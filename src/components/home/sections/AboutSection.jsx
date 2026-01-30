@@ -25,13 +25,10 @@ export default function AboutSection() {
 
             <div className="space-y-6 text-gray-300 leading-relaxed">
               <p>
-                Mon parcours est atypique et c&apos;est ce qui fait ma force. Pendant plus de <strong className="text-primary font-bold">20 ans</strong>, j&apos;ai exercé en tant qu&apos;artisan électricien et serrurier. Ces années de terrain m&apos;ont appris la rigueur, la précision et le sens du service client.
+                L&apos;artisanat est avant tout une histoire de famille et de transmission. J&apos;ai exercé le métier d&apos;électricien serrurier pendant <strong className="text-primary font-bold">23 ans</strong> au sein de notre société familiale à Paris, travaillant aux côtés de mes parents et de mes frères. En tant qu&apos;aîné, c&apos;est là que j&apos;ai forgé mon exigence et ma passion du métier.
               </p>
               <p>
-                Aujourd&apos;hui, je mets cette solide expérience technique au service de vos installations électriques et de la sécurité de votre domicile.
-              </p>
-              <p>
-                Que ce soit pour sécuriser votre habitation ou rénover votre installation électrique, je vous apporte une solution concrète, fiable et professionnelle.
+                Aujourd&apos;hui, j&apos;interviens en <strong className="text-primary font-bold">Eure (27) et Eure-et-Loir (28)</strong>, tout en collaborant régulièrement avec mes frères de <strong className="text-primary font-bold">L&apos;Atelier des Frères d&apos;Antan</strong> situés à Montfort-l&apos;Amaury (78). Très proches de l&apos;Eure-et-Loir, ils rayonnent sur les Yvelines, nous permettant d&apos;unir nos forces sur des projets communs avec une exigence fraternelle.
               </p>
             </div>
 
@@ -80,7 +77,7 @@ export default function AboutSection() {
 
               <div className="absolute inset-0 flex items-center justify-center text-center p-8">
                 <div className="relative z-10">
-                  <span className="block text-7xl font-black text-primary mb-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]">20+</span>
+                  <span className="block text-7xl font-black text-primary mb-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]">23</span>
                   <span className="block text-3xl font-bold text-foreground mb-2 tracking-wide">Années</span>
                   <span className="block text-lg text-foreground-muted font-medium tracking-widest uppercase">d&apos;Expérience</span>
                 </div>

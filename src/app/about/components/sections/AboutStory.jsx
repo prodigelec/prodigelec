@@ -16,13 +16,13 @@ export default function AboutStory() {
         </h2>
         <div className="text-gray-300 space-y-4 leading-relaxed text-lg">
           <p>
-            Mon parcours est loin d&apos;être linéaire, et c&apos;est ce qui fait aujourd&apos;hui ma force. Pendant plus de <strong className="text-white">20 ans</strong>, j&apos;ai sillonné les routes en tant qu&apos;artisan électricien et serrurier.
+            L&apos;artisanat est pour moi une histoire de famille. J&apos;ai travaillé pendant <strong className="text-white">23 ans</strong> aux côtés de mes parents et de mes frères au sein de notre société familiale à Paris. En tant qu&apos;aîné, c&apos;est auprès de mon père que j&apos;ai appris l&apos;exigence du terrain et l&apos;excellence technique.
           </p>
           <p>
-            J&apos;ai appris sur le terrain la valeur du travail bien fait, l&apos;importance de la réactivité et le sens du service client. Ces années m&apos;ont forgé une rigueur technique et une capacité d&apos;adaptation à toute épreuve.
+            Aujourd&apos;hui, cette aventure se décline sur deux structures unies par un lien fraternel fort. J&apos;interviens en <strong className="text-primary">Eure (27) et Eure-et-Loir (28)</strong> avec PRODIGELEC. Mes frères, basés à Montfort-l&apos;Amaury au sein de <strong className="text-primary">L&apos;Atelier des Frères d&apos;Antan</strong>, opèrent dans les Yvelines (78) et à proximité immédiate de l&apos;Eure-et-Loir.
           </p>
           <p>
-            Aujourd&apos;hui, je mets cette expérience au service de vos besoins en électricité et serrurerie, avec une exigence de qualité, de sécurité et de clarté sur les interventions.
+            Nous unissons régulièrement nos compétences sur le terrain pour vous offrir une réactivité exemplaire et un savoir-faire complet, héritage direct de notre formation familiale.
           </p>
         </div>
       </motion.div>
@@ -36,7 +36,7 @@ export default function AboutStory() {
         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
           <Wrench className="w-8 h-8 text-amber-500 mb-4" />
           <h3 className="text-xl font-bold text-white mb-2">Artisan Expert</h3>
-          <p className="text-gray-400 text-sm">20 ans d&apos;expérience terrain en électricité et serrurerie.</p>
+          <p className="text-gray-400 text-sm">23 ans d&apos;expérience terrain en électricité et serrurerie.</p>
         </div>
         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
           <Zap className="w-8 h-8 text-amber-400 mb-4" />

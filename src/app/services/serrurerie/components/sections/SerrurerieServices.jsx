@@ -88,7 +88,7 @@ export default function SerrurerieServices() {
               <p className="text-gray-400 leading-relaxed mb-8 text-base lg:text-lg min-h-[60px]">
                 {feature.title === "Clés & Badges" ? (
                   <>
-                    Service de reproduction et copie de badges en collaboration avec mon partenaire <span className="text-primary font-bold">L&apos;Atelier des Frères d&apos;Antan</span>.
+                    Service de reproduction et copie de badges en collaboration avec mon partenaire <span className="text-primary font-bold">L&apos;Atelier des Frères d&apos;Antan</span> situé à Montfort-l&apos;Amaury.
                   </>
                 ) : feature.description}
               </p>
