@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://beaveraid.fr"; // Remplacez par votre vrai domaine
+  const baseUrl = "https://www.prodigelec.fr";
 
   const routes = [
     "",
@@ -7,6 +7,7 @@ export default function sitemap() {
     "/services/serrurerie",
     "/about",
     "/contact",
+    "/politique-de-confidentialite"
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

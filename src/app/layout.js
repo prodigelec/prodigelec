@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://beaveraid.fr"),
+  metadataBase: new URL("https://www.prodigelec.fr"),
   title: {
     default: "PRODIGELEC - Électricien & Serrurier | Eure-et-Loir (28)",
     template: "%s | PRODIGELEC"
@@ -38,6 +38,7 @@ export const metadata = {
 
     // Services spécifiques
     "Dépannage électricité 28",
+    "Dépanna"
     "Dépannage électricité Eure",
     "Ouverture de porte 28",
     "Ouverture de porte Eure",
@@ -45,12 +46,17 @@ export const metadata = {
     "Serrure 3 points",
     "Réparation volet roulant",
     "Déblocage volet roulant",
+    "Mise aux normes électrique",
+    "Remplacement tableau électrique",
 
-    // Marque
+    // Marque et Qualificatifs
     "PRODIGELEC",
-    "Artisan 28"
+    "Artisan 28",
+    "Électricien agréé",
+    "Devis gratuit électricité",
+    "Urgence serrurier 28"
   ],
-  authors: [{ name: "PRODIGELEC", url: "https://beaver-aid.vercel.app" }],
+  authors: [{ name: "PRODIGELEC", url: "https://www.prodigelec.fr" }],
   creator: "PRODIGELEC",
   publisher: "PRODIGELEC",
   formatDetection: {
@@ -61,7 +67,7 @@ export const metadata = {
   openGraph: {
     title: "PRODIGELEC - L'expertise artisanale 2.0",
     description: "Électricité et serrurerie. Un interlocuteur de confiance pour vos travaux et votre sécurité.",
-    url: "https://beaveraid.fr",
+    url: "https://www.prodigelec.fr",
     siteName: "PRODIGELEC",
     images: [
       {
@@ -138,7 +144,7 @@ export default function RootLayout({ children }) {
                 }
               ],
               "priceRange": "$$",
-              "areaServed": ["Broué", "Dreux", "Chartres", "Évreux", "Anet", "Houdan"],
+              "areaServed": ["Broué", "Dreux", "Chartres", "Évreux", "Anet"],
               "sameAs": [
                 "https://www.facebook.com/beaveraid", // Exemple
                 "https://www.instagram.com/beaveraid"  // Exemple

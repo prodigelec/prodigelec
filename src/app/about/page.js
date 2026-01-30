@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: "L'histoire de PRODIGELEC - Artisanat & Sécurité",
     description: "Un parcours de terrain au service de votre sécurité et de vos installations.",
-    url: "https://beaveraid.fr/about",
+    url: "https://www.prodigelec.fr/about",
   },
 };
 

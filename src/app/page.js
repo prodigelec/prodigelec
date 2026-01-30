@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: "PRODIGELEC - Électricien & Serrurier | 27 & 28",
     description: "Expertise locale en Eure et Eure-et-Loir. Dépannage électricité et urgence serrurerie.",
-    url: "https://beaveraid.fr",
+    url: "https://www.prodigelec.fr",
   },
 };
 

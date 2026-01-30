@@ -21,7 +21,7 @@ export const metadata = {
   openGraph: {
     title: "Serrurier Urgentiste 28 - PRODIGELEC",
     description: "Ouverture de porte, changement de serrure et sécurisation. Intervention rapide sur Broué, Dreux et Chartres.",
-    url: "https://beaveraid.fr/services/serrurerie",
+    url: "https://www.prodigelec.fr/services/serrurerie",
   },
 };
 
