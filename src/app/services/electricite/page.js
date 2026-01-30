@@ -6,7 +6,7 @@ import ElecUrgency from "./components/sections/ElecUrgency";
 import ElecCTA from "./components/sections/ElecCTA";
 
 export const metadata = {
-  title: "Électricien Broué (28) - Dépannage & Installation | Beaver'Aid",
+  title: "Électricien Broué (28) - Dépannage & Installation | PRODIGELEC",
   description: "Électricien qualifié à Broué, Dreux, Chartres. Mise aux normes, éclairage LED, domotique, vidéophonie. Intervention rapide et devis gratuit.",
   keywords: [
     "Électricien Broué", "Électricien Dreux", "Électricien Chartres", "Électricien Évreux", "Électricien Anet", "Électricien Nonancourt",
@@ -17,9 +17,9 @@ export const metadata = {
     canonical: "/services/electricite",
   },
   openGraph: {
-    title: "Électricien à Broué et environs - Beaver'Aid",
+    title: "Électricien à Broué et environs - PRODIGELEC",
     description: "Besoin d'un électricien ? Dépannage, installation et mise aux normes. Intervention rapide sur le 28.",
-    url: "https://beaveraid.fr/services/electricite",
+    url: "https://prodigelec.fr/services/electricite",
   },
 };
 
