@@ -15,7 +15,7 @@ export default function FlyerPage() {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 print:p-0 print:bg-white">
       {/* Print Styles Injection */}
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media print {
           @page {
             margin: 0;
@@ -36,10 +36,7 @@ export default function FlyerPage() {
             display: none !important;
           }
         }
-        .clip-path-slant {
-          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-      `}</style>
+      `}} />
 
       {/* Controls Bar */}
       <div className="max-w-[210mm] mx-auto mb-8 flex justify-between items-center no-print">
@@ -66,7 +63,7 @@ export default function FlyerPage() {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -ml-16 -mb-16" />
 
         {/* Header Section */}
-        <div className="relative bg-[#0b1a2a] text-white pt-24 px-12 pb-24 clip-path-slant">
+        <div className="relative bg-[#0b1a2a] text-white pt-24 px-12 pb-24 [clip-path:polygon(0_0,100%_0,100%_85%,0_100%)]">
           <div className="flex justify-between items-start">
             <div className="scale-150 origin-top-left">
               <Logo />
