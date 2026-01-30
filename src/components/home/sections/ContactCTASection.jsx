@@ -37,7 +37,7 @@ export default function ContactCTASection() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="tel:0123456789"
+                  href="tel:0638194752"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-background rounded-full font-bold text-lg hover:bg-primary-light transition-colors shadow-lg shadow-primary/30 hover:shadow-primary-light/25 group"
                 >
                   <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
