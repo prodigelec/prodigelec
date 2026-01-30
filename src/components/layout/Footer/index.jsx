@@ -73,9 +73,9 @@ export default function Footer() {
             © 2025 PRODIGELEC. Tous droits réservés.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">Mentions Légales</a>
+            <Link href="/mentions-legales" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">Mentions Légales</Link>
             <Link href="/politique-de-confidentialite" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">Politique de Confidentialité</Link>
-            <a href="#" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">CGV</a>
+            <Link href="/cgv" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">CGV</Link>
           </div>
         </div>
       </div>

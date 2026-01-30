@@ -17,10 +17,10 @@ export default function ContactForm() {
 
     try {
       const result = await emailjs.sendForm(
-        'service_gw6xwxl',
-        'template_iua9x0s',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        '9JhtcKKMCdzRo6WPB'
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
 
       if (result.text === 'OK') {
@@ -100,20 +100,20 @@ export default function ContactForm() {
               />
             </div>
 
-          <div className="space-y-1">
-            <label htmlFor="user_email" className="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Email</label>
-            <input
-              type="email"
-              name="user_email"
-              id="user_email"
-              required
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
-            />
-          </div>
+            <div className="space-y-1">
+              <label htmlFor="user_email" className="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Email</label>
+              <input
+                type="email"
+                name="user_email"
+                id="user_email"
+                required
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
+              />
+            </div>
 
-          <div className="space-y-1">
-            <label htmlFor="user_city" className="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Ville</label>
-            <input
+            <div className="space-y-1">
+              <label htmlFor="user_city" className="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Ville</label>
+              <input
                 type="text"
                 name="user_city"
                 id="user_city"
@@ -156,8 +156,8 @@ export default function ContactForm() {
               required
               rows={3}
               className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all resize-none"
-                placeholder="Décrivez votre besoin..."
-              />
+              placeholder="Décrivez votre besoin..."
+            />
           </div>
 
           <button

@@ -6,23 +6,28 @@ export default function PrivacyPolicyPage() {
     const sections = [
         {
             icon: <ShieldCheck className="w-6 h-6 text-primary" />,
-            title: "Collecte des données",
-            content: "Nous collectons uniquement les informations nécessaires pour vous fournir nos services. Pour la newsletter, cela se limite à votre adresse e-mail."
+            title: "Responsable du traitement",
+            content: "Le responsable du traitement des données est PRODIGELEC, représenté par son responsable légal, dont le siège social est situé au 10 Rue Georges Bréant, 28410 Broué."
         },
         {
             icon: <Eye className="w-6 h-6 text-primary" />,
-            title: "Utilisation des données",
-            content: "Vos données sont utilisées exclusivement pour vous envoyer nos conseils techniques, astuces de sécurité et offres commerciales PRODIGELEC."
+            title: "Données collectées & Finalités",
+            content: "Nous collectons vos données (Nom, Email, Téléphone) via nos formulaires pour : répondre à vos demandes de devis, assurer le suivi de nos prestations, et vous envoyer notre newsletter si vous y avez consenti. La base légale est l'exécution d'un contrat ou l'intérêt légitime."
         },
         {
             icon: <Lock className="w-6 h-6 text-primary" />,
-            title: "Protection des données",
-            content: "Nous mettons en œuvre des mesures de sécurité rigoureuses pour protéger vos informations contre tout accès non autorisé."
+            title: "Durée de conservation",
+            content: "Vos données personnelles sont conservées uniquement pendant la durée nécessaire aux finalités pour lesquelles elles ont été collectées : 3 ans pour les prospects (après le dernier contact) et 10 ans pour les clients (obligations comptables/fiscales)."
         },
         {
             icon: <FileText className="w-6 h-6 text-primary" />,
-            title: "Vos droits",
-            content: "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Vous pouvez vous désinscrire à tout moment via le lien présent dans nos e-mails."
+            title: "Vos droits (RGPD)",
+            content: "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression, de limitation et de portabilité de vos données. Vous pouvez exercer ces droits à tout moment en nous contactant par email."
+        },
+        {
+            icon: <ShieldCheck className="w-6 h-6 text-primary" />,
+            title: "Destinataires des données",
+            content: "Vos données sont traitées exclusivement par PRODIGELEC. Elles ne sont jamais vendues ou cédées à des tiers. Certains sous-traitants techniques (comme Vercel pour l'hébergement) peuvent avoir accès aux données dans le cadre strict de leur mission."
         }
     ];
 

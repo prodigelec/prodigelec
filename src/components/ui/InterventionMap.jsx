@@ -180,7 +180,7 @@ export default function InterventionMap() {
   return (
     <div className="flex flex-col gap-6 w-full h-full min-h-[600px]">
       {/* City Search Bar with Autocomplete */}
-      <div className="bg-[#0b1a2a]/80 backdrop-blur-xl border border-white/10 p-3 rounded-2xl shadow-2xl relative z-1000">
+      <div className="bg-[#0b1a2a]/80 backdrop-blur-xl border border-white/10 p-3 rounded-2xl shadow-2xl relative z-0">
         <div className="flex flex-col md:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary pointer-events-none" />

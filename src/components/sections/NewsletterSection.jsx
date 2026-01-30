@@ -20,8 +20,8 @@ export default function NewsletterSection() {
         try {
             // Envoi à EmailJS
             const result = await emailjs.send(
-                'service_gw6xwxl',
-                'template_iua9x0s',
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
                 {
                     user_email: email,
                     user_name: 'Abonné Newsletter',
@@ -29,7 +29,7 @@ export default function NewsletterSection() {
                     message: 'Nouvelle inscription reçue depuis le site.',
                     user_city: ''
                 },
-                '9JhtcKKMCdzRo6WPB'
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
             );
 
             if (result.text === 'OK') {
@@ -105,12 +105,12 @@ export default function NewsletterSection() {
                                         type="submit"
                                         disabled={status === "loading" || status === "success" || !agreedToGdpr}
                                         className={`relative overflow-hidden px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 min-w-[180px] ${status === "success"
-                                                ? "bg-success text-white shadow-lg shadow-success/20"
-                                                : status === "error"
-                                                    ? "bg-error text-white shadow-lg shadow-error/20"
-                                                    : !agreedToGdpr && status === "idle"
-                                                        ? "bg-white/5 text-white/30 cursor-not-allowed border border-white/10"
-                                                        : "bg-primary text-background hover:bg-primary-light shadow-lg shadow-primary/20"
+                                            ? "bg-success text-white shadow-lg shadow-success/20"
+                                            : status === "error"
+                                                ? "bg-error text-white shadow-lg shadow-error/20"
+                                                : !agreedToGdpr && status === "idle"
+                                                    ? "bg-white/5 text-white/30 cursor-not-allowed border border-white/10"
+                                                    : "bg-primary text-background hover:bg-primary-light shadow-lg shadow-primary/20"
                                             }`}
                                     >
                                         {(status === "idle" || status === "error") && (
