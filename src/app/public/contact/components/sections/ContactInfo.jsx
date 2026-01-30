@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import dynamic from 'next/dynamic';
 
-const InterventionMap = dynamic(() => import('@/components/ui/InterventionMap'), {
+const InterventionMap = dynamic(() => import('@/app/public/components/ui/InterventionMap'), {
   ssr: false,
   loading: () => <div className="h-full w-full bg-white/5 animate-pulse rounded-3xl" />
 });

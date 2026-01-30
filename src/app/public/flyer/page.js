@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone, MapPin, Globe, Mail, CheckCircle2, QrCode, Zap, Printer, Star, Lightbulb, Download } from "lucide-react";
 import { IoKey } from "react-icons/io5";
-import Logo from "@/components/layout/Navbar/Logo";
+import Logo from "@/app/public/components/layout/Navbar/Logo";
 import dynamic from 'next/dynamic';
 
 // Import dynamique du composant PDF et du lien de téléchargement (Client Side Only)

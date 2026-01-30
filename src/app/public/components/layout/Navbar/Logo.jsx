@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import BrandName from "@/components/ui/BrandName";
+import BrandName from "@/app/public/components/ui/BrandName";
 
 export default function Logo({ className = "", boxClassName = "" }) {
   return (

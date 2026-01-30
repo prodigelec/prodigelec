@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
-import Button from '@/components/ui/Button';
+import Button from '@/app/public/components/ui/Button';
 import { useRouter } from 'next/navigation';
 
 export default function HeroContent({ slides, currentSlide }) {

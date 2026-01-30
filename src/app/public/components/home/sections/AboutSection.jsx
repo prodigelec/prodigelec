@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import BrandName from "@/components/ui/BrandName";
+import BrandName from "@/app/public/components/ui/BrandName";
 
 export default function AboutSection() {
   return (

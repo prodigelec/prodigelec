@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Wrench, Zap, Award, Briefcase } from "lucide-react";
-import BrandName from "@/components/ui/BrandName";
+import BrandName from "@/app/public/components/ui/BrandName";
 
 export default function AboutStory() {
   return (

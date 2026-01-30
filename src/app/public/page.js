@@ -1,4 +1,4 @@
-import { HeroSection, BrandsSection, FeaturesSection, AboutSection, ServicesSection, ProcessSection, PartnersSection, ContactCTASection, NewsletterSection } from "@/components/home";
+import { HeroSection, BrandsSection, FeaturesSection, AboutSection, ServicesSection, ProcessSection, PartnersSection, ContactCTASection, NewsletterSection } from "@/app/public/components/home";
 
 export const metadata = {
   title: "PRODIGELEC - Artisan Électricien & Serrurier | 27 & 28",

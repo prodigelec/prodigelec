@@ -1,7 +1,7 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import Link from "next/link";
-import BrandName from "@/components/ui/BrandName";
+import BrandName from "@/app/public/components/ui/BrandName";
 
 export default function Footer() {
   return (

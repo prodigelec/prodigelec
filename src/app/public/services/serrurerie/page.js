@@ -5,7 +5,7 @@ import SerrureriePricing from "./components/sections/SerrureriePricing";
 import SerrurerieUrgency from "./components/sections/SerrurerieUrgency";
 import SerrurerieFAQ from "./components/sections/SerrurerieFAQ";
 import SerrurerieCTA from "./components/sections/SerrurerieCTA";
-import NewsletterSection from "@/components/sections/NewsletterSection";
+import NewsletterSection from "@/app/public/components/sections/NewsletterSection";
 
 export const metadata = {
   title: "Serrurier Broué (28) - Dépannage Urgent & Clés | PRODIGELEC",
