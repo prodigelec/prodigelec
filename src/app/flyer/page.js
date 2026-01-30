@@ -89,7 +89,7 @@ export default function FlyerPage() {
         </div>
 
         {/* Hero Message - Overlapping Header */}
-        <div className="relative px-6 md:px-12 -mt-8 mb-12">
+        <div className="relative px-6 md:px-12 -mt-8 mb-8">
           <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border-l-8 border-primary flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left">
             <div className="flex-1">
               <h2 className="text-2xl md:text-3xl font-black text-[#0b1a2a] mb-2 uppercase tracking-tight">
@@ -105,6 +105,35 @@ export default function FlyerPage() {
                 Intervention rapide <span className="text-primary font-bold">du lundi au vendredi</span><br/> en Eure (27) et Eure-et-Loir (28)
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* PROMO BANNER */}
+        <div className="px-6 md:px-12 mb-12">
+          <div className="bg-gradient-to-r from-red-600 to-red-500 text-white p-4 md:p-6 rounded-xl shadow-lg transform rotate-1 border-2 border-white border-dashed outline outline-4 outline-red-500/30 relative overflow-hidden">
+            <div className="absolute top-0 right-0 -mt-4 -mr-4 bg-white/20 w-24 h-24 rounded-full blur-xl"></div>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left relative z-10">
+              <div className="flex items-center gap-4">
+                <div className="bg-white text-red-600 font-black text-2xl md:text-3xl p-3 rounded-lg shadow-sm rotate-3 transform">
+                  -10%
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-black uppercase italic tracking-wider">
+                    OFFRE DÉCOUVERTE
+                  </h3>
+                  <p className="text-red-100 font-medium text-sm md:text-base">
+                    Sur votre première intervention (Électricité ou Serrurerie)
+                  </p>
+                </div>
+              </div>
+              <div className="bg-black/20 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/80">Code Promo</p>
+                <p className="text-lg font-mono font-bold tracking-widest">FLYER2025</p>
+              </div>
+            </div>
+            <p className="text-[10px] text-white/60 text-center mt-2 md:mt-0 md:absolute md:bottom-2 md:right-4">
+              *Sur présentation de ce flyer. Hors pièces.
+            </p>
           </div>
         </div>
 
