@@ -1,3 +1,4 @@
+import '../../(private)/private.css';
 import { validateAccessCode } from '@/utils/crm/accessCode';
 import LoginForm from '../components/LoginForm';
 import { notFound } from 'next/navigation';

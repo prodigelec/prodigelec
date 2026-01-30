@@ -1,3 +1,4 @@
+import '../(private)/private.css';
 import { redirect, notFound } from 'next/navigation';
 import { generateAccessCode } from '@/utils/crm/accessCode';
 
