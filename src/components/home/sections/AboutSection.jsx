@@ -37,10 +37,10 @@ export default function AboutSection() {
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                "Plus de 20 ans d&apos;expérience",
-                "Interlocuteur unique",
-                "Travail soigné",
-                "Polyvalence technique"
+                "Garantie Décennale incluse",
+                "Normes NF C 15-100 & CE",
+                "Chantier propre garanti",
+                "Assurance pro à jour"
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 group">
                   <div className="p-1.5 rounded-full bg-white/10 ring-1 ring-white/10 group-hover:ring-primary/30 transition-colors shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]">
@@ -50,6 +50,20 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
+
+            {/* Launch Offer / CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-10 p-6 rounded-2xl bg-primary/10 border border-primary/20 ring-1 ring-primary/10 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-2 bg-primary text-background font-bold text-[10px] uppercase tracking-tighter rounded-bl-lg">Offre de Lancement</div>
+              <p className="text-white font-bold mb-2">Bilan Sécurité Offert</p>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Pour mes 10 premiers clients, je réalise un <span className="text-primary font-medium">diagnostic sécurité gratuit</span> de votre installation électrique lors de mon passage.
+              </p>
+            </motion.div>
           </motion.div>
 
           {/* Visual / Image Placeholder */}

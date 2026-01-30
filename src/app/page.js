@@ -1,4 +1,4 @@
-import { HeroSection, FeaturesSection, AboutSection, ServicesSection, ProcessSection, PartnersSection, ContactCTASection, NewsletterSection } from "@/components/home";
+import { HeroSection, BrandsSection, FeaturesSection, AboutSection, ServicesSection, ProcessSection, PartnersSection, ContactCTASection, NewsletterSection } from "@/components/home";
 
 export const metadata = {
   title: "PRODIGELEC - Artisan Électricien & Serrurier | 28",
@@ -18,6 +18,7 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 overflow-x-hidden relative w-full pb-24 md:pb-0">
       <div className="w-full overflow-x-hidden">
         <HeroSection />
+        <BrandsSection />
         <FeaturesSection />
         <AboutSection />
         <ServicesSection />

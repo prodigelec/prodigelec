@@ -4,23 +4,23 @@ import { ClipboardList, Award, HeartHandshake } from "lucide-react";
 
 const features = [
   {
-    icon: <ClipboardList className="w-8 h-8 text-primary" />,
-    title: "Devis Gratuit & Transparent",
-    description: "Aucune mauvaise surprise. Je vous fournis une estimation claire et détaillée avant chaque intervention.",
+    icon: <Award className="w-8 h-8 text-primary" />,
+    title: "Norme NF C 15-100",
+    description: "Toutes mes interventions respectent strictement les normes de sécurité en vigueur pour votre protection.",
     gradient: "from-primary/20 to-primary/5",
     border: "group-hover:border-primary/50"
   },
   {
-    icon: <Award className="w-8 h-8 text-accent" />,
-    title: "Expertise Confirmée",
-    description: "Plus de 20 ans d'expérience terrain en électricité et serrurerie.",
+    icon: <HeartHandshake className="w-8 h-8 text-accent" />,
+    title: "Chantier Propre",
+    description: "Je m'engage à laisser votre domicile aussi propre qu'à mon arrivée. Pas de poussière, pas de traces.",
     gradient: "from-accent/20 to-accent/5",
     border: "group-hover:border-accent/50"
   },
   {
-    icon: <HeartHandshake className="w-8 h-8 text-primary-light" />,
-    title: "Solutions Sur-Mesure",
-    description: "Je prends le temps de vous écouter pour vous proposer la solution la plus adaptée à votre situation et à votre budget.",
+    icon: <ClipboardList className="w-8 h-8 text-primary-light" />,
+    title: "Zéro Surprise",
+    description: "Le prix du devis est ferme et définitif. Aucune facturation supplémentaire imprévue en fin de chantier.",
     gradient: "from-primary-light/20 to-primary-light/5",
     border: "group-hover:border-primary-light/50"
   }
