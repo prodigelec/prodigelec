@@ -5,23 +5,35 @@ import { CheckCircle2 } from "lucide-react";
 export default function AboutValues() {
   const values = [
     {
-      title: "Rigueur",
-      desc: "Que ce soit pour câbler un tableau électrique ou coder une fonctionnalité, la précision est ma priorité."
+      title: "Garantie Décennale",
+      desc: "Toutes mes interventions bénéficient d'une assurance décennale à jour pour votre totale sérénité."
+    },
+    {
+      title: "Normes NF C 15-100",
+      desc: "Le respect strict des normes de sécurité électrique en vigueur est ma priorité sur chaque chantier."
+    },
+    {
+      title: "Rigueur & Propreté",
+      desc: "Précision technique et respect de votre domicile : je laisse votre chantier aussi propre qu'à mon arrivée."
     },
     {
       title: "Transparence",
-      desc: "Pas de mauvaises surprises. Mes devis sont clairs, détaillés et expliqués avant toute intervention."
+      desc: "Mes devis sont clairs et détaillés. Aucune mauvaise surprise, tout est expliqué avant l'intervention."
     },
     {
       title: "Proximité",
-      desc: "Basé près de Dreux, je privilégie la relation humaine et le suivi local de mes clients (Chartres, Évreux, Anet...)."
+      desc: "Basé à Broué, j'interviens rapidement en Eure (27) et Eure-et-Loir (28) pour un suivi local de qualité."
+    },
+    {
+      title: "Conseil & Écoute",
+      desc: "Chaque projet est unique. Je vous accompagne avec des conseils personnalisés pour optimiser votre confort."
     }
   ];
 
   return (
     <div className="mb-24">
-      <h2 className="text-3xl font-bold text-white mb-12 text-center">Mes Engagements</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <h2 className="text-3xl font-bold text-white mb-12 text-center">Mes Engagements & Garanties</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {values.map((item, idx) => (
           <motion.div
             key={idx}
