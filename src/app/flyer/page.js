@@ -83,9 +83,6 @@ export default function FlyerPage() {
               </div>
             </div>
             <div className="text-right">
-              <div className="inline-block bg-primary text-[#0b1a2a] px-4 py-1 rounded-full font-bold text-sm mb-2">
-                AGRÉÉ ASSURANCES
-              </div>
               <p className="text-gray-400 text-sm">Artisan qualifié</p>
             </div>
           </div>
@@ -174,7 +171,7 @@ export default function FlyerPage() {
             <div className="flex flex-wrap gap-3">
               {[
                 "Broué (28)", "Dreux", "Chartres", "Évreux (27)", 
-                "Anet", "Houdan", "Nonancourt", "Saint-André-de-l'Eure"
+                "Anet", "Nonancourt", "Saint-André-de-l'Eure"
               ].map((city) => (
                 <span key={city} className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-gray-700 font-bold shadow-sm">
                   {city}
@@ -197,7 +194,7 @@ export default function FlyerPage() {
                 <span className="text-lg">contact@prodigelec.fr</span>
               </div>
               <div className="pt-4 text-sm text-gray-500">
-                <p>SIRET : 98167876800017 • Assurance Décennale</p>
+                <p>SIRET : 80430489700023 • Assurance Décennale</p>
                 <p>Devis gratuit & sans engagement</p>
               </div>
             </div>
