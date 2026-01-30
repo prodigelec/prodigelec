@@ -6,4 +6,4 @@ export { default as ProcessSection } from './sections/ProcessSection';
 export { default as PartnersSection } from './sections/PartnersSection';
 export { default as BrandsSection } from './sections/BrandsSection';
 export { default as ContactCTASection } from './sections/ContactCTASection';
-export { default as NewsletterSection } from './sections/NewsletterSection';
+export { default as NewsletterSection } from '../sections/NewsletterSection';

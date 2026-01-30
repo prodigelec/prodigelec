@@ -4,6 +4,7 @@ import SerrurerieServices from "./components/sections/SerrurerieServices";
 import SerrureriePricing from "./components/sections/SerrureriePricing";
 import SerrurerieUrgency from "./components/sections/SerrurerieUrgency";
 import SerrurerieCTA from "./components/sections/SerrurerieCTA";
+import NewsletterSection from "@/components/sections/NewsletterSection";
 
 export const metadata = {
   title: "Serrurier Broué (28) - Dépannage Urgent & Clés | PRODIGELEC",
@@ -32,6 +33,7 @@ export default function SerrureriePage() {
         <SerrurerieServices />
         <SerrureriePricing />
         <SerrurerieUrgency />
+        <NewsletterSection />
         <SerrurerieCTA />
       </div>
     </main>
