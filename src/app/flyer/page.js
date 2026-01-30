@@ -13,7 +13,7 @@ export default function FlyerPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 print:p-0 print:bg-white">
+    <div className="min-h-screen bg-gray-100 pt-32 pb-12 px-4 print:p-0 print:bg-white">
       {/* Print Styles Injection */}
       <style dangerouslySetInnerHTML={{ __html: `
         @media print {
