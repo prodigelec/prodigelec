@@ -5,3 +5,4 @@ export { default as ServicesSection } from './sections/ServicesSection';
 export { default as ProcessSection } from './sections/ProcessSection';
 export { default as PartnersSection } from './sections/PartnersSection';
 export { default as ContactCTASection } from './sections/ContactCTASection';
+export { default as NewsletterSection } from './sections/NewsletterSection';
