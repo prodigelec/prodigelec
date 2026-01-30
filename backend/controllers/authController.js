@@ -25,7 +25,11 @@ exports.login = async (req, res) => {
         maxAge: 8 * 60 * 60 * 1000,
     });
 
-    res.json({ success: true, message: 'Connexion réussie.' });
+    res.json({
+        success: true,
+        message: 'Connexion réussie.',
+        accessCode: generateAccessCode()
+    });
 };
 
 exports.logout = (req, res) => {

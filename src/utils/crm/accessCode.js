@@ -6,7 +6,15 @@ import CryptoJS from 'crypto-js';
  */
 export const generateAccessCode = () => {
     const secret = process.env.CRM_ACCESS_SECRET;
-    if (!secret) throw new Error('CRM_ACCESS_SECRET is not defined');
+
+    // Fallback for build time or client-side (though it should only be called on server now)
+    if (!secret) {
+        if (typeof window !== 'undefined') {
+            console.warn('CRM_ACCESS_SECRET is a server-side variable. Calculation skipped on client.');
+            return 'PROTECTED';
+        }
+        throw new Error('CRM_ACCESS_SECRET is not defined in environment variables');
+    }
 
     const timestamp = Math.floor(Date.now() / (1000 * 60 * 5)); // 5 minute window
     const raw = `${secret}-${timestamp}`;
