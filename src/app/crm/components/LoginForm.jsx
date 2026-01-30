@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Loader2, Lock, ShieldCheck, AlertCircle } from 'lucide-react';
 
-export default function LoginForm({ accessCode }) {
+export default function LoginForm({ accessCode, onSuccess }) {
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
@@ -28,9 +28,13 @@ export default function LoginForm({ accessCode }) {
             const result = await response.json();
 
             if (response.ok) {
-                // Success! Redirect to the private portal
-                router.push('/portal');
-                router.refresh(); // Ensure the layout/guard re-checks cookies
+                // Success!
+                if (onSuccess) {
+                    onSuccess(result);
+                } else {
+                    router.push('/portal');
+                    router.refresh();
+                }
             } else {
                 setError(result.error || 'Identifiants invalides.');
             }
