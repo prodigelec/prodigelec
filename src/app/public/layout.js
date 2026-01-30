@@ -1,4 +1,4 @@
-import "./globals.css";
+
 import Navbar from "@/app/public/components/layout/Navbar";
 import FloatingContactButton from "@/app/public/components/layout/FloatingContactButton";
 import Footer from "@/app/public/components/layout/Footer";
