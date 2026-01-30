@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Phone, MapPin, Globe, Mail, CheckCircle2, QrCode } from "lucide-react";
 import { IoKey } from "react-icons/io5";
 import { FcFlashOn } from "react-icons/fc";
+import Logo from "@/components/layout/Navbar/Logo";
 
 export default function FlyerPage() {
   // Fonction d'impression
@@ -67,20 +68,8 @@ export default function FlyerPage() {
         {/* Header Section */}
         <div className="relative bg-[#0b1a2a] text-white p-12 pb-16 clip-path-slant">
           <div className="flex justify-between items-start">
-            <div className="flex items-center gap-6">
-              <div className="relative w-24 h-24 bg-white rounded-2xl p-2 shadow-lg">
-                <Image
-                  src="/prodigelec-logo.svg"
-                  alt="Logo PRODIGELEC"
-                  fill
-                  priority
-                  className="object-contain p-2"
-                />
-              </div>
-              <div>
-                <h1 className="text-5xl font-black tracking-tighter mb-2">PRODIGELEC</h1>
-                <p className="text-xl text-primary font-medium tracking-wide uppercase">Électricité & Serrurerie</p>
-              </div>
+            <div className="scale-150 origin-top-left">
+              <Logo />
             </div>
             <div className="text-right">
               <p className="text-gray-400 text-sm">Artisan qualifié</p>
