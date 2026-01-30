@@ -2,7 +2,7 @@ import { HeroSection, FeaturesSection, AboutSection, ServicesSection, ProcessSec
 
 export const metadata = {
   title: "PRODIGELEC - Artisan Électricien & Serrurier | 28",
-  description: "Un seul expert pour vos travaux d'électricité et de serrurerie. Intervention rapide à Broué, Dreux, Chartres et alentours.",
+  description: "Un seul expert pour vos travaux d'électricité et de serrurerie. Intervention rapide à Broué, Dreux, Chartres & leurs alentours.",
   alternates: {
     canonical: "/",
   },

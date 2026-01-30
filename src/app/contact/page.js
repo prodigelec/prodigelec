@@ -4,7 +4,7 @@ import ContactForm from "./components/sections/ContactForm";
 
 export const metadata = {
   title: "Contactez PRODIGELEC - Devis Gratuit Électricité & Serrurerie | 28",
-  description: "Besoin d'un dépannage urgent ? Contactez PRODIGELEC au 06 38 19 47 52. Intervention sur Broué, Dreux, Chartres et alentours.",
+  description: "Besoin d'un dépannage urgent ? Contactez PRODIGELEC au 06 38 19 47 52. Intervention sur Broué, Dreux, Chartres & leurs alentours.",
   alternates: {
     canonical: "/contact",
   },

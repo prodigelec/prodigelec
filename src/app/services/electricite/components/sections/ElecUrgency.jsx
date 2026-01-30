@@ -23,7 +23,7 @@ export default function ElecUrgency() {
               Besoin d&apos;un dépannage rapide ?
             </h3>
             <p className="text-xl text-gray-300 mb-8">
-              Une panne de courant ? Une prise qui chauffe ? J&apos;interviens rapidement sur le secteur de Chartres, Broué, Dreux et alentours pour diagnostiquer et réparer la panne.
+              Une panne de courant ? Une prise qui chauffe ? J&apos;interviens rapidement sur le secteur de Chartres, Broué, Dreux & leurs alentours pour diagnostiquer et réparer la panne.
             </p>
             <a href="tel:0638194752" className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-backgound rounded-full font-bold hover:bg-accent-glow transition-colors text-lg text-black">
               Appeler le 06 38 19 47 52

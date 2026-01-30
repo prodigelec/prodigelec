@@ -81,7 +81,7 @@ export default function ContactCTASection() {
                 <div>
                   <h3 className="text-lg font-bold text-white mb-1">Zone d&apos;intervention</h3>
                   <p className="text-gray-400 text-sm mb-2">Déplacement gratuit &lt; 5km</p>
-                  <span className="text-gray-200 font-medium">Chartres, Broué, Dreux, Anet, Nonancourt, Évreux, Ezy-sur-Eure & alentours (28/27)</span>
+                  <span className="text-gray-200 font-medium">Chartres, Broué, Dreux, Anet, Nonancourt, Évreux, Ezy-sur-Eure & leurs alentours (28/27)</span>
                 </div>
               </div>
 

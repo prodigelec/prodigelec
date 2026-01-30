@@ -23,7 +23,7 @@ export default function SerrurerieUrgency() {
               Porte claquée ou serrure bloquée ?
             </h3>
             <p className="text-xl text-gray-300 mb-8">
-              Je me déplace rapidement sur Chartres, Broué, Dreux, Anet et les environs. Tarifs annoncés avant intervention, pas de surprise.
+              Je me déplace rapidement sur Chartres, Broué, Dreux, Anet & leurs alentours. Tarifs annoncés avant intervention, pas de surprise.
             </p>
             <a href="tel:0638194752" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-background rounded-full font-bold hover:bg-primary-light transition-colors text-lg">
               Appeler le 06 38 19 47 52
