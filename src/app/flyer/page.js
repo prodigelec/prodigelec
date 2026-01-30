@@ -55,6 +55,7 @@ export default function FlyerPage() {
         style={{
           width: '210mm',
           minHeight: '297mm',
+          height: '297mm',
           maxWidth: '100%',
         }}
       >
@@ -63,9 +64,9 @@ export default function FlyerPage() {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -ml-16 -mb-16" />
 
         {/* Header Section */}
-        <div className="relative bg-[#0b1a2a] text-white pt-24 px-12 pb-24 [clip-path:polygon(0_0,100%_0,100%_85%,0_100%)]">
+        <div className="relative bg-[#0b1a2a] text-white pt-16 px-12 pb-20 [clip-path:polygon(0_0,100%_0,100%_85%,0_100%)]">
           <div className="flex justify-between items-start">
-            <div className="scale-150 origin-top-left">
+            <div className="scale-125 origin-top-left">
               <Logo />
             </div>
             <div className="text-right">
@@ -75,10 +76,10 @@ export default function FlyerPage() {
         </div>
 
         {/* Hero Message - Overlapping Header */}
-        <div className="relative px-6 md:px-12 -mt-8 mb-8">
-          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border-l-8 border-primary flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left">
+        <div className="relative px-6 md:px-12 -mt-12 mb-6">
+          <div className="bg-white rounded-2xl shadow-xl p-6 border-l-8 border-primary flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left">
             <div className="flex-1">
-              <h2 className="text-2xl md:text-3xl font-black text-[#0b1a2a] mb-2 uppercase tracking-tight">
+              <h2 className="text-2xl md:text-3xl font-black text-[#0b1a2a] mb-1 uppercase tracking-tight">
                 DÉPANNAGE URGENT
               </h2>
             </div>
@@ -86,7 +87,7 @@ export default function FlyerPage() {
               <a href="tel:0638194752" className="text-4xl sm:text-5xl md:text-6xl font-black text-primary hover:text-primary-dark transition-colors leading-none block">
                 06 38 19 47 52
               </a>
-              <p className="text-xs text-gray-400 mt-1 uppercase tracking-widest font-semibold mb-2">Appel direct</p>
+              <p className="text-xs text-gray-400 mt-1 uppercase tracking-widest font-semibold mb-1">Appel direct</p>
               <p className="text-gray-600 font-medium text-sm md:text-base leading-relaxed">
                 Intervention rapide <span className="text-primary font-bold">du lundi au vendredi</span><br/> en Eure (27) et Eure-et-Loir (28)
               </p>
@@ -95,8 +96,8 @@ export default function FlyerPage() {
         </div>
 
         {/* PROMO BANNER */}
-        <div className="px-6 md:px-12 mb-12">
-          <div className="bg-gradient-to-r from-red-600 to-red-500 text-white p-4 md:p-6 rounded-xl shadow-lg transform rotate-1 border-2 border-white border-dashed outline outline-4 outline-red-500/30 relative overflow-hidden">
+        <div className="px-6 md:px-12 mb-6">
+          <div className="bg-gradient-to-r from-red-600 to-red-500 text-white p-4 rounded-xl shadow-lg transform rotate-1 border-2 border-white border-dashed outline outline-4 outline-red-500/30 relative overflow-hidden">
             <div className="absolute top-0 right-0 -mt-4 -mr-4 bg-white/20 w-24 h-24 rounded-full blur-xl"></div>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left relative z-10">
               <div className="flex items-center gap-4">
@@ -124,16 +125,16 @@ export default function FlyerPage() {
         </div>
 
         {/* Services Grid */}
-        <div className="px-12 mb-12 grid grid-cols-2 gap-12">
+        <div className="px-12 mb-8 grid grid-cols-2 gap-8">
           {/* Électricité */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
-                <FcFlashOn size={50} />
+          <div className="space-y-4">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                <FcFlashOn size={40} />
               </div>
-              <h3 className="text-3xl font-bold text-[#0b1a2a]">Électricité</h3>
+              <h3 className="text-2xl font-bold text-[#0b1a2a]">Électricité</h3>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               {[
                 "Dépannage toutes pannes",
                 "Mise aux normes (NFC 15-100)",
@@ -143,22 +144,22 @@ export default function FlyerPage() {
                 "Éclairage LED"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
-                  <span className="text-gray-700 font-medium text-lg">{item}</span>
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-gray-700 font-medium text-base">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Serrurerie */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-20 h-20 bg-yellow-50 rounded-2xl flex items-center justify-center text-yellow-600">
-                <IoKey size={50} />
+          <div className="space-y-4">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center text-yellow-600">
+                <IoKey size={40} />
               </div>
-              <h3 className="text-3xl font-bold text-[#0b1a2a]">Serrurerie</h3>
+              <h3 className="text-2xl font-bold text-[#0b1a2a]">Serrurerie</h3>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               {[
                 "Ouverture de porte (clanquée/fermée)",
                 "Changement de serrure",
@@ -168,8 +169,8 @@ export default function FlyerPage() {
                 "Sécurisation après effraction"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
-                  <span className="text-gray-700 font-medium text-lg">{item}</span>
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-gray-700 font-medium text-base">{item}</span>
                 </li>
               ))}
             </ul>
@@ -177,18 +178,18 @@ export default function FlyerPage() {
         </div>
 
         {/* Zones d'intervention */}
-        <div className="px-12 mb-12">
-          <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div className="px-12 mb-8">
+          <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
             <div className="flex items-center gap-4 mb-4">
-              <MapPin className="w-8 h-8 text-primary" />
-              <h3 className="text-xl font-bold text-[#0b1a2a]">ZONES D&apos;INTERVENTION</h3>
+              <MapPin className="w-6 h-6 text-primary" />
+              <h3 className="text-lg font-bold text-[#0b1a2a]">ZONES D&apos;INTERVENTION</h3>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {[
                 "Broué (28)", "Dreux", "Chartres", "Évreux (27)", 
                 "Anet", "Nonancourt", "Saint-André-de-l'Eure"
               ].map((city) => (
-                <span key={city} className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-gray-700 font-bold shadow-sm">
+                <span key={city} className="bg-white border border-gray-200 px-3 py-1 rounded-lg text-gray-700 font-bold shadow-sm text-sm">
                   {city}
                 </span>
               ))}
@@ -197,18 +198,18 @@ export default function FlyerPage() {
         </div>
 
         {/* Footer Info */}
-        <div className="mt-auto bg-[#0b1a2a] text-white p-12">
+        <div className="mt-auto bg-[#0b1a2a] text-white p-8 pb-12">
           <div className="flex justify-between items-end">
-            <div className="space-y-4">
+            <div className="space-y-2">
               <div className="flex items-center gap-3">
-                <Globe className="w-5 h-5 text-primary" />
-                <span className="text-lg">www.prodigelec.fr</span>
+                <Globe className="w-4 h-4 text-primary" />
+                <span className="text-base">www.prodigelec.fr</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary" />
-                <span className="text-lg">contact@prodigelec.fr</span>
+                <Mail className="w-4 h-4 text-primary" />
+                <span className="text-base">contact@prodigelec.fr</span>
               </div>
-              <div className="pt-4 text-sm text-gray-500">
+              <div className="pt-2 text-xs text-gray-500">
                 <p>SIRET : 80430489700023 • Assurance Décennale</p>
                 <p>Devis gratuit & sans engagement</p>
               </div>
@@ -216,7 +217,7 @@ export default function FlyerPage() {
             
             {/* QR Code */}
             <div className="bg-white p-2 rounded-lg shadow-sm">
-              <div className="relative w-24 h-24">
+              <div className="relative w-20 h-20">
                 <Image
                   src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.prodigelec.fr"
                   alt="QR Code vers le site"
