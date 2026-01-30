@@ -100,12 +100,12 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
- icons: {
-  icon: [
-    { url: "/favicon.svg", type: "image/svg+xml" },
-  ],
-  apple: "/prodigelec-logo.svg",
-},
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/prodigelec-logo.svg",
+  },
 
   verification: {
     google: "C-dGhGfuNwqKlYfHp-ICPG43ZWYeHFpfyCsT8XF8lag",
@@ -156,7 +156,7 @@ export default function RootLayout({ children }) {
                 "https://www.google.com/maps/place/prodigelec/",
                 "https://www.facebook.com/prodigelec/",
                 "https://www.instagram.com/prodigelec/",
-                "https://www.whatsapp.com/prodigelec/"                
+                "https://www.whatsapp.com/prodigelec/"
               ]
             })
           }}

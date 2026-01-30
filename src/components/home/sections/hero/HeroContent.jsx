@@ -19,9 +19,14 @@ export default function HeroContent({ slides, currentSlide }) {
             transition={{ duration: 0.5, staggerChildren: 0.1 }}
             className="space-y-6 md:space-y-12 max-w-5xl mx-auto"
           >
-            {/* Title */}
+            {/* SEO Optimized H1 (Hidden) */}
+            <h1 className="sr-only">
+              PRODIGELEC - Expert Artisan Électricien & Serrurier | Eure (27) & Eure-et-Loir (28)
+            </h1>
+
+            {/* Title (Carousel H2) */}
             <div className="space-y-4 md:space-y-8 pt-24 md:pt-32">
-              <motion.h1
+              <motion.h2
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -33,7 +38,7 @@ export default function HeroContent({ slides, currentSlide }) {
                 <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light opacity-95 mt-4 md:mt-6">
                   {slides[currentSlide].title.split(' ').slice(1).join(' ')}
                 </span>
-              </motion.h1>
+              </motion.h2>
 
               <motion.div
                 initial={{ opacity: 0 }}
