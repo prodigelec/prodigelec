@@ -1,4 +1,3 @@
-import '../(private)/private.css';
 import { redirect, notFound } from 'next/navigation';
 import { generateAccessCode } from '@/utils/crm/accessCode';
 
@@ -21,9 +20,11 @@ export default async function AccessGatePage({ searchParams }) {
     } catch (error) {
         console.error('Gatekeeper Error:', error);
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gray-50 p-8">
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-red-100 text-red-500 font-bold">
-                    Erreur de configuration du système de sécurité.
+            <div className="theme-private min-h-screen">
+                <div className="flex items-center justify-center bg-gray-50 p-8 min-h-screen">
+                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-red-100 text-red-500 font-bold">
+                        Erreur de configuration du système de sécurité.
+                    </div>
                 </div>
             </div>
         );

@@ -149,10 +149,12 @@ export default function PublicLayout({ children }) {
           })
         }}
       />
-      <Navbar />
-      {children}
-      <Footer />
-      <FloatingContactButton />
+      <div className="theme-public">
+        <Navbar />
+        {children}
+        <Footer />
+        <FloatingContactButton />
+      </div>
     </>
   );
 }
