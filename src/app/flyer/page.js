@@ -66,7 +66,7 @@ export default function FlyerPage() {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -ml-16 -mb-16" />
 
         {/* Header Section */}
-        <div className="relative bg-[#0b1a2a] text-white p-12 pb-16 clip-path-slant">
+        <div className="relative bg-[#0b1a2a] text-white pt-24 px-12 pb-24 clip-path-slant">
           <div className="flex justify-between items-start">
             <div className="scale-150 origin-top-left">
               <Logo />
