@@ -12,7 +12,7 @@ export const metadata = {
   description: "Serrurier urgence à Broué, Dreux, Chartres. Ouverture de porte, changement de serrure 3 points, volets roulants, reproduction de clés. Disponible 6j/7.",
   keywords: [
     "Serrurier Broué", "Serrurier Dreux", "Serrurier Chartres", "Serrurier Évreux", "Serrurier Anet", "Serrurier Nonancourt",
-    "Ouverture de porte 28", "Ouverture de porte Eure",
+    "Ouverture de porte 28", "Ouverture de porte 27", "Ouverture de porte Eure",
     "Changement de serrure", "Volet roulant", "Blindage de porte", "Serrurier urgence"
   ],
   alternates: {

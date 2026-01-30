@@ -12,7 +12,7 @@ export const metadata = {
   description: "Électricien qualifié à Broué, Dreux, Chartres. Mise aux normes, éclairage LED, domotique, vidéophonie. Intervention rapide et devis gratuit.",
   keywords: [
     "Électricien Broué", "Électricien Dreux", "Électricien Chartres", "Électricien Évreux", "Électricien Anet", "Électricien Nonancourt",
-    "Dépannage électricité 28", "Dépannage électricité Eure",
+    "Dépannage électricité 28", "Dépannage électricité 27", "Dépannage électricité Eure",
     "Installation électrique", "Mise aux normes", "Domotique", "Vidéophonie"
   ],
   alternates: {

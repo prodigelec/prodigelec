@@ -38,9 +38,12 @@ export const metadata = {
 
     // Services spécifiques
     "Dépannage électricité 28",
-    "Dépanna"
+    "Dépannage électricité 27",
+    "Dépannage électrique 28",
+    "Dépannage électrique 27",
     "Dépannage électricité Eure",
     "Ouverture de porte 28",
+    "Ouverture de porte 27",
     "Ouverture de porte Eure",
     "Installation électrique",
     "Serrure 3 points",
@@ -145,10 +148,7 @@ export default function RootLayout({ children }) {
               ],
               "priceRange": "$$",
               "areaServed": ["Broué", "Dreux", "Chartres", "Évreux", "Anet"],
-              "sameAs": [
-                "https://www.facebook.com/beaveraid", // Exemple
-                "https://www.instagram.com/beaveraid"  // Exemple
-              ]
+              "sameAs": []
             })
           }}
         />
