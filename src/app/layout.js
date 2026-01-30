@@ -74,10 +74,10 @@ export const metadata = {
     siteName: "PRODIGELEC",
     images: [
       {
-        url: "/logo.png", // Idéalement une image OG de 1200x630
+        url: "https://www.prodigelec.fr/prodigelec-logo.svg", // Idéalement une image OG de 1200x630
         width: 800,
         height: 600,
-        alt: "Logo PRODIGELEC",
+        alt: "Logo PRODIGELEC - Électricien & Serrurier",
       },
     ],
     locale: "fr_FR",
@@ -87,7 +87,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "PRODIGELEC - Services 28",
     description: "Électricien et Serrurier en Eure-et-Loir.",
-    images: ["/logo.png"],
+    images: ["https://www.prodigelec.fr/prodigelec-logo.svg"],
   },
   robots: {
     index: true,
@@ -100,15 +100,18 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: '/prodigelec-logo.svg',
-    apple: '/prodigelec-logo.svg',
-  },
+ icons: {
+  icon: [
+    { url: "/favicon.svg", type: "image/svg+xml" },
+  ],
+  apple: "/prodigelec-logo.svg",
+},
+
   verification: {
     google: "C-dGhGfuNwqKlYfHp-ICPG43ZWYeHFpfyCsT8XF8lag",
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://www.prodigelec.fr",
   },
 };
 
@@ -148,7 +151,13 @@ export default function RootLayout({ children }) {
               ],
               "priceRange": "$$",
               "areaServed": ["Broué", "Dreux", "Chartres", "Évreux", "Anet"],
-              "sameAs": []
+              "sameAs": [
+                "https://www.google.com/search?q=prodigelec",
+                "https://www.google.com/maps/place/prodigelec/",
+                "https://www.facebook.com/prodigelec/",
+                "https://www.instagram.com/prodigelec/",
+                "https://www.whatsapp.com/prodigelec/"                
+              ]
             })
           }}
         />
