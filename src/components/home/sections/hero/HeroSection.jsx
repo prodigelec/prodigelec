@@ -19,6 +19,27 @@ const slides = [
     subtitle: "Vos installations fiables et sécurisées",
     image: "/img_carousel_hero_home/tableau-electrique.jpg",
     icon: "⚡"
+  },
+  {
+    id: 3,
+    title: "Volets Roulants",
+    subtitle: "Installation & Réparation motorisée",
+    image: "/img_carousel_hero_home/volets_roulants.png",
+    icon: "🪟"
+  },
+  {
+    id: 4,
+    title: "Domotique",
+    subtitle: "Pilotez votre maison intelligemment",
+    image: "/img_carousel_hero_home/domotique.png",
+    icon: "📱"
+  },
+  {
+    id: 5,
+    title: "Contrôle d'Accès",
+    subtitle: "Digicodes & Sécurité haute performance",
+    image: "/img_carousel_hero_home/digicode.png",
+    icon: "🛡️"
   }
 ];
 
@@ -34,7 +55,7 @@ export default function HeroSection() {
       }, 5000);
       return () => clearInterval(interval);
     }
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying]); // Removed slides.length to keep dependency array size constant
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -47,11 +68,11 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen overflow-hidden bg-black">
       <HeroBackground slides={slides} currentSlide={currentSlide} />
-      
+
       <HeroNavigation prevSlide={prevSlide} nextSlide={nextSlide} />
-      
+
       <HeroContent slides={slides} currentSlide={currentSlide} />
-      
+
       <HeroProgress currentSlide={currentSlide} totalSlides={slides.length} />
     </section>
   );
