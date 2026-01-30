@@ -102,7 +102,7 @@ export const metadata = {
     apple: '/logo.png',
   },
   verification: {
-    google: "votre-code-verification-google", // À ajouter plus tard
+    google: "C-dGhGfuNwqKlYfHp-ICPG43ZWYeHFpfyCsT8XF8lag",
   },
   alternates: {
     canonical: "/",
