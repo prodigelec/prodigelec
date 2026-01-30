@@ -5,20 +5,39 @@ import { useState } from "react";
 
 export default function NewsletterSection() {
     const [email, setEmail] = useState("");
-    const [status, setStatus] = useState("idle"); // idle, loading, success
+    const [status, setStatus] = useState("idle"); // idle, loading, success, error
+    const [errorMessage, setErrorMessage] = useState("");
     const [agreedToGdpr, setAgreedToGdpr] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!agreedToGdpr) return;
+
         setStatus("loading");
-        // Simulate API call
-        setTimeout(() => {
+        setErrorMessage("");
+
+        try {
+            const response = await fetch("/api/newsletter", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || "Une erreur est survenue.");
+            }
+
             setStatus("success");
             setEmail("");
             setAgreedToGdpr(false);
             setTimeout(() => setStatus("idle"), 5000);
-        }, 1500);
+        } catch (error) {
+            setStatus("error");
+            setErrorMessage(error.message);
+            setTimeout(() => setStatus("idle"), 4000);
+        }
     };
 
     return (
@@ -78,17 +97,19 @@ export default function NewsletterSection() {
                                     />
                                     <button
                                         type="submit"
-                                        disabled={status !== "idle" || !agreedToGdpr}
+                                        disabled={status === "loading" || status === "success" || !agreedToGdpr}
                                         className={`relative overflow-hidden px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 min-w-[180px] ${status === "success"
                                                 ? "bg-success text-white shadow-lg shadow-success/20"
-                                                : !agreedToGdpr && status === "idle"
-                                                    ? "bg-white/5 text-white/30 cursor-not-allowed border border-white/10"
-                                                    : "bg-primary text-background hover:bg-primary-light shadow-lg shadow-primary/20"
+                                                : status === "error"
+                                                    ? "bg-error text-white shadow-lg shadow-error/20"
+                                                    : !agreedToGdpr && status === "idle"
+                                                        ? "bg-white/5 text-white/30 cursor-not-allowed border border-white/10"
+                                                        : "bg-primary text-background hover:bg-primary-light shadow-lg shadow-primary/20"
                                             }`}
                                     >
-                                        {status === "idle" && (
+                                        {(status === "idle" || status === "error") && (
                                             <>
-                                                <span>S&apos;abonner</span>
+                                                <span>{status === "error" ? "Réessayer" : "S'abonner"}</span>
                                                 <Send className={`w-5 h-5 transition-transform ${agreedToGdpr ? 'group-hover:translate-x-1 group-hover:-translate-y-1' : ''}`} />
                                             </>
                                         )}
@@ -116,7 +137,7 @@ export default function NewsletterSection() {
                                         />
                                     </div>
                                     <label htmlFor="gdpr-consent" className="text-xs text-gray-500 leading-snug cursor-pointer select-none">
-                                        J&apos;accepte de recevoir vos conseils techniques et offres commerciales par e-mail. Vous pouvez vous désinscrire à tout moment. Voir notre <a href="#" className="text-primary hover:underline">politique de confidentialité</a>.
+                                        J&apos;accepte de recevoir vos conseils techniques et offres commerciales par e-mail. Vous pouvez vous désinscrire à tout moment. Voir notre <a href="/politique-de-confidentialite" className="text-primary hover:underline">politique de confidentialité</a>.
                                     </label>
                                 </div>
 
@@ -128,6 +149,17 @@ export default function NewsletterSection() {
                                     >
                                         <CheckCircle2 className="w-4 h-4" />
                                         Merci ! Vous recevrez bientôt nos conseils.
+                                    </motion.p>
+                                )}
+
+                                {status === "error" && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="mt-6 text-sm text-error flex items-center gap-2"
+                                    >
+                                        <div className="w-4 h-4 rounded-full bg-error flex items-center justify-center text-[10px] font-bold">!</div>
+                                        {errorMessage}
                                     </motion.p>
                                 )}
 
