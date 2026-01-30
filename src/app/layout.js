@@ -111,7 +111,7 @@ export const metadata = {
     google: "C-dGhGfuNwqKlYfHp-ICPG43ZWYeHFpfyCsT8XF8lag",
   },
   alternates: {
-    canonical: "https://www.prodigelec.fr",
+    canonical: "https://www.prodigelec.fr/public",
   },
 };
 

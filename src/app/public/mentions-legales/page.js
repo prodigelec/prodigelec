@@ -91,7 +91,7 @@ export default function MentionsLegales() {
                             Les informations collectées via les formulaires de contact ou d&apos;inscription aux newsletters sont traitées conformément au RGPD.
                         </p>
                         <p className="mt-4">
-                            Consultez notre <a href="/politique-de-confidentialite" className="text-primary font-bold hover:underline">Politique de Confidentialité</a> pour connaître vos droits d&apos;accès et de rectification.
+                            Consultez notre <a href="/public/politique-de-confidentialite" className="text-primary font-bold hover:underline">Politique de Confidentialité</a> pour connaître vos droits d&apos;accès et de rectification.
                         </p>
                     </Section>
                 </div>

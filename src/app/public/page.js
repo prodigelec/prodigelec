@@ -4,12 +4,12 @@ export const metadata = {
   title: "PRODIGELEC - Artisan Électricien & Serrurier | 27 & 28",
   description: "Expertise en électricité et serrurerie avec 23 ans d'expérience. Intervention rapide en Eure (27) et Eure-et-Loir (28) : Broué, Dreux, Chartres & alentours.",
   alternates: {
-    canonical: "https://www.prodigelec.fr/",
+    canonical: "https://www.prodigelec.fr/public/",
   },
   openGraph: {
     title: "PRODIGELEC - Électricien & Serrurier | 27 & 28",
     description: "Expertise locale en Eure et Eure-et-Loir. Dépannage électricité et urgence serrurerie.",
-    url: "https://www.prodigelec.fr",
+    url: "https://www.prodigelec.fr/public",
   },
 };
 

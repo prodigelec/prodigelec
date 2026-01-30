@@ -114,7 +114,7 @@ export default function FlyerPage() {
 
             <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 pt-2">
               <Link
-                href="/contact#contact-form"
+                href="/public/contact#contact-form"
                 className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full font-bold shadow-lg transition-all transform hover:scale-105 border border-white/20"
               >
                 <Mail className="w-5 h-5 text-primary" /> Contact

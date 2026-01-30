@@ -143,7 +143,7 @@ export default function NewsletterSection() {
                                         />
                                     </div>
                                     <label htmlFor="gdpr-consent" className="text-xs text-gray-500 leading-snug cursor-pointer select-none">
-                                        J&apos;accepte de recevoir vos conseils techniques et offres commerciales par e-mail. Vous pouvez vous désinscrire à tout moment. Voir notre <a href="/politique-de-confidentialite" className="text-primary hover:underline">politique de confidentialité</a>.
+                                        J&apos;accepte de recevoir vos conseils techniques et offres commerciales par e-mail. Vous pouvez vous désinscrire à tout moment. Voir notre <a href="/public/politique-de-confidentialite" className="text-primary hover:underline">politique de confidentialité</a>.
                                     </label>
                                 </div>
 

@@ -6,11 +6,11 @@ import { FcFlashOn } from "react-icons/fc";
 
 export default function MobileNavbar() {
     const navItems = [
-        { name: 'Accueil', icon: <Home size={20} />, href: '/' },
-        { name: 'Serrure', icon: <IoKey size={20} />, href: '/services/serrurerie' },
+        { name: 'Accueil', icon: <Home size={20} />, href: '/public' },
+        { name: 'Serrure', icon: <IoKey size={20} />, href: '/public/services/serrurerie' },
         { name: 'SOS', icon: <Phone size={22} />, href: 'tel:0638194752', highlight: true },
-        { name: 'Élec', icon: <FcFlashOn size={20} />, href: '/services/electricite' },
-        { name: 'Promo', icon: <Gift size={20} />, href: '/flyer' },
+        { name: 'Élec', icon: <FcFlashOn size={20} />, href: '/public/services/electricite' },
+        { name: 'Promo', icon: <Gift size={20} />, href: '/public/flyer' },
     ];
 
     return (

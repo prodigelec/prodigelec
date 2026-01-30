@@ -33,7 +33,7 @@ export default function ServicesSection() {
               </ul>
             </div>
             <div className="relative z-10 text-center md:text-left mt-auto">
-              <Link href="/services/electricite" className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link">
+              <Link href="/public/services/electricite" className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link">
                 En savoir plus
                 <ArrowRight className="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" />
               </Link>
@@ -61,7 +61,7 @@ export default function ServicesSection() {
               </ul>
             </div>
             <div className="relative z-10 text-center md:text-left mt-auto">
-              <Link href="/services/serrurerie" className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link">
+              <Link href="/public/services/serrurerie" className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link">
                 En savoir plus
                 <ArrowRight className="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" />
               </Link>

@@ -129,7 +129,7 @@ export default function SerrureriePricing() {
                 </ul>
 
                 <a
-                  href="/contact#contact-form"
+                  href="/public/contact#contact-form"
                   className={`w-full py-4 rounded-2xl font-black text-xs uppercase tracking-wider transition-all duration-300 text-center ${plan.highlight
                     ? 'bg-primary text-background hover:scale-[1.02] shadow-[0_10px_20px_-10px_rgba(201,162,39,0.5)]'
                     : 'bg-white/5 text-white border border-white/10 hover:bg-white/10'

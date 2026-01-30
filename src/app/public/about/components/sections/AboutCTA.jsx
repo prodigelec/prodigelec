@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function AboutCTA() {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -17,12 +17,12 @@ export default function AboutCTA() {
           Que vous ayez besoin d&apos;un dépannage urgent ou d&apos;un devis en électricité ou serrurerie, je suis à votre écoute.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="tel:0638194752" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-black rounded-full font-bold hover:bg-primary/90 transition-colors w-full sm:w-auto justify-center">
+          <Link href="tel:0638194752" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-black rounded-full font-bold hover:bg-primary/90 transition-colors w-full sm:w-auto justify-center">
             <Phone size={20} /> 06 38 19 47 52
-            </Link>
-            <Link href="/contact#contact-form" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-colors w-full sm:w-auto justify-center">
+          </Link>
+          <Link href="/public/contact#contact-form" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-colors w-full sm:w-auto justify-center">
             M&apos;envoyer un message <ArrowRight size={20} />
-            </Link>
+          </Link>
         </div>
       </div>
     </motion.div>

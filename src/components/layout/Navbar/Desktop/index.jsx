@@ -10,24 +10,24 @@ export default function Navbar() {
     const { scrollY } = useScroll();
     const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
-    const isHomePage = pathname === '/';
+    const isHomePage = pathname === '/public';
 
     // Dynamic padding based on scroll (height transitions from 24px to 16px)
     const navPadding = useTransform(scrollY, [0, 100], ["24px", "16px"]);
 
     const navItems = [
-        { name: 'Accueil', href: '/' },
+        { name: 'Accueil', href: '/public' },
         {
             name: 'Services',
             href: '#services',
             dropdown: [
-                { name: 'Serrurerie', href: '/services/serrurerie', icon: <IoKey className="w-5 h-5" /> },
-                { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
+                { name: 'Serrurerie', href: '/public/services/serrurerie', icon: <IoKey className="w-5 h-5" /> },
+                { name: 'Électricité', href: '/public/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
             ]
         },
-        { name: 'Réalisations', href: isHomePage ? '#realisations' : '/#realisations' },
-        { name: 'À Propos', href: '/about' },
-        { name: 'Contact', href: '/contact' }
+        { name: 'Réalisations', href: isHomePage ? '#realisations' : '/public#realisations' },
+        { name: 'À Propos', href: '/public/about' },
+        { name: 'Contact', href: '/public/contact' }
     ];
 
     const [activeSection, setActiveSection] = useState('');
@@ -143,7 +143,7 @@ export default function Navbar() {
                 >
                     <motion.button
                         onClick={() => {
-                            window.location.href = '/flyer';
+                            window.location.href = '/public/flyer';
                         }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -156,7 +156,7 @@ export default function Navbar() {
 
                     <motion.button
                         onClick={() => {
-                            window.location.href = '/contact#contact-form';
+                            window.location.href = '/public/contact#contact-form';
                         }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}

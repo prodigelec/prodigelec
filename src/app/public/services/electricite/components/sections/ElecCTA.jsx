@@ -14,7 +14,7 @@ export default function ElecCTA() {
       <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
         Discutons de votre projet. Je vous accompagne de la conception à la réalisation avec des conseils personnalisés.
       </p>
-      <a href="/contact#contact-form" className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-black rounded-full font-bold hover:bg-accent-glow transition-colors">
+      <a href="/public/contact#contact-form" className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-black rounded-full font-bold hover:bg-accent-glow transition-colors">
         Demander un devis gratuit <ArrowRight size={20} />
       </a>
     </motion.div>

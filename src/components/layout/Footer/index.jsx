@@ -31,10 +31,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-6">Navigation</h3>
             <ul className="space-y-4">
-              <li><Link href="/" className="text-gray-400 hover:text-primary transition-colors text-sm">Accueil</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-primary transition-colors text-sm">Services</Link></li>
-              <li><Link href="/#about" className="text-gray-400 hover:text-primary transition-colors text-sm">À Propos</Link></li>
-              <li><Link href="/contact#contact-form" className="text-gray-400 hover:text-primary transition-colors text-sm">Contact</Link></li>
+              <li><Link href="/public" className="text-gray-400 hover:text-primary transition-colors text-sm">Accueil</Link></li>
+              <li><Link href="/public#services" className="text-gray-400 hover:text-primary transition-colors text-sm">Services</Link></li>
+              <li><Link href="/public#about" className="text-gray-400 hover:text-primary transition-colors text-sm">À Propos</Link></li>
+              <li><Link href="/public/contact#contact-form" className="text-gray-400 hover:text-primary transition-colors text-sm">Contact</Link></li>
             </ul>
           </div>
 
@@ -42,8 +42,8 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-6">Nos Services</h3>
             <ul className="space-y-4">
-              <li><Link href="/services/electricite" className="text-gray-400 hover:text-accent transition-colors text-sm">Électricité Générale</Link></li>
-              <li><Link href="/services/serrurerie" className="text-gray-400 hover:text-primary transition-colors text-sm">Serrurerie & Sécurité</Link></li>
+              <li><Link href="/public/services/electricite" className="text-gray-400 hover:text-accent transition-colors text-sm">Électricité Générale</Link></li>
+              <li><Link href="/public/services/serrurerie" className="text-gray-400 hover:text-primary transition-colors text-sm">Serrurerie & Sécurité</Link></li>
             </ul>
           </div>
 
@@ -73,9 +73,9 @@ export default function Footer() {
             © 2025 PRODIGELEC. Tous droits réservés.
           </p>
           <div className="flex gap-6">
-            <Link href="/mentions-legales" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">Mentions Légales</Link>
-            <Link href="/politique-de-confidentialite" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">Politique de Confidentialité</Link>
-            <Link href="/cgv" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">CGV</Link>
+            <Link href="/public/mentions-legales" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">Mentions Légales</Link>
+            <Link href="/public/politique-de-confidentialite" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">Politique de Confidentialité</Link>
+            <Link href="/public/cgv" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">CGV</Link>
           </div>
         </div>
       </div>
