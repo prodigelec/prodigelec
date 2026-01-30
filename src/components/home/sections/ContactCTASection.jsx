@@ -46,7 +46,7 @@ export default function ContactCTASection() {
                   <span>06 38 19 47 52</span>
                 </a>
                 <a 
-                  href="#contact" 
+                  href="/contact#contact-form" 
                   className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-bold text-lg hover:bg-white/10 transition-colors group"
                 >
                   <span>Demander un devis</span>
