@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutCTA() {
   return (
@@ -16,12 +17,12 @@ export default function AboutCTA() {
           Que vous ayez besoin d'un dépannage urgent ou d'un devis pour un projet web, je suis à votre écoute.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="tel:0638194752" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-black rounded-full font-bold hover:bg-primary/90 transition-colors w-full sm:w-auto justify-center">
+            <Link href="tel:0638194752" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-black rounded-full font-bold hover:bg-primary/90 transition-colors w-full sm:w-auto justify-center">
             <Phone size={20} /> 06 38 19 47 52
-            </a>
-            <a href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-colors w-full sm:w-auto justify-center">
+            </Link>
+            <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-colors w-full sm:w-auto justify-center">
             M'envoyer un message <ArrowRight size={20} />
-            </a>
+            </Link>
         </div>
       </div>
     </motion.div>

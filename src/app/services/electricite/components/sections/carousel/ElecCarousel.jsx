@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 const slides = [
   {
@@ -61,10 +62,15 @@ export default function ElecCarousel() {
           className="absolute inset-0"
         >
           {/* Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-linear transform hover:scale-105"
-            style={{ backgroundImage: `url(${slides[current].image})` }}
-          />
+          <div className="absolute inset-0 transition-transform duration-[10s] ease-linear transform hover:scale-105">
+            <Image
+              src={slides[current].image}
+              alt={slides[current].title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/50 to-transparent" />

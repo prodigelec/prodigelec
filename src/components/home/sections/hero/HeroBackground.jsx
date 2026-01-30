@@ -1,5 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function HeroBackground({ slides, currentSlide }) {
   return (
@@ -13,10 +14,12 @@ export default function HeroBackground({ slides, currentSlide }) {
         className="absolute inset-0"
       >
         <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay sombre */}
-        <img
+        <Image
           src={slides[currentSlide].image}
           alt={slides[currentSlide].title}
-          className="w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
         />
       </motion.div>
     </AnimatePresence>

@@ -1,8 +1,11 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '@/components/ui/Button';
+import { useRouter } from 'next/navigation';
 
 export default function HeroContent({ slides, currentSlide }) {
+  const router = useRouter();
+
   return (
     <div className="relative z-20 h-full flex items-center justify-center">
       <div className="max-w-5xl mx-auto px-6 text-center text-white">
@@ -54,6 +57,7 @@ export default function HeroContent({ slides, currentSlide }) {
               className="hidden md:flex flex-row items-center justify-center space-x-8 pt-12"
             >
               <Button
+                onClick={() => router.push('/contact#contact-form')}
                 variant="primary"
                 icon={
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,6 +69,7 @@ export default function HeroContent({ slides, currentSlide }) {
               </Button>
               
               <Button
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 variant="primary"
                 icon={
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

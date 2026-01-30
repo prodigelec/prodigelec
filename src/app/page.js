@@ -3,6 +3,14 @@ import { HeroSection, FeaturesSection, AboutSection, ServicesSection, ProcessSec
 export const metadata = {
   title: "Beaver'Aid - Artisan Électricien, Serrurier & Webmaster | 28",
   description: "Un seul expert pour vos travaux d'électricité, de serrurerie et votre création de site web. Intervention rapide à Broué, Dreux, Chartres et alentours.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Beaver'Aid - Électricien, Serrurier & Webmaster | 28",
+    description: "Expertise locale en Eure-et-Loir. Dépannage électricité, urgence serrurerie et services numériques.",
+    url: "https://beaveraid.fr",
+  },
 };
 
 export default function Home() {

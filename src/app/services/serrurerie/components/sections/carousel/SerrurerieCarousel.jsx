@@ -18,7 +18,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "/img_carousel_hero_home/serrurerie.jpg",
+    image: "/img_carousel_serrure_page/blindage.jpg",
     title: "Renforcement de Porte",
     description: "Blindage et sécurisation de votre entrée"
   },
@@ -35,6 +35,8 @@ const slides = [
     description: "Clés de sécurité et badges avec notre partenaire"
   }
 ];
+
+import Image from "next/image";
 
 export default function SerrurerieCarousel() {
   const [current, setCurrent] = useState(0);
@@ -67,10 +69,15 @@ export default function SerrurerieCarousel() {
           className="absolute inset-0"
         >
           {/* Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-linear transform hover:scale-105"
-            style={{ backgroundImage: `url(${slides[current].image})` }}
-          />
+          <div className="absolute inset-0 transition-transform duration-[10s] ease-linear transform hover:scale-105">
+            <Image
+              src={slides[current].image}
+              alt={slides[current].title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/50 to-transparent" />

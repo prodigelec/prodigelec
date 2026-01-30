@@ -1,5 +1,5 @@
 "use client";
-import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Circle, Polygon } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -33,24 +33,27 @@ const cities = [
   { name: "Nonancourt", coords: [48.7725, 1.1264] }
 ];
 
-// Custom polygon to exclude Yvelines (78)
-const interventionZone = [
-  [49.05, 1.15], // North-West (Above Evreux)
-  [48.95, 1.35], // North (Between Evreux/Anet)
-  [48.90, 1.48], // North-East (Near Anet)
-  [48.78, 1.54], // East (Just East of Broué, strictly stopping before 78)
-  [48.55, 1.55], // South-East (East of Chartres)
-  [48.40, 1.50], // South (Below Chartres)
-  [48.40, 1.35], // South-West
-  [48.65, 1.10], // West (Below Nonancourt)
-  [48.90, 1.05], // West (Above Nonancourt)
+const zones = [
+  { radius: 60000, color: '#ef4444', price: '70€', label: 'Zone 4 (> 40km)' }, // 65 + 5
+  { radius: 40000, color: '#f97316', price: '50€', label: 'Zone 3 (< 40km)' }, // 45 + 5
+  { radius: 20000, color: '#eab308', price: '30€', label: 'Zone 2 (< 20km)' }, // 25 + 5
+  { radius: 5000, color: '#22c55e', price: 'Gratuit', label: 'Zone 1 (< 5km)' }   // Reste gratuit car < 5km
+];
+
+// Polygon to hide Yvelines (78)
+const maskYvelines = [
+  [48.7492, 1.6], // East limit point near Broué/78 border
+  [49.0, 1.6],    // North-East
+  [49.0, 2.0],    // Far North-East
+  [48.0, 2.0],    // Far South-East
+  [48.0, 1.6],    // South-East
 ];
 
 export default function InterventionMap() {
   return (
     <div className="h-full w-full min-h-[400px] rounded-3xl overflow-hidden border border-white/10 z-0 relative">
       <MapContainer 
-        center={[48.7492, 1.45]} 
+        center={[48.7492, 1.5234]} 
         zoom={9} 
         style={{ height: "100%", width: "100%" }}
         scrollWheelZoom={false}
@@ -61,16 +64,43 @@ export default function InterventionMap() {
           className="map-tiles"
         />
         
-        {/* Custom Zone Polygon */}
+        {/* Zones Concentriques (du plus grand au plus petit pour la superposition) */}
+        {zones.map((zone, idx) => (
+          <Circle 
+            key={idx}
+            center={[48.7492, 1.5234]}
+            radius={zone.radius}
+            pathOptions={{ 
+              fillColor: zone.color, 
+              color: zone.color, 
+              weight: 1, 
+              opacity: 0.8, 
+              fillOpacity: 0.15 
+            }}
+          >
+             <Popup>
+              <div className="text-center">
+                <div className="font-bold text-lg">{zone.price}</div>
+                <div className="text-sm text-gray-600">Frais de déplacement</div>
+              </div>
+            </Popup>
+          </Circle>
+        ))}
+
+        {/* Masque pour cacher les Yvelines (78) */}
         <Polygon 
-          positions={interventionZone}
+          positions={[
+            [49.5, 1.56], // Point Nord limite 28/78
+            [49.5, 3.0],  // Vers l'Est (Paris)
+            [48.0, 3.0],  // Vers le Sud-Est
+            [48.0, 1.56]  // Point Sud limite 28/78
+          ]}
           pathOptions={{ 
-            fillColor: '#06b6d4', 
-            color: '#06b6d4', 
+            fillColor: '#020617', 
+            color: '#020617', 
             weight: 2, 
             opacity: 1, 
-            fillOpacity: 0.15,
-            dashArray: '5, 10'
+            fillOpacity: 1
           }}
         />
 
@@ -86,6 +116,20 @@ export default function InterventionMap() {
           </Marker>
         ))}
       </MapContainer>
+
+      {/* Légende des Tarifs */}
+      <div className="absolute bottom-4 left-4 z-[400] bg-[#020617]/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl space-y-2 shadow-xl max-w-[200px]">
+        <div className="text-xs font-bold text-white uppercase tracking-wider mb-2 border-b border-white/10 pb-2">Frais de déplacement</div>
+        {zones.slice().reverse().map((zone, idx) => (
+          <div key={idx} className="flex items-center justify-between text-xs">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: zone.color }} />
+              <span className="text-gray-300">{zone.label}</span>
+            </div>
+            <span className="font-bold text-white ml-2">{zone.price}</span>
+          </div>
+        ))}
+      </div>
       
       {/* Dark mode overlay for map tiles to match site theme */}
       <style jsx global>{`

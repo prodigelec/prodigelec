@@ -45,13 +45,13 @@ export default function FloatingContactButton() {
                                 <p className="text-xs text-gray-800 mt-1">Réponse rapide garantie</p>
                             </div>
                             <div className="p-4 bg-white">
-                                <a 
-                                    href="tel:0638194752" 
+                                <Link
+                                    ref="tel:0638194752" 
                                     className="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-3 rounded-xl hover:bg-gray-800 transition-colors"
                                 >
                                     <Phone size={18} />
                                     06 38 19 47 52
-                                </a>
+                                </Link>
                                 <p className="text-xs text-center text-gray-500 mt-3">
                                     Basé à Broué (28) - Intervention rapide
                                 </p>
