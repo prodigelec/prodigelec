@@ -21,7 +21,7 @@ export default function WebCTA() {
             <a href="tel:0638194752" className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-400 text-[#020617] rounded-full font-bold hover:bg-cyan-300 transition-colors w-full sm:w-auto justify-center">
             <Phone size={20} /> Appeler maintenant
             </a>
-            <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-colors w-full sm:w-auto justify-center">
+            <a href="/contact#contact-form" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-colors w-full sm:w-auto justify-center">
             Demander un devis <ArrowRight size={20} />
             </a>
         </div>
