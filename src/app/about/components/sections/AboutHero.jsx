@@ -25,7 +25,7 @@ export default function AboutHero() {
         transition={{ delay: 0.1 }}
         className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
       >
-        De l'artisanat traditionnel au développement web. Découvrez mon parcours atypique au service de vos projets.
+        De l&apos;artisanat traditionnel à la sécurité et l&apos;électricité. Découvrez mon parcours au service de vos projets.
       </motion.p>
     </div>
   );

@@ -9,7 +9,7 @@ export default function HeroContent({ slides, currentSlide }) {
   return (
     <div className="relative z-20 h-full flex items-center justify-center">
       <div className="max-w-5xl mx-auto px-6 text-center text-white">
-        
+
         <AnimatePresence mode='wait'>
           <motion.div
             key={currentSlide}
@@ -17,44 +17,44 @@ export default function HeroContent({ slides, currentSlide }) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.5, staggerChildren: 0.1 }}
-            className="space-y-8 md:space-y-16 max-w-5xl mx-auto"
+            className="space-y-6 md:space-y-12 max-w-5xl mx-auto"
           >
             {/* Title */}
-            <div className="space-y-8 md:space-y-10 pt-16 md:pt-16">
-              <motion.h1 
+            <div className="space-y-4 md:space-y-8 pt-24 md:pt-32">
+              <motion.h1
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight"
               >
-                <span className="block hover:text-blue-400 transition-colors duration-300 mb-4 md:mb-0">
+                <span className="block hover:text-primary transition-colors duration-300 mb-4 md:mb-0">
                   {slides[currentSlide].title.split(' ')[0]}
                 </span>
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light opacity-95 mt-6 md:mt-6">
+                <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light opacity-95 mt-4 md:mt-6">
                   {slides[currentSlide].title.split(' ').slice(1).join(' ')}
                 </span>
               </motion.h1>
-              
-              <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                  className="flex justify-center"
-                >
-                  <div className="inline-flex items-center mt-8 md:mt-8 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border border-white/20 shadow-lg">
-                    <span className="text-xl sm:text-2xl md:text-3xl font-light tracking-wide italic">
-                      {slides[currentSlide].subtitle}
-                    </span>
-                  </div>
-                </motion.div>
-              </div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="flex justify-center"
+              >
+                <div className="inline-flex items-center mt-6 md:mt-8 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 border border-white/20 shadow-lg">
+                  <span className="text-lg sm:text-xl md:text-2xl font-light tracking-wide italic">
+                    {slides[currentSlide].subtitle}
+                  </span>
+                </div>
+              </motion.div>
+            </div>
 
             {/* CTA Buttons - Hidden on mobile */}
-            <motion.div 
+            <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="hidden md:flex flex-row items-center justify-center space-x-8 pt-12"
+              className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 pt-6 md:pt-10"
             >
               <Button
                 onClick={() => router.push('/contact#contact-form')}
@@ -67,7 +67,7 @@ export default function HeroContent({ slides, currentSlide }) {
               >
                 Nous contacter
               </Button>
-              
+
               <Button
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 variant="primary"

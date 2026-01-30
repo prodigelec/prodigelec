@@ -9,17 +9,17 @@ export default function Logo({ className = "" }) {
       animate={{ opacity: 1, x: 0 }}
       className={`flex items-center gap-3 group cursor-pointer ${className}`}
     >
-      <div className="relative w-10 h-10 sm:w-12 sm:h-12 overflow-hidden rounded-xl bg-white/5 p-1 group-hover:bg-primary/10 transition-colors">
+      <div className="relative w-[96px] h-[96px] overflow-hidden rounded-xl bg-gradient-to-br from-[#d9d9d9] via-[#f5f5f5] to-[#9ca3af] ring-1 ring-white/30 shadow-[inset_0_2px_6px_rgba(255,255,255,0.5),inset_0_-3px_6px_rgba(0,0,0,0.25),0_8px_18px_rgba(0,0,0,0.35)] transition-colors">
         <Image
-          src="/logo.png"
-          alt="Beaver'aid Logo"
+          src="/prodigelec-logo.svg"
+          alt="PRODIGELEC Logo"
           fill
-          className="object-contain"
+          className="object-contain object-center scale-[2.1] translate-y-[24px] -translate-x-[10px]"
         />
       </div>
       <div className="flex flex-col -gap-1">
-        <span className="text-lg sm:text-xl font-black tracking-tighter leading-none text-white">
-          <span className="text-primary">BEAVER</span>'AID
+        <span className="text-lg sm:text-xl font-black tracking-tighter leading-none bg-gradient-to-br from-[#f5f5f5] via-[#d1d5db] to-[#9ca3af] bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
+          PRODIGELEC
         </span>
         <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">
           Expertise Technique

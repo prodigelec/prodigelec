@@ -25,7 +25,7 @@ export const metadata = {
 
 export default function ElectricitePage() {
   return (
-    <main className="min-h-screen bg-[#020617] pt-24 pb-20">
+    <main className="min-h-screen bg-background pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-6">
         <ElecHero />
         <ElecCarousel />

@@ -17,13 +17,13 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL("https://beaveraid.fr"),
   title: {
-    default: "Beaver'Aid - Électricien, Serrurier & Web | Eure-et-Loir (28)",
-    template: "%s | Beaver'Aid"
+    default: "PRODIGELEC - Électricien & Serrurier | Eure-et-Loir (28)",
+    template: "%s | PRODIGELEC"
   },
-  description: "Artisan multiservices à Broué (28). Dépannage électricité et serrurerie 24/7 sur Dreux, Chartres, Évreux. Création de sites internet professionnels.",
+  description: "PRODIGELEC à Broué (28). Dépannage électricité et serrurerie sur Dreux, Chartres, Évreux. Intervention rapide et soignée.",
   keywords: [
     // Villes principales
-    "Électricien Broué", 
+    "Électricien Broué",
     "Serrurier Broué",
     "Électricien Dreux",
     "Serrurier Dreux",
@@ -45,36 +45,30 @@ export const metadata = {
     "Serrure 3 points",
     "Réparation volet roulant",
     "Déblocage volet roulant",
-    
-    // Web
-    "Dépannage informatique",
-    "Aide informatique",
-    "Création site internet Eure-et-Loir", 
-    "Webmaster 28",
-    
+
     // Marque
-    "Beaver'Aid", 
+    "PRODIGELEC",
     "Artisan 28"
   ],
-  authors: [{ name: "Beaver'Aid", url: "https://beaveraid.fr" }],
-  creator: "Beaver'Aid",
-  publisher: "Beaver'Aid",
+  authors: [{ name: "PRODIGELEC", url: "https://beaver-aid.vercel.app" }],
+  creator: "PRODIGELEC",
+  publisher: "PRODIGELEC",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Beaver'Aid - L'expertise artisanale 2.0",
-    description: "Électricité, Serrurerie, Informatique. Un seul interlocuteur de confiance pour vos travaux et votre visibilité web.",
+    title: "PRODIGELEC - L'expertise artisanale 2.0",
+    description: "Électricité et serrurerie. Un interlocuteur de confiance pour vos travaux et votre sécurité.",
     url: "https://beaveraid.fr",
-    siteName: "Beaver'Aid",
+    siteName: "PRODIGELEC",
     images: [
       {
         url: "/logo.png", // Idéalement une image OG de 1200x630
         width: 800,
         height: 600,
-        alt: "Logo Beaver'Aid",
+        alt: "Logo PRODIGELEC",
       },
     ],
     locale: "fr_FR",
@@ -82,8 +76,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Beaver'Aid - Services 28",
-    description: "Électricien, Serrurier et Webmaster en Eure-et-Loir.",
+    title: "PRODIGELEC - Services 28",
+    description: "Électricien et Serrurier en Eure-et-Loir.",
     images: ["/logo.png"],
   },
   robots: {
@@ -98,8 +92,8 @@ export const metadata = {
     },
   },
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/prodigelec-logo.svg',
+    apple: '/prodigelec-logo.svg',
   },
   verification: {
     google: "C-dGhGfuNwqKlYfHp-ICPG43ZWYeHFpfyCsT8XF8lag",
@@ -119,10 +113,10 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Beaver'Aid",
-              "image": "https://beaveraid.fr/logo.png",
+              "name": "PRODIGELEC",
+              "image": "https://www.prodigelec.fr/prodigelec-logo.svg",
               "telephone": "0638194752",
-              "url": "https://beaveraid.fr",
+              "url": "https://www.prodigelec.fr",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "10 Rue Georges Bréant",

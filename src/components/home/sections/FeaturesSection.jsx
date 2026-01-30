@@ -4,39 +4,39 @@ import { ClipboardList, Award, HeartHandshake } from "lucide-react";
 
 const features = [
   {
-    icon: <ClipboardList className="w-8 h-8 text-emerald-400" />,
+    icon: <ClipboardList className="w-8 h-8 text-primary" />,
     title: "Devis Gratuit & Transparent",
     description: "Aucune mauvaise surprise. Je vous fournis une estimation claire et détaillée avant chaque intervention.",
-    gradient: "from-emerald-500/20 to-emerald-500/5",
-    border: "group-hover:border-emerald-500/50"
-  },
-  {
-    icon: <Award className="w-8 h-8 text-amber-500" />,
-    title: "Expertise Confirmée",
-    description: "Plus de 20 ans d'expérience terrain en électricité et serrurerie, combinés à 3 ans d'expérience en développement web.",
-    gradient: "from-amber-500/20 to-amber-500/5",
-    border: "group-hover:border-amber-500/50"
-  },
-  {
-    icon: <HeartHandshake className="w-8 h-8 text-primary" />,
-    title: "Solutions Sur-Mesure",
-    description: "Je prends le temps de vous écouter pour vous proposer la solution la plus adaptée à votre situation et à votre budget.",
     gradient: "from-primary/20 to-primary/5",
     border: "group-hover:border-primary/50"
+  },
+  {
+    icon: <Award className="w-8 h-8 text-accent" />,
+    title: "Expertise Confirmée",
+    description: "Plus de 20 ans d'expérience terrain en électricité et serrurerie.",
+    gradient: "from-accent/20 to-accent/5",
+    border: "group-hover:border-accent/50"
+  },
+  {
+    icon: <HeartHandshake className="w-8 h-8 text-primary-light" />,
+    title: "Solutions Sur-Mesure",
+    description: "Je prends le temps de vous écouter pour vous proposer la solution la plus adaptée à votre situation et à votre budget.",
+    gradient: "from-primary-light/20 to-primary-light/5",
+    border: "group-hover:border-primary-light/50"
   }
 ];
 
 export default function FeaturesSection() {
   return (
-    <section className="py-20 bg-[#020617] relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-500/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent/10 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -50,13 +50,15 @@ export default function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className={`bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl transition-all duration-300 group ${feature.border}`}
+              className={`bg-gradient-to-b from-white/10 via-white/5 to-black/30 backdrop-blur-md border border-white/10 ring-1 ring-white/10 p-8 rounded-3xl transition-all duration-300 group ${feature.border} shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_12px_30px_rgba(0,0,0,0.45)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.35),0_16px_40px_rgba(0,0,0,0.55)]`}
             >
-              <div className={`mb-6 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`mb-6 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} ring-1 ring-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.35)] group-hover:scale-110 transition-transform duration-300`}>
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">{feature.title}</h3>
-              <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+              <h3 className="text-xl font-bold text-foreground mb-4 transition-all group-hover:text-primary">
+                {feature.title}
+              </h3>
+              <p className="text-gray-300/80 leading-relaxed group-hover:text-gray-200 transition-colors">
                 {feature.description}
               </p>
             </motion.div>

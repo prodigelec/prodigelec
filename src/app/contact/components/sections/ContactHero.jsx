@@ -36,7 +36,7 @@ export default function ContactHero() {
           transition={{ delay: 0.1 }}
           className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
         >
-          Une urgence technique ou un projet web ? Je suis à votre écoute pour vous apporter une réponse rapide et personnalisée.
+          Une urgence électrique ou serrurerie ? Je suis à votre écoute pour vous apporter une réponse rapide et personnalisée.
         </motion.p>
 
         <motion.div

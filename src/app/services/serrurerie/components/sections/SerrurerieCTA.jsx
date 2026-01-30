@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function SerrurerieCTA() {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -14,7 +14,7 @@ export default function SerrurerieCTA() {
       <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
         Demandez un audit sécurité gratuit. Je vous conseillerai sur les meilleures solutions pour protéger votre maison.
       </p>
-      <a href="/contact#contact-form" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-colors">
+      <a href="/contact#contact-form" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-background rounded-full font-bold hover:bg-primary-light transition-colors">
         Demander mon devis <ArrowRight size={20} />
       </a>
     </motion.div>

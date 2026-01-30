@@ -19,13 +19,6 @@ const slides = [
     subtitle: "Vos installations fiables et sécurisées",
     image: "/img_carousel_hero_home/tableau-electrique.jpg",
     icon: "⚡"
-  },
-  {
-    id: 3,
-    title: "Solutions IT",
-    subtitle: "L'innovation au service de votre réussite",
-    image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1920&h=1080&fit=crop",
-    icon: "💻"
   }
 ];
 
@@ -41,7 +34,7 @@ export default function HeroSection() {
       }, 5000);
       return () => clearInterval(interval);
     }
-  }, [currentSlide, isAutoPlaying, slides.length]);
+  }, [isAutoPlaying]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);

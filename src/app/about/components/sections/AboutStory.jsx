@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Wrench, Code, Award, Briefcase } from "lucide-react";
+import { Wrench, Zap, Award, Briefcase } from "lucide-react";
 
 export default function AboutStory() {
   return (
@@ -12,17 +12,17 @@ export default function AboutStory() {
         className="space-y-6"
       >
         <h2 className="text-3xl font-bold text-white mb-6">
-          Une double compétence <span className="text-primary">unique</span>
+          Une expertise <span className="text-primary">de terrain</span>
         </h2>
         <div className="text-gray-300 space-y-4 leading-relaxed text-lg">
           <p>
-            Mon parcours est loin d'être linéaire, et c'est ce qui fait aujourd'hui ma force. Pendant plus de <strong className="text-white">20 ans</strong>, j'ai sillonné les routes en tant qu'artisan électricien et serrurier.
+            Mon parcours est loin d&apos;être linéaire, et c&apos;est ce qui fait aujourd&apos;hui ma force. Pendant plus de <strong className="text-white">20 ans</strong>, j&apos;ai sillonné les routes en tant qu&apos;artisan électricien et serrurier.
           </p>
           <p>
-            J'ai appris sur le terrain la valeur du travail bien fait, l'importance de la réactivité et le sens du service client. Ces années m'ont forgé une rigueur technique et une capacité d'adaptation à toute épreuve.
+            J&apos;ai appris sur le terrain la valeur du travail bien fait, l&apos;importance de la réactivité et le sens du service client. Ces années m&apos;ont forgé une rigueur technique et une capacité d&apos;adaptation à toute épreuve.
           </p>
           <p>
-            Passionné par la technologie, j'ai décidé d'ajouter une nouvelle corde à mon arc en me formant au développement web. J'ai obtenu mon titre professionnel de <strong className="text-cyan-400">Développeur Web et Web Mobile</strong> (DWWM), me permettant aujourd'hui de lier le monde physique et numérique.
+            Aujourd&apos;hui, je mets cette expérience au service de vos besoins en électricité et serrurerie, avec une exigence de qualité, de sécurité et de clarté sur les interventions.
           </p>
         </div>
       </motion.div>
@@ -36,22 +36,22 @@ export default function AboutStory() {
         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
           <Wrench className="w-8 h-8 text-amber-500 mb-4" />
           <h3 className="text-xl font-bold text-white mb-2">Artisan Expert</h3>
-          <p className="text-gray-400 text-sm">20 ans d'expérience terrain en électricité et serrurerie.</p>
+          <p className="text-gray-400 text-sm">20 ans d&apos;expérience terrain en électricité et serrurerie.</p>
         </div>
         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-          <Code className="w-8 h-8 text-cyan-400 mb-4" />
-          <h3 className="text-xl font-bold text-white mb-2">Développeur</h3>
-          <p className="text-gray-400 text-sm">Certification DWWM. Sites vitrines et applications web.</p>
+          <Zap className="w-8 h-8 text-amber-400 mb-4" />
+          <h3 className="text-xl font-bold text-white mb-2">Électricité</h3>
+          <p className="text-gray-400 text-sm">Dépannage, mise aux normes et installations sécurisées.</p>
         </div>
         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
           <Award className="w-8 h-8 text-purple-500 mb-4" />
           <h3 className="text-xl font-bold text-white mb-2">Certifié</h3>
-          <p className="text-gray-400 text-sm">Diplômé d'État et assurances décennales à jour.</p>
+          <p className="text-gray-400 text-sm">Diplômé d&apos;État et assurances décennales à jour.</p>
         </div>
         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
           <Briefcase className="w-8 h-8 text-green-500 mb-4" />
           <h3 className="text-xl font-bold text-white mb-2">Entrepreneur</h3>
-          <p className="text-gray-400 text-sm">Une vision globale de vos besoins, du chantier au web.</p>
+          <p className="text-gray-400 text-sm">Un interlocuteur unique pour vos besoins en électricité et serrurerie.</p>
         </div>
       </motion.div>
     </div>

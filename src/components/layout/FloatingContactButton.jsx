@@ -41,17 +41,17 @@ export default function FloatingContactButton() {
                             className="absolute bottom-full right-0 mb-4 w-64 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
                         >
                             <div className="bg-primary p-4 text-center">
-                                <h3 className="font-bold text-gray-900">Besoin d'un dépannage ?</h3>
+                                <h3 className="font-bold text-gray-900">Besoin d&apos;un dépannage ?</h3>
                                 <p className="text-xs text-gray-800 mt-1">Réponse rapide garantie</p>
                             </div>
                             <div className="p-4 bg-white">
-                                <Link
-                                    ref="tel:0638194752" 
+                                <a
+                                    href="tel:0638194752" 
                                     className="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-3 rounded-xl hover:bg-gray-800 transition-colors"
                                 >
                                     <Phone size={18} />
                                     06 38 19 47 52
-                                </Link>
+                                </a>
                                 <p className="text-xs text-center text-gray-500 mt-3">
                                     Basé à Broué (28) - Intervention rapide
                                 </p>

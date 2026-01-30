@@ -13,13 +13,27 @@ export default function Navbar() {
     // Dynamic padding based on scroll (height transitions from 24px to 16px)
     const navPadding = useTransform(scrollY, [0, 100], ["24px", "16px"]);
 
+    const navItems = [
+        { name: 'Accueil', href: '/' },
+        {
+            name: 'Services',
+            href: '#services',
+            dropdown: [
+                { name: 'Serrurerie', href: '/services/serrurerie', icon: '🔑' },
+                { name: 'Électricité', href: '/services/electricite', icon: '⚡' }
+            ]
+        },
+        { name: 'Réalisations', href: isHomePage ? '#realisations' : '/#realisations' },
+        { name: 'À Propos', href: '/about' },
+        { name: 'Contact', href: '/contact' }
+    ];
+
     const [activeSection, setActiveSection] = useState('');
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         setIsScrolled(latest > 50);
-        
+
         if (isHomePage) {
-            // Active section detection (Only on Homepage)
             const sections = navItems.map(item => item.href.replace('/#', '').replace('#', '').replace('/', ''));
             const current = sections.find(section => {
                 if (!section) return false;
@@ -31,27 +45,11 @@ export default function Navbar() {
                 return false;
             });
             if (current) setActiveSection(current);
-            else if (latest < 100) setActiveSection(''); // Reset to top
+            else if (latest < 100) setActiveSection('');
         } else {
-            setActiveSection(''); // Reset on other pages
+            setActiveSection('');
         }
     });
-
-    const navItems = [
-        { name: 'Accueil', href: '/' },
-        { 
-            name: 'Services', 
-            href: '#services',
-            dropdown: [
-                { name: 'Serrurerie', href: '/services/serrurerie', icon: '🔑' },
-                { name: 'Électricité', href: '/services/electricite', icon: '⚡' },
-                { name: 'Informatique', href: '/services/web', icon: '💻' }
-            ]
-        },
-        { name: 'Réalisations', href: isHomePage ? '#realisations' : '/#realisations' },
-        { name: 'À Propos', href: '/about' },
-        { name: 'Contact', href: '/contact' }
-    ];
 
     const isItemActive = (item) => {
         // Check dropdown items first
@@ -77,7 +75,7 @@ export default function Navbar() {
     return (
         <motion.nav
             style={{
-                backgroundColor: `rgba(2, 6, 23, ${isScrolled ? 0.8 : 0})`,
+                backgroundColor: `rgba(11, 26, 42, ${isScrolled ? 0.8 : 0})`,
                 backdropFilter: isScrolled ? "blur(12px)" : "blur(0px)",
                 paddingTop: navPadding,
                 paddingBottom: navPadding
@@ -97,11 +95,10 @@ export default function Navbar() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 + 0.2 }}
                                 href={item.href}
-                                className={`flex items-center gap-1 text-sm font-medium transition-all duration-300 relative px-3 py-2 ${
-                                    isItemActive(item)
-                                    ? 'text-primary' 
-                                    : 'text-white/80 hover:text-white'
-                                }`}
+                                className={`flex items-center gap-1 text-sm font-medium transition-all duration-300 relative px-3 py-2 rounded-lg bg-black/30 backdrop-blur-sm hover:bg-black/40 ${isItemActive(item)
+                                    ? 'text-transparent bg-clip-text bg-gradient-to-br from-[#f5f5f5] via-[#d1d5db] to-[#9ca3af] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]'
+                                    : 'text-transparent bg-clip-text bg-gradient-to-br from-[#e5e7eb] via-[#cbd5e1] to-[#9ca3af] hover:from-[#f5f5f5] hover:via-[#d1d5db] hover:to-[#9ca3af] drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]'
+                                    }`}
                             >
                                 {item.name}
                                 {item.dropdown && (
@@ -110,22 +107,20 @@ export default function Navbar() {
                                     </svg>
                                 )}
                                 <span className="absolute inset-0 bg-white/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10" />
-                                <span className={`absolute bottom-1 left-3 right-3 h-0.5 bg-primary transition-transform duration-300 ${
-                                    isItemActive(item) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                                }`} />
+                                <span className={`absolute bottom-1 left-3 right-3 h-0.5 bg-primary transition-transform duration-300 ${isItemActive(item) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                                    }`} />
                             </motion.a>
 
                             {/* Dropdown Menu */}
                             {item.dropdown && (
                                 <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                    <div className="bg-[#020617]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-2 w-56 shadow-xl shadow-black/50 overflow-hidden">
+                                    <div className="bg-background/90 backdrop-blur-xl border border-white/10 rounded-2xl p-2 w-56 shadow-xl shadow-black/50 overflow-hidden">
                                         {item.dropdown.map((subItem, j) => (
                                             <a
                                                 key={subItem.name}
                                                 href={subItem.href}
-                                                className={`flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 transition-all group/item ${
-                                                    pathname === subItem.href ? 'text-primary bg-white/5' : 'text-white/80 hover:text-white'
-                                                }`}
+                                                className={`flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 transition-all group/item ${pathname === subItem.href ? 'text-primary bg-white/5' : 'text-white/80 hover:text-primary'
+                                                    }`}
                                             >
                                                 <span className="text-xl group-hover/item:scale-110 transition-transform">{subItem.icon}</span>
                                                 <span className="text-sm font-medium">{subItem.name}</span>
@@ -150,7 +145,7 @@ export default function Navbar() {
                         }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="relative overflow-hidden bg-primary text-black px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all group"
+                        className="relative overflow-hidden bg-primary text-background px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all group"
                     >
                         <span className="relative z-10">DEVIS GRATUIT</span>
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

@@ -96,8 +96,8 @@ export default function InterventionMap() {
             [48.0, 1.56]  // Point Sud limite 28/78
           ]}
           pathOptions={{ 
-            fillColor: '#020617', 
-            color: '#020617', 
+            fillColor: '#0b1a2a', 
+            color: '#0b1a2a', 
             weight: 2, 
             opacity: 1, 
             fillOpacity: 1
@@ -118,7 +118,7 @@ export default function InterventionMap() {
       </MapContainer>
 
       {/* Légende des Tarifs */}
-      <div className="absolute bottom-4 left-4 z-[400] bg-[#020617]/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl space-y-2 shadow-xl max-w-[200px]">
+      <div className="absolute bottom-4 left-4 z-[400] bg-[#0b1a2a]/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl space-y-2 shadow-xl max-w-[200px]">
         <div className="text-xs font-bold text-white uppercase tracking-wider mb-2 border-b border-white/10 pb-2">Frais de déplacement</div>
         {zones.slice().reverse().map((zone, idx) => (
           <div key={idx} className="flex items-center justify-between text-xs">
@@ -137,7 +137,7 @@ export default function InterventionMap() {
           filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
         .leaflet-container {
-          background: #020617;
+          background: #0b1a2a;
         }
       `}</style>
     </div>

@@ -27,7 +27,7 @@ export default function ContactForm() {
         <div className="relative z-10">
           <h2 className="text-3xl font-bold text-white mb-4">Envoyer un message</h2>
           <p className="text-gray-400 leading-relaxed mb-8">
-            Remplissez ce formulaire pour toute demande de devis ou d'information. Je m'engage à vous répondre sous 24h ouvrées.
+            Remplissez ce formulaire pour toute demande de devis ou d&apos;information. Je m&apos;engage à vous répondre sous 24h ouvrées.
           </p>
           
           <div className="space-y-4">
@@ -47,8 +47,8 @@ export default function ContactForm() {
         </div>
 
         <div className="relative z-10 mt-12">
-            <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Beaver'Aid</div>
-            <div className="text-white font-medium">L'expertise artisanale 2.0</div>
+            <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">PRODIGELEC</div>
+            <div className="text-white font-medium">L&apos;expertise artisanale 2.0</div>
         </div>
       </div>
 
@@ -95,7 +95,6 @@ export default function ContactForm() {
               <option value="depannage" className="bg-[#0f172a]">Dépannage / Urgence</option>
               <option value="electricite" className="bg-[#0f172a]">Travaux Électricité</option>
               <option value="serrurerie" className="bg-[#0f172a]">Travaux Serrurerie</option>
-              <option value="web" className="bg-[#0f172a]">Projet Web / Informatique</option>
               <option value="autre" className="bg-[#0f172a]">Autre demande</option>
             </select>
           </div>

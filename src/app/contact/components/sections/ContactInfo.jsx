@@ -16,17 +16,17 @@ export default function ContactInfo() {
       value: "06 38 19 47 52",
       sub: "Laissez un message si indisponible",
       link: "tel:0638194752",
-      gradient: "from-emerald-500/20 to-green-500/20",
-      text: "text-emerald-400"
+      gradient: "from-primary/20 to-primary-light/20",
+      text: "text-primary"
     },
     {
       icon: Mail,
       title: "Par Email",
-      value: "beaveraid28@gmail.com",
+      value: "contact@prodigelec.fr",
       sub: "Réponse sous 24h garantie",
-      link: "mailto:beaveraid28@gmail.com",
-      gradient: "from-blue-500/20 to-indigo-500/20",
-      text: "text-blue-400"
+      link: "mailto:contact@prodigelec.fr",
+      gradient: "from-accent/20 to-accent-glow/20",
+      text: "text-accent"
     },
     {
       icon: Clock,
@@ -34,8 +34,8 @@ export default function ContactInfo() {
       value: "Lundi - Vendredi (9h-18h)",
       sub: "Samedi uniquement sur RDV",
       link: null,
-      gradient: "from-purple-500/20 to-pink-500/20",
-      text: "text-purple-400"
+      gradient: "from-primary/20 to-primary-dark/20",
+      text: "text-primary-light"
     },
     {
       icon: MapPin,
@@ -43,8 +43,8 @@ export default function ContactInfo() {
       value: "10 Rue Georges Bréant",
       sub: "28410 Broué",
       link: "https://www.google.com/maps/search/?api=1&query=10+Rue+Georges+Bréant+28410+Broué",
-      gradient: "from-amber-500/20 to-orange-500/20",
-      text: "text-amber-400"
+      gradient: "from-accent/20 to-primary/20",
+      text: "text-primary"
     }
   ];
 
@@ -63,12 +63,12 @@ export default function ContactInfo() {
             className={`relative overflow-hidden p-6 rounded-3xl bg-[#0f172a] border border-white/5 hover:border-white/20 transition-all group flex-1 ${!item.link ? 'cursor-default' : 'cursor-pointer'}`}
           >
             <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${item.gradient} rounded-full blur-[60px] -mr-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-            
+
             <div className="relative z-10 flex items-center gap-4">
               <div className={`w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}>
                 <item.icon className={`w-6 h-6 ${item.text}`} />
               </div>
-              
+
               <div className="flex-1 min-w-0">
                 <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">{item.title}</h3>
                 <div className="text-lg font-bold text-white truncate">{item.value}</div>
@@ -86,15 +86,15 @@ export default function ContactInfo() {
       </div>
 
       {/* Map Column */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         className="lg:col-span-2 relative h-[400px] lg:h-auto rounded-3xl overflow-hidden border border-white/10 bg-[#0f172a]"
       >
-        <div className="absolute top-4 left-4 z-[400] bg-[#020617]/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full flex items-center gap-2">
-            <MapPin className="w-4 h-4 text-amber-400" />
-            <span className="text-sm font-bold text-white">Zone d'intervention</span>
+        <div className="absolute top-4 left-4 z-[400] bg-[#0b1a2a]/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full flex items-center gap-2">
+          <MapPin className="w-4 h-4 text-amber-400" />
+          <span className="text-sm font-bold text-white">Zone d&apos;intervention</span>
         </div>
         <InterventionMap />
       </motion.div>

@@ -5,7 +5,6 @@ export default function sitemap() {
     "",
     "/services/electricite",
     "/services/serrurerie",
-    "/services/web",
     "/about",
     "/contact",
   ].map((route) => ({
