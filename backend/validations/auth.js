@@ -1,6 +1,9 @@
 const Joi = require('joi');
 
 const loginSchema = Joi.object({
+    username: Joi.string().required().messages({
+        'string.empty': 'L\'identifiant est requis.'
+    }),
     password: Joi.string().required().messages({
         'string.empty': 'Le mot de passe est requis.'
     }),

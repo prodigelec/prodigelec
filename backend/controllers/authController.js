@@ -3,15 +3,15 @@ const { validateAccessCode, generateAccessCode } = require('../utils/accessCode'
 require('dotenv').config();
 
 exports.login = async (req, res) => {
-    const { password, accessCode } = req.body;
+    const { username, password, accessCode } = req.body;
 
     if (!validateAccessCode(accessCode)) {
         return res.status(403).json({ error: 'Code d\'accès invalide ou expiré.' });
     }
 
-    // Placeholder password check
-    if (password !== 'admin123') {
-        return res.status(401).json({ error: 'Mot de passe incorrect.' });
+    // Placeholder credential check
+    if (username !== 'admin' || password !== 'admin123') {
+        return res.status(401).json({ error: 'Identifiants incorrects.' });
     }
 
     const token = jwt.sign({ user: 'admin', role: 'admin' }, process.env.JWT_SECRET, {
