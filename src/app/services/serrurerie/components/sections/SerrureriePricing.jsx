@@ -1,11 +1,12 @@
 "use client";
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 export default function SerrureriePricing() {
   const prices = [
     {
       title: "Porte Claquée",
-      price: "120€ TTC",
+      price: "À partir de 120€ TTC",
       description: "Ouverture simple (sans dégâts).",
       features: [
         "Ouverture à la radio (bypass)",
@@ -13,7 +14,8 @@ export default function SerrureriePricing() {
         "1h de main d'œuvre incluse",
         "Hors zone : Frais déplacement +"
       ],
-      highlight: true
+      highlight: true,
+      tag: "Urgence"
     },
     {
       title: "Porte Fermée / Clé perdue",
@@ -54,46 +56,100 @@ export default function SerrureriePricing() {
   ];
 
   return (
-    <section className="py-16">
-      <h2 className="text-3xl font-bold text-white mb-12 text-center">Mes Tarifs <span className="text-primary">Serrurerie</span></h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="mb-32 relative">
+      <div className="text-center mb-16 px-6">
+        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tighter">
+          Mes Tarifs <span className="text-primary italic">Serrurerie</span>
+        </h2>
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          Un savoir-faire artisanal avec une tarification claire et sans surprise.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 px-6">
         {prices.map((plan, idx) => (
-          <div
+          <motion.div
             key={idx}
-            className={`rounded-3xl p-8 border ${plan.highlight ? 'border-primary bg-primary/5' : 'border-white/10 bg-white/5'} relative flex flex-col`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.1, duration: 0.5 }}
+            whileHover={{ y: -10 }}
+            className="relative group h-full"
           >
-            {plan.highlight && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-background font-bold px-4 py-1 rounded-full text-sm">
-                Urgence
+            {/* Urgence Badge */}
+            {plan.tag && (
+              <div className="absolute -top-[18px] left-1/2 -translate-x-1/2 bg-primary text-background font-black px-5 py-2 rounded-full text-[10px] uppercase tracking-widest shadow-[0_0_20px_rgba(201,162,39,0.6)] whitespace-nowrap z-50">
+                {plan.tag}
               </div>
             )}
-            <h3 className="text-xl font-bold text-white mb-2 min-h-[56px] flex items-center">{plan.title}</h3>
-            <div className="text-3xl font-black text-primary mb-4">{plan.price}</div>
-            <p className="text-sm text-gray-400 mb-8 min-h-[48px]">{plan.description}</p>
 
-            <ul className="space-y-4 mb-8 flex-1">
-              {plan.features.map((feature, fIdx) => (
-                <li key={fIdx} className="flex items-start gap-3 text-gray-300 text-sm">
-                  <Check className="w-5 h-5 text-primary shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="/contact#contact-form"
-              className={`w-full py-3 rounded-xl font-bold text-center transition-all ${plan.highlight
-                ? 'bg-primary text-background hover:bg-primary-light'
-                : 'bg-white/10 text-white hover:bg-white/20'
-                }`}
+            <div className={`relative h-full overflow-hidden bg-white/[0.03] backdrop-blur-xl border ${plan.highlight ? 'border-primary/40 shadow-[0_0_40px_-15px_rgba(201,162,39,0.3)]' : 'border-white/10'
+              } rounded-3xl p-8 transition-all duration-500 hover:border-primary/50 flex flex-col z-10`}
             >
-              Demander un devis
-            </a>
-          </div>
+              {/* Background Decor */}
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-colors duration-700 pointer-events-none" />
+
+              <div className="relative z-20 flex flex-col h-full">
+                <h3 className="text-lg lg:text-xl font-black text-white mb-2 uppercase tracking-tight min-h-[56px] flex items-center leading-tight">
+                  {plan.title}
+                </h3>
+
+                <div className="flex items-baseline gap-2 mb-6">
+                  <span className="text-2xl lg:text-3xl font-black text-primary drop-shadow-[0_0_10px_rgba(201,162,39,0.3)]">
+                    {plan.price === "Sur Devis" ? plan.price : plan.price.split(' ').slice(-2).join(' ')}
+                  </span>
+                  <span className="text-gray-400 font-medium text-xs">
+                    {plan.price === 'Sur Devis' ? '' : '/ intervention'}
+                  </span>
+                </div>
+                {plan.price !== "Sur Devis" && plan.price.includes("À partir de") && (
+                  <div className="text-primary/70 text-[10px] font-bold uppercase tracking-tight -mt-5 mb-4">
+                    À partir de
+                  </div>
+                )}
+
+                <p className="text-gray-400 text-xs leading-relaxed mb-8 min-h-[48px]">
+                  {plan.description}
+                </p>
+
+                <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent mb-8" />
+
+                <ul className="space-y-4 mb-10 flex-grow">
+                  {plan.features.map((feature, fIdx) => (
+                    <li key={fIdx} className="flex items-center gap-3 text-gray-300 group/item">
+                      <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover/item:bg-primary/20 transition-colors">
+                        <Check className="w-3 h-3 text-primary" />
+                      </div>
+                      <span className="text-xs font-medium transition-colors group-hover/item:text-white">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="/contact#contact-form"
+                  className={`w-full py-4 rounded-2xl font-black text-xs uppercase tracking-wider transition-all duration-300 text-center ${plan.highlight
+                    ? 'bg-primary text-background hover:scale-[1.02] shadow-[0_10px_20px_-10px_rgba(201,162,39,0.5)]'
+                    : 'bg-white/5 text-white border border-white/10 hover:bg-white/10'
+                    }`}
+                >
+                  Demander un devis
+                </a>
+              </div>
+
+              {/* Glow Effect */}
+              <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent ${plan.highlight ? 'via-primary/50' : 'via-accent/0'
+                } to-transparent group-hover:via-primary/50 transition-all duration-700`} />
+            </div>
+          </motion.div>
         ))}
       </div>
-      <p className="text-center text-gray-500 text-sm mt-8">
-        * Main d&apos;oeuvre : 50€ TTC / h. Majoration possible de 50% soirs (après 19h), week-ends et jours fériés.
+
+      <p className="text-center text-gray-500 text-xs mt-12 px-6">
+        * Main d'œuvre supplémentaire : 50€/h. <br />
+        Majoration possible soirs (après 19h), week-ends et jours fériés.
       </p>
     </section>
   );
