@@ -48,9 +48,39 @@
 
   /* Métallique (pour icônes) */
   --metallic: #6b7280;
-  /* Gris métallique */
+  /* Effet de texte Métallique (Gris) */
   --metallic-light: #9ca3af;
-  /* Gris métallique clair */
+  /* Effet de texte Métallique (Silver Navbar) */
+}
+
+.text-metallic {
+  background: linear-gradient(to bottom right,
+      #f5f5f5 0%,
+      #d1d5db 50%,
+      #9ca3af 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 900;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Effet de texte Or Brillant */
+.text-gold-shine {
+  background: linear-gradient(to right,
+      #c9a227 0%,
+      #d4af37 20%,
+      #fef08a 40%,
+      #d4af37 60%,
+      #c9a227 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+  display: inline-block;
+  font-weight: 900;
 }
 
 @theme inline {

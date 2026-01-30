@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import BrandName from "@/components/ui/BrandName";
 
 export default function Logo({ className = "" }) {
   return (
@@ -18,9 +19,7 @@ export default function Logo({ className = "" }) {
         />
       </div>
       <div className="flex flex-col -gap-1">
-        <span className="text-lg sm:text-xl font-black tracking-tighter leading-none bg-gradient-to-br from-[#f5f5f5] via-[#d1d5db] to-[#9ca3af] bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
-          PRODIGELEC
-        </span>
+        <BrandName className="text-lg sm:text-xl tracking-tighter leading-none drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
         <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">
           Expertise Technique
         </span>

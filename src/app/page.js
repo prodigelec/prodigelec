@@ -1,14 +1,14 @@
 import { HeroSection, BrandsSection, FeaturesSection, AboutSection, ServicesSection, ProcessSection, PartnersSection, ContactCTASection, NewsletterSection } from "@/components/home";
 
 export const metadata = {
-  title: "PRODIGELEC - Artisan Électricien & Serrurier | 28",
-  description: "Un seul expert pour vos travaux d'électricité et de serrurerie. Intervention rapide à Broué, Dreux, Chartres & leurs alentours.",
+  title: "PRODIGELEC - Artisan Électricien & Serrurier | 27 & 28",
+  description: "Expertise en électricité et serrurerie avec 23 ans d'expérience. Intervention rapide en Eure (27) et Eure-et-Loir (28) : Broué, Dreux, Chartres & alentours.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "PRODIGELEC - Électricien & Serrurier | 28",
-    description: "Expertise locale en Eure-et-Loir. Dépannage électricité et urgence serrurerie.",
+    title: "PRODIGELEC - Électricien & Serrurier | 27 & 28",
+    description: "Expertise locale en Eure et Eure-et-Loir. Dépannage électricité et urgence serrurerie.",
     url: "https://beaveraid.fr",
   },
 };
