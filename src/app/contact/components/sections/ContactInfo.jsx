@@ -42,7 +42,7 @@ export default function ContactInfo() {
       title: "Adresse",
       value: "10 Rue Georges Bréant",
       sub: "28410 Broué",
-      link: "https://www.google.com/maps/search/?api=1&query=10+Rue+Georges+Bréant+28410+Broué",
+      link: "https://waze.com/ul?ll=48.7492,1.5234&navigate=yes&q=10+Rue+Georges+Bréant+28410+Broué",
       gradient: "from-accent/20 to-primary/20",
       text: "text-primary"
     }
@@ -92,10 +92,6 @@ export default function ContactInfo() {
         viewport={{ once: true }}
         className="lg:col-span-2 relative h-[400px] lg:h-auto rounded-3xl overflow-hidden border border-white/10 bg-[#0f172a]"
       >
-        <div className="absolute top-4 left-4 z-[400] bg-[#0b1a2a]/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-amber-400" />
-          <span className="text-sm font-bold text-white">Zone d&apos;intervention</span>
-        </div>
         <InterventionMap />
       </motion.div>
     </div>

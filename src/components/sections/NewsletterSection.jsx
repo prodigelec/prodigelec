@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Send, Bell, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 export default function NewsletterSection() {
     const [email, setEmail] = useState("");
@@ -17,25 +18,30 @@ export default function NewsletterSection() {
         setErrorMessage("");
 
         try {
-            const response = await fetch("/api/newsletter", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }),
-            });
+            // Envoi à EmailJS
+            const result = await emailjs.send(
+                'service_gw6xwxl',
+                'template_iua9x0s',
+                {
+                    user_email: email,
+                    user_name: 'Abonné Newsletter',
+                    service: 'Inscription Newsletter',
+                    message: 'Nouvelle inscription reçue depuis le site.',
+                    user_city: ''
+                },
+                '9JhtcKKMCdzRo6WPB'
+            );
 
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || "Une erreur est survenue.");
+            if (result.text === 'OK') {
+                setStatus("success");
+                setEmail("");
+                setAgreedToGdpr(false);
+                setTimeout(() => setStatus("idle"), 5000);
             }
-
-            setStatus("success");
-            setEmail("");
-            setAgreedToGdpr(false);
-            setTimeout(() => setStatus("idle"), 5000);
         } catch (error) {
+            console.error('Erreur inscription newsletter:', error);
             setStatus("error");
-            setErrorMessage(error.message);
+            setErrorMessage("Une erreur est survenue lors de l'inscription.");
             setTimeout(() => setStatus("idle"), 4000);
         }
     };

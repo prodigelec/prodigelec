@@ -148,7 +148,7 @@ export default function SerrureriePricing() {
       </div>
 
       <p className="text-center text-gray-500 text-xs mt-12 px-6">
-        * Main d'œuvre supplémentaire : 50€/h. <br />
+        * Main d&apos;œuvre supplémentaire : 50€/h. <br />
         Majoration possible soirs (après 19h), week-ends et jours fériés.
       </p>
     </section>
