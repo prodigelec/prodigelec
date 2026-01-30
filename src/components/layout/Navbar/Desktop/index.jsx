@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-mot
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { IoKey } from "react-icons/io5";
+import { FcFlashOn } from "react-icons/fc";
 import Logo from "../Logo";
 
 export default function Navbar() {
@@ -21,7 +22,7 @@ export default function Navbar() {
             href: '#services',
             dropdown: [
                 { name: 'Serrurerie', href: '/services/serrurerie', icon: <IoKey className="w-5 h-5" /> },
-                { name: 'Électricité', href: '/services/electricite', icon: '⚡' }
+                { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
             ]
         },
         { name: 'Réalisations', href: isHomePage ? '#realisations' : '/#realisations' },
