@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import Link from "next/link";
 
 export default function Footer() {
@@ -10,33 +11,17 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <div className="text-2xl font-black tracking-tighter text-white">
-              <span className="text-primary">PRODI</span>GELEC
+              <span className="text-primary">PRODIG</span>ELEC
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Votre artisan de confiance en Eure-et-Loir. Expertise technique, réactivité et solutions sur-mesure pour tous vos besoins.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#020617] transition-all">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-facebook"
-                >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#0b1a2a] transition-all group">
+                <FaFacebook size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#0b1a2a] transition-all">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#0b1a2a] transition-all">
-                <Linkedin size={18} />
+                <FaInstagram size={18} />
               </a>
             </div>
           </div>
@@ -58,7 +43,6 @@ export default function Footer() {
             <ul className="space-y-4">
               <li><Link href="/services/electricite" className="text-gray-400 hover:text-accent transition-colors text-sm">Électricité Générale</Link></li>
               <li><Link href="/services/serrurerie" className="text-gray-400 hover:text-primary transition-colors text-sm">Serrurerie & Sécurité</Link></li>
-              <li><Link href="/services/electricite" className="text-gray-400 hover:text-warning transition-colors text-sm">Dépannage Urgent</Link></li>
             </ul>
           </div>
 
