@@ -142,8 +142,8 @@ export default function FlyerPage() {
           {/* Électricité */}
           <div className="space-y-6">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
-                <FcFlashOn size={40} />
+              <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                <FcFlashOn size={50} />
               </div>
               <h3 className="text-3xl font-bold text-[#0b1a2a]">Électricité</h3>
             </div>
@@ -167,8 +167,8 @@ export default function FlyerPage() {
           {/* Serrurerie */}
           <div className="space-y-6">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center text-yellow-600">
-                <IoKey size={40} />
+              <div className="w-20 h-20 bg-yellow-50 rounded-2xl flex items-center justify-center text-yellow-600">
+                <IoKey size={50} />
               </div>
               <h3 className="text-3xl font-bold text-[#0b1a2a]">Serrurerie</h3>
             </div>
