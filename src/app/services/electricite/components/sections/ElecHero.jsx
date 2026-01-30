@@ -25,7 +25,7 @@ export default function ElecHero() {
         transition={{ delay: 0.1 }}
         className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
       >
-        Mise aux normes, rénovation et dépannage. Une expertise certifiée pour votre sécurité et votre confort.
+        Mise aux normes, rénovation et dépannage. Une expertise qualifiée pour votre sécurité et votre confort.
       </motion.p>
     </div>
   );

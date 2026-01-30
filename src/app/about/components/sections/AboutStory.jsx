@@ -45,8 +45,8 @@ export default function AboutStory() {
         </div>
         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
           <Award className="w-8 h-8 text-purple-500 mb-4" />
-          <h3 className="text-xl font-bold text-white mb-2">Certifié</h3>
-          <p className="text-gray-400 text-sm">Diplômé d&apos;État et assurances décennales à jour.</p>
+          <h3 className="text-xl font-bold text-white mb-2">Qualifié</h3>
+          <p className="text-gray-400 text-sm">CAP Électrotechnique et assurances décennales à jour.</p>
         </div>
         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
           <Briefcase className="w-8 h-8 text-green-500 mb-4" />

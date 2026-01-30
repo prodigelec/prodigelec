@@ -25,7 +25,7 @@ export default function SerrurerieHero() {
         transition={{ delay: 0.1 }}
         className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
       >
-        Ouverture de porte, sécurisation et blindage. Une expertise certifiée pour protéger votre domicile.
+        Ouverture de porte, sécurisation et blindage. Une expertise qualifiée pour protéger votre domicile.
       </motion.p>
     </div>
   );
