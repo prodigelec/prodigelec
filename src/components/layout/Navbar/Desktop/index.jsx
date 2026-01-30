@@ -82,7 +82,7 @@ export default function Navbar() {
                 paddingTop: navPadding,
                 paddingBottom: navPadding
             }}
-            className="fixed top-0 w-full z-50 border-b border-white/0 transition-all duration-500"
+            className="fixed top-0 w-full z-999 border-b border-white/0 transition-all duration-500"
         >
             <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${isScrolled ? 'bg-black/20 rounded-full border border-white/10 px-8 mx-4 backdrop-blur-md shadow-lg' : ''}`}>
                 {/* Logo & Brand */}
