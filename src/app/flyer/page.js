@@ -28,7 +28,7 @@ export default function FlyerPage() {
             print-color-adjust: exact;
           }
           /* Masquer les éléments de navigation du layout principal */
-          nav, footer, .fixed.bottom-6 {
+          nav, footer, header, .fixed, [class*="fixed"] {
             display: none !important;
           }
           /* Masquer le bouton d'impression */
