@@ -87,7 +87,7 @@ export default function Navbar() {
                 <Logo className={`${isScrolled ? 'scale-90' : 'scale-100'} transition-transform duration-500`} />
 
                 {/* Navigation Links */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden lg:flex items-center gap-8">
                     {navItems.map((item, i) => (
                         <div key={item.name} className="relative group">
                             <motion.a

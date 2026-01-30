@@ -11,7 +11,7 @@ export default function MobileNavbar() {
     ];
 
     return (
-        <nav className="md:hidden fixed bottom-6 left-4 right-4 z-[9999] pointer-events-none">
+        <nav className="lg:hidden fixed bottom-6 left-4 right-4 z-[9999] pointer-events-none">
             <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
