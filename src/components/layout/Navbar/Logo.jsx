@@ -3,14 +3,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import BrandName from "@/components/ui/BrandName";
 
-export default function Logo({ className = "" }) {
+export default function Logo({ className = "", boxClassName = "" }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       className={`flex items-center gap-3 group cursor-pointer ${className}`}
     >
-      <div className="relative w-[96px] h-[96px] overflow-hidden rounded-xl bg-gradient-to-br from-[#d9d9d9] via-[#f5f5f5] to-[#9ca3af] ring-1 ring-white/30 shadow-[inset_0_2px_6px_rgba(255,255,255,0.5),inset_0_-3px_6px_rgba(0,0,0,0.25),0_8px_18px_rgba(0,0,0,0.35)] transition-colors">
+      <div className={`relative w-[96px] h-[96px] overflow-hidden rounded-xl bg-gradient-to-br from-[#d9d9d9] via-[#f5f5f5] to-[#9ca3af] ring-1 ring-white/30 shadow-[inset_0_2px_6px_rgba(255,255,255,0.5),inset_0_-3px_6px_rgba(0,0,0,0.25),0_8px_18px_rgba(0,0,0,0.35)] transition-colors ${boxClassName}`}>
         <Image
           src="/prodigelec-logo.svg"
           alt="PRODIGELEC Logo"
@@ -18,7 +18,7 @@ export default function Logo({ className = "" }) {
           className="object-contain object-center scale-[2.1] translate-y-[24px] -translate-x-[10px]"
         />
       </div>
-      <div className="flex flex-col -gap-1">
+      <div className="flex flex-col -gap-1 mt-3">
         <BrandName className="text-lg sm:text-xl tracking-tighter leading-none drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
         <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">
           Expertise Technique

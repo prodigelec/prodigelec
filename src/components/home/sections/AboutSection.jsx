@@ -49,18 +49,31 @@ export default function AboutSection() {
               ))}
             </div>
 
-            {/* Launch Offer / CTA */}
+            {/* Announcement / Offer */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-10 p-6 rounded-2xl bg-primary/10 border border-primary/20 ring-1 ring-primary/10 relative overflow-hidden"
+              className="mt-10 p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 ring-1 ring-primary/10 relative overflow-hidden group hover:bg-primary/15 transition-colors"
             >
-              <div className="absolute top-0 right-0 p-2 bg-primary text-background font-bold text-[10px] uppercase tracking-tighter rounded-bl-lg">Offre de Lancement</div>
-              <p className="text-white font-bold mb-2">Bilan Sécurité Offert</p>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Pour mes 10 premiers clients, je réalise un <span className="text-primary font-medium">diagnostic sécurité gratuit</span> de votre installation électrique lors de mon passage.
+              <div className="absolute top-0 right-0 p-2 bg-primary text-background font-bold text-[10px] uppercase tracking-tighter rounded-bl-lg shadow-sm">
+                Annonce
+              </div>
+              <h3 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                Offre Découverte <span className="text-primary">-10%</span>
+              </h3>
+              <p className="text-sm text-gray-300 leading-relaxed mb-3">
+                Pour fêter le lancement de notre activité sur le secteur, profitez de <span className="text-white font-medium">-10% sur votre première intervention</span> (dépannage ou installation).
               </p>
+              <div className="flex items-center justify-between mt-4">
+                <div className="inline-flex items-center gap-2 bg-background/50 px-3 py-1.5 rounded border border-white/10">
+                  <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Code promo :</span>
+                  <span className="text-sm font-mono font-bold text-white tracking-widest">PRODIG2026</span>
+                </div>
+                <span className="text-[10px] text-gray-400 font-medium italic">
+                  *Valable pour les 100 premiers clients (à mentionner lors du contact)
+                </span>
+              </div>
             </motion.div>
           </motion.div>
 

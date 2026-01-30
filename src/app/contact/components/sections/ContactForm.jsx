@@ -99,7 +99,6 @@ export default function ContactForm() {
                 className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
               />
             </div>
-          </div>
 
           <div className="space-y-1">
             <label htmlFor="user_email" className="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Email</label>
@@ -115,10 +114,22 @@ export default function ContactForm() {
           <div className="space-y-1">
             <label htmlFor="user_city" className="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Ville</label>
             <input
+                type="text"
+                name="user_city"
+                id="user_city"
+                required
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <label htmlFor="promo_code" className="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Code Promo (Optionnel)</label>
+            <input
               type="text"
-              name="user_city"
-              id="user_city"
-              required
+              name="promo_code"
+              id="promo_code"
+              placeholder="Ex: PRODIG2026"
               className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
             />
           </div>
@@ -145,7 +156,8 @@ export default function ContactForm() {
               required
               rows={3}
               className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all resize-none"
-            />
+                placeholder="Décrivez votre besoin..."
+              />
           </div>
 
           <button
