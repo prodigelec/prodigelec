@@ -6,7 +6,7 @@ import SerrurerieUrgency from "./components/sections/SerrurerieUrgency";
 import SerrurerieCTA from "./components/sections/SerrurerieCTA";
 
 export const metadata = {
-  title: "Serrurier Broué (28) - Dépannage Urgent & Clés | Beaver'Aid",
+  title: "Serrurier Broué (28) - Dépannage Urgent & Clés | PRODIGELEC",
   description: "Serrurier urgence à Broué, Dreux, Chartres. Ouverture de porte, changement de serrure 3 points, volets roulants, reproduction de clés. Disponible 6j/7.",
   keywords: [
     "Serrurier Broué", "Serrurier Dreux", "Serrurier Chartres", "Serrurier Évreux", "Serrurier Anet", "Serrurier Nonancourt",
@@ -17,7 +17,7 @@ export const metadata = {
     canonical: "/services/serrurerie",
   },
   openGraph: {
-    title: "Serrurier Urgentiste 28 - Beaver'Aid",
+    title: "Serrurier Urgentiste 28 - PRODIGELEC",
     description: "Ouverture de porte, changement de serrure et sécurisation. Intervention rapide sur Broué, Dreux et Chartres.",
     url: "https://beaveraid.fr/services/serrurerie",
   },

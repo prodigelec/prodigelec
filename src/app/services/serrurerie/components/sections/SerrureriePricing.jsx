@@ -4,38 +4,50 @@ import { Check } from "lucide-react";
 export default function SerrureriePricing() {
   const prices = [
     {
-      title: "Ouverture de Porte",
-      price: "À partir de 120€ TTC",
-      description: "Porte claquée ou clé perdue.",
+      title: "Porte Claquée",
+      price: "120€ TTC",
+      description: "Ouverture simple (sans dégâts).",
       features: [
-        "Ouverture fine (sans destruction) si possible",
+        "Ouverture à la radio (bypass)",
         "Déplacement Zone 1 inclus",
-        "Forfait Ouverture + 1h Main d'oeuvre",
-        "Si hors zone : + Frais déplacement"
+        "1h de main d'œuvre incluse",
+        "Hors zone : Frais déplacement +"
       ],
       highlight: true
     },
     {
-      title: "Changement Serrure",
+      title: "Porte Fermée / Clé perdue",
       price: "Sur Devis",
-      description: "Remplacement cylindre ou serrure complète.",
+      description: "Ouverture technique (perçage).",
       features: [
-        "Cylindre standard ou sécurité",
-        "Serrure 3 points",
-        "Marques reconnues (Vachette, Bricard...)",
-        "Jeu de clés fourni"
+        "Ouverture destructive (si nécessaire)",
+        "Diagnostic sécurité complet",
+        "Matériel de remplacement en supplément",
+        "Déplacement & Devis gratuit"
       ],
       highlight: false
     },
     {
-      title: "Blindage / Sécurité",
+      title: "Mise en Sécurité",
       price: "Sur Devis",
-      description: "Renforcement de votre entrée.",
+      description: "Blindage et renforcement.",
       features: [
-        "Cornières anti-pinces",
-        "Poignée blindée",
-        "Super-blindage",
-        "Installation volets roulants"
+        "Changement de serrure 3 points",
+        "Installation cornières anti-pinces",
+        "Blindage de porte existante",
+        "Poignée de sécurité renforcée"
+      ],
+      highlight: false
+    },
+    {
+      title: "Autres demandes",
+      price: "Sur Devis",
+      description: "Toute autre prestation.",
+      features: [
+        "Réparation de volets",
+        "Réglage de portes",
+        "Maintenance préventive",
+        "Conseils personnalisés"
       ],
       highlight: false
     }
@@ -44,7 +56,7 @@ export default function SerrureriePricing() {
   return (
     <section className="py-16">
       <h2 className="text-3xl font-bold text-white mb-12 text-center">Mes Tarifs <span className="text-primary">Serrurerie</span></h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {prices.map((plan, idx) => (
           <div
             key={idx}
@@ -55,9 +67,9 @@ export default function SerrureriePricing() {
                 Urgence
               </div>
             )}
-            <h3 className="text-xl font-bold text-white mb-2">{plan.title}</h3>
+            <h3 className="text-xl font-bold text-white mb-2 min-h-[56px] flex items-center">{plan.title}</h3>
             <div className="text-3xl font-black text-primary mb-4">{plan.price}</div>
-            <p className="text-gray-400 mb-8">{plan.description}</p>
+            <p className="text-sm text-gray-400 mb-8 min-h-[48px]">{plan.description}</p>
 
             <ul className="space-y-4 mb-8 flex-1">
               {plan.features.map((feature, fIdx) => (
@@ -71,8 +83,8 @@ export default function SerrureriePricing() {
             <a
               href="/contact#contact-form"
               className={`w-full py-3 rounded-xl font-bold text-center transition-all ${plan.highlight
-                  ? 'bg-primary text-background hover:bg-primary-light'
-                  : 'bg-white/10 text-white hover:bg-white/20'
+                ? 'bg-primary text-background hover:bg-primary-light'
+                : 'bg-white/10 text-white hover:bg-white/20'
                 }`}
             >
               Demander un devis
