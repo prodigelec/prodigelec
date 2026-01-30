@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import Link from "next/link";
+import BrandName from "@/components/ui/BrandName";
 
 export default function Footer() {
   return (
@@ -11,7 +12,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <div className="text-2xl font-black tracking-tighter text-white">
-              <span className="text-primary">PRODIG</span>ELEC
+              <BrandName />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Votre artisan de confiance en Eure-et-Loir. Expertise technique, réactivité et solutions sur-mesure pour tous vos besoins.

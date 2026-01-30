@@ -12,7 +12,7 @@ export default function PartnersSection() {
         <div className="flex flex-wrap justify-center items-center gap-12 opacity-70 hover:opacity-100 transition-opacity duration-500">
           {/* Atelier des frères d&apos;antan */}
           <motion.a
-            href="https://atelierfreresdantan.fr"
+            href="https://www.atelierfreresdantan.fr/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
