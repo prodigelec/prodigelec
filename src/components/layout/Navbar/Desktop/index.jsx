@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { IoKey } from "react-icons/io5";
 import Logo from "../Logo";
 
 export default function Navbar() {
@@ -19,7 +20,7 @@ export default function Navbar() {
             name: 'Services',
             href: '#services',
             dropdown: [
-                { name: 'Serrurerie', href: '/services/serrurerie', icon: '🔑' },
+                { name: 'Serrurerie', href: '/services/serrurerie', icon: <IoKey className="w-5 h-5" /> },
                 { name: 'Électricité', href: '/services/electricite', icon: '⚡' }
             ]
         },

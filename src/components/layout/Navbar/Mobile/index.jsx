@@ -1,11 +1,12 @@
 "use client"
 import { motion } from "framer-motion";
-import { Home, Zap, Shield, Phone } from "lucide-react";
+import { Home, Zap, Phone } from "lucide-react";
+import { IoKey } from "react-icons/io5";
 
 export default function MobileNavbar() {
     const navItems = [
         { name: 'Accueil', icon: <Home size={20} />, href: '/' },
-        { name: 'Serrure', icon: <Shield size={20} />, href: '/services/serrurerie' },
+        { name: 'Serrure', icon: <IoKey size={20} />, href: '/services/serrurerie' },
         { name: 'SOS', icon: <Phone size={22} />, href: 'tel:0638194752', highlight: true },
         { name: 'Élec', icon: <Zap size={20} />, href: '/services/electricite' },
     ];
