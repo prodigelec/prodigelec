@@ -3,6 +3,7 @@ import SerrurerieCarousel from "./components/sections/carousel/SerrurerieCarouse
 import SerrurerieServices from "./components/sections/SerrurerieServices";
 import SerrureriePricing from "./components/sections/SerrureriePricing";
 import SerrurerieUrgency from "./components/sections/SerrurerieUrgency";
+import SerrurerieFAQ from "./components/sections/SerrurerieFAQ";
 import SerrurerieCTA from "./components/sections/SerrurerieCTA";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 
@@ -33,6 +34,7 @@ export default function SerrureriePage() {
         <SerrurerieServices />
         <SerrureriePricing />
         <SerrurerieUrgency />
+        <SerrurerieFAQ />
         <NewsletterSection />
         <SerrurerieCTA />
       </div>
