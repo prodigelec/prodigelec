@@ -235,6 +235,7 @@ const FlyerPDF = () => (
                     <View style={styles.promoText}>
                         <Text style={styles.promoTitle}>OFFRE DÉCOUVERTE</Text>
                         <Text style={styles.promoSub}>Sur 1ère intervention (Main d'œuvre & Déplacement)</Text>
+                        <Text style={{ fontSize: 7, color: '#ffffff', fontWeight: 'bold', marginTop: 2 }}>OFFRE LIMITÉE AUX 100 PREMIERS CLIENTS</Text>
                         <Text style={{ fontSize: 9, fontWeight: 'bold', marginTop: 2 }}>CODE : FLYER2026</Text>
                     </View>
                 </View>

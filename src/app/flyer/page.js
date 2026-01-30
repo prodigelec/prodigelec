@@ -146,7 +146,7 @@ export default function FlyerPage() {
                 <h3 className="text-white font-black text-lg uppercase tracking-tight">Comment profiter de l'offre ?</h3>
                 <div className="space-y-3">
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Imprimez ce coupon ou présentez-le simplement sur votre smartphone au technicien lors de son passage.
+                    Imprimez ce coupon ou présentez-le simplement sur votre smartphone au technicien lors de son passage. <span className="text-primary font-semibold italic">Offre limitée aux 100 premiers clients de l'année.</span>
                   </p>
                   <p className="text-gray-300 text-sm leading-relaxed">
                     Pour une prise en charge rapide, mentionnez le code <span className="text-primary font-bold">FLYER2026</span> lors de votre demande de devis.
@@ -249,6 +249,9 @@ export default function FlyerPage() {
                         </p>
                         <p className="text-[9px] leading-tight font-medium opacity-90" style={{ color: '#fecaca' /* red-200 */ }}>
                           (Main d'œuvre & Déplacement - Hors matériel)
+                        </p>
+                        <p className="text-[8px] leading-tight font-black uppercase mt-1 italic" style={{ color: '#ffffff' }}>
+                          * Offre limitée aux 100 premiers clients
                         </p>
                       </div>
                     </div>
