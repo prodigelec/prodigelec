@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Loader2, Lock, ShieldCheck, User, AlertCircle, Eye, EyeOff } from 'lucide-react';
+import { Loader2, Lock, ShieldCheck, User, AlertCircle, Eye, EyeOff, ArrowRight } from 'lucide-react';
 
 /**
  * LoginForm - Premium Elite Edition
