@@ -89,18 +89,18 @@ export default function FlyerPage() {
         </div>
 
         {/* Hero Message - Overlapping Header */}
-        <div className="relative px-12 -mt-8 mb-12">
-          <div className="bg-white rounded-2xl shadow-xl p-8 border-l-8 border-primary flex justify-between items-center">
+        <div className="relative px-6 md:px-12 -mt-8 mb-12">
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border-l-8 border-primary flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 text-center md:text-left">
             <div>
-              <h2 className="text-3xl font-black text-[#0b1a2a] mb-2">
+              <h2 className="text-2xl md:text-3xl font-black text-[#0b1a2a] mb-2">
                 DÉPANNAGE URGENT
               </h2>
-              <p className="text-gray-600 font-medium">
+              <p className="text-gray-600 font-medium text-sm md:text-base">
                 Intervention rapide 7j/7 en Eure (27) et Eure-et-Loir (28)
               </p>
             </div>
-            <div className="text-right">
-              <a href="tel:0638194752" className="text-5xl font-black text-primary hover:text-primary-dark transition-colors">
+            <div className="md:text-right">
+              <a href="tel:0638194752" className="text-3xl sm:text-4xl md:text-5xl font-black text-primary hover:text-primary-dark transition-colors whitespace-nowrap">
                 06 38 19 47 52
               </a>
             </div>
