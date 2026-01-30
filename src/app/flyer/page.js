@@ -99,9 +99,8 @@ export default function FlyerPage() {
                 Intervention rapide 7j/7 en Eure (27) et Eure-et-Loir (28)
               </p>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-500 uppercase font-bold tracking-wider">Appelez-nous</span>
-              <a href="tel:0638194752" className="text-4xl font-black text-primary hover:text-primary-dark transition-colors">
+            <div className="text-right">
+              <a href="tel:0638194752" className="text-5xl font-black text-primary hover:text-primary-dark transition-colors">
                 06 38 19 47 52
               </a>
             </div>
