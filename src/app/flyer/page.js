@@ -95,15 +95,15 @@ export default function FlyerPage() {
               <h2 className="text-2xl md:text-3xl font-black text-[#0b1a2a] mb-2 uppercase tracking-tight">
                 DÉPANNAGE URGENT
               </h2>
-              <p className="text-gray-600 font-medium text-sm md:text-base leading-relaxed">
-                Intervention rapide <span className="text-primary font-bold">du lundi au vendredi</span><br className="hidden lg:inline"/> en Eure (27) et Eure-et-Loir (28)
-              </p>
             </div>
             <div className="md:text-right shrink-0">
               <a href="tel:0638194752" className="text-4xl sm:text-5xl md:text-6xl font-black text-primary hover:text-primary-dark transition-colors leading-none block">
                 06 38 19 47 52
               </a>
-              <p className="text-xs text-gray-400 mt-1 uppercase tracking-widest font-semibold">Appel direct</p>
+              <p className="text-xs text-gray-400 mt-1 uppercase tracking-widest font-semibold mb-2">Appel direct</p>
+              <p className="text-gray-600 font-medium text-sm md:text-base leading-relaxed">
+                Intervention rapide <span className="text-primary font-bold">du lundi au vendredi</span><br/> en Eure (27) et Eure-et-Loir (28)
+              </p>
             </div>
           </div>
         </div>
