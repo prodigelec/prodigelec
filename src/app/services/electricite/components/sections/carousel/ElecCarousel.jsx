@@ -9,25 +9,31 @@ const slides = [
     id: 1,
     image: "/img_carousel_electric_page/eclairage-led.jpg",
     title: "Éclairage LED",
-    description: "Modernité et économies"
+    description: "Solutions modernes et économies d'énergie"
   },
   {
     id: 2,
     image: "/img_carousel_electric_page/domotique.jpg",
     title: "Domotique",
-    description: "Maison connectée et intelligente"
+    description: "Votre maison connectée et intelligente"
   },
   {
     id: 3,
-    image: "/img_carousel_electric_page/prises.jpg",
-    title: "Installation Électrique",
-    description: "Prises, interrupteurs et circuits"
+    image: "/img_carousel_hero_home/tableau-electrique.jpg",
+    title: "Tableau Électrique",
+    description: "Mise aux normes et sécurité de votre installation"
   },
   {
     id: 4,
     image: "/img_carousel_electric_page/videophonie_digicode.jpg",
     title: "Vidéophonie & Accès",
-    description: "Sécurisation des accès"
+    description: "Contrôle d'accès et sécurité résidentielle"
+  },
+  {
+    id: 5,
+    image: "/img_carousel_electric_page/prises.jpg",
+    title: "Installation Électrique",
+    description: "Appareillage et circuits toutes marques"
   }
 ];
 
@@ -37,7 +43,7 @@ export default function ElecCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
@@ -46,68 +52,97 @@ export default function ElecCarousel() {
   };
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-      className="relative h-[60vh] w-full overflow-hidden rounded-3xl border border-white/10 mb-24"
-    >
-      <AnimatePresence initial={false} mode="wait">
-        <motion.div
-          key={current}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="absolute inset-0"
-        >
-          {/* Image */}
-          <div className="absolute inset-0 transition-transform duration-[10s] ease-linear transform hover:scale-105">
-            <Image
-              src={slides[current].image}
-              alt={slides[current].title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-          
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/50 to-transparent" />
-
-          {/* Content */}
-          <div className="absolute bottom-0 left-0 w-full p-8 md:p-12">
+    <div className="relative group mb-24">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="relative h-[65vh] w-full overflow-hidden rounded-[40px] border border-white/10 shadow-2xl"
+      >
+        <AnimatePresence initial={false} mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+          >
+            {/* Image with subtle zoom */}
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
+              animate={{ scale: [1, 1.05] }}
+              transition={{ duration: 6, ease: "linear" }}
+              className="absolute inset-0"
             >
-              <h2 className="text-3xl md:text-5xl font-black text-white mb-2">
-                {slides[current].title}
-              </h2>
-              <p className="text-lg text-amber-400 font-medium">
-                {slides[current].description}
-              </p>
+              <Image
+                src={slides[current].image}
+                alt={slides[current].title}
+                fill
+                className="object-cover"
+                priority
+              />
             </motion.div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
 
-      {/* Controls */}
-      <div className="absolute bottom-8 right-8 flex gap-4 z-10">
-        <button 
-          onClick={() => paginate(-1)}
-          className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md transition-colors border border-white/10"
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button 
-          onClick={() => paginate(1)}
-          className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md transition-colors border border-white/10"
-        >
-          <ChevronRight size={24} />
-        </button>
-      </div>
-    </motion.div>
+            {/* Multi-layered gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="max-w-2xl"
+              >
+                <div className="w-12 h-1 bg-accent mb-6 rounded-full shadow-[0_0_15px_rgba(var(--color-accent-rgb),0.5)]" />
+                <h2 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter leading-none uppercase italic">
+                  {slides[current].title}
+                </h2>
+                <p className="text-xl md:text-2xl text-accent font-medium tracking-wide">
+                  {slides[current].description}
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Progress Bar Container */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-white/10 overflow-hidden z-20">
+          <motion.div
+            key={current}
+            initial={{ x: "-100%" }}
+            animate={{ x: "0%" }}
+            transition={{ duration: 6, ease: "linear" }}
+            className="h-full bg-accent shadow-[0_0_10px_rgba(var(--color-accent-rgb),0.8)]"
+          />
+        </div>
+
+        {/* Navigation Controls */}
+        <div className="absolute bottom-12 right-12 flex gap-3 z-30">
+          <button
+            onClick={() => paginate(-1)}
+            className="p-4 rounded-full bg-white/5 hover:bg-white/20 text-white backdrop-blur-xl transition-all border border-white/10 hover:scale-110 active:scale-95"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => paginate(1)}
+            className="p-4 rounded-full bg-accent text-background transition-all hover:scale-110 active:scale-95 shadow-lg shadow-accent/20"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+
+        {/* Dot Indicators */}
+        <div className="absolute top-12 right-12 flex gap-2 z-30">
+          {slides.map((_, i) => (
+            <div
+              key={i}
+              className={`h-1.5 transition-all duration-500 rounded-full ${i === current ? 'w-8 bg-accent shadow-[0_0_8px_rgba(var(--color-accent-rgb),0.5)]' : 'w-2 bg-white/30'}`}
+            />
+          ))}
+        </div>
+      </motion.div>
+    </div>
   );
 }
