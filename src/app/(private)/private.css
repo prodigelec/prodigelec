@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #0F172A;
+    /* Slate 900 */
+    --color-primary-dark: #020617;
+    /* Slate 950 */
+    --color-accent: #6366F1;
+    /* Indigo 500 */
+
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Portal Styles */
+@layer base {
+    body {
+        @apply bg-slate-50 text-slate-900;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+}
+
+@layer components {
+    .portal-card {
+        @apply bg-white border border-slate-200 rounded-[2rem] shadow-[0_8px_30px_rgb(0, 0, 0, 0.02)] transition-all duration-300;
+    }
+
+    .nav-item-active {
+        @apply bg-slate-900 text-white shadow-lg shadow-slate-200;
+    }
+
+    /* Animations */
+    .animate-shake {
+        animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+    }
+
+    @keyframes shake {
+
+        10%,
+        90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+
+        20%,
+        80% {
+            transform: translate3d(2px, 0, 0);
+        }
+
+        30%,
+        50%,
+        70% {
+            transform: translate3d(-4px, 0, 0);
+        }
+
+        40%,
+        60% {
+            transform: translate3d(4px, 0, 0);
+        }
+    }
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+}

@@ -14,10 +14,9 @@ export default async function AccessGatePage({ searchParams }) {
         return notFound();
     }
 
+    let accessCode;
     try {
-        const accessCode = generateAccessCode();
-        // Redirect to the dynamic entry point
-        redirect(`/crm/${accessCode}`);
+        accessCode = generateAccessCode();
     } catch (error) {
         console.error('Gatekeeper Error:', error);
         return (
@@ -28,4 +27,6 @@ export default async function AccessGatePage({ searchParams }) {
             </div>
         );
     }
+
+    redirect(`/crm/${accessCode}`);
 }

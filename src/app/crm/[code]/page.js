@@ -1,5 +1,5 @@
 import { validateAccessCode } from '@/utils/crm/accessCode';
-import LoginForm from '../../components/LoginForm';
+import LoginForm from '../components/LoginForm';
 import { notFound } from 'next/navigation';
 import { ShieldAlert } from 'lucide-react';
 
