@@ -8,7 +8,7 @@ import {
     FolderOpen,
     ShieldCheck
 } from 'lucide-react';
-import LogoutButton from '../../../../crm/components/LogoutButton';
+import LogoutButton from '@/app/crm/components/LogoutButton';
 import { validateAccessCode } from '@/utils/crm/accessCode';
 
 /**
@@ -34,40 +34,43 @@ export default async function DynamicPortalLayout({ children, params }) {
 
     return (
         <div className="flex h-screen text-slate-900 font-sans">
-            {/* Sidebar - Premium Design */}
-            <aside className="w-72 bg-white border-r border-slate-200 flex flex-col shadow-sm z-30">
+            {/* Sidebar - Pennylane Aesthetic */}
+            <aside className="w-72 bg-white border-r border-slate-100 flex flex-col z-30">
                 <div className="p-8 flex items-center gap-4">
-                    <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center text-white shadow-xl shadow-slate-200 ring-4 ring-slate-50">
+                    <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
                         <ShieldCheck size={24} />
                     </div>
                     <div className="flex flex-col">
-                        <span className="font-black text-lg tracking-tight leading-none">PRODIGELEC</span>
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Élite Portal v2.0</span>
+                        <span className="font-black text-lg tracking-tight leading-none text-slate-900">PRODIGELEC</span>
+                        <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mt-1">Élite Master</span>
                     </div>
                 </div>
 
                 <nav className="flex-1 px-4 py-4 space-y-1">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            className="flex items-center gap-3 px-5 py-3.5 rounded-2xl text-slate-500 hover:bg-slate-50 hover:text-slate-900 transition-all duration-300 font-semibold group"
-                        >
-                            <span className="opacity-40 group-hover:opacity-100 transition-opacity">
-                                {item.icon}
-                            </span>
-                            {item.name}
-                        </Link>
-                    ))}
+                    {navItems.map((item) => {
+                        const isActive = false; // Note: In a real app, you'd check pathname here
+                        return (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className={`flex items-center gap-3 px-5 py-3 rounded-2xl transition-all duration-300 font-bold group ${isActive ? 'bg-emerald-50 text-emerald-600' : 'text-slate-400 hover:bg-slate-50 hover:text-slate-900'}`}
+                            >
+                                <span className={`${isActive ? 'text-emerald-500' : 'opacity-40 group-hover:opacity-100'}`}>
+                                    {item.icon}
+                                </span>
+                                {item.name}
+                            </Link>
+                        );
+                    })}
                 </nav>
 
                 <div className="p-6 mt-auto">
                     <div className="p-5 rounded-3xl bg-slate-50 border border-slate-100 flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center ring-2 ring-slate-100">
+                        <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center border border-slate-100">
                             <UserCircle className="text-slate-400" size={28} />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-sm font-bold">Admin Master</span>
+                            <span className="text-sm font-black text-slate-900">Admin Master</span>
                             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Connexion sécurisée</span>
                         </div>
                     </div>

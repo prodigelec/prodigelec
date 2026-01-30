@@ -9,8 +9,15 @@ exports.login = async (req, res) => {
         return res.status(403).json({ error: 'Code d\'accès invalide ou expiré.' });
     }
 
-    // Placeholder credential check
-    if (username !== 'admin' || password !== 'admin123') {
+    // Credential check using environment variables and SHA-256 hash
+    const adminUser = process.env.CRM_ADMIN_USERNAME;
+    const adminPassHash = process.env.CRM_ADMIN_PASSWORD_HASH;
+
+    // Use native crypto to hash the incoming password
+    const crypto = require('crypto');
+    const inputHash = crypto.createHash('sha256').update(password).digest('hex');
+
+    if (username !== adminUser || inputHash !== adminPassHash) {
         return res.status(401).json({ error: 'Identifiants incorrects.' });
     }
 

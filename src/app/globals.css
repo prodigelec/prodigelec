@@ -34,12 +34,23 @@ body {
     min-height: 100vh;
 }
 
-/* CRM Portal Theme (Slate/Light) */
+/* CRM Portal Theme (Pennylane-Inspired Soft & Vibrant) */
 .theme-private {
-    --color-primary: #0F172A;
-    --color-accent: #6366F1;
-    background-color: #f8fafc;
-    color: #0f172a;
+    --color-primary: #10b981;
+    /* Vibrant Teal */
+    --color-primary-soft: #ecfdf5;
+    --color-secondary: #8b5cf6;
+    /* Soft Violet */
+    --color-secondary-soft: #f5f3ff;
+    --color-accent: #f97316;
+    /* Coral/Orange */
+    --color-accent-soft: #fff7ed;
+    --color-slate-900: #1e293b;
+    --color-slate-500: #64748b;
+    --color-slate-50: #f8fafc;
+
+    background-color: #fafafa;
+    color: #1e293b;
     min-height: 100vh;
 }
 

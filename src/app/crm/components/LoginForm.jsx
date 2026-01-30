@@ -54,20 +54,20 @@ export default function LoginForm({ accessCode, onSuccess }) {
         <div className="w-full max-w-lg mx-auto perspective-1000">
             <div className="relative group transition-all duration-1000 ease-out hover:rotate-x-1 hover:rotate-y-1">
                 {/* Glow Backdrop */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 via-slate-400/20 to-indigo-500/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all duration-700 opacity-50"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 via-teal-400/20 to-emerald-500/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all duration-700 opacity-50"></div>
 
-                <div className="relative bg-white/70 backdrop-blur-3xl p-10 md:p-14 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/40 overflow-hidden">
+                <div className="relative bg-white/80 backdrop-blur-3xl p-10 md:p-14 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-100/50 overflow-hidden">
                     {/* Interior Decorative gradients */}
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full -mr-32 -mt-32 blur-3xl animate-pulse"></div>
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-slate-500/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full -mr-32 -mt-32 blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
 
                     <div className="relative z-10 flex flex-col items-center mb-12">
-                        <div className="w-20 h-20 bg-slate-900 rounded-[2rem] flex items-center justify-center shadow-2xl shadow-slate-900/40 mb-6 ring-8 ring-slate-900/5 rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <div className="w-20 h-20 bg-emerald-500 rounded-[2rem] flex items-center justify-center shadow-2xl shadow-emerald-500/20 mb-6 ring-8 ring-emerald-500/5 rotate-3 hover:rotate-0 transition-transform duration-500">
                             <ShieldCheck className="text-white" size={40} strokeWidth={1.5} />
                         </div>
-                        <h2 className="text-3xl font-black text-slate-900 tracking-tight text-center">Accès Privilégié</h2>
-                        <div className="h-1 w-12 bg-indigo-500 rounded-full mt-4"></div>
-                        <p className="text-slate-500 text-sm font-bold uppercase tracking-[0.2em] mt-6 text-center">Élite Portal v3.0</p>
+                        <h2 className="text-3xl font-black text-slate-900 tracking-tight text-center">Accès Élite</h2>
+                        <div className="h-1 w-12 bg-emerald-500 rounded-full mt-4"></div>
+                        <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mt-6 text-center">PRODIGELEC Portal v3.0</p>
                     </div>
 
                     <form onSubmit={handleLogin} className="space-y-8 relative z-10">
@@ -75,17 +75,17 @@ export default function LoginForm({ accessCode, onSuccess }) {
                             {/* Username Field */}
                             <div className="relative group/input">
                                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2.5 ml-2 block">
-                                    Identifiant Personnel
+                                    Identifiant Master
                                 </label>
                                 <div className="relative">
-                                    <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-slate-400 group-focus-within/input:text-indigo-500 transition-colors">
+                                    <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-slate-300 group-focus-within/input:text-emerald-500 transition-colors">
                                         <User size={18} strokeWidth={2.5} />
                                     </div>
                                     <input
                                         type="text"
                                         value={username}
                                         onChange={(e) => setUsername(e.target.value)}
-                                        className="block w-full pl-14 pr-5 py-5 bg-white/50 border border-slate-200/50 rounded-2xl focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-500/50 outline-none transition-all duration-300 font-bold text-slate-900 placeholder:text-slate-300 shadow-sm"
+                                        className="block w-full pl-14 pr-5 py-5 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/5 focus:border-emerald-500/50 outline-none transition-all duration-300 font-bold text-slate-900 placeholder:text-slate-200"
                                         placeholder="NOM_UTILISATEUR"
                                         required
                                     />
@@ -98,21 +98,21 @@ export default function LoginForm({ accessCode, onSuccess }) {
                                     Code de Sécurité
                                 </label>
                                 <div className="relative">
-                                    <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-slate-400 group-focus-within/input:text-indigo-500 transition-colors">
+                                    <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-slate-300 group-focus-within/input:text-emerald-500 transition-colors">
                                         <Lock size={18} strokeWidth={2.5} />
                                     </div>
                                     <input
                                         type={showPassword ? "text" : "password"}
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        className="block w-full pl-14 pr-14 py-5 bg-white/50 border border-slate-200/50 rounded-2xl focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-500/50 outline-none transition-all duration-300 font-bold text-slate-900 placeholder:text-slate-300 shadow-sm font-mono tracking-widest"
+                                        className="block w-full pl-14 pr-14 py-5 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/5 focus:border-emerald-500/50 outline-none transition-all duration-300 font-bold text-slate-900 placeholder:text-slate-200 font-mono tracking-widest"
                                         placeholder="••••••••"
                                         required
                                     />
                                     <button
                                         type="button"
                                         onClick={() => setShowPassword(!showPassword)}
-                                        className="absolute inset-y-0 right-0 pr-5 flex items-center text-slate-300 hover:text-indigo-500 transition-colors"
+                                        className="absolute inset-y-0 right-0 pr-5 flex items-center text-slate-300 hover:text-emerald-500 transition-colors"
                                     >
                                         {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                                     </button>
@@ -121,27 +121,24 @@ export default function LoginForm({ accessCode, onSuccess }) {
                         </div>
 
                         {error && (
-                            <div className="p-5 rounded-2xl bg-red-50/50 border border-red-100 flex items-center gap-4 text-red-600 animate-shake">
-                                <AlertCircle size={24} strokeWidth={2.5} />
-                                <p className="text-sm font-black tracking-tight uppercase">{error}</p>
+                            <div className="p-4 rounded-xl bg-red-50 border border-red-100 flex items-center gap-3 text-red-600 animate-shake">
+                                <AlertCircle size={18} strokeWidth={2.5} />
+                                <p className="text-[10px] font-black tracking-tight uppercase">{error}</p>
                             </div>
                         )}
 
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full h-16 bg-slate-900 hover:bg-black text-white rounded-2xl font-black text-sm uppercase tracking-[0.2em] shadow-2xl shadow-slate-900/20 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-4 disabled:opacity-70 disabled:cursor-not-allowed group overflow-hidden relative"
+                            className="w-full h-16 bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl font-black text-sm uppercase tracking-[0.2em] shadow-xl shadow-emerald-500/20 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-4 disabled:opacity-70 disabled:cursor-not-allowed group overflow-hidden relative"
                         >
                             <span className="relative z-10">
                                 {isLoading ? 'Vérification...' : 'S\'authentifier'}
                             </span>
-                            {!isLoading && <div className="absolute inset-0 bg-indigo-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>}
                             {isLoading ? (
                                 <Loader2 className="animate-spin relative z-10" size={20} />
                             ) : (
-                                <div className="w-5 h-px bg-white/30 group-hover:bg-white transition-colors relative z-10 overflow-hidden">
-                                    <div className="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                                </div>
+                                <ArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" size={18} strokeWidth={2.5} />
                             )}
                         </button>
                     </form>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import LoginForm from '../../crm/components/LoginForm';
+import LoginForm from '@/app/crm/components/LoginForm';
 import { ShieldAlert } from 'lucide-react';
 
 /**
