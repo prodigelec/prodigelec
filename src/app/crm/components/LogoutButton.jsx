@@ -3,7 +3,7 @@
 import { LogOut } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-export default function LogoutButton() {
+export default function LogoutButton({ iconOnly = false }) {
     const router = useRouter();
 
     const handleLogout = async () => {
@@ -28,10 +28,11 @@ export default function LogoutButton() {
     return (
         <button
             onClick={handleLogout}
-            className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-red-500 hover:border-red-100 transition-all duration-300 font-bold text-sm shadow-sm"
+            title="Déconnexion"
+            className={`flex items-center justify-center rounded-2xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-red-500 hover:border-red-100 transition-all duration-300 font-bold text-sm shadow-sm ${iconOnly ? 'w-14 h-14' : 'w-full py-4 gap-3'}`}
         >
             <LogOut size={18} />
-            Déconnexion
+            {!iconOnly && "Déconnexion"}
         </button>
     );
 }
