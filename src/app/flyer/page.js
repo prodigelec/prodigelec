@@ -5,64 +5,24 @@ import Link from "next/link";
 import { Phone, MapPin, Globe, Mail, CheckCircle2, QrCode, Zap, Printer, Star, Lightbulb, Download } from "lucide-react";
 import { IoKey } from "react-icons/io5";
 import Logo from "@/components/layout/Navbar/Logo";
+import dynamic from 'next/dynamic';
+
+// Import dynamique du composant PDF et du lien de téléchargement (Client Side Only)
+// Import dynamique du bouton PDF (Client Side Only pour éviter les erreurs @react-pdf/renderer)
+const FlyerDownloadButton = dynamic(() => import("./components/FlyerDownloadButton"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex-1 flex items-center justify-center gap-2 bg-white/50 text-[#0b1a2a] px-6 py-3 rounded-full font-bold animate-pulse">
+      <Download className="w-5 h-5" /> PDF
+    </div>
+  )
+});
 
 export default function FlyerPage() {
   const flyerRef = useRef(null);
   // Fonction d'impression
   const handlePrint = () => {
     window.print();
-  };
-
-  // Fonction de téléchargement PDF direct
-  const handleDownloadPDF = async () => {
-    // Import dynamique pour éviter les erreurs SSR
-    const html2pdf = (await import("html2pdf.js")).default;
-
-    // On clone le flyer pour appliquer des styles spécifiques sans modifier l'original à l'écran
-    const element = flyerRef.current;
-
-    const opt = {
-      margin: 0,
-      filename: 'Flyer-PRODIGELEC-2026.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: {
-        scale: 3, // Haute qualité
-        useCORS: true,
-        logging: false,
-        backgroundColor: '#ffffff', // On force le fond blanc pour le PDF
-        onclone: (clonedDoc) => {
-          // Supprimer les styles qui utilisent oklab/oklch pour éviter le crash html2canvas
-          const allElements = clonedDoc.querySelectorAll('*');
-          allElements.forEach(el => {
-            const style = window.getComputedStyle(el);
-            // Si une propriété utilise oklab ou oklch, on la force en HEX/RGB ou on la supprime
-            ['color', 'backgroundColor', 'borderColor', 'fill', 'stroke'].forEach(prop => {
-              const val = el.style[prop] || style[prop];
-              if (val && (val.includes('oklab') || val.includes('oklch'))) {
-                // On essaie de mettre une valeur par défaut sûre si c'est problématique
-                if (prop === 'color') el.style.color = '#0b1a2a';
-                if (prop === 'backgroundColor') el.style.backgroundColor = 'transparent';
-              }
-            });
-            // Désactiver les transitions/animations
-            el.style.transition = 'none';
-            el.style.animation = 'none';
-          });
-        }
-      },
-      jsPDF: { unit: 'mm', format: 'a5', orientation: 'portrait' }
-    };
-
-    // Pour le PDF, on veut les styles "print" (couleurs sombres sur fond blanc)
-    // On ajoute temporairement une classe pour simuler le mode print
-    element.classList.add('print-container');
-
-    try {
-      await html2pdf().set(opt).from(element).save();
-    } finally {
-      // On retire la classe pour remettre le design sombre à l'écran
-      element.classList.remove('print-container');
-    }
   };
 
   return (
@@ -123,6 +83,9 @@ export default function FlyerPage() {
             color: #0b1a2a !important;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
+            /* Surcharge des variables Tailwind 4 pour éviter oklch en impression */
+            --color-primary: #c9a227 !important;
+            --color-primary-dark: #a88b1f !important;
           }
           /* Ajuster les éléments spécifiques pour la lisibilité sur blanc */
           .print-no-glow {
@@ -163,12 +126,9 @@ export default function FlyerPage() {
                 >
                   <Printer className="w-5 h-5" /> Imprimer
                 </button>
-                <button
-                  onClick={handleDownloadPDF}
-                  className="flex-1 flex items-center justify-center gap-2 bg-white text-[#0b1a2a] hover:bg-gray-100 px-6 py-3 rounded-full font-bold shadow-lg transition-all transform hover:scale-105"
-                >
-                  <Download className="w-5 h-5" /> PDF
-                </button>
+
+                {/* Bouton PDF encapsulé */}
+                <FlyerDownloadButton />
               </div>
             </div>
           </div>
@@ -206,28 +166,36 @@ export default function FlyerPage() {
         <div className="lg:w-2/3 flex justify-center lg:justify-start">
           <div
             ref={flyerRef}
-            className="bg-linear-to-br from-[#0b1a2a] via-[#112438] to-[#0b1a2a] shadow-2xl overflow-hidden relative print-container flex flex-col"
+            className="shadow-2xl overflow-hidden relative print-container flex flex-col"
             style={{
               width: '148mm',
               minHeight: '210mm',
               height: '210mm',
               maxWidth: '100%',
+              background: 'linear-gradient(to bottom right, #0b1a2a, #112438, #0b1a2a)',
+              color: '#ffffff'
             }}
           >
             {/* Background Patterns */}
-            <div className="absolute top-0 right-0 w-48 h-48 bg-primary/10 rounded-full blur-3xl -mr-12 -mt-12" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/10 rounded-full blur-3xl -ml-12 -mb-12" />
+            <div className="absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl -mr-12 -mt-12" style={{ backgroundColor: 'rgba(201, 162, 39, 0.1)' }} />
+            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full blur-3xl -ml-12 -mb-12" style={{ backgroundColor: 'rgba(201, 162, 39, 0.1)' }} />
 
             {/* Header Section */}
-            <div className="relative bg-white/5 print:bg-primary/5 text-white pt-8 px-8 pb-16 [clip-path:polygon(0_0,100%_0,100%_85%,0_100%)]">
+            <div
+              className="relative pt-8 px-8 pb-16 [clip-path:polygon(0_0,100%_0,100%_85%,0_100%)] print:bg-primary/5"
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', color: '#ffffff' }}
+            >
               <div className="flex justify-between items-start">
                 <div className="scale-90 origin-top-left">
                   <Logo />
                 </div>
                 <div className="text-right">
-                  <div className="bg-white/10 print:bg-white print:border-primary/20 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-lg shadow-lg">
-                    <p className="text-white print:text-[#0b1a2a] font-bold text-sm uppercase tracking-wider flex items-center gap-2">
-                      <Star className="w-5 h-5 text-primary fill-primary" /> Artisan qualifié
+                  <div
+                    className="backdrop-blur-md border px-3 py-1.5 rounded-lg shadow-lg print:bg-white print:border-primary/20"
+                    style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', borderColor: 'rgba(255, 255, 255, 0.2)' }}
+                  >
+                    <p className="font-bold text-sm uppercase tracking-wider flex items-center gap-2 print:text-[#0b1a2a]">
+                      <Star className="w-5 h-5 fill-primary" style={{ color: '#c9a227' }} /> Artisan qualifié
                     </p>
                   </div>
                 </div>
@@ -319,8 +287,8 @@ export default function FlyerPage() {
                     "Éclairage LED"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                      <span className="text-gray-300 print:text-gray-700 font-medium text-xs leading-tight">{item}</span>
+                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#c9a227' }} />
+                      <span className="font-medium text-xs leading-tight print:text-gray-700" style={{ color: '#d1d5db' }}>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -351,8 +319,8 @@ export default function FlyerPage() {
                     "Sécurisation"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                      <span className="text-gray-300 print:text-gray-700 font-medium text-xs leading-tight">{item}</span>
+                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#c9a227' }} />
+                      <span className="font-medium text-xs leading-tight print:text-gray-700" style={{ color: '#d1d5db' }}>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -361,9 +329,12 @@ export default function FlyerPage() {
 
             {/* Zones d'intervention */}
             <div className="px-6 mb-1">
-              <div className="bg-white/5 print:bg-gray-50 backdrop-blur-sm rounded-xl p-4 border border-white/10 print:border-gray-100 shadow-sm print:shadow-none">
+              <div
+                className="backdrop-blur-sm rounded-xl p-4 border shadow-sm print:bg-gray-50 print:border-gray-100 print:shadow-none"
+                style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', borderColor: 'rgba(255, 255, 255, 0.1)' }}
+              >
                 <div className="flex items-center gap-3 mb-3">
-                  <MapPin className="w-5 h-5 text-primary" />
+                  <MapPin className="w-5 h-5" style={{ color: '#c9a227' }} />
                   <h3 className="text-sm font-bold text-white print:text-[#0b1a2a]">ZONES D&apos;INTERVENTION</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -371,7 +342,11 @@ export default function FlyerPage() {
                     "Broué", "Dreux", "Chartres", "Évreux",
                     "Anet", "Nonancourt", "St-André"
                   ].map((city) => (
-                    <span key={city} className="bg-white/5 print:bg-white border border-white/10 print:border-gray-200 px-2.5 py-1 rounded text-gray-300 print:text-gray-600 font-bold shadow-sm text-[10px]">
+                    <span
+                      key={city}
+                      className="border px-2.5 py-1 rounded font-bold shadow-sm text-[10px] print:bg-white print:border-gray-200 print:text-gray-600"
+                      style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', borderColor: 'rgba(255, 255, 255, 0.1)', color: '#d1d5db' }}
+                    >
                       {city}
                     </span>
                   ))}
