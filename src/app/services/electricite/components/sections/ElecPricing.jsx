@@ -66,7 +66,7 @@ export default function ElecPricing() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 px-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12 px-6 max-w-5xl mx-auto">
         {prices.map((plan, idx) => (
           <motion.div
             key={idx}
