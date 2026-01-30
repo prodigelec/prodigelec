@@ -32,9 +32,9 @@ export default function SerrurerieServices() {
       description: "Renforcez la résistance de votre habitation contre les tentatives d'effraction.",
       items: [
         "Installation serrure A2P*",
-        "Blindage de porte",
         "Cornières anti-pinces",
-        "Barre de pivotement"
+        "Barre de pivotement",
+        "Protections de cylindre"
       ]
     },
     {

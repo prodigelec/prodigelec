@@ -34,8 +34,8 @@ export default function SerrureriePricing() {
       features: [
         "Changement de serrure 3 points",
         "Installation cornières anti-pinces",
-        "Blindage de porte existante",
-        "Poignée de sécurité renforcée"
+        "Poignée de sécurité renforcée",
+        "Diagnostic sécurité offert"
       ],
       highlight: false
     },
