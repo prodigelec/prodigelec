@@ -3,7 +3,6 @@
 import { useRouter } from 'next/navigation';
 import LoginForm from '@/app/(private)/components/auth/LoginForm';
 import { ShieldCheck, CheckCircle2 } from 'lucide-react';
-import Image from 'next/image';
 
 /**
  * Client-side container for the CRM Login Page.
@@ -27,15 +26,7 @@ export default function CRMLoginClient({ initialCode }) {
         <div className="min-h-screen flex bg-white">
             {/* Left Side - Visual & Value Prop (Desktop Only) */}
             <div className="hidden lg:flex lg:w-1/2 relative bg-#0b1a2a flex-col justify-between p-12 overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
-                            <path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" strokeWidth="0.5" />
-                        </pattern>
-                        <rect width="100%" height="100%" fill="url(#grid)" />
-                    </svg>
-                </div>
+              
                 
                 {/* Abstract Shapes */}
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
@@ -43,14 +34,14 @@ export default function CRMLoginClient({ initialCode }) {
 
                 {/* Content */}
                 <div className="relative z-10">
-                    <div className="flex items-center gap-2 text-white/90 font-bold tracking-widest uppercase text-xs">
+                    <div className="flex items-center gap-2 font-bold tracking-widest uppercase text-xs">
                         <ShieldCheck className="w-4 h-4 text-primary" />
-                        <span>Espace Professionnel</span>
+                        <span className="text-primary/90">Espace Professionnel</span>
                     </div>
                 </div>
 
                 <div className="relative z-10 max-w-lg">
-                    <h1 className="text-4xl font-bold text-white mb-6 leading-tight">
+                    <h1 className="text-4xl font-bold text-primary/90 mb-6 leading-tight">
                         Gérez votre activité en toute <span className="text-primary">sérénité</span>.
                     </h1>
                     <ul className="space-y-4">
@@ -59,7 +50,7 @@ export default function CRMLoginClient({ initialCode }) {
                             "Gestion centralisée des clients",
                             "Accès sécurisé et crypté"
                         ].map((item, i) => (
-                            <li key={i} className="flex items-center gap-3 text-gray-300">
+                            <li key={i} className="flex items-center gap-3 text-shadow-background-dark">
                                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                                 <span className="text-sm font-medium">{item}</span>
                             </li>
@@ -67,7 +58,7 @@ export default function CRMLoginClient({ initialCode }) {
                     </ul>
                 </div>
 
-                <div className="relative z-10 text-xs text-gray-500">
+                <div className="relative z-10 text-xs text-shadow-background-dark">
                     © {new Date().getFullYear()} PRODIGELEC. Tous droits réservés.
                 </div>
             </div>
