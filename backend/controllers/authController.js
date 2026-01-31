@@ -1,29 +1,18 @@
-const jwt = require('jsonwebtoken');
-const { validateAccessCode, generateAccessCode } = require('../utils/accessCode');
+const authService = require('../services/authService');
 require('dotenv').config();
 
 exports.login = async (req, res) => {
     const { username, password, accessCode } = req.body;
 
-    if (!validateAccessCode(accessCode)) {
+    if (!authService.validateAccessCode(accessCode)) {
         return res.status(403).json({ error: 'Code d\'accès invalide ou expiré.' });
     }
 
-    // Credential check using environment variables and SHA-256 hash
-    const adminUser = process.env.CRM_ADMIN_USERNAME;
-    const adminPassHash = process.env.CRM_ADMIN_PASSWORD_HASH;
-
-    // Use native crypto to hash the incoming password
-    const crypto = require('crypto');
-    const inputHash = crypto.createHash('sha256').update(password).digest('hex');
-
-    if (username !== adminUser || inputHash !== adminPassHash) {
+    if (!authService.verifyCredentials(username, password)) {
         return res.status(401).json({ error: 'Identifiants incorrects.' });
     }
 
-    const token = jwt.sign({ user: 'admin', role: 'admin' }, process.env.JWT_SECRET, {
-        expiresIn: '8h',
-    });
+    const token = authService.generateToken({ user: 'admin', role: 'admin' });
 
     res.cookie('token', token, {
         httpOnly: true,
@@ -35,7 +24,7 @@ exports.login = async (req, res) => {
     res.json({
         success: true,
         message: 'Connexion réussie.',
-        accessCode: generateAccessCode()
+        accessCode: authService.generateAccessCode()
     });
 };
 
@@ -45,6 +34,12 @@ exports.logout = (req, res) => {
 };
 
 exports.getAccessCode = (req, res) => {
-    const code = generateAccessCode();
+    const code = authService.generateAccessCode();
     res.json({ code });
+};
+
+exports.validateCode = (req, res) => {
+    const { code } = req.body;
+    const isValid = authService.validateAccessCode(code);
+    res.json({ valid: isValid });
 };
