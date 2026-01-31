@@ -1,8 +1,24 @@
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { validateAccessCode } from '@/utils/crm/accessCode';
 import { Building2 } from 'lucide-react';
+
+async function validateCode(code) {
+    try {
+        const res = await fetch(`${process.env.BACKEND_URL || 'http://localhost:5000'}/api/auth/validate-code`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ code }),
+            cache: 'no-store'
+        });
+        if (!res.ok) return false;
+        const data = await res.json();
+        return data.valid;
+    } catch (error) {
+        console.error('Error validating code:', error);
+        return false;
+    }
+}
 
 async function getCompanyData() {
     try {
@@ -29,7 +45,8 @@ export default async function DynamicPortalLayout({ children, params }) {
     const { code } = await params;
 
     // Access Code Validation
-    if (!validateAccessCode(code)) {
+    const isValid = await validateCode(code);
+    if (!isValid) {
         redirect('/auth/crm-login');
     }
 
