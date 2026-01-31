@@ -8,10 +8,14 @@ export async function POST(req) {
         const body = await req.json();
         const { endpoint, method = 'POST', data } = body;
 
+        // Forward cookie if present to maintain session
+        const cookie = req.headers.get('cookie');
+
         const response = await fetch(`${process.env.BACKEND_URL || 'http://localhost:5000'}/api${endpoint}`, {
             method,
             headers: {
                 'Content-Type': 'application/json',
+                'Cookie': cookie || '',
             },
             body: JSON.stringify(data),
         });

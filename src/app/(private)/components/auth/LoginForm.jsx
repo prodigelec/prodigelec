@@ -57,7 +57,7 @@ export default function LoginForm({ accessCode, onSuccess }) {
             <div className="mb-10 text-center lg:text-left">
                 <div className="inline-block mb-6 scale-90 origin-left">
                      {/* Using text for brand to keep it clean, matching the Navbar style */}
-                     <span className="text-2xl font-black tracking-tighter text-[#0b1a2a]">
+                     <span className="text-2xl font-black tracking-tighter text-background-dark">
                         PRODIG<span className="text-primary">ELEC</span>
                     </span>
                 </div>

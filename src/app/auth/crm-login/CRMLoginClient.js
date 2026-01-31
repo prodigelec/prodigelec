@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import LoginForm from '@/app/crm/components/LoginForm';
+import LoginForm from '@/app/(private)/components/auth/LoginForm';
 import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 

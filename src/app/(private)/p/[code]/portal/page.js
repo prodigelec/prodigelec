@@ -1,4 +1,4 @@
-import CompanyOnboardingModal from '@/app/crm/components/onboarding/CompanyOnboardingModal';
+import CompanyOnboardingModal from '@/app/(private)/components/onboarding/CompanyOnboardingModal';
 
 /**
  * Minimalist Portal Dashboard

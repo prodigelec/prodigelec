@@ -399,44 +399,46 @@ export default function CompanyOnboardingModal() {
                                     />
                                 </div>
                             </div>
+                            <div className="flex justify-between pt-6">
+                                <button 
+                                    type="button" 
+                                    onClick={() => setStep(step - 1)}
+                                    className="px-6 py-2.5 border border-slate-200 rounded-lg text-slate-600 font-medium hover:bg-slate-50 transition-colors"
+                                >
+                                    Retour
+                                </button>
+                                <button 
+                                    type="submit"
+                                    disabled={isLoading}
+                                    className="px-8 py-2.5 bg-primary text-white rounded-lg font-bold hover:bg-primary-dark transition-colors flex items-center gap-2 disabled:opacity-70"
+                                >
+                                    {isLoading ? (
+                                        <>
+                                            <Loader2 className="animate-spin" size={18} />
+                                            Enregistrement...
+                                        </>
+                                    ) : (
+                                        <>
+                                            Terminer
+                                            <CheckCircle2 size={18} />
+                                        </>
+                                    )}
+                                </button>
+                            </div>
                         </form>
                     )}
                 </div>
 
                 {/* Footer */}
                 <div className="bg-white px-8 py-6 border-t border-slate-100 flex items-center justify-between">
-                    {step > 1 ? (
+                    {step > 1 && step < 3 && (
                         <button 
                             onClick={() => setStep(step - 1)}
-                            type="button"
-                            className="text-sm font-semibold text-slate-500 hover:text-slate-800 transition-colors"
+                            className="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors"
                         >
                             Retour
                         </button>
-                    ) : (
-                        <div></div>
                     )}
-
-                    <button
-                        form={`step${step}-form`}
-                        type="submit"
-                        disabled={isLoading}
-                        className="flex items-center gap-2 bg-primary hover:bg-primary-dark text-[#0b1a2a] px-6 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 transition-all disabled:opacity-70"
-                    >
-                        {isLoading ? (
-                            <Loader2 className="animate-spin" size={18} />
-                        ) : step === 3 ? (
-                            <>
-                                Terminer la configuration
-                                <CheckCircle2 size={18} />
-                            </>
-                        ) : (
-                            <>
-                                Continuer
-                                <ArrowRight size={18} />
-                            </>
-                        )}
-                    </button>
                 </div>
             </div>
         </div>

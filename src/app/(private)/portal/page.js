@@ -8,25 +8,7 @@ export default function PortalPage() {
                 <p className="text-slate-500 font-semibold text-lg max-w-2xl">L'interface de gestion privilégiée de PRODIGELEC. Gérez vos opportunités et vos clients avec excellence.</p>
             </div>
 
-            {/* Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {stats.map((stat) => (
-                    <div key={stat.name} className="group relative bg-white p-8 rounded-[2rem] border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1 overflow-hidden">
-                        <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${stat.color} opacity-[0.03] -mr-16 -mt-16 rounded-full group-hover:scale-150 transition-transform duration-700`}></div>
-
-                        <div className="flex flex-col gap-4 relative z-10">
-                            <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{stat.name}</span>
-                            <div className="flex items-baseline gap-3">
-                                <span className="text-4xl font-black tracking-tighter text-slate-900">{stat.value}</span>
-                                <span className={`text-xs font-bold px-2.5 py-1 rounded-lg ${stat.trend === 'up' ? 'bg-emerald-50 text-emerald-600' : 'bg-slate-50 text-slate-500'
-                                    }`}>
-                                    {stat.change}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
+           
 
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-10">
                 {/* Main Feed */}

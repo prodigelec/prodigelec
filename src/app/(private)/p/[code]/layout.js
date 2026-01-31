@@ -55,6 +55,7 @@ export default async function DynamicPortalLayout({ children, params }) {
                                 src={company.logoUrl} 
                                 alt={company.companyName || 'Logo'} 
                                 fill
+                                sizes="40px"
                                 className="object-cover"
                             />
                         </div>
