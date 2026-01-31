@@ -1,10 +1,5 @@
 export default function PortalPage() {
-    const stats = [
-        { name: 'Leads Chauds', value: '7', change: '+2', color: 'from-blue-500 to-blue-600', trend: 'up' },
-        { name: 'Clients Actifs', value: '148', change: '+12%', color: 'from-indigo-500 to-indigo-600', trend: 'up' },
-        { name: 'En Chantier', value: '4', change: 'Stable', color: 'from-amber-500 to-amber-600', trend: 'neutral' },
-        { name: 'Facturation (Mois)', value: '12.4k', change: '+8%', color: 'from-emerald-500 to-emerald-600', trend: 'up' },
-    ];
+   
 
     return (
         <div className="space-y-12 animate-in fade-in slide-in-from-bottom-2 duration-700">

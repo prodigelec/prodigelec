@@ -1,6 +1,25 @@
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { validateAccessCode } from '@/utils/crm/accessCode';
+import { Building2 } from 'lucide-react';
+
+async function getCompanyData() {
+    try {
+        const res = await fetch(`${process.env.BACKEND_URL || 'http://localhost:5000'}/api/company/get`, {
+            cache: 'no-store',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (!res.ok) return null;
+        return await res.json();
+    } catch (error) {
+        console.error('Error fetching company:', error);
+        return null;
+    }
+}
 
 /**
  * Dynamic Portal Layout
@@ -14,6 +33,9 @@ export default async function DynamicPortalLayout({ children, params }) {
         redirect('/auth/crm-login');
     }
 
+    const companyData = await getCompanyData();
+    const company = companyData?.company;
+
     const navItems = [
         { href: `/p/${code}/portal` },
         { href: `/p/${code}/customers` },
@@ -22,11 +44,26 @@ export default async function DynamicPortalLayout({ children, params }) {
     ];
 
     return (
-        <div className="flex h-screen bg-[#f8f9fa] font-sans">
+        <div className="flex h-screen bg-[#FDFBF7] font-sans">
             {/* Sidebar - Clean & Minimal */}
             <aside className="w-20 bg-white border-r border-slate-200 flex flex-col items-center py-6 z-30">
-                {/* Brand Placeholder */}
-                <div className="w-10 h-10 bg-slate-900 rounded-lg mb-12"></div>
+                {/* Brand Logo */}
+                <div className="w-10 h-10 mb-12 relative flex items-center justify-center">
+                    {company?.logoUrl ? (
+                         <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-slate-100 shadow-sm">
+                            <Image 
+                                src={company.logoUrl} 
+                                alt={company.companyName || 'Logo'} 
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    ) : (
+                        <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center text-white">
+                             <Building2 size={20} />
+                        </div>
+                    )}
+                </div>
 
                 <nav className="flex-1 w-full flex flex-col items-center gap-4">
                     {navItems.map((item, i) => (
@@ -48,10 +85,25 @@ export default async function DynamicPortalLayout({ children, params }) {
             <main className="flex-1 flex flex-col overflow-hidden">
                 {/* Header - Empty & Clean */}
                 <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8">
-                    <div className="w-32 h-4 bg-slate-100 rounded"></div>
+                    <div className="flex items-center gap-3">
+                         <h1 className="text-lg font-bold text-slate-800">
+                            {company?.companyName || 'Mon Espace'}
+                        </h1>
+                        {company?.legalForm && (
+                            <span className="text-xs font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-500 border border-slate-200">
+                                {company.legalForm}
+                            </span>
+                        )}
+                    </div>
+                    
                     <div className="flex items-center gap-4">
-                        <div className="w-24 h-4 bg-slate-100 rounded"></div>
-                        <div className="w-8 h-8 rounded-full bg-slate-100"></div>
+                        <div className="text-sm text-right hidden sm:block">
+                            <div className="font-medium text-slate-900">Admin</div>
+                            <div className="text-xs text-slate-500">Connecté</div>
+                        </div>
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs border border-primary/20">
+                            AD
+                        </div>
                     </div>
                 </header>
 

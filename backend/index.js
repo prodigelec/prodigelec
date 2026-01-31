@@ -22,6 +22,7 @@ app.use(cookieParser());
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/customers', authMiddleware, require('./routes/customers'));
+app.use('/api/company', require('./routes/company'));
 
 app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'OK', message: 'CRM Backend is running' });

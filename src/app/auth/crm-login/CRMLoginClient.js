@@ -26,7 +26,7 @@ export default function CRMLoginClient({ initialCode }) {
     return (
         <div className="min-h-screen flex bg-white">
             {/* Left Side - Visual & Value Prop (Desktop Only) */}
-            <div className="hidden lg:flex lg:w-1/2 relative bg-[#0b1a2a] flex-col justify-between p-12 overflow-hidden">
+            <div className="hidden lg:flex lg:w-1/2 relative bg-#0b1a2a flex-col justify-between p-12 overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
                     <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
