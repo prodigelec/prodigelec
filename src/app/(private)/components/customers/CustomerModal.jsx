@@ -5,6 +5,7 @@ import { X, Loader2, User, Building2, MapPin, Mail, Phone, FileText } from 'luci
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import AddressAutocomplete from '@/components/ui/AddressAutocomplete';
+import SiretAutocomplete from '@/components/ui/SiretAutocomplete';
 
 export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEdit = null }) {
     const [isLoading, setIsLoading] = useState(false);
@@ -73,6 +74,18 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSiretSelect = (data) => {
+        setFormData(prev => ({
+            ...prev,
+            company_name: data.company_name,
+            siret: data.siret,
+            vat_number: data.vat_number,
+            address: data.address,
+            zip_code: data.zip_code,
+            city: data.city
+        }));
     };
 
     const handleSubmit = async (e) => {
@@ -175,14 +188,17 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                             <div className="md:col-span-2 space-y-4 border-b border-slate-100 pb-4 mb-2">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-slate-700">Nom de la société <span className="text-red-500">*</span></label>
-                                    <input 
-                                        required
+                                    <SiretAutocomplete 
                                         name="company_name"
                                         value={formData.company_name}
                                         onChange={handleChange}
+                                        onSelect={handleSiretSelect}
                                         placeholder="Ex: SAS Renov"
                                         className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
                                     />
+                                    <p className="text-xs text-slate-500">
+                                        Si votre société n'apparaît pas (statut non-diffusible), saisissez le nom manuellement.
+                                    </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="space-y-2">
