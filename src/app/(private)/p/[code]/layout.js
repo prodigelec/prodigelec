@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Building2 } from 'lucide-react';
+import { Building2, LayoutDashboard, Users, Briefcase, Settings } from 'lucide-react';
 import axios from 'axios';
 
 async function validateCode(code) {
@@ -46,10 +46,10 @@ export default async function DynamicPortalLayout({ children, params }) {
     const company = companyData?.company;
 
     const navItems = [
-        { href: `/p/${code}/portal` },
-        { href: `/p/${code}/customers` },
-        { href: `/p/${code}/projects` },
-        { href: `/p/${code}/settings` },
+        { href: `/p/${code}/portal`, icon: LayoutDashboard, label: 'Tableau de bord' },
+        { href: `/p/${code}/customers`, icon: Users, label: 'Clients' },
+        { href: `/p/${code}/projects`, icon: Briefcase, label: 'Chantiers' },
+        { href: `/p/${code}/settings`, icon: Settings, label: 'Paramètres' },
     ];
 
     return (
@@ -80,8 +80,15 @@ export default async function DynamicPortalLayout({ children, params }) {
                         <Link
                             key={i}
                             href={item.href}
-                            className="w-10 h-10 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors"
-                        />
+                            title={item.label}
+                            className="w-10 h-10 rounded-lg bg-slate-50 hover:bg-primary hover:text-white text-slate-500 transition-all flex items-center justify-center group relative"
+                        >
+                            <item.icon size={20} />
+                            {/* Tooltip */}
+                            <span className="absolute left-14 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
+                                {item.label}
+                            </span>
+                        </Link>
                     ))}
                 </nav>
 
