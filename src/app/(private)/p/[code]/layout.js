@@ -81,7 +81,7 @@ export default async function DynamicPortalLayout({ children, params }) {
                             key={i}
                             href={item.href}
                             title={item.label}
-                            className="w-10 h-10 rounded-lg bg-slate-50 hover:bg-primary hover:text-white text-slate-500 transition-all flex items-center justify-center group relative"
+                            className="w-10 h-10 rounded-lg bg-slate-50 hover:bg-gradient-to-br hover:from-[#c9a227] hover:to-[#a88b1f] hover:text-white text-slate-500 transition-all flex items-center justify-center group relative"
                         >
                             <item.icon size={20} />
                             {/* Tooltip */}
