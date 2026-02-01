@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
-import ClientToaster from "./ClientToaster";
+import ClientToaster from "@/components/ui/ClientToaster";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

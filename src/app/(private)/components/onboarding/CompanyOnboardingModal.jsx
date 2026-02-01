@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Building2, MapPin, Mail, Phone, ArrowRight, CheckCircle2, Loader2, Upload, Image as ImageIcon } from 'lucide-react';
+import { Building2, MapPin, Mail, Phone, CheckCircle2, Loader2, Image as ImageIcon } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { supabase } from '@/lib/supabase';
+import axios from 'axios';
 
 export default function CompanyOnboardingModal() {
     const [step, setStep] = useState(1);
@@ -17,10 +18,11 @@ export default function CompanyOnboardingModal() {
     useEffect(() => {
         const checkCompanyExistence = async () => {
             try {
-                const res = await fetch('/api/crm?endpoint=/company/get');
-                const data = await res.json();
+                // Using axios for cleaner API calls
+                const res = await axios.get('/api/company/get');
+                const data = res.data;
                 
-                if (res.ok && data.exists) {
+                if (data.exists) {
                     setIsOpen(false);
                 } else {
                     setIsOpen(true);
@@ -79,45 +81,45 @@ export default function CompanyOnboardingModal() {
         setSiretError('');
 
         try {
-            const endpoint = `/company/check-siret?siret=${cleanSiret}`;
-            const res = await fetch(`/api/crm?endpoint=${encodeURIComponent(endpoint)}`);
-            const data = await res.json();
+            // Using new dedicated API route with axios
+            const res = await axios.get('/api/company/check-siret', {
+                params: { siret: cleanSiret }
+            });
+            const data = res.data;
 
-            if (res.ok) {
-                if (data.exists) {
-                    toast.success("Société trouvée dans notre base !");
-                    // Auto-fill everything including contact info
-                    setFormData(prev => ({
-                        ...prev,
-                        companyName: data.companyName || prev.companyName,
-                        address: data.address || prev.address,
-                        city: data.city || prev.city,
-                        zipCode: data.zipCode || prev.zipCode,
-                        vatNumber: data.vatNumber || prev.vatNumber,
-                        email: data.email || prev.email,
-                        phone: data.phone || prev.phone,
-                        legalForm: data.legalForm || prev.legalForm,
-                    }));
-                    if (data.logoUrl) {
-                        setLogoPreview(data.logoUrl);
-                    }
-                } else {
-                    // Auto-fill only public data
-                    setFormData(prev => ({
-                        ...prev,
-                        companyName: data.companyName || prev.companyName,
-                        address: data.address || prev.address,
-                        city: data.city || prev.city,
-                        zipCode: data.zipCode || prev.zipCode,
-                        vatNumber: data.vatNumber || prev.vatNumber,
-                        legalForm: data.legalForm || prev.legalForm,
-                    }));
+            if (data.exists) {
+                toast.success("Société trouvée dans notre base !");
+                // Auto-fill everything including contact info
+                setFormData(prev => ({
+                    ...prev,
+                    companyName: data.companyName || prev.companyName,
+                    address: data.address || prev.address,
+                    city: data.city || prev.city,
+                    zipCode: data.zipCode || prev.zipCode,
+                    vatNumber: data.vatNumber || prev.vatNumber,
+                    email: data.email || prev.email,
+                    phone: data.phone || prev.phone,
+                    legalForm: data.legalForm || prev.legalForm,
+                }));
+                if (data.logoUrl) {
+                    setLogoPreview(data.logoUrl);
                 }
             } else {
-                setSiretError(data.error || 'SIRET invalide');
+                // Auto-fill only public data
+                setFormData(prev => ({
+                    ...prev,
+                    companyName: data.companyName || prev.companyName,
+                    address: data.address || prev.address,
+                    city: data.city || prev.city,
+                    zipCode: data.zipCode || prev.zipCode,
+                    vatNumber: data.vatNumber || prev.vatNumber,
+                    legalForm: data.legalForm || prev.legalForm,
+                }));
             }
         } catch (err) {
-            setSiretError('Erreur de vérification');
+            // Check if error response exists
+            const errorMessage = err.response?.data?.error || 'Erreur de vérification';
+            setSiretError(errorMessage);
         } finally {
             setIsCheckingSiret(false);
         }
@@ -164,32 +166,20 @@ export default function CompanyOnboardingModal() {
                 }
             }
 
-            const res = await fetch('/api/crm', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    endpoint: '/company/save',
-                    method: 'POST',
-                    data: {
-                        ...formData,
-                        logoUrl: uploadedLogoUrl
-                    }
-                })
+            // Using new dedicated API route with axios
+            await axios.post('/api/company/save', {
+                ...formData,
+                logoUrl: uploadedLogoUrl
             });
 
-            const result = await res.json();
-
-            if (res.ok) {
-                toast.success('Société enregistrée avec succès !');
-                setIsOpen(false);
-                // Optional: trigger global state update or page refresh
-                // window.location.reload(); 
-            } else {
-                toast.error(result.error || "Erreur lors de l'enregistrement");
-            }
+            toast.success('Société enregistrée avec succès !');
+            setIsOpen(false);
+            // Optional: trigger global state update or page refresh
+            // window.location.reload(); 
         } catch (error) {
             console.error('Submit Error:', error);
-            toast.error("Erreur de connexion au serveur");
+            const errorMessage = error.response?.data?.error || "Erreur lors de l'enregistrement";
+            toast.error(errorMessage);
         } finally {
             setIsLoading(false);
         }
@@ -295,9 +285,14 @@ export default function CompanyOnboardingModal() {
                                             name="siret"
                                             value={formData.siret}
                                             onChange={handleChange}
+                                            onBlur={handleSiretBlur}
                                             placeholder="14 chiffres"
-                                            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                            className={`w-full px-4 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 outline-none transition-all ${
+                                                siretError ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-primary/20 focus:border-primary'
+                                            }`}
                                         />
+                                        {isCheckingSiret && <p className="text-xs text-blue-500">Vérification...</p>}
+                                        {siretError && <p className="text-xs text-red-500">{siretError}</p>}
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-sm font-medium text-slate-700">Numéro TVA (Optionnel)</label>

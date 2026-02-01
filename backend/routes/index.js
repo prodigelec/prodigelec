@@ -9,6 +9,6 @@ const companyRoutes = require('./company');
 router.use('/auth', authRoutes);
 
 // Protected routes
-router.use('/company', authMiddleware, companyRoutes);
+router.use('/company', companyRoutes);
 
 module.exports = router;

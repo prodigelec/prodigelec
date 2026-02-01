@@ -2,37 +2,29 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Building2 } from 'lucide-react';
+import axios from 'axios';
 
 async function validateCode(code) {
     try {
-        const res = await fetch(`${process.env.BACKEND_URL || 'http://localhost:5000'}/api/auth/validate-code`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ code }),
-            cache: 'no-store'
-        });
-        if (!res.ok) return false;
-        const data = await res.json();
-        return data.valid;
+        const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+        const res = await axios.post(`${appUrl}/api/auth/validate-code`, { code });
+        return res.data.valid;
     } catch (error) {
-        console.error('Error validating code:', error);
+        console.error('Error validating code:', error.message);
         return false;
     }
 }
 
-async function getCompanyData() {
+async function getCompanyData(code) {
     try {
-        const res = await fetch(`${process.env.BACKEND_URL || 'http://localhost:5000'}/api/company/get`, {
-            cache: 'no-store',
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+        // Pass the code as a query param so the API route can forward it as a header
+        const res = await axios.get(`${appUrl}/api/company/get`, {
+            params: { code }
         });
-        
-        if (!res.ok) return null;
-        return await res.json();
+        return res.data;
     } catch (error) {
-        console.error('Error fetching company:', error);
+        console.error('Error fetching company:', error.message);
         return null;
     }
 }
@@ -50,7 +42,7 @@ export default async function DynamicPortalLayout({ children, params }) {
         redirect('/auth/crm-login');
     }
 
-    const companyData = await getCompanyData();
+    const companyData = await getCompanyData(code);
     const company = companyData?.company;
 
     const navItems = [
