@@ -17,7 +17,9 @@ const customerSchema = Joi.object({
     delivery_address: Joi.string().allow('', null),
     delivery_city: Joi.string().allow('', null),
     delivery_zip_code: Joi.string().allow('', null),
-    payment_terms: Joi.string().allow('', null)
+    payment_terms: Joi.string().allow('', null),
+    tags: Joi.array().items(Joi.string()).default([]),
+    status: Joi.string().valid('active', 'inactive', 'lead').default('active')
 }).custom((value, helpers) => {
     // Custom validation: 
     // If individual, first_name and last_name are required (or at least one of them usually, but let's be strict if we want, or loose)

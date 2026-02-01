@@ -6,11 +6,13 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import CustomerModal from './CustomerModal';
 import ConfirmModal from '@/components/ui/ConfirmModal';
+import CustomSelect from '@/components/ui/CustomSelect';
 
 export default function CustomerList() {
     const [customers, setCustomers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
+    const [filterType, setFilterType] = useState('all');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedCustomer, setSelectedCustomer] = useState(null);
     
@@ -36,7 +38,36 @@ export default function CustomerList() {
         fetchCustomers();
     }, []);
 
+    const filterOptions = [
+        { value: 'all', label: 'Tous les clients' },
+        {
+            label: 'Type',
+            options: [
+                { value: 'individual', label: 'Particuliers' },
+                { value: 'professional', label: 'Professionnels' }
+            ]
+        },
+        {
+            label: 'Tags',
+            options: [
+                { value: 'VIP', label: 'VIP' },
+                { value: 'Mauvais Payeur', label: 'Mauvais Payeur' },
+                { value: 'Nouveau', label: 'Nouveau' },
+                { value: 'Gros Volume', label: 'Gros Volume' }
+            ]
+        }
+    ];
+
     const filteredCustomers = customers.filter(c => {
+        // Filter by Type or Tag
+        if (filterType !== 'all') {
+            if (filterType === 'individual' && c.type !== 'individual') return false;
+            if (filterType === 'professional' && c.type !== 'professional') return false;
+            if (['VIP', 'Mauvais Payeur', 'Nouveau', 'Gros Volume'].includes(filterType)) {
+                if (!c.tags || !c.tags.includes(filterType)) return false;
+            }
+        }
+
         const term = searchTerm.toLowerCase();
         return (
             c.first_name?.toLowerCase().includes(term) ||
@@ -89,15 +120,25 @@ export default function CustomerList() {
         <div className="space-y-6">
             {/* Header Actions */}
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-                <div className="relative w-full sm:w-96">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-                    <input 
-                        type="text" 
-                        placeholder="Rechercher un client..." 
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all shadow-sm"
-                    />
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto flex-1">
+                    <div className="relative w-full sm:w-96">
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                        <input 
+                            type="text" 
+                            placeholder="Rechercher un client..." 
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)] outline-none transition-all shadow-sm"
+                        />
+                    </div>
+                    <div className="w-full sm:w-48">
+                        <CustomSelect
+                            value={filterType}
+                            onChange={setFilterType}
+                            options={filterOptions}
+                            placeholder="Filtrer par..."
+                        />
+                    </div>
                 </div>
                 <button 
                     onClick={handleCreate}
@@ -136,7 +177,11 @@ export default function CustomerList() {
                                     <tr key={customer.id} className="hover:bg-slate-50/50 transition-colors group cursor-pointer" onClick={() => handleEdit(customer)}>
                                         <td className="px-6 py-4">
                                             <div className="flex items-center gap-4">
-                                                <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold shrink-0 ${customer.type === 'professional' ? 'bg-blue-600' : 'bg-emerald-500'}`}>
+                                                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0 ${
+                                                    customer.type === 'professional' 
+                                                    ? 'bg-(--color-info-soft) text-(--color-info)' 
+                                                    : 'bg-(--color-primary-soft) text-primary'
+                                                }`}>
                                                     {customer.type === 'professional' ? <Building2 size={18} /> : <User size={18} />}
                                                 </div>
                                                 <div>
@@ -152,6 +197,40 @@ export default function CustomerList() {
                                                         {customer.type === 'professional' ? 'Société' : 'Particulier'}
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex flex-col gap-2 items-start">
+                                                {/* Status Badge */}
+                                                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                                                    customer.status === 'inactive' ? 'bg-slate-100 text-slate-500' :
+                                                    customer.status === 'lead' ? 'bg-(--color-info-soft) text-(--color-info)' :
+                                                    'bg-(--color-primary-soft) text-primary)'
+                                                }`}>
+                                                    {customer.status === 'inactive' ? 'Inactif' :
+                                                     customer.status === 'lead' ? 'Prospect' : 'Actif'}
+                                                </span>
+                                                
+                                                {/* Tags */}
+                                                {customer.tags && customer.tags.length > 0 && (
+                                                    <div className="flex flex-wrap gap-1">
+                                                        {customer.tags.map((tag, idx) => {
+                                                            const tagColors = {
+                                                                'VIP': 'bg-accent-soft border-accent/30 text-accent',
+                                                                'Mauvais Payeur': 'bg-(--color-danger-soft) border-(--color-danger)/30 text-(--color-danger)',
+                                                                'Nouveau': 'bg-(--color-info-soft) border-(--color-info)/30 text-(--color-info)',
+                                                                'Gros Volume': 'bg-(--color-primary-soft) border-(--color-primary)/30 text-(--color-primary)'
+                                                            };
+                                                            return (
+                                                                <span key={idx} className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium border ${
+                                                                    tagColors[tag] || 'bg-slate-50 border-slate-200 text-slate-600'
+                                                                }`}>
+                                                                    {tag}
+                                                                </span>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                )}
                                             </div>
                                         </td>
                                         <td className="px-6 py-4">

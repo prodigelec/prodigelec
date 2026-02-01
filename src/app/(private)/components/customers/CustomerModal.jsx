@@ -1,11 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X, Loader2, User, Building2, MapPin, Mail, Phone, FileText } from 'lucide-react';
+import { X, Loader2, User, Building2, MapPin, Mail, Phone, FileText, Tag } from 'lucide-react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import AddressAutocomplete from '@/components/ui/AddressAutocomplete';
 import SiretAutocomplete from '@/components/ui/SiretAutocomplete';
+import CustomSelect from '@/components/ui/CustomSelect';
 
 export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEdit = null }) {
     const [isLoading, setIsLoading] = useState(false);
@@ -25,6 +26,8 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
         delivery_city: '', // New
         delivery_zip_code: '', // New
         payment_terms: '', // New
+        status: 'active', // New
+        tags: [], // New
         notes: ''
     });
 
@@ -46,6 +49,8 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                 delivery_city: customerToEdit.delivery_city || '',
                 delivery_zip_code: customerToEdit.delivery_zip_code || '',
                 payment_terms: customerToEdit.payment_terms || '',
+                status: customerToEdit.status || 'active',
+                tags: customerToEdit.tags || [],
                 notes: customerToEdit.notes || ''
             });
         } else {
@@ -66,6 +71,8 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                 delivery_city: '',
                 delivery_zip_code: '',
                 payment_terms: '',
+                status: 'active',
+                tags: [],
                 notes: ''
             });
         }
@@ -74,6 +81,17 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleTagToggle = (tag) => {
+        setFormData(prev => {
+            const currentTags = prev.tags || [];
+            if (currentTags.includes(tag)) {
+                return { ...prev, tags: currentTags.filter(t => t !== tag) };
+            } else {
+                return { ...prev, tags: [...currentTags, tag] };
+            }
+        });
     };
 
     const handleSiretSelect = (data) => {
@@ -87,6 +105,22 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
             city: data.city
         }));
     };
+
+    const paymentTermsOptions = [
+        { value: 'comptant', label: 'Comptant' },
+        { value: 'reception', label: 'A réception' },
+        { value: '30_days', label: '30 jours net' },
+        { value: '30_days_eom', label: '30 jours fin de mois' },
+        { value: '45_days_eom', label: '45 jours fin de mois' },
+        { value: '60_days', label: '60 jours net' },
+        { value: '60_days_eom', label: '60 jours fin de mois' }
+    ];
+
+    const statusOptions = [
+        { value: 'active', label: 'Actif' },
+        { value: 'inactive', label: 'Inactif' },
+        { value: 'lead', label: 'Prospect' }
+    ];
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -146,7 +180,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                 <form onSubmit={handleSubmit} className="p-6 overflow-y-auto space-y-6">
                     {/* Type Selection */}
                     <div className="flex gap-4">
-                        <label className={`flex-1 flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${formData.type === 'individual' ? 'border-primary bg-primary/5' : 'border-slate-100 hover:border-slate-200'}`}>
+                        <label className={`flex-1 flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${formData.type === 'individual' ? 'border-primary/30 bg-primary-soft' : 'border-slate-100 hover:border-slate-200'}`}>
                             <input 
                                 type="radio" 
                                 name="type" 
@@ -155,16 +189,16 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                                 onChange={handleChange}
                                 className="hidden" 
                             />
-                            <div className={`p-2 rounded-full ${formData.type === 'individual' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-400'}`}>
+                            <div className={`p-2 rounded-full ${formData.type === 'individual' ? 'bg-primary/10 text-primary' : 'bg-slate-100 text-slate-400'}`}>
                                 <User size={20} />
                             </div>
                             <div>
-                                <div className="font-semibold text-sm text-slate-900">Particulier</div>
-                                <div className="text-xs text-slate-500">Pour les particuliers</div>
+                                <div className={`font-semibold text-sm ${formData.type === 'individual' ? 'text-primary' : 'text-slate-900'}`}>Particulier</div>
+                                <div className={`text-xs ${formData.type === 'individual' ? 'text-primary/80' : 'text-slate-500'}`}>Pour les particuliers</div>
                             </div>
                         </label>
                         
-                        <label className={`flex-1 flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${formData.type === 'professional' ? 'border-primary bg-primary/5' : 'border-slate-100 hover:border-slate-200'}`}>
+                        <label className={`flex-1 flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${formData.type === 'professional' ? 'border-(--color-info)/30 bg-(--color-info-soft)' : 'border-slate-100 hover:border-slate-200'}`}>
                             <input 
                                 type="radio" 
                                 name="type" 
@@ -173,12 +207,12 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                                 onChange={handleChange}
                                 className="hidden" 
                             />
-                            <div className={`p-2 rounded-full ${formData.type === 'professional' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-400'}`}>
+                            <div className={`p-2 rounded-full ${formData.type === 'professional' ? 'bg-(--color-info)/10 text-info' : 'bg-slate-100 text-slate-400'}`}>
                                 <Building2 size={20} />
                             </div>
                             <div>
-                                <div className="font-semibold text-sm text-slate-900">Professionnel</div>
-                                <div className="text-xs text-slate-500">Pour les entreprises</div>
+                                <div className={`font-semibold text-sm ${formData.type === 'professional' ? 'text-info' : 'text-slate-900'}`}>Professionnel</div>
+                                <div className={`text-xs ${formData.type === 'professional' ? 'text-info/80' : 'text-slate-500'}`}>Pour les entreprises</div>
                             </div>
                         </label>
                     </div>
@@ -358,51 +392,89 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                         </h3>
                          <div className="space-y-2">
                             <label className="text-sm font-medium text-slate-700">Conditions de paiement</label>
-                            <select 
-                                name="payment_terms"
+                            <CustomSelect 
                                 value={formData.payment_terms}
-                                onChange={handleChange}
-                                className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none appearance-none"
-                            >
-                                <option value="">Sélectionner...</option>
-                                <option value="comptant">Comptant</option>
-                                <option value="reception">A réception</option>
-                                <option value="30_days">30 jours net</option>
-                                <option value="30_days_eom">30 jours fin de mois</option>
-                                <option value="45_days_eom">45 jours fin de mois</option>
-                                <option value="60_days">60 jours net</option>
-                                <option value="60_days_eom">60 jours fin de mois</option>
-                            </select>
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-slate-700">Notes</label>
-                            <textarea 
-                                name="notes"
-                                value={formData.notes}
-                                onChange={handleChange}
-                                placeholder="Informations complémentaires..."
-                                rows={3}
-                                className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none resize-none"
+                                onChange={(value) => setFormData(prev => ({ ...prev, payment_terms: value }))}
+                                options={paymentTermsOptions}
+                                placeholder="Sélectionner..."
                             />
+                        </div>
+
+                        <div className="space-y-4 pt-2 border-t border-slate-100">
+                            <h3 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
+                                <Tag size={16} className="text-slate-400" /> Classification
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-slate-700">Statut</label>
+                                    <CustomSelect 
+                                        value={formData.status}
+                                        onChange={(value) => setFormData(prev => ({ ...prev, status: value }))}
+                                        options={statusOptions}
+                                        placeholder="Sélectionner..."
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-slate-700">Tags</label>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['VIP', 'Mauvais Payeur', 'Nouveau', 'Gros Volume'].map(tag => {
+                                            const tagColors = {
+                                                'VIP': 'bg-(--color-accent-soft) border-(--color-accent)/30 text-(--color-accent)',
+                                                'Mauvais Payeur': 'bg-(--color-danger-soft) border-(--color-danger)/30 text-(--color-danger)',
+                                                'Nouveau': 'bg-(--color-info-soft) border-(--color-info)/30 text-(--color-info)',
+                                                'Gros Volume': 'bg-(--color-primary-soft) border-(--color-primary)/30 text-(--color-primary)'
+                                            };
+                                            const isActive = formData.tags && formData.tags.includes(tag);
+                                            
+                                            return (
+                                                <button
+                                                    key={tag}
+                                                    type="button"
+                                                    onClick={() => handleTagToggle(tag)}
+                                                    className={`px-3 py-1 text-xs rounded-full border transition-colors ${
+                                                        isActive 
+                                                        ? (tagColors[tag] || 'bg-primary-soft border-primary/30 text-primary') + ' font-medium'
+                                                        : 'bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-300'
+                                                    }`}
+                                                >
+                                                    {tag}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="flex justify-end gap-3 pt-4 border-t border-slate-100">
-                        <button 
-                            type="button" 
-                            onClick={onClose}
-                            className="px-4 py-2 text-slate-600 font-medium hover:bg-slate-100 rounded-lg transition-colors"
-                        >
-                            Annuler
-                        </button>
-                        <button 
-                            type="submit"
-                            disabled={isLoading}
-                            className="px-6 py-2 bg-primary text-white rounded-lg font-bold hover:bg-primary-dark transition-colors flex items-center gap-2 disabled:opacity-70"
-                        >
-                            {isLoading ? <Loader2 className="animate-spin" size={18} /> : 'Enregistrer'}
-                        </button>
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium text-slate-700">Notes</label>
+                        <textarea 
+                            name="notes"
+                            value={formData.notes}
+                            onChange={handleChange}
+                            placeholder="Informations complémentaires..."
+                            rows={3}
+                            className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)] outline-none resize-none"
+                        />
                     </div>
+                </div>
+
+                <div className="flex justify-end gap-3 pt-4 border-t border-slate-100">
+                    <button 
+                        type="button" 
+                        onClick={onClose}
+                        className="px-4 py-2 text-slate-600 font-medium hover:bg-slate-100 rounded-lg transition-colors"
+                    >
+                        Annuler
+                    </button>
+                    <button 
+                        type="submit"
+                        disabled={isLoading}
+                        className="px-6 py-2 bg-[var(--color-primary)] text-white rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center gap-2 disabled:opacity-70"
+                    >
+                        {isLoading ? <Loader2 className="animate-spin" size={18} /> : 'Enregistrer'}
+                    </button>
+                </div>
                 </form>
             </div>
         </div>

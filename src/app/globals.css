@@ -45,6 +45,13 @@ body {
     --color-accent: #f97316;
     /* Coral/Orange */
     --color-accent-soft: #fff7ed;
+    
+    --color-info: #3b82f6;
+    --color-info-soft: #eff6ff;
+    
+    --color-danger: #ef4444;
+    --color-danger-soft: #fef2f2;
+
     --color-slate-900: #1e293b;
     --color-slate-500: #64748b;
     --color-slate-50: #f8fafc;
@@ -82,7 +89,7 @@ body {
     /* Portal Specific Styles */
     .portal-card {
         background-color: white;
-        @apply border border-slate-200 rounded-[2rem] shadow-sm;
+        @apply border border-slate-200 rounded-4xl shadow-sm;
         transition: all 0.3s ease;
     }
 
