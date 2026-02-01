@@ -34,11 +34,12 @@ const createCustomer = async (customerData) => {
     return data;
 };
 
-const updateCustomer = async (id, customerData) => {
+const updateCustomer = async (id, companyId, customerData) => {
     const { data, error } = await supabase
         .from('customers')
         .update(customerData)
         .eq('id', id)
+        .eq('company_id', companyId)
         .select()
         .single();
 
@@ -46,11 +47,12 @@ const updateCustomer = async (id, customerData) => {
     return data;
 };
 
-const deleteCustomer = async (id) => {
+const deleteCustomer = async (id, companyId) => {
     const { error } = await supabase
         .from('customers')
         .delete()
-        .eq('id', id);
+        .eq('id', id)
+        .eq('company_id', companyId);
 
     if (error) throw new Error(error.message);
     return true;
