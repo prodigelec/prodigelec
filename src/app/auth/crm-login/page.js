@@ -1,5 +1,4 @@
 import CRMLoginClient from './CRMLoginClient';
-import axios from 'axios';
 
 /**
  * Server-side entry for CRM Login.
@@ -13,8 +12,20 @@ export default async function CRMLoginPage() {
 
     try {
         // Call the Next.js API route which acts as a proxy to the backend
-        const response = await axios.get(`${appUrl}/api/auth/access-code`);
-        initialCode = response.data.code;
+        // Using fetch for better Server Component compatibility
+        const response = await fetch(`${appUrl}/api/auth/access-code`, {
+            cache: 'no-store',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            initialCode = data.code;
+        } else {
+            console.error(`Server-side code generation failed with status: ${response.status}`);
+        }
     } catch (e) {
         console.error('Server-side code generation failed:', e.message);
     }
