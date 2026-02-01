@@ -25,6 +25,10 @@ const getCustomerById = async (req, res, next) => {
 const createCustomer = async (req, res, next) => {
     try {
         const companyId = req.user.company_id;
+
+        if (!companyId) {
+            return res.status(401).json({ error: 'Session incomplète. Veuillez vous reconnecter.' });
+        }
         
         // Validate input
         const { error, value } = customerSchema.validate({ ...req.body, company_id: companyId });

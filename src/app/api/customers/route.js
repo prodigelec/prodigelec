@@ -66,6 +66,7 @@ export async function POST(request) {
         console.error('API Proxy Error (customers-create):', error.message);
         
         if (error.response) {
+            console.error('Backend Response:', error.response.data);
             return NextResponse.json(
                 { error: error.response.data?.error || 'Backend Error' },
                 { status: error.response.status }

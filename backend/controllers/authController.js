@@ -1,4 +1,5 @@
 const authService = require('../services/authService');
+const { supabase } = require('../config/supabase');
 require('dotenv').config();
 
 exports.login = async (req, res) => {
@@ -12,7 +13,22 @@ exports.login = async (req, res) => {
         return res.status(401).json({ error: 'Identifiants incorrects.' });
     }
 
-    const token = authService.generateToken({ user: 'admin', role: 'admin' });
+    // Fetch the main company ID
+    // Since this is a single-tenant app for now, we take the first company found
+    // or we could match by email if needed.
+    const { data: company, error } = await supabase
+        .from('companies')
+        .select('id')
+        .limit(1)
+        .single();
+
+    const companyId = company ? company.id : null;
+
+    const token = authService.generateToken({ 
+        user: 'admin', 
+        role: 'admin',
+        company_id: companyId 
+    });
 
     res.cookie('token', token, {
         httpOnly: true,

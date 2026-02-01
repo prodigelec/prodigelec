@@ -5,6 +5,7 @@ import { Search, Plus, User, Building2, Phone, Mail, MapPin, Loader2, Pencil, Tr
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import CustomerModal from './CustomerModal';
+import ConfirmModal from '@/components/ui/ConfirmModal';
 
 export default function CustomerList() {
     const [customers, setCustomers] = useState([]);
@@ -12,6 +13,11 @@ export default function CustomerList() {
     const [searchTerm, setSearchTerm] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedCustomer, setSelectedCustomer] = useState(null);
+    
+    // Delete Modal State
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [customerToDelete, setCustomerToDelete] = useState(null);
+    const [isDeleting, setIsDeleting] = useState(false);
 
     const fetchCustomers = async () => {
         setIsLoading(true);
@@ -46,17 +52,27 @@ export default function CustomerList() {
         setIsModalOpen(true);
     };
 
-    const handleDelete = async (e, customerId) => {
+    const handleDeleteClick = (e, customer) => {
         e.stopPropagation(); // Prevent row click
-        if (!window.confirm('Êtes-vous sûr de vouloir supprimer ce client ?')) return;
+        setCustomerToDelete(customer);
+        setIsDeleteModalOpen(true);
+    };
 
+    const handleConfirmDelete = async () => {
+        if (!customerToDelete) return;
+        
+        setIsDeleting(true);
         try {
-            await axios.delete(`/api/customers/${customerId}`);
+            await axios.delete(`/api/customers/${customerToDelete.id}`);
             toast.success('Client supprimé avec succès');
             fetchCustomers();
+            setIsDeleteModalOpen(false);
+            setCustomerToDelete(null);
         } catch (error) {
             console.error('Error deleting customer:', error);
             toast.error('Erreur lors de la suppression');
+        } finally {
+            setIsDeleting(false);
         }
     };
 
@@ -175,7 +191,7 @@ export default function CustomerList() {
                                                     <Pencil size={18} />
                                                 </button>
                                                 <button 
-                                                    onClick={(e) => handleDelete(e, customer.id)}
+                                                    onClick={(e) => handleDeleteClick(e, customer)}
                                                     className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
                                                     title="Supprimer"
                                                 >
@@ -196,6 +212,18 @@ export default function CustomerList() {
                 onClose={() => setIsModalOpen(false)} 
                 onSuccess={handleSuccess}
                 customerToEdit={selectedCustomer}
+            />
+
+            <ConfirmModal 
+                isOpen={isDeleteModalOpen}
+                onClose={() => setIsDeleteModalOpen(false)}
+                onConfirm={handleConfirmDelete}
+                title="Supprimer le client"
+                message={`Êtes-vous sûr de vouloir supprimer le client ${customerToDelete?.company_name || (customerToDelete?.first_name + ' ' + customerToDelete?.last_name)} ? Cette action est irréversible.`}
+                confirmText="Supprimer"
+                cancelText="Annuler"
+                isDangerous={true}
+                isLoading={isDeleting}
             />
         </div>
     );
