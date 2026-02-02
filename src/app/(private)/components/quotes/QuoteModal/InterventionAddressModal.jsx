@@ -25,7 +25,7 @@ export default function InterventionAddressModal({ isOpen, onClose, onSave, init
     };
 
     return (
-        <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-110 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
              <div className="bg-white rounded-2xl w-full max-w-md shadow-2xl flex flex-col animate-in zoom-in-95 duration-200">
                 {/* Header */}
                 <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50 rounded-t-2xl">
@@ -62,7 +62,7 @@ export default function InterventionAddressModal({ isOpen, onClose, onSave, init
                             onChange={(e) => setAddress(e.target.value)}
                             onSelect={handleSelectAddress}
                             placeholder="Ex: 12 Rue de la Paix, Paris"
-                            className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-700 font-medium focus:ring-2 focus:ring-[var(--color-primary)]/10 focus:border-[var(--color-primary)] outline-none"
+                            className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-700 font-medium focus:ring-2 focus:ring-[var(--color-primary)]/10 focus:border-primary outline-none"
                         />
                     </div>
                 </div>

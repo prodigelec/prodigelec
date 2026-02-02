@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X, Save, BookOpen, Calculator, Package, Wrench } from 'lucide-react';
+import { X, Save, BookOpen, Calculator, Package, Wrench, Trash2 } from 'lucide-react';
 import CatalogModal from './CatalogModal';
 
-export default function QuoteLineModal({ isOpen, onClose, onSave, initialData }) {
+export default function QuoteLineModal({ isOpen, onClose, onSave, onDelete, initialData }) {
+    // Force re-render
     const [formData, setFormData] = useState({
         type: 'service',
         description: '',
@@ -57,7 +58,7 @@ export default function QuoteLineModal({ isOpen, onClose, onSave, initialData })
     const total = formData.quantity * formData.unit_price;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
              {/* Modal Content */}
              <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-in zoom-in-95 duration-200">
                 {/* Header */}
@@ -171,15 +172,27 @@ export default function QuoteLineModal({ isOpen, onClose, onSave, initialData })
                 </div>
 
                 {/* Footer */}
-                <div className="p-4 border-t border-slate-100 bg-slate-50 flex justify-end gap-3">
-                    <button onClick={onClose} className="px-4 py-2 text-slate-600 font-bold hover:bg-slate-200 rounded-lg transition-colors">Annuler</button>
-                    <button 
-                        onClick={() => onSave(formData)} 
-                        className="px-6 py-2 bg-[var(--color-primary)] text-white font-bold rounded-lg hover:bg-[var(--color-primary-dark)] transition-colors flex items-center gap-2"
-                    >
-                        <Save size={18} />
-                        Enregistrer
-                    </button>
+                <div className="p-4 border-t border-slate-100 bg-slate-50 flex justify-between gap-3">
+                    {initialData && onDelete ? (
+                        <button 
+                            onClick={onDelete}
+                            className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                            title="Supprimer la ligne"
+                        >
+                            <Trash2 size={20} />
+                        </button>
+                    ) : <div></div>}
+                    
+                    <div className="flex gap-3">
+                        <button onClick={onClose} className="px-4 py-2 text-slate-600 font-bold hover:bg-slate-200 rounded-lg transition-colors">Annuler</button>
+                        <button 
+                            onClick={() => onSave(formData)} 
+                            className="px-6 py-2 bg-[var(--color-primary)] text-white font-bold rounded-lg hover:bg-[var(--color-primary-dark)] transition-colors flex items-center gap-2"
+                        >
+                            <Save size={18} />
+                            Enregistrer
+                        </button>
+                    </div>
                 </div>
              </div>
 

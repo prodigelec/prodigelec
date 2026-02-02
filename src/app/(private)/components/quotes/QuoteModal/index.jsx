@@ -54,37 +54,60 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
 
     // Initialize Form
     useEffect(() => {
-        if (quote) {
-            setFormData({
-                customer_id: quote.customer_id,
-                date: quote.date ? new Date(quote.date).toISOString().split('T')[0] : '',
-                valid_until: quote.valid_until ? new Date(quote.valid_until).toISOString().split('T')[0] : '',
-                status: quote.status,
-                items: quote.items || [],
-                notes: quote.notes || '',
-                intervention_address: quote.intervention_address || '', // Load address
-                intervention_contact: quote.intervention_contact || '',
-                terms: quote.terms || 'Valable 30 jours. Acompte de 50% à la commande.'
-            });
-            setShowInterventionAddress(!!quote.intervention_address);
-        } else {
-            // Default validity 1 month
-            const today = new Date();
-            const validDate = new Date(today.setMonth(today.getMonth() + 1)).toISOString().split('T')[0];
+        const initForm = async () => {
+            if (quote && isOpen) {
+                setIsLoading(true);
+                try {
+                    // Fetch full quote details to get items
+                    const { data: fullQuote } = await axios.get(`/api/quotes/${quote.id}`);
+                    
+                    setFormData({
+                        customer_id: fullQuote.customer_id,
+                        date: fullQuote.date ? new Date(fullQuote.date).toISOString().split('T')[0] : '',
+                        valid_until: fullQuote.valid_until ? new Date(fullQuote.valid_until).toISOString().split('T')[0] : '',
+                        status: fullQuote.status,
+                        items: (fullQuote.items || []).map(item => ({
+                            ...item,
+                            type: item.item_type || item.type || 'service',
+                            vat_rate: item.tva_rate !== undefined ? item.tva_rate : (item.vat_rate !== undefined ? item.vat_rate : 20),
+                            unity: item.unit || item.unity || 'unité',
+                            quantity: Number(item.quantity),
+                            unit_price: Number(item.unit_price),
+                            description: item.description || ''
+                        })),
+                        notes: fullQuote.notes || '',
+                        intervention_address: fullQuote.intervention_address || '', 
+                        intervention_contact: fullQuote.intervention_contact || '',
+                        terms: fullQuote.terms || 'Valable 30 jours. Acompte de 50% à la commande.'
+                    });
+                    setShowInterventionAddress(!!fullQuote.intervention_address);
+                } catch (error) {
+                    console.error('Error fetching quote details:', error);
+                    toast.error('Erreur lors du chargement du devis');
+                } finally {
+                    setIsLoading(false);
+                }
+            } else if (isOpen) {
+                // Default validity 1 month
+                const today = new Date();
+                const validDate = new Date(today.setMonth(today.getMonth() + 1)).toISOString().split('T')[0];
 
-            setFormData({
-                customer_id: '',
-                date: new Date().toISOString().split('T')[0],
-                valid_until: validDate,
-                status: 'draft',
-                items: [{ type: 'service', description: '', quantity: 1, unit_price: 0, vat_rate: 20, unity: 'unité' }],
-                notes: '',
-                intervention_address: '',
-                intervention_contact: '',
-                terms: 'Valable 30 jours. Acompte de 50% à la commande.'
-            });
-            setShowInterventionAddress(false);
-        }
+                setFormData({
+                    customer_id: '',
+                    date: new Date().toISOString().split('T')[0],
+                    valid_until: validDate,
+                    status: 'draft',
+                    items: [{ type: 'service', description: '', quantity: 1, unit_price: 0, vat_rate: 20, unity: 'unité' }],
+                    notes: '',
+                    intervention_address: '',
+                    intervention_contact: '',
+                    terms: 'Valable 30 jours. Acompte de 50% à la commande.'
+                });
+                setShowInterventionAddress(false);
+            }
+        };
+
+        initForm();
     }, [quote, isOpen]);
 
     // Calculate Totals
@@ -171,6 +194,23 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
     };
 
     const saveQuote = async (newStatus = null) => {
+        // Frontend Validation
+        if (!formData.customer_id) {
+            toast.error('Veuillez sélectionner un client');
+            return;
+        }
+
+        if (!formData.items || formData.items.length === 0) {
+            toast.error('Le devis doit contenir au moins une ligne');
+            return;
+        }
+
+        const invalidItem = formData.items.find(item => !item.description || !item.description.trim());
+        if (invalidItem) {
+            toast.error('Toutes les lignes doivent avoir une description');
+            return;
+        }
+
         setIsLoading(true);
         try {
             // 1. Prepare items for backend (mapping fields)
@@ -203,23 +243,13 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
                 notes: formData.notes,
                 terms: formData.terms,
                 intervention_address: formData.intervention_address,
+                intervention_contact: formData.intervention_contact,
 
                 items: mappedItems
             };
 
-            // Handle intervention_address by appending to notes since backend doesn't support it natively yet
-    if (formData.intervention_address) {
-        let addressBlock = `📍 Adresse d'intervention : ${formData.intervention_address}`;
-        if (formData.intervention_contact) {
-            addressBlock = `👤 Contact sur place : ${formData.intervention_contact}\n` + addressBlock;
-        }
-        dataToSend.notes = (dataToSend.notes ? dataToSend.notes + '\n\n' : '') + addressBlock;
-    }
-    
-    // Clean up fields not in backend schema to avoid 400 Bad Request
-    delete dataToSend.intervention_address;
-    delete dataToSend.intervention_contact;
-    delete dataToSend.date; 
+            // Note: intervention_address and intervention_contact are now part of the schema, 
+            // so we don't need to append them to notes or delete them.
 
             if (quote) {
                 await axios.put(`/api/quotes/${quote.id}`, dataToSend);
@@ -232,6 +262,9 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
             onClose();
         } catch (error) {
             console.error('Error saving quote:', error);
+            if (error.response) {
+                console.error('Backend Error Response:', error.response.data);
+            }
             // Show more detailed error if available
             const msg = error.response?.data?.error || 'Erreur lors de l\'enregistrement';
             toast.error(msg);
@@ -241,14 +274,33 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
     };
 
     const handleSendEmail = async () => {
-        toast.error('Fonctionnalité en cours de développement');
-        // TODO: Implement email sending
+        if (!formData.customer_id) {
+            toast.error('Veuillez sélectionner un client');
+            return;
+        }
+
+        const customer = customers.find(c => c.id === formData.customer_id);
+        if (!customer) {
+            toast.error('Client introuvable');
+            return;
+        }
+
+        if (!customer.email) {
+            toast.error('Ce client n\'a pas d\'adresse email renseignée');
+            return;
+        }
+
+        const subject = encodeURIComponent(`Devis ${quote?.quote_number || 'PRODIGELEC'}`);
+        const body = encodeURIComponent(`Bonjour ${customer.first_name || ''} ${customer.last_name || ''},\n\nVeuillez trouver ci-joint votre devis.\n\nCordialement,\nL'équipe PRODIGELEC`);
+        
+        window.open(`mailto:${customer.email}?subject=${subject}&body=${body}`, '_blank');
+        toast.success('Client de messagerie ouvert');
     };
 
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-in fade-in duration-200">
             <div className="bg-white rounded-3xl w-full max-w-5xl h-[90vh] flex flex-col shadow-2xl animate-in zoom-in-95 duration-200" onClick={(e) => e.stopPropagation()}>
 
                 <QuoteHeader
@@ -258,7 +310,7 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
                     status={formData.status}
                 />
 
-                <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-10 md:p-12 space-y-8 bg-slate-50/50">
+                <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-4 md:p-10 space-y-6 md:space-y-8 bg-slate-50/50">
 
                     <QuoteClientInfo
                         formData={formData}

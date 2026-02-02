@@ -25,6 +25,8 @@ const quoteSchema = Joi.object({
     valid_until: Joi.date().iso().allow(null),
     notes: Joi.string().allow('', null),
     terms: Joi.string().allow('', null),
+    intervention_address: Joi.string().allow('', null),
+    intervention_contact: Joi.string().allow('', null),
 
     items: Joi.array().items(quoteItemSchema).min(1).required()
 });

@@ -4,20 +4,20 @@ import { Save, Send, PenTool } from 'lucide-react';
 
 export default function QuoteActions({ loading, status, onClose, onSave, onSign, onSend, isEditMode }) {
     return (
-        <div className="px-10 py-8 border-t border-slate-100 flex items-center justify-between bg-white z-10">
+        <div className="p-6 md:px-10 md:py-8 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-center justify-between gap-4 bg-white z-10">
             <button
                 type="button"
                 onClick={onClose}
-                className="px-6 py-2.5 rounded-xl font-bold text-slate-500 hover:bg-slate-50 hover:text-slate-700 transition-all"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-slate-500 hover:bg-slate-50 hover:text-slate-700 transition-all"
             >
                 Annuler
             </button>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
                 {isEditMode && (
                     <button
                         type="button"
                         onClick={onSign}
-                        className="flex items-center gap-2 bg-[var(--color-primary-soft)] text-[var(--color-primary)] px-6 py-2.5 rounded-xl font-bold border border-[var(--color-primary)]/20 hover:bg-[var(--color-primary)]/10 hover:border-[var(--color-primary)]/30 active:scale-[0.98] transition-all"
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[var(--color-primary-soft)] text-[var(--color-primary)] px-6 py-3 rounded-xl font-bold border border-[var(--color-primary)]/20 hover:bg-[var(--color-primary)]/10 hover:border-[var(--color-primary)]/30 active:scale-[0.98] transition-all"
                     >
                         <PenTool size={18} />
                         {status === 'signed' ? 'Voir Signature' : 'Signer'}
@@ -27,7 +27,7 @@ export default function QuoteActions({ loading, status, onClose, onSave, onSign,
                     type="submit"
                     onClick={onSave}
                     disabled={loading}
-                    className="flex items-center gap-2 bg-slate-900 text-white px-8 py-2.5 rounded-xl font-bold shadow-lg shadow-slate-900/10 hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-slate-900/10 hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     <Save size={18} />
                     {loading ? 'Enregistrement...' : 'Enregistrer'}
@@ -35,7 +35,7 @@ export default function QuoteActions({ loading, status, onClose, onSave, onSign,
                 <button
                     type="button"
                     onClick={onSend}
-                    className="flex items-center gap-2 bg-[var(--color-primary)] text-white px-8 py-2.5 rounded-xl font-bold shadow-lg shadow-[var(--color-primary)]/20 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[var(--color-primary)] text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-[var(--color-primary)]/20 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50"
                 >
                     <Send size={18} />
                     Envoyer
