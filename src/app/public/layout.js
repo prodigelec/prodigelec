@@ -1,4 +1,4 @@
-import "./globals.css";
+
 import Navbar from "@/app/public/components/layout/Navbar";
 import FloatingContactButton from "@/app/public/components/layout/FloatingContactButton";
 import Footer from "@/app/public/components/layout/Footer";
@@ -149,10 +149,12 @@ export default function PublicLayout({ children }) {
           })
         }}
       />
-      <Navbar />
-      {children}
-      <Footer />
-      <FloatingContactButton />
+      <div className="theme-public">
+        <Navbar />
+        {children}
+        <Footer />
+        <FloatingContactButton />
+      </div>
     </>
   );
 }

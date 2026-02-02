@@ -1,32 +1,81 @@
-const { supabase } = require('../config/supabase');
+const customerService = require('../services/customerService');
+const { customerSchema } = require('../validations/customer');
 
-exports.getAllCustomers = async (req, res) => {
+const getAllCustomers = async (req, res, next) => {
     try {
-        const { data, error } = await supabase
-            .from('customers')
-            .select('*');
-
-        if (error) {
-            if (error.code === '42P01') return res.json([]);
-            throw error;
-        }
-        res.json(data);
+        const companyId = req.user.company_id;
+        const customers = await customerService.getAllCustomers(companyId);
+        res.json(customers);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        next(error);
     }
 };
 
-exports.createCustomer = async (req, res) => {
+const getCustomerById = async (req, res, next) => {
     try {
-        const { name, email, phone, address } = req.body;
-        const { data, error } = await supabase
-            .from('customers')
-            .insert([{ name, email, phone, address }])
-            .select();
-
-        if (error) throw error;
-        res.status(201).json(data[0]);
+        const { id } = req.params;
+        const companyId = req.user.company_id;
+        const customer = await customerService.getCustomerById(id, companyId);
+        res.json(customer);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        next(error);
     }
+};
+
+const createCustomer = async (req, res, next) => {
+    try {
+        const companyId = req.user.company_id;
+
+        if (!companyId) {
+            return res.status(401).json({ error: 'Session incomplète. Veuillez vous reconnecter.' });
+        }
+        
+        // Validate input
+        const { error, value } = customerSchema.validate({ ...req.body, company_id: companyId });
+        if (error) {
+            return res.status(400).json({ error: error.details[0].message });
+        }
+
+        const customer = await customerService.createCustomer(value);
+        res.status(201).json(customer);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const updateCustomer = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const companyId = req.user.company_id;
+
+        // Validate input
+        const { error, value } = customerSchema.validate({ ...req.body, company_id: companyId });
+        if (error) {
+            return res.status(400).json({ error: error.details[0].message });
+        }
+
+        const customer = await customerService.updateCustomer(id, companyId, value);
+        res.json(customer);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const deleteCustomer = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const companyId = req.user.company_id;
+        await customerService.deleteCustomer(id, companyId);
+        res.status(204).send();
+    } catch (error) {
+        next(error);
+    }
+};
+
+module.exports = {
+    getAllCustomers,
+    getCustomerById,
+    createCustomer,
+    updateCustomer,
+    deleteCustomer
 };

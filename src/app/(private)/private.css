@@ -1,0 +1,92 @@
+/* 
+ * PRODIGELEC CRM - Private Theme (Pennylane-Inspired)
+ * Soft, colorful, and vibrant aesthetic.
+ */
+
+.theme-private {
+    /* Color Palette */
+    --color-primary: #10b981;
+    /* Emerald/Teal */
+    --color-primary-soft: #ecfdf5;
+
+    --color-secondary: #8b5cf6;
+    /* Violet */
+    --color-secondary-soft: #f5f3ff;
+
+    --color-accent: #f59e0b;
+    /* Amber */
+    --color-accent-soft: #fffbeb;
+
+    --color-info: #0ea5e9;
+    /* Sky Blue */
+    --color-info-soft: #f0f9ff;
+
+    --color-danger: #ef4444;
+    /* Rose/Red */
+    --color-danger-soft: #fef2f2;
+
+    --color-slate-900: #0f172a;
+    --color-slate-500: #64748b;
+    --color-slate-400: #94a3b8;
+    --color-slate-100: #f1f5f9;
+    --color-slate-50: #f8fafc;
+
+    background-color: #ffffff;
+    color: #0f172a;
+}
+
+/* Base Styles Scoped to Portal */
+.theme-private body {
+    background-color: #fafafa;
+}
+
+/* Custom Components */
+@layer components {
+    .portal-card {
+        background-color: #ffffff;
+        border: 1px solid #f1f5f9;
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portal-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        border-color: #e2e8f0;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        border-radius: 1rem;
+        font-weight: 600;
+        color: #64748b;
+        transition: all 0.2s;
+    }
+
+    .nav-item:hover {
+        background-color: #f8fafc;
+        color: #0f172a;
+    }
+
+    .nav-item-active {
+        background-color: #ecfdf5;
+        color: #10b981;
+    }
+
+    /* Gradient Backgrounds for Icons */
+    .icon-box-primary {
+        background: linear-gradient(135deg, #10b981, #059669);
+    }
+
+    .icon-box-secondary {
+        background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    }
+
+    .icon-box-accent {
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+}

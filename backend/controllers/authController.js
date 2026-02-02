@@ -1,21 +1,33 @@
-const jwt = require('jsonwebtoken');
-const { validateAccessCode, generateAccessCode } = require('../utils/accessCode');
+const authService = require('../services/authService');
+const { supabase } = require('../config/supabase');
 require('dotenv').config();
 
 exports.login = async (req, res) => {
-    const { password, accessCode } = req.body;
+    const { username, password, accessCode } = req.body;
 
-    if (!validateAccessCode(accessCode)) {
+    if (!authService.validateAccessCode(accessCode)) {
         return res.status(403).json({ error: 'Code d\'accès invalide ou expiré.' });
     }
 
-    // Placeholder password check
-    if (password !== 'admin123') {
-        return res.status(401).json({ error: 'Mot de passe incorrect.' });
+    if (!authService.verifyCredentials(username, password)) {
+        return res.status(401).json({ error: 'Identifiants incorrects.' });
     }
 
-    const token = jwt.sign({ user: 'admin', role: 'admin' }, process.env.JWT_SECRET, {
-        expiresIn: '8h',
+    // Fetch the main company ID
+    // Since this is a single-tenant app for now, we take the first company found
+    // or we could match by email if needed.
+    const { data: company, error } = await supabase
+        .from('companies')
+        .select('id')
+        .limit(1)
+        .single();
+
+    const companyId = company ? company.id : null;
+
+    const token = authService.generateToken({ 
+        user: 'admin', 
+        role: 'admin',
+        company_id: companyId 
     });
 
     res.cookie('token', token, {
@@ -25,7 +37,11 @@ exports.login = async (req, res) => {
         maxAge: 8 * 60 * 60 * 1000,
     });
 
-    res.json({ success: true, message: 'Connexion réussie.' });
+    res.json({
+        success: true,
+        message: 'Connexion réussie.',
+        accessCode: authService.generateAccessCode()
+    });
 };
 
 exports.logout = (req, res) => {
@@ -34,6 +50,12 @@ exports.logout = (req, res) => {
 };
 
 exports.getAccessCode = (req, res) => {
-    const code = generateAccessCode();
+    const code = authService.generateAccessCode();
     res.json({ code });
+};
+
+exports.validateCode = (req, res) => {
+    const { code } = req.body;
+    const isValid = authService.validateAccessCode(code);
+    res.json({ valid: isValid });
 };
