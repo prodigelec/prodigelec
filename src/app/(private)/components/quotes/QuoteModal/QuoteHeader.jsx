@@ -4,7 +4,7 @@ import { FileText, X } from 'lucide-react';
 
 export default function QuoteHeader({ quote, onClose, quoteNumber, status }) {
     return (
-        <div className="px-10 py-8 border-b border-slate-100 flex items-center justify-between bg-white sticky top-0 z-10">
+        <div className="p-4 md:px-10 md:py-8 border-b border-slate-100 flex items-center justify-between bg-white sticky top-0 z-10">
             <div className="flex items-center gap-4">
                 <div className="bg-[var(--color-primary-soft)] p-3 rounded-2xl text-[var(--color-primary)]">
                     <FileText size={24} />

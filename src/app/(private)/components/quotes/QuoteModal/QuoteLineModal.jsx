@@ -68,7 +68,7 @@ export default function QuoteLineModal({ isOpen, onClose, onSave, initialData })
                     <button onClick={onClose}><X size={20} className="text-slate-400 hover:text-slate-600" /></button>
                 </div>
 
-                <div className="p-6 space-y-6 overflow-y-auto">
+                <div className="p-4 md:p-6 space-y-4 md:space-y-6 overflow-y-auto">
                     {/* Catalog Button */}
                     <button 
                         onClick={() => setIsCatalogOpen(true)}

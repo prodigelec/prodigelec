@@ -258,7 +258,7 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
                     status={formData.status}
                 />
 
-                <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-10 md:p-12 space-y-8 bg-slate-50/50">
+                <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-4 md:p-12 space-y-6 md:space-y-8 bg-slate-50/50">
 
                     <QuoteClientInfo
                         formData={formData}

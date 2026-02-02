@@ -31,7 +31,49 @@ export default function QuoteItemsTable({ items, onItemChange, onUpdateItem, onA
 
     return (
         <div className="bg-white rounded-3xl p-1 shadow-sm border border-slate-100 overflow-hidden">
-            <table className="w-full">
+            
+            {/* Mobile View (Cards) */}
+            <div className="md:hidden divide-y divide-slate-100">
+                {items.map((item, index) => (
+                    <div key={index} className="p-4 flex flex-col gap-3 hover:bg-slate-50 transition-colors" onClick={() => openEditModal(index)}>
+                        <div className="flex justify-between items-start gap-4">
+                            <div className="flex gap-3">
+                                <div className={`w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center ${item.type === 'service' ? 'bg-amber-100 text-amber-600' : 'bg-emerald-100 text-emerald-600'}`}>
+                                    {item.type === 'service' ? <Wrench size={18} /> : <Package size={18} />}
+                                </div>
+                                <div>
+                                    <p className="text-sm font-bold text-slate-700 line-clamp-2">
+                                        {item.description || <span className="text-slate-400 italic">Aucune description...</span>}
+                                    </p>
+                                    <div className="flex items-center gap-2 mt-1">
+                                        <span className="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                                            {item.quantity} {item.unity}
+                                        </span>
+                                        <span className="text-xs text-slate-400">x {parseFloat(item.unit_price).toFixed(2)} €</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col items-end gap-2">
+                                <span className="text-sm font-bold text-slate-900">
+                                    {(item.quantity * item.unit_price).toFixed(2)} €
+                                </span>
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        onRemoveItem(index);
+                                    }}
+                                    className="p-2 bg-red-50 text-red-500 rounded-lg"
+                                >
+                                    <Trash2 size={16} />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Desktop View (Table) */}
+            <table className="w-full hidden md:table">
                 <thead>
                     <tr className="text-left text-xs font-bold text-slate-500 uppercase tracking-wider bg-slate-50/80 rounded-xl">
                         <th className="pb-4 pt-4 px-4 w-16 first:rounded-l-xl">Type</th>

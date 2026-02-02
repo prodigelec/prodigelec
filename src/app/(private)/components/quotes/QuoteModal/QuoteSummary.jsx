@@ -8,7 +8,7 @@ export default function QuoteSummary({
     signatureUrl // Si on veut afficher la signature
 }) {
     return (
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="space-y-6">
                 <div>
                     <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">

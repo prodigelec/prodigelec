@@ -34,9 +34,9 @@ export default function QuoteClientInfo({
             {/* Décoration d'arrière-plan */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full -translate-y-1/2 translate-x-1/2" />
 
-            <div className="relative grid grid-cols-12 gap-8 z-0">
+            <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 z-0">
                 {/* Client Selection */}
-                <div className="col-span-5">
+                <div className="col-span-1 md:col-span-5">
                     <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1">
                         Client <span className="text-red-400 text-sm">*</span>
                     </label>
@@ -112,7 +112,7 @@ export default function QuoteClientInfo({
                 />
 
                 {/* Dates */}
-                <div className="col-span-7 flex gap-6">
+                <div className="col-span-1 md:col-span-7 flex flex-col md:flex-row gap-4 md:gap-6">
                     <div className="flex-1">
                         <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-2">
                             <Calendar size={12} />
