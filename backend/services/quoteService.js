@@ -78,13 +78,17 @@ const updateQuote = async (id, quoteData) => {
         await supabase.from('quote_items').delete().eq('quote_id', id);
 
         // Insert new items
-        const itemsWithQuoteId = items.map(item => {
-            const { id: itemId, ...cleanItem } = item; // Remove old IDs if present
-            return {
-                ...cleanItem,
-                quote_id: id
-            };
-        });
+        const itemsWithQuoteId = items.map(item => ({
+            quote_id: id,
+            description: item.description,
+            quantity: item.quantity,
+            unit_price: item.unit_price,
+            tva_rate: item.tva_rate,
+            total_ht: item.total_ht,
+            item_type: item.item_type || 'service',
+            unit: item.unit || 'unité',
+            sort_order: item.sort_order || 0
+        }));
 
         const { error: itemsError } = await supabase
             .from('quote_items')

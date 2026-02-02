@@ -34,9 +34,9 @@ export default function QuoteClientInfo({
             {/* Décoration d'arrière-plan */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full -translate-y-1/2 translate-x-1/2" />
 
-            <div className="relative grid grid-cols-12 gap-8 z-0">
+            <div className="relative flex flex-col gap-6 z-0">
                 {/* Client Selection */}
-                <div className="col-span-5">
+                <div className="w-full">
                     <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1">
                         Client <span className="text-red-400 text-sm">*</span>
                     </label>
@@ -66,7 +66,7 @@ export default function QuoteClientInfo({
                             <button
                                 type="button"
                                 onClick={() => setIsAddressModalOpen(true)}
-                                className="group text-xs font-bold text-slate-500 hover:text-[var(--color-primary)] flex items-center gap-2 transition-all py-2 px-3 hover:bg-[var(--color-primary-soft)] rounded-lg"
+                                className="group text-xs font-bold text-slate-500 hover:text-[var(--color-primary)] flex items-center gap-2 transition-all py-2 px-3 hover:bg-[var(--color-primary-soft)] rounded-lg w-full md:w-auto"
                             >
                                 <div className={`p-1 rounded-full bg-slate-100 group-hover:bg-white transition-colors duration-200`}>
                                     <MapPin size={14} className="text-slate-400 group-hover:text-[var(--color-primary)]" />
@@ -112,7 +112,7 @@ export default function QuoteClientInfo({
                 />
 
                 {/* Dates */}
-                <div className="col-span-7 flex gap-6">
+                <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-1">
                         <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-2">
                             <Calendar size={12} />
