@@ -1,25 +1,55 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Plus, User, Building2, Phone, Mail, MapPin, Loader2, Pencil, Trash2 } from 'lucide-react';
+import { Search, Plus, User, Loader2 } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+
+// Sub-components
 import CustomerModal from './CustomerModal';
+import CustomerStats from './CustomerStats';
+import CustomerTableHeader from './CustomerTableHeader';
+import CustomerTableRow from './CustomerTableRow';
+import BulkActionsBar from './BulkActionsBar';
+import ExportDropdown from './ExportDropdown';
+
+// UI Components
 import ConfirmModal from '@/components/ui/ConfirmModal';
 import CustomSelect from '@/components/ui/CustomSelect';
 
+// Utils
+import { exportCustomersToCSV, exportCustomersToPDF } from './utils/customerExport';
+
 export default function CustomerList() {
+    // Data state
     const [customers, setCustomers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    // Filter state
     const [searchTerm, setSearchTerm] = useState('');
     const [filterType, setFilterType] = useState('all');
+
+    // Modal state
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedCustomer, setSelectedCustomer] = useState(null);
-    
-    // Delete Modal State
+
+    // Delete state
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [customerToDelete, setCustomerToDelete] = useState(null);
     const [isDeleting, setIsDeleting] = useState(false);
+
+    // Sorting state
+    const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+
+    // Multi-select state
+    const [selectedIds, setSelectedIds] = useState([]);
+    const [isBulkDeleteOpen, setIsBulkDeleteOpen] = useState(false);
+    const [isBulkDeleting, setIsBulkDeleting] = useState(false);
+
+    // Fetch customers on mount
+    useEffect(() => {
+        fetchCustomers();
+    }, []);
 
     const fetchCustomers = async () => {
         setIsLoading(true);
@@ -34,39 +64,25 @@ export default function CustomerList() {
         }
     };
 
-    useEffect(() => {
-        fetchCustomers();
-    }, []);
-
+    // Filter options
     const filterOptions = [
         { value: 'all', label: 'Tous les clients' },
-        {
-            label: 'Type',
-            options: [
-                { value: 'individual', label: 'Particuliers' },
-                { value: 'professional', label: 'Professionnels' }
-            ]
-        },
-        {
-            label: 'Tags',
-            options: [
-                { value: 'VIP', label: 'VIP' },
-                { value: 'Mauvais Payeur', label: 'Mauvais Payeur' },
-                { value: 'Nouveau', label: 'Nouveau' },
-                { value: 'Gros Volume', label: 'Gros Volume' }
-            ]
-        }
+        { value: 'professional', label: 'Professionnels' },
+        { value: 'syndic', label: 'Syndics' },
+        { value: 'individual', label: 'Particuliers' },
+        { value: 'active', label: 'Actifs' },
+        { value: 'lead', label: 'À relancer' },
+        { value: 'inactive', label: 'Inactifs' }
     ];
 
+    // Filter and sort customers
     const filteredCustomers = customers.filter(c => {
-        // Filter by Type or Tag
-        if (filterType !== 'all') {
-            if (filterType === 'individual' && c.type !== 'individual') return false;
-            if (filterType === 'professional' && c.type !== 'professional') return false;
-            if (['VIP', 'Mauvais Payeur', 'Nouveau', 'Gros Volume'].includes(filterType)) {
-                if (!c.tags || !c.tags.includes(filterType)) return false;
-            }
-        }
+        if (filterType === 'professional' && c.type !== 'professional') return false;
+        if (filterType === 'syndic' && c.type !== 'syndic') return false;
+        if (filterType === 'individual' && c.type !== 'individual') return false;
+        if (filterType === 'active' && c.status !== 'active') return false;
+        if (filterType === 'lead' && c.status !== 'lead') return false;
+        if (filterType === 'inactive' && c.status !== 'inactive') return false;
 
         const term = searchTerm.toLowerCase();
         return (
@@ -78,20 +94,64 @@ export default function CustomerList() {
         );
     });
 
+    const sortedCustomers = [...filteredCustomers].sort((a, b) => {
+        if (!sortConfig.key) return 0;
+
+        let aValue, bValue;
+        switch (sortConfig.key) {
+            case 'name':
+                aValue = a.type === 'professional' ? a.company_name : `${a.first_name} ${a.last_name}`;
+                bValue = b.type === 'professional' ? b.company_name : `${b.first_name} ${b.last_name}`;
+                break;
+            case 'email':
+                aValue = a.email || '';
+                bValue = b.email || '';
+                break;
+            case 'city':
+                aValue = a.city || '';
+                bValue = b.city || '';
+                break;
+            case 'status':
+                aValue = a.status || 'active';
+                bValue = b.status || 'active';
+                break;
+            default:
+                return 0;
+        }
+
+        aValue = aValue.toLowerCase();
+        bValue = bValue.toLowerCase();
+
+        if (aValue < bValue) return sortConfig.direction === 'asc' ? -1 : 1;
+        if (aValue > bValue) return sortConfig.direction === 'asc' ? 1 : -1;
+        return 0;
+    });
+
+    // Handlers
+    const handleSort = (key) => {
+        setSortConfig(prev => ({
+            key,
+            direction: prev.key === key && prev.direction === 'asc' ? 'desc' : 'asc'
+        }));
+    };
+
     const handleEdit = (customer) => {
         setSelectedCustomer(customer);
         setIsModalOpen(true);
     };
 
-    const handleDeleteClick = (e, customer) => {
-        e.stopPropagation(); // Prevent row click
+    const handleCreate = () => {
+        setSelectedCustomer(null);
+        setIsModalOpen(true);
+    };
+
+    const handleDeleteClick = (customer) => {
         setCustomerToDelete(customer);
         setIsDeleteModalOpen(true);
     };
 
     const handleConfirmDelete = async () => {
         if (!customerToDelete) return;
-        
         setIsDeleting(true);
         try {
             await axios.delete(`/api/customers/${customerToDelete.id}`);
@@ -107,28 +167,81 @@ export default function CustomerList() {
         }
     };
 
-    const handleCreate = () => {
-        setSelectedCustomer(null);
-        setIsModalOpen(true);
-    };
-
     const handleSuccess = () => {
         fetchCustomers();
+        setSelectedIds([]);
+    };
+
+    // Selection handlers
+    const handleSelectAll = () => {
+        if (selectedIds.length === sortedCustomers.length) {
+            setSelectedIds([]);
+        } else {
+            setSelectedIds(sortedCustomers.map(c => c.id));
+        }
+    };
+
+    const handleSelectOne = (customerId) => {
+        setSelectedIds(prev =>
+            prev.includes(customerId)
+                ? prev.filter(id => id !== customerId)
+                : [...prev, customerId]
+        );
+    };
+
+    // Bulk actions
+    const handleBulkDelete = async () => {
+        setIsBulkDeleting(true);
+        try {
+            await Promise.all(selectedIds.map(id => axios.delete(`/api/customers/${id}`)));
+            toast.success(`${selectedIds.length} client(s) supprimé(s) avec succès`);
+            fetchCustomers();
+            setSelectedIds([]);
+            setIsBulkDeleteOpen(false);
+        } catch (error) {
+            console.error('Error bulk deleting:', error);
+            toast.error('Erreur lors de la suppression');
+        } finally {
+            setIsBulkDeleting(false);
+        }
+    };
+
+    const handleBulkExportCSV = () => {
+        const selectedCustomers = customers.filter(c => selectedIds.includes(c.id));
+        exportCustomersToCSV(selectedCustomers, 'clients_selection');
+        setSelectedIds([]);
+    };
+
+    const handleBulkExportPDF = async () => {
+        const selectedCustomers = customers.filter(c => selectedIds.includes(c.id));
+        await exportCustomersToPDF(selectedCustomers, 'clients_selection', 'Clients Sélectionnés', 'Sélection de Clients');
+        setSelectedIds([]);
+    };
+
+    // Export all
+    const handleExportCSV = () => {
+        exportCustomersToCSV(filteredCustomers, 'clients_prodigelec');
+    };
+
+    const handleExportPDF = async () => {
+        await exportCustomersToPDF(filteredCustomers, 'clients_prodigelec');
     };
 
     return (
         <div className="space-y-6">
-            {/* Header Actions */}
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto flex-1">
+            <CustomerStats customers={customers} />
+
+            {/* Search, Filter, Export & Add */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+                <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
                     <div className="relative w-full sm:w-96">
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-                        <input 
-                            type="text" 
-                            placeholder="Rechercher un client..." 
+                        <input
+                            type="text"
+                            placeholder="Rechercher un client..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)] outline-none transition-all shadow-sm"
+                            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all shadow-sm"
                         />
                     </div>
                     <div className="w-full sm:w-48">
@@ -139,8 +252,12 @@ export default function CustomerList() {
                             placeholder="Filtrer par..."
                         />
                     </div>
+                    <ExportDropdown
+                        onExportCSV={handleExportCSV}
+                        onExportPDF={handleExportPDF}
+                    />
                 </div>
-                <button 
+                <button
                     onClick={handleCreate}
                     className="w-full sm:w-auto px-6 py-2.5 bg-primary text-white rounded-xl font-bold hover:bg-primary-dark transition-colors flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
                 >
@@ -149,7 +266,16 @@ export default function CustomerList() {
                 </button>
             </div>
 
-            {/* List */}
+            {/* Bulk Actions Bar */}
+            <BulkActionsBar
+                selectedCount={selectedIds.length}
+                onExportCSV={handleBulkExportCSV}
+                onExportPDF={handleBulkExportPDF}
+                onDelete={() => setIsBulkDeleteOpen(true)}
+                onClear={() => setSelectedIds([])}
+            />
+
+            {/* Customer Table */}
             <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
                 {isLoading ? (
                     <div className="flex items-center justify-center p-12 text-slate-400">
@@ -159,126 +285,35 @@ export default function CustomerList() {
                     <div className="flex flex-col items-center justify-center p-12 text-slate-400">
                         <User size={48} className="mb-4 opacity-20" />
                         <p>Aucun client trouvé.</p>
-                        {searchTerm && <button onClick={() => setSearchTerm('')} className="text-primary hover:underline mt-2">Effacer la recherche</button>}
+                        {searchTerm && (
+                            <button
+                                onClick={() => setSearchTerm('')}
+                                className="text-primary hover:underline mt-2"
+                            >
+                                Effacer la recherche
+                            </button>
+                        )}
                     </div>
                 ) : (
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
-                            <thead>
-                                <tr className="bg-slate-50 border-b border-slate-100 text-xs uppercase font-semibold text-slate-500 tracking-wider">
-                                    <th className="px-6 py-4">Client</th>
-                                    <th className="px-6 py-4">Contact</th>
-                                    <th className="px-6 py-4">Localisation</th>
-                                    <th className="px-6 py-4 text-right">Actions</th>
-                                </tr>
-                            </thead>
+                            <CustomerTableHeader
+                                sortConfig={sortConfig}
+                                onSort={handleSort}
+                                selectedCount={selectedIds.length}
+                                totalCount={sortedCustomers.length}
+                                onSelectAll={handleSelectAll}
+                            />
                             <tbody className="divide-y divide-slate-100">
-                                {filteredCustomers.map((customer) => (
-                                    <tr key={customer.id} className="hover:bg-slate-50/50 transition-colors group cursor-pointer" onClick={() => handleEdit(customer)}>
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-4">
-                                                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0 ${
-                                                    customer.type === 'professional' 
-                                                    ? 'bg-(--color-info-soft) text-(--color-info)' 
-                                                    : 'bg-(--color-primary-soft) text-primary'
-                                                }`}>
-                                                    {customer.type === 'professional' ? <Building2 size={18} /> : <User size={18} />}
-                                                </div>
-                                                <div>
-                                                    <div className="font-semibold text-slate-900">
-                                                        {customer.type === 'professional' ? customer.company_name : `${customer.first_name} ${customer.last_name}`}
-                                                    </div>
-                                                    {customer.type === 'professional' && customer.first_name && (
-                                                        <div className="text-xs text-slate-500">
-                                                            Contact: {customer.first_name} {customer.last_name}
-                                                        </div>
-                                                    )}
-                                                    <div className="text-xs text-slate-400 uppercase tracking-wide mt-0.5">
-                                                        {customer.type === 'professional' ? 'Société' : 'Particulier'}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex flex-col gap-2 items-start">
-                                                {/* Status Badge */}
-                                                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                                                    customer.status === 'inactive' ? 'bg-slate-100 text-slate-500' :
-                                                    customer.status === 'lead' ? 'bg-(--color-info-soft) text-(--color-info)' :
-                                                    'bg-(--color-primary-soft) text-primary)'
-                                                }`}>
-                                                    {customer.status === 'inactive' ? 'Inactif' :
-                                                     customer.status === 'lead' ? 'Prospect' : 'Actif'}
-                                                </span>
-                                                
-                                                {/* Tags */}
-                                                {customer.tags && customer.tags.length > 0 && (
-                                                    <div className="flex flex-wrap gap-1">
-                                                        {customer.tags.map((tag, idx) => {
-                                                            const tagColors = {
-                                                                'VIP': 'bg-accent-soft border-accent/30 text-accent',
-                                                                'Mauvais Payeur': 'bg-(--color-danger-soft) border-(--color-danger)/30 text-(--color-danger)',
-                                                                'Nouveau': 'bg-(--color-info-soft) border-(--color-info)/30 text-(--color-info)',
-                                                                'Gros Volume': 'bg-(--color-primary-soft) border-(--color-primary)/30 text-(--color-primary)'
-                                                            };
-                                                            return (
-                                                                <span key={idx} className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium border ${
-                                                                    tagColors[tag] || 'bg-slate-50 border-slate-200 text-slate-600'
-                                                                }`}>
-                                                                    {tag}
-                                                                </span>
-                                                            );
-                                                        })}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <div className="space-y-1">
-                                                {customer.email && (
-                                                    <div className="flex items-center gap-2 text-sm text-slate-600">
-                                                        <Mail size={14} className="text-slate-400" />
-                                                        {customer.email}
-                                                    </div>
-                                                )}
-                                                {customer.phone && (
-                                                    <div className="flex items-center gap-2 text-sm text-slate-600">
-                                                        <Phone size={14} className="text-slate-400" />
-                                                        {customer.phone}
-                                                    </div>
-                                                )}
-                                                {!customer.email && !customer.phone && <span className="text-slate-400 text-sm">-</span>}
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            {(customer.city || customer.zip_code) ? (
-                                                <div className="flex items-center gap-2 text-sm text-slate-600">
-                                                    <MapPin size={14} className="text-slate-400" />
-                                                    {customer.zip_code} {customer.city}
-                                                </div>
-                                            ) : (
-                                                <span className="text-slate-400 text-sm">-</span>
-                                            )}
-                                        </td>
-                                        <td className="px-6 py-4 text-right">
-                                            <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                <button 
-                                                    onClick={(e) => { e.stopPropagation(); handleEdit(customer); }}
-                                                    className="p-2 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-full transition-colors"
-                                                    title="Modifier"
-                                                >
-                                                    <Pencil size={18} />
-                                                </button>
-                                                <button 
-                                                    onClick={(e) => handleDeleteClick(e, customer)}
-                                                    className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
-                                                    title="Supprimer"
-                                                >
-                                                    <Trash2 size={18} />
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                {sortedCustomers.map((customer) => (
+                                    <CustomerTableRow
+                                        key={customer.id}
+                                        customer={customer}
+                                        isSelected={selectedIds.includes(customer.id)}
+                                        onSelect={handleSelectOne}
+                                        onEdit={handleEdit}
+                                        onDelete={handleDeleteClick}
+                                    />
                                 ))}
                             </tbody>
                         </table>
@@ -286,23 +321,34 @@ export default function CustomerList() {
                 )}
             </div>
 
-            <CustomerModal 
-                isOpen={isModalOpen} 
-                onClose={() => setIsModalOpen(false)} 
+            {/* Modals */}
+            <CustomerModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
                 onSuccess={handleSuccess}
                 customerToEdit={selectedCustomer}
             />
 
-            <ConfirmModal 
+            <ConfirmModal
                 isOpen={isDeleteModalOpen}
                 onClose={() => setIsDeleteModalOpen(false)}
                 onConfirm={handleConfirmDelete}
                 title="Supprimer le client"
-                message={`Êtes-vous sûr de vouloir supprimer le client ${customerToDelete?.company_name || (customerToDelete?.first_name + ' ' + customerToDelete?.last_name)} ? Cette action est irréversible.`}
+                message={`Êtes-vous sûr de vouloir supprimer ${customerToDelete?.company_name || (customerToDelete?.first_name + ' ' + customerToDelete?.last_name)} ? Cette action est irréversible.`}
                 confirmText="Supprimer"
                 cancelText="Annuler"
-                isDangerous={true}
-                isLoading={isDeleting}
+                isDeleting={isDeleting}
+            />
+
+            <ConfirmModal
+                isOpen={isBulkDeleteOpen}
+                onClose={() => setIsBulkDeleteOpen(false)}
+                onConfirm={handleBulkDelete}
+                title="Supprimer les clients sélectionnés"
+                message={`Êtes-vous sûr de vouloir supprimer ${selectedIds.length} client(s) ? Cette action est irréversible.`}
+                confirmText={`Supprimer ${selectedIds.length} client(s)`}
+                cancelText="Annuler"
+                isDeleting={isBulkDeleting}
             />
         </div>
     );

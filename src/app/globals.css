@@ -34,17 +34,20 @@ body {
     min-height: 100vh;
 }
 
-/* CRM Portal Theme (Pennylane-Inspired Soft & Vibrant) */
+/* CRM Portal Theme (PRODIGELEC Brand Identity) */
 .theme-private {
-    --color-primary: #10b981;
-    /* Vibrant Teal */
-    --color-primary-soft: #ecfdf5;
-    --color-secondary: #8b5cf6;
-    /* Soft Violet */
-    --color-secondary-soft: #f5f3ff;
-    --color-accent: #f97316;
-    /* Coral/Orange */
-    --color-accent-soft: #fff7ed;
+    --color-primary: #c9a227;
+    /* Brand Gold */
+    --color-primary-soft: #fefce8;
+    /* Soft Yellow */
+    --color-secondary: #0b1a2a;
+    /* Brand Deep Blue */
+    --color-secondary-soft: #f1f5f9;
+    /* Soft Slate */
+    
+    --color-accent: #0b1a2a;
+    /* Deep Blue as accent */
+    --color-accent-soft: #e2e8f0;
     
     --color-info: #3b82f6;
     --color-info-soft: #eff6ff;
@@ -52,12 +55,12 @@ body {
     --color-danger: #ef4444;
     --color-danger-soft: #fef2f2;
 
-    --color-slate-900: #1e293b;
+    --color-slate-900: #0b1a2a; /* Override slate-900 to match brand blue */
     --color-slate-500: #64748b;
     --color-slate-50: #f8fafc;
 
-    background-color: #fafafa;
-    color: #1e293b;
+    background-color: #f8fafc;
+    color: #0b1a2a;
     min-height: 100vh;
 }
 

@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X, Loader2, User, Building2, MapPin, Mail, Phone, FileText, Tag } from 'lucide-react';
+import { X, Loader2, MapPin, Mail, Phone, FileText, Tag } from 'lucide-react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import AddressAutocomplete from '@/components/ui/AddressAutocomplete';
 import SiretAutocomplete from '@/components/ui/SiretAutocomplete';
 import CustomSelect from '@/components/ui/CustomSelect';
+import CustomerTypeSelector from '@/components/ui/CustomerTypeSelector';
 
 export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEdit = null }) {
     const [isLoading, setIsLoading] = useState(false);
@@ -119,7 +120,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
     const statusOptions = [
         { value: 'active', label: 'Actif' },
         { value: 'inactive', label: 'Inactif' },
-        { value: 'lead', label: 'Prospect' }
+        { value: 'lead', label: 'À relancer' }
     ];
 
     const handleSubmit = async (e) => {
@@ -166,7 +167,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
             <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onClick={onClose} />
-            
+
             <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col max-h-[90vh]">
                 <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
                     <h2 className="text-lg font-bold text-slate-800">
@@ -179,65 +180,38 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
 
                 <form onSubmit={handleSubmit} className="p-6 overflow-y-auto space-y-6">
                     {/* Type Selection */}
-                    <div className="flex gap-4">
-                        <label className={`flex-1 flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${formData.type === 'individual' ? 'border-primary/30 bg-primary-soft' : 'border-slate-100 hover:border-slate-200'}`}>
-                            <input 
-                                type="radio" 
-                                name="type" 
-                                value="individual" 
-                                checked={formData.type === 'individual'} 
-                                onChange={handleChange}
-                                className="hidden" 
-                            />
-                            <div className={`p-2 rounded-full ${formData.type === 'individual' ? 'bg-primary/10 text-primary' : 'bg-slate-100 text-slate-400'}`}>
-                                <User size={20} />
-                            </div>
-                            <div>
-                                <div className={`font-semibold text-sm ${formData.type === 'individual' ? 'text-primary' : 'text-slate-900'}`}>Particulier</div>
-                                <div className={`text-xs ${formData.type === 'individual' ? 'text-primary/80' : 'text-slate-500'}`}>Pour les particuliers</div>
-                            </div>
-                        </label>
-                        
-                        <label className={`flex-1 flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${formData.type === 'professional' ? 'border-(--color-info)/30 bg-(--color-info-soft)' : 'border-slate-100 hover:border-slate-200'}`}>
-                            <input 
-                                type="radio" 
-                                name="type" 
-                                value="professional" 
-                                checked={formData.type === 'professional'} 
-                                onChange={handleChange}
-                                className="hidden" 
-                            />
-                            <div className={`p-2 rounded-full ${formData.type === 'professional' ? 'bg-(--color-info)/10 text-info' : 'bg-slate-100 text-slate-400'}`}>
-                                <Building2 size={20} />
-                            </div>
-                            <div>
-                                <div className={`font-semibold text-sm ${formData.type === 'professional' ? 'text-info' : 'text-slate-900'}`}>Professionnel</div>
-                                <div className={`text-xs ${formData.type === 'professional' ? 'text-info/80' : 'text-slate-500'}`}>Pour les entreprises</div>
-                            </div>
-                        </label>
-                    </div>
+                    <CustomerTypeSelector
+                        value={formData.type}
+                        onChange={(value) => setFormData(prev => ({ ...prev, type: value }))}
+                        layout="horizontal"
+                        size="normal"
+                    />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {formData.type === 'professional' && (
+                        {(formData.type === 'professional' || formData.type === 'syndic') && (
                             <div className="md:col-span-2 space-y-4 border-b border-slate-100 pb-4 mb-2">
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium text-slate-700">Nom de la société <span className="text-red-500">*</span></label>
-                                    <SiretAutocomplete 
+                                    <label className="text-sm font-medium text-slate-700">
+                                        {formData.type === 'syndic' ? 'Nom du Syndic / Agence' : 'Nom de la société'} <span className="text-red-500">*</span>
+                                    </label>
+                                    <SiretAutocomplete
                                         name="company_name"
                                         value={formData.company_name}
                                         onChange={handleChange}
                                         onSelect={handleSiretSelect}
-                                        placeholder="Ex: SAS Renov"
+                                        placeholder={formData.type === 'syndic' ? 'Ex: Foncia, Immo-Pro...' : 'Ex: SAS Renov'}
                                         className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
                                     />
-                                    <p className="text-xs text-slate-500">
-                                        Si votre société n'apparaît pas (statut non-diffusible), saisissez le nom manuellement.
-                                    </p>
+                                    {formData.type === 'professional' && (
+                                        <p className="text-xs text-slate-500">
+                                            Si votre société n'apparaît pas (statut non-diffusible), saisissez le nom manuellement.
+                                        </p>
+                                    )}
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="space-y-2">
                                         <label className="text-sm font-medium text-slate-700">SIRET <span className="text-slate-400 text-xs">(Facturation électronique)</span></label>
-                                        <input 
+                                        <input
                                             name="siret"
                                             value={formData.siret}
                                             onChange={handleChange}
@@ -247,7 +221,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-sm font-medium text-slate-700">TVA Intracom.</label>
-                                        <input 
+                                        <input
                                             name="vat_number"
                                             value={formData.vat_number}
                                             onChange={handleChange}
@@ -258,10 +232,10 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                                 </div>
                             </div>
                         )}
-                        
+
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-slate-700">Prénom</label>
-                            <input 
+                            <input
                                 name="first_name"
                                 value={formData.first_name}
                                 onChange={handleChange}
@@ -271,7 +245,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                         </div>
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-slate-700">Nom {formData.type === 'individual' && <span className="text-red-500">*</span>}</label>
-                            <input 
+                            <input
                                 required={formData.type === 'individual'}
                                 name="last_name"
                                 value={formData.last_name}
@@ -289,7 +263,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Email</label>
-                                <input 
+                                <input
                                     type="email"
                                     name="email"
                                     value={formData.email}
@@ -300,7 +274,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Téléphone</label>
-                                <input 
+                                <input
                                     type="tel"
                                     name="phone"
                                     value={formData.phone}
@@ -314,11 +288,13 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
 
                     <div className="space-y-4 pt-2 border-t border-slate-100">
                         <h3 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
-                            <MapPin size={16} className="text-slate-400" /> Adresse
+                            <MapPin size={16} className="text-slate-400" /> Coordonnées
                         </h3>
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-slate-700">Adresse de facturation</label>
-                            <AddressAutocomplete 
+                            <label className="text-sm font-medium text-slate-700">
+                                {formData.type === 'syndic' ? 'Adresse du Syndic (Facturation)' : 'Adresse de facturation'}
+                            </label>
+                            <AddressAutocomplete
                                 name="address"
                                 value={formData.address}
                                 onChange={handleChange}
@@ -330,7 +306,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                         <div className="grid grid-cols-3 gap-4">
                             <div className="col-span-1 space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Code Postal</label>
-                                <input 
+                                <input
                                     name="zip_code"
                                     value={formData.zip_code}
                                     onChange={handleChange}
@@ -340,7 +316,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                             </div>
                             <div className="col-span-2 space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Ville</label>
-                                <input 
+                                <input
                                     name="city"
                                     value={formData.city}
                                     onChange={handleChange}
@@ -352,20 +328,23 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
 
                         {/* Delivery Address Toggle could be implemented here, but let's just show fields for simplicity or accordion */}
                         <div className="space-y-2 pt-2">
-                            <label className="text-sm font-medium text-slate-700">Adresse de livraison <span className="text-slate-400 text-xs font-normal">(Si différente)</span></label>
-                            <AddressAutocomplete 
+                            <label className="text-sm font-medium text-slate-700">
+                                {formData.type === 'syndic' ? "Adresse de l'immeuble (Chantier)" : 'Adresse de livraison'}
+                                <span className="text-slate-400 text-xs font-normal"> (Si différente)</span>
+                            </label>
+                            <AddressAutocomplete
                                 name="delivery_address"
                                 value={formData.delivery_address}
                                 onChange={handleChange}
                                 onSelect={(data) => setFormData(prev => ({ ...prev, delivery_address: data.address, delivery_zip_code: data.zip_code, delivery_city: data.city }))}
-                                placeholder="Adresse de chantier..."
+                                placeholder={formData.type === 'syndic' ? "Adresse où l'intervention a lieu..." : "Adresse de chantier..."}
                                 className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
                             />
                         </div>
                         <div className="grid grid-cols-3 gap-4">
                             <div className="col-span-1 space-y-2">
                                 <label className="text-sm font-medium text-slate-700">CP (Livraison)</label>
-                                <input 
+                                <input
                                     name="delivery_zip_code"
                                     value={formData.delivery_zip_code}
                                     onChange={handleChange}
@@ -375,7 +354,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                             </div>
                             <div className="col-span-2 space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Ville (Livraison)</label>
-                                <input 
+                                <input
                                     name="delivery_city"
                                     value={formData.delivery_city}
                                     onChange={handleChange}
@@ -385,14 +364,14 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="space-y-2 pt-2 border-t border-slate-100">
                         <h3 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
                             <FileText size={16} className="text-slate-400" /> Autres informations
                         </h3>
-                         <div className="space-y-2">
+                        <div className="space-y-2">
                             <label className="text-sm font-medium text-slate-700">Conditions de paiement</label>
-                            <CustomSelect 
+                            <CustomSelect
                                 value={formData.payment_terms}
                                 onChange={(value) => setFormData(prev => ({ ...prev, payment_terms: value }))}
                                 options={paymentTermsOptions}
@@ -407,74 +386,94 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-slate-700">Statut</label>
-                                    <CustomSelect 
+                                    <CustomSelect
                                         value={formData.status}
                                         onChange={(value) => setFormData(prev => ({ ...prev, status: value }))}
                                         options={statusOptions}
                                         placeholder="Sélectionner..."
                                     />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-slate-700">Tags</label>
+                                <div className="space-y-3">
+                                    <label className="text-sm font-medium text-slate-700">Secteur d'activité</label>
                                     <div className="flex flex-wrap gap-2">
-                                        {['VIP', 'Mauvais Payeur', 'Nouveau', 'Gros Volume'].map(tag => {
-                                            const tagColors = {
-                                                'VIP': 'bg-(--color-accent-soft) border-(--color-accent)/30 text-(--color-accent)',
-                                                'Mauvais Payeur': 'bg-(--color-danger-soft) border-(--color-danger)/30 text-(--color-danger)',
-                                                'Nouveau': 'bg-(--color-info-soft) border-(--color-info)/30 text-(--color-info)',
-                                                'Gros Volume': 'bg-(--color-primary-soft) border-(--color-primary)/30 text-(--color-primary)'
-                                            };
+                                        {['Syndic', 'Agence Immobilière', 'Commerce', 'Bailleur', 'Entreprise'].map(tag => {
                                             const isActive = formData.tags && formData.tags.includes(tag);
-                                            
                                             return (
                                                 <button
                                                     key={tag}
                                                     type="button"
                                                     onClick={() => handleTagToggle(tag)}
-                                                    className={`px-3 py-1 text-xs rounded-full border transition-colors ${
-                                                        isActive 
-                                                        ? (tagColors[tag] || 'bg-primary-soft border-primary/30 text-primary') + ' font-medium'
+                                                    className={`px-3 py-1 text-xs rounded-full border transition-colors ${isActive
+                                                        ? 'bg-(--color-primary-soft) border-(--color-primary)/30 text-(--color-primary) font-medium'
                                                         : 'bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-300'
-                                                    }`}
+                                                        }`}
                                                 >
                                                     {tag}
                                                 </button>
                                             );
                                         })}
                                     </div>
+
+                                    <label className="text-sm font-medium text-slate-700 block pt-2">Alertes / Notes</label>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['VIP', 'Mauvais Payeur', 'Facture à réclamer', 'Accès Spécifique', 'Client Difficile'].map(tag => {
+                                            const tagColors = {
+                                                'VIP': 'bg-(--color-accent-soft) border-(--color-accent)/30 text-(--color-accent)',
+                                                'Mauvais Payeur': 'bg-(--color-danger-soft) border-(--color-danger)/30 text-(--color-danger)',
+                                                'Facture à réclamer': 'bg-(--color-info-soft) border-(--color-info)/30 text-(--color-info)',
+                                                'Accès Spécifique': 'bg-(--color-primary-soft) border-(--color-primary)/30 text-(--color-primary)',
+                                                'Client Difficile': 'bg-slate-100 border-slate-300 text-slate-600'
+                                            };
+                                            const isActive = formData.tags && formData.tags.includes(tag);
+
+                                            return (
+                                                <button
+                                                    key={tag}
+                                                    type="button"
+                                                    onClick={() => handleTagToggle(tag)}
+                                                    className={`px-3 py-1 text-xs rounded-full border transition-colors ${isActive
+                                                        ? (tagColors[tag] || 'bg-primary-soft border-primary/30 text-primary') + ' font-medium'
+                                                        : 'bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-300'
+                                                        }`}
+                                                >
+                                                    {tag}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-slate-700">Notes</label>
+                            <textarea
+                                name="notes"
+                                value={formData.notes}
+                                onChange={handleChange}
+                                placeholder="Informations complémentaires..."
+                                rows={3}
+                                className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)] outline-none resize-none"
+                            />
                         </div>
                     </div>
 
-                    <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700">Notes</label>
-                        <textarea 
-                            name="notes"
-                            value={formData.notes}
-                            onChange={handleChange}
-                            placeholder="Informations complémentaires..."
-                            rows={3}
-                            className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)] outline-none resize-none"
-                        />
+                    <div className="flex justify-end gap-3 pt-4 border-t border-slate-100">
+                        <button
+                            type="button"
+                            onClick={onClose}
+                            className="px-4 py-2 text-slate-600 font-medium hover:bg-slate-100 rounded-lg transition-colors"
+                        >
+                            Annuler
+                        </button>
+                        <button
+                            type="submit"
+                            disabled={isLoading}
+                            className="px-6 py-2 bg-[var(--color-primary)] text-white rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center gap-2 disabled:opacity-70"
+                        >
+                            {isLoading ? <Loader2 className="animate-spin" size={18} /> : 'Enregistrer'}
+                        </button>
                     </div>
-                </div>
-
-                <div className="flex justify-end gap-3 pt-4 border-t border-slate-100">
-                    <button 
-                        type="button" 
-                        onClick={onClose}
-                        className="px-4 py-2 text-slate-600 font-medium hover:bg-slate-100 rounded-lg transition-colors"
-                    >
-                        Annuler
-                    </button>
-                    <button 
-                        type="submit"
-                        disabled={isLoading}
-                        className="px-6 py-2 bg-[var(--color-primary)] text-white rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center gap-2 disabled:opacity-70"
-                    >
-                        {isLoading ? <Loader2 className="animate-spin" size={18} /> : 'Enregistrer'}
-                    </button>
-                </div>
                 </form>
             </div>
         </div>
