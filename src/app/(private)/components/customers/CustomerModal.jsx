@@ -9,10 +9,10 @@ import SiretAutocomplete from '@/components/ui/SiretAutocomplete';
 import CustomSelect from '@/components/ui/CustomSelect';
 import CustomerTypeSelector from '@/components/ui/CustomerTypeSelector';
 
-export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEdit = null }) {
+export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEdit = null, initialType = 'individual' }) {
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
-        type: 'individual', // 'individual' or 'professional'
+        type: initialType || 'individual', // 'individual' or 'professional'
         first_name: '',
         last_name: '',
         company_name: '',
@@ -55,9 +55,9 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                 notes: customerToEdit.notes || ''
             });
         } else {
-            // Reset form
+            // Reset form for new customer, preserving the initialType passed as prop
             setFormData({
-                type: 'individual',
+                type: initialType || 'individual',
                 first_name: '',
                 last_name: '',
                 company_name: '',
@@ -77,7 +77,7 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                 notes: ''
             });
         }
-    }, [customerToEdit, isOpen]);
+    }, [customerToEdit, isOpen, initialType]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
