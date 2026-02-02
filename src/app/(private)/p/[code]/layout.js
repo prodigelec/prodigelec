@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Building2, LayoutDashboard, Users, Briefcase, Settings } from 'lucide-react';
+import { Building2, LayoutDashboard, Users, FileText, Briefcase, Settings } from 'lucide-react';
 import axios from 'axios';
 
 async function validateCode(code) {
@@ -48,6 +48,7 @@ export default async function DynamicPortalLayout({ children, params }) {
     const navItems = [
         { href: `/p/${code}/portal`, icon: LayoutDashboard, label: 'Tableau de bord' },
         { href: `/p/${code}/customers`, icon: Users, label: 'Clients' },
+        { href: `/p/${code}/quotes`, icon: FileText, label: 'Devis' },
         { href: `/p/${code}/projects`, icon: Briefcase, label: 'Chantiers' },
         { href: `/p/${code}/settings`, icon: Settings, label: 'Paramètres' },
     ];
@@ -59,10 +60,10 @@ export default async function DynamicPortalLayout({ children, params }) {
                 {/* Brand Logo */}
                 <div className="w-10 h-10 mb-12 relative flex items-center justify-center">
                     {company?.logoUrl ? (
-                         <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-slate-100 shadow-sm">
-                            <Image 
-                                src={company.logoUrl} 
-                                alt={company.companyName || 'Logo'} 
+                        <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-slate-100 shadow-sm">
+                            <Image
+                                src={company.logoUrl}
+                                alt={company.companyName || 'Logo'}
                                 fill
                                 sizes="40px"
                                 className="object-cover"
@@ -70,7 +71,7 @@ export default async function DynamicPortalLayout({ children, params }) {
                         </div>
                     ) : (
                         <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center text-white">
-                             <Building2 size={20} />
+                            <Building2 size={20} />
                         </div>
                     )}
                 </div>
@@ -103,7 +104,7 @@ export default async function DynamicPortalLayout({ children, params }) {
                 {/* Header - Empty & Clean */}
                 <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8">
                     <div className="flex items-center gap-3">
-                         <h1 className="text-lg font-bold text-slate-800">
+                        <h1 className="text-lg font-bold text-slate-800">
                             {company?.companyName || 'Mon Espace'}
                         </h1>
                         {company?.legalForm && (
@@ -112,7 +113,7 @@ export default async function DynamicPortalLayout({ children, params }) {
                             </span>
                         )}
                     </div>
-                    
+
                     <div className="flex items-center gap-4">
                         <div className="text-sm text-right hidden sm:block">
                             <div className="font-medium text-slate-900">Admin</div>

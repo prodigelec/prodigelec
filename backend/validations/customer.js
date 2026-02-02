@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const customerSchema = Joi.object({
     company_id: Joi.string().uuid().required(),
-    type: Joi.string().valid('individual', 'professional').required(),
+    type: Joi.string().valid('individual', 'professional', 'syndic').required(),
     first_name: Joi.string().allow('', null),
     last_name: Joi.string().allow('', null),
     company_name: Joi.string().allow('', null),
@@ -17,17 +17,19 @@ const customerSchema = Joi.object({
     delivery_address: Joi.string().allow('', null),
     delivery_city: Joi.string().allow('', null),
     delivery_zip_code: Joi.string().allow('', null),
-    payment_terms: Joi.string().allow('', null)
+    payment_terms: Joi.string().allow('', null),
+    tags: Joi.array().items(Joi.string()).default([]),
+    status: Joi.string().valid('active', 'inactive', 'lead').default('active')
 }).custom((value, helpers) => {
     // Custom validation: 
     // If individual, first_name and last_name are required (or at least one of them usually, but let's be strict if we want, or loose)
     // If professional, company_name is required
-    
-    if (value.type === 'professional' && !value.company_name) {
-        return helpers.error('any.invalid', { message: 'Le nom de la société est obligatoire pour les professionnels' });
+
+    if ((value.type === 'professional' || value.type === 'syndic') && !value.company_name) {
+        return helpers.error('any.invalid', { message: 'Le nom de la société ou du syndic est obligatoire' });
     }
     // SIRET is mandatory for professionals for electronic invoicing (Factur-X/2026 reform)
-    // We can be strict or just warn, but strict is better for compliance
+    // For Syndics it depends, but let's keep it optional for now as requested.
     if (value.type === 'professional' && !value.siret) {
         // Uncomment to enforce strict compliance
         // return helpers.error('any.invalid', { message: 'Le SIRET est obligatoire pour la facturation électronique' });
