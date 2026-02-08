@@ -2,12 +2,12 @@ export default function sitemap() {
   const baseUrl = "https://www.prodigelec.fr";
 
   const routes = [
-    "/public",
-    "/public/services/electricite",
-    "/public/services/serrurerie",
-    "/public/about",
-    "/public/contact",
-    "/public/politique-de-confidentialite"
+    "/",
+    "/services/electricite",
+    "/services/serrurerie",
+    "/about",
+    "/contact",
+    "/politique-de-confidentialite"
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
