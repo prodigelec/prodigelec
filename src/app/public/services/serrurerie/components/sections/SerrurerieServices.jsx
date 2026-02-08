@@ -8,11 +8,11 @@ export default function SerrurerieServices() {
     {
       icon: IoKey,
       title: "Clés & Badges",
-      description: "Service de reproduction de clés et copie de badges en collaboration avec notre partenaire.",
+      description: "Service de reproduction de clés et copie de badges d'immeuble.",
       items: [
         "Reproduction de clés toutes marques",
         "Copie de badges d'immeuble",
-        "Service assuré avec l'Atelier des Frères d'Antan",
+        "Service rapide et garanti",
         "Clés brevetées et sécurisées"
       ]
     },
@@ -86,11 +86,7 @@ export default function SerrurerieServices() {
               </h3>
 
               <p className="text-gray-400 leading-relaxed mb-8 text-base lg:text-lg min-h-[60px]">
-                {feature.title === "Clés & Badges" ? (
-                  <>
-                    Service de reproduction et copie de badges en collaboration avec mon partenaire <a href="https://www.atelierfreresdantan.fr/" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">L&apos;Atelier des Frères d&apos;Antan</a> situé à Montfort-l&apos;Amaury.
-                  </>
-                ) : feature.description}
+                {feature.description}
               </p>
 
               <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent mb-8" />

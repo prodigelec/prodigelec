@@ -1,27 +1,29 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Building2, MapPin, Mail, Phone, CheckCircle2, Loader2, Image as ImageIcon } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { supabase } from '@/lib/supabase';
 import axios from 'axios';
+
+// Sub-components
+import Step1Identity from './components/Step1Identity';
+import Step2Coordinates from './components/Step2Coordinates';
+import Step3Contact from './components/Step3Contact';
 
 export default function CompanyOnboardingModal() {
     const [step, setStep] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
     const [isCheckingSiret, setIsCheckingSiret] = useState(false);
     const [siretError, setSiretError] = useState('');
-    const [isOpen, setIsOpen] = useState(false); // Initially false to prevent flash
+    const [isOpen, setIsOpen] = useState(false);
     const [isCheckingExistence, setIsCheckingExistence] = useState(true);
-    
+
     // Check if company exists on mount
     useEffect(() => {
         const checkCompanyExistence = async () => {
             try {
-                // Using axios for cleaner API calls
                 const res = await axios.get('/api/company/get');
                 const data = res.data;
-                
+
                 if (data.exists) {
                     setIsOpen(false);
                 } else {
@@ -29,7 +31,7 @@ export default function CompanyOnboardingModal() {
                 }
             } catch (error) {
                 console.error('Error checking company existence:', error);
-                setIsOpen(true); // Default to open on error just in case
+                setIsOpen(true);
             } finally {
                 setIsCheckingExistence(false);
             }
@@ -64,7 +66,7 @@ export default function CompanyOnboardingModal() {
     const handleLogoChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            if (file.size > 2 * 1024 * 1024) { // 2MB limit
+            if (file.size > 2 * 1024 * 1024) {
                 toast.error("Le logo ne doit pas dépasser 2MB");
                 return;
             }
@@ -81,7 +83,6 @@ export default function CompanyOnboardingModal() {
         setSiretError('');
 
         try {
-            // Using new dedicated API route with axios
             const res = await axios.get('/api/company/check-siret', {
                 params: { siret: cleanSiret }
             });
@@ -89,7 +90,6 @@ export default function CompanyOnboardingModal() {
 
             if (data.exists) {
                 toast.success("Société trouvée dans notre base !");
-                // Auto-fill everything including contact info
                 setFormData(prev => ({
                     ...prev,
                     companyName: data.companyName || prev.companyName,
@@ -102,10 +102,12 @@ export default function CompanyOnboardingModal() {
                     legalForm: data.legalForm || prev.legalForm,
                 }));
                 if (data.logoUrl) {
-                    setLogoPreview(data.logoUrl);
+                    const fullLogoUrl = data.logoUrl.startsWith('/')
+                        ? `${process.env.NEXT_PUBLIC_BACKEND_URL}${data.logoUrl}`
+                        : data.logoUrl;
+                    setLogoPreview(fullLogoUrl);
                 }
             } else {
-                // Auto-fill only public data
                 setFormData(prev => ({
                     ...prev,
                     companyName: data.companyName || prev.companyName,
@@ -117,7 +119,6 @@ export default function CompanyOnboardingModal() {
                 }));
             }
         } catch (err) {
-            // Check if error response exists
             const errorMessage = err.response?.data?.error || 'Erreur de vérification';
             setSiretError(errorMessage);
         } finally {
@@ -128,54 +129,48 @@ export default function CompanyOnboardingModal() {
     const handleNext = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        // Simulate check/validation
         setTimeout(() => {
             setIsLoading(false);
             setStep(step + 1);
         }, 600);
     };
 
+    const handleBack = () => {
+        setStep(step - 1);
+    };
+
+    const fileToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = (error) => reject(error);
+        });
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-        
+
         try {
-            let uploadedLogoUrl = null;
+            let logoData = null;
 
-            // Upload Logo if exists
             if (logoFile) {
-                const fileExt = logoFile.name.split('.').pop();
-                const fileName = `${formData.siret || 'temp'}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-                
-                const { error: uploadError } = await supabase.storage
-                    .from('company-logos')
-                    .upload(fileName, logoFile);
-
-                if (uploadError) {
-                    console.error('Upload error:', uploadError);
-                    if (uploadError.message && uploadError.message.includes('Bucket not found')) {
-                         toast.error("Erreur: Le dossier 'company-logos' n'existe pas dans Supabase. Exécutez le script SQL.");
-                    } else {
-                        toast.error("Erreur lors de l'upload du logo");
-                    }
-                } else {
-                    const { data: { publicUrl } } = supabase.storage
-                        .from('company-logos')
-                        .getPublicUrl(fileName);
-                    uploadedLogoUrl = publicUrl;
+                try {
+                    logoData = await fileToBase64(logoFile);
+                } catch (error) {
+                    console.error('Base64 Conversion Error:', error);
+                    toast.error("Erreur lors de la préparation du logo");
                 }
             }
 
-            // Using new dedicated API route with axios
             await axios.post('/api/company/save', {
                 ...formData,
-                logoUrl: uploadedLogoUrl
+                logoData
             });
 
             toast.success('Société enregistrée avec succès !');
             setIsOpen(false);
-            // Optional: trigger global state update or page refresh
-            // window.location.reload(); 
         } catch (error) {
             console.error('Submit Error:', error);
             const errorMessage = error.response?.data?.error || "Erreur lors de l'enregistrement";
@@ -185,17 +180,15 @@ export default function CompanyOnboardingModal() {
         }
     };
 
-    if (isCheckingExistence) return null; // Or return a loader
+    if (isCheckingExistence) return null;
     if (!isOpen) return null;
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-            {/* Backdrop */}
             <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" />
 
-            {/* Modal Content */}
             <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-                
+
                 {/* Header */}
                 <div className="bg-slate-50 px-8 py-6 border-b border-slate-100 flex items-center justify-between">
                     <div>
@@ -212,223 +205,43 @@ export default function CompanyOnboardingModal() {
                 {/* Body */}
                 <div className="p-8 overflow-y-auto">
                     {step === 1 && (
-                        <form id="step1-form" onSubmit={handleNext} className="space-y-6 animate-in slide-in-from-right-4 duration-500">
-                            <div className="space-y-4">
-                                <h3 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
-                                    <Building2 className="text-primary" size={20} />
-                                    Identité de l'entreprise
-                                </h3>
-                                
-                                {/* Logo Upload */}
-                                <div className="flex items-center gap-6 p-4 bg-slate-50 border border-slate-200 rounded-lg">
-                                    <div className="relative h-20 w-20 rounded-full bg-white border-2 border-dashed border-slate-300 flex items-center justify-center overflow-hidden group hover:border-primary transition-colors">
-                                        {logoPreview ? (
-                                            <img src={logoPreview} alt="Logo" className="h-full w-full object-cover" />
-                                        ) : (
-                                            <ImageIcon className="text-slate-400 group-hover:text-primary transition-colors" size={24} />
-                                        )}
-                                        <input 
-                                            type="file" 
-                                            accept="image/*"
-                                            onChange={handleLogoChange}
-                                            className="absolute inset-0 opacity-0 cursor-pointer"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h4 className="text-sm font-medium text-slate-900">Logo de l'entreprise</h4>
-                                        <p className="text-xs text-slate-500 mt-1">Format PNG, JPG ou SVG. Max 2MB.</p>
-                                        <button 
-                                            type="button" 
-                                            onClick={() => document.querySelector('input[type=file]').click()}
-                                            className="mt-2 text-xs font-semibold text-primary hover:text-primary-dark"
-                                        >
-                                            Importer un fichier
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-medium text-slate-700">Nom de la société</label>
-                                        <input 
-                                            required
-                                            name="companyName"
-                                            value={formData.companyName}
-                                            onChange={handleChange}
-                                            placeholder="ex: Elec Renov 75"
-                                            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-medium text-slate-700">Forme Juridique</label>
-                                        <select 
-                                            name="legalForm"
-                                            value={formData.legalForm}
-                                            onChange={handleChange}
-                                            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                                        >
-                                            <option value="SAS">SAS</option>
-                                            <option value="SARL">SARL</option>
-                                            <option value="EI">Entreprise Individuelle</option>
-                                            <option value="EURL">EURL</option>
-                                            <option value="SASU">SASU</option>
-                                            <option value="SA">SA</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-medium text-slate-700">Numéro SIRET</label>
-                                        <input 
-                                            required
-                                            name="siret"
-                                            value={formData.siret}
-                                            onChange={handleChange}
-                                            onBlur={handleSiretBlur}
-                                            placeholder="14 chiffres"
-                                            className={`w-full px-4 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 outline-none transition-all ${
-                                                siretError ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-primary/20 focus:border-primary'
-                                            }`}
-                                        />
-                                        {isCheckingSiret && <p className="text-xs text-blue-500">Vérification...</p>}
-                                        {siretError && <p className="text-xs text-red-500">{siretError}</p>}
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-medium text-slate-700">Numéro TVA (Optionnel)</label>
-                                        <input 
-                                            name="vatNumber"
-                                            value={formData.vatNumber}
-                                            onChange={handleChange}
-                                            placeholder="FR..."
-                                            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                        <Step1Identity
+                            formData={formData}
+                            handleChange={handleChange}
+                            handleSiretBlur={handleSiretBlur}
+                            isCheckingSiret={isCheckingSiret}
+                            siretError={siretError}
+                            logoPreview={logoPreview}
+                            handleLogoChange={handleLogoChange}
+                            handleNext={handleNext}
+                        />
                     )}
 
                     {step === 2 && (
-                        <form id="step2-form" onSubmit={handleNext} className="space-y-6 animate-in slide-in-from-right-4 duration-500">
-                             <div className="space-y-4">
-                                <h3 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
-                                    <MapPin className="text-primary" size={20} />
-                                    Coordonnées
-                                </h3>
-                                
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-slate-700">Adresse du siège</label>
-                                    <input 
-                                        required
-                                        name="address"
-                                        value={formData.address}
-                                        onChange={handleChange}
-                                        placeholder="12 rue de la République"
-                                        className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                                    />
-                                </div>
-
-                                <div className="grid grid-cols-3 gap-4">
-                                    <div className="col-span-1 space-y-2">
-                                        <label className="text-sm font-medium text-slate-700">Code Postal</label>
-                                        <input 
-                                            required
-                                            name="zipCode"
-                                            value={formData.zipCode}
-                                            onChange={handleChange}
-                                            placeholder="75001"
-                                            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                                        />
-                                    </div>
-                                    <div className="col-span-2 space-y-2">
-                                        <label className="text-sm font-medium text-slate-700">Ville</label>
-                                        <input 
-                                            required
-                                            name="city"
-                                            value={formData.city}
-                                            onChange={handleChange}
-                                            placeholder="Paris"
-                                            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                        <Step2Coordinates
+                            formData={formData}
+                            handleChange={handleChange}
+                            handleNext={handleNext}
+                            handleBack={handleBack}
+                        />
                     )}
 
                     {step === 3 && (
-                        <form id="step3-form" onSubmit={handleSubmit} className="space-y-6 animate-in slide-in-from-right-4 duration-500">
-                             <div className="space-y-4">
-                                <h3 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
-                                    <Mail className="text-primary" size={20} />
-                                    Contact Public
-                                </h3>
-                                <p className="text-sm text-slate-500 bg-blue-50 p-3 rounded-lg border border-blue-100">
-                                    Ces informations apparaîtront sur vos devis et factures.
-                                </p>
-                                
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-slate-700">Email de contact</label>
-                                    <input 
-                                        required
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        placeholder="contact@votre-entreprise.com"
-                                        className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                                    />
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-slate-700">Téléphone</label>
-                                    <input 
-                                        required
-                                        type="tel"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        placeholder="01 23 45 67 89"
-                                        className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                                    />
-                                </div>
-                            </div>
-                            <div className="flex justify-between pt-6">
-                                <button 
-                                    type="button" 
-                                    onClick={() => setStep(step - 1)}
-                                    className="px-6 py-2.5 border border-slate-200 rounded-lg text-slate-600 font-medium hover:bg-slate-50 transition-colors"
-                                >
-                                    Retour
-                                </button>
-                                <button 
-                                    type="submit"
-                                    disabled={isLoading}
-                                    className="px-8 py-2.5 bg-primary text-white rounded-lg font-bold hover:bg-primary-dark transition-colors flex items-center gap-2 disabled:opacity-70"
-                                >
-                                    {isLoading ? (
-                                        <>
-                                            <Loader2 className="animate-spin" size={18} />
-                                            Enregistrement...
-                                        </>
-                                    ) : (
-                                        <>
-                                            Terminer
-                                            <CheckCircle2 size={18} />
-                                        </>
-                                    )}
-                                </button>
-                            </div>
-                        </form>
+                        <Step3Contact
+                            formData={formData}
+                            handleChange={handleChange}
+                            handleSubmit={handleSubmit}
+                            handleBack={handleBack}
+                            isLoading={isLoading}
+                        />
                     )}
                 </div>
 
                 {/* Footer */}
                 <div className="bg-white px-8 py-6 border-t border-slate-100 flex items-center justify-between">
                     {step > 1 && step < 3 && (
-                        <button 
-                            onClick={() => setStep(step - 1)}
+                        <button
+                            onClick={handleBack}
                             className="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors"
                         >
                             Retour

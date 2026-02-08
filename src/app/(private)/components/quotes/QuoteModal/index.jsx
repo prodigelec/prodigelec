@@ -60,7 +60,7 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
                 try {
                     // Fetch full quote details to get items
                     const { data: fullQuote } = await axios.get(`/api/quotes/${quote.id}`);
-                    
+
                     setFormData({
                         customer_id: fullQuote.customer_id,
                         date: fullQuote.date ? new Date(fullQuote.date).toISOString().split('T')[0] : '',
@@ -76,7 +76,7 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
                             description: item.description || ''
                         })),
                         notes: fullQuote.notes || '',
-                        intervention_address: fullQuote.intervention_address || '', 
+                        intervention_address: fullQuote.intervention_address || '',
                         intervention_contact: fullQuote.intervention_contact || '',
                         terms: fullQuote.terms || 'Valable 30 jours. Acompte de 50% à la commande.'
                     });
@@ -230,13 +230,13 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
                 customer_id: formData.customer_id,
                 quote_number: quote?.quote_number || `DRAFT-${Date.now()}`, // Temporary number generation
                 status: newStatus || formData.status,
-                
+
                 // Totals
                 total_ht: totals.ht,
                 total_tva: totals.tva,
                 total_ttc: totals.ttc,
                 tva_rate: 20, // Default global rate (not used much if per item)
-                
+
                 // Dates & Text
                 // Note: 'date' is ignored by backend (uses issued_at default now()), 'valid_until' is allowed.
                 valid_until: formData.valid_until || null,
@@ -292,9 +292,32 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
 
         const subject = encodeURIComponent(`Devis ${quote?.quote_number || 'PRODIGELEC'}`);
         const body = encodeURIComponent(`Bonjour ${customer.first_name || ''} ${customer.last_name || ''},\n\nVeuillez trouver ci-joint votre devis.\n\nCordialement,\nL'équipe PRODIGELEC`);
-        
+
         window.open(`mailto:${customer.email}?subject=${subject}&body=${body}`, '_blank');
         toast.success('Client de messagerie ouvert');
+    };
+
+    const handleRequestSignature = async () => {
+        if (!quote) return;
+
+        setIsLoading(true);
+        try {
+            const response = await axios.post('/api/signatures/request', {
+                documentId: quote.id,
+                documentType: 'quote'
+            });
+
+            if (response.data.success) {
+                toast.success('La demande de signature a été envoyée par email');
+                onSuccess(); // To refresh status to 'sent'
+                onClose();
+            }
+        } catch (error) {
+            console.error('Error requesting signature:', error);
+            toast.error(error.response?.data?.error || 'Erreur lors de l\'envoi de la demande');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     if (!isOpen) return null;
@@ -321,14 +344,14 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
                         onToggleInterventionAddress={() => setShowInterventionAddress(!showInterventionAddress)}
                     />
 
-                    <QuoteItemsTable 
-                    items={formData.items} 
-                    onItemChange={handleItemChange}
-                    onUpdateItem={handleUpdateItem}
-                    onAddItem={handleAddItem}
-                    onRemoveItem={handleRemoveItem}
-                    onPresetSelect={handlePresetSelect}
-                />
+                    <QuoteItemsTable
+                        items={formData.items}
+                        onItemChange={handleItemChange}
+                        onUpdateItem={handleUpdateItem}
+                        onAddItem={handleAddItem}
+                        onRemoveItem={handleRemoveItem}
+                        onPresetSelect={handlePresetSelect}
+                    />
 
                     <QuoteSummary
                         formData={formData}
@@ -347,6 +370,7 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
                     onSave={() => saveQuote()}
                     onSign={() => setIsSignatureModalOpen(true)}
                     onSend={handleSendEmail}
+                    onRequestSignature={handleRequestSignature}
                 />
 
                 <SignatureModal

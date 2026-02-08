@@ -1,8 +1,8 @@
 'use client';
 
-import { Save, Send, PenTool } from 'lucide-react';
+import { Save, Send, PenTool, MailCheck } from 'lucide-react';
 
-export default function QuoteActions({ loading, status, onClose, onSave, onSign, onSend, isEditMode }) {
+export default function QuoteActions({ loading, status, onClose, onSave, onSign, onSend, onRequestSignature, isEditMode }) {
     return (
         <div className="p-6 md:px-10 md:py-8 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-center justify-between gap-4 bg-white z-10">
             <button
@@ -21,6 +21,17 @@ export default function QuoteActions({ loading, status, onClose, onSave, onSign,
                     >
                         <PenTool size={18} />
                         {status === 'signed' ? 'Voir Signature' : 'Signer'}
+                    </button>
+                )}
+                {isEditMode && status !== 'signed' && (
+                    <button
+                        type="button"
+                        onClick={onRequestSignature}
+                        disabled={loading}
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-50 text-blue-600 px-6 py-3 rounded-xl font-bold border border-blue-200 hover:bg-blue-100 transition-all disabled:opacity-50"
+                    >
+                        <MailCheck size={18} />
+                        Demander signature
                     </button>
                 )}
                 <button

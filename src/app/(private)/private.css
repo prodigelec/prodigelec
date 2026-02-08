@@ -1,50 +1,38 @@
 /* 
- * PRODIGELEC CRM - Private Theme
- * Brand Identity: Gold & Deep Blue
+ * PRODIGELEC CRM - Private Theme (Pennylane-Inspired)
+ * Soft, colorful, and vibrant aesthetic.
  */
 
 .theme-private {
     /* Color Palette */
-    --color-primary: #c9a227;
-    /* Gold */
-    --color-primary-soft: #c9a2271a;
-    /* Gold (10% opacity) */
+    --color-primary: #10b981;
+    /* Emerald/Teal */
+    --color-primary-soft: #ecfdf5;
 
-    --color-secondary: #0b1a2a;
-    /* Deep Blue */
-    --color-secondary-soft: #e2e8f0;
-    
-    /* Keep functional colors */
+    --color-secondary: #8b5cf6;
+    /* Violet */
+    --color-secondary-soft: #f5f3ff;
+
+    --color-accent: #f59e0b;
+    /* Amber */
+    --color-accent-soft: #fffbeb;
+
     --color-info: #0ea5e9;
+    /* Sky Blue */
+    --color-info-soft: #f0f9ff;
+
     --color-danger: #ef4444;
+    /* Rose/Red */
     --color-danger-soft: #fef2f2;
 
-    --color-slate-900: #0b1a2a; /* Override slate-900 with Brand Deep Blue */
+    --color-slate-900: #0f172a;
     --color-slate-500: #64748b;
     --color-slate-400: #94a3b8;
     --color-slate-100: #f1f5f9;
     --color-slate-50: #f8fafc;
 
     background-color: #ffffff;
-    color: #0b1a2a;
-}
-
-/* Custom Scrollbar */
-.custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-
-.custom-scrollbar:hover::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+    color: #0f172a;
 }
 
 /* Base Styles Scoped to Portal */
