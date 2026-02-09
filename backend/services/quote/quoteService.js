@@ -8,6 +8,8 @@ const mapQuoteFromPrisma = (q) => {
     const mapped = {
         ...q,
         quote_number: q.quoteNumber,
+        customer_id: q.customerId,
+        company_id: q.companyId,
         total_ht: q.totalHt,
         tva_rate: q.tvaRate,
         total_tva: q.totalTva,

@@ -63,7 +63,7 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
 
                     setFormData({
                         customer_id: fullQuote.customer_id,
-                        date: fullQuote.date ? new Date(fullQuote.date).toISOString().split('T')[0] : '',
+                        date: fullQuote.issued_at ? new Date(fullQuote.issued_at).toISOString().split('T')[0] : (fullQuote.date ? new Date(fullQuote.date).toISOString().split('T')[0] : ''),
                         valid_until: fullQuote.valid_until ? new Date(fullQuote.valid_until).toISOString().split('T')[0] : '',
                         status: fullQuote.status,
                         items: (fullQuote.items || []).map(item => ({

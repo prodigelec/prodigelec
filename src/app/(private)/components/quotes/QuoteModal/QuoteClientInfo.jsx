@@ -50,12 +50,17 @@ export default function QuoteClientInfo({
                         >
                             <option value="">Sélectionner un client...</option>
                             {customers
-                                .filter(c => !preselectedType || c.type === preselectedType)
-                                .map(c => (
-                                    <option key={c.id} value={c.id}>
-                                        {c.company_name || `${c.first_name} ${c.last_name}`}
-                                    </option>
-                                ))}
+                                .filter(c => !preselectedType || c.type === preselectedType || c.id === formData.customer_id)
+                                .map(c => {
+                                    const displayName = c.company_name 
+                                        ? c.company_name 
+                                        : `${c.first_name || ''} ${c.last_name || ''}`.trim() || 'Client sans nom';
+                                    return (
+                                        <option key={c.id} value={c.id}>
+                                            {displayName}
+                                        </option>
+                                    );
+                                })}
                         </select>
                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none group-hover:text-[var(--color-primary)] transition-colors" size={16} />
                     </div>
