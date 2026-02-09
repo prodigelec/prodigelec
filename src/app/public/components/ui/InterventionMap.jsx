@@ -1,21 +1,28 @@
 "use client";
-import { MapContainer, TileLayer, Marker, Popup, Circle, Polygon, Tooltip, useMap } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import { useState, useEffect, useCallback } from 'react';
-import { Search, MapPin, Calculator, Trash2 } from 'lucide-react';
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  Circle,
+  Polygon,
+  Tooltip,
+  useMap,
+} from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import { useState, useEffect, useCallback } from "react";
+import { Search, MapPin, Calculator, Trash2 } from "lucide-react";
 
 const BROUE_COORDS = [48.7492, 1.5234];
 
 const zones = [
-  { radius: 60500, color: '#ef4444', label: 'Zone 4', price: '70€' },
-  { radius: 40500, color: '#f97316', label: 'Zone 3', price: '50€' },
-  { radius: 20500, color: '#3b82f6', label: 'Zone 2', price: '30€' },
-  { radius: 5500, color: '#22c55e', label: 'Zone 1', price: 'Gratuit' }
+  { radius: 60500, color: "#ef4444", label: "Zone 4", price: "70€" },
+  { radius: 40500, color: "#f97316", label: "Zone 3", price: "50€" },
+  { radius: 20500, color: "#3b82f6", label: "Zone 2", price: "30€" },
+  { radius: 5500, color: "#22c55e", label: "Zone 1", price: "Gratuit" },
 ];
 
-const cities = [
-  { name: "Broué", coords: BROUE_COORDS, isBase: true }
-];
+const cities = [{ name: "Broué", coords: BROUE_COORDS, isBase: true }];
 
 function ChangeView({ center, zoom }) {
   const map = useMap();
@@ -37,34 +44,41 @@ export default function InterventionMap() {
     // Only initialize on client side
     const initMap = async () => {
       try {
-        const L = (await import('leaflet')).default;
+        const L = (await import("leaflet")).default;
 
         // Fix default icon issues
         delete L.Icon.Default.prototype._getIconUrl;
         L.Icon.Default.mergeOptions({
-          iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-          iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-          shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+          iconUrl:
+            "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+          iconRetinaUrl:
+            "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+          shadowUrl:
+            "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
         });
 
         setIcons({
           default: new L.Icon.Default(),
           base: new L.Icon({
-            iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png",
-            shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+            iconUrl:
+              "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png",
+            shadowUrl:
+              "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
             iconSize: [25, 41],
             iconAnchor: [12, 41],
             popupAnchor: [1, -34],
-            shadowSize: [41, 41]
+            shadowSize: [41, 41],
           }),
           partner: new L.Icon({
-            iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png",
-            shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+            iconUrl:
+              "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png",
+            shadowUrl:
+              "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
             iconSize: [25, 41],
             iconAnchor: [12, 41],
             popupAnchor: [1, -34],
-            shadowSize: [41, 41]
-          })
+            shadowSize: [41, 41],
+          }),
         });
 
         setMounted(true);
@@ -82,7 +96,7 @@ export default function InterventionMap() {
       return [];
     }
     const response = await fetch(
-      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(trimmed)}&countrycodes=fr&limit=${limit}`
+      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(trimmed)}&countrycodes=fr&limit=${limit}`,
     );
     return response.json();
   }, []);
@@ -124,25 +138,28 @@ export default function InterventionMap() {
 
     // Calculate distance Haversine
     const R = 6371;
-    const dLat = (lat - BROUE_COORDS[0]) * Math.PI / 180;
-    const dLon = (lon - BROUE_COORDS[1]) * Math.PI / 180;
-    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(BROUE_COORDS[0] * Math.PI / 180) * Math.cos(lat * Math.PI / 180) *
-      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const dLat = ((lat - BROUE_COORDS[0]) * Math.PI) / 180;
+    const dLon = ((lon - BROUE_COORDS[1]) * Math.PI) / 180;
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos((BROUE_COORDS[0] * Math.PI) / 180) *
+        Math.cos((lat * Math.PI) / 180) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c;
 
     setResult({
-      name: city.display_name.split(',')[0],
+      name: city.display_name.split(",")[0],
       distance: distance.toFixed(1),
       price: calculatePrice(distance),
-      coords: coords
+      coords: coords,
     });
 
     setMapCenter(coords);
     setMapZoom(11);
     setSuggestions([]);
-    setSearchQuery(city.display_name.split(',')[0]);
+    setSearchQuery(city.display_name.split(",")[0]);
   };
 
   const handleClear = () => {
@@ -172,9 +189,10 @@ export default function InterventionMap() {
     }
   };
 
-  if (!mounted || !icons) return (
-    <div className="h-full w-full min-h-[500px] rounded-3xl bg-white/5 animate-pulse" />
-  );
+  if (!mounted || !icons)
+    return (
+      <div className="h-full w-full min-h-[500px] rounded-3xl bg-white/5 animate-pulse" />
+    );
 
   return (
     <div className="flex flex-col gap-6 w-full h-full min-h-[600px]">
@@ -219,7 +237,9 @@ export default function InterventionMap() {
                     className="w-full text-left px-5 py-3 hover:bg-primary/10 text-gray-300 hover:text-white transition-colors border-b border-white/5 last:border-0 flex items-center gap-3"
                   >
                     <MapPin className="w-4 h-4 text-primary shrink-0" />
-                    <span className="text-sm truncate">{city.display_name}</span>
+                    <span className="text-sm truncate">
+                      {city.display_name}
+                    </span>
                   </button>
                 ))}
               </div>
@@ -238,13 +258,19 @@ export default function InterventionMap() {
               </div>
               <div>
                 <div className="text-white font-bold">{result.name}</div>
-                <div className="text-xs text-gray-400">{result.distance} km de Broué</div>
+                <div className="text-xs text-gray-400">
+                  {result.distance} km de Broué
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <div className="text-xs text-gray-400 uppercase font-bold tracking-wider">Frais de déplacement</div>
-                <div className="text-2xl font-black text-primary leading-none mt-1">{result.price}</div>
+                <div className="text-xs text-gray-400 uppercase font-bold tracking-wider">
+                  Frais de déplacement
+                </div>
+                <div className="text-2xl font-black text-primary leading-none mt-1">
+                  {result.price}
+                </div>
               </div>
               <button
                 onClick={handleClear}
@@ -263,7 +289,9 @@ export default function InterventionMap() {
         {/* Floating Zones Badge */}
         <div className="absolute top-4 left-4 z-[400] bg-[#0b1a2a]/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-help">
           <MapPin className="w-4 h-4 text-amber-400" />
-          <span className="text-xs font-bold text-white uppercase tracking-tight">Zones d&apos;intervention (27 & 28)</span>
+          <span className="text-xs font-bold text-white uppercase tracking-tight">
+            Zones d&apos;intervention (27 & 28)
+          </span>
         </div>
 
         <MapContainer
@@ -283,9 +311,10 @@ export default function InterventionMap() {
               add: (e) => {
                 const layer = e.target;
                 if (layer._container) {
-                  layer._container.style.filter = 'invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%)';
+                  layer._container.style.filter =
+                    "invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%)";
                 }
-              }
+              },
             }}
           />
 
@@ -299,14 +328,24 @@ export default function InterventionMap() {
                 color: zone.color,
                 weight: 1,
                 opacity: 0.8,
-                fillOpacity: 0.12
+                fillOpacity: 0.12,
               }}
             />
           ))}
 
           <Polygon
-            positions={[[51.0, 1.56], [51.0, 10.0], [46.0, 10.0], [46.0, 1.56]]}
-            pathOptions={{ fillColor: '#0b1a2a', color: 'transparent', weight: 0, fillOpacity: 0.85 }}
+            positions={[
+              [51.0, 1.56],
+              [51.0, 10.0],
+              [46.0, 10.0],
+              [46.0, 1.56],
+            ]}
+            pathOptions={{
+              fillColor: "#0b1a2a",
+              color: "transparent",
+              weight: 0,
+              fillOpacity: 0.85,
+            }}
           />
 
           {cities.map((city, idx) => (
@@ -315,13 +354,17 @@ export default function InterventionMap() {
               position={city.coords}
               icon={city.isBase ? icons.base : icons.default}
             >
-              <Popup><div className="font-bold text-slate-900">{city.name}</div></Popup>
+              <Popup>
+                <div className="font-bold text-slate-900">{city.name}</div>
+              </Popup>
             </Marker>
           ))}
 
           {result && (
             <Marker position={result.coords} icon={icons.default}>
-              <Popup><div className="font-bold text-slate-900">{result.name}</div></Popup>
+              <Popup>
+                <div className="font-bold text-slate-900">{result.name}</div>
+              </Popup>
             </Marker>
           )}
         </MapContainer>
@@ -332,16 +375,26 @@ export default function InterventionMap() {
             <Calculator className="w-3 h-3 text-primary" /> Tarifs Déplacement
           </div>
           <div className="space-y-2">
-            {zones.slice().reverse().map((zone, idx) => (
-              <div key={idx} className="flex items-center justify-between text-[10px]">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: zone.color }} />
-                  <span className="text-gray-400">{zone.label}</span>
+            {zones
+              .slice()
+              .reverse()
+              .map((zone, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center justify-between text-[10px]"
+                >
+                  <div className="flex items-center gap-2">
+                    <div
+                      className="w-2.5 h-2.5 rounded-full"
+                      style={{ backgroundColor: zone.color }}
+                    />
+                    <span className="text-gray-400">{zone.label}</span>
+                  </div>
+                  <span className="font-bold text-white ml-2">
+                    {zone.price}
+                  </span>
                 </div>
-                <span className="font-bold text-white ml-2">{zone.price}</span>
-              </div>
-            ))}
-
+              ))}
           </div>
         </div>
       </div>

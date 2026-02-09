@@ -1,4 +1,3 @@
-
 import Navbar from "@/app/public/components/layout/Navbar";
 import FloatingContactButton from "@/app/public/components/layout/FloatingContactButton";
 import Footer from "@/app/public/components/layout/Footer";
@@ -7,9 +6,10 @@ export const metadata = {
   metadataBase: new URL("https://www.prodigelec.fr"),
   title: {
     default: "PRODIGELEC - Électricien & Serrurier | Eure-et-Loir (28)",
-    template: "%s | PRODIGELEC"
+    template: "%s | PRODIGELEC",
   },
-  description: "PRODIGELEC à Broué (28). Dépannage électricité et serrurerie sur Dreux, Chartres, Évreux. Intervention rapide et soignée.",
+  description:
+    "PRODIGELEC à Broué (28). Dépannage électricité et serrurerie sur Dreux, Chartres, Évreux. Intervention rapide et soignée.",
   keywords: [
     // Villes principales
     "Électricien Broué",
@@ -46,7 +46,7 @@ export const metadata = {
     "Artisan 28",
     "Électricien agréé",
     "Devis gratuit électricité",
-    "Urgence serrurier 28"
+    "Urgence serrurier 28",
   ],
   authors: [{ name: "PRODIGELEC", url: "https://www.prodigelec.fr" }],
   creator: "PRODIGELEC",
@@ -58,7 +58,8 @@ export const metadata = {
   },
   openGraph: {
     title: "PRODIGELEC - L'expertise artisanale 2.0",
-    description: "Électricité et serrurerie. Un interlocuteur de confiance pour vos travaux et votre sécurité.",
+    description:
+      "Électricité et serrurerie. Un interlocuteur de confiance pour vos travaux et votre sécurité.",
     url: "https://www.prodigelec.fr",
     siteName: "PRODIGELEC",
     images: [
@@ -90,9 +91,7 @@ export const metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     apple: "/prodigelec-logo.svg",
   },
 
@@ -113,40 +112,47 @@ export default function PublicLayout({ children }) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "PRODIGELEC",
-            "image": "https://www.prodigelec.fr/prodigelec-logo.svg",
-            "telephone": "0638194752",
-            "url": "https://www.prodigelec.fr",
-            "address": {
+            name: "PRODIGELEC",
+            image: "https://www.prodigelec.fr/prodigelec-logo.svg",
+            telephone: "0638194752",
+            url: "https://www.prodigelec.fr",
+            address: {
               "@type": "PostalAddress",
-              "streetAddress": "10 Rue Georges Bréant",
-              "addressLocality": "Broué",
-              "postalCode": "28410",
-              "addressCountry": "FR"
+              streetAddress: "10 Rue Georges Bréant",
+              addressLocality: "Broué",
+              postalCode: "28410",
+              addressCountry: "FR",
             },
-            "geo": {
+            geo: {
               "@type": "GeoCoordinates",
-              "latitude": 48.7492,
-              "longitude": 1.5234
+              latitude: 48.7492,
+              longitude: 1.5234,
             },
-            "openingHoursSpecification": [
+            openingHoursSpecification: [
               {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "08:00",
-                "closes": "20:00"
-              }
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                ],
+                opens: "08:00",
+                closes: "20:00",
+              },
             ],
-            "priceRange": "$$",
-            "areaServed": ["Broué", "Dreux", "Chartres", "Évreux", "Anet"],
-            "sameAs": [
+            priceRange: "$$",
+            areaServed: ["Broué", "Dreux", "Chartres", "Évreux", "Anet"],
+            sameAs: [
               "https://www.google.com/search?q=prodigelec",
               "https://www.google.com/maps/place/prodigelec/",
               "https://www.facebook.com/prodigelec/",
               "https://www.instagram.com/prodigelec/",
-              "https://www.whatsapp.com/prodigelec/"
-            ]
-          })
+              "https://www.whatsapp.com/prodigelec/",
+            ],
+          }),
         }}
       />
       <div className="theme-public">

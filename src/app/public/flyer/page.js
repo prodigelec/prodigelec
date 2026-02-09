@@ -2,21 +2,36 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, MapPin, Globe, Mail, CheckCircle2, QrCode, Zap, Printer, Star, Lightbulb, Download } from "lucide-react";
+import {
+  Phone,
+  MapPin,
+  Globe,
+  Mail,
+  CheckCircle2,
+  QrCode,
+  Zap,
+  Printer,
+  Star,
+  Lightbulb,
+  Download,
+} from "lucide-react";
 import { IoKey } from "react-icons/io5";
 import Logo from "@/app/public/components/layout/Navbar/Logo";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 // Import dynamique du composant PDF et du lien de téléchargement (Client Side Only)
 // Import dynamique du bouton PDF (Client Side Only pour éviter les erreurs @react-pdf/renderer)
-const FlyerDownloadButton = dynamic(() => import("./components/FlyerDownloadButton"), {
-  ssr: false,
-  loading: () => (
-    <div className="flex-1 flex items-center justify-center gap-2 bg-white/50 text-[#0b1a2a] px-6 py-3 rounded-full font-bold animate-pulse">
-      <Download className="w-5 h-5" /> PDF
-    </div>
-  )
-});
+const FlyerDownloadButton = dynamic(
+  () => import("./components/FlyerDownloadButton"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex-1 flex items-center justify-center gap-2 bg-white/50 text-[#0b1a2a] px-6 py-3 rounded-full font-bold animate-pulse">
+        <Download className="w-5 h-5" /> PDF
+      </div>
+    ),
+  },
+);
 
 export default function FlyerPage() {
   const flyerRef = useRef(null);
@@ -28,8 +43,9 @@ export default function FlyerPage() {
   return (
     <div className="min-h-screen bg-[#0b1a2a] pt-32 pb-12 px-4 print:p-0 print:bg-white">
       {/* Print Styles Injection */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @media print {
           @page {
             size: A5;
@@ -97,11 +113,12 @@ export default function FlyerPage() {
             color: #4b5563 !important;
           }
         }
-      `}} />
+      `,
+        }}
+      />
 
       {/* Layout Wrapper */}
       <div className="max-w-7xl mx-auto lg:flex lg:items-start lg:gap-16">
-
         {/* Sidebar - Controls & Instructions */}
         <div className="lg:w-1/3 space-y-8 no-print lg:sticky lg:top-36 mb-12 lg:mb-0">
           <div className="space-y-6">
@@ -109,7 +126,8 @@ export default function FlyerPage() {
               Aperçu du <span className="text-primary italic">Flyer</span>
             </h1>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Visualisez et imprimez votre coupon de réduction. Format A5 optimisé pour une impression de haute qualité.
+              Visualisez et imprimez votre coupon de réduction. Format A5
+              optimisé pour une impression de haute qualité.
             </p>
 
             <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 pt-2">
@@ -143,18 +161,27 @@ export default function FlyerPage() {
                 <Lightbulb className="w-7 h-7" />
               </div>
               <div className="space-y-4">
-                <h3 className="text-white font-black text-lg uppercase tracking-tight">Comment profiter de l'offre ?</h3>
+                <h3 className="text-white font-black text-lg uppercase tracking-tight">
+                  Comment profiter de l&apos;offre ?
+                </h3>
                 <div className="space-y-3">
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Imprimez ce coupon ou présentez-le simplement sur votre smartphone au technicien lors de son passage. <span className="text-primary font-semibold italic">Offre limitée aux 100 premiers clients de l'année.</span>
+                    Imprimez ce coupon ou présentez-le simplement sur votre
+                    smartphone au technicien lors de son passage.{" "}
+                    <span className="text-primary font-semibold italic">
+                      Offre limitée aux 100 premiers clients de l&apos;année.
+                    </span>
                   </p>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Pour une prise en charge rapide, mentionnez le code <span className="text-primary font-bold">FLYER2026</span> lors de votre demande de devis.
+                    Pour une prise en charge rapide, mentionnez le code{" "}
+                    <span className="text-primary font-bold">FLYER2026</span>{" "}
+                    lors de votre demande de devis.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-white/10">
                   <span className="text-[11px] text-gray-500 italic leading-tight block">
-                    * L'offre de -10% s'applique uniquement sur la main d'œuvre et le déplacement (hors matériel).
+                    * L&apos;offre de -10% s&apos;applique uniquement sur la main d&apos;œuvre
+                    et le déplacement (hors matériel).
                   </span>
                 </div>
               </div>
@@ -168,22 +195,32 @@ export default function FlyerPage() {
             ref={flyerRef}
             className="shadow-2xl overflow-hidden relative print-container flex flex-col"
             style={{
-              width: '148mm',
-              minHeight: '210mm',
-              height: '210mm',
-              maxWidth: '100%',
-              background: 'linear-gradient(to bottom right, #0b1a2a, #112438, #0b1a2a)',
-              color: '#ffffff'
+              width: "148mm",
+              minHeight: "210mm",
+              height: "210mm",
+              maxWidth: "100%",
+              background:
+                "linear-gradient(to bottom right, #0b1a2a, #112438, #0b1a2a)",
+              color: "#ffffff",
             }}
           >
             {/* Background Patterns */}
-            <div className="absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl -mr-12 -mt-12" style={{ backgroundColor: 'rgba(201, 162, 39, 0.1)' }} />
-            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full blur-3xl -ml-12 -mb-12" style={{ backgroundColor: 'rgba(201, 162, 39, 0.1)' }} />
+            <div
+              className="absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl -mr-12 -mt-12"
+              style={{ backgroundColor: "rgba(201, 162, 39, 0.1)" }}
+            />
+            <div
+              className="absolute bottom-0 left-0 w-48 h-48 rounded-full blur-3xl -ml-12 -mb-12"
+              style={{ backgroundColor: "rgba(201, 162, 39, 0.1)" }}
+            />
 
             {/* Header Section */}
             <div
               className="relative pt-8 px-8 pb-16 [clip-path:polygon(0_0,100%_0,100%_85%,0_100%)] print:bg-primary/5"
-              style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', color: '#ffffff' }}
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.05)",
+                color: "#ffffff",
+              }}
             >
               <div className="flex justify-between items-start">
                 <div className="scale-90 origin-top-left">
@@ -192,10 +229,17 @@ export default function FlyerPage() {
                 <div className="text-right">
                   <div
                     className="backdrop-blur-md border px-3 py-1.5 rounded-lg shadow-lg print:bg-white print:border-primary/20"
-                    style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', borderColor: 'rgba(255, 255, 255, 0.2)' }}
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                      borderColor: "rgba(255, 255, 255, 0.2)",
+                    }}
                   >
                     <p className="font-bold text-sm uppercase tracking-wider flex items-center gap-2 print:text-[#0b1a2a]">
-                      <Star className="w-5 h-5 fill-primary" style={{ color: '#c9a227' }} /> Artisan qualifié
+                      <Star
+                        className="w-5 h-5 fill-primary"
+                        style={{ color: "#c9a227" }}
+                      />{" "}
+                      Artisan qualifié
                     </p>
                   </div>
                 </div>
@@ -209,15 +253,22 @@ export default function FlyerPage() {
                   <h2 className="text-xl font-black text-[#0b1a2a] uppercase tracking-tight">
                     DÉPANNAGE URGENT
                   </h2>
-                  <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Appel direct</p>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">
+                    Appel direct
+                  </p>
                 </div>
                 <div className="w-full flex justify-between items-end">
                   <div className="text-left">
                     <p className="text-gray-600 font-medium text-xs leading-snug">
-                      Intervention rapide <span className="text-primary font-bold">Lun-Ven</span><br /> Eure (27) & Eure-et-Loir (28)
+                      Intervention rapide{" "}
+                      <span className="text-primary font-bold">Lun-Ven</span>
+                      <br /> Eure (27) & Eure-et-Loir (28)
                     </p>
                   </div>
-                  <a href="tel:0638194752" className="text-4xl font-black text-primary hover:text-primary-dark transition-colors leading-none print:no-glow">
+                  <a
+                    href="tel:0638194752"
+                    className="text-4xl font-black text-primary hover:text-primary-dark transition-colors leading-none print:no-glow"
+                  >
                     06 38 19 47 52
                   </a>
                 </div>
@@ -229,8 +280,8 @@ export default function FlyerPage() {
               <div
                 className="text-white p-3 rounded-lg shadow-md transform rotate-1 border border-white border-dashed outline-2 relative overflow-hidden print:rotate-0 print:shadow-none print:border-red-600"
                 style={{
-                  background: 'linear-gradient(to right, #dc2626, #ef4444)',
-                  outlineColor: 'rgba(239, 68, 68, 0.3)'
+                  background: "linear-gradient(to right, #dc2626, #ef4444)",
+                  outlineColor: "rgba(239, 68, 68, 0.3)",
                 }}
               >
                 <div className="absolute top-0 right-0 -mt-2 -mr-2 bg-white/20 w-16 h-16 rounded-full blur-lg print:hidden"></div>
@@ -244,21 +295,34 @@ export default function FlyerPage() {
                         OFFRE DÉCOUVERTE
                       </h3>
                       <div className="flex flex-col">
-                        <p className="font-medium text-[10px] leading-tight mt-0.5" style={{ color: '#fee2e2' /* red-100 */ }}>
+                        <p
+                          className="font-medium text-[10px] leading-tight mt-0.5"
+                          style={{ color: "#fee2e2" /* red-100 */ }}
+                        >
                           Sur 1ère intervention
                         </p>
-                        <p className="text-[9px] leading-tight font-medium opacity-90" style={{ color: '#fecaca' /* red-200 */ }}>
-                          (Main d'œuvre & Déplacement - Hors matériel)
+                        <p
+                          className="text-[9px] leading-tight font-medium opacity-90"
+                          style={{ color: "#fecaca" /* red-200 */ }}
+                        >
+                          (Main d&apos;œuvre & Déplacement - Hors matériel)
                         </p>
-                        <p className="text-[8px] leading-tight font-black uppercase mt-1 italic" style={{ color: '#ffffff' }}>
+                        <p
+                          className="text-[8px] leading-tight font-black uppercase mt-1 italic"
+                          style={{ color: "#ffffff" }}
+                        >
                           * Offre limitée aux 100 premiers clients
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className="bg-black/20 print:bg-[#fef2f2] print:border-[#fecaca] px-3 py-1.5 rounded backdrop-blur-sm border border-white/10">
-                    <p className="text-[9px] font-bold uppercase tracking-widest text-white/80 print:text-[#b91d1b]">Code</p>
-                    <p className="text-sm font-mono font-bold tracking-widest print:text-[#b91d1b]">FLYER2026</p>
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-white/80 print:text-[#b91d1b]">
+                      Code
+                    </p>
+                    <p className="text-sm font-mono font-bold tracking-widest print:text-[#b91d1b]">
+                      FLYER2026
+                    </p>
                   </div>
                 </div>
               </div>
@@ -272,14 +336,16 @@ export default function FlyerPage() {
                   <div
                     className="w-10 h-10 border rounded-lg flex items-center justify-center print:text-primary"
                     style={{
-                      backgroundColor: 'rgba(30, 58, 138, 0.3)', // blue-900/30
-                      borderColor: 'rgba(59, 130, 246, 0.2)', // blue-500/20
-                      color: '#60a5fa' // blue-400
+                      backgroundColor: "rgba(30, 58, 138, 0.3)", // blue-900/30
+                      borderColor: "rgba(59, 130, 246, 0.2)", // blue-500/20
+                      color: "#60a5fa", // blue-400
                     }}
                   >
                     <Zap size={24} className="fill-current" />
                   </div>
-                  <h3 className="text-base font-bold text-white print:text-[#0b1a2a]">Électricité</h3>
+                  <h3 className="text-base font-bold text-white print:text-[#0b1a2a]">
+                    Électricité
+                  </h3>
                 </div>
                 <ul className="space-y-1.5">
                   {[
@@ -287,11 +353,19 @@ export default function FlyerPage() {
                     "Mise aux normes",
                     "Remplacement tableau",
                     "Domotique & Connectivité",
-                    "Éclairage LED"
+                    "Éclairage LED",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#c9a227' }} />
-                      <span className="font-medium text-xs leading-tight print:text-gray-700" style={{ color: '#d1d5db' }}>{item}</span>
+                      <CheckCircle2
+                        className="w-4 h-4 shrink-0 mt-0.5"
+                        style={{ color: "#c9a227" }}
+                      />
+                      <span
+                        className="font-medium text-xs leading-tight print:text-gray-700"
+                        style={{ color: "#d1d5db" }}
+                      >
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -303,14 +377,16 @@ export default function FlyerPage() {
                   <div
                     className="w-10 h-10 border rounded-lg flex items-center justify-center print:text-primary"
                     style={{
-                      backgroundColor: 'rgba(113, 63, 18, 0.3)', // yellow-900/30
-                      borderColor: 'rgba(234, 179, 8, 0.2)', // yellow-500/20
-                      color: '#facc15' // yellow-400
+                      backgroundColor: "rgba(113, 63, 18, 0.3)", // yellow-900/30
+                      borderColor: "rgba(234, 179, 8, 0.2)", // yellow-500/20
+                      color: "#facc15", // yellow-400
                     }}
                   >
                     <IoKey size={24} />
                   </div>
-                  <h3 className="text-base font-bold text-white print:text-[#0b1a2a]">Serrurerie</h3>
+                  <h3 className="text-base font-bold text-white print:text-[#0b1a2a]">
+                    Serrurerie
+                  </h3>
                 </div>
                 <ul className="space-y-1.5">
                   {[
@@ -319,36 +395,58 @@ export default function FlyerPage() {
                     "Porte blindée",
                     "Volet roulant",
                     "Reproduction de clés",
-                    "Sécurisation"
+                    "Sécurisation",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#c9a227' }} />
-                      <span className="font-medium text-xs leading-tight print:text-gray-700" style={{ color: '#d1d5db' }}>{item}</span>
+                      <CheckCircle2
+                        className="w-4 h-4 shrink-0 mt-0.5"
+                        style={{ color: "#c9a227" }}
+                      />
+                      <span
+                        className="font-medium text-xs leading-tight print:text-gray-700"
+                        style={{ color: "#d1d5db" }}
+                      >
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
 
-            {/* Zones d'intervention */}
+            {/* Zones d&apos;intervention */}
             <div className="px-6 mb-1">
               <div
                 className="backdrop-blur-sm rounded-xl p-4 border shadow-sm print:bg-gray-50 print:border-gray-100 print:shadow-none"
-                style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', borderColor: 'rgba(255, 255, 255, 0.1)' }}
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  borderColor: "rgba(255, 255, 255, 0.1)",
+                }}
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <MapPin className="w-5 h-5" style={{ color: '#c9a227' }} />
-                  <h3 className="text-sm font-bold text-white print:text-[#0b1a2a]">ZONES D&apos;INTERVENTION</h3>
+                  <MapPin className="w-5 h-5" style={{ color: "#c9a227" }} />
+                  <h3 className="text-sm font-bold text-white print:text-[#0b1a2a]">
+                    ZONES D&apos;INTERVENTION
+                  </h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Broué", "Dreux", "Chartres", "Évreux",
-                    "Anet", "Nonancourt", "St-André"
+                    "Broué",
+                    "Dreux",
+                    "Chartres",
+                    "Évreux",
+                    "Anet",
+                    "Nonancourt",
+                    "St-André",
                   ].map((city) => (
                     <span
                       key={city}
                       className="border px-2.5 py-1 rounded font-bold shadow-sm text-[10px] print:bg-white print:border-gray-200 print:text-gray-600"
-                      style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', borderColor: 'rgba(255, 255, 255, 0.1)', color: '#d1d5db' }}
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        borderColor: "rgba(255, 255, 255, 0.1)",
+                        color: "#d1d5db",
+                      }}
                     >
                       {city}
                     </span>

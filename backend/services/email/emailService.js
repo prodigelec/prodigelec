@@ -1,30 +1,35 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 /**
  * Service pour l'envoi d'emails via SMTP (Hostinger)
  */
 class EmailService {
-    constructor() {
-        this.transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: parseInt(process.env.SMTP_PORT),
-            secure: process.env.SMTP_SECURE === 'true',
-            auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS,
-            },
-        });
-    }
+  constructor() {
+    this.transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT),
+      secure: process.env.SMTP_SECURE === "true",
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+  }
 
-    /**
-     * Envoie un email de demande de signature au client
-     */
-    async sendSignatureRequest(customerEmail, customerName, quoteNumber, signatureUrl) {
-        const mailOptions = {
-            from: process.env.SMTP_FROM,
-            to: customerEmail,
-            subject: `Demande de signature électronique - Devis ${quoteNumber}`,
-            html: `
+  /**
+   * Envoie un email de demande de signature au client
+   */
+  async sendSignatureRequest(
+    customerEmail,
+    customerName,
+    quoteNumber,
+    signatureUrl,
+  ) {
+    const mailOptions = {
+      from: process.env.SMTP_FROM,
+      to: customerEmail,
+      subject: `Demande de signature électronique - Devis ${quoteNumber}`,
+      html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e1e1e1; border-radius: 10px;">
                     <h2 style="color: #333;">Bonjour ${customerName},</h2>
                     <p style="color: #555; line-height: 1.6;">
@@ -46,27 +51,27 @@ class EmailService {
                     </p>
                 </div>
             `,
-        };
+    };
 
-        try {
-            const info = await this.transporter.sendMail(mailOptions);
-            console.log('Email envoyé:', info.messageId);
-            return { success: true, messageId: info.messageId };
-        } catch (error) {
-            console.error('Erreur lors de l\'envoi de l\'email:', error);
-            throw new Error(`Échec de l'envoi de l'email: ${error.message}`);
-        }
+    try {
+      const info = await this.transporter.sendMail(mailOptions);
+      console.log("Email envoyé:", info.messageId);
+      return { success: true, messageId: info.messageId };
+    } catch (error) {
+      console.error("Erreur lors de l'envoi de l'email:", error);
+      throw new Error(`Échec de l'envoi de l'email: ${error.message}`);
     }
+  }
 
-    /**
-     * Envoie une confirmation de signature au client
-     */
-    async sendSignatureConfirmation(customerEmail, customerName, quoteNumber) {
-        const mailOptions = {
-            from: process.env.SMTP_FROM,
-            to: customerEmail,
-            subject: `Confirmation de signature - Devis ${quoteNumber}`,
-            html: `
+  /**
+   * Envoie une confirmation de signature au client
+   */
+  async sendSignatureConfirmation(customerEmail, customerName, quoteNumber) {
+    const mailOptions = {
+      from: process.env.SMTP_FROM,
+      to: customerEmail,
+      subject: `Confirmation de signature - Devis ${quoteNumber}`,
+      html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e1e1e1; border-radius: 10px;">
                     <h2 style="color: #333;">Merci ${customerName},</h2>
                     <p style="color: #555; line-height: 1.6;">
@@ -82,16 +87,67 @@ class EmailService {
                     </p>
                 </div>
             `,
-        };
+    };
 
-        try {
-            await this.transporter.sendMail(mailOptions);
-            return { success: true };
-        } catch (error) {
-            console.error('Erreur lors de l\'envoi de l\'email de confirmation:', error);
-            return { success: false, error: error.message };
-        }
+    try {
+      await this.transporter.sendMail(mailOptions);
+      return { success: true };
+    } catch (error) {
+      console.error(
+        "Erreur lors de l'envoi de l'email de confirmation:",
+        error,
+      );
+      return { success: false, error: error.message };
     }
+  }
+
+  /**
+   * Envoie un devis avec sa pièce jointe PDF
+   */
+  async sendQuoteWithAttachment(
+    customerEmail,
+    customerName,
+    quoteNumber,
+    pdfBuffer,
+  ) {
+    const mailOptions = {
+      from: process.env.SMTP_FROM,
+      to: customerEmail,
+      subject: `Votre devis PRODIGELEC - ${quoteNumber}`,
+      html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e1e1e1; border-radius: 10px;">
+                    <h2 style="color: #333;">Bonjour ${customerName},</h2>
+                    <p style="color: #555; line-height: 1.6;">
+                        Veuillez trouver ci-joint votre devis <strong>${quoteNumber}</strong>.
+                    </p>
+                    <p style="color: #555; line-height: 1.6;">
+                        Nous restons à votre entière disposition pour tout complément d'information.
+                    </p>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                    <p style="color: #888; font-size: 0.8em; text-align: center;">
+                        Cordialement,<br>
+                        L'équipe PRODIGELEC
+                    </p>
+                </div>
+            `,
+      attachments: [
+        {
+          filename: `Devis_${quoteNumber}.pdf`,
+          content: pdfBuffer,
+          contentType: "application/pdf",
+        },
+      ],
+    };
+
+    try {
+      const info = await this.transporter.sendMail(mailOptions);
+      console.log("Devis envoyé par email:", info.messageId);
+      return { success: true, messageId: info.messageId };
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du devis par email:", error);
+      throw new Error(`Échec de l'envoi du devis: ${error.message}`);
+    }
+  }
 }
 
 module.exports = new EmailService();

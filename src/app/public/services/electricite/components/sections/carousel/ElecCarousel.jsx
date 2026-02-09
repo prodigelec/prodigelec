@@ -9,32 +9,32 @@ const slides = [
     id: 1,
     image: "/img_carousel_electric_page/eclairage-led.jpg",
     title: "Éclairage LED",
-    description: "Solutions modernes et économies d'énergie"
+    description: "Solutions modernes et économies d'énergie",
   },
   {
     id: 2,
     image: "/img_carousel_electric_page/domotique.jpg",
     title: "Domotique",
-    description: "Votre maison connectée et intelligente"
+    description: "Votre maison connectée et intelligente",
   },
   {
     id: 3,
     image: "/img_carousel_hero_home/tableau-electrique.jpg",
     title: "Tableau Électrique",
-    description: "Mise aux normes et sécurité de votre installation"
+    description: "Mise aux normes et sécurité de votre installation",
   },
   {
     id: 4,
     image: "/img_carousel_electric_page/videophonie_digicode.jpg",
     title: "Vidéophonie & Accès",
-    description: "Contrôle d'accès et sécurité résidentielle"
+    description: "Contrôle d'accès et sécurité résidentielle",
   },
   {
     id: 5,
     image: "/img_carousel_electric_page/prises.jpg",
     title: "Installation Électrique",
-    description: "Appareillage et circuits toutes marques"
-  }
+    description: "Appareillage et circuits toutes marques",
+  },
 ];
 
 export default function ElecCarousel() {
@@ -138,7 +138,7 @@ export default function ElecCarousel() {
           {slides.map((_, i) => (
             <div
               key={i}
-              className={`h-1.5 transition-all duration-500 rounded-full ${i === current ? 'w-8 bg-accent shadow-[0_0_8px_rgba(var(--color-accent-rgb),0.5)]' : 'w-2 bg-white/30'}`}
+              className={`h-1.5 transition-all duration-500 rounded-full ${i === current ? "w-8 bg-accent shadow-[0_0_8px_rgba(var(--color-accent-rgb),0.5)]" : "w-2 bg-white/30"}`}
             />
           ))}
         </div>

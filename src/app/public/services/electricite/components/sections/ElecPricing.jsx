@@ -7,15 +7,16 @@ export default function ElecPricing() {
     {
       title: "Dépannage Électrique",
       price: "À partir de 120€ TTC",
-      description: "Recherche de panne et réparation rapide sur votre installation.",
+      description:
+        "Recherche de panne et réparation rapide sur votre installation.",
       features: [
         "Diagnostic complet inclus",
         "1h de main d'œuvre incluse",
         "Déplacement zone 1 offert",
-        "Hors zone : Frais déplacement +"
+        "Hors zone : Frais déplacement +",
       ],
       highlight: true,
-      tag: "Urgence"
+      tag: "Urgence",
     },
     {
       title: "Mise en Sécurité",
@@ -25,9 +26,9 @@ export default function ElecPricing() {
         "Tableau électrique aux normes",
         "Mise à la terre certifiée",
         "Protection 30mA installée",
-        "Attestation de conformité"
+        "Attestation de conformité",
       ],
-      highlight: false
+      highlight: false,
     },
     {
       title: "Vidéo & Alarme",
@@ -37,9 +38,9 @@ export default function ElecPricing() {
         "Caméras Haute Définition",
         "Alarmes anti-intrusion",
         "Configuration smartphone",
-        "Étude personnalisée"
+        "Étude personnalisée",
       ],
-      highlight: false
+      highlight: false,
     },
     {
       title: "Installation & Rénov",
@@ -49,10 +50,10 @@ export default function ElecPricing() {
         "Étude & Devis personnalisés",
         "Norme NF C 15-100",
         "Matériel Legrand / Schneider",
-        "Garantie décennale 10 ans"
+        "Garantie décennale 10 ans",
       ],
-      highlight: false
-    }
+      highlight: false,
+    },
   ];
 
   return (
@@ -62,7 +63,8 @@ export default function ElecPricing() {
           Mes Tarifs <span className="text-accent italic">Électricité</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Une tarification transparente et sans surprise pour toutes vos interventions électriques.
+          Une tarification transparente et sans surprise pour toutes vos
+          interventions électriques.
         </p>
       </div>
 
@@ -84,7 +86,11 @@ export default function ElecPricing() {
               </div>
             )}
 
-            <div className={`relative h-full overflow-hidden bg-white/[0.03] backdrop-blur-xl border ${plan.highlight ? 'border-accent/40 shadow-[0_0_40px_-15px_rgba(var(--color-accent-rgb),0.3)]' : 'border-white/10'
+            <div
+              className={`relative h-full overflow-hidden bg-white/[0.03] backdrop-blur-xl border ${
+                plan.highlight
+                  ? "border-accent/40 shadow-[0_0_40px_-15px_rgba(var(--color-accent-rgb),0.3)]"
+                  : "border-white/10"
               } rounded-[40px] p-8 transition-all duration-500 hover:border-accent/50 flex flex-col z-10`}
             >
               {/* Background Decor (Clipped) */}
@@ -97,17 +103,20 @@ export default function ElecPricing() {
 
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-2xl lg:text-3xl font-black text-accent drop-shadow-[0_0_10px_rgba(var(--color-accent-rgb),0.3)]">
-                    {plan.price === "Sur Devis" ? plan.price : plan.price.split(' ').slice(-2).join(' ')}
+                    {plan.price === "Sur Devis"
+                      ? plan.price
+                      : plan.price.split(" ").slice(-2).join(" ")}
                   </span>
                   <span className="text-gray-400 font-medium text-xs">
-                    {plan.price === 'Sur Devis' ? '' : '/ intervention'}
+                    {plan.price === "Sur Devis" ? "" : "/ intervention"}
                   </span>
                 </div>
-                {plan.price !== "Sur Devis" && plan.price.includes("À partir de") && (
-                  <div className="text-accent/70 text-[10px] font-bold uppercase tracking-tight -mt-5 mb-4">
-                    À partir de
-                  </div>
-                )}
+                {plan.price !== "Sur Devis" &&
+                  plan.price.includes("À partir de") && (
+                    <div className="text-accent/70 text-[10px] font-bold uppercase tracking-tight -mt-5 mb-4">
+                      À partir de
+                    </div>
+                  )}
 
                 <p className="text-gray-400 text-xs leading-relaxed mb-8 min-h-[48px]">
                   {plan.description}
@@ -117,7 +126,10 @@ export default function ElecPricing() {
 
                 <ul className="space-y-4 mb-10 flex-grow">
                   {plan.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-3 text-gray-300 group/item">
+                    <li
+                      key={fIdx}
+                      className="flex items-center gap-3 text-gray-300 group/item"
+                    >
                       <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover/item:bg-accent/20 transition-colors">
                         <Check className="w-3 h-3 text-accent" />
                       </div>
@@ -130,18 +142,22 @@ export default function ElecPricing() {
 
                 <a
                   href="/public/contact#contact-form"
-                  className={`w-full py-4 rounded-2xl font-black text-xs uppercase tracking-wider transition-all duration-300 text-center ${plan.highlight
-                    ? 'bg-accent text-background hover:scale-[1.02] shadow-[0_10px_20px_-10px_rgba(var(--color-accent-rgb),0.5)]'
-                    : 'bg-white/5 text-white border border-white/10 hover:bg-white/10'
-                    }`}
+                  className={`w-full py-4 rounded-2xl font-black text-xs uppercase tracking-wider transition-all duration-300 text-center ${
+                    plan.highlight
+                      ? "bg-accent text-background hover:scale-[1.02] shadow-[0_10px_20px_-10px_rgba(var(--color-accent-rgb),0.5)]"
+                      : "bg-white/5 text-white border border-white/10 hover:bg-white/10"
+                  }`}
                 >
                   Demander un devis
                 </a>
               </div>
 
               {/* Glow Effect */}
-              <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent ${plan.highlight ? 'via-accent/50' : 'via-accent/0'
-                } to-transparent group-hover:via-accent/50 transition-all duration-700`} />
+              <div
+                className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent ${
+                  plan.highlight ? "via-accent/50" : "via-accent/0"
+                } to-transparent group-hover:via-accent/50 transition-all duration-700`}
+              />
             </div>
           </motion.div>
         ))}

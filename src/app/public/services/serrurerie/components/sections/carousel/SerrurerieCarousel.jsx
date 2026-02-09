@@ -8,32 +8,32 @@ const slides = [
     id: 1,
     image: "/img_carousel_serrure_page/depannage_urgent.jpg",
     title: "Dépannage Urgent",
-    description: "Ouverture fine et dépannage immédiat 6j/7"
+    description: "Ouverture fine et dépannage immédiat 6j/7",
   },
   {
     id: 2,
     image: "/img_carousel_serrure_page/serrure_haute_securite.jpg",
     title: "Serrure multipoints",
-    description: "Installation de serrures de haute sécurité"
+    description: "Installation de serrures de haute sécurité",
   },
   {
     id: 4,
     image: "/img_carousel_serrure_page/volet_roulant_chambre(2).jpg",
     title: "Volets Roulants",
-    description: "Motorisation et réparation de tabliers"
+    description: "Motorisation et réparation de tabliers",
   },
   {
     id: 5,
     image: "/img_carousel_serrure_page/cles.jpg",
     title: "Reproduction de Clés",
-    description: "Clés brevetées et badges d'immeuble"
+    description: "Clés brevetées et badges d'immeuble",
   },
   {
     id: 6,
     image: "/img_carousel_serrure_page/porte_blindée.jpg",
     title: "Porte Blindée",
-    description: "Porte blindée et sécurisation"
-  }
+    description: "Porte blindée et sécurisation",
+  },
 ];
 
 import Image from "next/image";
@@ -139,7 +139,7 @@ export default function SerrurerieCarousel() {
           {slides.map((_, i) => (
             <div
               key={i}
-              className={`h-1.5 transition-all duration-500 rounded-full ${i === current ? 'w-8 bg-primary' : 'w-2 bg-white/30'}`}
+              className={`h-1.5 transition-all duration-500 rounded-full ${i === current ? "w-8 bg-primary" : "w-2 bg-white/30"}`}
             />
           ))}
         </div>

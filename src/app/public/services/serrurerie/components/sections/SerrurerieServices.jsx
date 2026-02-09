@@ -8,47 +8,51 @@ export default function SerrurerieServices() {
     {
       icon: IoKey,
       title: "Clés & Badges",
-      description: "Service de reproduction de clés et copie de badges d'immeuble.",
+      description:
+        "Service de reproduction de clés et copie de badges d'immeuble.",
       items: [
         "Reproduction de clés toutes marques",
         "Copie de badges d'immeuble",
         "Service rapide et garanti",
-        "Clés brevetées et sécurisées"
-      ]
+        "Clés brevetées et sécurisées",
+      ],
     },
     {
       icon: Lock,
       title: "Remplacement & Installation",
-      description: "Installation de serrures toutes marques pour votre porte d'entrée, garage ou portail.",
+      description:
+        "Installation de serrures toutes marques pour votre porte d'entrée, garage ou portail.",
       items: [
         "Changement de cylindre",
         "Serrure multipoints",
         "Installation de verrous",
-        "Poignées de sécurité"
-      ]
+        "Poignées de sécurité",
+      ],
     },
     {
       icon: ShieldCheck,
       title: "Haute Sécurité",
-      description: "Renforcez la résistance de votre habitation contre les tentatives d'effraction.",
+      description:
+        "Renforcez la résistance de votre habitation contre les tentatives d'effraction.",
       items: [
         "Installation serrure A2P*",
         "Cornières anti-pinces",
         "Barre de pivotement",
-        "Protections de cylindre"
-      ]
+        "Protections de cylindre",
+      ],
     },
     {
       icon: Blinds,
       title: "Fermetures & Volets",
-      description: "Réparation et installation de vos systèmes de fermeture extérieurs.",
+      description:
+        "Réparation et installation de vos systèmes de fermeture extérieurs.",
       items: [
         "Volets roulants (Acier, Alu, PVC)",
         "Réglage portes & fenêtres",
         "Motorisation de volets",
-        "Remplacement de manivelles"
-      ]
-    }
+        "Remplacement de manivelles",
+      ],
+    },
   ];
 
   return (
@@ -58,7 +62,8 @@ export default function SerrurerieServices() {
           Mes <span className="text-primary italic">Prestations</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Un savoir-faire artisanal combiné aux technologies de sécurité les plus modernes pour votre sérénité.
+          Un savoir-faire artisanal combiné aux technologies de sécurité les
+          plus modernes pour votre sérénité.
         </p>
       </div>
 
@@ -93,7 +98,10 @@ export default function SerrurerieServices() {
 
               <ul className="space-y-4 flex-grow">
                 {feature.items.map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-gray-300 group/item">
+                  <li
+                    key={i}
+                    className="flex items-center gap-4 text-gray-300 group/item"
+                  >
                     <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover/item:bg-primary/20 transition-colors">
                       <Check className="w-3.5 h-3.5 text-primary" />
                     </div>

@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect } from 'react';
-import HeroBackground from './HeroBackground';
-import HeroNavigation from './HeroNavigation';
-import HeroContent from './HeroContent';
-import HeroProgress from './HeroProgress';
+import { useState, useEffect } from "react";
+import HeroBackground from "./HeroBackground";
+import HeroNavigation from "./HeroNavigation";
+import HeroContent from "./HeroContent";
+import HeroProgress from "./HeroProgress";
 
 const slides = [
   {
@@ -11,36 +11,36 @@ const slides = [
     title: "Expertise Serrurerie",
     subtitle: "Votre sécurité sur-mesure",
     image: "/img_carousel_hero_home/serrurerie.jpg",
-    icon: "🔑"
+    icon: "🔑",
   },
   {
     id: 2,
     title: "Électricité Pro",
     subtitle: "Vos installations fiables et sécurisées",
     image: "/img_carousel_hero_home/tableau-electrique.jpg",
-    icon: "⚡"
+    icon: "⚡",
   },
   {
     id: 3,
     title: "Volets Roulants",
     subtitle: "Installation & Réparation motorisée",
     image: "/img_carousel_hero_home/volets_roulants.png",
-    icon: "🪟"
+    icon: "🪟",
   },
   {
     id: 4,
     title: "Domotique",
     subtitle: "Pilotez votre maison intelligemment",
     image: "/img_carousel_hero_home/domotique.png",
-    icon: "📱"
+    icon: "📱",
   },
   {
     id: 5,
     title: "Contrôle d'Accès",
     subtitle: "Digicodes & Sécurité haute performance",
     image: "/img_carousel_hero_home/digicode.png",
-    icon: "🛡️"
-  }
+    icon: "🛡️",
+  },
 ];
 
 export default function HeroSection() {

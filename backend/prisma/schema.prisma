@@ -67,10 +67,10 @@ model Customer {
   paymentTerms    String?      @map("payment_terms")
   notes           String?
   customerTypeId  String       @map("customer_type_id") @db.Uuid
-  company     Company?     @relation(fields: [companyId], references: [id], onDelete: Cascade)
-  customerType CustomerType @relation(fields: [customerTypeId], references: [id])
-  sites       Site[]
-  quotes      Quote[]
+  company         Company?     @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  customerType    CustomerType @relation(fields: [customerTypeId], references: [id])
+  quotes          Quote[]
+  sites           Site[]
 
   @@unique([companyId, firstName, lastName], name: "unique_customer_person")
   @@map("customers")
@@ -204,4 +204,18 @@ model SignatureOtp {
 
   @@unique([email, documentId], name: "email_documentId")
   @@map("signature_otps")
+}
+
+model Newsletter {
+  id              Int       @id @default(autoincrement())
+  encrypted_email String
+  email_hash      String    @unique
+  iv              String
+  auth_tag        String
+  subscribed_at   DateTime  @default(now()) @map("subscribed_at") @db.Timestamptz(6)
+  unsubscribed_at DateTime? @map("unsubscribed_at") @db.Timestamptz(6)
+  created_at      DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updated_at      DateTime  @default(now()) @map("updated_at") @db.Timestamptz(6)
+
+  @@map("newsletter")
 }

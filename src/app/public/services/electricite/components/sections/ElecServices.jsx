@@ -6,7 +6,7 @@ import {
   HiLockClosed,
   HiOutlineWrenchScrewdriver,
   HiOutlineHomeModern,
-  HiOutlineVideoCamera
+  HiOutlineVideoCamera,
 } from "react-icons/hi2";
 import { Check } from "lucide-react";
 
@@ -15,69 +15,75 @@ export default function ElecServices() {
     {
       icon: HiOutlineWrenchScrewdriver,
       title: "Dépannage Urgent",
-      description: "Intervention rapide pour toutes vos pannes électriques : coupures, courts-circuits ou défaillances.",
+      description:
+        "Intervention rapide pour toutes vos pannes électriques : coupures, courts-circuits ou défaillances.",
       items: [
         "Recherche de panne",
         "Diagnostic immédiat",
         "Réparation de circuits",
-        "Remise en route sécurisée"
-      ]
+        "Remise en route sécurisée",
+      ],
     },
     {
       icon: HiShieldCheck,
       title: "Mise en Sécurité",
-      description: "Mise en conformité de votre tableau de répartition et de l'installation selon la norme NF C 15-100.",
+      description:
+        "Mise en conformité de votre tableau de répartition et de l'installation selon la norme NF C 15-100.",
       items: [
         "Remplacement de tableau",
         "Mise à la terre certifiée",
         "Protection 30mA",
-        "Attestation CONSUEL"
-      ]
+        "Attestation CONSUEL",
+      ],
     },
     {
       icon: HiOutlineLightBulb,
       title: "Éclairage LED",
-      description: "Solutions d'éclairage modernes hautes performances pour transformer votre intérieur et extérieur.",
+      description:
+        "Solutions d'éclairage modernes hautes performances pour transformer votre intérieur et extérieur.",
       items: [
         "Spots encastrés design",
         "Éclairage extérieur",
         "Détecteurs de mouvement",
-        "Régulateurs d'intensité"
-      ]
+        "Régulateurs d'intensité",
+      ],
     },
     {
       icon: HiOutlineHomeModern,
       title: "Chauffage & VMC",
-      description: "Installation et maintenance de vos systèmes de confort thermique et renouvellement d'air.",
+      description:
+        "Installation et maintenance de vos systèmes de confort thermique et renouvellement d'air.",
       items: [
         "Radiateurs à inertie",
         "VMC Simple & Double flux",
         "Sèche-serviette",
-        "Maintenance préventive"
-      ]
+        "Maintenance préventive",
+      ],
     },
     {
       icon: HiOutlineVideoCamera,
       title: "Vidéo & Alarme",
-      description: "Installation de systèmes de surveillance et d'alarme pour une protection optimale de vos biens.",
+      description:
+        "Installation de systèmes de surveillance et d'alarme pour une protection optimale de vos biens.",
       items: [
         "Caméras IP Haute Définition",
         "Alarmes anti-intrusion",
         "Détection incendie",
-        "Paramétrage smartphone"
-      ]
+        "Paramétrage smartphone",
+      ],
     },
     {
       icon: HiLockClosed,
       title: "Sécurité & Accès",
-      description: "Protégez vos accès avec des technologies modernes de contrôle d’entrée et de surveillance.",
+      description:
+        "Protégez vos accès avec des technologies modernes de contrôle d’entrée et de surveillance.",
       items: [
         "Vidéophonie connectée",
         "Interphonie intelligente",
         "Contrôle par badge",
-        "Digicodes robustes"
-      ]
-    }
+        "Digicodes robustes",
+      ],
+    },
   ];
 
   return (
@@ -87,7 +93,8 @@ export default function ElecServices() {
           Mes <span className="text-accent italic">Prestations</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Une expertise certifiée pour des installations électriques sûres, modernes et adaptées à vos besoins.
+          Une expertise certifiée pour des installations électriques sûres,
+          modernes et adaptées à vos besoins.
         </p>
       </div>
 
@@ -122,7 +129,10 @@ export default function ElecServices() {
 
               <ul className="space-y-4 mb-8 flex-grow">
                 {feature.items.map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-gray-300 group/item">
+                  <li
+                    key={i}
+                    className="flex items-center gap-4 text-gray-300 group/item"
+                  >
                     <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover/item:bg-accent/20 transition-colors">
                       <Check className="w-3.5 h-3.5 text-accent" />
                     </div>

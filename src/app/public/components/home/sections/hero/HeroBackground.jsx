@@ -1,10 +1,10 @@
 "use client";
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function HeroBackground({ slides, currentSlide }) {
   return (
-    <AnimatePresence mode='wait'>
+    <AnimatePresence mode="wait">
       <motion.div
         key={currentSlide}
         initial={{ opacity: 0 }}
@@ -13,7 +13,8 @@ export default function HeroBackground({ slides, currentSlide }) {
         transition={{ duration: 1 }}
         className="absolute inset-0"
       >
-        <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay sombre */}
+        <div className="absolute inset-0 bg-black/40 z-10" />{" "}
+        {/* Overlay sombre */}
         <Image
           src={slides[currentSlide].image}
           alt={slides[currentSlide].title}
