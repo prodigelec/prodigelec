@@ -3,6 +3,8 @@ const prisma = require('../../config/prisma');
 /**
  * Helper to map Prisma camelCase Quote to underscore snake_case for API compatibility
  */
+const emailService = require('../email/emailService');
+
 const mapQuoteFromPrisma = (q) => {
     if (!q) return null;
     const mapped = {
@@ -159,6 +161,24 @@ const createQuote = async (quoteData) => {
 const updateQuote = async (id, quoteData) => {
     const { items, customer, ...mainQuoteData } = quoteData;
 
+    // Vérifier si le devis peut être modifié (pas signé ni facturé)
+    const currentQuote = await prisma.quote.findUnique({
+        where: { id },
+        select: { status: true }
+    });
+
+    if (!currentQuote) {
+        const error = new Error('Devis non trouvé');
+        error.statusCode = 404;
+        throw error;
+    }
+
+    if (['signed', 'invoiced'].includes(currentQuote.status)) {
+        const businessError = new Error(`Impossible de modifier un devis déjà ${currentQuote.status === 'signed' ? 'signé' : 'facturé'}.`);
+        businessError.statusCode = 403;
+        throw businessError;
+    }
+
     // Mapping fields
     const data = {};
     if (mainQuoteData.quote_number !== undefined) data.quoteNumber = mainQuoteData.quote_number;
@@ -219,6 +239,29 @@ const updateQuote = async (id, quoteData) => {
  * Met à jour uniquement le statut d'un devis
  */
 const updateQuoteStatus = async (id, companyId, status, additionalData = {}) => {
+    // Vérifier si le devis existe et n'est pas déjà dans un état final
+    const currentQuote = await prisma.quote.findUnique({
+        where: { id },
+        select: { status: true }
+    });
+
+    if (!currentQuote) {
+        const error = new Error('Devis non trouvé');
+        error.statusCode = 404;
+        throw error;
+    }
+
+    // Si le devis est déjà signé ou facturé, on ne peut plus changer son statut 
+    // (sauf peut-être vers 'invoiced' si c'était 'signed', mais ici on bloque tout changement post-signature pour la sécurité)
+    if (['signed', 'invoiced'].includes(currentQuote.status) && status !== currentQuote.status) {
+        // Exception : on permet de passer de 'signed' à 'invoiced'
+        if (!(currentQuote.status === 'signed' && status === 'invoiced')) {
+            const businessError = new Error(`Impossible de modifier le statut d'un devis déjà ${currentQuote.status === 'signed' ? 'signé' : 'facturé'}.`);
+            businessError.statusCode = 403;
+            throw businessError;
+        }
+    }
+
     const data = { status, updatedAt: new Date() };
 
     // Map additionalData underscores to camelCase
@@ -246,6 +289,23 @@ const updateQuoteStatus = async (id, companyId, status, additionalData = {}) => 
  * Supprime un devis
  */
 const deleteQuote = async (id, companyId) => {
+    const quote = await prisma.quote.findFirst({
+        where: { id, companyId },
+        select: { status: true }
+    });
+
+    if (!quote) {
+        const error = new Error('Devis non trouvé');
+        error.statusCode = 404;
+        throw error;
+    }
+
+    if (quote.status !== 'draft') {
+        const businessError = new Error('Seuls les devis en brouillon peuvent être supprimés.');
+        businessError.statusCode = 403; // Forbidden
+        throw businessError;
+    }
+
     await prisma.quote.delete({
         where: {
             id,
@@ -255,11 +315,57 @@ const deleteQuote = async (id, companyId) => {
     return true;
 };
 
+/**
+ * Envoie un devis par email avec sa pièce jointe
+ */
+const sendQuoteByEmail = async (id, companyId, pdfBase64) => {
+    const quote = await prisma.quote.findFirst({
+        where: { id, companyId },
+        include: { customer: true }
+    });
+
+    if (!quote) {
+        const error = new Error('Devis non trouvé');
+        error.statusCode = 404;
+        throw error;
+    }
+
+    if (!quote.customer || !quote.customer.email) {
+        const error = new Error('Le client n\'a pas d\'adresse email renseignée');
+        error.statusCode = 400;
+        throw error;
+    }
+
+    // Convertir base64 en buffer
+    const pdfBuffer = Buffer.from(pdfBase64, 'base64');
+
+    const customerName = quote.customer.companyName || `${quote.customer.firstName || ''} ${quote.customer.lastName || ''}`.trim();
+    
+    // Envoyer l'email
+    await emailService.sendQuoteWithAttachment(
+        quote.customer.email,
+        customerName,
+        quote.quoteNumber,
+        pdfBuffer
+    );
+
+    // Mettre à jour le statut si c'était en brouillon
+    if (quote.status === 'draft') {
+        await prisma.quote.update({
+            where: { id },
+            data: { status: 'sent', updatedAt: new Date() }
+        });
+    }
+
+    return { success: true };
+};
+
 module.exports = {
     getAllQuotes,
     getQuoteById,
     createQuote,
     updateQuote,
     updateQuoteStatus,
-    deleteQuote
+    deleteQuote,
+    sendQuoteByEmail
 };

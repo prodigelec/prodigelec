@@ -86,11 +86,29 @@ const deleteQuote = async (req, res, next) => {
     }
 };
 
+const sendQuoteByEmail = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const companyId = req.user.company_id;
+        const { pdfBase64 } = req.body;
+
+        if (!pdfBase64) {
+            return res.status(400).json({ error: 'Le contenu PDF est requis' });
+        }
+
+        const result = await quoteService.sendQuoteByEmail(id, companyId, pdfBase64);
+        res.json(result);
+    } catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
     getAllQuotes,
     getQuoteById,
     createQuote,
     updateQuote,
     updateQuoteStatus,
-    deleteQuote
+    deleteQuote,
+    sendQuoteByEmail
 };

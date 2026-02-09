@@ -152,13 +152,15 @@ export default function CustomerTableRow({
                     >
                         <Pencil size={18} />
                     </button>
-                    <button
-                        onClick={handleDelete}
-                        className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
-                        title="Supprimer"
-                    >
-                        <Trash2 size={18} />
-                    </button>
+                    {!customer.has_quotes && (
+                        <button
+                            onClick={handleDelete}
+                            className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
+                            title="Supprimer"
+                        >
+                            <Trash2 size={18} />
+                        </button>
+                    )}
                 </div>
             </td>
         </tr>

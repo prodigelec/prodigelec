@@ -101,7 +101,8 @@ export default function QuoteList() {
             setQuoteToDelete(null);
         } catch (error) {
             console.error('Error deleting quote:', error);
-            toast.error('Erreur lors de la suppression');
+            const msg = error.response?.data?.error || 'Erreur lors de la suppression';
+            toast.error(msg);
         }
     };
 
@@ -115,6 +116,46 @@ export default function QuoteList() {
         } catch (error) {
             console.error('Error generating PDF:', error);
             toast.error('Erreur lors de la génération du PDF', { id: 'pdf' });
+        }
+    };
+
+    const handleSendEmail = async (quote) => {
+        if (!quote.customer?.email) {
+            toast.error('Ce client n\'a pas d\'adresse email renseignée');
+            return;
+        }
+
+        try {
+            toast.loading('Envoi du devis...', { id: 'email-send' });
+            
+            // 1. Récupérer les données complètes
+            const res = await axios.get(`/api/quotes/${quote.id}`);
+            
+            // 2. Générer le PDF en tant que Blob
+            const pdfBlob = await exportQuoteToPDF(res.data, company, true);
+            
+            // 3. Convertir le Blob en Base64
+            const reader = new FileReader();
+            const pdfBase64Promise = new Promise((resolve) => {
+                reader.onloadend = () => {
+                    const base64String = reader.result.split(',')[1];
+                    resolve(base64String);
+                };
+            });
+            reader.readAsDataURL(pdfBlob);
+            const pdfBase64 = await pdfBase64Promise;
+
+            // 4. Envoyer via le backend
+            await axios.post(`/api/quotes/${quote.id}/send`, { pdfBase64 });
+            
+            toast.success('Le devis a été envoyé avec succès !', { id: 'email-send' });
+            
+            // 5. Actualiser la liste
+            fetchQuotes();
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi de l\'email:', error);
+            const errorMsg = error.response?.data?.error || 'Erreur lors de l\'envoi';
+            toast.error(errorMsg, { id: 'email-send' });
         }
     };
 
@@ -221,39 +262,43 @@ export default function QuoteList() {
                                                     <Download size={18} />
                                                 </button>
 
-                                                {quote.status === 'sent' && (
+                                                {quote.status === 'draft' && (
                                                     <button
-                                                        onClick={() => {
-                                                            setQuoteToSign(quote);
-                                                            setIsSignatureModalOpen(true);
-                                                        }}
-                                                        className="p-2 text-slate-400 hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-soft)] rounded-full transition-colors"
-                                                        title="Signer le devis"
+                                                        onClick={() => handleSendEmail(quote)}
+                                                        className="p-2 text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-full transition-colors"
+                                                        title="Envoyer par email"
                                                     >
-                                                        <PenTool size={18} />
+                                                        <Send size={18} />
                                                     </button>
                                                 )}
 
-                                                <button
-                                                    onClick={() => {
-                                                        setQuoteToEdit(quote);
-                                                        setIsModalOpen(true);
-                                                    }}
-                                                    className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 rounded-full transition-colors"
-                                                    title="Modifier"
-                                                >
-                                                    <Pencil size={18} />
-                                                </button>
-                                                <button
-                                                    onClick={() => {
-                                                        setQuoteToDelete(quote);
-                                                        setIsDeleteModalOpen(true);
-                                                    }}
-                                                    className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
-                                                    title="Supprimer"
-                                                >
-                                                    <Trash2 size={18} />
-                                                </button>
+                                                {/* On a supprimé le bouton de signature manuelle car il ne sert pas côté admin */}
+
+
+                                                {['draft', 'sent', 'rejected'].includes(quote.status) && (
+                                                    <button
+                                                        onClick={() => {
+                                                            setQuoteToEdit(quote);
+                                                            setIsModalOpen(true);
+                                                        }}
+                                                        className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 rounded-full transition-colors"
+                                                        title="Modifier"
+                                                    >
+                                                        <Pencil size={18} />
+                                                    </button>
+                                                )}
+                                                {quote.status === 'draft' && (
+                                                    <button
+                                                        onClick={() => {
+                                                            setQuoteToDelete(quote);
+                                                            setIsDeleteModalOpen(true);
+                                                        }}
+                                                        className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
+                                                        title="Supprimer"
+                                                    >
+                                                        <Trash2 size={18} />
+                                                    </button>
+                                                )}
                                             </div>
                                         </td>
                                     </tr>

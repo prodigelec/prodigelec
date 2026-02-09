@@ -290,11 +290,39 @@ export default function QuoteModal({ isOpen, onClose, quote = null, onSuccess, p
             return;
         }
 
-        const subject = encodeURIComponent(`Devis ${quote?.quote_number || 'PRODIGELEC'}`);
-        const body = encodeURIComponent(`Bonjour ${customer.first_name || ''} ${customer.last_name || ''},\n\nVeuillez trouver ci-joint votre devis.\n\nCordialement,\nL'équipe PRODIGELEC`);
+        try {
+            toast.loading('Génération et envoi du devis...', { id: 'email-send' });
+            
+            // 1. Récupérer les données complètes
+            const res = await axios.get(`/api/quotes/${quote.id}`);
+            const companyRes = await axios.get('/api/company');
+            
+            // 2. Générer le PDF en tant que Blob
+            const pdfBlob = await exportQuoteToPDF(res.data, companyRes.data, true);
+            
+            // 3. Convertir le Blob en Base64 pour l'envoi au serveur
+            const reader = new FileReader();
+            const pdfBase64Promise = new Promise((resolve) => {
+                reader.onloadend = () => {
+                    const base64String = reader.result.split(',')[1];
+                    resolve(base64String);
+                };
+            });
+            reader.readAsDataURL(pdfBlob);
+            const pdfBase64 = await pdfBase64Promise;
 
-        window.open(`mailto:${customer.email}?subject=${subject}&body=${body}`, '_blank');
-        toast.success('Client de messagerie ouvert');
+            // 4. Envoyer au backend pour l'envoi automatique de l'email
+            await axios.post(`/api/quotes/${quote.id}/send`, { pdfBase64 });
+            
+            toast.success('Le devis a été envoyé avec succès !', { id: 'email-send' });
+            
+            // 5. Actualiser les données
+            onSuccess();
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi de l\'email:', error);
+            const errorMsg = error.response?.data?.error || 'Erreur lors de la génération ou de l\'envoi';
+            toast.error(errorMsg, { id: 'email-send' });
+        }
     };
 
     const handleRequestSignature = async () => {

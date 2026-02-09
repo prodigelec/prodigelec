@@ -10,6 +10,7 @@ router.get('/:id', quoteController.getQuoteById);
 router.post('/', quoteController.createQuote);
 router.put('/:id', quoteController.updateQuote);
 router.patch('/:id/status', quoteController.updateQuoteStatus);
+router.post('/:id/send', quoteController.sendQuoteByEmail);
 router.delete('/:id', quoteController.deleteQuote);
 
 module.exports = router;

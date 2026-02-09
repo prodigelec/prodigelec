@@ -192,6 +192,14 @@ export default function CustomerList() {
 
     // Bulk actions
     const handleBulkDelete = async () => {
+        const selectedCustomers = customers.filter(c => selectedIds.includes(c.id));
+        const protectedCustomers = selectedCustomers.filter(c => c.has_quotes);
+        
+        if (protectedCustomers.length > 0) {
+            toast.error(`Impossible de supprimer ${protectedCustomers.length} client(s) car ils possèdent des devis.`);
+            return;
+        }
+
         setIsBulkDeleting(true);
         try {
             await Promise.all(selectedIds.map(id => axios.delete(`/api/customers/${id}`)));

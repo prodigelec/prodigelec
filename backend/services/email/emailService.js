@@ -92,6 +92,49 @@ class EmailService {
             return { success: false, error: error.message };
         }
     }
+
+    /**
+     * Envoie un devis avec sa pièce jointe PDF
+     */
+    async sendQuoteWithAttachment(customerEmail, customerName, quoteNumber, pdfBuffer) {
+        const mailOptions = {
+            from: process.env.SMTP_FROM,
+            to: customerEmail,
+            subject: `Votre devis PRODIGELEC - ${quoteNumber}`,
+            html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e1e1e1; border-radius: 10px;">
+                    <h2 style="color: #333;">Bonjour ${customerName},</h2>
+                    <p style="color: #555; line-height: 1.6;">
+                        Veuillez trouver ci-joint votre devis <strong>${quoteNumber}</strong>.
+                    </p>
+                    <p style="color: #555; line-height: 1.6;">
+                        Nous restons à votre entière disposition pour tout complément d'information.
+                    </p>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                    <p style="color: #888; font-size: 0.8em; text-align: center;">
+                        Cordialement,<br>
+                        L'équipe PRODIGELEC
+                    </p>
+                </div>
+            `,
+            attachments: [
+                {
+                    filename: `Devis_${quoteNumber}.pdf`,
+                    content: pdfBuffer,
+                    contentType: 'application/pdf'
+                }
+            ]
+        };
+
+        try {
+            const info = await this.transporter.sendMail(mailOptions);
+            console.log('Devis envoyé par email:', info.messageId);
+            return { success: true, messageId: info.messageId };
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi du devis par email:', error);
+            throw new Error(`Échec de l'envoi du devis: ${error.message}`);
+        }
+    }
 }
 
 module.exports = new EmailService();

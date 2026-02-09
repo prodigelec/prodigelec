@@ -5,7 +5,7 @@ const prisma = require('../../config/prisma');
  */
 const mapCustomerFromPrisma = (c) => {
     if (!c) return null;
-    return {
+    const mapped = {
         ...c,
         company_id: c.companyId,
         first_name: c.firstName,
@@ -19,8 +19,15 @@ const mapCustomerFromPrisma = (c) => {
         payment_terms: c.paymentTerms,
         created_at: c.createdAt,
         updated_at: c.updatedAt,
-        type: c.customerType?.code // Récupérer le code du type pour la compatibilité
+        type: c.customerType?.code, // Récupérer le code du type pour la compatibilité
     };
+
+    // Ajouter l'information de protection si les devis sont inclus
+    if (c._count) {
+        mapped.has_quotes = c._count.quotes > 0;
+    }
+
+    return mapped;
 };
 
 /**
@@ -30,7 +37,10 @@ const getAllCustomers = async (companyId) => {
     const customers = await prisma.customer.findMany({
         where: { companyId },
         include: {
-            customerType: true
+            customerType: true,
+            _count: {
+                select: { quotes: true }
+            }
         },
         orderBy: { createdAt: 'desc' }
     });

@@ -3,7 +3,7 @@
  * Génération de devis professionnels au format PDF
  */
 
-export const exportQuoteToPDF = async (quote, company) => {
+export const exportQuoteToPDF = async (quote, company, returnBlob = false) => {
     const html2pdf = (await import('html2pdf.js')).default;
 
     // Default Company Data (PRODIGELEC Identity)
@@ -168,6 +168,10 @@ export const exportQuoteToPDF = async (quote, company) => {
         html2canvas: { scale: 2, logging: false, useCORS: true },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
+
+    if (returnBlob) {
+        return html2pdf().set(opt).from(content).output('blob');
+    }
 
     return html2pdf().set(opt).from(content).save();
 };
