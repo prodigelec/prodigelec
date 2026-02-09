@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, Eye, EyeOff, Lock } from "lucide-react";
+import { toast } from "react-hot-toast";
 import BrandName from "@/app/components/ui/BrandName";
 
 /**
@@ -41,6 +42,7 @@ export default function LoginForm({ accessCode, onSuccess }) {
         console.log("✅ Connexion réussie !");
         if (onSuccess) {
           onSuccess(result);
+          toast.success("Connexion réussie !");
         } else {
           router.push("/portal");
           router.refresh();
@@ -48,10 +50,12 @@ export default function LoginForm({ accessCode, onSuccess }) {
       } else {
         console.log("❌ Erreur de connexion:", result.error);
         setError(result.error || "Identifiants invalides.");
+        toast.error(result.error || "Identifiants invalides.");
       }
     } catch (err) {
       console.log("💥 Erreur réseau:", err);
       setError("Erreur de connexion au serveur.");
+      toast.error("Erreur de connexion au serveur.");
     } finally {
       setIsLoading(false);
     }
@@ -130,26 +134,6 @@ export default function LoginForm({ accessCode, onSuccess }) {
             </a>
           </div>
         </div>
-
-        {/* Error Message */}
-        {error && (
-          <div className="p-3 rounded-lg bg-red-50 border border-red-100 flex items-center gap-2 text-red-600 text-sm">
-            <svg
-              className="w-4 h-4 shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            {error}
-          </div>
-        )}
 
         {/* Submit Button */}
         <button
