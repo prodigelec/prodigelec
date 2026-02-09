@@ -161,7 +161,8 @@ export default function CustomerList() {
             setCustomerToDelete(null);
         } catch (error) {
             console.error('Error deleting customer:', error);
-            toast.error('Erreur lors de la suppression');
+            const msg = error.response?.data?.error || 'Erreur lors de la suppression';
+            toast.error(msg);
         } finally {
             setIsDeleting(false);
         }
@@ -200,7 +201,8 @@ export default function CustomerList() {
             setIsBulkDeleteOpen(false);
         } catch (error) {
             console.error('Error bulk deleting:', error);
-            toast.error('Erreur lors de la suppression');
+            const msg = error.response?.data?.error || 'Erreur lors de la suppression groupée';
+            toast.error(msg);
         } finally {
             setIsBulkDeleting(false);
         }

@@ -3,9 +3,9 @@ const Joi = require('joi');
 const customerSchema = Joi.object({
     company_id: Joi.string().uuid().required(),
     type: Joi.string().valid('individual', 'professional', 'syndic').required(),
-    first_name: Joi.string().allow('', null),
-    last_name: Joi.string().allow('', null),
-    company_name: Joi.string().allow('', null),
+    first_name: Joi.string().allow('', null).default(''),
+    last_name: Joi.string().allow('', null).default(''),
+    company_name: Joi.string().allow('', null).default(''),
     email: Joi.string().email().allow('', null),
     phone: Joi.string().allow('', null),
     address: Joi.string().allow('', null),
@@ -21,24 +21,23 @@ const customerSchema = Joi.object({
     tags: Joi.array().items(Joi.string()).default([]),
     status: Joi.string().valid('active', 'inactive', 'lead').default('active')
 }).custom((value, helpers) => {
-    // Custom validation: 
-    // If individual, first_name and last_name are required (or at least one of them usually, but let's be strict if we want, or loose)
-    // If professional, company_name is required
+    // Règle: Un seul nom est obligatoire pour les lois (Nom ou Raison Sociale)
+    const hasLastName = value.last_name && value.last_name.trim() !== '';
+    const hasCompanyName = value.company_name && value.company_name.trim() !== '';
 
-    if ((value.type === 'professional' || value.type === 'syndic') && !value.company_name) {
-        return helpers.error('any.invalid', { message: 'Le nom de la société ou du syndic est obligatoire' });
-    }
-    // SIRET is mandatory for professionals for electronic invoicing (Factur-X/2026 reform)
-    // For Syndics it depends, but let's keep it optional for now as requested.
-    if (value.type === 'professional' && !value.siret) {
-        // Uncomment to enforce strict compliance
-        // return helpers.error('any.invalid', { message: 'Le SIRET est obligatoire pour la facturation électronique' });
+    if (!hasLastName && !hasCompanyName) {
+        return helpers.error('any.invalid', { message: 'Un nom (particulier) ou une raison sociale (société) est obligatoire' });
     }
 
-    if (value.type === 'individual' && (!value.last_name)) {
-        // Let's require at least last name for individual
-        return helpers.error('any.invalid', { message: 'Le nom est obligatoire pour les particuliers' });
+    // Validations spécifiques par type (optionnel mais recommandé)
+    if (value.type === 'individual' && !hasLastName) {
+        return helpers.error('any.invalid', { message: 'Le nom est obligatoire pour un particulier' });
     }
+
+    if ((value.type === 'professional' || value.type === 'syndic') && !hasCompanyName) {
+        return helpers.error('any.invalid', { message: 'La raison sociale est obligatoire pour une société ou un syndic' });
+    }
+
     return value;
 });
 
