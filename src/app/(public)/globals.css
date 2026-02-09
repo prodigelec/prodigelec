@@ -115,8 +115,8 @@
   --color-metallic-light: var(--metallic-light);
 
   /* Fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-outfit: var(--font-outfit);
+  --font-inter: var(--font-inter);
 }
 
 html,
@@ -128,7 +128,29 @@ body {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Styles pour les titres avec Outfit */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+/* Amélioration des styles de texte */
+p, span, div {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Styles pour les boutons et éléments interactifs */
+button, .btn, input, select, textarea {
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 /* Responsive utilities */
