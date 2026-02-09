@@ -14,8 +14,7 @@ const zones = [
 ];
 
 const cities = [
-  { name: "Broué", coords: BROUE_COORDS, isBase: true },
-  { name: "L'Atelier des Frères d'Antan", coords: [48.776, 1.808], isPartner: true }
+  { name: "Broué", coords: BROUE_COORDS, isBase: true }
 ];
 
 function ChangeView({ center, zoom }) {
@@ -39,7 +38,7 @@ export default function InterventionMap() {
     const initMap = async () => {
       try {
         const L = (await import('leaflet')).default;
-        
+
         // Fix default icon issues
         delete L.Icon.Default.prototype._getIconUrl;
         L.Icon.Default.mergeOptions({
@@ -67,7 +66,7 @@ export default function InterventionMap() {
             shadowSize: [41, 41]
           })
         });
-        
+
         setMounted(true);
       } catch (e) {
         console.error("Map initialization error:", e);
@@ -311,18 +310,12 @@ export default function InterventionMap() {
           />
 
           {cities.map((city, idx) => (
-            <Marker 
-              key={`city-${idx}`} 
-              position={city.coords} 
-              icon={city.isBase ? icons.base : city.isPartner ? icons.partner : icons.default}
+            <Marker
+              key={`city-${idx}`}
+              position={city.coords}
+              icon={city.isBase ? icons.base : icons.default}
             >
-              {city.isPartner ? (
-                <Tooltip permanent direction="top" offset={[0, -45]} className="!bg-[#0b1a2a] !border-white/10 !text-white font-bold text-[10px] rounded-lg shadow-xl">
-                  L&apos;Atelier des Frères d&apos;Antan
-                </Tooltip>
-              ) : (
-                <Popup><div className="font-bold text-slate-900">{city.name}</div></Popup>
-              )}
+              <Popup><div className="font-bold text-slate-900">{city.name}</div></Popup>
             </Marker>
           ))}
 
@@ -348,10 +341,7 @@ export default function InterventionMap() {
                 <span className="font-bold text-white ml-2">{zone.price}</span>
               </div>
             ))}
-            <div className="mt-3 pt-3 border-t border-white/10 flex items-center gap-2 text-[9px]">
-              <div className="w-2 h-2 rounded-full bg-[#9ca3af]" />
-              <span className="text-gray-400 font-bold italic">L&apos;Atelier des Frères d&apos;Antan</span>
-            </div>
+
           </div>
         </div>
       </div>

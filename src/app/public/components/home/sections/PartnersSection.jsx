@@ -10,22 +10,10 @@ export default function PartnersSection() {
         </p>
 
         <div className="flex flex-wrap justify-center items-center gap-12 opacity-70 hover:opacity-100 transition-opacity duration-500">
-          {/* Atelier des frères d&apos;antan */}
-          <motion.a
-            href="https://www.atelierfreresdantan.fr/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            className="flex flex-col items-center group cursor-pointer"
-          >
-            <div className="text-2xl font-serif italic font-bold text-primary/80 group-hover:text-primary transition-colors">
-              L&apos;Atelier des Frères d&apos;Antan
-            </div>
-            <div className="h-0.5 w-12 bg-primary/30 mt-2 group-hover:w-full transition-all duration-500" />
-          </motion.a>
-
           {/* Placeholder for future partners */}
-          {/* <div className="...">...</div> */}
+          <p className="text-gray-500 italic text-sm">
+            Aucun partenaire pour le moment.
+          </p>
         </div>
       </div>
     </section>

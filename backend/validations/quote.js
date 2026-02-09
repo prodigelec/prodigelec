@@ -26,6 +26,11 @@ const quoteSchema = Joi.object({
     notes: Joi.string().allow('', null),
     terms: Joi.string().allow('', null),
 
+    intervention_address: Joi.string().allow('', null),
+    intervention_city: Joi.string().allow('', null),
+    intervention_zip_code: Joi.string().allow('', null),
+    intervention_contact: Joi.string().allow('', null),
+
     items: Joi.array().items(quoteItemSchema).min(1).required()
 });
 

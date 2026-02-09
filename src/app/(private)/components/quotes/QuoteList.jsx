@@ -270,9 +270,12 @@ export default function QuoteList() {
                 onClose={() => {
                     setIsModalOpen(false);
                     setQuoteToEdit(null);
+                    // On ne reset pas setSelectedCustomerType ici pour garder le contexte si on rouvre
+                    // Mais idéalement, on devrait peut-être le reset quand on ferme complètement le flux
                 }}
                 quote={quoteToEdit}
                 onSuccess={fetchQuotes}
+                preselectedType={!quoteToEdit ? selectedCustomerType : null} // Seulement pour nouveau devis
             />
 
             <SignatureModal
@@ -320,6 +323,7 @@ export default function QuoteList() {
                     setQuoteToEdit(null);
                     setIsModalOpen(true);
                 }}
+                initialType={selectedCustomerType}
             />
         </div>
     );

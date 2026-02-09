@@ -1,0 +1,207 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Company {
+  id                String     @id @default(uuid()) @db.Uuid
+  createdAt         DateTime   @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt         DateTime   @default(now()) @map("updated_at") @db.Timestamptz(6)
+  name              String
+  siret             String     @unique
+  vatNumber         String?    @map("vat_number")
+  address           String?
+  city              String?
+  zipCode           String?    @map("zip_code")
+  email             String?
+  phone             String?
+  legalForm         String?    @map("legal_form")
+  logoUrl           String?    @map("logo_url")
+  capital           String?
+  rcsNumber         String?    @map("rcs_number")
+  decennaleNumber   String?    @map("decennale_number")
+  decennaleCompany  String?    @map("decennale_company")
+  decennaleValidity DateTime?  @map("decennale_validity") @db.Date
+  customers         Customer[]
+  quotes            Quote[]
+  sites             Site[]
+
+  @@map("companies")
+}
+
+model CustomerType {
+  id          String     @id @default(uuid()) @db.Uuid
+  createdAt   DateTime   @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime   @default(now()) @map("updated_at") @db.Timestamptz(6)
+  code        String     @unique
+  name        String
+  description String?
+  isActive    Boolean    @default(true) @map("is_active")
+  customers   Customer[]
+
+  @@map("customer_types")
+}
+
+model Customer {
+  id              String       @id @default(uuid()) @db.Uuid
+  createdAt       DateTime     @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime     @default(now()) @map("updated_at") @db.Timestamptz(6)
+  companyId       String?      @map("company_id") @db.Uuid
+  firstName       String?      @map("first_name")
+  lastName        String?      @map("last_name")
+  companyName     String?      @map("company_name")
+  email           String?
+  phone           String?
+  address         String?
+  city            String?
+  zipCode         String?      @map("zip_code")
+  siret           String?
+  vatNumber       String?      @map("vat_number")
+  deliveryAddress String?      @map("delivery_address")
+  deliveryCity    String?      @map("delivery_city")
+  deliveryZipCode String?      @map("delivery_zip_code")
+  paymentTerms    String?      @map("payment_terms")
+  notes           String?
+  customerTypeId  String       @map("customer_type_id") @db.Uuid
+  company     Company?     @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  customerType CustomerType @relation(fields: [customerTypeId], references: [id])
+  sites       Site[]
+  quotes      Quote[]
+
+  @@unique([companyId, firstName, lastName], name: "unique_customer_person")
+  @@map("customers")
+}
+
+model Site {
+  id           String   @id @default(uuid()) @db.Uuid
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime @default(now()) @map("updated_at") @db.Timestamptz(6)
+  companyId    String   @map("company_id") @db.Uuid
+  customerId   String   @map("customer_id") @db.Uuid
+  name         String
+  address      String?
+  city         String?
+  zipCode      String?  @map("zip_code")
+  contactName  String?  @map("contact_name")
+  contactEmail String?  @map("contact_email")
+  contactPhone String?  @map("contact_phone")
+  accessCode   String?  @map("access_code")
+  floor        String?
+  apartment    String?
+  notes        String?
+  company      Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  customer     Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@map("sites")
+}
+
+model Quote {
+  id                  String      @id @default(uuid()) @db.Uuid
+  companyId           String      @map("company_id") @db.Uuid
+  customerId          String      @map("customer_id") @db.Uuid
+  quoteNumber         String      @map("quote_number")
+  status              String      @default("draft")
+  totalHt             Decimal     @default(0) @map("total_ht") @db.Decimal(12, 2)
+  tvaRate             Decimal     @default(20.0) @map("tva_rate") @db.Decimal(5, 2)
+  totalTva            Decimal     @default(0) @map("total_tva") @db.Decimal(12, 2)
+  totalTtc            Decimal     @default(0) @map("total_ttc") @db.Decimal(12, 2)
+  issuedAt            DateTime?   @default(now()) @map("issued_at") @db.Timestamptz(6)
+  validUntil          DateTime?   @map("valid_until") @db.Timestamptz(6)
+  signedAt            DateTime?   @map("signed_at") @db.Timestamptz(6)
+  interventionAddress String?     @map("intervention_address")
+  interventionCity    String?     @map("intervention_city")
+  interventionZipCode String?     @map("intervention_zip_code")
+  interventionContact String?     @map("intervention_contact")
+  signatureId         String?     @map("signature_id")
+  signatureData       String?     @map("signature_data")
+  signerName          String?     @map("signer_name")
+  signerIp            String?     @map("signer_ip")
+  signingMetadata     Json?       @map("signing_metadata")
+  notes               String?
+  terms               String?
+  createdAt           DateTime?   @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt           DateTime?   @default(now()) @map("updated_at") @db.Timestamptz(6)
+  items               QuoteItem[]
+  company             Company     @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  customer            Customer    @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@map("quotes")
+}
+
+model QuoteItem {
+  id          String   @id @default(uuid()) @db.Uuid
+  quoteId     String   @map("quote_id") @db.Uuid
+  description String
+  quantity    Decimal  @default(1) @db.Decimal(10, 2)
+  unitPrice   Decimal  @default(0) @map("unit_price") @db.Decimal(12, 2)
+  tvaRate     Decimal  @default(20.0) @map("tva_rate") @db.Decimal(5, 2)
+  totalHt     Decimal  @default(0) @map("total_ht") @db.Decimal(12, 2)
+  itemType    String?  @default("service") @map("item_type")
+  unit        String?  @default("unité")
+  sortOrder   Int?     @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  quote       Quote    @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+
+  @@map("quote_items")
+}
+
+model PublicToken {
+  id           Int       @id @default(autoincrement())
+  token        String    @unique
+  documentId   String    @map("document_id")
+  documentType String    @map("document_type")
+  customerId   String?   @map("customer_id")
+  companyId    String    @map("company_id")
+  createdAt    DateTime? @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime? @default(now()) @map("updated_at") @db.Timestamptz(6)
+  expiresAt    DateTime  @map("expires_at") @db.Timestamptz(6)
+  usedAt       DateTime? @map("used_at") @db.Timestamptz(6)
+  status       String?   @default("active")
+  ipAddress    String?   @map("ip_address")
+  userAgent    String?   @map("user_agent")
+  metadata     Json?     @default("{}")
+
+  @@map("public_tokens")
+}
+
+model ElectronicSignature {
+  id                 String    @id
+  documentId         String    @map("document_id")
+  documentType       String    @map("document_type")
+  signerName         String    @map("signer_name")
+  signerEmail        String    @map("signer_email")
+  signatureHash      String    @map("signature_hash")
+  signatureValue     String    @map("signature_value")
+  signatureAlgorithm String    @map("signature_algorithm")
+  certificateData    Json      @map("certificate_data")
+  signedAt           DateTime  @map("signed_at") @db.Timestamptz(6)
+  expiresAt          DateTime  @map("expires_at") @db.Timestamptz(6)
+  legalFramework     Json      @map("legal_framework")
+  isValid            Boolean?  @default(true) @map("is_valid")
+  revokedAt          DateTime? @map("revoked_at") @db.Timestamptz(6)
+  revocationReason   String?   @map("revocation_reason")
+  createdAt          DateTime? @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt          DateTime? @default(now()) @map("updated_at") @db.Timestamptz(6)
+
+  @@map("electronic_signatures")
+}
+
+model SignatureOtp {
+  id           String    @id @default(uuid()) @db.Uuid
+  email        String
+  documentId   String    @map("document_id")
+  documentType String    @default("quote") @map("document_type")
+  code         String
+  expiresAt    DateTime  @map("expires_at") @db.Timestamptz(6)
+  attempts     Int       @default(0)
+  verified     Boolean   @default(false)
+  verifiedAt   DateTime? @map("verified_at") @db.Timestamptz(6)
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@unique([email, documentId], name: "email_documentId")
+  @@map("signature_otps")
+}

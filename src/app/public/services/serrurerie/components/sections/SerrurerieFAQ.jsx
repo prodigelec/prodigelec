@@ -17,7 +17,7 @@ export default function SerrurerieFAQ() {
         },
         {
             question: "Proposez-vous le service de reproduction de clés ?",
-            answer: "Oui, en partenariat avec <a href=\"https://www.atelierfreresdantan.fr/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary font-bold hover:underline\">L'Atelier des Frères d'Antan</a>, je propose la reproduction de clés toutes marques ainsi que la copie de badges d'immeuble. Le service est rapide et les clés sont garanties."
+            answer: "Oui, je propose la reproduction de clés toutes marques ainsi que la copie de badges d'immeuble. Le service est rapide et les clés sont garanties."
         },
         {
             question: "Qu'est-ce qu'une serrure A2P ?",

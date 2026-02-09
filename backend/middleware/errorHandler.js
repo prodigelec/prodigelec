@@ -1,5 +1,11 @@
 const errorHandler = (err, req, res, next) => {
-    console.error(err.stack);
+    // Log complet de l'erreur pour le debug
+    console.error('--- Backend Error ---');
+    console.error('Path:', req.path);
+    console.error('Method:', req.method);
+    console.error('Body:', req.body);
+    console.error('Error Stack:', err.stack);
+    console.error('----------------------');
 
     const statusCode = err.statusCode || 500;
     const message = err.message || 'Une erreur interne est survenue.';

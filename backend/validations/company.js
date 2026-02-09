@@ -24,8 +24,9 @@ const companySchema = Joi.object({
         'string.pattern.base': 'Le numéro de téléphone est invalide.'
     }),
     legalForm: Joi.string().allow('', null).optional(),
-    logoUrl: Joi.string().uri().allow('', null).optional()
-});
+    logoUrl: Joi.string().uri().allow('', null).optional(),
+    logoData: Joi.string().allow('', null).optional()
+}).unknown(true);
 
 const siretSchema = Joi.object({
     siret: Joi.string().length(14).pattern(/^[0-9]+$/).required().messages({

@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+import CompanyOnboardingModal from './components/onboarding/CompanyOnboardingModal';
 import './private.css';
 
 /**
@@ -17,6 +18,7 @@ export default async function PrivateLayout({ children }) {
 
     return (
         <div className="theme-private min-h-screen">
+            <CompanyOnboardingModal />
             {children}
         </div>
     );
