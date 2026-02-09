@@ -4,14 +4,20 @@ require("dotenv").config();
 
 exports.login = async (req, res) => {
   const { username, password, accessCode } = req.body;
+  
+  console.log("🔑 Backend - Tentative de login:", { username, password, accessCode });
 
   if (!authService.validateAccessCode(accessCode)) {
+    console.log("❌ Code d'accès invalide");
     return res.status(403).json({ error: "Code d'accès invalide ou expiré." });
   }
 
   if (!authService.verifyCredentials(username, password)) {
+    console.log("❌ Identifiants incorrects");
     return res.status(401).json({ error: "Identifiants incorrects." });
   }
+  
+  console.log("✅ Identifiants valides !");
 
   // Récupérer l'ID de l'entreprise principale
   const company = await prisma.company.findFirst();

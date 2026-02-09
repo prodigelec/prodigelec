@@ -8,13 +8,9 @@ export default function LogoutButton({ iconOnly = false }) {
 
   const handleLogout = async () => {
     try {
-      await fetch("/api/crm", {
+      await fetch("/api/auth/logout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          endpoint: "/auth/logout",
-          method: "POST",
-        }),
       });
 
       // Refresh and redirect to public home

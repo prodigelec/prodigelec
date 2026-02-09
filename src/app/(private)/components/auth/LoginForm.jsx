@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, Eye, EyeOff, Lock } from "lucide-react";
-import BrandName from "@/app/public/components/ui/BrandName";
+import BrandName from "@/app/components/ui/BrandName";
 
 /**
  * LoginForm - Professional Edition (Pennylane Style)
@@ -22,19 +22,23 @@ export default function LoginForm({ accessCode, onSuccess }) {
     setIsLoading(true);
     setError("");
 
+    // Console.log pour déboguer
+    console.log("🚀 Tentative de connexion:", { username, password, accessCode });
+
     try {
-      const response = await fetch("/api/crm", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          endpoint: "/auth/login",
-          data: { username, password, accessCode },
-        }),
+        body: JSON.stringify({ username, password, accessCode }),
       });
 
+      console.log("📡 Réponse HTTP:", response.status, response.statusText);
+
       const result = await response.json();
+      console.log("📋 Données reçues:", result);
 
       if (response.ok) {
+        console.log("✅ Connexion réussie !");
         if (onSuccess) {
           onSuccess(result);
         } else {
@@ -42,9 +46,11 @@ export default function LoginForm({ accessCode, onSuccess }) {
           router.refresh();
         }
       } else {
+        console.log("❌ Erreur de connexion:", result.error);
         setError(result.error || "Identifiants invalides.");
       }
     } catch (err) {
+      console.log("💥 Erreur réseau:", err);
       setError("Erreur de connexion au serveur.");
     } finally {
       setIsLoading(false);
@@ -56,10 +62,7 @@ export default function LoginForm({ accessCode, onSuccess }) {
       {/* Header */}
       <div className="mb-10 text-center lg:text-left">
         <div className="inline-block mb-6 scale-90 origin-left">
-          {/* Using text for brand to keep it clean, matching the Navbar style */}
-          <span className="text-2xl font-black tracking-tighter text-background-dark">
-            PRODIG<span className="text-primary">ELEC</span>
-          </span>
+          <BrandName />
         </div>
         <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
           Connexion à votre espace

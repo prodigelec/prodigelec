@@ -1,25 +1,11 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import CompanyOnboardingModal from "./components/onboarding/CompanyOnboardingModal";
-import "./private.css";
+import PrivateThemeWrapper from "@/app/components/layout/PrivateThemeWrapper";
 
-/**
- * Base Private Layout
- * Handles session (JWT) validation.
- */
-export default async function PrivateLayout({ children }) {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("token");
-
-  // Basic session guard
-  if (!token) {
-    redirect("/auth/crm-login");
-  }
-
+export default function PrivateLayout({ children }) {
   return (
-    <div className="theme-private min-h-screen">
-      <CompanyOnboardingModal />
-      {children}
-    </div>
+    <PrivateThemeWrapper>
+      <div className="min-h-screen">
+        {children}
+      </div>
+    </PrivateThemeWrapper>
   );
 }
