@@ -128,14 +128,24 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
         setIsLoading(true);
 
         try {
-            // Basic validation
-            if (formData.type === 'professional' && !formData.company_name) {
-                toast.error('Le nom de la société est obligatoire pour un client professionnel');
+            // Règle: Un seul nom est obligatoire pour les lois
+            const hasLastName = formData.last_name && formData.last_name.trim() !== '';
+            const hasCompanyName = formData.company_name && formData.company_name.trim() !== '';
+
+            if (!hasLastName && !hasCompanyName) {
+                toast.error('Un nom (particulier) ou une raison sociale (société) est obligatoire');
                 setIsLoading(false);
                 return;
             }
-            if (formData.type === 'individual' && !formData.last_name) {
+
+            if (formData.type === 'individual' && !hasLastName) {
                 toast.error('Le nom est obligatoire pour un particulier');
+                setIsLoading(false);
+                return;
+            }
+
+            if ((formData.type === 'professional' || formData.type === 'syndic') && !hasCompanyName) {
+                toast.error('La raison sociale est obligatoire pour une société ou un syndic');
                 setIsLoading(false);
                 return;
             }
@@ -154,7 +164,12 @@ export default function CustomerModal({ isOpen, onClose, onSuccess, customerToEd
                 onClose();
             }
         } catch (error) {
-            console.error('Error saving customer:', error);
+            const isConflict = error.response?.status === 409;
+            
+            if (!isConflict) {
+                console.error('Error saving customer:', error);
+            }
+            
             const msg = error.response?.data?.error || 'Erreur lors de la sauvegarde';
             toast.error(msg);
         } finally {

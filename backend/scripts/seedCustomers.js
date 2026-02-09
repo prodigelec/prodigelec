@@ -14,6 +14,18 @@ async function seed() {
         const companyId = company.id;
         console.log(`🏢 Utilisation de la société: ${company.name} (${companyId})`);
 
+        // 2. Récupérer les types de clients
+        const customerTypes = await prisma.customerType.findMany();
+        const typeMap = customerTypes.reduce((acc, type) => {
+            acc[type.code] = type.id;
+            return acc;
+        }, {});
+
+        if (Object.keys(typeMap).length === 0) {
+            console.error('❌ Erreur: Aucun type de client trouvé. Veuillez lancer le script seedCustomerTypes.js d\'abord.');
+            process.exit(1);
+        }
+
         const customers = [
             // Individuels
             {
@@ -100,7 +112,7 @@ async function seed() {
             },
             // Professionnels
             {
-                type: 'business',
+                type: 'professional',
                 companyName: 'Boulangerie de la Halle',
                 email: 'contact@boulangerie-halle.fr',
                 phone: '0142365897',
@@ -112,7 +124,7 @@ async function seed() {
                 notes: 'Maintenance préventive bimestrielle'
             },
             {
-                type: 'business',
+                type: 'professional',
                 companyName: 'Garage du Centre',
                 email: 'info@garageducentre.com',
                 phone: '0237458963',
@@ -123,7 +135,7 @@ async function seed() {
                 notes: 'Nouveau client'
             },
             {
-                type: 'business',
+                type: 'professional',
                 companyName: 'Hôtel Splendid',
                 email: 'direction@hotel-splendid.fr',
                 phone: '0493887766',
@@ -133,7 +145,7 @@ async function seed() {
                 siret: '45678912300045'
             },
             {
-                type: 'business',
+                type: 'professional',
                 companyName: 'Restaurant Le Gourmet',
                 email: 'resa@legourmet-lyon.fr',
                 phone: '0478423695',
@@ -143,7 +155,7 @@ async function seed() {
                 siret: '32165498700012'
             },
             {
-                type: 'business',
+                type: 'professional',
                 companyName: 'Pharmacie Principale',
                 email: 'pharma.principale@gmail.com',
                 phone: '0145632589',
@@ -153,7 +165,7 @@ async function seed() {
                 siret: '78912345600078'
             },
             {
-                type: 'business',
+                type: 'professional',
                 companyName: 'Agence Immobilière Nexity',
                 email: 'accueil.lyon@nexity.fr',
                 phone: '0472456321',
@@ -163,7 +175,7 @@ async function seed() {
                 siret: '65432178900065'
             },
             {
-                type: 'business',
+                type: 'professional',
                 companyName: 'Café de Flore',
                 email: 'contact@cafedeflore.fr',
                 phone: '0145485526',
@@ -217,11 +229,43 @@ async function seed() {
 
         console.log(`⏳ Insertion de ${customers.length} clients...`);
 
-        for (const customerData of customers) {
+        // Insertion des clients avec vérification d'existence pour l'idempotence
+        for (const customer of customers) {
+            const { type, ...data } = customer;
+            const customerTypeId = typeMap[type];
+
+            if (!customerTypeId) {
+                console.warn(`⚠️ Type de client inconnu: ${type}. Ignoré.`);
+                continue;
+            }
+
+            // Vérifier si le client existe déjà (par nom/prénom ou email)
+            const existingCustomer = await prisma.customer.findFirst({
+                where: {
+                    companyId: companyId,
+                    OR: [
+                        { email: data.email },
+                        {
+                            firstName: data.firstName || '',
+                            lastName: data.lastName || ''
+                        }
+                    ]
+                }
+            });
+
+            if (existingCustomer) {
+                console.log(`⏩ Client déjà existant: ${data.firstName || ''} ${data.lastName || data.companyName}`);
+                continue;
+            }
+
             await prisma.customer.create({
                 data: {
-                    ...customerData,
-                    companyId: companyId
+                    ...data,
+                    companyId: companyId,
+                    customerTypeId: customerTypeId,
+                    firstName: data.firstName || '',
+                    lastName: data.lastName || '',
+                    companyName: data.companyName || ''
                 }
             });
         }

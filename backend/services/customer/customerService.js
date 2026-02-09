@@ -18,7 +18,8 @@ const mapCustomerFromPrisma = (c) => {
         delivery_zip_code: c.deliveryZipCode,
         payment_terms: c.paymentTerms,
         created_at: c.createdAt,
-        updated_at: c.updatedAt
+        updated_at: c.updatedAt,
+        type: c.customerType?.code // Récupérer le code du type pour la compatibilité
     };
 };
 
@@ -28,6 +29,9 @@ const mapCustomerFromPrisma = (c) => {
 const getAllCustomers = async (companyId) => {
     const customers = await prisma.customer.findMany({
         where: { companyId },
+        include: {
+            customerType: true
+        },
         orderBy: { createdAt: 'desc' }
     });
     return customers.map(mapCustomerFromPrisma);
@@ -41,9 +45,23 @@ const getCustomerById = async (id, companyId) => {
         where: {
             id,
             companyId
+        },
+        include: {
+            customerType: true
         }
     });
     return mapCustomerFromPrisma(customer);
+};
+
+/**
+ * Helper pour trouver l'ID du type de client par son code
+ */
+const getCustomerTypeIdByCode = async (code) => {
+    const type = await prisma.customerType.findUnique({
+        where: { code }
+    });
+    if (!type) throw new Error(`Type de client '${code}' non trouvé`);
+    return type.id;
 };
 
 /**
@@ -57,29 +75,43 @@ const createCustomer = async (customerData) => {
         delivery_zip_code, payment_terms, notes
     } = customerData;
 
-    const customer = await prisma.customer.create({
-        data: {
-            companyId: company_id,
-            type,
-            firstName: first_name,
-            lastName: last_name,
-            companyName: company_name,
-            email,
-            phone,
-            address,
-            city,
-            zipCode: zip_code,
-            siret,
-            vatNumber: vat_number,
-            deliveryAddress: delivery_address,
-            deliveryCity: delivery_city,
-            deliveryZipCode: delivery_zip_code,
-            paymentTerms: payment_terms,
-            notes
-        }
-    });
+    try {
+        const customerTypeId = await getCustomerTypeIdByCode(type);
 
-    return mapCustomerFromPrisma(customer);
+        const customer = await prisma.customer.create({
+            data: {
+                companyId: company_id,
+                customerTypeId: customerTypeId,
+                firstName: first_name || '',
+                lastName: last_name || '',
+                companyName: company_name || '',
+                email,
+                phone,
+                address,
+                city,
+                zipCode: zip_code,
+                siret,
+                vatNumber: vat_number,
+                deliveryAddress: delivery_address,
+                deliveryCity: delivery_city,
+                deliveryZipCode: delivery_zip_code,
+                paymentTerms: payment_terms,
+                notes
+            },
+            include: {
+                customerType: true
+            }
+        });
+
+        return mapCustomerFromPrisma(customer);
+    } catch (error) {
+        if (error.code === 'P2002') {
+            const businessError = new Error('Un client avec ce nom et ce prénom existe déjà pour cette société.');
+            businessError.statusCode = 409;
+            throw businessError;
+        }
+        throw error;
+    }
 };
 
 /**
@@ -87,38 +119,68 @@ const createCustomer = async (customerData) => {
  */
 const updateCustomer = async (id, companyId, customerData) => {
     const data = {};
-    if (customerData.type !== undefined) data.type = customerData.type;
-    if (customerData.first_name !== undefined) data.firstName = customerData.first_name;
-    if (customerData.last_name !== undefined) data.lastName = customerData.last_name;
-    if (customerData.company_name !== undefined) data.companyName = customerData.company_name;
-    if (customerData.email !== undefined) data.email = customerData.email;
-    if (customerData.phone !== undefined) data.phone = customerData.phone;
-    if (customerData.address !== undefined) data.address = customerData.address;
-    if (customerData.city !== undefined) data.city = customerData.city;
-    if (customerData.zip_code !== undefined) data.zipCode = customerData.zip_code;
-    if (customerData.siret !== undefined) data.siret = customerData.siret;
-    if (customerData.vat_number !== undefined) data.vatNumber = customerData.vat_number;
-    if (customerData.delivery_address !== undefined) data.deliveryAddress = customerData.delivery_address;
-    if (customerData.delivery_city !== undefined) data.deliveryCity = customerData.delivery_city;
-    if (customerData.delivery_zip_code !== undefined) data.deliveryZipCode = customerData.delivery_zip_code;
-    if (customerData.payment_terms !== undefined) data.paymentTerms = customerData.payment_terms;
-    if (customerData.notes !== undefined) data.notes = customerData.notes;
+    
+    try {
+        if (customerData.type !== undefined) {
+            data.customerTypeId = await getCustomerTypeIdByCode(customerData.type);
+        }
+        
+        if (customerData.first_name !== undefined) data.firstName = customerData.first_name || '';
+        if (customerData.last_name !== undefined) data.lastName = customerData.last_name || '';
+        if (customerData.company_name !== undefined) data.companyName = customerData.company_name || '';
+        if (customerData.email !== undefined) data.email = customerData.email;
+        if (customerData.phone !== undefined) data.phone = customerData.phone;
+        if (customerData.address !== undefined) data.address = customerData.address;
+        if (customerData.city !== undefined) data.city = customerData.city;
+        if (customerData.zip_code !== undefined) data.zipCode = customerData.zip_code;
+        if (customerData.siret !== undefined) data.siret = customerData.siret;
+        if (customerData.vat_number !== undefined) data.vatNumber = customerData.vat_number;
+        if (customerData.delivery_address !== undefined) data.deliveryAddress = customerData.delivery_address;
+        if (customerData.delivery_city !== undefined) data.deliveryCity = customerData.delivery_city;
+        if (customerData.delivery_zip_code !== undefined) data.deliveryZipCode = customerData.delivery_zip_code;
+        if (customerData.payment_terms !== undefined) data.paymentTerms = customerData.payment_terms;
+        if (customerData.notes !== undefined) data.notes = customerData.notes;
 
-    const customer = await prisma.customer.update({
-        where: {
-            id,
-            companyId
-        },
-        data
-    });
+        const customer = await prisma.customer.update({
+            where: {
+                id,
+                companyId
+            },
+            data,
+            include: {
+                customerType: true
+            }
+        });
 
-    return mapCustomerFromPrisma(customer);
+        return mapCustomerFromPrisma(customer);
+    } catch (error) {
+        if (error.code === 'P2002') {
+            const businessError = new Error('Un client avec ce nom et ce prénom existe déjà pour cette société.');
+            businessError.statusCode = 409;
+            throw businessError;
+        }
+        throw error;
+    }
 };
 
 /**
  * Supprime un client
  */
 const deleteCustomer = async (id, companyId) => {
+    // Vérifier si le client a des devis (quotes)
+    const quotesCount = await prisma.quote.count({
+        where: {
+            customerId: id,
+            companyId: companyId
+        }
+    });
+
+    if (quotesCount > 0) {
+        const businessError = new Error('Impossible de supprimer ce client car il possède des devis ou factures associés.');
+        businessError.statusCode = 403; // Forbidden
+        throw businessError;
+    }
+
     await prisma.customer.delete({
         where: {
             id,
