@@ -51,6 +51,7 @@ export default async function DynamicPortalLayout({ children, params }) {
 
   const companyData = await getCompanyData(code);
   const company = companyData?.company;
+  const user = companyData?.user;
 
   const navItems = [
     {
@@ -74,7 +75,7 @@ export default async function DynamicPortalLayout({ children, params }) {
             <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-slate-100 shadow-sm">
               <Image
                 src={company.logoUrl}
-                alt={company.companyName || "Logo"}
+                alt={company.company_name || "Logo"}
                 fill
                 sizes="40px"
                 className="object-cover"
@@ -116,7 +117,7 @@ export default async function DynamicPortalLayout({ children, params }) {
         <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8">
           <div className="flex items-center gap-3">
             <h1 className="text-lg font-bold text-slate-800">
-              {company?.companyName || "Mon Espace"}
+              {company?.company_name || "Mon Espace"}
             </h1>
             {company?.legalForm && (
               <span className="text-xs font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-500 border border-slate-200">
@@ -127,8 +128,8 @@ export default async function DynamicPortalLayout({ children, params }) {
 
           <div className="flex items-center gap-4">
             <div className="text-sm text-right hidden sm:block">
-              <div className="font-medium text-slate-900">Admin</div>
-              <div className="text-xs text-slate-500">Connecté</div>
+              <div className="font-medium text-slate-900">{user?.name || "Admin"}</div>
+              <div className="text-xs text-slate-500">{user?.role || "Connecté"}</div>
             </div>
             <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs border border-primary/20">
               AD

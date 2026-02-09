@@ -88,9 +88,25 @@ const getCompany = async (req, res) => {
       return res.json({ exists: false });
     }
 
+    // Récupérer les infos utilisateur depuis le token
+    let user = null;
+    if (req.user) {
+      user = {
+        name: req.user.user || req.user.name || "Admin",
+        role: req.user.role || "admin",
+      };
+    } else {
+      // Fallback si pas d'info utilisateur
+      user = {
+        name: "Admin",
+        role: "admin",
+      };
+    }
+
     return res.json({
       exists: true,
       company,
+      user,
     });
   } catch (error) {
     console.error("Get Company Error:", error);
