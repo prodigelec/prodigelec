@@ -12,7 +12,9 @@ export default function Logo({ className = "", boxClassName = "" }) {
         animate={{ opacity: 1, x: 0 }}
         className={`flex items-center gap-3 group cursor-pointer ${className}`}
       >
-        <div className={`relative w-[96px] h-[96px] overflow-hidden rounded-xl bg-gradient-to-br from-[#d9d9d9] via-[#f5f5f5] to-[#9ca3af] ring-1 ring-white/30 shadow-[inset_0_2px_6px_rgba(255,255,255,0.5),inset_0_-3px_6px_rgba(0,0,0,0.25),0_8px_18px_rgba(0,0,0,0.35)] transition-colors ${boxClassName}`}>
+        <div
+          className={`relative w-[96px] h-[96px] overflow-hidden rounded-xl bg-gradient-to-br from-[#d9d9d9] via-[#f5f5f5] to-[#9ca3af] ring-1 ring-white/30 shadow-[inset_0_2px_6px_rgba(255,255,255,0.5),inset_0_-3px_6px_rgba(0,0,0,0.25),0_8px_18px_rgba(0,0,0,0.35)] transition-colors ${boxClassName}`}
+        >
           <Image
             src="/prodigelec-logo.svg"
             alt="PRODIGELEC Logo"

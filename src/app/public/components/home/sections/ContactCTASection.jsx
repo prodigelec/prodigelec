@@ -13,10 +13,8 @@ export default function ContactCTASection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="bg-gradient-to-b from-white/10 via-white/5 to-black/30 backdrop-blur-xl border border-white/10 ring-1 ring-white/10 rounded-3xl p-8 md:p-12 lg:p-16 overflow-hidden relative shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_18px_50px_rgba(0,0,0,0.5)]">
-
           {/* Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
             {/* Left Column: Text */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -32,7 +30,9 @@ export default function ContactCTASection() {
                 </span>
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
-                Que ce soit pour une urgence électrique ou un besoin en serrurerie, je suis à votre écoute pour vous apporter une solution rapide et sur-mesure.
+                Que ce soit pour une urgence électrique ou un besoin en
+                serrurerie, je suis à votre écoute pour vous apporter une
+                solution rapide et sur-mesure.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -68,8 +68,15 @@ export default function ContactCTASection() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-1">Email</h3>
-                  <p className="text-gray-400 text-sm mb-2">Réponse sous 24h garantie</p>
-                  <a href="mailto:contact@prodigelec.fr" className="text-primary hover:text-primary-light transition-colors font-medium">contact@prodigelec.fr</a>
+                  <p className="text-gray-400 text-sm mb-2">
+                    Réponse sous 24h garantie
+                  </p>
+                  <a
+                    href="mailto:contact@prodigelec.fr"
+                    className="text-primary hover:text-primary-light transition-colors font-medium"
+                  >
+                    contact@prodigelec.fr
+                  </a>
                 </div>
               </div>
 
@@ -79,12 +86,18 @@ export default function ContactCTASection() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Zone d&apos;intervention</h3>
-                  <p className="text-gray-400 text-sm mb-2">Déplacement gratuit &lt; 5km</p>
-                  <span className="text-gray-200 font-medium">Chartres, Broué, Dreux, Anet, Nonancourt, Évreux, Ezy-sur-Eure & leurs alentours (28/27)</span>
+                  <h3 className="text-lg font-bold text-white mb-1">
+                    Zone d&apos;intervention
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-2">
+                    Déplacement gratuit &lt; 5km
+                  </p>
+                  <span className="text-gray-200 font-medium">
+                    Chartres, Broué, Dreux, Anet, Nonancourt, Évreux,
+                    Ezy-sur-Eure & leurs alentours (28/27)
+                  </span>
                 </div>
               </div>
-
             </motion.div>
           </div>
         </div>

@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const signatureRoutes = require('./signature');
+const signatureRoutes = require("./signature");
 
 /**
  * Routes publiques pour l'accès via token
@@ -8,6 +8,6 @@ const signatureRoutes = require('./signature');
  */
 
 // Routes de signature électronique publiques
-router.use('/signature', signatureRoutes);
+router.use("/signature", signatureRoutes);
 
 module.exports = router;

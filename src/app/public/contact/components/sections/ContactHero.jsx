@@ -36,7 +36,9 @@ export default function ContactHero() {
           transition={{ delay: 0.1 }}
           className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-8"
         >
-          Une urgence ou un projet ? Fort de 23 ans d&apos;expertise terrain, je suis à votre écoute pour vous apporter une réponse rapide et personnalisée en Eure (27) et Eure-et-Loir (28).
+          Une urgence ou un projet ? Fort de 23 ans d&apos;expertise terrain, je
+          suis à votre écoute pour vous apporter une réponse rapide et
+          personnalisée en Eure (27) et Eure-et-Loir (28).
         </motion.p>
 
         <motion.div

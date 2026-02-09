@@ -1,12 +1,17 @@
 "use client";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
-const InterventionMap = dynamic(() => import('@/app/public/components/ui/InterventionMap'), {
-  ssr: false,
-  loading: () => <div className="h-full w-full bg-white/5 animate-pulse rounded-3xl" />
-});
+const InterventionMap = dynamic(
+  () => import("@/app/public/components/ui/InterventionMap"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-full w-full bg-white/5 animate-pulse rounded-3xl" />
+    ),
+  },
+);
 
 export default function ContactInfo() {
   const contacts = [
@@ -17,7 +22,7 @@ export default function ContactInfo() {
       sub: "Laissez un message si indisponible",
       link: "tel:0638194752",
       gradient: "from-primary/20 to-primary-light/20",
-      text: "text-primary"
+      text: "text-primary",
     },
     {
       icon: Mail,
@@ -26,7 +31,7 @@ export default function ContactInfo() {
       sub: "Réponse sous 24h garantie",
       link: "mailto:contact@prodigelec.fr",
       gradient: "from-accent/20 to-accent-glow/20",
-      text: "text-accent"
+      text: "text-accent",
     },
     {
       icon: Clock,
@@ -35,7 +40,7 @@ export default function ContactInfo() {
       sub: "Samedi uniquement sur RDV",
       link: null,
       gradient: "from-primary/20 to-primary-dark/20",
-      text: "text-primary-light"
+      text: "text-primary-light",
     },
     {
       icon: MapPin,
@@ -44,8 +49,8 @@ export default function ContactInfo() {
       sub: "28410 Broué",
       link: "https://waze.com/ul?ll=48.7492,1.5234&navigate=yes&q=10+Rue+Georges+Bréant+28410+Broué",
       gradient: "from-accent/20 to-primary/20",
-      text: "text-primary"
-    }
+      text: "text-primary",
+    },
   ];
 
   return (
@@ -60,19 +65,29 @@ export default function ContactInfo() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className={`relative overflow-hidden p-6 rounded-3xl bg-[#0f172a] border border-white/5 hover:border-white/20 transition-all group flex-1 ${!item.link ? 'cursor-default' : 'cursor-pointer'}`}
+            className={`relative overflow-hidden p-6 rounded-3xl bg-[#0f172a] border border-white/5 hover:border-white/20 transition-all group flex-1 ${!item.link ? "cursor-default" : "cursor-pointer"}`}
           >
-            <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${item.gradient} rounded-full blur-[60px] -mr-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+            <div
+              className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${item.gradient} rounded-full blur-[60px] -mr-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+            />
 
             <div className="relative z-10 flex items-center gap-4">
-              <div className={`w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+              <div
+                className={`w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}
+              >
                 <item.icon className={`w-6 h-6 ${item.text}`} />
               </div>
 
               <div className="flex-1 min-w-0">
-                <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">{item.title}</h3>
-                <div className="text-lg font-bold text-white truncate">{item.value}</div>
-                <div className="text-xs text-gray-500 font-medium truncate">{item.sub}</div>
+                <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">
+                  {item.title}
+                </h3>
+                <div className="text-lg font-bold text-white truncate">
+                  {item.value}
+                </div>
+                <div className="text-xs text-gray-500 font-medium truncate">
+                  {item.sub}
+                </div>
               </div>
 
               {item.link && (

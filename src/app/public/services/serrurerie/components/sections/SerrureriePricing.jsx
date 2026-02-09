@@ -12,10 +12,10 @@ export default function SerrureriePricing() {
         "Ouverture à la radio (bypass)",
         "Déplacement Zone 1 inclus",
         "1h de main d'œuvre incluse",
-        "Hors zone : Frais déplacement +"
+        "Hors zone : Frais déplacement +",
       ],
       highlight: true,
-      tag: "Urgence"
+      tag: "Urgence",
     },
     {
       title: "Porte Fermée / Clé perdue",
@@ -25,9 +25,9 @@ export default function SerrureriePricing() {
         "Ouverture destructive (si nécessaire)",
         "Diagnostic sécurité complet",
         "Matériel de remplacement en supplément",
-        "Déplacement & Devis gratuit"
+        "Déplacement & Devis gratuit",
       ],
-      highlight: false
+      highlight: false,
     },
     {
       title: "Mise en Sécurité",
@@ -37,9 +37,9 @@ export default function SerrureriePricing() {
         "Changement de serrure 3 points",
         "Installation cornières anti-pinces",
         "Poignée de sécurité renforcée",
-        "Diagnostic sécurité offert"
+        "Diagnostic sécurité offert",
       ],
-      highlight: false
+      highlight: false,
     },
     {
       title: "Autres demandes",
@@ -49,10 +49,10 @@ export default function SerrureriePricing() {
         "Réparation de volets",
         "Réglage de portes",
         "Maintenance préventive",
-        "Conseils personnalisés"
+        "Conseils personnalisés",
       ],
-      highlight: false
-    }
+      highlight: false,
+    },
   ];
 
   return (
@@ -62,7 +62,8 @@ export default function SerrureriePricing() {
           Mes Tarifs <span className="text-primary italic">Serrurerie</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Un savoir-faire artisanal avec une tarification claire et sans surprise.
+          Un savoir-faire artisanal avec une tarification claire et sans
+          surprise.
         </p>
       </div>
 
@@ -84,7 +85,11 @@ export default function SerrureriePricing() {
               </div>
             )}
 
-            <div className={`relative h-full overflow-hidden bg-white/[0.03] backdrop-blur-xl border ${plan.highlight ? 'border-primary/40 shadow-[0_0_40px_-15px_rgba(201,162,39,0.3)]' : 'border-white/10'
+            <div
+              className={`relative h-full overflow-hidden bg-white/[0.03] backdrop-blur-xl border ${
+                plan.highlight
+                  ? "border-primary/40 shadow-[0_0_40px_-15px_rgba(201,162,39,0.3)]"
+                  : "border-white/10"
               } rounded-3xl p-8 transition-all duration-500 hover:border-primary/50 flex flex-col z-10`}
             >
               {/* Background Decor */}
@@ -97,17 +102,20 @@ export default function SerrureriePricing() {
 
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-2xl lg:text-3xl font-black text-primary drop-shadow-[0_0_10px_rgba(201,162,39,0.3)]">
-                    {plan.price === "Sur Devis" ? plan.price : plan.price.split(' ').slice(-2).join(' ')}
+                    {plan.price === "Sur Devis"
+                      ? plan.price
+                      : plan.price.split(" ").slice(-2).join(" ")}
                   </span>
                   <span className="text-gray-400 font-medium text-xs">
-                    {plan.price === 'Sur Devis' ? '' : '/ intervention'}
+                    {plan.price === "Sur Devis" ? "" : "/ intervention"}
                   </span>
                 </div>
-                {plan.price !== "Sur Devis" && plan.price.includes("À partir de") && (
-                  <div className="text-primary/70 text-[10px] font-bold uppercase tracking-tight -mt-5 mb-4">
-                    À partir de
-                  </div>
-                )}
+                {plan.price !== "Sur Devis" &&
+                  plan.price.includes("À partir de") && (
+                    <div className="text-primary/70 text-[10px] font-bold uppercase tracking-tight -mt-5 mb-4">
+                      À partir de
+                    </div>
+                  )}
 
                 <p className="text-gray-400 text-xs leading-relaxed mb-8 min-h-[48px]">
                   {plan.description}
@@ -117,7 +125,10 @@ export default function SerrureriePricing() {
 
                 <ul className="space-y-4 mb-10 flex-grow">
                   {plan.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-3 text-gray-300 group/item">
+                    <li
+                      key={fIdx}
+                      className="flex items-center gap-3 text-gray-300 group/item"
+                    >
                       <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover/item:bg-primary/20 transition-colors">
                         <Check className="w-3 h-3 text-primary" />
                       </div>
@@ -130,18 +141,22 @@ export default function SerrureriePricing() {
 
                 <a
                   href="/public/contact#contact-form"
-                  className={`w-full py-4 rounded-2xl font-black text-xs uppercase tracking-wider transition-all duration-300 text-center ${plan.highlight
-                    ? 'bg-primary text-background hover:scale-[1.02] shadow-[0_10px_20px_-10px_rgba(201,162,39,0.5)]'
-                    : 'bg-white/5 text-white border border-white/10 hover:bg-white/10'
-                    }`}
+                  className={`w-full py-4 rounded-2xl font-black text-xs uppercase tracking-wider transition-all duration-300 text-center ${
+                    plan.highlight
+                      ? "bg-primary text-background hover:scale-[1.02] shadow-[0_10px_20px_-10px_rgba(201,162,39,0.5)]"
+                      : "bg-white/5 text-white border border-white/10 hover:bg-white/10"
+                  }`}
                 >
                   Demander un devis
                 </a>
               </div>
 
               {/* Glow Effect */}
-              <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent ${plan.highlight ? 'via-primary/50' : 'via-accent/0'
-                } to-transparent group-hover:via-primary/50 transition-all duration-700`} />
+              <div
+                className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent ${
+                  plan.highlight ? "via-primary/50" : "via-accent/0"
+                } to-transparent group-hover:via-primary/50 transition-all duration-700`}
+              />
             </div>
           </motion.div>
         ))}

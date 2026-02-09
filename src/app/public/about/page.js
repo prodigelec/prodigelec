@@ -4,14 +4,17 @@ import AboutValues from "./components/sections/AboutValues";
 import AboutCTA from "./components/sections/AboutCTA";
 
 export const metadata = {
-  title: "À Propos de PRODIGELEC - Artisan Électricien & Serrurier | Eure-et-Loir",
-  description: "Découvrez le parcours de PRODIGELEC, artisan électricien serrurier avec 23 ans d'expérience. Une expertise de terrain au service de vos projets.",
+  title:
+    "À Propos de PRODIGELEC - Artisan Électricien & Serrurier | Eure-et-Loir",
+  description:
+    "Découvrez le parcours de PRODIGELEC, artisan électricien serrurier avec 23 ans d'expérience. Une expertise de terrain au service de vos projets.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "L'histoire de PRODIGELEC - Artisanat & Sécurité",
-    description: "Un parcours de terrain au service de votre sécurité et de vos installations.",
+    description:
+      "Un parcours de terrain au service de votre sécurité et de vos installations.",
     url: "https://www.prodigelec.fr/about",
   },
 };
