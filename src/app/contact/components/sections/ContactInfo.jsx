@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowUpRight, Calculator } from "lucide-react";
 import dynamic from 'next/dynamic';
 
 const InterventionMap = dynamic(() => import('@/app/components/ui/InterventionMap'), {
@@ -71,7 +71,7 @@ export default function ContactInfo() {
 
               <div className="flex-1 min-w-0">
                 <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">{item.title}</h3>
-                <div className="text-lg font-bold text-white truncate">{item.value}</div>
+                <div className="text-xs sm:text-sm font-bold text-white truncate">{item.value}</div>
                 <div className="text-xs text-gray-500 font-medium truncate">{item.sub}</div>
               </div>
 
@@ -85,15 +85,66 @@ export default function ContactInfo() {
         ))}
       </div>
 
-      {/* Map Column */}
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="lg:col-span-2 relative h-[400px] lg:h-auto rounded-3xl overflow-hidden border border-white/10 bg-[#0f172a]"
-      >
-        <InterventionMap />
-      </motion.div>
+      {/* Map & Travel Rates Column */}
+      <div className="lg:col-span-2 flex flex-col gap-6">
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="relative h-[550px] w-full rounded-3xl overflow-hidden border border-white/10 bg-[#0f172a]"
+        >
+          <InterventionMap />
+        </motion.div>
+
+        {/* Travel Rates Summary Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="p-6 rounded-3xl bg-[#0f172a]/80 backdrop-blur-xl border border-white/10 shadow-2xl"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center">
+              <Calculator className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-white font-bold uppercase tracking-tight leading-none text-base">Tarifs de déplacement</h3>
+              <p className="text-gray-500 text-[10px] sm:text-xs font-medium mt-1 uppercase tracking-widest italic">Intervention (27 & 28)</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Zone 1', sub: '< 5km', price: 'Gratuit', color: '#22c55e' },
+              { label: 'Zone 2', sub: '< 20km', price: '30€', color: '#3b82f6' },
+              { label: 'Zone 3', sub: '< 40km', price: '50€', color: '#f97316' },
+              { label: 'Zone 4', sub: '< 60km', price: '70€', color: '#ef4444' }
+            ].map((zone, idx) => (
+              <div
+                key={idx}
+                className="p-3 bg-white/5 rounded-2xl border border-white/5 flex flex-col items-center text-center transition-all hover:bg-white/[0.08]"
+              >
+                <div className="flex items-center gap-1.5 mb-1.5">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: zone.color }} />
+                  <span className="text-gray-400 text-[10px] font-black uppercase tracking-tight">{zone.label}</span>
+                </div>
+                <div className="text-white font-bold text-lg leading-tight">{zone.price}</div>
+                <div className="text-gray-500 text-[9px] font-medium leading-tight">{zone.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+            <p className="text-[9px] sm:text-[10px] text-gray-400 italic font-medium leading-relaxed">
+              * Calcul automatique disponible via le moteur de recherche de la carte ci-dessus.
+            </p>
+            <div className="text-[9px] sm:text-[10px] font-bold text-primary px-3 py-1 bg-primary/5 rounded-full uppercase tracking-tighter">
+              Devis Gratuit
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }

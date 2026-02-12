@@ -5,6 +5,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Search, MapPin, Calculator, Trash2 } from 'lucide-react';
 
 const BROUE_COORDS = [48.7492, 1.5234];
+const MAP_CENTER = [48.74, 1.34];
 
 const zones = [
   { radius: 60500, color: '#ef4444', label: 'Zone 4', price: '70€' },
@@ -14,7 +15,11 @@ const zones = [
 ];
 
 const cities = [
-  { name: "Broué", coords: BROUE_COORDS, isBase: true }
+  { name: "Broué", coords: BROUE_COORDS, isBase: true },
+  { name: "Évreux", coords: [49.0238, 1.1508], isBase: false },
+  { name: "Vernon", coords: [49.0917, 1.4883], isBase: false },
+  { name: "Dreux", coords: [48.7303, 1.3664], isBase: false },
+  { name: "Chartres", coords: [48.4438, 1.4891], isBase: false }
 ];
 
 function ChangeView({ center, zoom }) {
@@ -29,7 +34,7 @@ export default function InterventionMap() {
   const [suggestions, setSuggestions] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [result, setResult] = useState(null);
-  const [mapCenter, setMapCenter] = useState(BROUE_COORDS);
+  const [mapCenter, setMapCenter] = useState(MAP_CENTER);
   const [mapZoom, setMapZoom] = useState(9);
   const [icons, setIcons] = useState(null);
 
@@ -38,7 +43,7 @@ export default function InterventionMap() {
     const initMap = async () => {
       try {
         const L = (await import('leaflet')).default;
-        
+
         // Fix default icon issues
         delete L.Icon.Default.prototype._getIconUrl;
         L.Icon.Default.mergeOptions({
@@ -66,7 +71,7 @@ export default function InterventionMap() {
             shadowSize: [41, 41]
           })
         });
-        
+
         setMounted(true);
       } catch (e) {
         console.error("Map initialization error:", e);
@@ -140,7 +145,7 @@ export default function InterventionMap() {
     });
 
     setMapCenter(coords);
-    setMapZoom(11);
+    setMapZoom(9);
     setSuggestions([]);
     setSearchQuery(city.display_name.split(',')[0]);
   };
@@ -149,7 +154,7 @@ export default function InterventionMap() {
     setResult(null);
     setSearchQuery("");
     setSuggestions([]);
-    setMapCenter(BROUE_COORDS);
+    setMapCenter(MAP_CENTER);
     setMapZoom(9);
     setIsSearching(false);
   };
@@ -179,7 +184,10 @@ export default function InterventionMap() {
   return (
     <div className="flex flex-col gap-6 w-full h-full min-h-[600px]">
       {/* City Search Bar with Autocomplete */}
-      <div className="bg-[#0b1a2a]/80 backdrop-blur-xl border border-white/10 p-3 rounded-2xl shadow-2xl relative z-0">
+      <div className="bg-[#0b1a2a]/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl relative z-0">
+        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 ml-1 flex items-center gap-2">
+          <Calculator className="w-3 h-3 text-primary" /> Calculez vos frais de déplacement
+        </p>
         <div className="flex flex-col md:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary pointer-events-none" />
@@ -261,7 +269,7 @@ export default function InterventionMap() {
       {/* Map Implementation */}
       <div className="relative flex-1 rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
         {/* Floating Zones Badge */}
-        <div className="absolute top-4 left-4 z-[400] bg-[#0b1a2a]/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-help">
+        <div className="absolute top-3 left-3 z-10 bg-[#0b1a2a]/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-help">
           <MapPin className="w-4 h-4 text-amber-400" />
           <span className="text-xs font-bold text-white uppercase tracking-tight">Zones d&apos;intervention (27 & 28)</span>
         </div>
@@ -270,10 +278,16 @@ export default function InterventionMap() {
           center={mapCenter}
           zoom={mapZoom}
           className="h-full w-full z-0"
-          style={{ height: "450px", width: "100%" }}
+          style={{ height: "100%", width: "100%" }}
           scrollWheelZoom={false}
           dragging={false}
+          zoomControl={false}
+          doubleClickZoom={false}
+          touchZoom={false}
+          boxZoom={false}
+          keyboard={false}
           minZoom={9}
+          maxZoom={9}
         >
           <ChangeView center={mapCenter} zoom={mapZoom} />
           <TileLayer
@@ -310,10 +324,10 @@ export default function InterventionMap() {
           />
 
           {cities.map((city, idx) => (
-            <Marker 
-              key={`city-${idx}`} 
-              position={city.coords} 
-              icon={city.isBase ? icons.base : icons.default}
+            <Marker
+              key={`city-${idx}`}
+              position={city.coords}
+              icon={city.isBase ? icons.base : icons.partner}
             >
               <Popup><div className="font-bold text-slate-900">{city.name}</div></Popup>
             </Marker>
@@ -326,8 +340,8 @@ export default function InterventionMap() {
           )}
         </MapContainer>
 
-        {/* Legend Overlay */}
-        <div className="absolute bottom-4 left-4 z-[500] bg-[#0b1a2a]/95 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-2xl max-w-[200px]">
+        {/* Legend Overlay - Visible only on Desktop */}
+        <div className="absolute bottom-4 left-4 z-[500] bg-[#0b1a2a]/95 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-2xl max-w-[200px] hidden sm:block">
           <div className="text-[10px] font-bold text-white uppercase tracking-widest mb-3 border-b border-white/10 pb-2 flex items-center gap-2">
             <Calculator className="w-3 h-3 text-primary" /> Tarifs Déplacement
           </div>
