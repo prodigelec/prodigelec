@@ -128,11 +128,11 @@ export default async function DynamicPortalLayout({ children, params }) {
 
           <div className="flex items-center gap-4">
             <div className="text-sm text-right hidden sm:block">
-              <div className="font-medium text-slate-900">{user?.name || "Admin"}</div>
-              <div className="text-xs text-slate-500">{user?.role || "Connecté"}</div>
+              <div className="font-medium text-slate-900">{user?.name || "Responsable"}</div>
+              <div className="text-xs text-slate-500">{user?.role || "Direction"}</div>
             </div>
-            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs border border-primary/20">
-              AD
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-slate-900 to-slate-700 flex items-center justify-center text-white font-bold text-xs border border-slate-200/20 shadow-lg">
+              PD
             </div>
           </div>
         </header>

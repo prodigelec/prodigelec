@@ -191,8 +191,8 @@ export default function Sidebar({
               }}
               className="overflow-hidden whitespace-nowrap"
             >
-              <div className="text-sm font-bold text-white">Administrateur</div>
-              <div className="text-xs text-slate-400">admin@prodigelec.fr</div>
+              <div className="text-sm font-bold text-white">Direction</div>
+              <div className="text-xs text-slate-400">Espace Pro</div>
             </motion.div>
 
             <button

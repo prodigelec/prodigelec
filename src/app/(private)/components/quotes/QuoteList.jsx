@@ -184,23 +184,23 @@ export default function QuoteList() {
   return (
     <div className="space-y-6">
       {/* Header section */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
-            <div className="p-2 bg-slate-900 rounded-xl text-white shadow-lg shadow-slate-900/10">
-              <FileText size={24} />
+          <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-4">
+            <div className="p-3 bg-slate-900 rounded-xl text-white shadow-lg shadow-slate-900/10">
+              <FileText size={28} />
             </div>
             Gestion des Devis
           </h1>
-          <p className="text-slate-500 text-sm">
+          <p className="text-slate-500 text-sm mt-2">
             Créez, envoyez et suivez vos devis professionnels
           </p>
         </div>
         <button
           onClick={() => setIsTypeModalOpen(true)}
-          className="flex items-center justify-center gap-2 bg-slate-900 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-slate-900/10 hover:bg-slate-800 active:scale-[0.98] transition-all"
+          className="flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-slate-900/10 hover:bg-slate-800 active:scale-[0.98] transition-all"
         >
-          <Plus size={20} />
+          <Plus size={22} />
           Nouveau Devis
         </button>
       </div>
