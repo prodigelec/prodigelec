@@ -23,8 +23,8 @@ export default function HeroBackground({ slides, currentSlide }) {
             priority
             fetchPriority="high"
             loading="eager"
-            sizes="100vw"
-            quality={45}
+            sizes="(max-width: 1440px) 1440px, 100vw"
+            quality={40}
             className="object-cover"
           />
         </div>
@@ -48,8 +48,8 @@ export default function HeroBackground({ slides, currentSlide }) {
               fill
               priority={currentSlide === 0}
               loading={currentSlide === 0 ? "eager" : "lazy"}
-              sizes="100vw"
-              quality={45}
+              sizes="(max-width: 1440px) 1440px, 100vw"
+              quality={40}
               className="object-cover"
             />
           </motion.div>
