@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
         {
             icon: <Eye className="w-6 h-6 text-primary" />,
             title: "Données collectées & Finalités",
-            content: "Nous collectons vos données (Nom, Email, Téléphone) via nos formulaires pour : répondre à vos demandes de devis, assurer le suivi de nos prestations, et vous envoyer notre newsletter si vous y avez consenti. La base légale est l'exécution d'un contrat ou l'intérêt légitime."
+            content: "Nous collectons vos données (Nom, Email, Téléphone) via nos formulaires pour : répondre à vos demandes de devis et assurer le suivi de nos prestations. La base légale est l'exécution d'un contrat ou l'intérêt légitime."
         },
         {
             icon: <Lock className="w-6 h-6 text-primary" />,

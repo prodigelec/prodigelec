@@ -7,7 +7,6 @@ import {
   ProcessSection,
   PartnersSection,
   ContactCTASection,
-  NewsletterSection,
 } from "@/app/components/home";
 
 export const metadata = {
@@ -36,7 +35,6 @@ export default function Home() {
         <ServicesSection />
         <ProcessSection />
         <PartnersSection />
-        <NewsletterSection />
         <ContactCTASection />
       </div>
     </main>
