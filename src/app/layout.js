@@ -122,10 +122,8 @@ export const metadata = {
   // Optimisation de la chaîne de requêtes critiques
   other: {
     'link': [
-      // Preconnect au domaine lui-même pour accélérer les requêtes suivantes
-      { rel: 'preconnect', href: 'https://www.prodigelec.fr' },
-      // Préchargement de l'image LCP avec fetchPriority élevée
-      { rel: 'preload', href: '/img_carousel_hero_home/serrurerie.jpg', as: 'image', type: 'image/jpeg', fetchPriority: 'high' }
+      // Preconnect au domaine lui-même pour établir la connexion TLS au plus tôt
+      { rel: 'preconnect', href: 'https://www.prodigelec.fr' }
     ]
   }
 };
