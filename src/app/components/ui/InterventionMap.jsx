@@ -192,6 +192,8 @@ export default function InterventionMap() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary pointer-events-none" />
             <input
               type="text"
+              id="city-search"
+              aria-label="Rechercher votre ville pour calculer les frais de déplacement"
               placeholder="Entrez votre ville (ex: Dreux, Chartres...)"
               className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-10 text-sm text-white placeholder:text-gray-200 focus:outline-none focus:border-primary/50 transition-all shadow-inner"
               value={searchQuery}
@@ -264,9 +266,9 @@ export default function InterventionMap() {
               </div>
             </div>
             {result.price.includes('*') && (
-               <div className="text-[10px] text-gray-200 italic text-center border-t border-white/5 pt-2">
-                 * Les frais de déplacement sont intégralement déduits si le devis est accepté.
-               </div>
+              <div className="text-[10px] text-gray-200 italic text-center border-t border-white/5 pt-2">
+                * Les frais de déplacement sont intégralement déduits si le devis est accepté.
+              </div>
             )}
           </div>
         )}

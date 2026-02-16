@@ -6,7 +6,7 @@ import BrandName from "@/app/components/ui/BrandName";
 
 export default function Logo({ className = "", boxClassName = "" }) {
   return (
-    <Link href="/">
+    <Link href="/" aria-label="PRODIGELEC - Retour à l'accueil">
       <div
         className={`flex items-center gap-3 group cursor-pointer ${className}`}
       >

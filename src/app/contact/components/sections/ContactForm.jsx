@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import BrandName from "@/app/components/ui/BrandName";
 import { useState, useRef } from "react";
@@ -41,7 +41,7 @@ export default function ContactForm() {
   };
 
   return (
-    <motion.div
+    <m.div
       id="contact-form"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -173,28 +173,28 @@ export default function ContactForm() {
           </button>
 
           {status === 'success' && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className="bg-green-500/10 border border-green-500/20 text-green-400 p-4 rounded-xl flex items-center gap-3"
             >
               <CheckCircle2 className="w-5 h-5 shrink-0" />
               <p>Message envoyé avec succès ! Nous vous répondrons rapidement.</p>
-            </motion.div>
+            </m.div>
           )}
 
           {status === 'error' && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className="bg-red-500/10 border border-red-500/20 text-red-400 p-4 rounded-xl flex items-center gap-3"
             >
               <AlertCircle className="w-5 h-5 shrink-0" />
               <p>{errorMessage}</p>
-            </motion.div>
+            </m.div>
           )}
         </form>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 export default function AboutValues() {
@@ -35,7 +35,7 @@ export default function AboutValues() {
       <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 md:mb-12 text-center">Mes Engagements & Garanties</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {values.map((item, idx) => (
-          <motion.div
+          <m.div
             key={idx}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function AboutValues() {
             <p className="text-sm md:text-base text-gray-200">
               {item.desc}
             </p>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </div>

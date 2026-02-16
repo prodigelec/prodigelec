@@ -45,18 +45,6 @@ export const metadata = {
   icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }], apple: "/prodigelec-logo.svg" },
   verification: { google: "w5rAOBeW-q78ZcjmJWRltGvSvm92EYiSSSo5CfP6Zo0" },
   alternates: { canonical: "https://www.prodigelec.fr/" },
-  other: {
-    'link': [
-      { rel: 'dns-prefetch', href: 'https://www.prodigelec.fr' },
-      { rel: 'preconnect', href: 'https://www.prodigelec.fr', crossorigin: 'anonymous' },
-      {
-        rel: 'preload',
-        href: '/_next/image?url=%2Fimg_carousel_hero_home%2Fserrurerie.jpg&w=1536&q=45',
-        as: 'image',
-        fetchPriority: 'high'
-      }
-    ]
-  }
 };
 
 export default function RootLayout({ children }) {
@@ -71,13 +59,18 @@ export default function RootLayout({ children }) {
           @keyframes shine { to { background-position:200% center; } }
           [data-motion] { will-change: transform, opacity; }
           main, section, article { contain: layout style paint; }
+          .skip-link { position: absolute; top: -40px; left: 0; background: #c9a227; color: #0b1a2a; padding: 8px; z-index: 10000; transition: top 0.3s; }
+          .skip-link:focus { top: 0; }
         `}} />
       </head>
       <body className={`${outfit.variable} ${inter.variable} font-sans bg-background text-foreground antialiased`}>
+        <a href="#main-content" className="skip-link font-bold">Passer au contenu principal</a>
         <MotionProvider>
           <JsonLd />
           <Navbar />
-          {children}
+          <div id="main-content">
+            {children}
+          </div>
           <Footer />
           <FloatingContactButton />
         </MotionProvider>

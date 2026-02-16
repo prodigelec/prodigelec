@@ -69,6 +69,7 @@ export default function BrandsSection() {
                                 {[...cat.brands, ...cat.brands].map((brand, bIdx) => (
                                     <span
                                         key={bIdx}
+                                        aria-hidden="true"
                                         className="text-xl md:text-2xl lg:text-4xl font-black text-white/15 hover:text-white hover:scale-105 transition-all duration-500 cursor-default uppercase italic tracking-tighter"
                                     >
                                         {brand}

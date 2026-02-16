@@ -1,11 +1,11 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutCTA() {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -25,6 +25,6 @@ export default function AboutCTA() {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

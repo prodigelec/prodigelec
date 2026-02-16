@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ShieldCheck, Lock, Eye, FileText } from "lucide-react";
 
 export default function PrivacyPolicyPage() {
@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
     return (
         <main className="min-h-screen bg-background pt-24 pb-20 md:pt-32">
             <div className="max-w-4xl mx-auto px-6">
-                <motion.div
+                <m.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
@@ -46,11 +46,11 @@ export default function PrivacyPolicyPage() {
                     <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto">
                         Chez PRODIGELEC, la protection de vos données personnelles est une priorité. Voici comment nous traitons vos informations.
                     </p>
-                </motion.div>
+                </m.div>
 
                 <div className="grid gap-8">
                     {sections.map((section, idx) => (
-                        <motion.div
+                        <m.div
                             key={idx}
                             initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -69,11 +69,11 @@ export default function PrivacyPolicyPage() {
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </m.div>
                     ))}
                 </div>
 
-                <motion.div
+                <m.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     className="mt-16 p-8 border border-primary/10 rounded-3xl bg-primary/5 text-center"
@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
                     <a href="mailto:contact@prodigelec.fr" className="text-primary font-bold hover:underline">
                         contact@prodigelec.fr
                     </a>
-                </motion.div>
+                </m.div>
             </div>
         </main>
     );

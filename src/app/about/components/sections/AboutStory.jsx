@@ -1,12 +1,12 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Wrench, Zap, Award, Briefcase } from "lucide-react";
 import BrandName from "@/app/components/ui/BrandName";
 
 export default function AboutStory() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-24">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -24,9 +24,9 @@ export default function AboutStory() {
           </p>
 
         </div>
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -52,7 +52,7 @@ export default function AboutStory() {
           <h3 className="text-lg md:text-xl font-bold text-white mb-2">Entrepreneur</h3>
           <p className="text-gray-200 text-xs md:text-sm">Un interlocuteur unique pour vos besoins en électricité et serrurerie.</p>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

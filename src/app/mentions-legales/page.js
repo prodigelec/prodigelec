@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Shield, Scale, Info } from "lucide-react";
 
 export default function MentionsLegales() {
@@ -9,21 +9,21 @@ export default function MentionsLegales() {
             <div className="max-w-4xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-16">
-                    <motion.div
+                    <m.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full text-primary text-sm font-bold uppercase tracking-wider mb-6"
                     >
                         <Shield className="w-4 h-4" /> Cadre Légal
-                    </motion.div>
-                    <motion.h1
+                    </m.div>
+                    <m.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-6xl font-black text-white uppercase italic tracking-tighter mb-6"
                     >
                         Mentions <span className="text-primary italic">Légales</span>
-                    </motion.h1>
+                    </m.h1>
                     <p className="text-gray-200 text-sm md:text-lg">
                         Informations obligatoires concernant l&apos;entreprise et l&apos;utilisation du site.
                     </p>
@@ -102,7 +102,7 @@ export default function MentionsLegales() {
 
 function Section({ icon, title, children }) {
     return (
-        <motion.div
+        <m.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -117,6 +117,6 @@ function Section({ icon, title, children }) {
             <div className="text-gray-200">
                 {children}
             </div>
-        </motion.div>
+        </m.div>
     );
 }

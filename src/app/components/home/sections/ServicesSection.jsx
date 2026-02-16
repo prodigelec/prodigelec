@@ -33,7 +33,11 @@ export default function ServicesSection() {
               </ul>
             </div>
             <div className="relative z-10 text-center md:text-left mt-auto">
-              <Link href="/services/electricite" className="inline-flex items-center text-xs md:text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link">
+              <Link
+                href="/services/electricite"
+                aria-label="En savoir plus sur nos prestations d'électricien"
+                className="inline-flex items-center text-xs md:text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link"
+              >
                 En savoir plus
                 <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" />
               </Link>
@@ -61,7 +65,11 @@ export default function ServicesSection() {
               </ul>
             </div>
             <div className="relative z-10 text-center md:text-left mt-auto">
-              <Link href="/services/serrurerie" className="inline-flex items-center text-xs md:text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link">
+              <Link
+                href="/services/serrurerie"
+                aria-label="En savoir plus sur nos prestations de serrurier"
+                className="inline-flex items-center text-xs md:text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link"
+              >
                 En savoir plus
                 <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" />
               </Link>
