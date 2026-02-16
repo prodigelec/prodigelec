@@ -12,49 +12,29 @@ export default function HeroBackground({ slides, currentSlide }) {
 
   return (
     <div className="absolute inset-0 bg-black">
-      {/* Rendu statique pour le premier slide afin d'optimiser le LCP (z-index 0) */}
-      {isFirstRender.current && (
-        <div className="absolute inset-0">
+      <AnimatePresence mode='wait' initial={false}>
+        <motion.div
+          key={currentSlide}
+          initial={isFirstRender.current ? { opacity: 1 } : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+        >
           <div className="absolute inset-0 bg-black/40 z-10" />
           <Image
-            src={slides[0].image}
-            alt={slides[0].title}
+            src={slides[currentSlide].image}
+            alt={slides[currentSlide].title}
             fill
-            priority
-            fetchPriority="high"
-            loading="eager"
-            sizes="(max-width: 1440px) 1440px, 100vw"
-            quality={40}
+            priority={currentSlide === 0}
+            fetchPriority={currentSlide === 0 ? "high" : "low"}
+            loading={currentSlide === 0 ? "eager" : "lazy"}
+            sizes="(max-width: 1366px) 1366px, (max-width: 1536px) 1536px, 100vw"
+            quality={35}
             className="object-cover"
           />
-        </div>
-      )}
-
-      {/* Couche d'animation qui prend le relais après l'hydratation (z-index 20) */}
-      {!isFirstRender.current && (
-        <AnimatePresence mode='wait' initial={false}>
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            className="absolute inset-0 z-20"
-          >
-            <div className="absolute inset-0 bg-black/40 z-10" />
-            <Image
-              src={slides[currentSlide].image}
-              alt={slides[currentSlide].title}
-              fill
-              priority={currentSlide === 0}
-              loading={currentSlide === 0 ? "eager" : "lazy"}
-              sizes="(max-width: 1440px) 1440px, 100vw"
-              quality={40}
-              className="object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
-      )}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
