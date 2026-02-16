@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import BrandName from "@/app/components/ui/BrandName";
 
@@ -13,7 +13,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text Content */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -48,10 +48,10 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Visual / Image Placeholder */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -74,7 +74,7 @@ export default function AboutSection() {
             {/* Decorative elements */}
             <div className="absolute -z-10 top-[-20px] right-[-20px] w-40 h-40 bg-primary/20 rounded-full blur-[90px] animate-pulse" />
             <div className="absolute -z-10 bottom-[-20px] left-[-20px] w-40 h-40 bg-accent/20 rounded-full blur-[90px] animate-pulse delay-700" />
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 export default function ServiceCarousel({ slides, theme = "electricite" }) {
@@ -28,13 +28,13 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
 
   return (
     <div className="relative group mb-24">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         className="relative h-[65vh] w-full overflow-hidden rounded-[40px] border border-white/10 shadow-2xl"
       >
         <AnimatePresence initial={false} mode="wait">
-          <motion.div
+          <m.div
             key={current}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -43,7 +43,7 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
             className="absolute inset-0"
           >
             {/* Image with subtle zoom */}
-            <motion.div
+            <m.div
               animate={{ scale: [1, 1.05] }}
               transition={{ duration: 6, ease: "linear" }}
               className="absolute inset-0"
@@ -55,7 +55,7 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
                 className="object-cover"
                 priority
               />
-            </motion.div>
+            </m.div>
 
             {/* Multi-layered gradient overlay */}
             <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent" />
@@ -63,7 +63,7 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
 
             {/* Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
-              <motion.div
+              <m.div
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
@@ -76,9 +76,9 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
                 <p className="text-lg md:text-xl text-gray-200 font-medium">
                   {slides[current].description}
                 </p>
-              </motion.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
         </AnimatePresence>
 
         {/* Progress Indicators */}
@@ -94,7 +94,7 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
             />
           ))}
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

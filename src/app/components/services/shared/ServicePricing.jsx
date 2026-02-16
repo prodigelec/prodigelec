@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function ServicePricing({ title, subtitle, description, prices, theme = "electricite" }) {
   const themeConfig = {
@@ -44,7 +44,7 @@ export default function ServicePricing({ title, subtitle, description, prices, t
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12 px-6 max-w-5xl mx-auto">
         {prices.map((plan, idx) => (
-          <motion.div
+          <m.div
             key={idx}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export default function ServicePricing({ title, subtitle, description, prices, t
                 </a>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </section>

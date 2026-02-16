@@ -1,5 +1,5 @@
 "use client";
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function Button({
   children,
@@ -18,7 +18,7 @@ export default function Button({
   };
 
   return (
-    <motion.button
+    <m.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
@@ -32,6 +32,6 @@ export default function Button({
       {variant === 'primary' && (
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       )}
-    </motion.button>
+    </m.button>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ClipboardList, Award, HeartHandshake } from "lucide-react";
 
 const features = [
@@ -36,7 +36,7 @@ export default function FeaturesSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -44,7 +44,7 @@ export default function FeaturesSection() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
         >
           {features.map((feature, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -63,9 +63,9 @@ export default function FeaturesSection() {
               <p className="text-sm md:text-base text-gray-200 leading-relaxed group-hover:text-white transition-colors">
                 {feature.description}
               </p>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const categories = [
     {
@@ -53,7 +53,7 @@ export default function BrandsSection() {
                             <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
                             <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
 
-                            <motion.div
+                            <m.div
                                 className="flex whitespace-nowrap gap-12 md:gap-24 py-4 w-max"
                                 animate={{
                                     x: cat.reverse ? ["-50%", "0%"] : ["0%", "-50%"]
@@ -74,7 +74,7 @@ export default function BrandsSection() {
                                         {brand}
                                     </span>
                                 ))}
-                            </motion.div>
+                            </m.div>
                         </div>
                     </div>
                 ))}

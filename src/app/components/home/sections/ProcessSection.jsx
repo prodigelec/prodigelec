@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { PhoneCall, FileText, Wrench, CheckCircle } from "lucide-react";
 
 const steps = [
@@ -64,7 +64,7 @@ export default function ProcessSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 relative z-10">
             {steps.map((step, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function ProcessSection() {
                     {step.description}
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

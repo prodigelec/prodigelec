@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 
@@ -19,7 +19,7 @@ export default function ContactCTASection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
             {/* Left Column: Text */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -52,10 +52,10 @@ export default function ContactCTASection() {
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform text-primary" />
                 </Link>
               </div>
-            </motion.div>
+            </m.div>
 
             {/* Right Column: Contact Cards */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function ContactCTASection() {
                 </div>
               </div>
 
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

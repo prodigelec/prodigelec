@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { MapPin, CheckCircle2, AlertCircle, ChevronRight, X } from "lucide-react";
 
 const CITIES_28 = [
@@ -49,7 +49,7 @@ export default function PricingPolicySection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           
           {/* Zone Gratuite */}
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -111,10 +111,10 @@ export default function PricingPolicySection() {
                 <span className="font-bold text-xs md:text-sm text-white">Déplacement 100% offert</span>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Zone Payante mais Déductible */}
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -176,7 +176,7 @@ export default function PricingPolicySection() {
                 <span className="font-bold text-xs md:text-sm text-white">Remboursé si travaux effectués</span>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>
@@ -184,14 +184,14 @@ export default function PricingPolicySection() {
       {/* Modal Overlay */}
       <AnimatePresence>
         {activeModal && (
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
             onClick={() => setActiveModal(null)}
           >
-            <motion.div 
+            <m.div 
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -260,8 +260,8 @@ export default function PricingPolicySection() {
                 </div>
               </div>
 
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     </section>

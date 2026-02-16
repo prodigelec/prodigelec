@@ -19,8 +19,9 @@ const nextConfig = {
 
   experimental: {
     optimizeCss: true,
+    cssChunking: 'strict',
     // Optimiser les imports pour réduire les bundles
-    optimizePackageImports: ['lucide-react', 'framer-motion', 'leaflet', 'react-leaflet', 'react-icons'],
+    optimizePackageImports: ['lucide-react', 'framer-motion', 'leaflet', 'react-leaflet', 'react-icons', '@heroicons/react'],
   },
 
   // Compression et optimisation

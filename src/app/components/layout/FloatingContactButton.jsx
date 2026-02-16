@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from "framer-motion";
 import { Phone, X } from 'lucide-react';
 
 export default function FloatingContactButton() {
@@ -26,7 +26,7 @@ export default function FloatingContactButton() {
     <AnimatePresence>
       {isVisible && (
         <div className="fixed bottom-6 right-6 z-9999 hidden md:block">
-            <motion.div
+            <m.div
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
@@ -34,7 +34,7 @@ export default function FloatingContactButton() {
             >
                 <AnimatePresence>
                     {isExpanded && (
-                        <motion.div
+                        <m.div
                             initial={{ opacity: 0, y: 10, scale: 0.9 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.9 }}
@@ -56,11 +56,11 @@ export default function FloatingContactButton() {
                                     Basé à Broué (28) - Intervention rapide
                                 </p>
                             </div>
-                        </motion.div>
+                        </m.div>
                     )}
                 </AnimatePresence>
 
-                <motion.button
+                <m.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsExpanded(!isExpanded)}
@@ -68,8 +68,8 @@ export default function FloatingContactButton() {
                     className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg shadow-primary/30 transition-colors ${isExpanded ? 'bg-gray-900 text-white' : 'bg-primary text-gray-900'}`}
                 >
                     {isExpanded ? <X size={24} /> : <Phone size={24} className="animate-pulse" />}
-                </motion.button>
-            </motion.div>
+                </m.button>
+            </m.div>
         </div>
       )}
     </AnimatePresence>

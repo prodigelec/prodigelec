@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function ServiceUrgency({ title, subtitle, description, steps, icon: Icon, theme = "electricite" }) {
   const themeConfig = {
@@ -36,7 +36,7 @@ export default function ServiceUrgency({ title, subtitle, description, steps, ic
   const config = themeConfig[theme];
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
@@ -93,6 +93,6 @@ export default function ServiceUrgency({ title, subtitle, description, steps, ic
           </div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

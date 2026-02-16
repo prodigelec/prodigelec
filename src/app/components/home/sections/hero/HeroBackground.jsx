@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 export default function HeroBackground({ slides, currentSlide }) {
   const isFirstRender = useRef(true);
@@ -13,7 +13,7 @@ export default function HeroBackground({ slides, currentSlide }) {
   return (
     <div className="absolute inset-0 bg-black">
       <AnimatePresence mode='wait'>
-        <motion.div
+        <m.div
           key={currentSlide}
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
@@ -32,7 +32,7 @@ export default function HeroBackground({ slides, currentSlide }) {
             quality={45}
             className="object-cover"
           />
-        </motion.div>
+        </m.div>
       </AnimatePresence>
     </div>
   );

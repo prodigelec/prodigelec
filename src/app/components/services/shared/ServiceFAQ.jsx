@@ -1,5 +1,5 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { HiChevronDown } from "react-icons/hi2";
 
@@ -46,7 +46,7 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
 
       <div className="max-w-4xl mx-auto px-6 space-y-4">
         {faqs.map((faq, index) => (
-          <motion.div
+          <m.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -61,18 +61,18 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
               <h3 className={`text-lg md:text-xl font-bold text-white group-hover:${config.highlightColor} transition-colors`}>
                 {faq.question}
               </h3>
-              <motion.div
+              <m.div
                 animate={{ rotate: openIndex === index ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
                 className="shrink-0"
               >
                 <HiChevronDown className={`w-6 h-6 ${config.iconColor}`} />
-              </motion.div>
+              </m.div>
             </button>
 
             <AnimatePresence>
               {openIndex === index && (
-                <motion.div
+                <m.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -85,10 +85,10 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
                       {faq.answer}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
-          </motion.div>
+          </m.div>
         ))}
       </div>
 

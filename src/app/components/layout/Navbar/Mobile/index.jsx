@@ -1,5 +1,5 @@
 "use client"
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Home, Phone, Gift, Mail } from "lucide-react";
 import { IoKey } from "react-icons/io5";
 import { FcFlashOn } from "react-icons/fc";
@@ -15,14 +15,14 @@ export default function MobileNavbar() {
 
     return (
         <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-9999 pointer-events-none">
-            <motion.div
+            <m.div
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 className="bg-[#0b1a2a]/95 backdrop-blur-2xl border-t border-white/10 rounded-t-4xl px-6 py-4 pb-8 shadow-2xl flex items-center justify-between w-full pointer-events-auto"
             >
                 {navItems.map((item, i) => (
-                    <motion.a
+                    <m.a
                         key={item.name}
                         href={item.href}
                         aria-label={item.name}
@@ -34,9 +34,9 @@ export default function MobileNavbar() {
                         <span className="text-[9px] font-bold uppercase tracking-tight mt-1 truncate w-full text-center">
                             {item.highlight ? 'SOS' : item.name}
                         </span>
-                    </motion.a>
+                    </m.a>
                 ))}
-            </motion.div>
+            </m.div>
         </nav>
     );
 }

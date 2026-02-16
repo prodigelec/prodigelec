@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function ServiceHero({ icon: Icon, title, subtitle, description, theme = "electricite" }) {
   const themeConfig = {
@@ -23,28 +23,28 @@ export default function ServiceHero({ icon: Icon, title, subtitle, description, 
 
   return (
     <div className="text-center my-8 md:my-16">
-      <motion.div
+      <m.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         className={`inline-flex items-center justify-center w-16 h-16 md:w-24 md:h-24 rounded-full mb-6 md:mb-8 border ${config.iconBg} ${config.iconBorder} ${config.iconShadow}`}
       >
         <Icon className={`w-8 h-8 md:w-14 md:h-14 ${config.iconColor}`} />
-      </motion.div>
-      <motion.h1
+      </m.div>
+      <m.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-3xl md:text-6xl font-black text-white mb-4 md:mb-6"
       >
         {title} <span className={config.highlightColor}>{subtitle}</span>
-      </motion.h1>
-      <motion.p
+      </m.h1>
+      <m.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
         className="text-sm md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
       >
         {description}
-      </motion.p>
+      </m.p>
     </div>
   );
 }

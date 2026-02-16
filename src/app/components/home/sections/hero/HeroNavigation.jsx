@@ -1,10 +1,10 @@
 "use client";
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function HeroNavigation({ prevSlide, nextSlide }) {
   return (
     <>
-      <motion.button
+      <m.button
         whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
         whileTap={{ scale: 0.9 }}
         onClick={prevSlide}
@@ -14,9 +14,9 @@ export default function HeroNavigation({ prevSlide, nextSlide }) {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
-      </motion.button>
+      </m.button>
 
-      <motion.button
+      <m.button
         whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
         whileTap={{ scale: 0.9 }}
         onClick={nextSlide}
@@ -26,7 +26,7 @@ export default function HeroNavigation({ prevSlide, nextSlide }) {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-      </motion.button>
+      </m.button>
     </>
   );
 }

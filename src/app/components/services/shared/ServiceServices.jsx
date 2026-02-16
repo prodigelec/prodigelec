@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Check } from "lucide-react";
 
 export default function ServiceServices({ title, subtitle, description, features, theme = "electricite" }) {
@@ -39,7 +39,7 @@ export default function ServiceServices({ title, subtitle, description, features
 
       <div className={`grid grid-cols-1 md:grid-cols-2 ${theme === 'electricite' ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-4 md:gap-8 lg:gap-10 px-6`}>
         {features.map((feature, idx) => (
-          <motion.div
+          <m.div
             key={idx}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ export default function ServiceServices({ title, subtitle, description, features
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </div>

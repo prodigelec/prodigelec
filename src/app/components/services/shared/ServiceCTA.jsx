@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export default function ServiceCTA({ title, description, buttonText, theme = "electricite" }) {
@@ -19,7 +19,7 @@ export default function ServiceCTA({ title, description, buttonText, theme = "el
   const config = themeConfig[theme];
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -32,6 +32,6 @@ export default function ServiceCTA({ title, description, buttonText, theme = "el
       <a href="/contact#contact-form" className={`inline-flex items-center gap-2 px-5 py-3 md:px-8 md:py-4 ${config.buttonBg} ${config.buttonText} rounded-full font-medium md:font-bold ${config.buttonHover} transition-colors text-sm md:text-base`}>
         {buttonText} <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
       </a>
-    </motion.div>
+    </m.div>
   );
 }

@@ -1,10 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Logo from "../Logo";
 
 export default function MobileTopBar() {
   return (
-    <motion.div
+    <m.div
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -13,6 +13,6 @@ export default function MobileTopBar() {
       <div className="pointer-events-auto flex justify-center">
         <Logo />
       </div>
-    </motion.div>
+    </m.div>
   );
 }

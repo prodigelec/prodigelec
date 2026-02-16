@@ -1,5 +1,5 @@
 "use client"
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { m, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { IoKey } from "react-icons/io5";
@@ -75,7 +75,7 @@ export default function Navbar() {
     };
 
     return (
-        <motion.nav
+        <m.nav
             style={{
                 backgroundColor: `rgba(11, 26, 42, ${isScrolled ? 0.8 : 0})`,
                 backdropFilter: isScrolled ? "blur(12px)" : "blur(0px)",
@@ -92,7 +92,7 @@ export default function Navbar() {
                 <div className="hidden lg:flex items-center gap-8">
                     {navItems.map((item, i) => (
                         <div key={item.name} className="relative group">
-                            <motion.a
+                            <m.a
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 + 0.2 }}
@@ -111,7 +111,7 @@ export default function Navbar() {
                                 <span className="absolute inset-0 bg-white/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10" />
                                 <span className={`absolute bottom-1 left-3 right-3 h-0.5 bg-primary transition-transform duration-300 ${isItemActive(item) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                                     }`} />
-                            </motion.a>
+                            </m.a>
 
                             {/* Dropdown Menu */}
                             {item.dropdown && (
@@ -136,12 +136,12 @@ export default function Navbar() {
                 </div>
 
                 {/* CTA */}
-                <motion.div
+                <m.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     className="flex items-center gap-4"
                 >
-                    <motion.button
+                    <m.button
                         onClick={() => {
                             window.location.href = '/contact#contact-form';
                         }}
@@ -151,9 +151,9 @@ export default function Navbar() {
                     >
                         <span className="relative z-10">DEVIS GRATUIT</span>
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                    </motion.button>
-                </motion.div>
+                    </m.button>
+                </m.div>
             </div>
-        </motion.nav>
+        </m.nav>
     );
 }

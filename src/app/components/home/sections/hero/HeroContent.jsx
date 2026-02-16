@@ -1,5 +1,5 @@
 "use client";
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import Button from '@/app/components/ui/Button';
 import { useRouter } from 'next/navigation';
 
@@ -11,7 +11,7 @@ export default function HeroContent({ slides, currentSlide }) {
       <div className="max-w-5xl mx-auto px-6 text-center text-white">
 
         <AnimatePresence mode='wait'>
-          <motion.div
+          <m.div
             key={currentSlide}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -26,7 +26,7 @@ export default function HeroContent({ slides, currentSlide }) {
 
             {/* Title (Carousel H2) */}
             <div className="space-y-4 md:space-y-8 pt-16 md:pt-32">
-              <motion.h2
+              <m.h2
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -38,9 +38,9 @@ export default function HeroContent({ slides, currentSlide }) {
                 <span className="block font-light opacity-95 mt-2 md:mt-6 text-xl sm:text-2xl md:text-4xl lg:text-5xl">
                   {slides[currentSlide].title.split(' ').slice(1).join(' ')}
                 </span>
-              </motion.h2>
+              </m.h2>
 
-              <motion.div
+              <m.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
@@ -51,11 +51,11 @@ export default function HeroContent({ slides, currentSlide }) {
                     {slides[currentSlide].subtitle}
                   </span>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
 
             {/* CTA Buttons - Hidden on mobile */}
-            <motion.div
+            <m.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8 }}
@@ -85,8 +85,8 @@ export default function HeroContent({ slides, currentSlide }) {
               >
                 Voir nos services
               </Button>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </AnimatePresence>
       </div>
     </div>
