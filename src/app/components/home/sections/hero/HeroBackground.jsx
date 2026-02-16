@@ -28,8 +28,8 @@ export default function HeroBackground({ slides, currentSlide }) {
             fill
             priority={currentSlide === 0}
             fetchPriority={currentSlide === 0 ? "high" : "low"}
-            sizes="(max-width: 1366px) 1366px, 100vw"
-            quality={50}
+            sizes="(max-width: 1366px) 1366px, (max-width: 1536px) 1536px, 100vw"
+            quality={45}
             className="object-cover"
           />
         </motion.div>

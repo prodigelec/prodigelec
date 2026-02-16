@@ -65,8 +65,8 @@ export default function BrandsSection() {
                                 }}
                                 style={{ display: 'flex' }}
                             >
-                                {/* Quadruple the list to ensure no gaps even on huge screens */}
-                                {[...cat.brands, ...cat.brands, ...cat.brands, ...cat.brands].map((brand, bIdx) => (
+                                {/* Double the list to ensure no gaps even on huge screens */}
+                                {[...cat.brands, ...cat.brands].map((brand, bIdx) => (
                                     <span
                                         key={bIdx}
                                         className="text-xl md:text-2xl lg:text-4xl font-black text-white/15 hover:text-white hover:scale-105 transition-all duration-500 cursor-default uppercase italic tracking-tighter"
