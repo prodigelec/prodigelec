@@ -9,14 +9,14 @@ import JsonLd from "@/app/components/JsonLd";
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -119,9 +119,12 @@ export const metadata = {
   alternates: {
     canonical: "https://www.prodigelec.fr/",
   },
+  // Optimisation de la chaîne de requêtes critiques
   other: {
-    // Préchargement de l'image LCP pour un affichage instantané
     'link': [
+      // Preconnect au domaine lui-même pour accélérer les requêtes suivantes
+      { rel: 'preconnect', href: 'https://www.prodigelec.fr' },
+      // Préchargement de l'image LCP avec fetchPriority élevée
       { rel: 'preload', href: '/img_carousel_hero_home/serrurerie.jpg', as: 'image', type: 'image/jpeg', fetchPriority: 'high' }
     ]
   }

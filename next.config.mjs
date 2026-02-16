@@ -20,7 +20,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     // Optimiser les imports pour réduire les bundles
-    optimizePackageImports: ['lucide-react', 'framer-motion', 'leaflet', 'react-leaflet'],
+    optimizePackageImports: ['lucide-react', 'framer-motion', 'leaflet', 'react-leaflet', 'react-icons'],
   },
 
   // Compression et optimisation
