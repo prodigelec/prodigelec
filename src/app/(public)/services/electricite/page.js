@@ -5,7 +5,6 @@ import ElecPricing from "./components/sections/ElecPricing";
 import ElecUrgency from "./components/sections/ElecUrgency";
 import ElecFAQ from "./components/sections/ElecFAQ";
 import ElecCTA from "./components/sections/ElecCTA";
-import NewsletterSection from "@/app/(public)/components/sections/NewsletterSection";
 
 export const metadata = {
   title: "Électricien Broué (28) - Dépannage & Installation | PRODIGELEC",
@@ -35,7 +34,6 @@ export default function ElectricitePage() {
         <ElecPricing />
         <ElecUrgency />
         <ElecFAQ />
-        <NewsletterSection />
         <ElecCTA />
       </div>
     </main>
