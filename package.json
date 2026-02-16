@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.91.1",
+    "critters": "^0.0.23",
     "framer-motion": "^12.23.26",
     "googleapis": "^169.0.0",
     "leaflet": "^1.9.4",
@@ -29,7 +29,11 @@
     "tailwindcss": "^4"
   },
   "browserslist": [
-    "defaults",
-    "not IE 11"
+    "chrome >= 95",
+    "firefox >= 95",
+    "edge >= 95",
+    "safari >= 15.5",
+    "ios >= 15.5",
+    "not dead"
   ]
 }

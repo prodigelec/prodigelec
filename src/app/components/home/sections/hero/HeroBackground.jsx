@@ -28,6 +28,7 @@ export default function HeroBackground({ slides, currentSlide }) {
           fill
           priority
           sizes="100vw"
+          quality={60}
           className="object-cover"
         />
       </motion.div>
