@@ -19,6 +19,7 @@ export default function HeroBackground({ slides, currentSlide }) {
           alt={slides[currentSlide].title}
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
       </motion.div>

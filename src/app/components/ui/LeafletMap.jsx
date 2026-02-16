@@ -186,7 +186,7 @@ export default function LeafletMap() {
             <input
               type="text"
               placeholder="Entrez votre ville (ex: Dreux, Chartres...)"
-              className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-10 text-sm text-white focus:outline-none focus:border-primary/50 transition-all shadow-inner"
+              className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-10 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:border-primary/50 transition-all shadow-inner"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => {
@@ -216,7 +216,7 @@ export default function LeafletMap() {
                   <button
                     key={idx}
                     onClick={() => handleSelection(city)}
-                    className="w-full text-left px-5 py-3 hover:bg-primary/10 text-gray-300 hover:text-white transition-colors border-b border-white/5 last:border-0 flex items-center gap-3"
+                    className="w-full text-left px-5 py-3 hover:bg-primary/10 text-gray-200 hover:text-white transition-colors border-b border-white/5 last:border-0 flex items-center gap-3"
                   >
                     <MapPin className="w-4 h-4 text-primary shrink-0" />
                     <span className="text-sm truncate">{city.display_name}</span>
@@ -225,7 +225,7 @@ export default function LeafletMap() {
               </div>
             )}
           </div>
-          <div className="hidden md:flex items-center text-xs text-gray-500 font-medium px-2 italic">
+          <div className="hidden md:flex items-center text-xs text-gray-300 font-medium px-2 italic">
             Calculez vos frais de déplacement instantanément
           </div>
         </div>
@@ -238,12 +238,12 @@ export default function LeafletMap() {
               </div>
               <div>
                 <div className="text-white font-bold">{result.name}</div>
-                <div className="text-xs text-gray-400">{result.distance} km de Broué</div>
+                <div className="text-xs text-gray-300">{result.distance} km de Broué</div>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <div className="text-xs text-gray-400 uppercase font-bold tracking-wider">Frais de déplacement</div>
+                <div className="text-xs text-gray-300 uppercase font-bold tracking-wider">Frais de déplacement</div>
                 <div className="text-2xl font-black text-primary leading-none mt-1">{result.price}</div>
               </div>
               <button
@@ -336,7 +336,7 @@ export default function LeafletMap() {
               <div key={idx} className="flex items-center justify-between text-[10px]">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: zone.color }} />
-                  <span className="text-gray-400">{zone.label}</span>
+                  <span className="text-foreground-subtle">{zone.label}</span>
                 </div>
                 <span className="font-bold text-white ml-2">{zone.price}</span>
               </div>

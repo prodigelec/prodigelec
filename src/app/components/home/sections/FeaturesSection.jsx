@@ -60,7 +60,7 @@ export default function FeaturesSection() {
               <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-4 transition-all group-hover:text-primary">
                 {feature.title}
               </h3>
-              <p className="text-sm md:text-base text-gray-300/80 leading-relaxed group-hover:text-gray-200 transition-colors">
+              <p className="text-sm md:text-base text-gray-200 leading-relaxed group-hover:text-white transition-colors">
                 {feature.description}
               </p>
             </motion.div>

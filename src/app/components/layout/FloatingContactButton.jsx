@@ -52,7 +52,7 @@ export default function FloatingContactButton() {
                                     <Phone size={18} />
                                     06 38 19 47 52
                                 </a>
-                                <p className="text-xs text-center text-gray-500 mt-3">
+                                <p className="text-xs text-center text-gray-700 mt-3">
                                     Basé à Broué (28) - Intervention rapide
                                 </p>
                             </div>

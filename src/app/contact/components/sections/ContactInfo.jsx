@@ -70,9 +70,9 @@ export default function ContactInfo() {
               </div>
 
               <div className="flex-1 min-w-0">
-                <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-1">{item.title}</h3>
+                <h3 className="text-foreground-subtle text-xs font-bold uppercase tracking-wider mb-1">{item.title}</h3>
                 <div className="text-xs sm:text-sm font-bold text-white truncate">{item.value}</div>
-                <div className="text-xs text-gray-500 font-medium truncate">{item.sub}</div>
+                <div className="text-xs text-foreground-subtle font-medium truncate">{item.sub}</div>
               </div>
 
               {item.link && (
@@ -110,7 +110,7 @@ export default function ContactInfo() {
             </div>
             <div>
               <h3 className="text-white font-bold uppercase tracking-tight leading-none text-base">Tarifs de déplacement</h3>
-              <p className="text-gray-500 text-[10px] sm:text-xs font-medium mt-1 uppercase tracking-widest italic">Intervention (27 & 28)</p>
+              <p className="text-foreground-subtle text-[10px] sm:text-xs font-medium mt-1 uppercase tracking-widest italic">Intervention (27 & 28)</p>
             </div>
           </div>
 
@@ -127,10 +127,10 @@ export default function ContactInfo() {
               >
                 <div className="flex items-center gap-1.5 mb-1.5">
                   <div className="w-2 h-2 rounded-full" style={{ backgroundColor: zone.color }} />
-                  <span className="text-gray-400 text-[10px] font-black uppercase tracking-tight">{zone.label}</span>
+                  <span className="text-foreground-subtle text-[10px] font-black uppercase tracking-tight">{zone.label}</span>
                 </div>
                 <div className="text-white font-bold text-lg leading-tight">{zone.price}</div>
-                <div className="text-gray-500 text-[9px] font-medium leading-tight">{zone.sub}</div>
+                <div className="text-foreground-subtle text-[9px] font-medium leading-tight">{zone.sub}</div>
               </div>
             ))}
           </div>

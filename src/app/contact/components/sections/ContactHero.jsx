@@ -34,7 +34,7 @@ export default function ContactHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-6 md:mb-8"
+          className="text-sm md:text-lg text-foreground-subtle max-w-2xl mx-auto leading-relaxed mb-6 md:mb-8"
         >
           Une urgence ou un projet ? Fort de 23 ans d&apos;expertise terrain, je suis à votre écoute pour vous apporter une réponse rapide et personnalisée en Eure (27) et Eure-et-Loir (28).
         </motion.p>
@@ -44,7 +44,7 @@ export default function ContactHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <ArrowDown className="w-6 h-6 text-gray-500 mx-auto animate-bounce" />
+          <ArrowDown className="w-6 h-6 text-foreground-subtle mx-auto animate-bounce" />
         </motion.div>
       </div>
     </div>

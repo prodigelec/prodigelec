@@ -33,7 +33,7 @@ export default function BrandsSection() {
                 <h2 className="text-[10px] md:text-xs font-bold text-primary uppercase tracking-[0.3em] mb-2 md:mb-4">
                     Expertise & Matériel Professionnel
                 </h2>
-                <p className="text-gray-400 text-xs md:text-sm max-w-xl mx-auto leading-relaxed italic">
+                <p className="text-foreground-subtle text-xs md:text-sm max-w-xl mx-auto leading-relaxed italic">
                     Nous installons les plus grands fabricants pour votre sécurité et votre confort.
                 </p>
             </div>

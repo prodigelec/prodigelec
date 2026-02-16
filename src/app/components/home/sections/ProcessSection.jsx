@@ -53,7 +53,7 @@ export default function ProcessSection() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4">
             Comment ça se passe ?
           </h2>
-          <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm md:text-lg text-foreground-subtle max-w-2xl mx-auto">
             Un processus simple et transparent pour votre tranquillité d&apos;esprit.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function ProcessSection() {
 
                 <div className="bg-linear-to-b from-white/10 via-white/5 to-black/30 border border-white/10 ring-1 ring-white/10 p-6 md:p-6 rounded-3xl w-full h-full transition-colors shadow-[inset_0_1px_2px_rgba(255,255,255,0.2),0_12px_30px_rgba(0,0,0,0.45)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.3),0_16px_40px_rgba(0,0,0,0.55)]">
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">{step.title}</h3>
-                  <p className="text-sm md:text-base text-gray-300/80 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-200 leading-relaxed">
                     {step.description}
                   </p>
                 </div>

@@ -73,7 +73,7 @@ export default function NotFound() {
           Page introuvable
         </h2>
         
-        <p className="text-gray-400 text-lg mb-8 max-w-md mx-auto">
+        <p className="text-foreground-subtle text-lg mb-8 max-w-md mx-auto">
           Oups ! La page que vous recherchez semble avoir été déconnectée du réseau ou n'existe pas.
         </p>
 
@@ -102,7 +102,7 @@ export default function NotFound() {
       </motion.div>
 
       {/* Footer Text */}
-      <div className="absolute bottom-8 text-gray-500 text-sm">
+      <div className="absolute bottom-8 text-foreground-subtle text-sm">
         Prodigelec - Électricité & Serrurerie
       </div>
     </div>

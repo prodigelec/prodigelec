@@ -24,7 +24,7 @@ export default function CGVPage() {
                     >
                         Conditions <span className="text-primary italic">Générales</span>
                     </motion.h1>
-                    <p className="text-gray-400 text-sm md:text-lg">
+                    <p className="text-foreground-subtle text-sm md:text-lg">
                         Les règles qui régissent nos prestations pour garantir une collaboration transparente.
                     </p>
                 </div>
@@ -118,7 +118,7 @@ export default function CGVPage() {
                     </Section>
                 </div>
 
-                <div className="mt-16 text-center text-gray-500 text-sm">
+                <div className="mt-16 text-center text-gray-400 text-sm">
                     <p>Dernière mise à jour : Janvier 2026</p>
                 </div>
             </div>
@@ -140,7 +140,7 @@ function Section({ icon, title, children }) {
                 </div>
                 <h2 className="text-xl md:text-2xl font-black text-white uppercase italic tracking-tight">{title}</h2>
             </div>
-            <div className="text-gray-400">
+            <div className="text-foreground-subtle">
                 {children}
             </div>
         </motion.div>

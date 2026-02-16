@@ -14,14 +14,14 @@ export default function Footer() {
             <div className="text-xl md:text-2xl font-black tracking-tighter text-white">
               <BrandName />
             </div>
-            <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+            <p className="text-foreground-subtle text-xs md:text-sm leading-relaxed">
               Votre artisan de confiance en Eure-et-Loir. Expertise technique, réactivité et solutions sur-mesure pour tous vos besoins.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" aria-label="Suivez-nous sur Facebook" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#0b1a2a] transition-all group">
+              <a href="#" aria-label="Suivez-nous sur Facebook" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-primary hover:text-[#0b1a2a] transition-all group">
                 <FaFacebook size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="#" aria-label="Suivez-nous sur Instagram" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#0b1a2a] transition-all">
+              <a href="#" aria-label="Suivez-nous sur Instagram" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-primary hover:text-[#0b1a2a] transition-all">
                 <FaInstagram size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
             </div>
@@ -31,10 +31,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-3 md:mb-6 text-sm md:text-base">Navigation</h3>
             <ul className="space-y-2 md:space-y-4">
-              <li><Link href="/" className="text-gray-400 hover:text-primary transition-colors text-xs md:text-sm">Accueil</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-primary transition-colors text-xs md:text-sm">Services</Link></li>
-              <li><Link href="/#about" className="text-gray-400 hover:text-primary transition-colors text-xs md:text-sm">À Propos</Link></li>
-              <li><Link href="/contact#contact-form" className="text-gray-400 hover:text-primary transition-colors text-xs md:text-sm">Contact</Link></li>
+              <li><Link href="/" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Accueil</Link></li>
+              <li><Link href="/#services" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Services</Link></li>
+              <li><Link href="/#about" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">À Propos</Link></li>
+              <li><Link href="/contact#contact-form" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Contact</Link></li>
             </ul>
           </div>
 
@@ -42,8 +42,8 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-3 md:mb-6 text-sm md:text-base">Nos Services</h3>
             <ul className="space-y-2 md:space-y-4">
-              <li><Link href="/services/electricite" className="text-gray-400 hover:text-accent transition-colors text-xs md:text-sm">Électricité Générale</Link></li>
-              <li><Link href="/services/serrurerie" className="text-gray-400 hover:text-primary transition-colors text-xs md:text-sm">Serrurerie & Sécurité</Link></li>
+              <li><Link href="/services/electricite" className="text-foreground-subtle hover:text-accent transition-colors text-xs md:text-sm">Électricité Générale</Link></li>
+              <li><Link href="/services/serrurerie" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Serrurerie & Sécurité</Link></li>
             </ul>
           </div>
 
@@ -51,15 +51,15 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-3 md:mb-6 text-sm md:text-base">Contact</h3>
             <ul className="space-y-2 md:space-y-4">
-              <li className="flex items-start gap-3 text-gray-400 text-xs md:text-sm">
+              <li className="flex items-start gap-3 text-foreground-subtle text-xs md:text-sm">
                 <MapPin size={16} className="text-primary shrink-0 mt-0.5 md:w-[18px] md:h-[18px]" />
                 <span>10 Rue Georges Bréant<br />28410 Broué</span>
               </li>
-              <li className="flex items-center gap-3 text-gray-400 text-xs md:text-sm">
+              <li className="flex items-center gap-3 text-foreground-subtle text-xs md:text-sm">
                 <Phone size={16} className="text-primary shrink-0 md:w-[18px] md:h-[18px]" />
                 <a href="tel:0638194752" className="hover:text-white transition-colors">06 38 19 47 52</a>
               </li>
-              <li className="flex items-center gap-3 text-gray-400 text-xs md:text-sm">
+              <li className="flex items-center gap-3 text-foreground-subtle text-xs md:text-sm">
                 <Mail size={16} className="text-primary shrink-0 md:w-[18px] md:h-[18px]" />
                 <a href="mailto:contact@prodigelec.fr" className="hover:text-white transition-colors">contact@prodigelec.fr</a>
               </li>
@@ -69,13 +69,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <p className="text-gray-400 text-[10px] md:text-xs">
+          <p className="text-foreground-subtle text-[10px] md:text-xs">
             © 2025 PRODIGELEC. Tous droits réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <Link href="/mentions-legales" className="text-gray-400 hover:text-gray-300 text-[10px] md:text-xs transition-colors">Mentions Légales</Link>
-            <Link href="/politique-de-confidentialite" className="text-gray-400 hover:text-gray-300 text-[10px] md:text-xs transition-colors">Politique de Confidentialité</Link>
-            <Link href="/cgv" className="text-gray-400 hover:text-gray-300 text-[10px] md:text-xs transition-colors">CGV</Link>
+            <Link href="/mentions-legales" className="text-foreground-subtle hover:text-gray-300 text-[10px] md:text-xs transition-colors">Mentions Légales</Link>
+            <Link href="/politique-de-confidentialite" className="text-foreground-subtle hover:text-gray-300 text-[10px] md:text-xs transition-colors">Politique de Confidentialité</Link>
+            <Link href="/cgv" className="text-foreground-subtle hover:text-gray-300 text-[10px] md:text-xs transition-colors">CGV</Link>
           </div>
         </div>
       </div>

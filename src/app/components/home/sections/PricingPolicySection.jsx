@@ -41,7 +41,7 @@ export default function PricingPolicySection() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 md:mb-6 uppercase tracking-tight">
             Politique de <span className="text-primary">Déplacement</span>
           </h2>
-          <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">
+          <p className="text-foreground-subtle text-sm md:text-lg max-w-2xl mx-auto">
             Une transparence totale sur les frais de déplacement. Pas de surprise : tout est clair avant mon intervention.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function PricingPolicySection() {
             </div>
 
             <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Devis & Déplacement Gratuits</h3>
-            <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-6 grow">Pour toute intervention située dans un rayon de <span className="text-white font-bold">30km autour de Broué</span>.</p>
+            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Pour toute intervention située dans un rayon de <span className="text-white font-bold">30km autour de Broué</span>.</p>
             
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
               <p className="text-xs md:text-sm text-primary font-medium">
@@ -130,7 +130,7 @@ export default function PricingPolicySection() {
             </div>
 
             <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Frais Déductibles</h3>
-            <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-6 grow">Au-delà de 30km, une participation aux frais est demandée pour le déplacement.</p>
+            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Au-delà de 30km, une participation aux frais est demandée pour le déplacement.</p>
             
             <div className="bg-accent/10 border border-accent/20 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
               <p className="text-xs md:text-sm text-accent font-medium">

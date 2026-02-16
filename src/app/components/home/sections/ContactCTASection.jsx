@@ -69,7 +69,7 @@ export default function ContactCTASection() {
                 </div>
                 <div>
                   <h3 className="hidden md:block text-xl font-bold text-white mb-1">Email</h3>
-                  <p className="text-gray-400 text-sm mb-2">Réponse sous 24h garantie</p>
+                  <p className="text-foreground-subtle text-sm mb-2">Réponse sous 24h garantie</p>
                   <a href="mailto:contact@prodigelec.fr" className="text-base md:text-lg text-primary hover:text-primary-light transition-colors font-medium">contact@prodigelec.fr</a>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function ContactCTASection() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-1">Zone d&apos;intervention</h3>
-                  <p className="text-gray-400 text-sm mb-2">Devis gratuit jusqu&apos;à 30km (Zone 2)</p>
+                  <p className="text-foreground-subtle text-sm mb-2">Devis gratuit jusqu&apos;à 30km (Zone 2)</p>
                   <span className="text-sm md:text-base text-gray-200 font-medium">Chartres, Broué, Dreux, Anet, Nonancourt, Évreux, Ezy-sur-Eure & leurs alentours (28/27)</span>
                 </div>
               </div>
