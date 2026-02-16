@@ -9,14 +9,14 @@ import JsonLd from "@/app/components/JsonLd";
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -122,8 +122,7 @@ export const metadata = {
   // Optimisation de la chaîne de requêtes critiques
   other: {
     'link': [
-      // Preconnect et DNS-prefetch au domaine pour accélérer la résolution et la connexion
-      { rel: 'dns-prefetch', href: 'https://www.prodigelec.fr' },
+      // Preconnect au domaine lui-même
       { rel: 'preconnect', href: 'https://www.prodigelec.fr' }
     ]
   }
