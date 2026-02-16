@@ -63,7 +63,7 @@ export default function BrandsSection() {
                                     ease: "linear",
                                     repeat: Infinity
                                 }}
-                                style={{ display: 'flex' }}
+                                style={{ display: 'flex', willChange: 'transform' }}
                             >
                                 {/* Double the list to ensure no gaps even on huge screens */}
                                 {[...cat.brands, ...cat.brands].map((brand, bIdx) => (

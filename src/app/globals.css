@@ -29,10 +29,10 @@
   /* Texte - Optimisé pour contraste WCAG AA */
   --foreground: #f4f4f5;
   /* Texte principal - blanc cassé */
-  --foreground-muted: #e4e4e7;
-  /* Texte secondaire - gris très clair (était #d4d4d8) - Contraste amélioré */
-  --foreground-subtle: #d4d4d8;
-  /* Texte subtil - gris clair (était #a1a1aa) - Contraste amélioré */
+  --foreground-muted: #ececee;
+  /* Texte secondaire - gris très clair (ratio > 4.5:1) */
+  --foreground-subtle: #e5e5e7;
+  /* Texte subtil - gris clair (ratio > 4.5:1) */
 
   /* Utilitaires */
   --border: #1e3a5f;
@@ -68,19 +68,15 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-/* Effet de texte Or Brillant */
+/* Effet de texte Or Brillant - Version performance optimisée */
 .text-gold-shine {
   background: linear-gradient(to right,
-      #c9a227 0%,
-      #d4af37 20%,
-      #fef08a 40%,
-      #d4af37 60%,
-      #c9a227 100%);
-  background-size: 200% auto;
+      #d4af37 0%,
+      #fef08a 50%,
+      #d4af37 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
   display: inline-block;
   font-weight: 900;
 }
