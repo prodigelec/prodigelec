@@ -13,7 +13,14 @@ const nextConfig = {
   },
   experimental: {
     optimizeCss: true,
+    // Optimiser les imports pour réduire les bundles
+    optimizePackageImports: ['lucide-react', 'framer-motion', 'leaflet', 'react-leaflet'],
   },
+  // Compression et optimisation
+  compress: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;
+
+
