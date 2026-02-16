@@ -10,12 +10,14 @@ const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -117,6 +119,12 @@ export const metadata = {
   alternates: {
     canonical: "https://www.prodigelec.fr/",
   },
+  other: {
+    // Préchargement de l'image LCP pour un affichage instantané
+    'link': [
+      { rel: 'preload', href: '/img_carousel_hero_home/serrurerie.jpg', as: 'image', type: 'image/jpeg', fetchPriority: 'high' }
+    ]
+  }
 };
 
 export default function RootLayout({ children }) {
