@@ -121,7 +121,7 @@ export default function Navbar() {
                                             <a
                                                 key={subItem.name}
                                                 href={subItem.href}
-                                                className={`flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 transition-all group/item ${pathname === subItem.href ? 'text-primary bg-white/5' : 'text-white/80 hover:text-primary'
+                                                className={`flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 transition-all group/item ${pathname === subItem.href ? 'text-primary bg-white/5' : 'text-white/90 hover:text-primary'
                                                     }`}
                                             >
                                                 <span className="text-xl group-hover/item:scale-110 transition-transform">{subItem.icon}</span>

@@ -70,7 +70,7 @@ export default function BrandsSection() {
                                     <span
                                         key={bIdx}
                                         aria-hidden="true"
-                                        className="text-xl md:text-2xl lg:text-4xl font-black text-white/15 hover:text-white hover:scale-105 transition-all duration-500 cursor-default uppercase italic tracking-tighter"
+                                        className="text-xl md:text-2xl lg:text-4xl font-black text-white/25 hover:text-white hover:scale-105 transition-all duration-500 cursor-default uppercase italic tracking-tighter"
                                     >
                                         {brand}
                                     </span>
