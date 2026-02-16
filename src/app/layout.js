@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/app/components/layout/Navbar";
 import FloatingContactButton from "@/app/components/layout/FloatingContactButton";
 import Footer from "@/app/components/layout/Footer";
+import JsonLd from "@/app/components/JsonLd";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -111,7 +112,7 @@ export const metadata = {
   },
 
   verification: {
-    google: "C-dGhGfuNwqKlYfHp-ICPG43ZWYeHFpfyCsT8XF8lag",
+    google: "w5rAOBeW-q78ZcjmJWRltGvSvm92EYiSSSo5CfP6Zo0",
   },
   alternates: {
     canonical: "https://www.prodigelec.fr/",
@@ -121,49 +122,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>
-      <body className={`${outfit.variable} ${inter.variable} antialiased`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "PRODIGELEC",
-              "image": "https://www.prodigelec.fr/prodigelec-logo.svg",
-              "telephone": "0638194752",
-              "url": "https://www.prodigelec.fr",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "10 Rue Georges Bréant",
-                "addressLocality": "Broué",
-                "postalCode": "28410",
-                "addressCountry": "FR"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 48.7492,
-                "longitude": 1.5234
-              },
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                  "opens": "08:00",
-                  "closes": "20:00"
-                }
-              ],
-              "priceRange": "$$",
-              "areaServed": ["Broué", "Dreux", "Chartres", "Évreux", "Anet"],
-              "sameAs": [
-                "https://www.google.com/search?q=prodigelec",
-                "https://www.google.com/maps/place/prodigelec/",
-                "https://www.facebook.com/prodigelec/",
-                "https://www.instagram.com/prodigelec/",
-                "https://www.whatsapp.com/prodigelec/"
-              ]
-            })
-          }}
-        />
+      <body className={`${outfit.variable} ${inter.variable} font-sans bg-background text-foreground antialiased`}>
+        <JsonLd />
         <Navbar />
         {children}
         <Footer />
