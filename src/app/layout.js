@@ -122,7 +122,8 @@ export const metadata = {
   // Optimisation de la chaîne de requêtes critiques
   other: {
     'link': [
-      // Preconnect au domaine lui-même pour établir la connexion TLS au plus tôt
+      // Preconnect et DNS-prefetch au domaine pour accélérer la résolution et la connexion
+      { rel: 'dns-prefetch', href: 'https://www.prodigelec.fr' },
       { rel: 'preconnect', href: 'https://www.prodigelec.fr' }
     ]
   }

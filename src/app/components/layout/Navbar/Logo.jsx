@@ -7,9 +7,7 @@ import BrandName from "@/app/components/ui/BrandName";
 export default function Logo({ className = "", boxClassName = "" }) {
   return (
     <Link href="/">
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
+      <div
         className={`flex items-center gap-3 group cursor-pointer ${className}`}
       >
         <div className={`relative w-[96px] h-[96px] overflow-hidden rounded-xl bg-linear-to-br from-[#d9d9d9] via-[#f5f5f5] to-[#9ca3af] ring-1 ring-white/30 shadow-[inset_0_2px_6px_rgba(255,255,255,0.5),inset_0_-3px_6px_rgba(0,0,0,0.25),0_8px_18px_rgba(0,0,0,0.35)] transition-colors ${boxClassName}`}>
@@ -17,6 +15,7 @@ export default function Logo({ className = "", boxClassName = "" }) {
             src="/prodigelec-logo.svg"
             alt="PRODIGELEC Logo"
             fill
+            priority
             className="object-contain object-center scale-[2.1] translate-y-[24px] -translate-x-[10px]"
           />
         </div>
@@ -26,7 +25,7 @@ export default function Logo({ className = "", boxClassName = "" }) {
             Expertise Technique
           </span>
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 }

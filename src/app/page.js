@@ -1,7 +1,8 @@
 import dynamic from "next/dynamic";
-import { HeroSection, BrandsSection } from "@/app/components/home";
+import { HeroSection } from "@/app/components/home";
 
 // Chargement dynamique des sections sous le pli pour optimiser le LCP et le JS initial
+const BrandsSection = dynamic(() => import("@/app/components/home/sections/BrandsSection"));
 const FeaturesSection = dynamic(() => import("@/app/components/home/sections/FeaturesSection"));
 const AboutSection = dynamic(() => import("@/app/components/home/sections/AboutSection"));
 const ServicesSection = dynamic(() => import("@/app/components/home/sections/ServicesSection"));
