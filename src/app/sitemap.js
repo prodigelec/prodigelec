@@ -7,7 +7,9 @@ export default function sitemap() {
     "/services/serrurerie",
     "/about",
     "/contact",
-    "/politique-de-confidentialite"
+    "/politique-de-confidentialite",
+    "/mentions-legales",
+    "/cgv"
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
