@@ -184,7 +184,7 @@ export default function InterventionMap() {
     <div className="flex flex-col gap-6 w-full h-full min-h-[600px]">
       {/* City Search Bar with Autocomplete */}
       <div className="bg-[#0b1a2a]/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl relative z-0">
-        <p className="text-[10px] font-bold text-gray-200 uppercase tracking-widest mb-3 ml-1 flex items-center gap-2">
+        <p className="text-[10px] font-bold text-gray-100 uppercase tracking-widest mb-3 ml-1 flex items-center gap-2">
           <Calculator className="w-3 h-3 text-primary" /> Calculez vos frais de déplacement
         </p>
         <div className="flex flex-col md:flex-row gap-3">
@@ -195,7 +195,7 @@ export default function InterventionMap() {
               id="city-search"
               aria-label="Rechercher votre ville pour calculer les frais de déplacement"
               placeholder="Entrez votre ville (ex: Dreux, Chartres...)"
-              className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-10 text-sm text-white placeholder:text-gray-200 focus:outline-none focus:border-primary/50 transition-all shadow-inner"
+              className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-10 text-sm text-white placeholder:text-gray-100 focus:outline-none focus:border-primary/50 transition-all shadow-inner"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => {
@@ -225,7 +225,7 @@ export default function InterventionMap() {
                   <button
                     key={idx}
                     onClick={() => handleSelection(city)}
-                    className="w-full text-left px-5 py-3 hover:bg-primary/10 text-gray-200 hover:text-white transition-colors border-b border-white/5 last:border-0 flex items-center gap-3"
+                    className="w-full text-left px-5 py-3 hover:bg-primary/10 text-gray-100 hover:text-white transition-colors border-b border-white/5 last:border-0 flex items-center gap-3"
                   >
                     <MapPin className="w-4 h-4 text-primary shrink-0" />
                     <span className="text-sm truncate">{city.display_name}</span>
@@ -234,7 +234,7 @@ export default function InterventionMap() {
               </div>
             )}
           </div>
-          <div className="hidden md:flex items-center text-xs text-gray-200 font-medium px-2 italic">
+          <div className="hidden md:flex items-center text-xs text-gray-100 font-medium px-2 italic">
             Calculez vos frais de déplacement instantanément
           </div>
         </div>
@@ -248,12 +248,12 @@ export default function InterventionMap() {
                 </div>
                 <div>
                   <div className="text-white font-bold">{result.name}</div>
-                  <div className="text-xs text-gray-200">{result.distance} km de Broué</div>
+                  <div className="text-xs text-gray-100">{result.distance} km de Broué</div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div className="text-right">
-                  <div className="text-xs text-gray-200 uppercase font-bold tracking-wider">Frais de déplacement</div>
+                  <div className="text-xs text-gray-100 uppercase font-bold tracking-wider">Frais de déplacement</div>
                   <div className="text-2xl font-black text-primary leading-none mt-1">{result.price}</div>
                 </div>
                 <button
@@ -266,7 +266,7 @@ export default function InterventionMap() {
               </div>
             </div>
             {result.price.includes('*') && (
-              <div className="text-[10px] text-gray-200 italic text-center border-t border-white/5 pt-2">
+              <div className="text-[10px] text-gray-100 italic text-center border-t border-white/5 pt-2">
                 * Les frais de déplacement sont intégralement déduits si le devis est accepté.
               </div>
             )}

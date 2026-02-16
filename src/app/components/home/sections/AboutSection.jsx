@@ -24,7 +24,7 @@ export default function AboutSection() {
               <span className="text-primary font-semibold">Une Expertise Unique</span>
             </h2>
 
-            <div className="space-y-4 md:space-y-6 text-sm md:text-base lg:text-lg text-gray-200 leading-relaxed">
+            <div className="space-y-4 md:space-y-6 text-sm md:text-base lg:text-lg text-gray-100 leading-relaxed">
               <p>
                 L&apos;artisanat est avant tout une histoire de famille et de transmission. J&apos;ai exercé le métier d&apos;électricien serrurier pendant <strong className="text-primary font-bold">23 ans</strong> au sein de notre société familiale à Paris, travaillant aux côtés de mes parents et de mes frères. En tant qu&apos;aîné, c&apos;est là que j&apos;ai forgé mon exigence et ma passion du métier.
               </p>
@@ -44,7 +44,7 @@ export default function AboutSection() {
                   <div className="p-1.5 rounded-full bg-white/10 ring-1 ring-white/10 group-hover:ring-primary/30 transition-colors shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]">
                     <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4 text-primary" />
                   </div>
-                  <span className="text-xs md:text-sm font-medium text-gray-200 group-hover:text-white transition-colors">{item}</span>
+                  <span className="text-xs md:text-sm font-medium text-gray-100 group-hover:text-white transition-colors">{item}</span>
                 </div>
               ))}
             </div>

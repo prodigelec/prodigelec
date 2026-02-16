@@ -73,7 +73,7 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
                 <h2 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter leading-none uppercase italic">
                   {slides[current].title}
                 </h2>
-                <p className="text-lg md:text-xl text-gray-200 font-medium">
+                <p className="text-lg md:text-xl text-gray-100 font-medium">
                   {slides[current].description}
                 </p>
               </m.div>

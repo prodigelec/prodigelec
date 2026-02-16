@@ -73,7 +73,7 @@ export default function PricingPolicySection() {
               </p>
             </div>
 
-            <div className="space-y-3 md:space-y-4 text-gray-200 mt-auto">
+            <div className="space-y-3 md:space-y-4 text-gray-100 mt-auto">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                 <span className="text-xs md:text-base">Zone d'intervention immédiate</span>
@@ -101,6 +101,7 @@ export default function PricingPolicySection() {
 
               <button
                 onClick={() => setActiveModal('free')}
+                aria-label="Voir toutes les villes de la zone gratuite"
                 className="w-full mt-4 py-2 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold text-primary uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
               >
                 Voir toutes les villes <ChevronRight className="w-3 h-3" />
@@ -138,7 +139,7 @@ export default function PricingPolicySection() {
               </p>
             </div>
 
-            <div className="space-y-3 md:space-y-4 text-gray-200 mt-auto">
+            <div className="space-y-3 md:space-y-4 text-gray-100 mt-auto">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                 <span className="text-xs md:text-base">Entre 50€ et 70€ selon la distance</span>
@@ -166,6 +167,7 @@ export default function PricingPolicySection() {
 
               <button
                 onClick={() => setActiveModal('paid')}
+                aria-label="Voir toutes les villes de la zone payante"
                 className="w-full mt-4 py-2 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold text-accent uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
               >
                 Voir toutes les villes <ChevronRight className="w-3 h-3" />
@@ -201,7 +203,7 @@ export default function PricingPolicySection() {
             >
               <button
                 onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white transition-colors"
+                className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-100 hover:text-white transition-colors"
                 aria-label="Fermer la liste des villes"
               >
                 <X className="w-6 h-6" />
@@ -216,7 +218,7 @@ export default function PricingPolicySection() {
                 <h3 className="text-2xl md:text-3xl font-bold text-white">
                   {activeModal === 'free' ? "Zone d'intervention Gratuite" : "Zone Payante (Déductible)"}
                 </h3>
-                <p className="text-gray-200 mt-2">
+                <p className="text-gray-100 mt-2">
                   {activeModal === 'free'
                     ? "Liste complète des villes où le déplacement et le devis sont 100% offerts."
                     : "Liste des villes nécessitant une participation aux frais (déductible du devis)."}
@@ -233,7 +235,7 @@ export default function PricingPolicySection() {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {(activeModal === 'free' ? CITIES_28 : CITIES_28_ZONE3).map(city => (
-                      <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-200 border border-white/5 hover:border-white/20 transition-colors">
+                      <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-100 border border-white/5 hover:border-white/20 transition-colors">
                         {city}
                       </span>
                     ))}
@@ -249,7 +251,7 @@ export default function PricingPolicySection() {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {(activeModal === 'free' ? CITIES_27 : CITIES_27_ZONE3).map(city => (
-                      <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-200 border border-white/5 hover:border-white/20 transition-colors">
+                      <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-100 border border-white/5 hover:border-white/20 transition-colors">
                         {city}
                       </span>
                     ))}

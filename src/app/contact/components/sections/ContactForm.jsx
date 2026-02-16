@@ -54,20 +54,20 @@ export default function ContactForm() {
 
         <div className="relative z-10">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Envoyer un message</h2>
-          <p className="text-gray-200 leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
+          <p className="text-gray-100 leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
             Remplissez ce formulaire pour toute demande de devis ou d&apos;information. Je m&apos;engage à vous répondre sous 24h ouvrées.
           </p>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-3 text-sm text-gray-200">
+            <div className="flex items-center gap-3 text-sm text-gray-100">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               Réponse rapide garantie
             </div>
-            <div className="flex items-center gap-3 text-sm text-gray-200">
+            <div className="flex items-center gap-3 text-sm text-gray-100">
               <div className="w-2 h-2 rounded-full bg-blue-500" />
               Devis gratuit et détaillé
             </div>
-            <div className="flex items-center gap-3 text-sm text-gray-200">
+            <div className="flex items-center gap-3 text-sm text-gray-100">
               <div className="w-2 h-2 rounded-full bg-amber-500" />
               Conseils personnalisés
             </div>
@@ -75,7 +75,7 @@ export default function ContactForm() {
         </div>
 
         <div className="relative z-10 mt-12">
-          <div className="text-xs font-bold uppercase tracking-widest text-gray-200 mb-2 group"><BrandName className="text-[10px]" /></div>
+          <div className="text-xs font-bold uppercase tracking-widest text-gray-100 mb-2 group"><BrandName className="text-[10px]" /></div>
           <div className="text-white font-medium">L&apos;expertise artisanale 2.0</div>
         </div>
       </div>
@@ -85,51 +85,51 @@ export default function ContactForm() {
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1">
-              <label htmlFor="user_name" className="text-xs font-bold text-gray-200 uppercase tracking-wide ml-1">Nom complet</label>
+              <label htmlFor="user_name" className="text-xs font-bold text-gray-100 uppercase tracking-wide ml-1">Nom complet</label>
               <input
                 type="text"
                 name="user_name"
                 id="user_name"
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-200 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-100 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
               />
             </div>
             <div className="space-y-1">
-              <label htmlFor="user_phone" className="text-xs font-bold text-gray-200 uppercase tracking-wide ml-1">Téléphone</label>
+              <label htmlFor="user_phone" className="text-xs font-bold text-gray-100 uppercase tracking-wide ml-1">Téléphone</label>
               <input
                 type="tel"
                 name="user_phone"
                 id="user_phone"
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-200 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-100 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
               />
             </div>
 
             <div className="space-y-1">
-              <label htmlFor="user_email" className="text-xs font-bold text-gray-200 uppercase tracking-wide ml-1">Email</label>
+              <label htmlFor="user_email" className="text-xs font-bold text-gray-100 uppercase tracking-wide ml-1">Email</label>
               <input
                 type="email"
                 name="user_email"
                 id="user_email"
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-200 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-100 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
               />
             </div>
 
             <div className="space-y-1">
-              <label htmlFor="user_city" className="text-xs font-bold text-gray-200 uppercase tracking-wide ml-1">Ville</label>
+              <label htmlFor="user_city" className="text-xs font-bold text-gray-100 uppercase tracking-wide ml-1">Ville</label>
               <input
                 type="text"
                 name="user_city"
                 id="user_city"
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-200 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-100 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all"
               />
             </div>
           </div>
 
           <div className="space-y-1">
-            <label htmlFor="service" className="text-xs font-bold text-gray-200 uppercase tracking-wide ml-1">Service concerné</label>
+            <label htmlFor="service" className="text-xs font-bold text-gray-100 uppercase tracking-wide ml-1">Service concerné</label>
             <select
               name="service"
               id="service"
@@ -143,13 +143,13 @@ export default function ContactForm() {
           </div>
 
           <div className="space-y-1">
-            <label htmlFor="message" className="text-xs font-bold text-gray-200 uppercase tracking-wide ml-1">Votre message</label>
+            <label htmlFor="message" className="text-xs font-bold text-gray-100 uppercase tracking-wide ml-1">Votre message</label>
             <textarea
               name="message"
               id="message"
               required
               rows={3}
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-200 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all resize-none"
+              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-gray-100 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all resize-none"
               placeholder="Décrivez votre besoin..."
             />
           </div>

@@ -39,7 +39,7 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
         <h2 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tighter">
           {title} <span className={`${config.highlightColor} italic`}>{subtitle}</span>
         </h2>
-        <p className="text-gray-200 text-lg max-w-2xl mx-auto">
+        <p className="text-gray-100 text-lg max-w-2xl mx-auto">
           {description}
         </p>
       </div>
@@ -81,7 +81,7 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
                 >
                   <div className="px-6 md:px-8 pb-6 pt-2">
                     <div className={`w-full h-px bg-gradient-to-r ${config.gradientFrom} ${config.gradientVia} to-transparent mb-4`} />
-                    <p className="text-gray-200 leading-relaxed">
+                    <p className="text-gray-100 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -93,7 +93,7 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
       </div>
 
       <div className="text-center mt-12 px-6">
-        <p className="text-gray-200 mb-6">
+        <p className="text-gray-100 mb-6">
           Vous ne trouvez pas la réponse à votre question ?
         </p>
         <a

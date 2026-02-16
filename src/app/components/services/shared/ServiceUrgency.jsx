@@ -54,7 +54,7 @@ export default function ServiceUrgency({ title, subtitle, description, steps, ic
             <h3 className="text-2xl md:text-4xl font-bold text-white mb-6">
               {title}
             </h3>
-            <div className="text-base md:text-xl text-gray-200 mb-4">
+            <div className="text-base md:text-xl text-gray-100 mb-4">
               {description}
             </div>
             <div className="flex flex-wrap gap-3 mb-10">
@@ -64,7 +64,7 @@ export default function ServiceUrgency({ title, subtitle, description, steps, ic
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2 flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-amber-500/50" />
-                <span className="text-gray-200 font-medium text-sm whitespace-nowrap">Samedi : Sur RDV</span>
+                <span className="text-gray-100 font-medium text-sm whitespace-nowrap">Samedi : Sur RDV</span>
               </div>
               <div className={`${config.iconBg} backdrop-blur-md border ${config.border} rounded-xl px-4 py-2 flex items-center gap-2`}>
                 <div className={`w-2 h-2 rounded-full ${config.pingColor} animate-ping ${config.pingShadow}`} />
@@ -86,7 +86,7 @@ export default function ServiceUrgency({ title, subtitle, description, steps, ic
                 <span className={`text-3xl font-black ${config.stepColor}`}>{item.step}</span>
                 <div>
                   <div className="font-bold text-white">{item.title}</div>
-                  <div className="text-sm text-gray-200">{item.desc}</div>
+                  <div className="text-sm text-gray-100">{item.desc}</div>
                 </div>
               </div>
             ))}

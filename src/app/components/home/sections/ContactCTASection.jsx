@@ -32,7 +32,7 @@ export default function ContactCTASection() {
                   Parlons-en dès aujourd&apos;hui.
                 </span>
               </h2>
-              <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-xl">
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-xl">
                 Que ce soit pour une urgence électrique ou un besoin en serrurerie, je suis à votre écoute pour vous apporter une solution rapide et sur-mesure.
               </p>
 
@@ -82,7 +82,7 @@ export default function ContactCTASection() {
                 <div>
                   <h3 className="text-lg font-bold text-white mb-1">Zone d&apos;intervention</h3>
                   <p className="text-foreground-subtle text-sm mb-2">Devis gratuit jusqu&apos;à 30km (Zone 2)</p>
-                  <span className="text-sm md:text-base text-gray-200 font-medium">Chartres, Broué, Dreux, Anet, Nonancourt, Évreux, Ezy-sur-Eure & leurs alentours (28/27)</span>
+                  <span className="text-sm md:text-base text-gray-100 font-medium">Chartres, Broué, Dreux, Anet, Nonancourt, Évreux, Ezy-sur-Eure & leurs alentours (28/27)</span>
                 </div>
               </div>
 

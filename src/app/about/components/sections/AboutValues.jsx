@@ -47,7 +47,7 @@ export default function AboutValues() {
               <CheckCircle2 className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-lg md:text-xl font-bold text-white mb-4 mt-4">{item.title}</h3>
-            <p className="text-sm md:text-base text-gray-200">
+            <p className="text-sm md:text-base text-gray-100">
               {item.desc}
             </p>
           </m.div>

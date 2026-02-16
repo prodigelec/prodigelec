@@ -41,7 +41,7 @@ export default function ServiceHero({ icon: Icon, title, subtitle, description, 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="text-sm md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
+        className="text-sm md:text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed"
       >
         {description}
       </m.p>
