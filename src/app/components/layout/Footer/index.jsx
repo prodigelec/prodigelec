@@ -18,10 +18,10 @@ export default function Footer() {
               Votre artisan de confiance en Eure-et-Loir. Expertise technique, réactivité et solutions sur-mesure pour tous vos besoins.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#0b1a2a] transition-all group">
+              <a href="#" aria-label="Suivez-nous sur Facebook" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#0b1a2a] transition-all group">
                 <FaFacebook size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#0b1a2a] transition-all">
+              <a href="#" aria-label="Suivez-nous sur Instagram" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-[#0b1a2a] transition-all">
                 <FaInstagram size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
             </div>
@@ -69,13 +69,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <p className="text-gray-500 text-[10px] md:text-xs">
+          <p className="text-gray-400 text-[10px] md:text-xs">
             © 2025 PRODIGELEC. Tous droits réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <Link href="/mentions-legales" className="text-gray-500 hover:text-gray-300 text-[10px] md:text-xs transition-colors">Mentions Légales</Link>
-            <Link href="/politique-de-confidentialite" className="text-gray-500 hover:text-gray-300 text-[10px] md:text-xs transition-colors">Politique de Confidentialité</Link>
-            <Link href="/cgv" className="text-gray-500 hover:text-gray-300 text-[10px] md:text-xs transition-colors">CGV</Link>
+            <Link href="/mentions-legales" className="text-gray-400 hover:text-gray-300 text-[10px] md:text-xs transition-colors">Mentions Légales</Link>
+            <Link href="/politique-de-confidentialite" className="text-gray-400 hover:text-gray-300 text-[10px] md:text-xs transition-colors">Politique de Confidentialité</Link>
+            <Link href="/cgv" className="text-gray-400 hover:text-gray-300 text-[10px] md:text-xs transition-colors">CGV</Link>
           </div>
         </div>
       </div>

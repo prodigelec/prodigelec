@@ -64,6 +64,7 @@ export default function FloatingContactButton() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsExpanded(!isExpanded)}
+                    aria-label={isExpanded ? "Fermer le menu de contact" : "Ouvrir le menu de contact"}
                     className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg shadow-primary/30 transition-colors ${isExpanded ? 'bg-gray-900 text-white' : 'bg-primary text-gray-900'}`}
                 >
                     {isExpanded ? <X size={24} /> : <Phone size={24} className="animate-pulse" />}

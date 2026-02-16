@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function HeroBackground({ slides, currentSlide }) {
   return (
-    <AnimatePresence mode='wait'>
+    <AnimatePresence mode='wait' initial={false}>
       <motion.div
         key={currentSlide}
         initial={{ opacity: 0 }}

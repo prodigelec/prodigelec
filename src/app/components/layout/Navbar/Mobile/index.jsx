@@ -25,6 +25,7 @@ export default function MobileNavbar() {
                     <motion.a
                         key={item.name}
                         href={item.href}
+                        aria-label={item.name}
                         whileTap={{ scale: 0.9 }}
                         className={`flex flex-col items-center justify-center min-w-0 flex-1 px-1 transition-all ${item.highlight ? 'bg-primary text-background rounded-xl py-2 shadow-lg shadow-primary/20' : 'text-primary font-medium' 
                             }`}
