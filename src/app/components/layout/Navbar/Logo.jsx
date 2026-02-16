@@ -22,7 +22,7 @@ export default function Logo({ className = "", boxClassName = "" }) {
         </div>
         <div className="flex flex-col -gap-1 mt-3">
           <BrandName className="text-lg sm:text-xl tracking-tighter leading-none drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" />
-          <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">
+          <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-foreground font-bold">
             Expertise Technique
           </span>
         </div>
