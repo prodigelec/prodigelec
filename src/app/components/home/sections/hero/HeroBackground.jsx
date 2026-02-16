@@ -15,7 +15,7 @@ export default function HeroBackground({ slides, currentSlide }) {
       <AnimatePresence mode='wait'>
         <motion.div
           key={currentSlide}
-          initial={{ opacity: 1 }} // Toujours visible au démarrage pour éviter de "perdre" l'image
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
@@ -27,10 +27,8 @@ export default function HeroBackground({ slides, currentSlide }) {
             alt={slides[currentSlide].title}
             fill
             priority={currentSlide === 0}
-            fetchPriority={currentSlide === 0 ? "high" : "low"}
-            loading={currentSlide === 0 ? "eager" : "lazy"}
-            sizes="(max-width: 1366px) 1366px, (max-width: 1536px) 1536px, 100vw"
-            quality={45}
+            sizes="100vw"
+            quality={75}
             className="object-cover"
           />
         </motion.div>
