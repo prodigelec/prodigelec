@@ -13,7 +13,7 @@ export default function AboutCTA() {
     >
       <div className="relative z-10 max-w-2xl mx-auto">
         <h3 className="text-xl md:text-3xl font-bold text-white mb-4 md:mb-6">Un projet ? Une question ?</h3>
-        <p className="text-gray-300 mb-6 md:mb-8 text-sm md:text-lg">
+        <p className="text-gray-200 mb-6 md:mb-8 text-sm md:text-lg">
           Que vous ayez besoin d&apos;un dépannage urgent ou d&apos;un devis en électricité ou serrurerie, je suis à votre écoute.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

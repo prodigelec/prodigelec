@@ -73,7 +73,7 @@ export default function PricingPolicySection() {
               </p>
             </div>
 
-            <div className="space-y-3 md:space-y-4 text-gray-300 mt-auto">
+            <div className="space-y-3 md:space-y-4 text-gray-200 mt-auto">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                 <span className="text-xs md:text-base">Zone d'intervention immédiate</span>
@@ -138,7 +138,7 @@ export default function PricingPolicySection() {
               </p>
             </div>
 
-            <div className="space-y-3 md:space-y-4 text-gray-300 mt-auto">
+            <div className="space-y-3 md:space-y-4 text-gray-200 mt-auto">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                 <span className="text-xs md:text-base">Entre 50€ et 70€ selon la distance</span>
@@ -202,7 +202,7 @@ export default function PricingPolicySection() {
             >
               <button 
                 onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+                className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -217,7 +217,7 @@ export default function PricingPolicySection() {
                 <h3 className="text-2xl md:text-3xl font-bold text-white">
                   {activeModal === 'free' ? "Zone d'intervention Gratuite" : "Zone Payante (Déductible)"}
                 </h3>
-                <p className="text-gray-400 mt-2">
+                <p className="text-gray-200 mt-2">
                   {activeModal === 'free' 
                     ? "Liste complète des villes où le déplacement et le devis sont 100% offerts." 
                     : "Liste des villes nécessitant une participation aux frais (déductible du devis)."}
@@ -235,7 +235,7 @@ export default function PricingPolicySection() {
                    </h4>
                    <div className="flex flex-wrap gap-2">
                      {(activeModal === 'free' ? CITIES_28 : CITIES_28_ZONE3).map(city => (
-                       <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-300 border border-white/5 hover:border-white/20 transition-colors">
+                       <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-200 border border-white/5 hover:border-white/20 transition-colors">
                          {city}
                        </span>
                      ))}
@@ -252,7 +252,7 @@ export default function PricingPolicySection() {
                    </h4>
                    <div className="flex flex-wrap gap-2">
                      {(activeModal === 'free' ? CITIES_27 : CITIES_27_ZONE3).map(city => (
-                       <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-300 border border-white/5 hover:border-white/20 transition-colors">
+                       <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-200 border border-white/5 hover:border-white/20 transition-colors">
                          {city}
                        </span>
                      ))}

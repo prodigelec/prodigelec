@@ -32,7 +32,7 @@ export default function ContactCTASection() {
                   Parlons-en dès aujourd&apos;hui.
                 </span>
               </h2>
-              <p className="text-sm md:text-lg text-gray-300 leading-relaxed max-w-xl">
+              <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-xl">
                 Que ce soit pour une urgence électrique ou un besoin en serrurerie, je suis à votre écoute pour vous apporter une solution rapide et sur-mesure.
               </p>
 

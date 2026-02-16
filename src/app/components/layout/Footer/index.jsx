@@ -73,9 +73,9 @@ export default function Footer() {
             © 2025 PRODIGELEC. Tous droits réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <Link href="/mentions-legales" className="text-foreground-subtle hover:text-gray-300 text-[10px] md:text-xs transition-colors">Mentions Légales</Link>
-            <Link href="/politique-de-confidentialite" className="text-foreground-subtle hover:text-gray-300 text-[10px] md:text-xs transition-colors">Politique de Confidentialité</Link>
-            <Link href="/cgv" className="text-foreground-subtle hover:text-gray-300 text-[10px] md:text-xs transition-colors">CGV</Link>
+            <Link href="/mentions-legales" className="text-foreground-subtle hover:text-gray-200 text-[10px] md:text-xs transition-colors">Mentions Légales</Link>
+            <Link href="/politique-de-confidentialite" className="text-foreground-subtle hover:text-gray-200 text-[10px] md:text-xs transition-colors">Politique de Confidentialité</Link>
+            <Link href="/cgv" className="text-foreground-subtle hover:text-gray-200 text-[10px] md:text-xs transition-colors">CGV</Link>
           </div>
         </div>
       </div>

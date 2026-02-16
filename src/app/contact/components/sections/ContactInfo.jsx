@@ -138,13 +138,13 @@ export default function ContactInfo() {
           <div className="mt-6 pt-4 border-t border-white/5 flex flex-col gap-2">
              <div className="flex items-start gap-2">
                 <div className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                <p className="text-[11px] text-gray-300 leading-relaxed">
+                <p className="text-[11px] text-gray-200 leading-relaxed">
                   <span className="text-white font-bold">Frais de déplacement offerts</span> jusqu&apos;à 30km autour de Broué.
                 </p>
              </div>
              <div className="flex items-start gap-2">
                 <div className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                <p className="text-[11px] text-gray-300 leading-relaxed">
+                <p className="text-[11px] text-gray-200 leading-relaxed">
                   <span className="text-white font-bold">* Déductibles :</span> Les frais de déplacement (Zone 3 & 4) sont <span className="text-primary font-bold">intégralement déduits</span> de la facture finale si le devis est accepté.
                 </p>
              </div>

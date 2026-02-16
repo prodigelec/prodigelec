@@ -24,7 +24,7 @@ export default function AboutSection() {
               <span className="text-primary font-semibold">Une Expertise Unique</span>
             </h2>
 
-            <div className="space-y-4 md:space-y-6 text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed">
+            <div className="space-y-4 md:space-y-6 text-sm md:text-base lg:text-lg text-gray-200 leading-relaxed">
               <p>
                 L&apos;artisanat est avant tout une histoire de famille et de transmission. J&apos;ai exercé le métier d&apos;électricien serrurier pendant <strong className="text-primary font-bold">23 ans</strong> au sein de notre société familiale à Paris, travaillant aux côtés de mes parents et de mes frères. En tant qu&apos;aîné, c&apos;est là que j&apos;ai forgé mon exigence et ma passion du métier.
               </p>

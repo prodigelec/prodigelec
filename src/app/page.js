@@ -1,4 +1,13 @@
-import { HeroSection, BrandsSection, FeaturesSection, AboutSection, ServicesSection, ProcessSection, PartnersSection, PricingPolicySection, ContactCTASection } from "@/app/components/home";
+import dynamic from "next/dynamic";
+import { HeroSection, BrandsSection } from "@/app/components/home";
+
+// Chargement dynamique des sections sous le pli pour optimiser le LCP et le JS initial
+const FeaturesSection = dynamic(() => import("@/app/components/home/sections/FeaturesSection"));
+const AboutSection = dynamic(() => import("@/app/components/home/sections/AboutSection"));
+const ServicesSection = dynamic(() => import("@/app/components/home/sections/ServicesSection"));
+const ProcessSection = dynamic(() => import("@/app/components/home/sections/ProcessSection"));
+const PricingPolicySection = dynamic(() => import("@/app/components/home/sections/PricingPolicySection"));
+const ContactCTASection = dynamic(() => import("@/app/components/home/sections/ContactCTASection"));
 
 export const metadata = {
   title: "PRODIGELEC - Artisan Électricien & Serrurier | 27 & 28",

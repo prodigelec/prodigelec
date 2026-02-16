@@ -37,7 +37,7 @@ export default function ServicePricing({ title, subtitle, description, prices, t
         <h2 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tighter">
           {title} <span className={`${config.highlightColor} italic`}>{subtitle}</span>
         </h2>
-        <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">
+        <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto">
           {description}
         </p>
       </div>
@@ -76,19 +76,19 @@ export default function ServicePricing({ title, subtitle, description, prices, t
                     {plan.price === "Sur Devis" ? plan.price : plan.price.split(' ').slice(-2).join(' ')}
                   </span>
                   {plan.price !== "Sur Devis" && (
-                     <span className="text-sm text-gray-400 font-medium ml-1">
+                     <span className="text-sm text-gray-200 font-medium ml-1">
                         {plan.price.replace(plan.price.split(' ').slice(-2).join(' '), '').trim()}
                      </span>
                   )}
                 </div>
 
-                <p className="text-gray-400 text-sm md:text-base mb-8 pb-8 border-b border-white/10">
+                <p className="text-gray-200 text-sm md:text-base mb-8 pb-8 border-b border-white/10">
                   {plan.description}
                 </p>
 
                 <ul className="space-y-4 mb-8 grow">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                    <li key={i} className="flex items-start gap-3 text-sm text-gray-200">
                       <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${config.badgeBg}`} />
                       <span>{feature}</span>
                     </li>

@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
                         Politique de <br />
                         <span className="text-primary italic">Confidentialité</span>
                     </h1>
-                    <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto">
                         Chez PRODIGELEC, la protection de vos données personnelles est une priorité. Voici comment nous traitons vos informations.
                     </p>
                 </motion.div>
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
                                 </div>
                                 <div>
                                     <h2 className="text-lg md:text-xl font-bold text-white mb-3">{section.title}</h2>
-                                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                                    <p className="text-gray-200 leading-relaxed text-sm md:text-base">
                                         {section.content}
                                     </p>
                                 </div>
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
                     whileInView={{ opacity: 1 }}
                     className="mt-16 p-8 border border-primary/10 rounded-3xl bg-primary/5 text-center"
                 >
-                    <p className="text-gray-300 text-sm mb-6">
+                    <p className="text-gray-200 text-sm mb-6">
                         Pour toute question concernant vos données, vous pouvez nous contacter directement.
                     </p>
                     <a href="mailto:contact@prodigelec.fr" className="text-primary font-bold hover:underline">

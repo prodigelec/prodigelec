@@ -26,13 +26,13 @@
   --accent-glow: #ffcc00;
   /* Jaune lumineux - effets glow */
 
-  /* Texte */
+  /* Texte - Optimisé pour contraste WCAG AA */
   --foreground: #f4f4f5;
   /* Texte principal - blanc cassé */
-  --foreground-muted: #d4d4d8;
-  /* Texte secondaire - gris clair */
-  --foreground-subtle: #a1a1aa;
-  /* Texte subtil - gris moyen */
+  --foreground-muted: #e4e4e7;
+  /* Texte secondaire - gris très clair (était #d4d4d8) - Contraste amélioré */
+  --foreground-subtle: #d4d4d8;
+  /* Texte subtil - gris clair (était #a1a1aa) - Contraste amélioré */
 
   /* Utilitaires */
   --border: #1e3a5f;
@@ -126,4 +126,24 @@
   to {
     background-position: 200% center;
   }
+}
+
+/* Optimisations Performance Animations */
+/* Force GPU acceleration pour les animations */
+[data-motion] {
+  will-change: transform, opacity;
+}
+
+/* Optimiser les transformations */
+.motion-safe {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Containment pour améliorer les performances de rendu */
+main,
+section,
+article {
+  contain: layout style paint;
 }

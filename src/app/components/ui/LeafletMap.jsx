@@ -186,7 +186,7 @@ export default function LeafletMap() {
             <input
               type="text"
               placeholder="Entrez votre ville (ex: Dreux, Chartres...)"
-              className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-10 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:border-primary/50 transition-all shadow-inner"
+              className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-10 text-sm text-white placeholder:text-gray-200 focus:outline-none focus:border-primary/50 transition-all shadow-inner"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => {
@@ -225,7 +225,7 @@ export default function LeafletMap() {
               </div>
             )}
           </div>
-          <div className="hidden md:flex items-center text-xs text-gray-300 font-medium px-2 italic">
+          <div className="hidden md:flex items-center text-xs text-gray-200 font-medium px-2 italic">
             Calculez vos frais de déplacement instantanément
           </div>
         </div>
@@ -238,12 +238,12 @@ export default function LeafletMap() {
               </div>
               <div>
                 <div className="text-white font-bold">{result.name}</div>
-                <div className="text-xs text-gray-300">{result.distance} km de Broué</div>
+                <div className="text-xs text-gray-200">{result.distance} km de Broué</div>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <div className="text-xs text-gray-300 uppercase font-bold tracking-wider">Frais de déplacement</div>
+                <div className="text-xs text-gray-200 uppercase font-bold tracking-wider">Frais de déplacement</div>
                 <div className="text-2xl font-black text-primary leading-none mt-1">{result.price}</div>
               </div>
               <button
