@@ -1,5 +1,6 @@
 import { Outfit } from "next/font/google";
 import { Inter } from "next/font/google";
+import { preconnect } from "react-dom";
 import "./globals.css";
 import Navbar from "@/app/components/layout/Navbar";
 import FloatingContactButton from "@/app/components/layout/FloatingContactButton";
@@ -120,6 +121,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  preconnect("https://tile.openstreetmap.org");
+  preconnect("https://nominatim.openstreetmap.org");
+  preconnect("https://unpkg.com");
+
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={`${outfit.variable} ${inter.variable} font-sans bg-background text-foreground antialiased`}>
