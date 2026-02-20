@@ -9,12 +9,12 @@ export const metadata = {
     "Installation électrique", "Mise aux normes", "Domotique", "Vidéophonie"
   ],
   alternates: {
-    canonical: "/services/electricite",
+    canonical: "https://www.prodigelec.fr/services/electricite",
   },
   openGraph: {
     title: "Électricien à Broué et environs - PRODIGELEC",
     description: "Besoin d'un électricien ? Dépannage, installation et mise aux normes. Intervention rapide sur le 28.",
-    url: "https://prodigelec.fr/services/electricite",
+    url: "https://www.prodigelec.fr/services/electricite",
   },
 };
 

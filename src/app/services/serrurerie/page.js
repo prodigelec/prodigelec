@@ -9,7 +9,7 @@ export const metadata = {
     "Changement de serrure", "Volet roulant", "Blindage de porte", "Serrurier urgence"
   ],
   alternates: {
-    canonical: "/services/serrurerie",
+    canonical: "https://www.prodigelec.fr/services/serrurerie",
   },
   openGraph: {
     title: "Serrurier Urgentiste 28 - PRODIGELEC",
