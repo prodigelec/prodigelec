@@ -29,7 +29,7 @@ const testimonials = [
   }
 ];
 
-export default function TestimonialsSection() {
+export default function Testimonials() {
   const googleReviewLink = "https://g.page/r/Cc7ec3hVcz95EBM/review";
 
   return (
