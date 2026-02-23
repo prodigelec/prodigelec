@@ -1,7 +1,7 @@
 import { Outfit } from "next/font/google";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/app/components/layout/Navbar";
+import ClientNavbar from "@/app/components/layout/Navbar/ClientNavbar";
 import FloatingContactButton from "@/app/components/layout/FloatingContactButton";
 import Footer from "@/app/components/layout/Footer";
 import JsonLd from "@/app/components/JsonLd";
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
         <a href="#main-content" className="skip-link font-bold">Passer au contenu principal</a>
         <MotionProvider>
           <JsonLd />
-          <Navbar />
+          <ClientNavbar />
           <div id="main-content">
             {children}
           </div>

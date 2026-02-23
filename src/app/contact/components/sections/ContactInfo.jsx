@@ -1,3 +1,5 @@
+"use client";
+import { m } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, ArrowUpRight, Calculator } from "lucide-react";
 import dynamic from 'next/dynamic';
 
@@ -51,7 +53,7 @@ export default function ContactInfo() {
       {/* Contact Cards Column */}
       <div className="lg:col-span-1 flex flex-col gap-4 md:gap-6">
         {contacts.map((item, idx) => (
-          <a
+          <m.a
             key={idx}
             href={item.link}
             initial={{ opacity: 0, x: -20 }}
@@ -79,23 +81,23 @@ export default function ContactInfo() {
                 </div>
               )}
             </div>
-          </a>
+          </m.a>
         ))}
       </div>
 
       {/* Map & Travel Rates Column */}
       <div className="lg:col-span-2 flex flex-col gap-4 md:gap-6">
-        <div
+        <m.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="relative h-[550px] md:h-[550px] w-full rounded-3xl overflow-hidden border border-white/10 bg-[#0f172a]"
         >
           <InterventionMap />
-        </div>
+        </m.div>
 
         {/* Travel Rates Summary Section */}
-        <div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -147,7 +149,7 @@ export default function ContactInfo() {
                 </p>
              </div>
           </div>
-        </div>
+        </m.div>
       </div>
     </div>
   );

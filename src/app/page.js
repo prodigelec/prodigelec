@@ -8,7 +8,7 @@ const AboutSection = dynamic(() => import("@/app/components/home/sections/AboutS
 const ServicesSection = dynamic(() => import("@/app/components/home/sections/ServicesSection"));
 const ProcessSection = dynamic(() => import("@/app/components/home/sections/ProcessSection"));
 const PricingPolicySection = dynamic(() => import("@/app/components/home/sections/PricingPolicySection"));
-const TestimonialsSection = dynamic(() => import("@/app/components/home/sections/Testimonials"));
+const TestimonialsSection = dynamic(() => import("@/app/components/home/sections/ClientTestimonials"));
 const ContactCTASection = dynamic(() => import("@/app/components/home/sections/ContactCTASection"));
 
 export const metadata = {

@@ -82,7 +82,7 @@ export default function Navbar() {
                 paddingTop: navPadding,
                 paddingBottom: navPadding
             }}
-            className="fixed top-0 w-full z-999 border-b border-white/0 transition-all duration-500"
+            className="fixed top-0 w-full z-[999] border-b border-white/0 transition-all duration-500"
         >
             <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${isScrolled ? 'bg-black/20 rounded-full border border-white/10 px-8 mx-4 backdrop-blur-md shadow-lg' : ''}`}>
                 {/* Logo & Brand */}
@@ -98,8 +98,8 @@ export default function Navbar() {
                                 transition={{ delay: i * 0.1 + 0.2 }}
                                 href={item.href}
                                 className={`flex items-center gap-1 text-sm font-medium transition-all duration-300 relative px-3 py-2 rounded-lg bg-black/30 backdrop-blur-sm hover:bg-black/40 ${isItemActive(item)
-                                    ? 'text-transparent bg-clip-text bg-gradient-to-br from-[#f5f5f5] via-[#d1d5db] to-[#9ca3af] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]'
-                                    : 'text-transparent bg-clip-text bg-gradient-to-br from-[#e5e7eb] via-[#cbd5e1] to-[#9ca3af] hover:from-[#f5f5f5] hover:via-[#d1d5db] hover:to-[#9ca3af] drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]'
+                                    ? 'text-transparent bg-clip-text bg-linear-to-br from-[#f5f5f5] via-[#d1d5db] to-[#9ca3af] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]'
+                                    : 'text-transparent bg-clip-text bg-linear-to-br from-[#e5e7eb] via-[#cbd5e1] to-[#9ca3af] hover:from-[#f5f5f5] hover:via-[#d1d5db] hover:to-[#9ca3af] drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]'
                                     }`}
                             >
                                 {item.name}
