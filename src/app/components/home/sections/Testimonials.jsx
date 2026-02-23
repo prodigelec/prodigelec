@@ -1,15 +1,32 @@
 "use client";
+// v2
 import { m } from "framer-motion";
-import { Star, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
-const testimonials = [
+function FilledStar({ className = "" }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="#c9a227"
+        stroke="#c9a227"
+        strokeWidth="0.5"
+        d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+      />
+    </svg>
+  );
+}
+
+const FALLBACK_TESTIMONIALS = [
   {
     id: 1,
     name: "Sophie M.",
     location: "Dreux",
     rating: 5,
     text: "Intervention très rapide pour une panne de courant totale. L'électricien a été ponctuel, très professionnel et a pris le temps d'expliquer le problème. Je recommande vivement !",
-    date: "Il y a 2 semaines"
+    date: "Il y a 2 semaines",
+    profilePhoto: null,
   },
   {
     id: 2,
@@ -17,20 +34,32 @@ const testimonials = [
     location: "Chartres",
     rating: 5,
     text: "Serrure bloquée un dimanche matin... Arrivé en 30 minutes comme annoncé. Le prix était clair dès le départ, pas de mauvaise surprise. Travail propre et soigné.",
-    date: "Il y a 1 mois"
+    date: "Il y a 1 mois",
+    profilePhoto: null,
   },
   {
     id: 3,
     name: "Marie & Thomas",
     location: "Broué",
-    rating: 5,
+    rating: 4,
     text: "Nous avons fait appel à Prodigelec pour la rénovation de notre tableau électrique. Excellent travail. Un artisan de confiance.",
-    date: "Il y a 3 semaines"
-  }
+    date: "Il y a 3 semaines",
+    profilePhoto: null,
+  },
 ];
 
 export default function Testimonials() {
-  const googleReviewLink = "https://g.page/r/Cc7ec3hVcz95EBM/review";
+  const googleReviewLink = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cc7ec3hVcz95EBM/review";
+  const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
+
+  useEffect(() => {
+    fetch("/api/reviews")
+      .then((r) => r.json())
+      .then(({ reviews }) => {
+        if (reviews?.length > 0) setTestimonials(reviews);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <section className="py-20 md:py-32 bg-background relative overflow-hidden">
@@ -45,7 +74,7 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium"
           >
-            <Star className="w-4 h-4 fill-primary" />
+            <FilledStar className="w-4 h-4" />
             <span>Avis Clients Vérifiés</span>
           </m.div>
 
@@ -97,12 +126,9 @@ export default function Testimonials() {
                 <div className="mb-5 flex items-center justify-between">
                   <div className="flex items-center gap-0.5">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Star
+                      <FilledStar
                         key={i}
-                        className={i <= testimonial.rating
-                          ? "h-4 w-4 fill-primary text-primary drop-shadow-[0_0_5px_rgba(201,162,39,0.7)]"
-                          : "h-4 w-4 fill-none text-white/20"
-                        }
+                        className="h-4 w-4 drop-shadow-[0_0_5px_rgba(201,162,39,0.7)]"
                       />
                     ))}
                   </div>
@@ -122,15 +148,28 @@ export default function Testimonials() {
                 {/* Footer : Avatar + Nom + Google */}
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex min-w-0 items-center gap-3">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-primary/40 to-primary/10 text-sm font-black text-primary ring-1 ring-primary/30">
-                      {testimonial.name.charAt(0)}
-                    </div>
+                    {/* Avatar : photo Google ou initiale */}
+                    {testimonial.profilePhoto ? (
+                      <Image
+                        src={testimonial.profilePhoto}
+                        alt={testimonial.name}
+                        width={36}
+                        height={36}
+                        className="h-9 w-9 shrink-0 rounded-full ring-1 ring-primary/30 object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-primary/40 to-primary/10 text-sm font-black text-primary ring-1 ring-primary/30">
+                        {testimonial.name.charAt(0)}
+                      </div>
+                    )}
                     <div className="min-w-0">
                       <div className="truncate text-sm font-bold text-white">{testimonial.name}</div>
-                      <div className="mt-0.5 flex items-center gap-1 text-xs text-white/40">
-                        <MapPin className="h-3 w-3 shrink-0" />
-                        <span className="truncate">{testimonial.location}</span>
-                      </div>
+                      {testimonial.location && (
+                        <div className="mt-0.5 flex items-center gap-1 text-xs text-white/40">
+                          <MapPin className="h-3 w-3 shrink-0" />
+                          <span className="truncate">{testimonial.location}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -140,7 +179,7 @@ export default function Testimonials() {
                       src="/google-logo.svg"
                       alt="Google"
                       className="h-3 w-3"
-                      onError={(e) => { e.target.style.display = 'none'; }}
+                      onError={(e) => { e.target.style.display = "none"; }}
                     />
                     <span className="text-[11px] font-semibold text-white/40">Google</span>
                   </div>
@@ -163,11 +202,11 @@ export default function Testimonials() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-white text-background font-bold rounded-xl hover:bg-gray-100 transition-colors shadow-lg shadow-white/10 group"
           >
-            <img src="/google-logo.svg" alt="Google" className="w-6 h-6" onError={(e) => e.target.style.display = 'none'} />
+            <img src="/google-logo.svg" alt="Google" className="w-6 h-6" onError={(e) => e.target.style.display = "none"} />
             <span className="group-hover:translate-x-1 transition-transform">
               Lire plus d&apos;avis ou laisser le vôtre
             </span>
-            <Star className="w-5 h-5 text-primary fill-primary group-hover:rotate-12 transition-transform" />
+            <FilledStar className="w-5 h-5 group-hover:rotate-12 transition-transform" />
           </a>
           <p className="mt-4 text-sm text-gray-500">
             Votre avis compte ! Scannez le QR Code ou cliquez sur le bouton pour partager votre expérience.
