@@ -3,7 +3,7 @@ import { LazyMotion, domAnimation } from "framer-motion";
 
 export function MotionProvider({ children }) {
     return (
-        <LazyMotion features={domAnimation} strict>
+        <LazyMotion features={domAnimation}>
             {children}
         </LazyMotion>
     );

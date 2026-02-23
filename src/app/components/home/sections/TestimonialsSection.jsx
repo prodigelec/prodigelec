@@ -68,7 +68,7 @@ export default function TestimonialsSection() {
           >
             La satisfaction de mes clients est ma meilleure carte de visite. 
             Transparence, qualité et propreté sont mes engagements au quotidien.
-          </motion.p>
+          </m.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
