@@ -5,13 +5,23 @@ import AboutCTA from "./components/sections/AboutCTA";
 
 export const metadata = {
   title: "À Propos de PRODIGELEC - Artisan Électricien & Serrurier | Eure-et-Loir",
-  description: "Découvrez le parcours de PRODIGELEC, artisan électricien serrurier avec 23 ans d'expérience. Une expertise de terrain au service de vos projets.",
+  description: "Découvrez le parcours de Petaccia Sébastien, artisan électricien serrurier avec 23 ans d'expérience. Fondateur de PRODIGELEC, expert en Eure (27) et Eure-et-Loir (28).",
+  keywords: [
+    "Petaccia Sébastien",
+    "PRODIGELEC",
+    "artisan électricien Broué",
+    "serrurier électronique 28",
+    "23 ans expérience électricité",
+    "entreprise individuelle Eure-et-Loir",
+    "électricien Dreux Chartres",
+    "artisan qualifié CAP électrotechnique"
+  ],
   alternates: {
-    canonical: "/about",
+    canonical: "https://www.prodigelec.fr/about",
   },
   openGraph: {
-    title: "L'histoire de PRODIGELEC - Artisanat & Sécurité",
-    description: "Un parcours de terrain au service de votre sécurité et de vos installations.",
+    title: "Petaccia Sébastien — Fondateur de PRODIGELEC",
+    description: "23 ans d'expertise terrain en électricité et serrurerie électronique. Artisan de confiance en Eure (27) et Eure-et-Loir (28).",
     url: "https://www.prodigelec.fr/about",
   },
 };

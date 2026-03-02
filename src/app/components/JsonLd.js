@@ -35,7 +35,28 @@ export default function JsonLd() {
       }
     ],
     "priceRange": "€€",
-    "servesCuisine": "Électricité, Serrurerie",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services PRODIGELEC",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Électricité Générale",
+            "description": "Dépannage, mise aux normes NF C 15-100, éclairage LED, chauffage, VMC, domotique."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Serrurerie Électronique",
+            "description": "Serrures connectées, digicodes, vidéophonie, volets motorisés, dépannage électronique."
+          }
+        }
+      ]
+    },
     "areaServed": [
       {
         "@type": "City",
