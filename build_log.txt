@@ -1,0 +1,942 @@
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Environments: .env.local
+   - Experiments (use with caution):
+     ✓ optimizeCss
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+
+> Build error occurred
+Error: Turbopack build failed with 26 errors:
+./src/app/about/components/sections/AboutCTA.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/about/components/sections/AboutCTA.jsx
+    ./src/app/about/page.js
+
+
+./src/app/about/components/sections/AboutHero.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/about/components/sections/AboutHero.jsx
+    ./src/app/about/page.js
+
+
+./src/app/about/components/sections/AboutStory.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/about/components/sections/AboutStory.jsx
+    ./src/app/about/page.js
+
+
+./src/app/about/components/sections/AboutValues.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/about/components/sections/AboutValues.jsx
+    ./src/app/about/page.js
+
+
+./src/app/cgv/page.js
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import traces:
+  Client Component Browser:
+    ./src/app/cgv/page.js [Client Component Browser]
+    ./src/app/cgv/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/cgv/page.js [Client Component SSR]
+    ./src/app/cgv/page.js [Server Component]
+
+
+./src/app/components/home/sections/AboutSection.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/home/sections/AboutSection.jsx
+    ./src/app/page.js
+
+
+./src/app/components/home/sections/BrandsSection.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/home/sections/BrandsSection.jsx
+    ./src/app/page.js
+
+
+./src/app/components/home/sections/ContactCTASection.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/home/sections/ContactCTASection.jsx
+    ./src/app/page.js
+
+
+./src/app/components/home/sections/FeaturesSection.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/home/sections/FeaturesSection.jsx
+    ./src/app/page.js
+
+
+./src/app/components/home/sections/PartnersSection.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/home/sections/PartnersSection.jsx
+    ./src/app/components/home/index.js
+    ./src/app/page.js
+
+
+./src/app/components/home/sections/PricingPolicySection.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/home/sections/PricingPolicySection.jsx
+    ./src/app/page.js
+
+
+./src/app/components/home/sections/ProcessSection.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/home/sections/ProcessSection.jsx
+    ./src/app/page.js
+
+
+./src/app/components/home/sections/ServicesSection.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/home/sections/ServicesSection.jsx
+    ./src/app/page.js
+
+
+./src/app/components/home/sections/hero/HeroSection.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/home/sections/hero/HeroSection.jsx
+    ./src/app/page.js
+
+
+./src/app/components/layout/FloatingContactButton.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/layout/FloatingContactButton.jsx
+    ./src/app/layout.js
+
+
+./src/app/components/layout/Navbar/index.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/components/layout/Navbar/index.jsx
+    ./src/app/layout.js
+
+
+./src/app/components/ui/BrandName.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import traces:
+  Server Component:
+    ./src/app/components/ui/BrandName.jsx
+    ./src/app/components/layout/Footer/index.jsx
+    ./src/app/layout.js
+
+  Client Component SSR:
+    ./src/app/components/ui/BrandName.jsx [Client Component SSR]
+    ./src/app/about/components/sections/AboutStory.jsx [Client Component SSR]
+    ./src/app/about/components/sections/AboutStory.jsx [Server Component]
+    ./src/app/about/page.js [Server Component]
+
+
+./src/app/components/ui/InterventionMap.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+
+./src/app/contact/components/sections/ContactForm.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/contact/components/sections/ContactForm.jsx
+    ./src/app/contact/page.js
+
+
+./src/app/contact/components/sections/ContactHero.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/contact/components/sections/ContactHero.jsx
+    ./src/app/contact/page.js
+
+
+./src/app/contact/components/sections/ContactInfo.jsx
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/contact/components/sections/ContactInfo.jsx
+    ./src/app/contact/page.js
+
+
+./src/app/mentions-legales/page.js
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import traces:
+  Client Component Browser:
+    ./src/app/mentions-legales/page.js [Client Component Browser]
+    ./src/app/mentions-legales/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/mentions-legales/page.js [Client Component SSR]
+    ./src/app/mentions-legales/page.js [Server Component]
+
+
+./src/app/not-found.js
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import traces:
+  Client Component Browser:
+    ./src/app/not-found.js [Client Component Browser]
+    ./src/app/not-found.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/not-found.js [Client Component SSR]
+    ./src/app/not-found.js [Server Component]
+
+
+./src/app/politique-de-confidentialite/page.js
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import traces:
+  Client Component Browser:
+    ./src/app/politique-de-confidentialite/page.js [Client Component Browser]
+    ./src/app/politique-de-confidentialite/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/politique-de-confidentialite/page.js [Client Component SSR]
+    ./src/app/politique-de-confidentialite/page.js [Server Component]
+
+
+./src/app/services/electricite/ElectriciteContent.js
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/services/electricite/ElectriciteContent.js
+    ./src/app/services/electricite/page.js
+
+
+./src/app/services/serrurerie/SerrurerieContent.js
+Error evaluating Node.js code
+BrowserslistError: C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec contains both .browserslistrc and package.json with browsers
+    [at C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29608]
+    [at eachParent (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:23934)]
+    [at Function.findConfigFile (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\browserslist\index.js:1:29181)]
+    [at getTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:13:148971)]
+    [at resolveTargets (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:115525)]
+    [at loadPrivatePartialConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:110234)]
+    [at <anonymous>]
+    [at loadFullConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:96551)]
+    [at <anonymous>]
+    [at loadOptionsImpl (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106199)]
+    [at <anonymous>]
+    [at evaluateSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:42887)]
+    [at sync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:40903)]
+    [at stopHiding - secret - don't use this - v1 (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:133315)]
+    [at loadOptionsSync (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106438)]
+    [at loadOptions (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\compiled\babel\bundle.js:1:106627)]
+    [at getFreshConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:367:49)]
+    [at getConfig (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\get-config.js:424:31)]
+    [at async transform (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\transform.js:74:25)]
+    [at async (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:108)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+    [at async nextBabelLoader (C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\node_modules\next\dist\build\babel\loader\index.js:36:63)]
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16]
+
+Import trace:
+  Server Component:
+    ./src/app/services/serrurerie/SerrurerieContent.js
+    ./src/app/services/serrurerie/page.js
+
+
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
+    at async DummySpan.traceAsyncFn (turbopack:///[turbopack-node]/transforms/webpack-loaders.ts:115:12) [C:\Users\leola.DRAGON-FILES\Desktop\ProjetsDev\prodigelec\.next\build\chunks\[root-of-the-server]__6e020478._.js:126:16])
