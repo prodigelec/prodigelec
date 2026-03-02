@@ -15,17 +15,16 @@ export const metadata = {
   title: "PRODIGELEC - Artisan Électricien & Serrurier | 27 & 28",
   description: "Expertise en électricité et serrurerie avec 23 ans d'expérience. Intervention rapide en Eure (27) et Eure-et-Loir (28) : Broué, Dreux, Chartres & alentours.",
   keywords: [
-    "électricien Broué",
-    "électricien Eure-et-Loir",
-    "dépannage électricité 28",
-    "serrurier électronique Broué",
-    "serrure connectée Dreux",
-    "électricien Chartres",
-    "électricien Dreux",
-    "installation électrique Eure",
-    "artisan électricien Nogent-le-Roi",
-    "PRODIGELEC",
-    "Petaccia Sébastien électricien"
+    // Électricien par ville
+    "Électricien Broué", "Électricien Dreux", "Électricien Chartres", "Électricien Évreux",
+    "Électricien Anet", "Électricien Nonancourt", "Électricien Nogent-le-Roi",
+    // Serrurier par ville
+    "Serrurier électronique Broué", "Serrurier électronique Dreux", "Serrurier électronique Chartres", "Serrurier électronique Évreux",
+    "Serrurier électronique Anet", "Serrurier électronique Nonancourt", "Serrurier électronique Nogent-le-Roi",
+    // Termes généraux
+    "Artisan électricien 27", "Artisan électricien 28",
+    "Dépannage électricité Eure", "Dépannage électricité Eure-et-Loir",
+    "Installation électrique", "PRODIGELEC", "Petaccia Sébastien électricien"
   ],
   alternates: {
     canonical: "https://www.prodigelec.fr/",
