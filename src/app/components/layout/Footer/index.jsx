@@ -70,7 +70,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-foreground-subtle text-[10px] md:text-xs">
-            © 2025 PRODIGELEC. Tous droits réservés.
+            © 2025 PRODIGELEC — Petaccia Sébastien, EI. Tous droits réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <Link href="/mentions-legales" className="text-foreground-subtle hover:text-gray-100 text-[10px] md:text-xs transition-colors">Mentions Légales</Link>

@@ -12,8 +12,12 @@ export default function AboutStory() {
         viewport={{ once: true }}
         className="space-y-6"
       >
+        <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary/80 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full mb-4">
+          Artisan Électricien &amp; Serrurier — Fondateur de PRODIGELEC
+        </span>
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
-          Une expertise <span className="text-primary">de terrain</span>
+          Sébastien Petaccia<br />
+          <span className="font-light text-gray-100">une expertise </span><span className="text-primary">de terrain</span>
         </h2>
         <div className="text-gray-100 space-y-4 leading-relaxed text-sm md:text-lg">
           <p>

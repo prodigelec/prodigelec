@@ -77,8 +77,8 @@ export default function Navbar() {
     return (
         <m.nav
             style={{
-                backgroundColor: `rgba(11, 26, 42, ${isScrolled ? 0.8 : 0})`,
-                backdropFilter: isScrolled ? "blur(12px)" : "blur(0px)",
+                backgroundColor: `rgba(11, 26, 42, ${isScrolled ? 0.85 : 0.45})`,
+                backdropFilter: isScrolled ? "blur(12px)" : "blur(8px)",
                 paddingTop: navPadding,
                 paddingBottom: navPadding
             }}
@@ -97,9 +97,9 @@ export default function Navbar() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 + 0.2 }}
                                 href={item.href}
-                                className={`flex items-center gap-1 text-sm font-medium transition-all duration-300 relative px-3 py-2 rounded-lg bg-black/30 backdrop-blur-sm hover:bg-black/40 ${isItemActive(item)
-                                    ? 'text-transparent bg-clip-text bg-linear-to-br from-[#f5f5f5] via-[#d1d5db] to-[#9ca3af] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]'
-                                    : 'text-transparent bg-clip-text bg-linear-to-br from-[#e5e7eb] via-[#cbd5e1] to-[#9ca3af] hover:from-[#f5f5f5] hover:via-[#d1d5db] hover:to-[#9ca3af] drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]'
+                                className={`flex items-center gap-1 text-sm font-semibold transition-all duration-300 relative px-3 py-2 rounded-lg hover:bg-white/10 ${isItemActive(item)
+                                    ? 'text-white'
+                                    : 'text-white/80 hover:text-white'
                                     }`}
                             >
                                 {item.name}

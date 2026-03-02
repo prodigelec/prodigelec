@@ -15,7 +15,7 @@ const steps = [
   {
     icon: <FileText className="w-6 h-6" />,
     title: "Diagnostic & Devis",
-    description: "Je me déplace (gratuit < 5km). Devis clair envoyé par email avec signature électronique sécurisée pour un accord rapide.",
+    description: "Je me déplace pour établir votre devis. Gratuit jusqu'à 30km — au-delà, des frais s'appliquent mais sont déduits si vous acceptez. Devis envoyé par email.",
     color: "text-accent",
     ring: "ring-accent/40",
     glow: "from-accent/30 via-accent/10 to-transparent",

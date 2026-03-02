@@ -1,15 +1,8 @@
 "use client";
-import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { m, AnimatePresence } from "framer-motion";
 
 export default function HeroBackground({ slides, currentSlide }) {
-  const isFirstRender = useRef(true);
-
-  useEffect(() => {
-    isFirstRender.current = false;
-  }, []);
-
   return (
     <div className="absolute inset-0 bg-black">
       <AnimatePresence mode='wait'>
@@ -21,15 +14,15 @@ export default function HeroBackground({ slides, currentSlide }) {
           transition={{ duration: 1 }}
           className="absolute inset-0"
         >
-          <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="absolute inset-0 bg-black/20 z-10" />
           <Image
             src={slides[currentSlide].image}
             alt={slides[currentSlide].title}
             fill
             priority={currentSlide === 0}
             fetchPriority={currentSlide === 0 ? "high" : "low"}
-            sizes="(max-width: 1366px) 1366px, (max-width: 1536px) 1536px, 100vw"
-            quality={45}
+            sizes="100vw"
+            quality={85}
             className="object-cover"
           />
         </m.div>

@@ -1,5 +1,5 @@
 "use client";
-import { MapContainer, TileLayer, Marker, Popup, Circle, Polygon, Tooltip, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Circle, Polygon, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useState, useEffect, useCallback } from 'react';
 import { Search, MapPin, Calculator, Trash2 } from 'lucide-react';
@@ -8,10 +8,10 @@ const BROUE_COORDS = [48.7492, 1.5234];
 const MAP_CENTER = [48.74, 1.34];
 
 const zones = [
-  { radius: 60500, color: '#ef4444', label: 'Zone 4', price: '70€ (Déductible*)' },
-  { radius: 40500, color: '#f97316', label: 'Zone 3', price: '50€ (Déductible*)' },
-  { radius: 30500, color: '#3b82f6', label: 'Zone 2', price: 'Devis Gratuit' },
-  { radius: 10500, color: '#22c55e', label: 'Zone 1', price: 'Devis Gratuit' }
+  { radius: 60500, color: '#ef4444', label: 'Zone 4', price: '70€' },
+  { radius: 40500, color: '#f97316', label: 'Zone 3', price: '50€' },
+  { radius: 30500, color: '#3b82f6', label: 'Zone 2', price: '30€' },
+  { radius: 5500, color: '#22c55e', label: 'Zone 1', price: 'Devis Gratuit' }
 ];
 
 const cities = [
@@ -30,6 +30,7 @@ function ChangeView({ center, zoom }) {
 
 export default function InterventionMap() {
   const [mounted, setMounted] = useState(false);
+  const [mapKey] = useState(() => Date.now());
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
@@ -115,7 +116,8 @@ export default function InterventionMap() {
   }, [searchQuery, fetchPlaces]);
 
   const calculatePrice = (distanceKm) => {
-    if (distanceKm <= 30.5) return "Gratuit";
+    if (distanceKm <= 5.5) return "Gratuit";
+    if (distanceKm <= 30.5) return "30€ (Déductible*)";
     if (distanceKm <= 40.5) return "50€ (Déductible*)";
     if (distanceKm <= 60.5) return "70€ (Déductible*)";
     return "Sur devis (> 60km)";
@@ -266,8 +268,11 @@ export default function InterventionMap() {
               </div>
             </div>
             {result.price.includes('*') && (
-              <div className="text-[10px] text-gray-100 italic text-center border-t border-white/5 pt-2">
-                * Les frais de déplacement sont intégralement déduits si le devis est accepté.
+              <div className="flex items-start gap-1.5">
+                <span className="text-[10px] font-bold text-primary shrink-0">*</span>
+                <p className="text-[10px] text-gray-100 leading-relaxed">
+                  Ces frais sont <span className="text-white font-bold">déduits de votre facture</span> si vous acceptez le devis.
+                </p>
               </div>
             )}
           </div>
@@ -283,7 +288,7 @@ export default function InterventionMap() {
         </div>
 
         <MapContainer
-          key="intervention-map"
+          key={mapKey}
           center={mapCenter}
           zoom={mapZoom}
           className="h-full w-full z-0"

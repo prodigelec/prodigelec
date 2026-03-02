@@ -12,14 +12,14 @@ export default function AboutHero() {
       >
         <User className="w-8 h-8 md:w-12 md:h-12 text-primary" />
       </m.div>
-      <m.h1 
+      <m.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-3xl md:text-6xl font-black text-white mb-4 md:mb-6"
       >
-        Qui suis-je <span className="text-primary">?</span>
+        Sébastien <span className="text-primary">Petaccia</span>
       </m.h1>
-      <m.p 
+      <m.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}

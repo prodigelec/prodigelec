@@ -187,7 +187,7 @@ export default function ElectriciteContent() {
     },
     {
       id: 3,
-      image: "/img_carousel_hero_home/tableau-electrique.jpg",
+      image: "/img_carousel_hero_home/tableau-electrique.optimized.jpg",
       title: "Tableau Électrique",
       description: "Mise aux normes et sécurité de votre installation"
     },

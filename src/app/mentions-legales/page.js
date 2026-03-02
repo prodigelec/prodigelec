@@ -39,7 +39,7 @@ export default function MentionsLegales() {
                             <p><strong className="text-white">Siège social :</strong> 10 Rue Georges Bréant, 28410 Broué, France</p>
                             <p><strong className="text-white">SIRET :</strong> 804 304 897 00023</p>
                             <p><strong className="text-white">Inscription au RM :</strong> Immatriculée au Répertoire des Métiers de Chartres (CMA 28)</p>
-                            <p><strong className="text-white">Directeur de la publication :</strong> Responsable PRODIGELEC</p>
+                            <p><strong className="text-white">Directeur de la publication :</strong> Petaccia Sébastien</p>
                             <p><strong className="text-white">Contact :</strong> contact@prodigelec.fr / 06 38 19 47 52</p>
                         </div>
                     </Section>

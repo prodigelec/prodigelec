@@ -39,10 +39,10 @@ export default function PricingPolicySection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 md:mb-6 uppercase tracking-tight">
-            Politique de <span className="text-primary">Déplacement</span>
+            Devis <span className="text-primary">Gratuit</span>
           </h2>
           <p className="text-foreground-subtle text-sm md:text-lg max-w-2xl mx-auto">
-            Une transparence totale sur les frais de déplacement. Pas de surprise : tout est clair avant mon intervention.
+            Pas de surprise : tout est clair avant mon intervention.
           </p>
         </div>
 
@@ -61,15 +61,15 @@ export default function PricingPolicySection() {
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-500 font-bold text-[10px] md:text-xs uppercase tracking-wider mb-4 md:mb-6 w-fit">
               <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4" />
-              Zone 1 & 2
+              Zone 1 &amp; 2 (&lt; 30km)
             </div>
 
-            <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Devis & Déplacement Gratuits</h3>
-            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Pour toute intervention située dans un rayon de <span className="text-white font-bold">30km autour de Broué</span>.</p>
+            <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Devis Gratuit</h3>
+            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Je me déplace gratuitement pour établir votre devis dans un rayon de <span className="text-white font-bold">30km autour de Broué</span>.</p>
 
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
               <p className="text-xs md:text-sm text-primary font-medium">
-                <span className="font-bold">✨ Avantage Client :</span> Le déplacement et le devis sont <span className="underline decoration-2 underline-offset-2">100% offerts</span>, sans aucun frais caché.
+                <span className="font-bold">✨ Avantage Client :</span> Le devis est <span className="underline decoration-2 underline-offset-2">100% offert</span>, sans aucun frais caché.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export default function PricingPolicySection() {
 
               <div className="flex items-center gap-3 pt-4 border-t border-white/10">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                <span className="font-bold text-xs md:text-sm text-white">Déplacement 100% offert</span>
+                <span className="font-bold text-xs md:text-sm text-white">Devis 100% offert</span>
               </div>
             </div>
           </m.div>
@@ -131,7 +131,7 @@ export default function PricingPolicySection() {
             </div>
 
             <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Frais Déductibles</h3>
-            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Au-delà de 30km, une participation aux frais est demandée pour le déplacement.</p>
+            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Au-delà de 30km, des frais de déplacement s&apos;appliquent. Ils sont <span className="text-white font-semibold">déduits de votre facture</span> si vous acceptez le devis.</p>
 
             <div className="bg-accent/10 border border-accent/20 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
               <p className="text-xs md:text-sm text-accent font-medium">
@@ -142,7 +142,7 @@ export default function PricingPolicySection() {
             <div className="space-y-3 md:space-y-4 text-gray-100 mt-auto">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                <span className="text-xs md:text-base">Entre 50€ et 70€ selon la distance</span>
+                <span className="text-xs md:text-base">50€ ou 70€ selon la distance</span>
               </div>
 
               <div className="flex items-start gap-3">
@@ -220,7 +220,7 @@ export default function PricingPolicySection() {
                 </h3>
                 <p className="text-gray-100 mt-2">
                   {activeModal === 'free'
-                    ? "Liste complète des villes où le déplacement et le devis sont 100% offerts."
+                    ? "Liste complète des villes où le devis est 100% offert."
                     : "Liste des villes nécessitant une participation aux frais (déductible du devis)."}
                 </p>
               </div>

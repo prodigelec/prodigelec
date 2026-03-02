@@ -52,14 +52,16 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
                 src={slides[current].image}
                 alt={slides[current].title}
                 fill
+                sizes="100vw"
+                quality={85}
                 className="object-cover"
                 priority
               />
             </m.div>
 
             {/* Multi-layered gradient overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent" />
-            <div className="absolute inset-0 bg-linear-to-r from-background/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-background/30 via-transparent to-transparent" />
 
             {/* Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">

@@ -52,7 +52,7 @@ export default function ServicesSection() {
             </div>
             <h3 className="text-lg md:text-2xl font-bold mb-3 sm:mb-4 text-center md:text-left text-foreground group-hover:text-primary transition-all relative z-10">Serrurerie</h3>
             <p className="text-gray-100 leading-relaxed text-sm md:text-base text-center md:text-left relative z-10 group-hover:text-white mb-5 grow">
-              Ouverture de porte, changement de serrure, blindage, sécurisation.
+              Serrures connectées, digicodes, vidéophonie et volets motorisés.
             </p>
             <div className="relative z-10 mb-6">
               <ul className="grid grid-cols-1 gap-2 text-xs md:text-sm text-gray-100">

@@ -8,14 +8,14 @@ const categories = [
         duration: 30
     },
     {
-        name: "Volets Roulants",
+        name: "Automatisation Volets",
         brands: ["Somfy", "Nice", "Bubendorff", "Delta Dore", "Profalux", "Simu", "Eveno", "Lakal"],
         duration: 25,
         reverse: true
     },
     {
-        name: "Serrurerie & Sécurité",
-        brands: ["JPM", "Vachette", "Bricard", "Ferco", "Metallux", "Abus", "Pollux", "Iseo", "Decayeux"],
+        name: "Serrurerie Connectée",
+        brands: ["Netatmo", "Nuki", "Yale", "Tedee", "Somfy", "Aiphone", "Comelit", "Fermax", "2N"],
         duration: 35
     },
     {
@@ -30,10 +30,10 @@ export default function BrandsSection() {
     return (
         <section className="py-10 md:py-16 bg-background border-b border-white/5 relative z-10 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-12 text-center">
-                <h2 className="text-[10px] md:text-xs font-bold text-primary uppercase tracking-[0.3em] mb-2 md:mb-4">
+                <h2 className="text-[10px] md:text-sm lg:text-base font-bold text-primary uppercase tracking-[0.3em] mb-2 md:mb-4">
                     Expertise & Matériel Professionnel
                 </h2>
-                <p className="text-foreground-subtle text-xs md:text-sm max-w-xl mx-auto leading-relaxed italic">
+                <p className="text-foreground-subtle text-xs md:text-base lg:text-lg max-w-xl mx-auto leading-relaxed italic">
                     Nous installons les plus grands fabricants pour votre sécurité et votre confort.
                 </p>
             </div>
