@@ -30,7 +30,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Serrurerie Électronique 27 & 28 - PRODIGELEC",
-    description: "Serrure connectée, digicode, visiophone et volets motorisés. Installation sur mesure à Broué, Dreux et Chartres.",
+    description: "Serrure connectée, digicode, visiophone et volets motorisés en Eure (27) et Eure-et-Loir (28). Broué, Dreux, Chartres, Évreux, Anet, Nonancourt, Nogent-le-Roi.",
     url: "https://www.prodigelec.fr/services/serrurerie",
   },
 };

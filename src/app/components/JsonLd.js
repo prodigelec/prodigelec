@@ -83,6 +83,10 @@ export default function JsonLd() {
         "name": "Nonancourt"
       },
       {
+        "@type": "City",
+        "name": "Nogent-le-Roi"
+      },
+      {
         "@type": "AdministrativeArea",
         "name": "Eure-et-Loir"
       },
