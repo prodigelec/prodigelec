@@ -96,7 +96,7 @@ export default function JsonLd() {
       }
     ],
     "sameAs": [
-      "https://www.google.com/search?q=prodigelec",
+      "https://www.google.com/maps/place/prodigelec/@48.7627173,1.5127265,17z/data=!3m1!4b1!4m6!3m5!1s0x40ad536c8e957f6b:0x793f73557873dece!8m2!3d48.7627138!4d1.5153014!16s%2Fg%2F11yzb2y_y6",
       "https://www.facebook.com/prodigelec/",
       "https://www.instagram.com/prodigelec/"
     ]
