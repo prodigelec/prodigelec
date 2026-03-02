@@ -31,7 +31,7 @@ export default function MobileNavbar() {
                             }`}
                     >
                         {item.icon}
-                        <span className="text-[9px] font-bold uppercase tracking-tight mt-1 truncate w-full text-center">
+                        <span className="text-xs font-bold uppercase tracking-tight mt-1 truncate w-full text-center">
                             {item.highlight ? 'SOS' : item.name}
                         </span>
                     </m.a>

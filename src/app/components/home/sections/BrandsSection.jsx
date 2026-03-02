@@ -30,7 +30,7 @@ export default function BrandsSection() {
     return (
         <section className="py-10 md:py-16 bg-background border-b border-white/5 relative z-10 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-12 text-center">
-                <h2 className="text-[10px] md:text-sm lg:text-base font-bold text-primary uppercase tracking-[0.3em] mb-2 md:mb-4">
+                <h2 className="text-xs md:text-sm lg:text-base font-bold text-primary uppercase tracking-[0.3em] mb-2 md:mb-4">
                     Expertise & Matériel Professionnel
                 </h2>
                 <p className="text-foreground-subtle text-xs md:text-base lg:text-lg max-w-xl mx-auto leading-relaxed italic">
@@ -43,7 +43,7 @@ export default function BrandsSection() {
                     <div key={idx} className="relative group">
                         {/* Category label */}
                         <div className="max-w-7xl mx-auto px-6 mb-3 md:mb-5">
-                            <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-primary/60 bg-primary/5 px-2 py-0.5 md:px-3 md:py-1 rounded border border-primary/10">
+                            <span className="text-xs font-black uppercase tracking-[0.2em] text-primary/60 bg-primary/5 px-2 py-0.5 md:px-3 md:py-1 rounded border border-primary/10">
                                 {cat.name}
                             </span>
                         </div>

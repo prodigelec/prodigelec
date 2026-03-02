@@ -132,7 +132,7 @@ export default function Testimonials() {
                       />
                     ))}
                   </div>
-                  <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-white/40">
+                  <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-white/40">
                     {testimonial.date}
                   </span>
                 </div>
@@ -181,7 +181,7 @@ export default function Testimonials() {
                       className="h-3 w-3"
                       onError={(e) => { e.target.style.display = "none"; }}
                     />
-                    <span className="text-[11px] font-semibold text-white/40">Google</span>
+                    <span className="text-xs font-semibold text-white/40">Google</span>
                   </div>
                 </div>
               </div>

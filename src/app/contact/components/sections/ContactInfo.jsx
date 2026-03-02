@@ -110,7 +110,7 @@ export default function ContactInfo() {
             </div>
             <div>
               <h3 className="text-white font-bold uppercase tracking-tight leading-none text-base">Tarifs de déplacement</h3>
-              <p className="text-foreground-subtle text-[10px] sm:text-xs font-medium mt-1 uppercase tracking-widest italic">Intervention (27 & 28)</p>
+              <p className="text-foreground-subtle text-xs font-medium mt-1 uppercase tracking-widest italic">Intervention (27 & 28)</p>
             </div>
           </div>
 
@@ -127,10 +127,10 @@ export default function ContactInfo() {
               >
                 <div className="flex items-center gap-1.5 mb-1.5">
                   <div className="w-2 h-2 rounded-full" style={{ backgroundColor: zone.color }} />
-                  <span className="text-foreground-subtle text-[10px] font-black uppercase tracking-tight">{zone.label}</span>
+                  <span className="text-foreground-subtle text-xs font-black uppercase tracking-tight">{zone.label}</span>
                 </div>
                 <div className="text-white font-bold text-lg leading-tight">{zone.price}</div>
-                <div className="text-foreground-subtle text-[9px] font-medium leading-tight">{zone.sub}</div>
+                <div className="text-foreground-subtle text-xs font-medium leading-tight">{zone.sub}</div>
               </div>
             ))}
           </div>
@@ -138,13 +138,13 @@ export default function ContactInfo() {
           <div className="mt-6 pt-4 border-t border-white/5 flex flex-col gap-2">
              <div className="flex items-start gap-2">
                 <div className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                <p className="text-[11px] text-gray-100 leading-relaxed">
+                <p className="text-xs text-gray-100 leading-relaxed">
                   <span className="text-white font-bold">Devis gratuit</span> jusqu&apos;à 30km — déplacement gratuit jusqu&apos;à 5km (Zone 1).
                 </p>
              </div>
              <div className="flex items-start gap-2">
                 <div className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                <p className="text-[11px] text-gray-100 leading-relaxed">
+                <p className="text-xs text-gray-100 leading-relaxed">
                   <span className="text-white font-bold">Devis au-delà de 30km</span> : le déplacement est payant mais déduit de votre facture si vous acceptez.
                 </p>
              </div>

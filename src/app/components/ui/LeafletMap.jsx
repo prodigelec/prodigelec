@@ -328,12 +328,12 @@ export default function LeafletMap() {
 
         {/* Legend Overlay */}
         <div className="absolute bottom-4 left-4 z-[500] bg-[#0b1a2a]/95 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-2xl max-w-[200px]">
-          <div className="text-[10px] font-bold text-white uppercase tracking-widest mb-3 border-b border-white/10 pb-2 flex items-center gap-2">
+          <div className="text-xs font-bold text-white uppercase tracking-widest mb-3 border-b border-white/10 pb-2 flex items-center gap-2">
             <Calculator className="w-3 h-3 text-primary" /> Tarifs Déplacement
           </div>
           <div className="space-y-2">
             {zones.slice().reverse().map((zone, idx) => (
-              <div key={idx} className="flex items-center justify-between text-[10px]">
+              <div key={idx} className="flex items-center justify-between text-xs">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: zone.color }} />
                   <span className="text-foreground-subtle">{zone.label}</span>

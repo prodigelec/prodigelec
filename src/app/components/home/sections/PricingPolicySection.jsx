@@ -59,7 +59,7 @@ export default function PricingPolicySection() {
               <MapPin className="w-16 h-16 md:w-24 md:h-24 text-primary" />
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-500 font-bold text-[10px] md:text-xs uppercase tracking-wider mb-4 md:mb-6 w-fit">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-500 font-bold text-xs uppercase tracking-wider mb-4 md:mb-6 w-fit">
               <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4" />
               Zone 1 &amp; 2 (&lt; 30km)
             </div>
@@ -125,7 +125,7 @@ export default function PricingPolicySection() {
               <MapPin className="w-16 h-16 md:w-24 md:h-24 text-accent" />
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent font-bold text-[10px] md:text-xs uppercase tracking-wider mb-4 md:mb-6 w-fit">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent font-bold text-xs uppercase tracking-wider mb-4 md:mb-6 w-fit">
               <AlertCircle className="w-3 h-3 md:w-4 md:h-4" />
               Zone 3 & 4 (+30km)
             </div>

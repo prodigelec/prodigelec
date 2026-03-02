@@ -186,7 +186,7 @@ export default function InterventionMap() {
     <div className="flex flex-col gap-6 w-full h-full min-h-[600px]">
       {/* City Search Bar with Autocomplete */}
       <div className="bg-[#0b1a2a]/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl relative z-0">
-        <p className="text-[10px] font-bold text-gray-100 uppercase tracking-widest mb-3 ml-1 flex items-center gap-2">
+        <p className="text-xs font-bold text-gray-100 uppercase tracking-widest mb-3 ml-1 flex items-center gap-2">
           <Calculator className="w-3 h-3 text-primary" /> Calculez vos frais de déplacement
         </p>
         <div className="flex flex-col md:flex-row gap-3">
@@ -269,8 +269,8 @@ export default function InterventionMap() {
             </div>
             {result.price.includes('*') && (
               <div className="flex items-start gap-1.5">
-                <span className="text-[10px] font-bold text-primary shrink-0">*</span>
-                <p className="text-[10px] text-gray-100 leading-relaxed">
+                <span className="text-xs font-bold text-primary shrink-0">*</span>
+                <p className="text-xs text-gray-100 leading-relaxed">
                   Ces frais sont <span className="text-white font-bold">déduits de votre facture</span> si vous acceptez le devis.
                 </p>
               </div>
