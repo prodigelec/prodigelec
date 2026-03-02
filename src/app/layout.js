@@ -1,11 +1,15 @@
 import { Outfit } from "next/font/google";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientNavbar from "@/app/components/layout/Navbar/ClientNavbar";
-import FloatingContactButton from "@/app/components/layout/FloatingContactButton";
 import Footer from "@/app/components/layout/Footer";
 import JsonLd from "@/app/components/JsonLd";
 import { MotionProvider } from "@/app/components/MotionProvider";
+import dynamic from "next/dynamic";
+
+const FloatingContactButton = dynamic(
+  () => import("@/app/components/layout/FloatingContactButton"),
+  { ssr: false, loading: () => null }
+);
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -14,12 +18,6 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-});
 
 export const metadata = {
   metadataBase: new URL("https://www.prodigelec.fr"),
@@ -63,7 +61,7 @@ export default function RootLayout({ children }) {
           .skip-link:focus { top: 0; }
         `}} />
       </head>
-      <body className={`${outfit.variable} ${inter.variable} font-sans bg-background text-foreground antialiased`}>
+      <body className={`${outfit.variable} font-sans bg-background text-foreground antialiased`}>
         <a href="#main-content" className="skip-link font-bold">Passer au contenu principal</a>
         <MotionProvider>
           <JsonLd />
