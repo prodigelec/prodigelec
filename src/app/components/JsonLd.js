@@ -51,8 +51,8 @@ export default function JsonLd() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Serrurerie Électronique",
-            "description": "Serrures connectées, digicodes, vidéophonie, volets motorisés, dépannage électronique."
+            "name": "Sécurité & Automatismes",
+            "description": "Digicode, vidéophonie, alarmes, vidéosurveillance, motorisation de tous types de volets, fermetures automatiques."
           }
         }
       ]

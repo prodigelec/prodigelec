@@ -12,15 +12,15 @@ const TestimonialsSection = dynamic(() => import("@/app/components/home/sections
 const ContactCTASection = dynamic(() => import("@/app/components/home/sections/ContactCTASection"));
 
 export const metadata = {
-  title: "PRODIGELEC - Artisan Électricien & Serrurier | 27 & 28",
-  description: "Expertise en électricité et serrurerie avec 23 ans d'expérience. Intervention rapide en Eure (27) et Eure-et-Loir (28) : Broué, Dreux, Chartres & alentours.",
+  title: "PRODIGELEC - Artisan Électricien & Sécurité Électronique | 27 & 28",
+  description: "Expertise en électricité et sécurité électronique avec 23 ans d'expérience. Intervention rapide en Eure (27) et Eure-et-Loir (28) : Broué, Dreux, Chartres & alentours.",
   keywords: [
     // Électricien par ville
     "Électricien Broué", "Électricien Dreux", "Électricien Chartres", "Électricien Évreux",
     "Électricien Anet", "Électricien Nonancourt", "Électricien Nogent-le-Roi",
-    // Serrurier par ville
-    "Serrurier électronique Broué", "Serrurier électronique Dreux", "Serrurier électronique Chartres", "Serrurier électronique Évreux",
-    "Serrurier électronique Anet", "Serrurier électronique Nonancourt", "Serrurier électronique Nogent-le-Roi",
+    // Sécurité par ville
+    "Sécurité électronique Broué", "Sécurité électronique Dreux", "Sécurité électronique Chartres", "Sécurité électronique Évreux",
+    "Sécurité électronique Anet", "Sécurité électronique Nonancourt", "Sécurité électronique Nogent-le-Roi",
     // Termes généraux
     "Artisan électricien 27", "Artisan électricien 28",
     "Dépannage électricité Eure", "Dépannage électricité Eure-et-Loir",
@@ -30,8 +30,8 @@ export const metadata = {
     canonical: "https://www.prodigelec.fr/",
   },
   openGraph: {
-    title: "PRODIGELEC - Électricien & Serrurier | 27 & 28",
-    description: "Expertise locale en Eure et Eure-et-Loir. Dépannage électricité et urgence serrurerie.",
+    title: "PRODIGELEC - Électricien & Sécurité Électronique | 27 & 28",
+    description: "Expertise locale en Eure et Eure-et-Loir. Dépannage électricité, sécurité électronique et automatismes.",
     url: "https://www.prodigelec.fr/",
   },
 };

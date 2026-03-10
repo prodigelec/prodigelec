@@ -21,7 +21,7 @@ export default function Navbar() {
             name: 'Services',
             href: '#services',
             dropdown: [
-                { name: 'Serrurerie', href: '/services/serrurerie', icon: <IoKey className="w-5 h-5" /> },
+                { name: 'Sécurité', href: '/services/securite', icon: <IoKey className="w-5 h-5" /> },
                 { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
             ]
         },
