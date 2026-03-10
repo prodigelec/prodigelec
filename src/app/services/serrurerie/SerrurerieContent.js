@@ -183,6 +183,18 @@ export default function SerrurerieContent() {
       title: "Volets Battants",
       description: "Motorisation et automatisation de volets battants"
     },
+    {
+      id: 5,
+      image: "/img_carousel_serrure_page/videosurveillance_alternative.png",
+      title: "Vidéosurveillance",
+      description: "Caméras haute définition pour sécuriser vos extérieurs"
+    },
+    {
+      id: 6,
+      image: "/img_carousel_serrure_page/urmet_aura_alternative.png",
+      title: "Visiophone Design",
+      description: "Platine de rue moderne avec finition haut de gamme"
+    }
   ];
 
   return (

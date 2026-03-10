@@ -32,6 +32,17 @@ const nextConfig = {
   // Production optimisations
   productionBrowserSourceMaps: false,
 
+  // Redirection SEO : ancienne URL serrurerie → nouvelle URL securite
+  async redirects() {
+    return [
+      {
+        source: '/services/serrurerie',
+        destination: '/services/securite',
+        permanent: true,
+      },
+    ];
+  },
+
   // Optimiser les headers de cache
   async headers() {
     const isDev = process.env.NODE_ENV === 'development';
