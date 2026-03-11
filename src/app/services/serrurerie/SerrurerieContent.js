@@ -161,19 +161,19 @@ export default function SerrurerieContent() {
   const carouselSlides = [
     {
       id: 1,
-      image: "/img_carousel_serrure_page/serrure_connectee.jpg",
+      image: "/img_carousel_securite_page/serrure_connectee.jpg",
       title: "Serrure connectée & Digicode",
       description: "Accès par code, badge, smartphone ou clé physique"
     },
     {
       id: 2,
-      image: "/img_carousel_electric_page/videophonie_digicode.jpg",
+      image: "/img_carousel_securite_page/videophonie_digicode.jpg",
       title: "Vidéophonie & Interphonie",
       description: "Voyez et parlez à vos visiteurs depuis votre téléphone"
     },
     {
       id: 3,
-      image: "/img_carousel_serrure_page/tahoma_switch.avif",
+      image: "/img_carousel_securite_page/tahoma_switch.avif",
       title: "Volets Roulants",
       description: "Motorisation et pilotage smartphone ou télécommande"
     },
@@ -185,13 +185,13 @@ export default function SerrurerieContent() {
     },
     {
       id: 5,
-      image: "/img_carousel_serrure_page/videosurveillance_alternative.png",
+      image: "/img_carousel_securite_page/videosurveillance_alternative.png",
       title: "Vidéosurveillance",
       description: "Caméras haute définition pour sécuriser vos extérieurs"
     },
     {
       id: 6,
-      image: "/img_carousel_serrure_page/urmet_aura_alternative.png",
+      image: "/img_carousel_securite_page/urmet_aura_alternative.png",
       title: "Visiophone Design",
       description: "Platine de rue moderne avec finition haut de gamme"
     }
