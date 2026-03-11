@@ -15,7 +15,7 @@ export default function ServicePricing({ title, subtitle, description, prices, t
       priceShadow: "drop-shadow-[0_0_10px_rgba(var(--color-accent-rgb),0.3)]",
       checkColor: "text-accent" // Assuming we might add checks, though currently not explicitly used in pricing component provided
     },
-    serrurerie: {
+    securite: {
       highlightColor: "text-primary",
       borderColor: "border-primary/40",
       shadowColor: "shadow-[0_0_40px_-15px_rgba(201,162,39,0.3)]",

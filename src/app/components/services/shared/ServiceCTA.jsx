@@ -9,7 +9,7 @@ export default function ServiceCTA({ title, description, buttonText, theme = "el
       buttonHover: "hover:bg-accent-glow",
       buttonText: "text-black"
     },
-    serrurerie: {
+    securite: {
       buttonBg: "bg-primary",
       buttonHover: "hover:bg-primary-light",
       buttonText: "text-background"

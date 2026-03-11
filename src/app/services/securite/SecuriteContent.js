@@ -207,12 +207,12 @@ export default function SecuriteContent() {
           subtitle="Automatismes"
           description="Digicode, vidéophonie, alarmes, vidéosurveillance et motorisations. Une expertise électronique pour sécuriser et automatiser votre domicile."
           icon={ShieldCheck}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceCarousel
           slides={carouselSlides}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceServices
@@ -220,7 +220,7 @@ export default function SecuriteContent() {
           subtitle="Prestations"
           description="Un savoir-faire artisanal combiné aux technologies de sécurité les plus modernes pour votre sérénité."
           features={servicesFeatures}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServicePricing
@@ -228,7 +228,7 @@ export default function SecuriteContent() {
           subtitle="Sécurité & Automatismes"
           description="Un savoir-faire artisanal avec une tarification claire et sans surprise."
           prices={pricingPlans}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceUrgency
@@ -238,7 +238,7 @@ export default function SecuriteContent() {
           }
           steps={urgencySteps}
           icon={ShieldAlert}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceFAQ
@@ -246,14 +246,14 @@ export default function SecuriteContent() {
           subtitle="Fréquentes"
           description="Vous avez des questions ? Retrouvez ici les réponses aux interrogations les plus courantes sur mes services de sécurité et d'automatisme."
           faqs={faqItems}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceCTA
           title="Besoin de sécuriser votre domicile ?"
           description="Demandez un audit sécurité gratuit. Je vous conseillerai sur les meilleures solutions pour protéger votre maison."
           buttonText="Demander mon devis"
-          theme="serrurerie"
+          theme="securite"
         />
       </div>
     </main>

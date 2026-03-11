@@ -10,7 +10,7 @@ export default function ServiceHero({ icon: Icon, title, subtitle, description, 
       highlightColor: "text-accent",
       iconColor: "text-white" // Default icon color unless specified otherwise
     },
-    serrurerie: {
+    securite: {
       iconBg: "bg-primary/10",
       iconBorder: "border-primary/20",
       iconShadow: "shadow-[0_0_30px_-5px_rgba(201,162,39,0.3)]",
