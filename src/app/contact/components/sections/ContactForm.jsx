@@ -137,7 +137,8 @@ export default function ContactForm() {
             >
               <option value="depannage" className="bg-[#0f172a]">Dépannage / Urgence</option>
               <option value="electricite" className="bg-[#0f172a]">Travaux Électricité</option>
-              <option value="securite" className="bg-[#0f172a]">Sécurité & Automatismes</option>
+              <option value="securite" className="bg-[#0f172a]">Sécurité Électronique</option>
+              <option value="automatismes" className="bg-[#0f172a]">Automatismes & Motorisations</option>
               <option value="autre" className="bg-[#0f172a]">Autre demande</option>
             </select>
           </div>

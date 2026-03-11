@@ -43,7 +43,8 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-3 md:mb-6 text-sm md:text-base">Nos Services</h3>
             <ul className="space-y-2 md:space-y-4">
               <li><Link href="/services/electricite" className="text-foreground-subtle hover:text-accent transition-colors text-xs md:text-sm">Électricité Générale</Link></li>
-              <li><Link href="/services/securite" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Sécurité & Automatismes</Link></li>
+              <li><Link href="/services/securite" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Sécurité Électronique</Link></li>
+              <li><Link href="/services/automatismes" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Automatismes & Motorisations</Link></li>
             </ul>
           </div>
 
