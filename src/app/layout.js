@@ -4,12 +4,7 @@ import ClientNavbar from "@/app/components/layout/Navbar/ClientNavbar";
 import Footer from "@/app/components/layout/Footer";
 import JsonLd from "@/app/components/JsonLd";
 import { MotionProvider } from "@/app/components/MotionProvider";
-import dynamic from "next/dynamic";
-
-const FloatingContactButton = dynamic(
-  () => import("@/app/components/layout/FloatingContactButton"),
-  { ssr: false, loading: () => null }
-);
+import FloatingContactButtonLoader from "@/app/components/layout/FloatingContactButtonLoader";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -70,7 +65,7 @@ export default function RootLayout({ children }) {
             {children}
           </div>
           <Footer />
-          <FloatingContactButton />
+          <FloatingContactButtonLoader />
         </MotionProvider>
       </body>
     </html>
