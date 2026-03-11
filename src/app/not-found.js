@@ -103,7 +103,7 @@ export default function NotFound() {
 
       {/* Footer Text */}
       <div className="absolute bottom-8 text-foreground-subtle text-sm">
-        Prodigelec - Électricité & Serrurerie
+        Prodigelec - Électricité & Sécurité
       </div>
     </div>
   );

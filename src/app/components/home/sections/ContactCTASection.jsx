@@ -33,7 +33,7 @@ export default function ContactCTASection() {
                 </span>
               </h2>
               <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-xl">
-                Que ce soit pour une urgence électrique ou un besoin en serrurerie, je suis à votre écoute pour vous apporter une solution rapide et sur-mesure.
+                Que ce soit pour une urgence électrique ou un besoin en sécurité & automatismes, je suis à votre écoute pour vous apporter une solution rapide et sur-mesure.
               </p>
 
               <div className="flex justify-center flex-wrap gap-4">

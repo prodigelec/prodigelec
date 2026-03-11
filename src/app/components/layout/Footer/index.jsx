@@ -43,7 +43,8 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-3 md:mb-6 text-sm md:text-base">Nos Services</h3>
             <ul className="space-y-2 md:space-y-4">
               <li><Link href="/services/electricite" className="text-foreground-subtle hover:text-accent transition-colors text-xs md:text-sm">Électricité Générale</Link></li>
-              <li><Link href="/services/serrurerie" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Serrurerie & Sécurité</Link></li>
+              <li><Link href="/services/securite" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Sécurité Électronique</Link></li>
+              <li><Link href="/services/automatismes" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Automatismes & Motorisations</Link></li>
             </ul>
           </div>
 
@@ -69,13 +70,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <p className="text-foreground-subtle text-[10px] md:text-xs">
+          <p className="text-foreground-subtle text-xs">
             © 2025 PRODIGELEC — Petaccia Sébastien, EI. Tous droits réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <Link href="/mentions-legales" className="text-foreground-subtle hover:text-gray-100 text-[10px] md:text-xs transition-colors">Mentions Légales</Link>
-            <Link href="/politique-de-confidentialite" className="text-foreground-subtle hover:text-gray-100 text-[10px] md:text-xs transition-colors">Politique de Confidentialité</Link>
-            <Link href="/cgv" className="text-foreground-subtle hover:text-gray-100 text-[10px] md:text-xs transition-colors">CGV</Link>
+            <Link href="/mentions-legales" className="text-foreground-subtle hover:text-gray-100 text-xs transition-colors py-2">Mentions Légales</Link>
+            <Link href="/politique-de-confidentialite" className="text-foreground-subtle hover:text-gray-100 text-xs transition-colors py-2">Politique de Confidentialité</Link>
+            <Link href="/cgv" className="text-foreground-subtle hover:text-gray-100 text-xs transition-colors py-2">CGV</Link>
           </div>
         </div>
       </div>

@@ -11,9 +11,9 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
       barColor: "bg-accent",
       barShadow: "shadow-[0_0_15px_rgba(var(--color-accent-rgb),0.5)]"
     },
-    serrurerie: {
+    securite: {
       barColor: "bg-primary",
-      barShadow: "" // Original serrurerie didn't have a shadow on the bar
+      barShadow: ""
     }
   };
 

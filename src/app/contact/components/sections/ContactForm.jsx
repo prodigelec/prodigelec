@@ -75,7 +75,7 @@ export default function ContactForm() {
         </div>
 
         <div className="relative z-10 mt-12">
-          <div className="text-xs font-bold uppercase tracking-widest text-gray-100 mb-2 group"><BrandName className="text-[10px]" /></div>
+          <div className="text-xs font-bold uppercase tracking-widest text-gray-100 mb-2 group"><BrandName className="text-xs" /></div>
           <div className="text-white font-medium">L&apos;expertise artisanale 2.0</div>
         </div>
       </div>
@@ -137,7 +137,8 @@ export default function ContactForm() {
             >
               <option value="depannage" className="bg-[#0f172a]">Dépannage / Urgence</option>
               <option value="electricite" className="bg-[#0f172a]">Travaux Électricité</option>
-              <option value="serrurerie" className="bg-[#0f172a]">Travaux Serrurerie</option>
+              <option value="securite" className="bg-[#0f172a]">Sécurité Électronique</option>
+              <option value="automatismes" className="bg-[#0f172a]">Automatismes & Motorisations</option>
               <option value="autre" className="bg-[#0f172a]">Autre demande</option>
             </select>
           </div>

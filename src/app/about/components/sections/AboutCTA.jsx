@@ -14,7 +14,7 @@ export default function AboutCTA() {
       <div className="relative z-10 max-w-2xl mx-auto">
         <h3 className="text-xl md:text-3xl font-bold text-white mb-4 md:mb-6">Un projet ? Une question ?</h3>
         <p className="text-gray-100 mb-6 md:mb-8 text-sm md:text-lg">
-          Que vous ayez besoin d&apos;un dépannage urgent ou d&apos;un devis en électricité ou serrurerie, je suis à votre écoute.
+          Que vous ayez besoin d&apos;un dépannage urgent ou d&apos;un devis en électricité ou sécurité, je suis à votre écoute.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="tel:0638194752" className="inline-flex items-center gap-2 px-5 py-3 md:px-8 md:py-4 bg-primary text-black rounded-full font-medium md:font-bold hover:bg-primary/90 transition-colors w-full sm:w-auto justify-center text-sm md:text-base">

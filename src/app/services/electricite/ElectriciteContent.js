@@ -14,10 +14,10 @@ import { HiBolt } from "react-icons/hi2";
 import {
   HiShieldCheck,
   HiOutlineLightBulb,
-  HiLockClosed,
   HiOutlineWrenchScrewdriver,
   HiOutlineHomeModern,
-  HiOutlineVideoCamera
+  HiOutlineClipboardDocumentList,
+  HiOutlineCpuChip
 } from "react-icons/hi2";
 
 export default function ElectriciteContent() {
@@ -67,27 +67,27 @@ export default function ElectriciteContent() {
       ]
     },
     {
-      icon: HiOutlineVideoCamera,
-      title: "Vidéo & Alarme",
-      description: "Installation de systèmes de surveillance et d'alarme pour une protection optimale de vos biens.",
+      icon: HiOutlineCpuChip,
+      title: "Prises, Interrupteurs & Appareillage",
+      description: "Installation et remplacement de prises, interrupteurs, va-et-vient et appareillage électrique toutes marques.",
       items: [
-        "Caméras IP Haute Définition",
-        "Alarmes anti-intrusion",
-        "Détection incendie",
-        "Paramétrage smartphone"
+        "Prises simples, doubles, USB",
+        "Interrupteurs & va-et-vient",
+        "Prises extérieures étanches",
+        "Legrand, Schneider, Hager..."
       ]
     },
     {
-      icon: HiLockClosed,
-      title: "Sécurité & Accès",
-      description: "Protégez vos accès avec des technologies modernes de contrôle d’entrée et de surveillance.",
+      icon: HiOutlineClipboardDocumentList,
+      title: "Repérage de Disjoncteurs",
+      description: "Identification et étiquetage complet de votre tableau électrique pour savoir en un coup d'œil quel disjoncteur commande quel circuit.",
       items: [
-        "Vidéophonie connectée",
-        "Interphonie intelligente",
-        "Contrôle par badge",
-        "Digicodes robustes"
+        "Identification de chaque circuit",
+        "Étiquetage clair du tableau",
+        "Schéma de repérage fourni",
+        "Vérification de la cohérence"
       ]
-    }
+    },
   ];
 
   const pricingPlans = [
@@ -113,18 +113,6 @@ export default function ElectriciteContent() {
         "Mise à la terre certifiée",
         "Protection 30mA installée",
         "Attestation de conformité"
-      ],
-      highlight: false
-    },
-    {
-      title: "Vidéo & Alarme",
-      price: "Sur Devis",
-      description: "Installation de systèmes de surveillance et alarme.",
-      features: [
-        "Caméras Haute Définition",
-        "Alarmes anti-intrusion",
-        "Configuration smartphone",
-        "Étude personnalisée"
       ],
       highlight: false
     },
@@ -180,12 +168,6 @@ export default function ElectriciteContent() {
       description: "Solutions modernes et économies d'énergie"
     },
     {
-      id: 2,
-      image: "/img_carousel_electric_page/domotique.jpg",
-      title: "Domotique",
-      description: "Votre maison connectée et intelligente"
-    },
-    {
       id: 3,
       image: "/img_carousel_hero_home/tableau-electrique.optimized.jpg",
       title: "Tableau Électrique",
@@ -193,15 +175,21 @@ export default function ElectriciteContent() {
     },
     {
       id: 4,
-      image: "/img_carousel_electric_page/videophonie_digicode.jpg",
-      title: "Vidéophonie & Accès",
-      description: "Contrôle d'accès et sécurité résidentielle"
-    },
-    {
-      id: 5,
       image: "/img_carousel_electric_page/prises.jpg",
       title: "Installation Électrique",
       description: "Appareillage et circuits toutes marques"
+    },
+    {
+      id: 5,
+      image: "/img_carousel_electric_page/reperage-disjoncteurs.jpg",
+      title: "Repérage de Disjoncteurs",
+      description: "Identification et étiquetage de chaque circuit"
+    },
+    {
+      id: 6,
+      image: "/img_carousel_electric_page/seche_serviette.jpg",
+      title: "Chauffage & VMC",
+      description: "Sèche-serviette, radiateurs et ventilation"
     }
   ];
 

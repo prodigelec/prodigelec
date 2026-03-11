@@ -15,7 +15,7 @@ export default function ServicePricing({ title, subtitle, description, prices, t
       priceShadow: "drop-shadow-[0_0_10px_rgba(var(--color-accent-rgb),0.3)]",
       checkColor: "text-accent" // Assuming we might add checks, though currently not explicitly used in pricing component provided
     },
-    serrurerie: {
+    securite: {
       highlightColor: "text-primary",
       borderColor: "border-primary/40",
       shadowColor: "shadow-[0_0_40px_-15px_rgba(201,162,39,0.3)]",
@@ -55,7 +55,7 @@ export default function ServicePricing({ title, subtitle, description, prices, t
           >
             {/* Urgence Badge */}
             {plan.tag && (
-              <div className={`absolute -top-[18px] left-1/2 -translate-x-1/2 ${config.badgeBg} text-background font-black px-5 py-2 rounded-full text-[10px] uppercase tracking-widest ${config.badgeShadow} whitespace-nowrap z-50`}>
+              <div className={`absolute -top-[18px] left-1/2 -translate-x-1/2 ${config.badgeBg} text-background font-black px-5 py-2 rounded-full text-xs uppercase tracking-widest ${config.badgeShadow} whitespace-nowrap z-50`}>
                 {plan.tag}
               </div>
             )}

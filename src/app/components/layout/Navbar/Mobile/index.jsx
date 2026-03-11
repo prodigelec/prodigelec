@@ -7,7 +7,7 @@ import { FcFlashOn } from "react-icons/fc";
 export default function MobileNavbar() {
     const navItems = [
         { name: 'Accueil', icon: <Home size={20} />, href: '/' },
-        { name: 'Serrure', icon: <IoKey size={20} />, href: '/services/serrurerie' },
+        { name: 'Sécurité', icon: <IoKey size={20} />, href: '/services/securite' },
         { name: 'SOS', icon: <Phone size={22} />, href: 'tel:0638194752', highlight: true },
         { name: 'Élec', icon: <FcFlashOn size={20} />, href: '/services/electricite' },
         { name: 'Contact', icon: <Mail size={20} />, href: '/contact' },
@@ -31,7 +31,7 @@ export default function MobileNavbar() {
                             }`}
                     >
                         {item.icon}
-                        <span className="text-[9px] font-bold uppercase tracking-tight mt-1 truncate w-full text-center">
+                        <span className="text-xs font-bold uppercase tracking-tight mt-1 truncate w-full text-center">
                             {item.highlight ? 'SOS' : item.name}
                         </span>
                     </m.a>

@@ -48,7 +48,7 @@ export default function MentionsLegales() {
                     <Section icon={<Shield className="text-primary" />} title="Assurances Professionnelles">
                         <p className="text-gray-100 leading-relaxed uppercase font-bold text-xs mb-4">Garantie Décennale & Responsabilité Civile</p>
                         <p className="text-gray-100 leading-relaxed">
-                            Conformément à la loi, PRODIGELEC a souscrit un contrat d&apos;assurance de responsabilité civile professionnelle et de <span className="text-white">Garantie Décennale</span> pour l&apos;ensemble de ses activités d&apos;électricité et de serrurerie.
+                            Conformément à la loi, PRODIGELEC a souscrit un contrat d&apos;assurance de responsabilité civile professionnelle et de <span className="text-white">Garantie Décennale</span> pour l&apos;ensemble de ses activités d&apos;électricité et de sécurité & automatismes.
                         </p>
                         <p className="mt-4 text-gray-100 italic">
                             Les coordonnées de l&apos;assureur et le numéro de contrat sont disponibles sur simple demande ou figurent sur vos devis et factures.

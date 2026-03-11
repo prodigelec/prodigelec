@@ -18,7 +18,7 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
       buttonBorder: "border-accent/30",
       buttonHoverBg: "hover:bg-accent"
     },
-    serrurerie: {
+    securite: {
       highlightColor: "text-primary",
       hoverBorder: "hover:border-primary/30",
       iconColor: "text-primary",

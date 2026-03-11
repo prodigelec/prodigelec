@@ -17,7 +17,7 @@ export default function ServiceUrgency({ title, subtitle, description, steps, ic
       pingShadow: "shadow-[0_0_10px_rgba(var(--color-accent-rgb),0.8)]",
       stepColor: "text-accent/50"
     },
-    serrurerie: {
+    securite: {
       gradient: "from-primary/20 to-primary-light/20",
       border: "border-primary/20",
       blur: "bg-primary/20",

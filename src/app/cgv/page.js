@@ -33,7 +33,7 @@ export default function CGVPage() {
                     {/* Objet */}
                     <Section icon={<FileText className="text-primary" />} title="1. Objet">
                         <p className="text-gray-100 leading-relaxed">
-                            Les présentes conditions générales de vente (CGV) s&apos;appliquent à toutes les prestations de services (électricité, serrurerie, dépannage) effectuées par <span className="text-white">PRODIGELEC</span> pour ses clients. Toute commande implique l&apos;adhésion sans réserve aux présentes CGV.
+                            Les présentes conditions générales de vente (CGV) s&apos;appliquent à toutes les prestations de services (électricité, sécurité & automatismes, dépannage) effectuées par <span className="text-white">PRODIGELEC</span> pour ses clients. Toute commande implique l&apos;adhésion sans réserve aux présentes CGV.
                         </p>
                     </Section>
 
