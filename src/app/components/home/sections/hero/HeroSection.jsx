@@ -10,7 +10,7 @@ const slides = [
     id: 1,
     title: "Vidéophonie & Interphonie",
     subtitle: "Voyez et parlez à vos visiteurs depuis votre téléphone",
-    image: "/img_carousel_electric_page/videophonie_digicode.jpg",
+    image: "/img_carousel_securite_page/videophonie_digicode.jpg",
     icon: "📹"
   },
   {

@@ -8,21 +8,10 @@ import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
 
-import { ShieldCheck, ShieldAlert, Fingerprint, Video, Bell, Camera, Blinds, Wrench } from "lucide-react";
+import { ShieldCheck, ShieldAlert, Fingerprint, Video, Bell, Camera, Blinds, Smartphone } from "lucide-react";
 
 export default function SecuriteContent() {
   const servicesFeatures = [
-    {
-      icon: Wrench,
-      title: "Dépannage & Maintenance",
-      description: "Panne, blocage ou dysfonctionnement — j'interviens rapidement sur vos équipements de sécurité et d'automatisme.",
-      items: [
-        "Visiophone ou interphone HS",
-        "Volet bloqué ou moteur défaillant",
-        "Digicode défaillant",
-        "Reconfiguration & mise à jour"
-      ]
-    },
     {
       icon: Fingerprint,
       title: "Digicode & Contrôle d'accès",
@@ -65,6 +54,17 @@ export default function SecuriteContent() {
         "Accès à distance via smartphone",
         "Enregistrement continu",
         "Vision nocturne"
+      ]
+    },
+    {
+      icon: Smartphone,
+      title: "Domotique & Maison Connectée",
+      description: "Centralisez le contrôle de vos équipements de sécurité et d'automatisme depuis votre smartphone.",
+      items: [
+        "Pilotage volets & alarme via app",
+        "Scénarios automatisés",
+        "Compatible Box domotique",
+        "Contrôle à distance"
       ]
     },
     {
@@ -175,7 +175,7 @@ export default function SecuriteContent() {
     },
     {
       id: 2,
-      image: "/img_carousel_electric_page/videophonie_digicode.jpg",
+      image: "/img_carousel_securite_page/videophonie_digicode.jpg",
       title: "Vidéophonie & Interphonie",
       description: "Voyez et parlez à vos visiteurs depuis votre téléphone"
     },
@@ -187,10 +187,16 @@ export default function SecuriteContent() {
     },
     {
       id: 4,
-      image: "/img_carousel_serrure_page/depannage_urgent.jpg",
-      title: "Dépannage & Maintenance",
-      description: "Intervention rapide sur vos équipements de sécurité"
-    }
+      image: "/img_carousel_securite_page/domotique.jpg",
+      title: "Domotique & Maison Connectée",
+      description: "Pilotage de vos équipements depuis votre smartphone"
+    },
+    {
+      id: 5,
+      image: "/img_carousel_securite_page/tahoma_switch.avif",
+      title: "Tahoma Switch — Somfy",
+      description: "Box domotique pour piloter volets, alarme et équipements depuis votre smartphone"
+    },
   ];
 
   return (
