@@ -15,7 +15,7 @@ export default function ServiceServices({ title, subtitle, description, features
       glowColor: "bg-accent/10 group-hover:bg-accent/20",
       checkBg: "bg-accent/10"
     },
-    serrurerie: {
+    securite: {
       highlightColor: "text-primary",
       cardHoverBorder: "hover:border-primary/50",
       iconBgHover: "hover:bg-white/[0.07]",

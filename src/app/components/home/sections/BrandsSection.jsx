@@ -14,7 +14,7 @@ const categories = [
         reverse: true
     },
     {
-        name: "Serrurerie Connectée",
+        name: "Sécurité & Automatismes",
         brands: ["Netatmo", "Nuki", "Yale", "Tedee", "Somfy", "Aiphone", "Comelit", "Fermax", "2N"],
         duration: 35
     },

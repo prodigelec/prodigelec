@@ -4,6 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { IoKey } from "react-icons/io5";
 import { FcFlashOn } from "react-icons/fc";
+import { Settings2 } from "lucide-react";
 import Logo from "../Logo";
 
 export default function Navbar() {
@@ -22,6 +23,7 @@ export default function Navbar() {
             href: '#services',
             dropdown: [
                 { name: 'Sécurité', href: '/services/securite', icon: <IoKey className="w-5 h-5" /> },
+                { name: 'Automatismes', href: '/services/automatismes', icon: <Settings2 className="w-5 h-5" /> },
                 { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
             ]
         },
@@ -117,7 +119,7 @@ export default function Navbar() {
                             {item.dropdown && (
                                 <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                                     <div className="bg-background/90 backdrop-blur-xl border border-white/10 rounded-2xl p-2 w-56 shadow-xl shadow-black/50 overflow-hidden">
-                                        {item.dropdown.map((subItem, j) => (
+                                        {item.dropdown.map((subItem) => (
                                             <a
                                                 key={subItem.name}
                                                 href={subItem.href}

@@ -8,7 +8,7 @@ import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
 
-import { ShieldCheck, ShieldAlert, Fingerprint, Video, Bell, Camera, Blinds, Smartphone } from "lucide-react";
+import { ShieldCheck, ShieldAlert, Fingerprint, Video, Bell, Camera } from "lucide-react";
 
 export default function SecuriteContent() {
   const servicesFeatures = [
@@ -55,28 +55,6 @@ export default function SecuriteContent() {
         "Enregistrement continu",
         "Vision nocturne"
       ]
-    },
-    {
-      icon: Smartphone,
-      title: "Domotique & Maison Connectée",
-      description: "Centralisez le contrôle de vos équipements de sécurité et d'automatisme depuis votre smartphone.",
-      items: [
-        "Pilotage volets & alarme via app",
-        "Scénarios automatisés",
-        "Compatible Box domotique",
-        "Contrôle à distance"
-      ]
-    },
-    {
-      icon: Blinds,
-      title: "Motorisations & Fermetures automatiques",
-      description: "Automatisez tous types de volets et fermetures — pilotage smartphone, télécommande ou programmation horaire.",
-      items: [
-        "Motorisation tous types de volets",
-        "Portails & portes de garage automatiques",
-        "Pilotage smartphone & télécommande",
-        "Programmation horaire & domotique"
-      ]
     }
   ];
 
@@ -106,23 +84,11 @@ export default function SecuriteContent() {
       highlight: false
     },
     {
-      title: "Motorisations & Automatismes",
-      price: "Sur Devis",
-      description: "Motorisation de vos volets ou fermetures automatiques.",
-      features: [
-        "Tous types de volets",
-        "Portails & portes de garage",
-        "Pilotage smartphone & télécommande",
-        "Devis gratuit jusqu'à 30km"
-      ],
-      highlight: false
-    },
-    {
       title: "Dépannage Urgence",
       price: "À partir de 120€ TTC",
-      description: "Panne ou blocage sur vos équipements de sécurité ou d'automatisme.",
+      description: "Panne ou blocage sur vos équipements de sécurité.",
       features: [
-        "Digicode, visiophone, volet, alarme",
+        "Digicode, visiophone, alarme, caméra",
         "Diagnostic & réparation sur place",
         "Déplacement Zone 1 offert",
         "Tarif annoncé avant intervention"
@@ -153,16 +119,12 @@ export default function SecuriteContent() {
       answer: "Oui, j'installe des systèmes d'alarme pour particuliers et professionnels : centrale d'alarme, détecteurs de mouvement, alertes smartphone. Je vous conseille sur la solution adaptée à votre configuration."
     },
     {
-      question: "Intervenez-vous sur tous types de volets motorisés ?",
-      answer: "Oui, j'interviens sur tous types de volets motorisés : volets roulants, battants et coulissants. Je peux motoriser des volets existants ou remplacer un mécanisme défaillant. Je propose également la programmation horaire et le pilotage smartphone."
-    },
-    {
-      question: "Que sont les fermetures automatiques ?",
-      answer: "Les fermetures automatiques incluent les portails électriques et les portes de garage motorisées. Je prends en charge l'installation, la configuration et la maintenance de ces équipements, avec pilotage par télécommande ou smartphone."
+      question: "Proposez-vous la vidéosurveillance ?",
+      answer: "Oui, j'installe des caméras HD pour surveiller votre propriété à distance, en intérieur comme en extérieur. Les systèmes sont accessibles via smartphone avec enregistrement continu et vision nocturne."
     },
     {
       question: "Intervenez-vous en urgence ?",
-      answer: "Oui, j'interviens en dépannage sur les équipements que j'installe et entretiens : digicodes, visiophones, interphones, volets motorisés. Le tarif est annoncé avant tout déplacement."
+      answer: "Oui, j'interviens en dépannage sur les équipements que j'installe et entretiens : digicodes, visiophones, interphones, alarmes, caméras. Le tarif est annoncé avant tout déplacement."
     }
   ];
 
@@ -178,41 +140,23 @@ export default function SecuriteContent() {
       image: "/img_carousel_securite_page/videophonie_digicode.jpg",
       title: "Vidéophonie & Interphonie",
       description: "Voyez et parlez à vos visiteurs depuis votre téléphone"
-    },
-    {
-      id: 3,
-      image: "/img_carousel_hero_home/Volet_Battant.avif",
-      title: "Motorisations & Automatismes",
-      description: "Motorisation tous types de volets et fermetures automatiques"
-    },
-    {
-      id: 4,
-      image: "/img_carousel_securite_page/domotique.jpg",
-      title: "Domotique & Maison Connectée",
-      description: "Pilotage de vos équipements depuis votre smartphone"
-    },
-    {
-      id: 5,
-      image: "/img_carousel_securite_page/tahoma_switch.avif",
-      title: "Tahoma Switch — Somfy",
-      description: "Box domotique pour piloter volets, alarme et équipements depuis votre smartphone"
-    },
+    }
   ];
 
   return (
     <main className="min-h-screen bg-background pt-28 pb-8 md:pt-24 md:pb-20">
       <div className="max-w-7xl mx-auto px-6">
         <ServiceHero
-          title="Sécurité &"
-          subtitle="Automatismes"
-          description="Digicode, vidéophonie, alarmes, vidéosurveillance et motorisations. Une expertise électronique pour sécuriser et automatiser votre domicile."
+          title="Sécurité"
+          subtitle="Électronique"
+          description="Digicode, vidéophonie, alarmes et vidéosurveillance. Une expertise électronique pour sécuriser votre domicile ou local professionnel."
           icon={ShieldCheck}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceCarousel
           slides={carouselSlides}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceServices
@@ -220,40 +164,40 @@ export default function SecuriteContent() {
           subtitle="Prestations"
           description="Un savoir-faire artisanal combiné aux technologies de sécurité les plus modernes pour votre sérénité."
           features={servicesFeatures}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServicePricing
           title="Mes Tarifs"
-          subtitle="Sécurité & Automatismes"
+          subtitle="Sécurité Électronique"
           description="Un savoir-faire artisanal avec une tarification claire et sans surprise."
           prices={pricingPlans}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceUrgency
-          title="Panne ou blocage sur vos équipements ?"
+          title="Panne sur vos équipements de sécurité ?"
           description={
             <p>J&apos;interviens rapidement sur <span className="font-bold text-primary">Chartres, Broué, Dreux, Anet, Nonancourt, Nogent-le-Roi, Évreux</span> &amp; leurs alentours. Tarifs annoncés avant intervention, pas de surprise.</p>
           }
           steps={urgencySteps}
           icon={ShieldAlert}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceFAQ
           title="Questions"
           subtitle="Fréquentes"
-          description="Vous avez des questions ? Retrouvez ici les réponses aux interrogations les plus courantes sur mes services de sécurité et d'automatisme."
+          description="Vous avez des questions ? Retrouvez ici les réponses aux interrogations les plus courantes sur mes services de sécurité électronique."
           faqs={faqItems}
-          theme="serrurerie"
+          theme="securite"
         />
 
         <ServiceCTA
           title="Besoin de sécuriser votre domicile ?"
           description="Demandez un audit sécurité gratuit. Je vous conseillerai sur les meilleures solutions pour protéger votre maison."
           buttonText="Demander mon devis"
-          theme="serrurerie"
+          theme="securite"
         />
       </div>
     </main>

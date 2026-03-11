@@ -13,7 +13,7 @@ export default function AboutStory() {
         className="space-y-6"
       >
         <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary/80 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full mb-4">
-          Artisan Électricien &amp; Serrurier — Fondateur de PRODIGELEC
+          Artisan Électricien — Fondateur de PRODIGELEC
         </span>
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
           Sébastien Petaccia<br />
@@ -39,7 +39,7 @@ export default function AboutStory() {
         <div className="bg-white/5 border border-white/10 p-4 md:p-6 rounded-2xl">
           <Wrench className="w-6 h-6 md:w-8 md:h-8 text-amber-500 mb-4" />
           <h3 className="text-lg md:text-xl font-bold text-white mb-2">Artisan Expert</h3>
-          <p className="text-gray-100 text-xs md:text-sm">23 ans d&apos;expérience terrain en électricité et serrurerie.</p>
+          <p className="text-gray-100 text-xs md:text-sm">23 ans d&apos;expérience terrain en électricité et sécurité.</p>
         </div>
         <div className="bg-white/5 border border-white/10 p-4 md:p-6 rounded-2xl">
           <Zap className="w-6 h-6 md:w-8 md:h-8 text-amber-400 mb-4" />
@@ -54,7 +54,7 @@ export default function AboutStory() {
         <div className="bg-white/5 border border-white/10 p-4 md:p-6 rounded-2xl">
           <Briefcase className="w-6 h-6 md:w-8 md:h-8 text-green-500 mb-4" />
           <h3 className="text-lg md:text-xl font-bold text-white mb-2">Entrepreneur</h3>
-          <p className="text-gray-100 text-xs md:text-sm">Un interlocuteur unique pour vos besoins en électricité et serrurerie.</p>
+          <p className="text-gray-100 text-xs md:text-sm">Un interlocuteur unique pour vos besoins en électricité et sécurité.</p>
         </div>
       </m.div>
     </div>
