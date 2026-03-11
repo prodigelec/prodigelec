@@ -83,7 +83,7 @@ export default function ServicesSection() {
             <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-primary/10 ring-1 ring-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.35)] flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all mx-auto md:mx-0 relative z-10">
               <Settings2 className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
             </div>
-            <h3 className="text-lg md:text-2xl font-bold mb-3 sm:mb-4 text-center md:text-left text-foreground group-hover:text-primary transition-all relative z-10">Automatismes</h3>
+            <h3 className="text-lg md:text-2xl font-bold mb-3 sm:mb-4 text-center md:text-left text-foreground group-hover:text-primary transition-all relative z-10">Automatisation</h3>
             <p className="text-gray-100 leading-relaxed text-sm md:text-base text-center md:text-left relative z-10 group-hover:text-white mb-5 grow">
               Motorisation de volets, portails et portes de garage. Domotique connectée.
             </p>
