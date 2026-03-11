@@ -135,20 +135,6 @@ export default function ContactInfo() {
             ))}
           </div>
 
-          <div className="mt-6 pt-4 border-t border-white/5 flex flex-col gap-2">
-             <div className="flex items-start gap-2">
-                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                <p className="text-xs text-gray-100 leading-relaxed">
-                  <span className="text-white font-bold">Devis gratuit</span> jusqu&apos;à 30km — déplacement gratuit jusqu&apos;à 5km (Zone 1).
-                </p>
-             </div>
-             <div className="flex items-start gap-2">
-                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                <p className="text-xs text-gray-100 leading-relaxed">
-                  <span className="text-white font-bold">Devis au-delà de 30km</span> : le déplacement est payant mais déduit de votre facture si vous acceptez.
-                </p>
-             </div>
-          </div>
         </m.div>
       </div>
     </div>
