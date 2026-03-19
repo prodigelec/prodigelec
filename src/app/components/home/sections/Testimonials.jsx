@@ -49,7 +49,7 @@ const FALLBACK_TESTIMONIALS = [
 ];
 
 export default function Testimonials() {
-  const googleReviewLink = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cc7ec3hVcz95EBM/review";
+  const googleReviewLink = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL || "https://g.page/r/Cc7ec3hVcz95EBM/review";
   const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
 
   useEffect(() => {
