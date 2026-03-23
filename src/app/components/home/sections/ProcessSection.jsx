@@ -15,7 +15,7 @@ const steps = [
   {
     icon: <FileText className="w-6 h-6" />,
     title: "Diagnostic & Devis",
-    description: "Je me déplace pour établir votre devis. Gratuit jusqu'à 30km — au-delà, des frais s'appliquent mais sont déduits si vous acceptez. Devis envoyé par email.",
+    description: "Je me déplace pour établir votre devis. Devis gratuit jusqu'à 30km — Zone 1 (< 5km) : 20€ de déplacement. Au-delà de 30km, des frais s'appliquent. Devis envoyé par email.",
     color: "text-accent",
     ring: "ring-accent/40",
     glow: "from-accent/30 via-accent/10 to-transparent",

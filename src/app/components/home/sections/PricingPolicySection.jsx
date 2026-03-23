@@ -61,15 +61,15 @@ export default function PricingPolicySection() {
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-500 font-bold text-xs uppercase tracking-wider mb-4 md:mb-6 w-fit">
               <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4" />
-              Zone 1 &amp; 2 (&lt; 30km)
+              Zone 2 (5 - 30km)
             </div>
 
             <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Devis Gratuit</h3>
-            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Je me déplace gratuitement pour établir votre devis dans un rayon de <span className="text-white font-bold">30km autour de Broué</span>.</p>
+            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Je me déplace gratuitement pour établir votre devis dans un rayon de <span className="text-white font-bold">5 à 30km autour de Broué</span>. Zone 1 (&lt; 5km) : <span className="text-white font-semibold">20€ de déplacement</span>.</p>
 
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
               <p className="text-xs md:text-sm text-primary font-medium">
-                <span className="font-bold">✨ Avantage Client :</span> Le devis est <span className="underline decoration-2 underline-offset-2">100% offert</span>, sans aucun frais caché.
+                <span className="font-bold">✨ Avantage Client :</span> Le devis est <span className="underline decoration-2 underline-offset-2">100% gratuit</span> dès 5km — Zone 1 (&lt; 5km) : 20€ de déplacement.
               </p>
             </div>
 
