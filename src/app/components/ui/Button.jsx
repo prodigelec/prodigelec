@@ -9,7 +9,7 @@ export default function Button({
   icon = null,
   ...props
 }) {
-  const baseStyles = "group relative inline-flex items-center justify-center px-5 py-3 md:px-10 md:py-5 font-bold rounded-xl md:rounded-2xl transition-all";
+  const baseStyles = "group relative inline-flex items-center justify-center px-5 py-3 md:px-8 md:py-4 font-bold rounded-xl md:rounded-2xl transition-all";
 
   const variants = {
     primary: "bg-primary text-background hover:bg-primary-light shadow-lg shadow-primary/30 hover:shadow-primary-light/40",
@@ -25,7 +25,7 @@ export default function Button({
       className={`${baseStyles} ${variants[variant]} ${className}`}
       {...props}
     >
-      <span className="relative z-10 flex items-center text-sm md:text-lg">
+      <span className="relative z-10 flex items-center text-sm md:text-base">
         {icon && <span className="mr-2 md:mr-3">{icon}</span>}
         {children}
       </span>

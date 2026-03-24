@@ -5,7 +5,7 @@ import BrandName from "@/app/components/ui/BrandName";
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-white/5 pt-4 md:pt-16 pb-28 md:pb-8">
+    <footer className="bg-background border-t border-white/5 pt-4 md:pt-16 pb-28 md:pb-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-16">
 
@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <div className="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left md:pr-24">
           <p className="text-foreground-subtle text-xs">
             © 2025 PRODIGELEC — Petaccia Sébastien, EI. Tous droits réservés.
           </p>
