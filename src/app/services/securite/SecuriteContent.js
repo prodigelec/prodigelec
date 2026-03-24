@@ -8,7 +8,7 @@ import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
 
-import { ShieldCheck, ShieldAlert, Fingerprint, Video, Bell, Camera } from "lucide-react";
+import { Cctv, ShieldAlert, Fingerprint, Video, Bell, Camera } from "lucide-react";
 
 export default function SecuriteContent() {
   const servicesFeatures = [
@@ -150,7 +150,7 @@ export default function SecuriteContent() {
           title="Sécurité"
           subtitle="Électronique"
           description="Digicode, vidéophonie, alarmes et vidéosurveillance. Une expertise électronique pour sécuriser votre domicile ou local professionnel."
-          icon={ShieldCheck}
+          icon={Cctv}
           theme="securite"
         />
 
