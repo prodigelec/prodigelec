@@ -1,11 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
-const Navbar = dynamic(() => import("./index"), {
-  ssr: false,
-  loading: () => <div className="h-[88px] w-full" />,
-});
+import Navbar from "./index";
 
 export default function ClientNavbar() {
   return <Navbar />;

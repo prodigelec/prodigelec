@@ -116,7 +116,7 @@ export default function ContactInfo() {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              { label: 'Zone 1', sub: '< 5km', price: 'Gratuit', color: '#22c55e' },
+              { label: 'Zone 1', sub: '< 5km', price: '20€', color: '#22c55e' },
               { label: 'Zone 2', sub: '< 30km', price: '30€', color: '#3b82f6' },
               { label: 'Zone 3', sub: '< 40km', price: '50€', color: '#f97316' },
               { label: 'Zone 4', sub: '< 60km', price: '70€', color: '#ef4444' }
@@ -134,7 +134,6 @@ export default function ContactInfo() {
               </div>
             ))}
           </div>
-
         </m.div>
       </div>
     </div>

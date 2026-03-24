@@ -37,7 +37,6 @@ export const metadata = {
   },
   icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }], apple: "/prodigelec-logo.svg" },
   verification: { google: "w5rAOBeW-q78ZcjmJWRltGvSvm92EYiSSSo5CfP6Zo0" },
-  alternates: { canonical: "https://www.prodigelec.fr/" },
 };
 
 export default function RootLayout({ children }) {

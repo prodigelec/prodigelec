@@ -74,7 +74,7 @@ export default function NotFound() {
         </h2>
         
         <p className="text-foreground-subtle text-lg mb-8 max-w-md mx-auto">
-          Oups ! La page que vous recherchez semble avoir été déconnectée du réseau ou n'existe pas.
+          Oups ! La page que vous recherchez semble avoir été déconnectée du réseau ou n&apos;existe pas.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -84,7 +84,7 @@ export default function NotFound() {
           >
             <span className="relative z-10 flex items-center gap-2">
               <Home size={20} />
-              Retour à l'accueil
+              Retour à l&apos;accueil
             </span>
             <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </Link>

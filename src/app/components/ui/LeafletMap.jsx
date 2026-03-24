@@ -10,7 +10,7 @@ const zones = [
   { radius: 60500, color: '#ef4444', label: 'Zone 4', price: '70€' },
   { radius: 40500, color: '#f97316', label: 'Zone 3', price: '50€' },
   { radius: 20500, color: '#3b82f6', label: 'Zone 2', price: '30€' },
-  { radius: 5500, color: '#22c55e', label: 'Zone 1', price: 'Gratuit' }
+  { radius: 5500, color: '#22c55e', label: 'Zone 1', price: '20€' }
 ];
 
 const cities = [
@@ -110,7 +110,7 @@ export default function LeafletMap() {
   }, [searchQuery, fetchPlaces]);
 
   const calculatePrice = (distanceKm) => {
-    if (distanceKm <= 5.5) return "Gratuit";
+    if (distanceKm <= 5.5) return "20€";
     if (distanceKm <= 20.5) return "30€";
     if (distanceKm <= 40.5) return "50€";
     if (distanceKm <= 60.5) return "70€";
