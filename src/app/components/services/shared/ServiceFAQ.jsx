@@ -36,7 +36,7 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
   return (
     <div className="mb-32">
       <div className="text-center mb-16 px-6">
-        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tighter">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 uppercase italic tracking-tighter">
           {title} <span className={`${config.highlightColor} italic`}>{subtitle}</span>
         </h2>
         <p className="text-gray-100 text-lg max-w-2xl mx-auto">
@@ -98,7 +98,7 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
         </p>
         <a
           href="tel:0638194752"
-          className={`inline-flex items-center gap-2 px-8 py-4 ${config.buttonBg} ${config.buttonText} border ${config.buttonBorder} rounded-full font-bold ${config.buttonHoverBg} hover:text-background transition-all hover:scale-105`}
+          className={`inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 ${config.buttonBg} ${config.buttonText} border ${config.buttonBorder} rounded-full font-bold text-sm md:text-base ${config.buttonHoverBg} hover:text-background transition-all hover:scale-105`}
         >
           Contactez-moi directement
         </a>
