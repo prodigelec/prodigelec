@@ -22,7 +22,7 @@ export default function Navbar() {
             name: 'Services',
             href: '#services',
             dropdown: [
-                { name: 'Sécurité', href: '/services/securite', icon: <Cctv className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" /> },
+                { name: 'Sécurité', href: '/services/securite', icon: <Cctv className="w-5 h-5 text-rose-400 group-hover:text-rose-500 transition-colors" /> },
                 { name: 'Automatismes', href: '/services/automatismes', icon: <GiGate className="w-5 h-5 text-sky-400 group-hover:text-sky-300 transition-colors" /> },
                 { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
             ]
