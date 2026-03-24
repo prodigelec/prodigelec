@@ -8,18 +8,14 @@ const BROUE_COORDS = [48.7492, 1.5234];
 const MAP_CENTER = [48.74, 1.34];
 
 const zones = [
-  { radius: 60500, color: '#ef4444', label: 'Zone 4', price: '70€' },
+  { radius: 46000, color: '#ef4444', label: 'Zone 4', price: '70€' },
   { radius: 40500, color: '#f97316', label: 'Zone 3', price: '50€' },
   { radius: 30500, color: '#3b82f6', label: 'Zone 2', price: '30€' },
   { radius: 5500, color: '#22c55e', label: 'Zone 1', price: '20€' }
 ];
 
 const cities = [
-  { name: "Broué", coords: BROUE_COORDS, isBase: true },
-  { name: "Évreux", coords: [49.0238, 1.1508], isBase: false },
-  { name: "Vernon", coords: [49.0917, 1.4883], isBase: false },
-  { name: "Dreux", coords: [48.7303, 1.3664], isBase: false },
-  { name: "Chartres", coords: [48.4438, 1.4891], isBase: false }
+  { name: "Broué", coords: BROUE_COORDS, isBase: true }
 ];
 
 function ChangeView({ center, zoom }) {
@@ -284,7 +280,7 @@ export default function InterventionMap() {
         {/* Floating Zones Badge */}
         <div className="absolute  md:top-3 md:left-3 z-[1000] bg-[#0b1a2a]/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-help">
           <MapPin className="w-4 h-4 text-amber-400" />
-          <span className="text-xs font-bold text-white uppercase tracking-tight">Zones d&apos;intervention (27 & 28)</span>
+          <span className="text-xs font-bold text-white uppercase tracking-tight">Zones d&apos;intervention (27, 28 & 78)</span>
         </div>
 
         <MapContainer
@@ -307,7 +303,6 @@ export default function InterventionMap() {
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            className="leaflet-tile-filter"
           />
 
           {zones.map((zone, idx) => (
@@ -324,11 +319,6 @@ export default function InterventionMap() {
               }}
             />
           ))}
-
-          <Polygon
-            positions={[[51.0, 1.56], [51.0, 10.0], [46.0, 10.0], [46.0, 1.56]]}
-            pathOptions={{ fillColor: '#0b1a2a', color: 'transparent', weight: 0, fillOpacity: 0.85 }}
-          />
 
           {cities.map((city, idx) => (
             <Marker

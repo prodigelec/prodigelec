@@ -18,6 +18,11 @@ const CITIES_27 = [
   "L'Habit", "Mouettes", "Mousseaux-Neuville"
 ];
 
+const CITIES_78 = [
+  "Houdan", "Maulette", "Richebourg", "Tacoignières", "Orgerus", "Septeuil",
+  "Condé-sur-Vesgre", "Bourdonné", "Gambais", "Dannemarie", "Boutigny-Prouais"
+];
+
 const CITIES_28_ZONE3 = [
   "Chartres", "Lucé", "Mainvilliers", "Luisant", "Lèves", "Auneau-Bleury-Saint-Symphorien",
   "Courville-sur-Eure", "Senonches"
@@ -26,6 +31,10 @@ const CITIES_28_ZONE3 = [
 const CITIES_27_ZONE3 = [
   "Évreux", "Vernon", "Saint-Marcel", "Pacy-sur-Eure", "Verneuil d'Avre et d'Iton",
   "Breteuil", "Conches-en-Ouche", "Mesnils-sur-Iton"
+];
+
+const CITIES_78_ZONE3 = [
+  "Mantes-la-Jolie", "Rambouillet", "Montfort-l'Amaury", "Thoiry", "Gargenville", "Plaisir", "Versailles"
 ];
 
 export default function PricingPolicySection() {
@@ -99,6 +108,16 @@ export default function PricingPolicySection() {
                 </div>
               </div>
 
+              <div className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                <div className="text-xs md:text-sm">
+                  <strong className="text-white block mb-1">Yvelines (78) :</strong>
+                  <p className="leading-relaxed">
+                    {CITIES_78.slice(0, 4).join(", ") + "..."}
+                  </p>
+                </div>
+              </div>
+
               <button
                 onClick={() => setActiveModal('free')}
                 aria-label="Voir toutes les villes de la zone gratuite"
@@ -161,6 +180,16 @@ export default function PricingPolicySection() {
                   <strong className="text-white block mb-1">Eure (27) :</strong>
                   <p className="leading-relaxed">
                     {CITIES_27_ZONE3.slice(0, 4).join(", ") + "..."}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                <div className="text-xs md:text-sm">
+                  <strong className="text-white block mb-1">Yvelines (78) :</strong>
+                  <p className="leading-relaxed">
+                    {CITIES_78_ZONE3.slice(0, 4).join(", ") + "..."}
                   </p>
                 </div>
               </div>
@@ -251,6 +280,22 @@ export default function PricingPolicySection() {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {(activeModal === 'free' ? CITIES_27 : CITIES_27_ZONE3).map(city => (
+                      <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-100 border border-white/5 hover:border-white/20 transition-colors">
+                        {city}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Yvelines */}
+                <div>
+                  <h4 className={`text-lg font-bold mb-4 flex items-center gap-2 ${activeModal === 'free' ? 'text-primary' : 'text-accent'
+                    }`}>
+                    <div className={`w-2 h-2 rounded-full ${activeModal === 'free' ? 'bg-primary' : 'bg-accent'}`} />
+                    Yvelines (78)
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {(activeModal === 'free' ? CITIES_78 : CITIES_78_ZONE3).map(city => (
                       <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-100 border border-white/5 hover:border-white/20 transition-colors">
                         {city}
                       </span>
