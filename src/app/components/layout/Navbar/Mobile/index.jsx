@@ -2,6 +2,7 @@
 import { m } from "framer-motion";
 import { Home, Mail, Cctv, PhoneCall } from "lucide-react";
 import { MdBlinds } from "react-icons/md";
+import { GiGate } from "react-icons/gi";
 import { FcFlashOn } from "react-icons/fc";
 
 export default function MobileNavbar() {
@@ -10,7 +11,7 @@ export default function MobileNavbar() {
         { name: 'Sécurité', icon: <Cctv size={18} />, href: '/services/securite' },
         { name: 'SOS', icon: <PhoneCall size={22} />, href: 'tel:0638194752', highlight: true },
         { name: 'Élec', icon: <FcFlashOn size={18} />, href: '/services/electricite' },
-        { name: 'Automat.', icon: <MdBlinds size={18} />, href: '/services/automatismes' },
+        { name: 'Automat.', icon: <GiGate size={18} />, href: '/services/automatismes' },
         { name: 'Contact', icon: <Mail size={18} />, href: '/contact' },
     ];
 

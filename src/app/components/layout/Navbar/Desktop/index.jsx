@@ -3,7 +3,8 @@ import { m, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { FcFlashOn } from "react-icons/fc";
-import { Settings2, ShieldCheck } from "lucide-react";
+import { GiGate } from "react-icons/gi";
+import { ShieldCheck } from "lucide-react";
 import Logo from "../Logo";
 
 export default function Navbar() {
@@ -22,7 +23,7 @@ export default function Navbar() {
             href: '#services',
             dropdown: [
                 { name: 'Sécurité', href: '/services/securite', icon: <ShieldCheck className="w-5 h-5" /> },
-                { name: 'Automatismes', href: '/services/automatismes', icon: <Settings2 className="w-5 h-5" /> },
+                { name: 'Automatismes', href: '/services/automatismes', icon: <GiGate className="w-5 h-5" /> },
                 { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
             ]
         },
