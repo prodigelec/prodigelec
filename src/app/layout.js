@@ -31,11 +31,11 @@ export const metadata = {
     description: "Électricité et sécurité en Eure-et-Loir, Eure et Yvelines.",
     url: "https://www.prodigelec.fr",
     siteName: "PRODIGELEC",
-    images: [{ url: "https://www.prodigelec.fr/prodigelec-logo.svg", width: 800, height: 600, alt: "Logo PRODIGELEC" }],
+    images: [{ url: "https://www.prodigelec.fr/logo_camera.png", width: 800, height: 600, alt: "Logo PRODIGELEC" }],
     locale: "fr_FR",
     type: "website",
   },
-  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }], apple: "/prodigelec-logo.svg" },
+  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }], apple: "/logo_camera.png" },
   verification: { google: "w5rAOBeW-q78ZcjmJWRltGvSvm92EYiSSSo5CfP6Zo0" },
 };
 

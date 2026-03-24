@@ -17,7 +17,7 @@ function LogoBadge() {
         position: "relative",
         flexShrink: 0,
       }}>
-        <Image src="/prodigelec-logo.svg" alt="PRODIGELEC" fill style={{ objectFit: "contain", transform: "scale(2.1) translateY(12px) translateX(-5px)" }} />
+        <Image src="/logo_camera.png" alt="PRODIGELEC" fill style={{ objectFit: "contain", padding: "4px" }} />
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <div style={{ display: "flex", fontSize: 17, fontWeight: 900, letterSpacing: 1 }}>
@@ -351,7 +351,7 @@ function TemplateConseil({ conseil, contexte }) {
           background: "linear-gradient(135deg, #d9d9d9, #f5f5f5)",
           overflow: "hidden", position: "relative",
         }}>
-          <Image src="/prodigelec-logo.svg" alt="logo" fill style={{ objectFit: "contain", transform: "scale(2.1) translateY(10px) translateX(-4px)" }} />
+          <Image src="/logo_camera.png" alt="logo" fill style={{ objectFit: "contain", padding: "4px" }} />
         </div>
         <div>
           <div style={{ color: GOLD, fontSize: 12, fontWeight: 700 }}>Sébastien PETACCIA — PRODIGELEC</div>
