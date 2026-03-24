@@ -81,7 +81,7 @@ export default function ContactCTASection() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-1">Zone d&apos;intervention</h3>
-                  <p className="text-foreground-subtle text-sm mb-2">Devis gratuit jusqu&apos;à 30km — Zone 1 (&lt; 5km) : 20€</p>
+                  <p className="text-foreground-subtle text-sm mb-2">Devis gratuit dans un rayon de 30km autour de Broué</p>
                   <span className="text-sm md:text-base text-gray-100 font-medium">Chartres, Broué, Dreux, Anet, Nonancourt, Évreux, Ezy-sur-Eure & leurs alentours (28/27)</span>
                 </div>
               </div>

@@ -65,18 +65,18 @@ export default function PricingPolicySection() {
             </div>
 
             <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Devis Gratuit</h3>
-            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Je me déplace gratuitement pour établir votre devis dans un rayon de <span className="text-white font-bold">5 à 30km autour de Broué</span>. Zone 1 (&lt; 5km) : <span className="text-white font-semibold">20€ de déplacement</span>.</p>
+            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Je me déplace gratuitement pour établir votre devis dans un rayon de <span className="text-white font-bold"> 30km autour de Broué</span>.</p>
 
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
               <p className="text-xs md:text-sm text-primary font-medium">
-                <span className="font-bold">✨ Avantage Client :</span> Le devis est <span className="underline decoration-2 underline-offset-2">100% gratuit</span> dès 5km — Zone 1 (&lt; 5km) : 20€ de déplacement.
+                <span className="font-bold">✨ Avantage Client :</span> Le devis est <span className="underline decoration-2 underline-offset-2">100% gratuit</span> .
               </p>
             </div>
 
             <div className="space-y-3 md:space-y-4 text-gray-100 mt-auto">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                <span className="text-xs md:text-base">Zone d'intervention immédiate</span>
+                <span className="text-xs md:text-base">Zone d&apos;intervention immédiate</span>
               </div>
 
               <div className="flex items-start gap-3">
