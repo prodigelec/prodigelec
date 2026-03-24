@@ -17,10 +17,10 @@ const outfit = Outfit({
 export const metadata = {
   metadataBase: new URL("https://www.prodigelec.fr"),
   title: {
-    default: "PRODIGELEC - Électricien & Sécurité | Eure-et-Loir (28)",
+    default: "PRODIGELEC - Électricien & Sécurité | Eure-et-Loir, Eure, Yvelines",
     template: "%s | PRODIGELEC"
   },
-  description: "PRODIGELEC à Broué (28). Dépannage électricité et sécurité sur Dreux, Chartres, Évreux.",
+  description: "PRODIGELEC à Broué (28). Dépannage électricité et sécurité sur Dreux, Chartres, Évreux, Houdan et alentours (28, 27, 78).",
   keywords: ["Électricien Broué", "Sécurité & Automatismes Broué", "Installation électrique", "PRODIGELEC"],
   authors: [{ name: "PRODIGELEC", url: "https://www.prodigelec.fr" }],
   creator: "PRODIGELEC",
@@ -28,7 +28,7 @@ export const metadata = {
   formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
     title: "PRODIGELEC - L'expertise artisanale 2.0",
-    description: "Électricité et sécurité en Eure-et-Loir.",
+    description: "Électricité et sécurité en Eure-et-Loir, Eure et Yvelines.",
     url: "https://www.prodigelec.fr",
     siteName: "PRODIGELEC",
     images: [{ url: "https://www.prodigelec.fr/prodigelec-logo.svg", width: 800, height: 600, alt: "Logo PRODIGELEC" }],

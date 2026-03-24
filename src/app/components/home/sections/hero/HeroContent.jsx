@@ -21,7 +21,7 @@ export default function HeroContent({ slides, currentSlide }) {
           >
             {/* SEO Optimized H1 (Hidden) */}
             <h1 className="sr-only">
-              PRODIGELEC - Expert Artisan Électricien & Sécurité Électronique | Eure (27) & Eure-et-Loir (28)
+              PRODIGELEC - Expert Artisan Électricien & Sécurité Électronique | Eure (27), Eure-et-Loir (28) & Yvelines (78)
             </h1>
 
             {/* Title (Carousel H2) */}

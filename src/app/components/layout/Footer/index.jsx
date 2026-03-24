@@ -15,7 +15,7 @@ export default function Footer() {
               <BrandName />
             </div>
             <p className="text-foreground-subtle text-xs md:text-sm leading-relaxed">
-              Votre artisan de confiance en Eure-et-Loir. Expertise technique, réactivité et solutions sur-mesure pour tous vos besoins.
+              Votre artisan de confiance en Eure-et-Loir, Eure et Yvelines. Expertise technique, réactivité et solutions sur-mesure pour tous vos besoins.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" aria-label="Suivez-nous sur Facebook" className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-primary hover:text-[#0b1a2a] transition-all group">

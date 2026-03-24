@@ -58,7 +58,7 @@ export async function POST(req) {
             <!-- Header -->
             <div style="background-color: #0b1a2a; padding: 30px 20px; text-align: center;">
               <h1 style="margin: 0; color: #c9a227; font-size: 28px; font-weight: bold; letter-spacing: 1px;">PRODIGELEC</h1>
-              <p style="margin: 5px 0 0; color: #a1a1aa; font-size: 14px;">Électricité & Sécurité - Eure-et-Loir / Eure</p>
+              <p style="margin: 5px 0 0; color: #a1a1aa; font-size: 14px;">Électricité & Sécurité - Eure-et-Loir / Eure / Yvelines</p>
             </div>
 
             <!-- Content -->

@@ -29,7 +29,7 @@ export default function AboutSection() {
                 L&apos;artisanat est avant tout une histoire de famille et de transmission. J&apos;ai exercé le métier d&apos;électricien serrurier pendant <strong className="text-primary font-bold">23 ans</strong> au sein de notre société familiale à Paris, travaillant aux côtés de mes parents et de mes frères. En tant qu&apos;aîné, c&apos;est là que j&apos;ai forgé mon exigence et ma passion du métier.
               </p>
               <p>
-                Aujourd&apos;hui, j&apos;interviens en <strong className="text-primary font-bold">Eure (27) et Eure-et-Loir (28)</strong>. Fort de cette expérience familiale, je porte désormais les couleurs de <BrandName /> avec la même rigueur et la même exigence de qualité qui ont toujours guidé mon travail.
+                Aujourd&apos;hui, j&apos;interviens en <strong className="text-primary font-bold">Eure (27), Eure-et-Loir (28) et dans une partie des Yvelines (78)</strong>. Fort de cette expérience familiale, je porte désormais les couleurs de <BrandName /> avec la même rigueur et la même exigence de qualité qui ont toujours guidé mon travail.
               </p>
             </div>
 
