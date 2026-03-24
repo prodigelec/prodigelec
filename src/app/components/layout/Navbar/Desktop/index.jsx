@@ -4,7 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { FcFlashOn } from "react-icons/fc";
 import { GiGate } from "react-icons/gi";
-import { ShieldCheck } from "lucide-react";
+import { Cctv } from "lucide-react";
 import Logo from "../Logo";
 
 export default function Navbar() {
@@ -22,8 +22,8 @@ export default function Navbar() {
             name: 'Services',
             href: '#services',
             dropdown: [
-                { name: 'Sécurité', href: '/services/securite', icon: <ShieldCheck className="w-5 h-5" /> },
-                { name: 'Automatismes', href: '/services/automatismes', icon: <GiGate className="w-5 h-5" /> },
+                { name: 'Sécurité', href: '/services/securite', icon: <Cctv className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" /> },
+                { name: 'Automatismes', href: '/services/automatismes', icon: <GiGate className="w-5 h-5 text-sky-400 group-hover:text-sky-300 transition-colors" /> },
                 { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
             ]
         },
