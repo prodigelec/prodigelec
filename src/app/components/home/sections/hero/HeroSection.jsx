@@ -45,7 +45,7 @@ const slides = [
     id: 6,
     title: "Vidéosurveillance",
     subtitle: "Sécurisez vos espaces de jour comme de nuit",
-    image: "/img_carousel_hero_home/videosurveillance.avif",
+    image: "/img_carousel_hero_home/camera.jpg",
     icon: "🎥",
     objectFit: "contain"
   },
@@ -80,7 +80,7 @@ export default function HeroSection() {
   const safeSlide = currentSlide % slides.length;
 
   return (
-    <section className="relative mt-36 lg:mt-0 h-[80vh] lg:h-screen overflow-hidden bg-black">
+    <section className="relative mt-16 md:mt-20 lg:mt-0 h-[80vh] lg:h-screen overflow-hidden bg-black">
       <HeroBackground slides={slides} currentSlide={safeSlide} />
 
       <HeroNavigation prevSlide={prevSlide} nextSlide={nextSlide} />
