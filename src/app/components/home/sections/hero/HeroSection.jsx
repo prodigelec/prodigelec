@@ -45,7 +45,7 @@ const slides = [
     id: 6,
     title: "Vidéosurveillance",
     subtitle: "Sécurisez vos espaces de jour comme de nuit",
-    image: "/img_carousel_hero_home/videosurveillance.avif",
+    image: "/img_carousel_hero_home/camera.jpg",
     icon: "🎥",
     objectFit: "contain"
   },
