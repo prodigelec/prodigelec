@@ -47,7 +47,7 @@ const slides = [
     subtitle: "Sécurisez vos espaces de jour comme de nuit",
     image: "/img_carousel_hero_home/camera.jpg",
     icon: "🎥",
-    objectFit: "contain"
+    objectFit: "cover"
   },
   {
     id: 7,
