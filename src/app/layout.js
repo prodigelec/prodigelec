@@ -35,7 +35,14 @@ export const metadata = {
     locale: "fr_FR",
     type: "website",
   },
-  icons: { icon: [{ url: "/logo_camera.png", type: "image/png" }], apple: "/logo_camera.png" },
+  icons: {
+    icon: [
+      { url: "/logo_camera.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo_camera.png", sizes: "192x192", type: "image/png" },
+      { url: "/logo_camera.png", sizes: "500x500", type: "image/png" },
+    ],
+    apple: [{ url: "/logo_camera.png", sizes: "180x180", type: "image/png" }],
+  },
   verification: { google: "w5rAOBeW-q78ZcjmJWRltGvSvm92EYiSSSo5CfP6Zo0" },
 };
 
