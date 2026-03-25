@@ -140,6 +140,12 @@ export default function SecuriteContent() {
       image: "/img_carousel_securite_page/videophonie_digicode.jpg",
       title: "Vidéophonie & Interphonie",
       description: "Voyez et parlez à vos visiteurs depuis votre téléphone"
+    },
+    {
+      id: 3,
+      image: "/img_carousel_hero_home/urmet-aura.avif",
+      title: "Visiophone Urmet Aura",
+      description: "Visiophone haute qualité avec platine de rue"
     }
   ];
 
