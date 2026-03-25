@@ -7,8 +7,8 @@ export default function HeroContent({ slides, currentSlide }) {
   const router = useRouter();
 
   return (
-    <div className="relative z-20 h-full flex items-center justify-center pt-6 md:pt-8 lg:pt-0">
-      <div className="max-w-5xl mx-auto px-6 text-center text-white w-full">
+    <div className="relative z-20 h-full flex items-center justify-center">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center text-white w-full">
 
         <AnimatePresence mode='wait'>
           <m.div
@@ -30,12 +30,12 @@ export default function HeroContent({ slides, currentSlide }) {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-none tracking-tight"
+                className="text-3xl sm:text-5xl md:text-5xl lg:text-7xl font-black leading-tight tracking-tight"
               >
-                <span className="block hover:text-primary transition-colors duration-300 mb-2 md:mb-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <span className="block hover:text-primary transition-colors duration-300 mb-2 md:mb-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                   {slides[currentSlide].title.split(' ')[0]}
                 </span>
-                <span className="block font-light opacity-95 mt-2 md:mt-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                <span className="block font-light opacity-95 mt-2 md:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                   {slides[currentSlide].title.split(' ').slice(1).join(' ')}
                 </span>
               </m.h2>
