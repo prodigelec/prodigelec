@@ -51,11 +51,11 @@ const slides = [
   },
   {
     id: 7,
-    title: "Visiophone Urmet Aura",
+    title: "Visiophone Platine de Rue",
     subtitle: "Le visiophone avec platine de rue haute qualité",
-    image: "/img_carousel_hero_home/urmet-aura.avif",
+    image: "/img_carousel_hero_home/videophone-platine.jpg",
     icon: "📞",
-    objectFit: "contain"
+    objectFit: "cover"
   }
 ];
 
