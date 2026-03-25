@@ -35,7 +35,7 @@ export const metadata = {
     locale: "fr_FR",
     type: "website",
   },
-  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }], apple: "/logo_camera.png" },
+  icons: { icon: [{ url: "/logo_camera.png", type: "image/png" }], apple: "/logo_camera.png" },
   verification: { google: "w5rAOBeW-q78ZcjmJWRltGvSvm92EYiSSSo5CfP6Zo0" },
 };
 
