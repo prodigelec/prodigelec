@@ -70,7 +70,7 @@ export default function PricingPolicySection() {
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-500 font-bold text-xs uppercase tracking-wider mb-4 md:mb-6 w-fit">
               <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4" />
-              Zone 2 (5 - 30km)
+              Zone 1 & 2 (30 km) 
             </div>
 
             <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Devis Gratuit</h3>
