@@ -37,10 +37,11 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/logo_camera.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: [{ url: "/logo_camera.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/favicon-512.png", sizes: "180x180", type: "image/png" }],
   },
   verification: { google: "w5rAOBeW-q78ZcjmJWRltGvSvm92EYiSSSo5CfP6Zo0" },
 };
