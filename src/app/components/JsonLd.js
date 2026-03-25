@@ -3,7 +3,7 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "PRODIGELEC",
-    "image": "https://www.prodigelec.fr/prodigelec-logo.svg",
+    "image": "https://www.prodigelec.fr/logo_camera.png",
     "url": "https://www.prodigelec.fr",
     "telephone": "+33638194752",
     "email": "contact@prodigelec.fr",

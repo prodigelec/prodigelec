@@ -2,9 +2,9 @@
 import { m, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { IoKey } from "react-icons/io5";
 import { FcFlashOn } from "react-icons/fc";
-import { Settings2 } from "lucide-react";
+import { GiGate } from "react-icons/gi";
+import { Cctv } from "lucide-react";
 import Logo from "../Logo";
 
 export default function Navbar() {
@@ -22,8 +22,8 @@ export default function Navbar() {
             name: 'Services',
             href: '#services',
             dropdown: [
-                { name: 'Sécurité', href: '/services/securite', icon: <IoKey className="w-5 h-5" /> },
-                { name: 'Automatismes', href: '/services/automatismes', icon: <Settings2 className="w-5 h-5" /> },
+                { name: 'Sécurité', href: '/services/securite', icon: <Cctv className="w-5 h-5 text-rose-400 group-hover:text-rose-500 transition-colors" /> },
+                { name: 'Automatismes', href: '/services/automatismes', icon: <GiGate className="w-5 h-5 text-sky-400 group-hover:text-sky-300 transition-colors" /> },
                 { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
             ]
         },
@@ -84,7 +84,7 @@ export default function Navbar() {
                 paddingTop: navPadding,
                 paddingBottom: navPadding
             }}
-            className="fixed top-0 w-full z-[999] border-b border-white/0 transition-all duration-500"
+            className="fixed top-0 w-full z-999 border-b border-white/0 transition-all duration-500"
         >
             <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${isScrolled ? 'bg-black/20 rounded-full border border-white/10 px-8 mx-4 backdrop-blur-md shadow-lg' : ''}`}>
                 {/* Logo & Brand */}

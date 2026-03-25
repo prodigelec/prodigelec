@@ -34,7 +34,7 @@ export default function ServicePricing({ title, subtitle, description, prices, t
   return (
     <section className="mb-32 relative">
       <div className="text-center mb-16 px-6">
-        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tighter">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 uppercase italic tracking-tighter">
           {title} <span className={`${config.highlightColor} italic`}>{subtitle}</span>
         </h2>
         <p className="text-gray-100 text-sm md:text-lg max-w-2xl mx-auto">

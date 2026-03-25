@@ -110,7 +110,7 @@ export default function ContactInfo() {
             </div>
             <div>
               <h3 className="text-white font-bold uppercase tracking-tight leading-none text-base">Tarifs de déplacement</h3>
-              <p className="text-foreground-subtle text-xs font-medium mt-1 uppercase tracking-widest italic">Intervention (27 & 28)</p>
+              <p className="text-foreground-subtle text-xs font-medium mt-1 uppercase tracking-widest italic">Intervention (27, 28 & 78)</p>
             </div>
           </div>
 
@@ -133,7 +133,7 @@ export default function ContactInfo() {
                 <div className="text-foreground-subtle text-xs font-medium leading-tight">{zone.sub}</div>
               </div>
             ))}
-          </div>  
+          </div>
         </m.div>
       </div>
     </div>

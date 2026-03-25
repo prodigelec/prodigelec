@@ -1,16 +1,18 @@
 "use client"
 import { m } from "framer-motion";
-import { Home, Phone, Gift, Mail } from "lucide-react";
-import { IoKey } from "react-icons/io5";
+import { Home, Mail, Cctv, PhoneCall } from "lucide-react";
+import { MdBlinds } from "react-icons/md";
+import { GiGate } from "react-icons/gi";
 import { FcFlashOn } from "react-icons/fc";
 
 export default function MobileNavbar() {
     const navItems = [
-        { name: 'Accueil', icon: <Home size={20} />, href: '/' },
-        { name: 'Sécurité', icon: <IoKey size={20} />, href: '/services/securite' },
-        { name: 'SOS', icon: <Phone size={22} />, href: 'tel:0638194752', highlight: true },
-        { name: 'Élec', icon: <FcFlashOn size={20} />, href: '/services/electricite' },
-        { name: 'Contact', icon: <Mail size={20} />, href: '/contact' },
+        { name: 'Accueil', icon: <Home size={18} />, href: '/' },
+        { name: 'Sécurité', icon: <Cctv size={18} />, href: '/services/securite' },
+        { name: 'SOS', icon: <PhoneCall size={22} />, href: 'tel:0638194752', highlight: true },
+        { name: 'Élec', icon: <FcFlashOn size={18} />, href: '/services/electricite' },
+        { name: 'Automat.', icon: <GiGate size={18} />, href: '/services/automatismes' },
+        { name: 'Contact', icon: <Mail size={18} />, href: '/contact' },
     ];
 
     return (
@@ -21,14 +23,13 @@ export default function MobileNavbar() {
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 className="bg-[#0b1a2a]/95 backdrop-blur-2xl border-t border-white/10 rounded-t-4xl px-6 py-4 pb-8 shadow-2xl flex items-center justify-between w-full pointer-events-auto"
             >
-                {navItems.map((item, i) => (
+                {navItems.map((item) => (
                     <m.a
                         key={item.name}
                         href={item.href}
                         aria-label={item.name}
                         whileTap={{ scale: 0.9 }}
-                        className={`flex flex-col items-center justify-center min-w-0 flex-1 px-1 transition-all ${item.highlight ? 'bg-primary text-background rounded-xl py-2 shadow-lg shadow-primary/20' : 'text-primary font-medium' 
-                            }`}
+                        className={`flex flex-col items-center justify-center min-w-0 flex-1 px-1 transition-all ${item.highlight ? 'bg-primary text-background rounded-xl py-2 shadow-lg shadow-primary/20' : 'text-primary font-medium'}`}
                     >
                         {item.icon}
                         <span className="text-xs font-bold uppercase tracking-tight mt-1 truncate w-full text-center">

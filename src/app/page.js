@@ -12,26 +12,26 @@ const TestimonialsSection = dynamic(() => import("@/app/components/home/sections
 const ContactCTASection = dynamic(() => import("@/app/components/home/sections/ContactCTASection"));
 
 export const metadata = {
-  title: "PRODIGELEC - Artisan Électricien & Sécurité Électronique | 27 & 28",
-  description: "Expertise en électricité et sécurité électronique avec 23 ans d'expérience. Intervention rapide en Eure (27) et Eure-et-Loir (28) : Broué, Dreux, Chartres & alentours.",
+  title: "PRODIGELEC - Artisan Électricien & Sécurité Électronique | 27, 28 & 78",
+  description: "Expertise en électricité et sécurité électronique avec 23 ans d'expérience. Intervention rapide en Eure (27), Eure-et-Loir (28) et Yvelines (78) : Broué, Dreux, Chartres, Houdan & alentours.",
   keywords: [
     // Électricien par ville
     "Électricien Broué", "Électricien Dreux", "Électricien Chartres", "Électricien Évreux",
-    "Électricien Anet", "Électricien Nonancourt", "Électricien Nogent-le-Roi",
+    "Électricien Anet", "Électricien Nonancourt", "Électricien Nogent-le-Roi", "Électricien Houdan",
     // Sécurité par ville
     "Sécurité électronique Broué", "Sécurité électronique Dreux", "Sécurité électronique Chartres", "Sécurité électronique Évreux",
-    "Sécurité électronique Anet", "Sécurité électronique Nonancourt", "Sécurité électronique Nogent-le-Roi",
+    "Sécurité électronique Anet", "Sécurité électronique Nonancourt", "Sécurité électronique Nogent-le-Roi", "Sécurité électronique Houdan",
     // Termes généraux
-    "Artisan électricien 27", "Artisan électricien 28",
-    "Dépannage électricité Eure", "Dépannage électricité Eure-et-Loir",
+    "Artisan électricien 27", "Artisan électricien 28", "Artisan électricien 78",
+    "Dépannage électricité Eure", "Dépannage électricité Eure-et-Loir", "Dépannage électricité Yvelines",
     "Installation électrique", "PRODIGELEC", "Petaccia Sébastien électricien"
   ],
   alternates: {
     canonical: "https://www.prodigelec.fr/",
   },
   openGraph: {
-    title: "PRODIGELEC - Électricien & Sécurité Électronique | 27 & 28",
-    description: "Expertise locale en Eure et Eure-et-Loir. Dépannage électricité, sécurité électronique et automatismes.",
+    title: "PRODIGELEC - Électricien & Sécurité Électronique | 27, 28 & 78",
+    description: "Expertise locale en Eure, Eure-et-Loir et Yvelines. Dépannage électricité, sécurité électronique et automatismes.",
     url: "https://www.prodigelec.fr/",
   },
 };

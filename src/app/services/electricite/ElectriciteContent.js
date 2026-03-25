@@ -228,7 +228,7 @@ export default function ElectriciteContent() {
         <ServiceUrgency 
           title="Panne ou court-circuit ?" 
           description={
-            <p>Je me déplace rapidement sur <span className="font-bold text-accent">Chartres, Broué, Dreux, Anet, Nonancourt, Nogent-le-Roi, Evreux</span> & leurs alentours. Diagnostic immédiat et réparation sécurisée.</p>
+            <p>Je me déplace rapidement sur <span className="font-bold text-accent">Chartres, Broué, Dreux, Houdan, Anet, Nonancourt, Nogent-le-Roi, Evreux</span> & leurs alentours. Diagnostic immédiat et réparation sécurisée.</p>
           }
           steps={urgencySteps}
           icon={HiBolt}

@@ -6,7 +6,7 @@ const steps = [
   {
     icon: <PhoneCall className="w-6 h-6" />,
     title: "Prise de Contact",
-    description: "Vous m&apos;appelez ou m&apos;envoyez un email. On discute de votre besoin et je vous donne une première estimation ou un rendez-vous.",
+    description: "Vous m'appelez ou m'envoyez un email. On discute de votre besoin et je vous donne une première estimation ou un rendez-vous.",
     color: "text-primary",
     ring: "ring-primary/40",
     glow: "from-primary/30 via-primary/10 to-transparent",

@@ -54,7 +54,7 @@ export default function BrandsSection() {
                             <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
 
                             <m.div
-                                className="flex whitespace-nowrap gap-12 md:gap-24 py-4 w-max"
+                                className="flex whitespace-nowrap gap-8 md:gap-16 lg:gap-24 py-4 w-max"
                                 animate={{
                                     x: cat.reverse ? ["-50%", "0%"] : ["0%", "-50%"]
                                 }}
@@ -70,7 +70,7 @@ export default function BrandsSection() {
                                     <span
                                         key={bIdx}
                                         aria-hidden="true"
-                                        className="text-xl md:text-2xl lg:text-4xl font-black text-white/25 hover:text-white hover:scale-105 transition-all duration-500 cursor-default uppercase italic tracking-tighter"
+                                        className="text-xl md:text-2xl lg:text-3xl font-black text-white/25 hover:text-white hover:scale-105 transition-all duration-500 cursor-default uppercase italic tracking-tighter"
                                     >
                                         {brand}
                                     </span>

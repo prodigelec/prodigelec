@@ -22,7 +22,7 @@ export default function AboutValues() {
     },
     {
       title: "Proximité",
-      desc: "Basé à Broué, j'interviens rapidement en Eure (27) et Eure-et-Loir (28) pour un suivi local de qualité."
+      desc: "Basé à Broué, j'interviens rapidement en Eure (27), Eure-et-Loir (28) et Yvelines (78) pour un suivi local de qualité."
     },
     {
       title: "Conseil & Écoute",

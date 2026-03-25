@@ -12,11 +12,11 @@ export default function Logo({ className = "", boxClassName = "" }) {
       >
         <div className={`relative w-[96px] h-[96px] overflow-hidden rounded-xl bg-linear-to-br from-[#d9d9d9] via-[#f5f5f5] to-[#9ca3af] ring-1 ring-white/30 shadow-[inset_0_2px_6px_rgba(255,255,255,0.5),inset_0_-3px_6px_rgba(0,0,0,0.25),0_8px_18px_rgba(0,0,0,0.35)] transition-colors ${boxClassName}`}>
           <Image
-            src="/prodigelec-logo.svg"
+            src="/logo_camera.png"
             alt="PRODIGELEC Logo"
             fill
             priority
-            className="object-contain object-center scale-[2.1] translate-y-[24px] -translate-x-[10px]"
+            className="object-contain object-center p-2"
           />
         </div>
         <div className="flex flex-col -gap-1 mt-3">

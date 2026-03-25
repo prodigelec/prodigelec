@@ -80,7 +80,7 @@ export default function HeroSection() {
   const safeSlide = currentSlide % slides.length;
 
   return (
-    <section className="relative mt-36 h-[80vh] overflow-hidden bg-black">
+    <section className="relative mt-36 lg:mt-0 h-[80vh] lg:h-screen overflow-hidden bg-black">
       <HeroBackground slides={slides} currentSlide={safeSlide} />
 
       <HeroNavigation prevSlide={prevSlide} nextSlide={nextSlide} />

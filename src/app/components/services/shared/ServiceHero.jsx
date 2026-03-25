@@ -33,7 +33,7 @@ export default function ServiceHero({ icon: Icon, title, subtitle, description, 
       <m.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-3xl md:text-6xl font-black text-white mb-4 md:mb-6"
+        className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-4 md:mb-6"
       >
         {title} <span className={config.highlightColor}>{subtitle}</span>
       </m.h1>

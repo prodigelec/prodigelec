@@ -24,7 +24,7 @@ export default function AboutStory() {
             L&apos;artisanat est pour moi une histoire de famille. J&apos;ai travaillé pendant <strong className="text-white">23 ans</strong> aux côtés de mes parents et de mes frères au sein de notre société familiale à Paris. En tant qu&apos;aîné, c&apos;est auprès de mon père que j&apos;ai appris l&apos;exigence du terrain et l&apos;excellence technique.
           </p>
           <p>
-            Aujourd&apos;hui, fort de ces années d&apos;expérience, j&apos;interviens en <strong className="text-primary">Eure (27) et Eure-et-Loir (28)</strong> avec <BrandName />. Je poursuis cette tradition familiale avec la même exigence et le même savoir-faire qui ont fait nos succès.
+            Aujourd&apos;hui, fort de ces années d&apos;expérience, j&apos;interviens en <strong className="text-primary">Eure (27), Eure-et-Loir (28) et dans une partie des Yvelines (78)</strong> avec <BrandName />. Je poursuis cette tradition familiale avec la même exigence et le même savoir-faire qui ont fait nos succès.
           </p>
 
         </div>
