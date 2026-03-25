@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-   <rect width="32" height="32" rx="4" fill="#1e3a5f" />
-   <path d="M18 4L8 18h6l-2 10 10-14h-6l2-10z" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.5" />
+  <!-- Fond bleu nuit -->
+  <rect width="32" height="32" rx="6" fill="#0b1a2a"/>
+  <!-- Corps caméra -->
+  <rect x="3" y="11" width="26" height="17" rx="3" fill="#d4a017"/>
+  <!-- Bosse viewfinder -->
+  <rect x="10" y="7" width="7" height="5" rx="2" fill="#d4a017"/>
+  <!-- Flash -->
+  <rect x="20" y="8" width="5" height="3" rx="1.5" fill="#f59e0b"/>
+  <!-- Objectif extérieur -->
+  <circle cx="16" cy="20" r="6" fill="#0b1a2a"/>
+  <!-- Objectif intérieur reflet -->
+  <circle cx="16" cy="20" r="4" fill="#1e3a5f"/>
+  <circle cx="16" cy="20" r="2" fill="#d4a017" opacity="0.6"/>
 </svg>
