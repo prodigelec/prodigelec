@@ -7,7 +7,7 @@ export default function HeroContent({ slides, currentSlide }) {
   const router = useRouter();
 
   return (
-    <div className="relative z-20 h-full flex items-center justify-center">
+    <div className="relative z-20 h-full flex items-center justify-center pt-24 md:pt-40">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center text-white w-full">
 
         <AnimatePresence mode='wait'>
