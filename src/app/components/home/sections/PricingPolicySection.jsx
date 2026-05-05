@@ -4,37 +4,38 @@ import { m, AnimatePresence } from "framer-motion";
 import { MapPin, CheckCircle2, AlertCircle, ChevronRight, X } from "lucide-react";
 
 const CITIES_28 = [
-  "Broué", "Dreux", "Saint-Rémy-sur-Avre", "Anet", "Nogent-le-Roi", "Maintenon", "Épernon", "Châteauneuf-en-Thymerais",
+  "Broué", "Dreux", "Saint-Rémy-sur-Avre", "Saint-Lubin-des-Joncherets", "Anet", "Nogent-le-Roi", "Maintenon",
   "Tremblay-les-Villages", "Dampierre-sur-Avre", "Prudemanche", "Abondant", "Bû", "Cherisy", "Marchezais", "Oulins",
-  "Serville", "Vernouillet", "Gallardon", "Sorel-Moussel", "Saussay", "Boutigny-Prouais", "Champagne", "Goussainville",
+  "Serville", "Vernouillet", "Sorel-Moussel", "Saussay", "Boutigny-Prouais", "Champagne", "Goussainville",
   "Havelu", "Ecluzelles", "Mézières-en-Drouais", "Luray", "Sainte-Gemme-Moronval", "Garnay", "Tréon", "Aunay-sous-Crécy",
-  "Crécy-Couvé", "Saulnières", "Thimert-Gâtelles", "Germainville", "Boncourt", "Montreuil", "Saint-Ouen-Marchefroy",
-  "Le Mesnil-Simon", "La Chapelle-Forainvilliers"
+  "Crécy-Couvé", "Saulnières", "Germainville", "Boncourt", "Montreuil", "Saint-Ouen-Marchefroy",
+  "Le Mesnil-Simon", "La Chapelle-Forainvilliers","Châteauneuf-en-Thymerais","Thimert-Gâtelles",
 ];
 
 const CITIES_27 = [
-  "Ezy-sur-Eure", "Ivry-la-Bataille", "Saint-André-de-l'Eure", "Marcilly-sur-Eure", "Nonancourt", "Saint-Lubin-des-Joncherets",
+  "Ezy-sur-Eure", "Ivry-la-Bataille", "Saint-André-de-l'Eure", "Marcilly-sur-Eure", "Nonancourt",
   "La Madeleine-de-Nonancourt", "Saint-Germain-sur-Avre", "La Couture-Boussey", "Garennes-sur-Eure", "Bueil", "Croth",
-  "L'Habit", "Mouettes", "Mousseaux-Neuville"
+  "L'Habit", "Mouettes", "Mousseaux-Neuville","Pacy-sur-Eure",
 ];
 
 const CITIES_78 = [
   "Houdan", "Maulette", "Richebourg", "Tacoignières", "Orgerus", "Septeuil",
-  "Condé-sur-Vesgre", "Bourdonné", "Gambais", "Dannemarie", "Boutigny-Prouais"
+  "Condé-sur-Vesgre", "Bourdonné", "Gambais", "Dannemarie",
+  "Plaisir", "Montfort l'Amaury", "Thoiry", "Rambouillet"
 ];
 
 const CITIES_28_ZONE3 = [
   "Chartres", "Lucé", "Mainvilliers", "Luisant", "Lèves", "Auneau-Bleury-Saint-Symphorien",
-  "Courville-sur-Eure", "Senonches"
+  "Courville-sur-Eure",  "Gallardon", "Senonches", "Épernon"
 ];
 
 const CITIES_27_ZONE3 = [
-  "Évreux", "Vernon", "Saint-Marcel", "Pacy-sur-Eure", "Verneuil d'Avre et d'Iton",
+  "Évreux", "Vernon", "Saint-Marcel",  "Verneuil d'Avre et d'Iton",
   "Breteuil", "Conches-en-Ouche", "Mesnils-sur-Iton"
 ];
 
 const CITIES_78_ZONE3 = [
-  "Mantes-la-Jolie", "Rambouillet", "Montfort-l'Amaury", "Thoiry", "Gargenville", "Plaisir", "Versailles"
+  "Mantes-la-Jolie","Gargenville", "Versailles"
 ];
 
 export default function PricingPolicySection() {
@@ -149,12 +150,12 @@ export default function PricingPolicySection() {
               Zone 3 & 4 (+30km)
             </div>
 
-            <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Frais Déductibles</h3>
-            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Au-delà de 30km, des frais de déplacement s&apos;appliquent. Ils sont <span className="text-white font-semibold">déduits de votre facture</span> si vous acceptez le devis.</p>
+            <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Frais de Déplacement</h3>
+            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Au-delà de 30km, des frais de déplacement s&apos;appliquent pour toute intervention.</p>
 
             <div className="bg-accent/10 border border-accent/20 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
               <p className="text-xs md:text-sm text-accent font-medium">
-                <span className="font-bold">✨ Avantage Client :</span> Ces frais sont <span className="underline decoration-2 underline-offset-2">intégralement déduits</span> de votre facture finale si vous acceptez le devis.
+                <span className="font-bold">✨ Transparence :</span> Les frais sont annoncés à l&apos;avance, sans mauvaise surprise.
               </p>
             </div>
 
@@ -204,7 +205,7 @@ export default function PricingPolicySection() {
 
               <div className="flex items-center gap-3 pt-4 border-t border-white/10">
                 <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                <span className="font-bold text-xs md:text-sm text-white">Remboursé si travaux effectués</span>
+                <span className="font-bold text-xs md:text-sm text-white">Tarif clair et sans surprise</span>
               </div>
             </div>
           </m.div>
@@ -245,12 +246,12 @@ export default function PricingPolicySection() {
                   {activeModal === 'free' ? 'Zone 1 & 2' : 'Zone 3 & 4'}
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white">
-                  {activeModal === 'free' ? "Zone d'intervention Gratuite" : "Zone Payante (Déductible)"}
+                  {activeModal === 'free' ? "Zone d'intervention Gratuite" : "Zone avec Frais de déplacement"}
                 </h3>
                 <p className="text-gray-100 mt-2">
                   {activeModal === 'free'
                     ? "Liste complète des villes où le devis est 100% offert."
-                    : "Liste des villes nécessitant une participation aux frais (déductible du devis)."}
+                    : "Liste des villes nécessitant une participation aux frais de déplacement."}
                 </p>
               </div>
 

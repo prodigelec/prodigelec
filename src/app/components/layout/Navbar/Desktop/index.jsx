@@ -4,7 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { FcFlashOn } from "react-icons/fc";
 import { GiGate } from "react-icons/gi";
-import { Cctv } from "lucide-react";
+import { Cctv, PhoneCall } from "lucide-react";
 import Logo from "../Logo";
 
 export default function Navbar() {
@@ -84,9 +84,9 @@ export default function Navbar() {
                 paddingTop: navPadding,
                 paddingBottom: navPadding
             }}
-            className="fixed top-0 w-full z-999 border-b border-white/0 transition-all duration-500"
+            className="fixed top-0 w-full z-9999 border-b border-white/0 transition-all duration-500"
         >
-            <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${isScrolled ? 'bg-black/20 rounded-full border border-white/10 px-8 mx-4 backdrop-blur-md shadow-lg' : ''}`}>
+            <div className={`container mx-auto px-6 flex items-center justify-between transition-all duration-500 ${isScrolled ? 'bg-black/20 rounded-full border border-white/10 px-8 mx-4 backdrop-blur-md shadow-lg' : ''}`}>
                 {/* Logo & Brand */}
                 <Logo className={`${isScrolled ? 'scale-90' : 'scale-100'} transition-transform duration-500`} />
 
@@ -141,15 +141,25 @@ export default function Navbar() {
                 <m.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="flex items-center gap-4"
+                    className="flex items-center gap-3 lg:gap-4"
                 >
+                    <m.a
+                        href="tel:0638194752"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="hidden md:flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white h-10 w-[220px] px-8 rounded-full font-bold text-sm text-center shadow-lg shadow-rose-600/20 transition-all whitespace-nowrap"
+                    >
+                        <PhoneCall className="w-4 h-4 animate-pulse" />
+                        <span>Dépannage : 06 38 19 47 52</span>
+                    </m.a>
+
                     <m.button
                         onClick={() => {
                             window.location.href = '/contact#contact-form';
                         }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="relative overflow-hidden bg-primary text-background px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all group"
+                        className="relative overflow-hidden bg-primary text-background h-10 w-[160px] rounded-full font-bold text-sm shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all group flex items-center justify-center whitespace-nowrap"
                     >
                         <span className="relative z-10">DEVIS GRATUIT</span>
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

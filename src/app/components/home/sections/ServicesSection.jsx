@@ -19,13 +19,13 @@ export default function ServicesSection() {
             <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-accent/10 ring-1 ring-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.35)] flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:bg-accent/20 transition-all mx-auto md:mx-0 relative z-10">
               <Zap className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
             </div>
-            <h3 className="text-lg md:text-2xl font-bold mb-3 sm:mb-4 text-center md:text-left text-foreground group-hover:text-accent transition-all relative z-10">Électricité</h3>
+            <h3 className="text-lg md:text-2xl font-bold mb-3 sm:mb-4 text-center md:text-left text-foreground group-hover:text-accent transition-all relative z-10">Électricité & Dépannage</h3>
             <p className="text-gray-100 leading-relaxed text-sm md:text-base text-center md:text-left relative z-10 group-hover:text-white mb-5 grow">
-              Dépannage électrique, mise aux normes, tableaux, prises, éclairage LED.
+              Dépannage urgent, recherche de panne, mise aux normes et tableaux électriques.
             </p>
             <div className="relative z-10 mb-6">
               <ul className="grid grid-cols-1 gap-2 text-xs md:text-sm text-gray-100">
-                {["Intervention rapide", "Devis clair", "Travail soigné"].map((item) => (
+                {["Dépannage d'urgence", "Intervention rapide", "Devis gratuit"].map((item) => (
                   <li key={item} className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-accent/80" />
                     <span>{item}</span>

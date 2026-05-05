@@ -15,7 +15,16 @@ const zones = [
 ];
 
 const cities = [
-  { name: "Broué", coords: BROUE_COORDS, isBase: true }
+  { name: "Broué (Siège)", coords: BROUE_COORDS, isBase: true },
+  { name: "Dreux", coords: [48.7333, 1.3667], isBase: false },
+  { name: "Houdan", coords: [48.791, 1.6013], isBase: false },
+  { name: "Anet", coords: [48.8553, 1.4394], isBase: false },
+  { name: "Montfort l'Amaury", coords: [48.7766, 1.8080], isBase: false },
+  { name: "Évreux", coords: [49.0241, 1.1508], isBase: false },
+  { name: "Chartres", coords: [48.4438, 1.489], isBase: false },
+  { name: "Plaisir", coords: [48.818, 1.947], isBase: false },
+  { name: "Neauphle-le-Château", coords: [48.814, 1.902], isBase: false },
+  { name: "Saint-André-de-l'Eure", coords: [48.905, 1.276], isBase: false }
 ];
 
 function ChangeView({ center, zoom }) {
@@ -113,9 +122,9 @@ export default function InterventionMap() {
 
   const calculatePrice = (distanceKm) => {
     if (distanceKm <= 5.5) return "20€";
-    if (distanceKm <= 30.5) return "30€ (Déductible*)";
-    if (distanceKm <= 40.5) return "50€ (Déductible*)";
-    if (distanceKm <= 60.5) return "70€ (Déductible*)";
+    if (distanceKm <= 30.5) return "30€";
+    if (distanceKm <= 40.5) return "50€";
+    if (distanceKm <= 60.5) return "70€";
     return "Sur devis (> 60km)";
   };
 
@@ -267,7 +276,7 @@ export default function InterventionMap() {
               <div className="flex items-start gap-1.5">
                 <span className="text-xs font-bold text-primary shrink-0">*</span>
                 <p className="text-xs text-gray-100 leading-relaxed">
-                  Ces frais sont <span className="text-white font-bold">déduits de votre facture</span> si vous acceptez le devis.
+                  Frais appliqués en cas de déplacement.
                 </p>
               </div>
             )}

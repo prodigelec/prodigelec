@@ -20,8 +20,8 @@ export const metadata = {
     default: "PRODIGELEC - Électricien & Sécurité | Eure-et-Loir, Eure, Yvelines",
     template: "%s | PRODIGELEC"
   },
-  description: "PRODIGELEC à Broué (28). Dépannage électricité et sécurité sur Dreux, Chartres, Évreux, Houdan et alentours (28, 27, 78).",
-  keywords: ["Électricien Broué", "Sécurité & Automatismes Broué", "Installation électrique", "PRODIGELEC"],
+  description: "PRODIGELEC à Broué (28). Dépannage électricité et sécurité sur Dreux, Chartres, Évreux, Houdan, Plaisir, Montfort l'Amaury et alentours (28, 27, 78).",
+  keywords: ["Électricien Broué", "Électricien Dreux", "Électricien Houdan", "Électricien Montfort l'Amaury", "Sécurité & Automatismes", "Dépannage électricité", "PRODIGELEC"],
   authors: [{ name: "PRODIGELEC", url: "https://www.prodigelec.fr" }],
   creator: "PRODIGELEC",
   publisher: "PRODIGELEC",

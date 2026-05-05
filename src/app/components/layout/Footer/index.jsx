@@ -50,13 +50,17 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-bold mb-3 md:mb-6 text-sm md:text-base">Contact</h3>
+            <h3 className="text-white font-bold mb-3 md:mb-6 text-sm md:text-base">Contact & Zone</h3>
             <ul className="space-y-2 md:space-y-4">
               <li className="flex items-start gap-3 text-foreground-subtle text-xs md:text-sm">
                 <MapPin size={16} className="text-primary shrink-0 mt-0.5 md:w-[18px] md:h-[18px]" />
-                <span>10 Rue Georges Bréant<br />28410 Broué</span>
+                <span>
+                  10 Rue Georges Bréant<br />28410 Broué<br /><br />
+                  <strong className="text-white">Zones d&apos;intervention :</strong><br />
+                  Houdan, Évreux, Dreux, Broué, Anet, Montfort l&apos;Amaury, Neauphle-le-Château, Plaisir, Saint-André-de-l&apos;Eure, Chartres et alentours (28, 27, 78).
+                </span>
               </li>
-              <li className="flex items-center gap-3 text-foreground-subtle text-xs md:text-sm">
+              <li className="flex items-center gap-3 text-foreground-subtle text-xs md:text-sm mt-4">
                 <Phone size={16} className="text-primary shrink-0 md:w-[18px] md:h-[18px]" />
                 <a href="tel:0638194752" className="hover:text-white transition-colors">06 38 19 47 52</a>
               </li>

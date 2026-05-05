@@ -54,34 +54,36 @@ export default function HeroContent({ slides, currentSlide }) {
               </m.div>
             </div>
 
-            {/* CTA Buttons - Hidden on mobile */}
+            {/* CTA Buttons - Visible on all devices */}
             <m.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 pt-4 md:pt-6 lg:pt-10"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 md:pt-6 lg:pt-10 w-full px-4 sm:px-0"
             >
               <Button
-                onClick={() => router.push('/contact#contact-form')}
+                onClick={() => window.location.href = 'tel:0638194752'}
                 variant="primary"
                 icon={
                   <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 }
+                className="!bg-rose-600 hover:!bg-rose-700 shadow-rose-600/30 hover:shadow-rose-600/50 !text-white !border-none w-full sm:w-auto"
               >
-                Nous contacter
+                Urgence : 06 38 19 47 52
               </Button>
 
               <Button
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                variant="primary"
+                variant="secondary"
                 icon={
                   <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 }
+                className="w-full sm:w-auto bg-black/40 hover:bg-black/60 backdrop-blur-md"
               >
                 Voir nos services
               </Button>

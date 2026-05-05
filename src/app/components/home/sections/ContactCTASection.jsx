@@ -81,8 +81,8 @@ export default function ContactCTASection() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-1">Zone d&apos;intervention</h3>
-                  <p className="text-foreground-subtle text-sm mb-2">Devis gratuit dans un rayon de 30km autour de Broué</p>
-                  <span className="text-sm md:text-base text-gray-100 font-medium">Chartres, Broué, Dreux, Houdan, Anet, Nonancourt, Évreux & leurs alentours (28/27/78)</span>
+                  <p className="text-foreground-subtle text-sm mb-2">Devis gratuit dans un rayon de 30km et jusqu&apos;à Plaisir</p>
+                  <span className="text-sm md:text-base text-gray-100 font-medium">Chartres, Broué, Dreux, Houdan, Anet, Montfort l&apos;Amaury, Neauphle-le-Château, Plaisir, Saint-André-de-l&apos;Eure, Évreux & alentours (28/27/78)</span>
                 </div>
               </div>
 

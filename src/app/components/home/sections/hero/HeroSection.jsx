@@ -15,8 +15,8 @@ const slides = [
   },
   {
     id: 2,
-    title: "Électricité Générale",
-    subtitle: "Vos installations fiables et sécurisées",
+    title: "Dépannage & Électricité",
+    subtitle: "Intervention rapide et mise aux normes",
     image: "/img_carousel_hero_home/tableau-electrique.optimized.jpg",
     icon: "⚡"
   },
