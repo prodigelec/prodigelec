@@ -43,7 +43,7 @@ function Bandeau() {
       <LogoBadge />
       <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2 }}>
         <span style={{ color: GOLD, fontSize: 10, fontWeight: 700, letterSpacing: 1 }}>Électricité · Sécurité Électronique</span>
-        <span style={{ color: "#ffffff40", fontSize: 9, letterSpacing: 1 }}>Eure · Eure-et-Loir</span>
+        <span style={{ color: "#ffffff40", fontSize: 9, letterSpacing: 1 }}>Eure · Eure-et-Loir · Yvelines</span>
       </div>
     </div>
   );
@@ -58,7 +58,7 @@ function BandeauBas() {
       alignItems: "center",
       justifyContent: "space-between",
     }}>
-      <span style={{ color: DARK, fontWeight: 800, fontSize: 12 }}>📞 06 XX XX XX XX</span>
+      <span style={{ color: DARK, fontWeight: 800, fontSize: 12 }}>📞 06 38 19 47 52</span>
       <span style={{ color: DARK, fontWeight: 700, fontSize: 11 }}>📍 Chartres · Dreux · Évreux</span>
       <span style={{ color: DARK, fontWeight: 800, fontSize: 11 }}>🌐 prodigelec.fr</span>
     </div>
@@ -355,7 +355,7 @@ function TemplateConseil({ conseil, contexte }) {
         </div>
         <div>
           <div style={{ color: GOLD, fontSize: 12, fontWeight: 700 }}>Sébastien PETACCIA — PRODIGELEC</div>
-          <div style={{ color: "#475569", fontSize: 10 }}>Électricien & Sécurité Électronique · 28 & 27</div>
+          <div style={{ color: "#475569", fontSize: 10 }}>Électricien & Sécurité Électronique · 28, 27 & 78</div>
         </div>
       </div>
 
