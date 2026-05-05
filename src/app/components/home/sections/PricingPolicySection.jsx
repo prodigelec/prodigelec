@@ -151,7 +151,7 @@ export default function PricingPolicySection() {
             </div>
 
             <h3 className="text-lg md:text-2xl font-bold text-white mb-2">Frais de Déplacement</h3>
-            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Au-delà de 30km, des frais de déplacement s&apos;appliquent pour toute intervention.</p>
+            <p className="text-sm md:text-base text-foreground-subtle mb-4 md:mb-6 grow">Au-delà de 30km, des frais de déplacement s&apos;appliquent pour les devis.</p>
 
             <div className="bg-accent/10 border border-accent/20 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
               <p className="text-xs md:text-sm text-accent font-medium">
