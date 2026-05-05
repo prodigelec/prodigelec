@@ -21,7 +21,7 @@ const CITIES_27 = [
 const CITIES_78 = [
   "Houdan", "Maulette", "Richebourg", "Tacoignières", "Orgerus", "Septeuil",
   "Condé-sur-Vesgre", "Bourdonné", "Gambais", "Dannemarie",
-  "Plaisir", "Montfort l'Amaury", "Thoiry", "Rambouillet"
+  "Plaisir", "Montfort l'Amaury", "Thoiry", "Mantes-la-Jolie"
 ];
 
 const CITIES_28_ZONE3 = [
@@ -35,7 +35,7 @@ const CITIES_27_ZONE3 = [
 ];
 
 const CITIES_78_ZONE3 = [
-  "Mantes-la-Jolie","Gargenville", "Versailles"
+  "Gargenville", "Versailles", "Rambouillet"
 ];
 
 export default function PricingPolicySection() {
