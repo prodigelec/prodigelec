@@ -4,7 +4,7 @@ import ContactForm from "./components/sections/ContactForm";
 
 export const metadata = {
   title: "Contactez PRODIGELEC - Devis Gratuit Électricité & Sécurité | 27, 28 & 78",
-  description: "23 ans d'expérience à votre service. Besoin d'un dépannage urgent ? Contactez PRODIGELEC au 06 38 19 47 52. Intervention rapide sur l'Eure (27), l'Eure-et-Loir (28) et les Yvelines (78).",
+  description: "Contactez PRODIGELEC au 06 38 19 47 52. Devis gratuit, dépannage urgent. Intervention rapide sur Dreux, Chartres, Évreux, Houdan & alentours (27, 28, 78).",
   keywords: [
     "contact PRODIGELEC",
     "devis gratuit électricien Broué",

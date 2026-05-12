@@ -1,8 +1,9 @@
 import ElectriciteContent from "./ElectriciteContent";
+import ServicePageJsonLd from "@/app/components/ServicePageJsonLd";
 
 export const metadata = {
   title: "Électricien 27, 28 & 78 - Dépannage & Installation Électrique | PRODIGELEC",
-  description: "Électricien qualifié en Eure (27), Eure-et-Loir (28) et Yvelines (78). Dépannage, mise aux normes NF C 15-100, éclairage LED, VMC, alarme, vidéophonie. Intervention rapide. Devis gratuit.",
+  description: "Électricien qualifié en 27, 28 & 78. Dépannage, mise aux normes NF C 15-100, éclairage LED, VMC, domotique. Intervention rapide. Devis gratuit.",
   keywords: [
     // Électricien par ville
     "Électricien Broué", "Électricien Dreux", "Électricien Chartres", "Électricien Évreux",
@@ -46,11 +47,54 @@ export const metadata = {
   },
   openGraph: {
     title: "Électricien 27, 28 & 78 - Dépannage & Installation | PRODIGELEC",
-    description: "Dépannage, mise aux normes, éclairage LED, VMC, alarme et vidéophonie en Eure (27), Eure-et-Loir (28) et Yvelines (78). Intervention rapide. Devis gratuit.",
+    description: "Dépannage, mise aux normes NF C 15-100, éclairage LED, VMC, domotique en Eure (27), Eure-et-Loir (28) et Yvelines (78). Devis gratuit.",
     url: "https://www.prodigelec.fr/services/electricite",
+    images: [{ url: "https://www.prodigelec.fr/img_carousel_electric_page/eclairage-led.jpg", width: 1200, height: 630, alt: "Éclairage LED PRODIGELEC" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Électricien 27, 28 & 78 - PRODIGELEC",
+    description: "Dépannage, mise aux normes NF C 15-100, éclairage LED, VMC, domotique. Intervention rapide. Devis gratuit.",
+    images: ["https://www.prodigelec.fr/img_carousel_electric_page/eclairage-led.jpg"],
   },
 };
 
+const faqs = [
+  {
+    question: "Quels sont les tarifs pour un dépannage électrique ?",
+    answer: "Les tarifs varient selon la nature de l'intervention. Je fournis un devis gratuit avant toute intervention. Si vous acceptez le devis et que j'effectue les travaux, la facturation inclut au minimum 1 heure de main d'œuvre et un déplacement, sans surprise."
+  },
+  {
+    question: "Intervenez-vous en urgence le week-end ?",
+    answer: "Oui, j'interviens sur rendez-vous le samedi et en urgence après 19h ainsi que le dimanche pour les pannes nécessitant une intervention immédiate (court-circuit, coupure totale, etc.)."
+  },
+  {
+    question: "Qu'est-ce que la norme NF C 15-100 ?",
+    answer: "La norme NF C 15-100 régit toutes les installations électriques en France. Elle garantit la sécurité des personnes et des biens. Je m'assure que toutes mes installations respectent cette norme avec protection différentielle 30mA, mise à la terre et tableaux conformes."
+  },
+  {
+    question: "Quelle est la durée de garantie sur vos interventions ?",
+    answer: "Pour les travaux de mise en conformité, je garantis 2 ans selon les normes en vigueur. Pour les dépannages, je garantis la main d'œuvre et le matériel installé. Le matériel installé bénéficie de la garantie constructeur (2 à 5 ans selon les équipements)."
+  },
+  {
+    question: "Faut-il couper le courant avant votre arrivée ?",
+    answer: "Pour une panne totale, le courant est déjà coupé. Pour un problème localisé (prise qui chauffe, disjoncteur qui saute), vous pouvez couper uniquement le circuit concerné par sécurité. Je vous conseillerai par téléphone selon votre situation."
+  }
+];
+
 export default function ElectricitePage() {
-  return <ElectriciteContent />;
+  return (
+    <>
+      <ServicePageJsonLd
+        service={{
+          name: "Électricité Générale",
+          description: "Dépannage électrique, mise aux normes NF C 15-100, éclairage LED, chauffage électrique, VMC, domotique en Eure-et-Loir, Eure et Yvelines."
+        }}
+        breadcrumbName="Électricité"
+        pageUrl="https://www.prodigelec.fr/services/electricite"
+        faqs={faqs}
+      />
+      <ElectriciteContent />
+    </>
+  );
 }

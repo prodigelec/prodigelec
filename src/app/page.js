@@ -13,7 +13,7 @@ const ContactCTASection = dynamic(() => import("@/app/components/home/sections/C
 
 export const metadata = {
   title: "PRODIGELEC - Artisan Électricien & Sécurité Électronique | 27, 28 & 78",
-  description: "Expertise en électricité et sécurité électronique avec 23 ans d'expérience. Intervention rapide en Eure (27), Eure-et-Loir (28) et Yvelines (78) : Broué, Dreux, Chartres, Houdan & alentours.",
+  description: "Artisan électricien & sécurité électronique, 23 ans d'expérience. Intervention rapide en Eure (27), Eure-et-Loir (28) et Yvelines (78). Devis gratuit.",
   keywords: [
     // Électricien par ville
     "Électricien Broué", "Électricien Dreux", "Électricien Chartres", "Électricien Évreux",

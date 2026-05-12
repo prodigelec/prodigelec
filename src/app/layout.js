@@ -52,6 +52,12 @@ export const metadata = {
     apple: [{ url: "/favicon-512.png", sizes: "180x180", type: "image/png" }],
   },
   verification: { google: "w5rAOBeW-q78ZcjmJWRltGvSvm92EYiSSSo5CfP6Zo0" },
+  twitter: {
+    card: "summary_large_image",
+    title: "PRODIGELEC - Électricien & Sécurité | 27, 28 & 78",
+    description: "PRODIGELEC à Broué (28). Dépannage électricité et sécurité sur Dreux, Chartres, Évreux, Houdan et alentours (28, 27, 78).",
+    images: ["https://www.prodigelec.fr/logo_camera.png"],
+  },
 };
 
 export default function RootLayout({ children }) {

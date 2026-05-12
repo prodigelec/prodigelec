@@ -5,7 +5,7 @@ import AboutCTA from "./components/sections/AboutCTA";
 
 export const metadata = {
   title: "À Propos de PRODIGELEC - Artisan Électricien & Sécurité | Eure-et-Loir, Eure, Yvelines",
-  description: "Découvrez le parcours de Petaccia Sébastien, artisan électricien avec 23 ans d'expérience. Fondateur de PRODIGELEC, expert en Eure (27), Eure-et-Loir (28) et Yvelines (78).",
+  description: "Petaccia Sébastien, fondateur de PRODIGELEC. 23 ans d'expertise en électricité et sécurité en Eure (27), Eure-et-Loir (28) et Yvelines (78).",
   keywords: [
     "Petaccia Sébastien",
     "PRODIGELEC",
