@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import Link from "next/link";
+import { cities } from "@/app/data/cities";
 import ProdigelecMonogram from "@/app/components/ui/ProdigelecMonogram";
 
 export default function Footer() {
@@ -69,7 +70,17 @@ export default function Footer() {
                 <span>
                   10 Rue Georges Bréant<br />28410 Broué<br /><br />
                   <strong className="text-white">Zones d&apos;intervention :</strong><br />
-                  Houdan, Évreux, Dreux, Broué, Anet, Montfort l&apos;Amaury, Neauphle-le-Château, Plaisir, Saint-André-de-l&apos;Eure, Chartres et alentours (28, 27, 78).
+                  <span className="flex flex-wrap gap-1 mt-1">
+                    {cities.map((city) => (
+                      <Link
+                        key={city.slug}
+                        href={`/electricien/${city.slug}`}
+                        className="hover:text-primary transition-colors underline-offset-2 hover:underline"
+                      >
+                        {city.name}
+                      </Link>
+                    )).reduce((acc, el, i) => i === 0 ? [el] : [...acc, <span key={`sep-${i}`}>, </span>, el], [])}
+                  </span>
                 </span>
               </li>
               <li className="flex items-center gap-3 text-foreground-subtle text-xs md:text-sm mt-4">

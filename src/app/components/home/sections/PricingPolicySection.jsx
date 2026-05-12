@@ -2,6 +2,23 @@
 import { useState } from 'react';
 import { m, AnimatePresence } from "framer-motion";
 import { MapPin, CheckCircle2, AlertCircle, ChevronRight, X } from "lucide-react";
+import Link from "next/link";
+import { cities } from "@/app/data/cities";
+
+const citySlugMap = Object.fromEntries(cities.map(c => [c.name, c.slug]));
+
+function CityBadge({ name }) {
+  const slug = citySlugMap[name];
+  const base = "px-3 py-1.5 rounded-lg bg-white/5 text-sm border transition-colors";
+  if (slug) {
+    return (
+      <Link href={`/electricien/${slug}`} className={`${base} text-primary border-primary/20 hover:border-primary/50 hover:bg-primary/10`}>
+        {name}
+      </Link>
+    );
+  }
+  return <span className={`${base} text-gray-100 border-white/5 hover:border-white/20`}>{name}</span>;
+}
 
 const CITIES_28 = [
   "Broué", "Dreux", "Saint-Rémy-sur-Avre", "Saint-Lubin-des-Joncherets", "Anet", "Nogent-le-Roi", "Maintenon",
@@ -265,9 +282,7 @@ export default function PricingPolicySection() {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {(activeModal === 'free' ? CITIES_28 : CITIES_28_ZONE3).map(city => (
-                      <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-100 border border-white/5 hover:border-white/20 transition-colors">
-                        {city}
-                      </span>
+                      <CityBadge key={city} name={city} />
                     ))}
                   </div>
                 </div>
@@ -281,9 +296,7 @@ export default function PricingPolicySection() {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {(activeModal === 'free' ? CITIES_27 : CITIES_27_ZONE3).map(city => (
-                      <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-100 border border-white/5 hover:border-white/20 transition-colors">
-                        {city}
-                      </span>
+                      <CityBadge key={city} name={city} />
                     ))}
                   </div>
                 </div>
@@ -297,9 +310,7 @@ export default function PricingPolicySection() {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {(activeModal === 'free' ? CITIES_78 : CITIES_78_ZONE3).map(city => (
-                      <span key={city} className="px-3 py-1.5 rounded-lg bg-white/5 text-sm text-gray-100 border border-white/5 hover:border-white/20 transition-colors">
-                        {city}
-                      </span>
+                      <CityBadge key={city} name={city} />
                     ))}
                   </div>
                 </div>
