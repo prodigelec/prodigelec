@@ -54,7 +54,7 @@ const stats = [
 
 export default function CityPageContent({ city }) {
   return (
-    <main className="min-h-screen bg-background text-foreground pt-20 pb-8 mt-8 md:pt-24 md:pb-20 md:mt-16 overflow-x-hidden">
+    <main className="min-h-screen bg-background text-foreground pt-20 pb-8 mt-16 md:pt-24 md:pb-20 md:mt-16 overflow-x-hidden">
 
       {/* ── HERO ── */}
       <section className="relative max-w-7xl mx-auto px-6 mb-10 md:mb-20">
