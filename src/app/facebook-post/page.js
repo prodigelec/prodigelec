@@ -349,12 +349,206 @@ function TemplateConseil({ conseil, contexte }) {
 }
 
 /* ────────────────────────────────────────
+   COUVERTURE FACEBOOK — 820 × 312 px
+──────────────────────────────────────── */
+function CouvertureFacebook() {
+  const services = [
+    {
+      icon: "⚡",
+      color: "#F59E0B",
+      gradient: "linear-gradient(135deg, #1c1200 0%, #2a1c00 100%)",
+      border: "rgba(245,158,11,0.25)",
+      title: "Électricité Générale",
+      image: "/img_carousel_hero_home/tableau-electrique.optimized.jpg",
+      items: ["Dépannage & mise aux normes NF C 15-100", "Tableau électrique & disjoncteurs", "Éclairage LED, VMC & chauffage"],
+    },
+    {
+      icon: "🔒",
+      color: "#C9A227",
+      gradient: "linear-gradient(135deg, #130f00 0%, #1e1800 100%)",
+      border: "rgba(201,162,39,0.25)",
+      title: "Sécurité Électronique",
+      image: "/img_carousel_securite_page/videophonie_digicode.jpg",
+      items: ["Digicode & contrôle d'accès", "Alarme & vidéosurveillance HD", "Visiophone & interphone"],
+    },
+    {
+      icon: "⚙️",
+      color: "#818cf8",
+      gradient: "linear-gradient(135deg, #07071a 0%, #0d0d2a 100%)",
+      border: "rgba(129,140,248,0.25)",
+      title: "Automatismes",
+      image: "/img_carousel_hero_home/Volet_Battant.avif",
+      items: ["Volets roulants & battants motorisés", "Portails automatiques", "Portes de garage sectionnelles"],
+    },
+  ];
+
+  return (
+    <div style={{
+      width: 820, height: 312,
+      display: "flex",
+      overflow: "hidden",
+      fontFamily: "'Sora', 'Inter', sans-serif",
+    }}>
+
+      {/* ── COLONNE GAUCHE — branding ── */}
+      <div style={{
+        width: 256,
+        flexShrink: 0,
+        background: "linear-gradient(160deg, #061525 0%, #0b1a2a 60%, #0f2336 100%)",
+        borderRight: "1px solid rgba(201,162,39,0.2)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: "24px 24px",
+        gap: 16,
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        {/* Décor cercle */}
+        <div style={{ position: "absolute", bottom: -60, right: -60, width: 180, height: 180, borderRadius: "50%", background: "radial-gradient(circle, rgba(201,162,39,0.1) 0%, transparent 70%)", pointerEvents: "none" }} />
+
+        {/* Wordmark */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
+          <div style={{ fontSize: 28, fontWeight: 900, letterSpacing: -0.5, lineHeight: 1 }}>
+            <span style={{ color: "#ffffff" }}>PRODIG</span>
+            <span style={{ color: "#ffd60a" }}>ELEC</span>
+          </div>
+          <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 7.5, letterSpacing: 3, textTransform: "uppercase", fontWeight: 600 }}>
+            Électricité · Sécurité · Automatisme
+          </span>
+        </div>
+
+        {/* Séparateur */}
+        <div style={{ width: 40, height: 2, background: "linear-gradient(90deg, #C9A227, transparent)" }} />
+
+        {/* Tagline */}
+        <div style={{ color: "rgba(255,255,255,0.7)", fontSize: 11, lineHeight: 1.5 }}>
+          Artisan indépendant<br />
+          <span style={{ color: "#C9A227", fontWeight: 700 }}>23 ans d&apos;expérience</span>
+        </div>
+
+        {/* Zone */}
+        <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 9.5, lineHeight: 1.6 }}>
+          Eure-et-Loir · Eure · Yvelines<br />Dep. 28 · 27 · 78
+        </div>
+
+        {/* Contact */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+          <div style={{
+            backgroundColor: "#C9A227", borderRadius: 7, padding: "6px 12px",
+            display: "flex", alignItems: "center", gap: 6, width: "fit-content",
+          }}>
+            <span style={{ fontSize: 11 }}>📞</span>
+            <span style={{ color: "#061525", fontWeight: 900, fontSize: 12, whiteSpace: "nowrap" }}>06 38 19 47 52</span>
+          </div>
+          <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 9 }}>🌐 prodigelec.fr</span>
+        </div>
+      </div>
+
+      {/* ── COLONNE DROITE — 3 services empilés ── */}
+      <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+        {services.map((s, i) => (
+          <div key={s.title} style={{
+            flex: 1,
+            display: "flex",
+            alignItems: "center",
+            gap: 0,
+            borderBottom: i < 2 ? "1px solid rgba(0,0,0,0.5)" : "none",
+            position: "relative",
+            overflow: "hidden",
+          }}>
+            {/* Photo fond */}
+            <div style={{
+              position: "absolute", inset: 0,
+              backgroundImage: `url(${s.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }} />
+            {/* Overlay coloré */}
+            <div style={{
+              position: "absolute", inset: 0,
+              background: s.gradient,
+              opacity: 0.88,
+            }} />
+            {/* Bordure gauche couleur */}
+            <div style={{
+              position: "absolute", left: 0, top: 0, bottom: 0,
+              width: 3,
+              backgroundColor: s.color,
+            }} />
+
+            {/* Contenu */}
+            <div style={{
+              position: "relative", zIndex: 1,
+              display: "flex", alignItems: "center",
+              width: "100%", padding: "0 20px 0 18px", gap: 14,
+            }}>
+              {/* Icône */}
+              <div style={{
+                width: 38, height: 38, borderRadius: 10, flexShrink: 0,
+                backgroundColor: `${s.color}20`,
+                border: `1.5px solid ${s.color}60`,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 18,
+              }}>{s.icon}</div>
+
+              {/* Titre + items */}
+              <div style={{ flex: 1 }}>
+                <div style={{ color: "#ffffff", fontWeight: 800, fontSize: 13, marginBottom: 5 }}>
+                  {s.title}
+                </div>
+                <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+                  {s.items.map((item) => (
+                    <div key={item} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                      <span style={{ color: s.color, fontSize: 8 }}>▸</span>
+                      <span style={{ color: "rgba(255,255,255,0.7)", fontSize: 9.5 }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Badge devis */}
+              <div style={{
+                flexShrink: 0,
+                border: `1px solid ${s.color}50`,
+                borderRadius: 6, padding: "4px 10px",
+              }}>
+                <span style={{ color: s.color, fontSize: 9, fontWeight: 700 }}>Devis gratuit</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Ligne dorée bas */}
+      <div style={{
+        position: "absolute", bottom: 0, left: 0, right: 0,
+        height: 3,
+        background: "linear-gradient(90deg, #C9A227, #ffd60a, #C9A227)",
+        zIndex: 3,
+      }} />
+    </div>
+  );
+}
+
+/* ────────────────────────────────────────
    PAGE
 ──────────────────────────────────────── */
 export default function FacebookPostPage() {
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#1a1a2e", display: "flex", flexDirection: "column", alignItems: "center", padding: "48px 24px", gap: 48, fontFamily: "Inter, sans-serif" }}>
       <h1 style={{ color: "white", fontSize: 22, fontWeight: 700 }}>Templates Facebook — PRODIGELEC</h1>
+
+      {/* ── COUVERTURE ── */}
+      <div>
+        <p style={{ color: "#64748b", textAlign: "center", marginBottom: 8, fontSize: 13 }}>Photo de couverture — 820 × 312 px</p>
+        <p style={{ color: "#475569", textAlign: "center", marginBottom: 16, fontSize: 11 }}>
+          Clic droit → &quot;Enregistrer l&apos;image&quot; puis upload sur Facebook
+        </p>
+        <CouvertureFacebook />
+      </div>
+
+      <div style={{ width: 820, height: 1, background: "rgba(255,255,255,0.08)" }} />
 
       <div>
         <p style={{ color: "#64748b", textAlign: "center", marginBottom: 12, fontSize: 13 }}>Template 1 — Avant / Après (avec tes photos)</p>
