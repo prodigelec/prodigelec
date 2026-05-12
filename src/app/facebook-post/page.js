@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import ProdigelecMonogram from "@/app/components/ui/ProdigelecMonogram";
 
 const GOLD = "#C9A84C";
 const DARK = "#0b1a2a";
@@ -8,23 +8,13 @@ const DARK2 = "#0f2336";
 function LogoBadge() {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-      <div style={{
-        width: 52, height: 52,
-        borderRadius: 10,
-        background: "linear-gradient(135deg, #d9d9d9, #f5f5f5, #9ca3af)",
-        boxShadow: "inset 0 2px 6px rgba(255,255,255,0.5), inset 0 -3px 6px rgba(0,0,0,0.25), 0 4px 12px rgba(0,0,0,0.4)",
-        overflow: "hidden",
-        position: "relative",
-        flexShrink: 0,
-      }}>
-        <Image src="/logo_camera.png" alt="PRODIGELEC" fill style={{ objectFit: "contain", padding: "4px" }} />
-      </div>
+      <ProdigelecMonogram size={52} light={false} />
       <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
-        <div style={{ display: "flex", fontSize: 17, fontWeight: 900, letterSpacing: 1 }}>
-          <span style={{ color: "#c8c8c8" }}>PRODIG</span>
-          <span style={{ color: GOLD }}>ELEC</span>
+        <div style={{ display: "flex", fontSize: 17, fontWeight: 900, letterSpacing: 1, fontFamily: "'Sora', sans-serif" }}>
+          <span style={{ color: "#ffffff" }}>PRODIG</span>
+          <span style={{ color: "#ffd60a" }}>ELEC</span>
         </div>
-        <span style={{ color: "#ffffff60", fontSize: 9, letterSpacing: 3, fontWeight: 600, textTransform: "uppercase" }}>Expertise Technique</span>
+        <span style={{ color: "#ffffff60", fontSize: 9, letterSpacing: 3, fontWeight: 600, textTransform: "uppercase" }}>Électricité · Sécurité · Automatisme</span>
       </div>
     </div>
   );
@@ -346,13 +336,7 @@ function TemplateConseil({ conseil, contexte }) {
 
       {/* Signature */}
       <div style={{ padding: "8px 24px 14px", display: "flex", alignItems: "center", gap: 10 }}>
-        <div style={{
-          width: 34, height: 34, borderRadius: 8, flexShrink: 0,
-          background: "linear-gradient(135deg, #d9d9d9, #f5f5f5)",
-          overflow: "hidden", position: "relative",
-        }}>
-          <Image src="/logo_camera.png" alt="logo" fill style={{ objectFit: "contain", padding: "4px" }} />
-        </div>
+        <ProdigelecMonogram size={34} light={false} />
         <div>
           <div style={{ color: GOLD, fontSize: 12, fontWeight: 700 }}>Sébastien PETACCIA — PRODIGELEC</div>
           <div style={{ color: "#475569", fontSize: 10 }}>Électricien & Sécurité Électronique · 28, 27 & 78</div>

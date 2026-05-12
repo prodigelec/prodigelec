@@ -1,7 +1,7 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import Link from "next/link";
-import BrandName from "@/app/components/ui/BrandName";
+import ProdigelecMonogram from "@/app/components/ui/ProdigelecMonogram";
 
 export default function Footer() {
   return (
@@ -11,8 +11,20 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="space-y-4 md:space-y-6">
-            <div className="text-xl md:text-2xl font-black tracking-tighter text-white">
-              <BrandName />
+            <div className="flex items-center gap-3">
+              <ProdigelecMonogram size={52} light={false} />
+              <div className="flex flex-col gap-0.5 leading-none">
+                <span
+                  style={{ fontFamily: "'Sora', var(--font-sora), sans-serif", fontWeight: 800, fontSize: "1.15rem", letterSpacing: "-0.015em", color: "#ffffff" }}
+                >
+                  PRODIG<span style={{ color: "#ffd60a" }}>ELEC</span>
+                </span>
+                <span
+                  style={{ fontFamily: "var(--font-sora), 'Sora', sans-serif", fontSize: "0.55rem", letterSpacing: "0.2em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase" }}
+                >
+                  Électricité · Sécurité · Automatisme
+                </span>
+              </div>
             </div>
             <p className="text-foreground-subtle text-xs md:text-sm leading-relaxed">
               Votre artisan de confiance en Eure-et-Loir, Eure et Yvelines. Expertise technique, réactivité et solutions sur-mesure pour tous vos besoins.

@@ -1,4 +1,4 @@
-import { Outfit } from "next/font/google";
+import { Outfit, Sora } from "next/font/google";
 import "./globals.css";
 import ClientNavbar from "@/app/components/layout/Navbar/ClientNavbar";
 import Footer from "@/app/components/layout/Footer";
@@ -10,6 +10,13 @@ const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
+});
+
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -37,6 +44,7 @@ export const metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
       { url: "/favicon-512.png", sizes: "192x192", type: "image/png" },
       { url: "/favicon-512.png", sizes: "32x32", type: "image/png" },
@@ -62,7 +70,7 @@ export default function RootLayout({ children }) {
           .skip-link:focus { top: 0; }
         `}} />
       </head>
-      <body className={`${outfit.variable} font-sans bg-background text-foreground antialiased`}>
+      <body className={`${outfit.variable} ${sora.variable} font-sans bg-background text-foreground antialiased`}>
         <a href="#main-content" className="skip-link font-bold">Passer au contenu principal</a>
         <MotionProvider>
           <JsonLd />
