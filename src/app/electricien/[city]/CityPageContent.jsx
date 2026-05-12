@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { m } from "framer-motion";
 import { Phone, MapPin, Zap, Shield, Settings, CheckCircle, ArrowRight } from "lucide-react";
 
@@ -12,6 +13,7 @@ const services = [
   {
     icon: Zap,
     title: "Électricité Générale",
+    image: "/img_carousel_hero_home/tableau-electrique.optimized.jpg",
     items: ["Dépannage & mise aux normes NF C 15-100", "Tableau électrique & disjoncteurs", "Éclairage LED & domotique", "VMC & chauffage électrique"],
     href: "/services/electricite",
     color: "#ffc107",
@@ -19,6 +21,7 @@ const services = [
   {
     icon: Shield,
     title: "Sécurité Électronique",
+    image: "/img_carousel_securite_page/videophonie_digicode.jpg",
     items: ["Digicode & contrôle d'accès", "Vidéophonie & visiophone", "Alarme & détection intrusion", "Caméras & vidéosurveillance HD"],
     href: "/services/securite",
     color: "#c9a227",
@@ -26,6 +29,7 @@ const services = [
   {
     icon: Settings,
     title: "Automatismes",
+    image: "/img_carousel_hero_home/Volet_Battant.avif",
     items: ["Motorisation volets roulants & battants", "Portails automatiques", "Portes de garage sectionnelles", "Domotique Somfy & pilotage smartphone"],
     href: "/services/automatismes",
     color: "#c9a227",
@@ -41,19 +45,25 @@ const trustPoints = [
   "Tarifs annoncés avant intervention",
 ];
 
+const stats = [
+  { value: "23 ans", label: "d'expérience" },
+  { value: "3", label: "expertises" },
+  { value: "30 km", label: "zone gratuite" },
+  { value: "28·27·78", label: "départements" },
+];
+
 export default function CityPageContent({ city }) {
   return (
     <main className="min-h-screen bg-background text-foreground pt-20 pb-8 mt-8 md:pt-24 md:pb-20 md:mt-16 overflow-x-hidden">
 
       {/* ── HERO ── */}
       <section className="relative max-w-7xl mx-auto px-6 mb-10 md:mb-20">
-        {/* glow décoratif */}
         <div
           className="absolute -top-20 -left-20 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none"
           style={{ background: "var(--primary)" }}
         />
 
-        <div className="relative grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative grid lg:grid-cols-2 gap-10 items-center">
           {/* Texte */}
           <div>
             <m.p
@@ -70,13 +80,7 @@ export default function CityPageContent({ city }) {
             >
               Électricien &amp;<br />
               Sécurité à{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #c9a227, #ffd60a)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
+              <span style={{ background: "linear-gradient(135deg, #c9a227, #ffd60a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 {city.name}
               </span>
             </m.h1>
@@ -93,11 +97,11 @@ export default function CityPageContent({ city }) {
 
             <m.div
               variants={fadeUp} initial="hidden" animate="visible" custom={3}
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap gap-3 mb-8"
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:brightness-110 hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:brightness-110"
                 style={{ background: "var(--primary)", color: "var(--background)", boxShadow: "0 4px 24px rgba(201,162,39,0.3)" }}
               >
                 Devis gratuit <ArrowRight size={16} />
@@ -110,28 +114,45 @@ export default function CityPageContent({ city }) {
                 <Phone size={15} className="shrink-0" /> 06 38 19 47 52
               </a>
             </m.div>
+
+            {/* Stats — visibles sur mobile aussi */}
+            <m.div
+              variants={fadeUp} initial="hidden" animate="visible" custom={4}
+              className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3"
+            >
+              {stats.map((stat, i) => (
+                <div key={i} className="rounded-2xl p-4 flex flex-col gap-1" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
+                  <span className="text-xl font-extrabold" style={{ color: "var(--primary)" }}>{stat.value}</span>
+                  <span className="text-xs" style={{ color: "var(--foreground-subtle)" }}>{stat.label}</span>
+                </div>
+              ))}
+            </m.div>
           </div>
 
-          {/* Badges */}
+          {/* Image hero */}
           <m.div
             variants={fadeUp} initial="hidden" animate="visible" custom={2}
-            className="hidden lg:grid grid-cols-2 gap-3"
+            className="relative hidden lg:block"
           >
-            {[
-              { value: "23 ans", label: "d'expérience" },
-              { value: "3", label: "domaines d'expertise" },
-              { value: city.freeZone ? "Gratuit" : "Sur devis", label: "déplacement" },
-              { value: "28 · 27 · 78", label: "départements" },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className="rounded-2xl p-5 flex flex-col gap-1"
-                style={{ background: "var(--card)", border: "1px solid var(--border)" }}
-              >
-                <span className="text-2xl font-extrabold" style={{ color: "var(--primary)" }}>{stat.value}</span>
-                <span className="text-xs" style={{ color: "var(--foreground-subtle)" }}>{stat.label}</span>
-              </div>
-            ))}
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/img_carousel_electric_page/reperage-disjoncteurs.jpg"
+                alt={`Électricien PRODIGELEC à ${city.name}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 0px, 50vw"
+              />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 50%, rgba(11,26,42,0.8) 100%)" }} />
+              {city.freeZone && (
+                <div
+                  className="absolute bottom-4 left-4 right-4 flex items-center gap-2 px-4 py-3 rounded-2xl text-sm font-bold"
+                  style={{ background: "rgba(201,162,39,0.15)", backdropFilter: "blur(12px)", border: "1px solid rgba(201,162,39,0.4)", color: "var(--primary)" }}
+                >
+                  <CheckCircle size={16} />
+                  Devis gratuit à {city.name}
+                </div>
+              )}
+            </div>
           </m.div>
         </div>
       </section>
@@ -141,8 +162,7 @@ export default function CityPageContent({ city }) {
         <m.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-10">
           <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "var(--primary)" }}>Prestations</p>
           <h2 className="text-3xl font-bold">
-            Ce que je fais à{" "}
-            <span style={{ color: "var(--primary)" }}>{city.name}</span>
+            Ce que je fais à <span style={{ color: "var(--primary)" }}>{city.name}</span>
           </h2>
         </m.div>
 
@@ -150,36 +170,45 @@ export default function CityPageContent({ city }) {
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
-              <m.div
-                key={s.href}
-                variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}
-              >
+              <m.div key={s.href} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}>
                 <Link
                   href={s.href}
-                  className="group flex flex-col h-full rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+                  className="group flex flex-col h-full rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
                   style={{ background: "var(--card)", border: "1px solid var(--border)" }}
                 >
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all group-hover:scale-110"
-                    style={{ background: `${s.color}20`, border: `1px solid ${s.color}40` }}
-                  >
-                    <Icon size={22} style={{ color: s.color }} />
+                  {/* Image carte */}
+                  <div className="relative h-40 overflow-hidden">
+                    <Image
+                      src={s.image}
+                      alt={s.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 30%, rgba(11,26,42,0.9) 100%)" }} />
+                    <div
+                      className="absolute bottom-3 left-4 w-9 h-9 rounded-xl flex items-center justify-center"
+                      style={{ background: `${s.color}25`, border: `1px solid ${s.color}50` }}
+                    >
+                      <Icon size={18} style={{ color: s.color }} />
+                    </div>
                   </div>
-                  <h3 className="font-bold text-base mb-4">{s.title}</h3>
-                  <ul className="space-y-2 flex-1">
-                    {s.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "var(--foreground-subtle)" }}>
-                        <CheckCircle size={13} className="shrink-0 mt-0.5" style={{ color: s.color }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <span
-                    className="mt-5 text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
-                    style={{ color: s.color }}
-                  >
-                    En savoir plus <ArrowRight size={12} />
-                  </span>
+
+                  {/* Contenu */}
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="font-bold text-base mb-3">{s.title}</h3>
+                    <ul className="space-y-2 flex-1">
+                      {s.items.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "var(--foreground-subtle)" }}>
+                          <CheckCircle size={13} className="shrink-0 mt-0.5" style={{ color: s.color }} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="mt-4 text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: s.color }}>
+                      En savoir plus <ArrowRight size={12} />
+                    </span>
+                  </div>
                 </Link>
               </m.div>
             );
@@ -201,9 +230,7 @@ export default function CityPageContent({ city }) {
             <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-subtle)" }}>
               Basé à Broué (28410), j&apos;interviens à {city.name} et dans toutes les communes voisines :{" "}
               <span className="text-white font-medium">{city.nearby.join(", ")}</span>.{" "}
-              {city.freeZone
-                ? "Le déplacement pour le devis est 100% gratuit."
-                : "Déplacement facturé — tarif annoncé avant intervention."}
+              {city.freeZone ? "Le déplacement pour le devis est 100% gratuit." : "Déplacement facturé — tarif annoncé avant intervention."}
             </p>
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -221,7 +248,7 @@ export default function CityPageContent({ city }) {
         </div>
       </section>
 
-      {/* ── ZONE MAP ── */}
+      {/* ── ZONE ── */}
       <section className="max-w-7xl mx-auto px-6 mb-10 md:mb-20">
         <div className="flex items-start gap-3 rounded-2xl p-6" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
           <MapPin size={20} className="shrink-0 mt-0.5" style={{ color: "var(--primary)" }} />
@@ -235,7 +262,7 @@ export default function CityPageContent({ city }) {
         </div>
       </section>
 
-      {/* ── CTA FINAL ── */}
+      {/* ── CTA ── */}
       <section className="max-w-7xl mx-auto px-6">
         <m.div
           variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
