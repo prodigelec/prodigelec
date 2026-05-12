@@ -46,7 +46,7 @@ export default function CityPageContent({ city }) {
     <main className="min-h-screen bg-background text-foreground pt-20 pb-8 mt-8 md:pt-24 md:pb-20 md:mt-16 overflow-x-hidden">
 
       {/* ── HERO ── */}
-      <section className="relative max-w-7xl mx-auto px-6 mb-20">
+      <section className="relative max-w-7xl mx-auto px-6 mb-10 md:mb-20">
         {/* glow décoratif */}
         <div
           className="absolute -top-20 -left-20 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none"
@@ -115,7 +115,7 @@ export default function CityPageContent({ city }) {
           {/* Badges */}
           <m.div
             variants={fadeUp} initial="hidden" animate="visible" custom={2}
-            className="grid grid-cols-2 gap-3"
+            className="hidden lg:grid grid-cols-2 gap-3"
           >
             {[
               { value: "23 ans", label: "d'expérience" },
@@ -137,7 +137,7 @@ export default function CityPageContent({ city }) {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-7xl mx-auto px-6 mb-10 md:mb-20">
         <m.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-10">
           <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "var(--primary)" }}>Prestations</p>
           <h2 className="text-3xl font-bold">
@@ -188,7 +188,7 @@ export default function CityPageContent({ city }) {
       </section>
 
       {/* ── CONFIANCE ── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-7xl mx-auto px-6 mb-10 md:mb-20">
         <div
           className="rounded-3xl p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center"
           style={{ background: "linear-gradient(135deg, #0d1f32 0%, #112438 100%)", border: "1px solid var(--border)" }}
@@ -222,7 +222,7 @@ export default function CityPageContent({ city }) {
       </section>
 
       {/* ── ZONE MAP ── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-7xl mx-auto px-6 mb-10 md:mb-20">
         <div className="flex items-start gap-3 rounded-2xl p-6" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
           <MapPin size={20} className="shrink-0 mt-0.5" style={{ color: "var(--primary)" }} />
           <div>
