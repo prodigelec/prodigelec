@@ -1,15 +1,28 @@
 import { ImageResponse } from "next/og";
 import { getCityBySlug } from "@/app/data/cities";
+import { readFileSync } from "fs";
+import path from "path";
 
-export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const ACCENT = "#c9a227";
 
+function loadCityPhoto(slug) {
+  try {
+    const filePath = path.join(process.cwd(), "public", "cities", `${slug}.jpg`);
+    const data = readFileSync(filePath);
+    return `data:image/jpeg;base64,${data.toString("base64")}`;
+  } catch {
+    return null;
+  }
+}
+
 export default async function OgImage({ params }) {
   const { city: citySlug } = await params;
   const city = getCityBySlug(citySlug);
+
+  const photoSrc = city ? loadCityPhoto(city.slug) : null;
 
   const label = city
     ? `${city.department} (${city.departmentCode}) — ${city.freeZone ? "Devis gratuit" : "Sur devis"}`
@@ -18,7 +31,7 @@ export default async function OgImage({ params }) {
   const title = city ? `Électricien à ${city.name}` : "PRODIGELEC";
 
   const subtitle = city
-    ? `Électricité, sécurité électronique et automatismes à ${city.name} (${city.postalCode}) et ses environs. Artisan indépendant basé à Broué.`
+    ? `Électricité, sécurité électronique et automatismes à ${city.name} (${city.postalCode}) et ses environs.`
     : "Électricité générale, sécurité électronique et automatismes en Eure-et-Loir, Eure et Yvelines.";
 
   return new ImageResponse(
@@ -29,46 +42,95 @@ export default async function OgImage({ params }) {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          backgroundColor: "#0b1a2a",
-          padding: "0 70px 52px 76px",
           position: "relative",
         }}
       >
-        <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "6px", background: "linear-gradient(180deg, #c9a227 0%, #ffd60a 100%)", display: "flex" }} />
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "200px", background: "linear-gradient(180deg, rgba(201,162,39,0.12) 0%, transparent 100%)", display: "flex" }} />
+        {/* Photo de la ville en fond */}
+        {photoSrc && (
+          <img
+            src={photoSrc}
+            width={1200}
+            height={630}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        )}
 
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "52px", marginBottom: "auto" }}>
-          <span style={{ fontSize: "30px", fontWeight: 800, letterSpacing: "-0.5px", color: "white" }}>
-            PRODIG<span style={{ color: "#ffd60a" }}>ELEC</span>
-          </span>
-          <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "18px" }}>prodigelec.fr</span>
-        </div>
+        {/* Overlay sombre */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "linear-gradient(105deg, rgba(11,26,42,0.92) 55%, rgba(11,26,42,0.55) 100%)",
+            display: "flex",
+          }}
+        />
 
-        <div style={{ display: "flex", marginBottom: "14px" }}>
-          <span style={{ color: ACCENT, fontSize: "15px", fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase" }}>
-            {label}
-          </span>
-        </div>
+        {/* Barre dorée gauche */}
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: "6px",
+            background: "linear-gradient(180deg, #c9a227 0%, #ffd60a 100%)",
+            display: "flex",
+          }}
+        />
 
-        <div style={{ color: "white", fontSize: title.length > 28 ? "58px" : "70px", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-1.5px", marginBottom: "18px" }}>
-          {title}
-        </div>
-
-        <div style={{ color: "rgba(255,255,255,0.55)", fontSize: "23px", lineHeight: 1.45, maxWidth: "820px", marginBottom: "auto" }}>
-          {subtitle}
-        </div>
-
-        <div style={{ display: "flex", height: "1px", backgroundColor: "rgba(255,255,255,0.08)", margin: "36px 0 28px" }} />
-
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ display: "flex", gap: "10px" }}>
-            {["Électricité", "Sécurité", "Automatismes"].map((s) => (
-              <div key={s} style={{ display: "flex", padding: "7px 16px", borderRadius: "100px", backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.6)", fontSize: "15px" }}>
-                {s}
-              </div>
-            ))}
+        {/* Contenu */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            height: "100%",
+            padding: "0 70px 52px 76px",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "52px", marginBottom: "auto" }}>
+            <span style={{ fontSize: "30px", fontWeight: 800, letterSpacing: "-0.5px", color: "white" }}>
+              PRODIG<span style={{ color: "#ffd60a" }}>ELEC</span>
+            </span>
+            <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "18px" }}>prodigelec.fr</span>
           </div>
-          <span style={{ color: ACCENT, fontSize: "19px", fontWeight: 700 }}>06 38 19 47 52</span>
+
+          <div style={{ display: "flex", marginBottom: "14px" }}>
+            <span style={{ color: ACCENT, fontSize: "15px", fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase" }}>
+              {label}
+            </span>
+          </div>
+
+          <div style={{ color: "white", fontSize: title.length > 28 ? "58px" : "70px", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-1.5px", marginBottom: "18px" }}>
+            {title}
+          </div>
+
+          <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "23px", lineHeight: 1.45, maxWidth: "720px", marginBottom: "auto" }}>
+            {subtitle}
+          </div>
+
+          <div style={{ display: "flex", height: "1px", backgroundColor: "rgba(255,255,255,0.15)", margin: "36px 0 28px" }} />
+
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ display: "flex", gap: "10px" }}>
+              {["Électricité", "Sécurité", "Automatismes"].map((s) => (
+                <div key={s} style={{ display: "flex", padding: "7px 16px", borderRadius: "100px", backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.8)", fontSize: "15px" }}>
+                  {s}
+                </div>
+              ))}
+            </div>
+            <span style={{ color: ACCENT, fontSize: "19px", fontWeight: 700 }}>06 38 19 47 52</span>
+          </div>
         </div>
       </div>
     ),
