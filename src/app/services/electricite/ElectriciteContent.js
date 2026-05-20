@@ -7,6 +7,7 @@ import ServiceUrgency from "../../components/services/shared/ServiceUrgency";
 import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
+import ServiceCityLinks from "../../components/services/shared/ServiceCityLinks";
 
 // Icons
 import { FcFlashOn } from "react-icons/fc";
@@ -243,8 +244,10 @@ export default function ElectriciteContent() {
           theme="electricite"
         />
         
-        <ServiceCTA 
-          title="Un projet de rénovation ou d'installation ?" 
+        <ServiceCityLinks theme="electricite" />
+
+        <ServiceCTA
+          title="Un projet de rénovation ou d'installation ?"
           description="Discutons de votre projet. Je vous accompagne de la conception à la réalisation avec des conseils personnalisés."
           buttonText="Demander un devis gratuit"
           theme="electricite"

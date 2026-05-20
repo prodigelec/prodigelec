@@ -34,6 +34,13 @@ export default function JsonLd() {
         "closes": "20:00"
       }
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "3",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "priceRange": "€€",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

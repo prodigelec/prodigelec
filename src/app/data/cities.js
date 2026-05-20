@@ -134,3 +134,7 @@ export const cities = [
 export function getCityBySlug(slug) {
   return cities.find((c) => c.slug === slug);
 }
+
+export function getCityByName(name) {
+  return cities.find((c) => c.name.toLowerCase() === name.toLowerCase());
+}

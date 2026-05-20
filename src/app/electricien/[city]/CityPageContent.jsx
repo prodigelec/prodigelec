@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { m } from "framer-motion";
 import { Phone, MapPin, Zap, Shield, Settings, CheckCircle, ArrowRight } from "lucide-react";
+import { getCityByName } from "@/app/data/cities";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -51,6 +52,28 @@ const stats = [
   { value: "30 km", label: "zone gratuite" },
   { value: "28·27·78", label: "départements" },
 ];
+
+function NearbyList({ nearby, color }) {
+  return nearby.map((name, i) => {
+    const linked = getCityByName(name);
+    return (
+      <span key={name}>
+        {i > 0 && ", "}
+        {linked ? (
+          <Link
+            href={`/electricien/${linked.slug}`}
+            className="font-medium underline underline-offset-2 hover:opacity-80 transition-opacity"
+            style={{ color: color ?? "white" }}
+          >
+            {name}
+          </Link>
+        ) : (
+          <span className="text-white font-medium">{name}</span>
+        )}
+      </span>
+    );
+  });
+}
 
 export default function CityPageContent({ city }) {
   return (
@@ -229,7 +252,7 @@ export default function CityPageContent({ city }) {
             </h2>
             <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-subtle)" }}>
               Basé à Broué (28410), j&apos;interviens à {city.name} et dans toutes les communes voisines :{" "}
-              <span className="text-white font-medium">{city.nearby.join(", ")}</span>.{" "}
+              <NearbyList nearby={city.nearby} />.{" "}
               {city.freeZone ? "Le déplacement pour le devis est 100% gratuit." : "Déplacement facturé — tarif annoncé avant intervention."}
             </p>
           </div>
@@ -255,7 +278,7 @@ export default function CityPageContent({ city }) {
           <div>
             <p className="font-bold mb-1">Zone d&apos;intervention — {city.name} &amp; environs</p>
             <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-subtle)" }}>
-              J&apos;interviens à <strong className="text-white">{city.name}</strong>, {city.nearby.join(", ")} et leurs communes voisines.
+              J&apos;interviens à <strong className="text-white">{city.name}</strong>, <NearbyList nearby={city.nearby} /> et leurs communes voisines.
               Eure-et-Loir (28), Eure (27) et Yvelines (78).
             </p>
           </div>

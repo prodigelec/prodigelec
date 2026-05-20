@@ -7,6 +7,7 @@ import ServiceUrgency from "../../components/services/shared/ServiceUrgency";
 import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
+import ServiceCityLinks from "../../components/services/shared/ServiceCityLinks";
 
 import { Blinds, Wrench, Smartphone, Settings2, DoorOpen } from "lucide-react";
 
@@ -210,6 +211,8 @@ export default function AutomatismesContent() {
           faqs={faqItems}
           theme="securite"
         />
+
+        <ServiceCityLinks theme="securite" />
 
         <ServiceCTA
           title="Besoin de motoriser vos fermetures ?"
