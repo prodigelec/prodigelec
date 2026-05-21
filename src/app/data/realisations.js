@@ -49,8 +49,8 @@ export const realisations = [
   },
   {
     slug: "radiateur-electrique-conde-sur-vesgres-1",
-    titre: "Installation radiateur électrique à inertie",
-    description: "Pose et raccordement électrique d'un radiateur à inertie — câblage propre avec branchement au tableau électrique.",
+    titre: "Remplacement radiateur par modèle à inertie",
+    description: "Remplacement d'un ancien radiateur par un radiateur à inertie — meilleur confort thermique et économies d'énergie à la clé.",
     ville: "Condé-sur-Vesgres",
     departement: "Yvelines",
     departementCode: "78",
@@ -61,8 +61,8 @@ export const realisations = [
   },
   {
     slug: "radiateur-electrique-conde-sur-vesgres-2",
-    titre: "Pose second radiateur électrique",
-    description: "Installation d'un second radiateur électrique dans la même habitation — raccordement soigné au tableau avec mise en service.",
+    titre: "Remplacement second radiateur à inertie",
+    description: "Second remplacement dans la même habitation — passage aux radiateurs à inertie pour réduire la consommation électrique et améliorer le confort.",
     ville: "Condé-sur-Vesgres",
     departement: "Yvelines",
     departementCode: "78",
