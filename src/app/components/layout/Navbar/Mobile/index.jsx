@@ -1,11 +1,11 @@
 "use client"
 import { m } from "framer-motion";
-import { Home, Mail, Cctv, PhoneCall, BookOpen } from "lucide-react";
+import { Home, Mail, PhoneCall, BookOpen, Images } from "lucide-react";
 
 export default function MobileNavbar() {
     const navItems = [
         { name: 'Accueil', icon: <Home size={18} />, href: '/' },
-        { name: 'Sécurité', icon: <Cctv size={18} />, href: '/services/securite' },
+        { name: 'Réalisations', icon: <Images size={18} />, href: '/realisations' },
         { name: 'SOS Élec', icon: <PhoneCall size={22} />, href: 'tel:0638194752', highlight: true },
         { name: 'Blog', icon: <BookOpen size={18} />, href: '/blog' },
         { name: 'Contact', icon: <Mail size={18} />, href: '/contact' },
@@ -26,8 +26,8 @@ export default function MobileNavbar() {
                         aria-label={item.name}
                         whileTap={{ scale: 0.9 }}
                         className={`flex flex-col items-center justify-center min-w-0 flex-1 px-1 transition-all ${
-                            item.highlight 
-                            ? 'bg-rose-600 text-white rounded-xl py-3 -mt-6 shadow-lg shadow-rose-600/30 border-2 border-white/20' 
+                            item.highlight
+                            ? 'bg-rose-600 text-white rounded-xl py-3 -mt-6 shadow-lg shadow-rose-600/30 border-2 border-white/20'
                             : 'text-white/70 hover:text-primary hover:bg-white/5 py-2 rounded-xl'
                         }`}
                     >
