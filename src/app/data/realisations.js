@@ -2,7 +2,7 @@ export const realisations = [
   {
     slug: "sonnette-urmet-la-queue-yvelines",
     titre: "Installation sonnette sans fil",
-    description: "Solution provisoire rapide en attente du remplacement du visiophone — installation d'une sonnette sans fil Urmet pour un accès fonctionnel immédiat.",
+    description: "Le visiophone était hors service, le client avait besoin d'un accès fonctionnel rapidement. J'ai posé une sonnette sans fil Urmet en attendant le remplacement définitif.",
     ville: "La Queue-les-Yvelines",
     departement: "Yvelines",
     departementCode: "78",
@@ -14,7 +14,7 @@ export const realisations = [
   {
     slug: "four-bosch-branchement-la-queue-yvelines",
     titre: "Remplacement et branchement four encastrable",
-    description: "Intervention en urgence pour le remplacement et le branchement électrique d'un four encastrable Bosch dans une cuisine.",
+    description: "Appel en urgence pour un four encastrable Bosch à remplacer. Dépose de l'ancien, branchement électrique du nouveau et mise en service le même jour.",
     ville: "La Queue-les-Yvelines",
     departement: "Yvelines",
     departementCode: "78",
@@ -26,7 +26,7 @@ export const realisations = [
   {
     slug: "tableau-electrique-marchezais",
     titre: "Branchement tableau électrique, prises et interrupteurs",
-    description: "Installation complète dans un garage : branchement du tableau électrique, pose et branchement des prises et interrupteurs étanches.",
+    description: "Travaux complets dans un garage : branchement du tableau électrique, pose des prises et interrupteurs étanches. Tout a été fait dans les règles pour une installation durable.",
     ville: "Marchezais",
     departement: "Eure-et-Loir",
     departementCode: "28",
@@ -38,7 +38,7 @@ export const realisations = [
   {
     slug: "videophone-solaire-sans-fil-garencieres-yvelines",
     titre: "Installation visiophone solaire sans fil",
-    description: "Installation d'un visiophone solaire sans fil fourni par le client — solution autonome en énergie pour un contrôle d'accès moderne sans câblage.",
+    description: "Le client avait acheté un visiophone solaire sans fil. Je me suis chargé de la pose et du paramétrage. Pas de câblage nécessaire, l'appareil fonctionne sur énergie solaire.",
     ville: "Garancières",
     departement: "Yvelines",
     departementCode: "78",
@@ -50,7 +50,7 @@ export const realisations = [
   {
     slug: "radiateur-electrique-conde-sur-vesgres-1",
     titre: "Remplacement radiateur par modèle à inertie",
-    description: "Remplacement d'un ancien radiateur par un radiateur à inertie — meilleur confort thermique et économies d'énergie à la clé.",
+    description: "Remplacement d'un vieux radiateur électrique par un radiateur à inertie. Le confort de chauffe est bien meilleur et la consommation diminue sur la durée.",
     ville: "Condé-sur-Vesgres",
     departement: "Yvelines",
     departementCode: "78",
@@ -62,7 +62,7 @@ export const realisations = [
   {
     slug: "radiateur-electrique-conde-sur-vesgres-2",
     titre: "Remplacement second radiateur à inertie",
-    description: "Second remplacement dans la même habitation — passage aux radiateurs à inertie pour réduire la consommation électrique et améliorer le confort.",
+    description: "Même maison, même intervention pour une seconde pièce. Deux radiateurs à inertie remplacés pour moderniser le chauffage et faire des économies d'électricité.",
     ville: "Condé-sur-Vesgres",
     departement: "Yvelines",
     departementCode: "78",
@@ -74,7 +74,7 @@ export const realisations = [
   {
     slug: "chauffe-eau-ariston-havelu-yvelines",
     titre: "Installation chauffe-eau électrique Ariston",
-    description: "Pose et raccordement d'un chauffe-eau électrique Ariston en cave — installation fixe avec mise en service complète.",
+    description: "Pose d'un chauffe-eau électrique Ariston en cave. Raccordement électrique, mise en eau et mise en service. Travail soigné dans un espace contraint.",
     ville: "Havelu",
     departement: "Yvelines",
     departementCode: "78",
