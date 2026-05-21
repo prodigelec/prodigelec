@@ -143,3 +143,71 @@ section,
 article {
   contain: layout style paint;
 }
+
+/* Styles typographiques pour les articles de blog */
+.prose-blog {
+  color: var(--foreground);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.prose-blog h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.prose-blog h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-blog p {
+  margin-bottom: 1.25rem;
+  color: rgba(244, 244, 245, 0.85);
+}
+
+.prose-blog ul {
+  margin: 1rem 0 1.5rem 0;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+
+.prose-blog ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: rgba(244, 244, 245, 0.85);
+}
+
+.prose-blog ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.prose-blog strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.prose-blog a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-blog a:hover {
+  color: var(--primary-light);
+}
