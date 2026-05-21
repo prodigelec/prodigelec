@@ -88,17 +88,17 @@ export default function RealisationsContent() {
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  {/* Badge catégorie */}
-                  <div
-                    className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold"
-                    style={{ background: cat.bg, border: `1px solid ${cat.border}`, color: cat.text, backdropFilter: "blur(8px)" }}
-                  >
-                    {cat.label}
-                  </div>
                 </div>
 
                 {/* Contenu */}
                 <div className="p-5 flex flex-col flex-1">
+                  {/* Badge catégorie */}
+                  <div
+                    className="self-start px-3 py-1 rounded-full text-xs font-bold mb-3"
+                    style={{ background: cat.bg, border: `1px solid ${cat.border}`, color: cat.text }}
+                  >
+                    {cat.label}
+                  </div>
                   <h2 className="font-bold text-base mb-2 leading-snug">{r.titre}</h2>
                   <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "var(--foreground-subtle)" }}>
                     {r.description}
