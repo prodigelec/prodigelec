@@ -12,6 +12,7 @@ const nextConfig = {
     minimumCacheTTL: 60,
     remotePatterns: [
       { protocol: 'https', hostname: '**.googleusercontent.com' },
+      { protocol: 'https', hostname: 'upload.wikimedia.org' },
     ],
   },
 

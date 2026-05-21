@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { m } from "framer-motion";
-import { Phone, MapPin, Zap, Shield, Settings, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Zap, Shield, Settings, CheckCircle, ArrowRight, Clock } from "lucide-react";
 import { getCityByName } from "@/app/data/cities";
 
 const fadeUp = {
@@ -46,13 +46,6 @@ const trustPoints = [
   "Tarifs annoncés avant intervention",
 ];
 
-const stats = [
-  { value: "23 ans", label: "d'expérience" },
-  { value: "3", label: "expertises" },
-  { value: "30 km", label: "zone gratuite" },
-  { value: "28·27·78", label: "départements" },
-];
-
 function NearbyList({ nearby, color }) {
   return nearby.map((name, i) => {
     const linked = getCityByName(name);
@@ -76,6 +69,13 @@ function NearbyList({ nearby, color }) {
 }
 
 export default function CityPageContent({ city }) {
+  const stats = [
+    { value: "23 ans", label: "d'expérience" },
+    { value: "3", label: "expertises" },
+    { value: `${city.distance} km`, label: city.freeZone ? "devis gratuit" : "depuis Broué" },
+    { value: city.departmentCode, label: city.department },
+  ];
+
   return (
     <main className="min-h-screen bg-background text-foreground pt-20 pb-8 mt-16 md:pt-24 md:pb-20 md:mt-16 overflow-x-hidden">
 
@@ -113,9 +113,7 @@ export default function CityPageContent({ city }) {
               className="text-base md:text-lg leading-relaxed mb-8"
               style={{ color: "var(--foreground-subtle)" }}
             >
-              PRODIGELEC intervient à <strong className="text-white">{city.name} ({city.postalCode})</strong> pour
-              l&apos;électricité, la sécurité électronique et les automatismes.
-              Artisan indépendant basé à Broué — à ~{city.distance} km.
+              {city.description}
             </m.p>
 
             <m.div
@@ -138,7 +136,6 @@ export default function CityPageContent({ city }) {
               </a>
             </m.div>
 
-            {/* Stats — visibles sur mobile aussi */}
             <m.div
               variants={fadeUp} initial="hidden" animate="visible" custom={4}
               className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3"
@@ -152,15 +149,15 @@ export default function CityPageContent({ city }) {
             </m.div>
           </div>
 
-          {/* Image hero */}
+          {/* Image hero — photo de la ville */}
           <m.div
             variants={fadeUp} initial="hidden" animate="visible" custom={2}
             className="relative hidden lg:block"
           >
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
               <Image
-                src="/img_carousel_electric_page/reperage-disjoncteurs.jpg"
-                alt={`Électricien PRODIGELEC à ${city.name}`}
+                src={city.photo}
+                alt={`Vue de ${city.name} — PRODIGELEC électricien`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 0px, 50vw"
@@ -178,6 +175,39 @@ export default function CityPageContent({ city }) {
             </div>
           </m.div>
         </div>
+      </section>
+
+      {/* ── CONTEXTE LOCAL ── */}
+      <section className="max-w-7xl mx-auto px-6 mb-10 md:mb-20">
+        <m.div
+          variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+          className="rounded-2xl p-6 md:p-8 grid md:grid-cols-[auto_1fr] gap-4 items-start"
+          style={{ background: "var(--card)", border: "1px solid var(--border)" }}
+        >
+          <div
+            className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+            style={{ background: "rgba(201,162,39,0.12)", border: "1px solid rgba(201,162,39,0.3)" }}
+          >
+            <MapPin size={20} style={{ color: "var(--primary)" }} />
+          </div>
+          <div>
+            <p className="font-bold mb-2 text-base">
+              Pourquoi j&apos;interviens à <span style={{ color: "var(--primary)" }}>{city.name}</span>
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-subtle)" }}>
+              {city.localContext}
+            </p>
+            {city.freeZone ? (
+              <p className="mt-3 text-sm font-medium" style={{ color: "var(--primary)" }}>
+                Déplacement inclus dans le devis — aucun frais caché.
+              </p>
+            ) : (
+              <p className="mt-3 text-sm" style={{ color: "var(--foreground-subtle)" }}>
+                Déplacement facturé — tarif annoncé avant toute intervention.
+              </p>
+            )}
+          </div>
+        </m.div>
       </section>
 
       {/* ── SERVICES ── */}
@@ -199,7 +229,6 @@ export default function CityPageContent({ city }) {
                   className="group flex flex-col h-full rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
                   style={{ background: "var(--card)", border: "1px solid var(--border)" }}
                 >
-                  {/* Image carte */}
                   <div className="relative h-40 overflow-hidden">
                     <Image
                       src={s.image}
@@ -217,7 +246,6 @@ export default function CityPageContent({ city }) {
                     </div>
                   </div>
 
-                  {/* Contenu */}
                   <div className="p-5 flex flex-col flex-1">
                     <h3 className="font-bold text-base mb-3">{s.title}</h3>
                     <ul className="space-y-2 flex-1">
@@ -274,7 +302,7 @@ export default function CityPageContent({ city }) {
       {/* ── ZONE ── */}
       <section className="max-w-7xl mx-auto px-6 mb-10 md:mb-20">
         <div className="flex items-start gap-3 rounded-2xl p-6" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
-          <MapPin size={20} className="shrink-0 mt-0.5" style={{ color: "var(--primary)" }} />
+          <Clock size={20} className="shrink-0 mt-0.5" style={{ color: "var(--primary)" }} />
           <div>
             <p className="font-bold mb-1">Zone d&apos;intervention — {city.name} &amp; environs</p>
             <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-subtle)" }}>

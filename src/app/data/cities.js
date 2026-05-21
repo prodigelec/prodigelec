@@ -9,6 +9,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Anet", "Nonancourt", "Saint-Rémy-sur-Avre", "Ivry-la-Bataille"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Place_Mesirard_Dreux.jpg/960px-Place_Mesirard_Dreux.jpg",
+    description: "Dreux est ma ville d'intervention principale — à seulement 15 km de Broué, j'y interviens régulièrement pour des dépannages électriques urgents, des remises aux normes et des installations de sécurité dans les quartiers pavillonnaires comme le centre-ville.",
+    localContext: "Ville de taille moyenne avec un tissu résidentiel dense : appartements anciens du centre, maisons pavillonnaires et petits commerces. Forte demande en mise aux normes NF C 15-100 et en sécurité électronique.",
   },
   {
     slug: "chartres",
@@ -20,6 +22,8 @@ export const cities = [
     freeZone: false,
     nearby: ["Maintenon", "Nogent-le-Roi", "Lèves", "Barjouville"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Chartres_-_Vue_ville_et_cath%C3%A9trale.jpg/960px-Chartres_-_Vue_ville_et_cath%C3%A9trale.jpg",
+    description: "Chartres, préfecture d'Eure-et-Loir, est une ville où j'interviens pour des installations complètes en électricité, sécurité et automatismes — principalement dans les lotissements modernes et les maisons individuelles de la périphérie chartraine.",
+    localContext: "Préfecture avec un parc immobilier varié : bâtiments du centre historique nécessitant des mises aux normes, résidences récentes en périphérie avec des besoins en domotique et en sécurité électronique.",
   },
   {
     slug: "evreux",
@@ -31,6 +35,8 @@ export const cities = [
     freeZone: false,
     nearby: ["Saint-André-de-l'Eure", "Nonancourt", "Ivry-la-Bataille"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Evreux_-_2016-06-15_-_IMG_1262.jpg/960px-Evreux_-_2016-06-15_-_IMG_1262.jpg",
+    description: "Évreux, préfecture de l'Eure, est une ville que je dessers pour des travaux d'électricité générale et des installations de sécurité électronique. Les quartiers résidentiels d'Évreux concentrent de nombreuses maisons individuelles à équiper ou à remettre aux normes.",
+    localContext: "Chef-lieu de l'Eure avec une forte proportion de maisons individuelles et de copropriétés — les besoins en digicode, interphonie et vidéosurveillance y sont particulièrement importants.",
   },
   {
     slug: "mantes-la-jolie",
@@ -42,6 +48,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Mantes-la-Ville", "Limay", "Rosny-sur-Seine"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Mantes-la-Jolie_%2878%29%2C_coll%C3%A9giale_Notre-Dame%2C_vue_g%C3%A9n%C3%A9rale_depuis_le_nord_7.jpg/960px-Mantes-la-Jolie_%2878%29%2C_coll%C3%A9giale_Notre-Dame%2C_vue_g%C3%A9n%C3%A9rale_depuis_le_nord_7.jpg",
+    description: "Mantes-la-Jolie et son agglomération dans les Yvelines concentrent une forte demande en sécurité électronique : digicodes, interphones vidéo et caméras de surveillance y sont très recherchés. J'y interviens aussi pour des motorisations de portails dans les zones pavillonnaires.",
+    localContext: "Ville urbaine avec une périphérie pavillonnaire étendue — appartements du centre nécessitant des systèmes d'accès sécurisés et maisons individuelles à automatiser.",
   },
   {
     slug: "rambouillet",
@@ -53,6 +61,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Montfort l'Amaury", "Houdan", "Thoiry"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Mairie_de_Rambouillet.JPG/960px-Mairie_de_Rambouillet.JPG",
+    description: "Rambouillet est une ville résidentielle des Yvelines à forte demande en domotique et en automatismes. Les maisons individuelles de la région sont souvent à équiper en systèmes Somfy — volets motorisés, portails automatiques et pilotage depuis smartphone.",
+    localContext: "Ville résidentielle aisée avec un parc de maisons individuelles de qualité — forte demande en motorisation Somfy Tahoma Switch et en systèmes de sécurité discrets.",
   },
   {
     slug: "plaisir",
@@ -64,6 +74,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Neauphle-le-Château", "Montfort l'Amaury", "Thoiry"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Plaisir_Mairie.JPG/960px-Plaisir_Mairie.JPG",
+    description: "Plaisir est une commune des Yvelines à tissu pavillonnaire dense. J'y interviens régulièrement pour des motorisations de portails et de volets roulants, des installations de contrôle d'accès et des travaux d'électricité générale dans les maisons individuelles.",
+    localContext: "Zone pavillonnaire des Yvelines avec une forte densité de maisons individuelles — demande soutenue en motorisation de portails et de volets, et en sécurisation des accès.",
   },
   {
     slug: "montfort-lamaury",
@@ -75,6 +87,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Houdan", "Rambouillet", "Thoiry", "Plaisir"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Montfort-l%27Amaury_%40_Ch%C3%A2teau_de_Montfort.jpg/960px-Montfort-l%27Amaury_%40_Ch%C3%A2teau_de_Montfort.jpg",
+    description: "Montfort l'Amaury, village médiéval des Yvelines, attire une clientèle de propriétaires de maisons de caractère qui recherchent des installations électriques soignées et des systèmes de sécurité discrets. J'y interviens pour des travaux adaptés aux bâtiments anciens et aux propriétés de standing.",
+    localContext: "Village historique entouré de propriétés de caractère — interventions personnalisées pour des maisons anciennes et des résidences de standing nécessitant des installations discrètes et de qualité.",
   },
   {
     slug: "houdan",
@@ -86,6 +100,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Montfort l'Amaury", "Anet", "Broué"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Houdan_vue_g%C3%A9n%C3%A9rale_2025.jpg/960px-Houdan_vue_g%C3%A9n%C3%A9rale_2025.jpg",
+    description: "Houdan est un bourg des Yvelines proche de ma base à Broué, que je dessers fréquemment. Maisons de ville, pavillons et exploitations agricoles de la commune ont des besoins variés en électricité, sécurité et automatismes — que je traite avec réactivité.",
+    localContext: "Bourg rural animé avec marché local — clientèle de particuliers, artisans et agriculteurs avec des besoins en électricité générale, motorisation de portails et systèmes de sécurité.",
   },
   {
     slug: "maintenon",
@@ -97,6 +113,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Nogent-le-Roi", "Chartres", "Epernon"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Mairie_de_Maintenon_le_9_septembre_2015_-_3.jpg/960px-Mairie_de_Maintenon_le_9_septembre_2015_-_3.jpg",
+    description: "Maintenon, connue pour son château et son aqueduc, est une commune d'Eure-et-Loir que je dessers régulièrement. Les maisons individuelles de Maintenon et des hameaux alentour bénéficient d'un déplacement gratuit pour le devis et de délais d'intervention rapides.",
+    localContext: "Commune résidentielle proche de Chartres et Nogent-le-Roi — maisons individuelles et lotissements pavillonnaires avec des besoins croissants en domotique et sécurité électronique.",
   },
   {
     slug: "anet",
@@ -108,6 +126,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Broué", "Dreux", "Ivry-la-Bataille", "Nonancourt"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Ch%C3%A2teau_Anet_wiki.jpg/960px-Ch%C3%A2teau_Anet_wiki.jpg",
+    description: "Anet est l'une des communes les plus proches de ma base à Broué — à seulement 12 km. J'y interviens rapidement pour tout dépannage électrique urgent, installation de sécurité ou motorisation. Intervention le jour même souvent possible pour les urgences.",
+    localContext: "Commune rurale très proche de Broué avec son célèbre château — maisons de village et propriétés rurales avec des besoins en dépannage rapide et en installations électriques soignées.",
   },
   {
     slug: "nogent-le-roi",
@@ -119,6 +139,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Maintenon", "Dreux", "Broué"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Nogent-le-Roi_-_Chateau_01.jpg/960px-Nogent-le-Roi_-_Chateau_01.jpg",
+    description: "Nogent-le-Roi est un bourg d'Eure-et-Loir avec un parc de maisons individuelles et de lotissements récents. J'y interviens pour des mises aux normes électriques, des installations de systèmes de sécurité et des motorisations de portails et de volets.",
+    localContext: "Bourg rural entre Dreux et Maintenon avec des lotissements en développement — demande en motorisation de portails, systèmes d'alarme et remises aux normes électriques.",
   },
   {
     slug: "nonancourt",
@@ -130,6 +152,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Dreux", "Anet", "Broué", "Saint-Rémy-sur-Avre"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Nonancourt_-_%C3%A9glise_saint_Martin.jpg/960px-Nonancourt_-_%C3%A9glise_saint_Martin.jpg",
+    description: "Nonancourt est un bourg de l'Eure à la frontière entre la Normandie et la Beauce, que je dessers régulièrement depuis Broué. Maisons de bourg, pavillons et fermes constituent l'essentiel de mes interventions — électricité, sécurité et automatismes.",
+    localContext: "Bourg à la croisée de l'Eure-et-Loir et de l'Eure — clientèle rurale avec des propriétés souvent anciennes nécessitant des mises aux normes et des installations électriques adaptées.",
   },
   {
     slug: "ivry-la-bataille",
@@ -141,6 +165,8 @@ export const cities = [
     freeZone: true,
     nearby: ["Anet", "Dreux", "Nonancourt", "Évreux"],
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Ivry-la-bataille-vu-du-chateau.jpg/960px-Ivry-la-bataille-vu-du-chateau.jpg",
+    description: "Ivry-la-Bataille, au bord de la rivière Eure, est une commune que je dessers facilement depuis Broué. Maisons individuelles et bâtiments anciens du bourg sont au cœur de mes interventions : mise aux normes, sécurité, motorisation et dépannage électrique.",
+    localContext: "Commune rurale en bord de rivière avec un patrimoine bâti ancien — besoins importants en remise aux normes électriques et en installation de systèmes de sécurité discrets.",
   },
 ];
 
