@@ -3,12 +3,13 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import Link from "next/link";
 import { cities } from "@/app/data/cities";
 import ProdigelecMonogram from "@/app/components/ui/ProdigelecMonogram";
+import ProdigelecSeal from "@/app/components/ui/ProdigelecSeal";
 
 export default function Footer() {
   return (
     <footer className="bg-background border-t border-white/5 pt-4 md:pt-16 pb-28 md:pb-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-20">
 
           {/* Brand Column */}
           <div className="space-y-4 md:space-y-6">
@@ -93,6 +94,11 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Seal */}
+        <div className="flex justify-center mb-12 md:mb-16 opacity-50 hover:opacity-80 transition-opacity duration-500">
+          <ProdigelecSeal size={200} variant="transparent" instanceId="footer" />
         </div>
 
         {/* Bottom Bar */}

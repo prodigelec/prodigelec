@@ -1,5 +1,4 @@
 "use client";
-import { useId } from "react";
 
 function IconPortail({ c = "#fff", w = 1.6 }) {
   return (
@@ -71,10 +70,9 @@ function IconAmpoule({ c = "#fff", w = 1.6 }) {
  * @param {number} size - Taille en px (défaut 200)
  * @param {"navy"|"paper"|"transparent"} variant - Fond du sceau
  */
-export default function ProdigelecSeal({ size = 200, variant = "navy" }) {
-  const uid = useId().replace(/:/g, "_");
-  const idTop = uid + "_t";
-  const idBot = uid + "_b";
+export default function ProdigelecSeal({ size = 200, variant = "navy", instanceId = "seal" }) {
+  const idTop = `prodigelec_${instanceId}_t`;
+  const idBot = `prodigelec_${instanceId}_b`;
 
   const yellow = "#ffd60a";
   const bgColor =
@@ -128,9 +126,9 @@ export default function ProdigelecSeal({ size = 200, variant = "navy" }) {
       <path d="M 10 -70 L -28 8 L -2 8 L -14 72 L 28 -8 L 4 -8 L 18 -70 Z" fill={yellow} />
 
       {/* AUTOMATISME — haut */}
-      <g transform="translate(0,-130)">
+      <g transform="translate(0,-138)">
         <text fill={fg} textAnchor="middle" style={labelFont}>AUTOMATISME</text>
-        <g transform="translate(0,32)">
+        <g transform="translate(0,42)">
           <IconPortail c={fg} />
         </g>
       </g>
@@ -155,9 +153,9 @@ export default function ProdigelecSeal({ size = 200, variant = "navy" }) {
       </g>
 
       {/* ÉLECTRICITÉ — bas */}
-      <g transform="translate(0,128)">
+      <g transform="translate(0,138)">
         <text fill={fg} textAnchor="middle" style={labelFont}>ÉLECTRICITÉ</text>
-        <g transform="translate(0,-28)">
+        <g transform="translate(0,-38)">
           <IconAmpoule c={fg} />
         </g>
       </g>
