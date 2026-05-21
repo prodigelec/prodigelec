@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, ArrowRight, Calendar } from 'lucide-react'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPost, getAllPosts } from '@/lib/blog'
@@ -53,7 +54,7 @@ export default async function BlogPostPage({ params }) {
         </Link>
 
         {/* Header */}
-        <div className="mb-10">
+        <div className="mb-8">
           <div className="flex items-center gap-3 mb-5">
             <span
               className="px-3 py-1 rounded-full text-xs font-bold"
@@ -70,8 +71,19 @@ export default async function BlogPostPage({ params }) {
           <p className="text-base leading-relaxed" style={{ color: "var(--foreground-subtle)" }}>{meta.description}</p>
         </div>
 
-        {/* Séparateur */}
-        <div className="h-px mb-10" style={{ background: "var(--border)" }} />
+        {/* Image principale */}
+        {meta.image && (
+          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-10">
+            <Image
+              src={meta.image}
+              alt={meta.imageAlt || meta.titre}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+              priority
+            />
+          </div>
+        )}
 
         {/* Contenu MDX */}
         <div className="prose-blog">

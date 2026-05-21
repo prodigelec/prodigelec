@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getAllPosts } from '@/lib/blog'
 import { Calendar, ArrowRight } from 'lucide-react'
 
@@ -50,11 +51,25 @@ export default function BlogPage() {
             return (
               <article
                 key={post.slug}
-                className="rounded-2xl flex flex-col"
+                className="rounded-2xl overflow-hidden flex flex-col"
                 style={{ background: "var(--card)", border: "1px solid var(--border)" }}
               >
+                {/* Image */}
+                {post.image && (
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt || post.titre}
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                )}
+
+                {/* Contenu */}
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="mb-4">
+                  <div className="mb-3">
                     <span
                       className="px-3 py-1 rounded-full text-xs font-bold"
                       style={{ background: cat.bg, border: `1px solid ${cat.border}`, color: cat.text }}
