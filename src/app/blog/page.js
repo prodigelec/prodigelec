@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { getAllPosts } from '@/lib/blog'
-import { Calendar, ArrowRight } from 'lucide-react'
+import { Calendar, ArrowRight, Wrench, Package } from 'lucide-react'
 
 export const metadata = {
-  title: "Blog — Conseils électricité, sécurité & automatismes | PRODIGELEC",
-  description: "Conseils pratiques d'un artisan électricien : installation électrique, sécurité, portails motorisés — interventions en Eure-et-Loir, Eure et Yvelines.",
+  title: "Blog — Dépannage & Installation électrique | PRODIGELEC",
+  description: "Conseils pratiques d'un artisan électricien : dépannage urgence, installation électrique, sécurité, portails motorisés — Eure-et-Loir, Eure et Yvelines.",
   alternates: { canonical: "https://www.prodigelec.fr/blog" },
   openGraph: {
-    title: "Blog PRODIGELEC — Conseils de votre électricien",
-    description: "Astuces et conseils pratiques en électricité, sécurité et automatismes par un artisan de terrain.",
+    title: "Blog PRODIGELEC — Dépannage & Installation",
+    description: "Conseils de terrain en électricité, sécurité et automatismes par un artisan de proximité.",
     url: "https://www.prodigelec.fr/blog",
   },
 }
@@ -24,15 +24,66 @@ function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString("fr-FR", { month: "long", year: "numeric" })
 }
 
+function PostCard({ post }) {
+  const cat = categoryColors[post.categorie]
+  return (
+    <article
+      className="rounded-2xl overflow-hidden flex flex-col"
+      style={{ background: "var(--card)", border: "1px solid var(--border)" }}
+    >
+      {post.image && (
+        <div className="relative h-48 overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.imageAlt || post.titre}
+            fill
+            className="object-cover transition-transform duration-500 hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        </div>
+      )}
+      <div className="p-6 flex flex-col flex-1">
+        <div className="mb-3">
+          <span
+            className="px-3 py-1 rounded-full text-xs font-bold"
+            style={{ background: cat.bg, border: `1px solid ${cat.border}`, color: cat.text }}
+          >
+            {cat.label}
+          </span>
+        </div>
+        <h2 className="font-bold text-base mb-3 leading-snug">{post.titre}</h2>
+        <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: "var(--foreground-subtle)" }}>
+          {post.description}
+        </p>
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-1 text-xs" style={{ color: "var(--foreground-subtle)" }}>
+            <Calendar size={12} />
+            {formatDate(post.date)}
+          </span>
+          <Link
+            href={`/blog/${post.slug}`}
+            className="flex items-center gap-1 text-xs font-semibold transition-all hover:gap-2"
+            style={{ color: "var(--primary)" }}
+          >
+            Lire <ArrowRight size={12} />
+          </Link>
+        </div>
+      </div>
+    </article>
+  )
+}
+
 export default function BlogPage() {
   const posts = getAllPosts()
+  const depannage = posts.filter(p => p.type === 'depannage')
+  const installation = posts.filter(p => p.type === 'installation')
 
   return (
     <main className="min-h-screen bg-background text-foreground pt-20 pb-16 mt-16 md:pt-24 md:mt-16 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="mb-10 md:mb-14">
+        <div className="mb-12 md:mb-16">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "var(--primary)" }}>
             Conseils & expertise
           </p>
@@ -44,61 +95,42 @@ export default function BlogPage() {
           </p>
         </div>
 
-        {/* Grille */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map(post => {
-            const cat = categoryColors[post.categorie]
-            return (
-              <article
-                key={post.slug}
-                className="rounded-2xl overflow-hidden flex flex-col"
-                style={{ background: "var(--card)", border: "1px solid var(--border)" }}
-              >
-                {/* Image */}
-                {post.image && (
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.imageAlt || post.titre}
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                )}
+        {/* Section Dépannage */}
+        {depannage.length > 0 && (
+          <section className="mb-14">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center justify-center w-9 h-9 rounded-xl" style={{ background: "rgba(239,68,68,0.12)", border: "1px solid rgba(239,68,68,0.3)" }}>
+                <Wrench size={16} className="text-rose-400" />
+              </div>
+              <div>
+                <h2 className="text-xl font-extrabold text-white">Dépannage</h2>
+                <p className="text-xs" style={{ color: "var(--foreground-subtle)" }}>Pannes, diagnostics, interventions urgentes</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {depannage.map(post => <PostCard key={post.slug} post={post} />)}
+            </div>
+          </section>
+        )}
 
-                {/* Contenu */}
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="mb-3">
-                    <span
-                      className="px-3 py-1 rounded-full text-xs font-bold"
-                      style={{ background: cat.bg, border: `1px solid ${cat.border}`, color: cat.text }}
-                    >
-                      {cat.label}
-                    </span>
-                  </div>
-                  <h2 className="font-bold text-base mb-3 leading-snug">{post.titre}</h2>
-                  <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: "var(--foreground-subtle)" }}>
-                    {post.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-1 text-xs" style={{ color: "var(--foreground-subtle)" }}>
-                      <Calendar size={12} />
-                      {formatDate(post.date)}
-                    </span>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="flex items-center gap-1 text-xs font-semibold transition-all hover:gap-2"
-                      style={{ color: "var(--primary)" }}
-                    >
-                      Lire <ArrowRight size={12} />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            )
-          })}
-        </div>
+        {/* Section Installation */}
+        {installation.length > 0 && (
+          <section>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center justify-center w-9 h-9 rounded-xl" style={{ background: "rgba(201,162,39,0.12)", border: "1px solid rgba(201,162,39,0.3)" }}>
+                <Package size={16} style={{ color: "var(--primary)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-extrabold text-white">Installation</h2>
+                <p className="text-xs" style={{ color: "var(--foreground-subtle)" }}>Choix, mise en place, conseils avant travaux</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {installation.map(post => <PostCard key={post.slug} post={post} />)}
+            </div>
+          </section>
+        )}
+
       </div>
     </main>
   )
