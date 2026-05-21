@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import Link from "next/link";
 import { cities } from "@/app/data/cities";
 import ProdigelecMonogram from "@/app/components/ui/ProdigelecMonogram";
@@ -37,6 +37,9 @@ export default function Footer() {
               </a>
               <a href="#" aria-label="Suivez-nous sur Instagram" className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-primary hover:text-[#0b1a2a] transition-all">
                 <FaInstagram size={20} className="md:w-[18px] md:h-[18px]" />
+              </a>
+              <a href="https://wa.me/33638194752" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp" className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-[#25D366] hover:text-white transition-all">
+                <FaWhatsapp size={20} className="md:w-[18px] md:h-[18px]" />
               </a>
             </div>
           </div>
@@ -91,6 +94,10 @@ export default function Footer() {
               <li className="flex items-center gap-3 text-foreground-subtle text-xs md:text-sm">
                 <Mail size={16} className="text-primary shrink-0 md:w-[18px] md:h-[18px]" />
                 <a href="mailto:contact@prodigelec.fr" className="hover:text-white transition-colors">contact@prodigelec.fr</a>
+              </li>
+              <li className="flex items-center gap-3 text-foreground-subtle text-xs md:text-sm">
+                <FaWhatsapp size={16} className="text-[#25D366] shrink-0 md:w-[18px] md:h-[18px]" />
+                <a href="https://wa.me/33638194752" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
               </li>
             </ul>
           </div>
