@@ -38,25 +38,20 @@ export const metadata = {
     description: "Électricité et sécurité en Eure-et-Loir, Eure et Yvelines.",
     url: "https://www.prodigelec.fr",
     siteName: "PRODIGELEC",
-    images: [{ url: "https://www.prodigelec.fr/logo_camera.png", width: 800, height: 600, alt: "Logo PRODIGELEC" }],
+    images: [{ url: "https://www.prodigelec.fr/opengraph-image", width: 1200, height: 630, alt: "PRODIGELEC - Électricien & Sécurité" }],
     locale: "fr_FR",
     type: "website",
   },
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
-      { url: "/favicon-512.png", sizes: "192x192", type: "image/png" },
-      { url: "/favicon-512.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/favicon-512.png", sizes: "180x180", type: "image/png" }],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   verification: { google: "w5rAOBeW-q78ZcjmJWRltGvSvm92EYiSSSo5CfP6Zo0" },
   twitter: {
     card: "summary_large_image",
     title: "PRODIGELEC - Électricien & Sécurité | 27, 28 & 78",
     description: "PRODIGELEC à Broué (28). Dépannage électricité et sécurité sur Dreux, Chartres, Évreux, Houdan et alentours (28, 27, 78).",
-    images: ["https://www.prodigelec.fr/logo_camera.png"],
+    images: ["https://www.prodigelec.fr/opengraph-image"],
   },
 };
 
