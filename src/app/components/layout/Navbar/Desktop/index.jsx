@@ -27,7 +27,7 @@ export default function Navbar() {
                 { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
             ]
         },
-        { name: 'Réalisations', href: isHomePage ? '#realisations' : '/#realisations' },
+        { name: 'Réalisations', href: '/realisations' },
         { name: 'À Propos', href: '/about' },
         { name: 'Contact', href: '/contact' }
     ];
