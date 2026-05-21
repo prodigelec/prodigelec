@@ -9,6 +9,7 @@ const ServicesSection = dynamic(() => import("@/app/components/home/sections/Ser
 const ProcessSection = dynamic(() => import("@/app/components/home/sections/ProcessSection"));
 const PricingPolicySection = dynamic(() => import("@/app/components/home/sections/PricingPolicySection"));
 const TestimonialsSection = dynamic(() => import("@/app/components/home/sections/ClientTestimonials"));
+const PartnersSection = dynamic(() => import("@/app/components/home/sections/PartnersSection"));
 const ContactCTASection = dynamic(() => import("@/app/components/home/sections/ContactCTASection"));
 
 export const metadata = {
@@ -48,6 +49,7 @@ export default function Home() {
         <ProcessSection />
         <PricingPolicySection />
         <TestimonialsSection  />
+        <PartnersSection />
         <ContactCTASection />
       </div>
     </main>
