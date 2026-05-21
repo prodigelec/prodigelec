@@ -1,16 +1,13 @@
 "use client"
 import { m } from "framer-motion";
-import { Home, Mail, Cctv, PhoneCall } from "lucide-react";
-import { MdBlinds } from "react-icons/md";
-import { GiGate } from "react-icons/gi";
-import { FcFlashOn } from "react-icons/fc";
+import { Home, Mail, Cctv, PhoneCall, BookOpen } from "lucide-react";
 
 export default function MobileNavbar() {
     const navItems = [
         { name: 'Accueil', icon: <Home size={18} />, href: '/' },
         { name: 'Sécurité', icon: <Cctv size={18} />, href: '/services/securite' },
         { name: 'SOS Élec', icon: <PhoneCall size={22} />, href: 'tel:0638194752', highlight: true },
-        { name: 'Élec', icon: <FcFlashOn size={18} />, href: '/services/electricite' },
+        { name: 'Blog', icon: <BookOpen size={18} />, href: '/blog' },
         { name: 'Contact', icon: <Mail size={18} />, href: '/contact' },
     ];
 

@@ -28,6 +28,7 @@ export default function Navbar() {
             ]
         },
         { name: 'Réalisations', href: '/realisations' },
+        { name: 'Blog', href: '/blog' },
         { name: 'À Propos', href: '/about' },
         { name: 'Contact', href: '/contact' }
     ];
