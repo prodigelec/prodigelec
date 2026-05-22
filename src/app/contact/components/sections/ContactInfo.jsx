@@ -32,8 +32,8 @@ export default function ContactInfo() {
     {
       icon: Clock,
       title: "Horaires d'ouverture",
-      value: "Lundi - Vendredi (9h-18h)",
-      sub: "Samedi uniquement sur RDV",
+      value: "Lundi - Samedi : 24h/24",
+      sub: "Répondeur actif la nuit, rappel dès que possible",
       link: null,
       gradient: "from-primary/20 to-primary-dark/20",
       text: "text-primary-light"

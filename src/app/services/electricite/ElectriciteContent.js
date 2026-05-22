@@ -144,8 +144,8 @@ export default function ElectriciteContent() {
       answer: "Les tarifs varient selon la nature de l'intervention. Je fournis un devis gratuit avant toute intervention. Si vous acceptez le devis et que j'effectue les travaux, la facturation inclut au minimum 1 heure de main d'œuvre et un déplacement, sans surprise."
     },
     {
-      question: "Intervenez-vous en urgence le week-end ?",
-      answer: "Oui, j'interviens sur rendez-vous le samedi et en urgence après 19h ainsi que le dimanche pour les pannes nécessitant une intervention immédiate (court-circuit, coupure totale, etc.)."
+      question: "Intervenez-vous en urgence la nuit ?",
+      answer: "Oui, je suis disponible du lundi au samedi 24h/24. La nuit, un répondeur est actif — laissez un message et je vous rappelle dès que possible pour les pannes nécessitant une intervention immédiate (court-circuit, coupure totale, etc.)."
     },
     {
       question: "Qu'est-ce que la norme NF C 15-100 ?",

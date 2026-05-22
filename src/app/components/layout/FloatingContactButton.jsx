@@ -42,7 +42,13 @@ export default function FloatingContactButton() {
                 >
                   <div className="bg-rose-600 p-4 text-center">
                     <h3 className="font-bold text-white">Besoin d&apos;un dépannage ?</h3>
-                    <p className="text-xs text-white/90 mt-1">Réponse rapide garantie</p>
+                    <div className="flex items-center justify-center gap-1.5 mt-1">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400" />
+                      </span>
+                      <p className="text-xs text-white/90">Disponible 24h/24 — Lun. au Sam.</p>
+                    </div>
                   </div>
                   <div className="p-4 bg-white">
                     <a
@@ -53,7 +59,7 @@ export default function FloatingContactButton() {
                       06 38 19 47 52
                     </a>
                     <p className="text-xs text-center text-gray-700 mt-3">
-                      Basé à Broué (28) - Intervention rapide
+                      Répondeur actif la nuit — rappel dès que possible
                     </p>
                   </div>
                 </m.div>
