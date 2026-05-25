@@ -63,7 +63,8 @@ export default async function CityPage({ params }) {
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Electrician",
+    "@id": `https://www.prodigelec.fr/electricien/${city.slug}#business`,
     name: "PRODIGELEC",
     url: "https://www.prodigelec.fr",
     telephone: "+33638194752",
@@ -73,14 +74,36 @@ export default async function CityPage({ params }) {
       streetAddress: "10 Rue Georges Bréant",
       addressLocality: "Broué",
       postalCode: "28410",
+      addressRegion: "Eure-et-Loir",
       addressCountry: "FR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 48.76271,
+      longitude: 1.51530,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "00:00",
+        closes: "23:59",
+      },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "4",
+      bestRating: "5",
+      worstRating: "1",
     },
     areaServed: [
       { "@type": "City", name: city.name },
       ...city.nearby.map((n) => ({ "@type": "City", name: n })),
     ],
-    priceRange: city.freeZone ? "€€ (devis gratuit)" : "€€",
+    priceRange: "€€",
     sameAs: [
+      "https://www.prodigelec.fr/#business",
       "https://www.facebook.com/prodigelec/",
       "https://www.instagram.com/prodigelec/",
     ],

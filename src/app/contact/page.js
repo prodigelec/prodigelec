@@ -3,37 +3,43 @@ import ContactInfo from "./components/sections/ContactInfo";
 import ContactForm from "./components/sections/ContactForm";
 
 export const metadata = {
-  title: "Contactez PRODIGELEC - Devis Gratuit Électricité & Sécurité | 27, 28 & 78",
+  title: "Contact & Devis Gratuit — Électricien 27, 28 & 78 | PRODIGELEC",
   description: "Contactez PRODIGELEC au 06 38 19 47 52. Devis gratuit, dépannage urgent. Intervention rapide sur Dreux, Chartres, Évreux, Houdan & alentours (27, 28, 78).",
-  keywords: [
-    "contact PRODIGELEC",
-    "devis gratuit électricien Broué",
-    "dépannage électricité urgent 28",
-    "dépannage électricité urgent 78",
-    "électricien Chartres contact",
-    "intervention rapide Eure-et-Loir",
-    "intervention rapide Yvelines",
-    "06 38 19 47 52",
-    "artisan électricien devis"
-  ],
   alternates: {
     canonical: "https://www.prodigelec.fr/contact",
   },
   openGraph: {
-    title: "Contactez PRODIGELEC - Devis Gratuit & Intervention Rapide (27/28/78)",
-    description: "Une urgence ou un projet ? Profitez de 23 ans d'expertise. Appel ou message, réponse rapide garantie.",
+    title: "Contact PRODIGELEC — Devis gratuit & intervention rapide (27/28/78)",
+    description: "Urgence ou projet ? 23 ans d'expertise. Réponse rapide garantie. Appelez le 06 38 19 47 52 ou envoyez un message.",
     url: "https://www.prodigelec.fr/contact",
   },
 };
 
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact PRODIGELEC",
+  "url": "https://www.prodigelec.fr/contact",
+  "description": "Contactez PRODIGELEC pour un devis gratuit ou un dépannage électrique urgent en Eure-et-Loir (28), Eure (27) et Yvelines (78).",
+  "mainEntity": {
+    "@id": "https://www.prodigelec.fr/#business"
+  }
+};
+
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-background pt-20 pb-8 md:pt-24 md:pb-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <ContactHero />
-        <ContactInfo />
-        <ContactForm />
-      </div>
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+      <main className="min-h-screen bg-background pt-20 pb-8 md:pt-24 md:pb-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <ContactHero />
+          <ContactInfo />
+          <ContactForm />
+        </div>
+      </main>
+    </>
   );
 }

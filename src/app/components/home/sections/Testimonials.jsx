@@ -18,56 +18,21 @@ function FilledStar({ className = "" }) {
   );
 }
 
-const FALLBACK_TESTIMONIALS = [
-  {
-    id: 1,
-    name: "Sophie M.",
-    location: "Dreux",
-    rating: 5,
-    text: "Intervention très rapide pour une panne de courant totale. L'électricien a été ponctuel, très professionnel et a pris le temps d'expliquer le problème. Je recommande vivement !",
-    date: "Il y a 2 semaines",
-    profilePhoto: null,
-  },
-  {
-    id: 2,
-    name: "Laurent B.",
-    location: "Anet",
-    rating: 5,
-    text: "Excellent professionnel, je recommande à 100%. Réparation de notre digicode réalisée rapidement et proprement. Explications claires, tarif honnête. On sent que le métier est maîtrisé.",
-    date: "Il y a 3 semaines",
-    profilePhoto: null,
-  },
-  {
-    id: 3,
-    name: "Marie & Thomas",
-    location: "Broué",
-    rating: 4,
-    text: "Nous avons fait appel à Prodigelec pour la rénovation de notre tableau électrique. Excellent travail. Un artisan de confiance.",
-    date: "Il y a 3 semaines",
-    profilePhoto: null,
-  },
-];
 
 export default function Testimonials() {
   const googleReviewLink = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL || "https://g.page/r/Cc7ec3hVcz95EBM/review";
-  const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
+  const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
     fetch("/api/reviews")
       .then((r) => r.json())
       .then(({ reviews }) => {
-        if (reviews?.length > 0) {
-          // Compléter avec les fallbacks si moins de 3 vrais avis
-          const merged = [...reviews];
-          for (const f of FALLBACK_TESTIMONIALS) {
-            if (merged.length >= 3) break;
-            merged.push({ ...f, id: reviews.length + f.id });
-          }
-          setTestimonials(merged);
-        }
+        if (reviews?.length > 0) setTestimonials(reviews);
       })
       .catch(() => {});
   }, []);
+
+  if (testimonials.length === 0) return null;
 
   return (
     <section className="py-20 md:py-32 bg-background relative overflow-hidden">
@@ -108,7 +73,7 @@ export default function Testimonials() {
           </m.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16">
           {testimonials.map((testimonial, index) => (
             <m.div
               key={testimonial.id}

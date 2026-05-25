@@ -1,10 +1,8 @@
 "use client";
 import { m, AnimatePresence } from 'framer-motion';
 import Button from '@/app/components/ui/Button';
-import { useRouter } from 'next/navigation';
 
 export default function HeroContent({ slides, currentSlide }) {
-  const router = useRouter();
 
   return (
     <div className="relative z-20 h-full flex items-center justify-center pt-24 md:pt-40">
@@ -19,12 +17,12 @@ export default function HeroContent({ slides, currentSlide }) {
             transition={{ duration: 0.5, staggerChildren: 0.1 }}
             className="space-y-6 md:space-y-12 max-w-5xl mx-auto"
           >
-            {/* SEO Optimized H1 (Hidden) */}
-            <h1 className="sr-only">
-              PRODIGELEC - Expert Artisan Électricien & Sécurité Électronique | Eure (27), Eure-et-Loir (28) & Yvelines (78)
+            {/* H1 visible — ancre SEO locale */}
+            <h1 className="text-xs font-bold uppercase tracking-[0.3em] opacity-60" style={{ color: "var(--primary)" }}>
+              Artisan électricien &amp; sécurité — Eure-et-Loir, Eure &amp; Yvelines
             </h1>
 
-            {/* Title (Carousel H2) */}
+            {/* Titre carousel (H2) */}
             <div className="space-y-4">
               <m.h2
                 initial={{ y: 20, opacity: 0 }}
@@ -54,7 +52,7 @@ export default function HeroContent({ slides, currentSlide }) {
               </m.div>
             </div>
 
-            {/* CTA Buttons - Visible on all devices */}
+            {/* CTA Buttons */}
             <m.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

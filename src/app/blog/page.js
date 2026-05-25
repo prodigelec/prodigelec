@@ -4,12 +4,12 @@ import { getAllPosts } from '@/lib/blog'
 import { Calendar, ArrowRight } from 'lucide-react'
 
 export const metadata = {
-  title: "Blog — Dépannage & Installation électrique | PRODIGELEC",
+  title: "Blog électricien — Conseils & dépannage en 27, 28 & 78 | PRODIGELEC",
   description: "Conseils pratiques d'un artisan électricien : dépannage urgence, installation électrique, sécurité, portails motorisés — Eure-et-Loir, Eure et Yvelines.",
   alternates: { canonical: "https://www.prodigelec.fr/blog" },
   openGraph: {
-    title: "Blog PRODIGELEC — Dépannage & Installation",
-    description: "Conseils de terrain en électricité, sécurité et automatismes par un artisan de proximité.",
+    title: "Blog PRODIGELEC — Conseils électricité, sécurité & automatismes",
+    description: "Conseils de terrain en électricité, sécurité et automatismes par un artisan de proximité en Eure-et-Loir, Eure et Yvelines.",
     url: "https://www.prodigelec.fr/blog",
   },
 }
@@ -37,10 +37,13 @@ export default function BlogPage() {
             Conseils & expertise
           </p>
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-            Le <span style={{ background: "linear-gradient(135deg, #c9a227, #ffd60a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>blog</span>
+            Blog électricien —{" "}
+            <span style={{ background: "linear-gradient(135deg, #c9a227, #ffd60a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              conseils & dépannage
+            </span>
           </h1>
           <p className="text-sm md:text-base max-w-xl" style={{ color: "var(--foreground-subtle)" }}>
-            Dépannage et installation en électricité, sécurité et automatismes — conseils d'un artisan de terrain en Eure-et-Loir, Eure et Yvelines.
+            Dépannage et installation en électricité, sécurité et automatismes — conseils d&apos;un artisan de terrain en Eure-et-Loir, Eure et Yvelines.
           </p>
         </div>
 

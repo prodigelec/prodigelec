@@ -1,6 +1,10 @@
 "use client";
 import ProdigelecMonogram from "@/app/components/ui/ProdigelecMonogram";
 
+export const metadata = {
+  robots: { index: false, follow: false },
+};
+
 const GOLD = "#C9A84C";
 const DARK = "#0b1a2a";
 const DARK2 = "#0f2336";

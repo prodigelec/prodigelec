@@ -32,13 +32,31 @@ export default function Footer() {
               Votre artisan de confiance en Eure-et-Loir, Eure et Yvelines. Expertise technique, réactivité et solutions sur-mesure pour tous vos besoins.
             </p>
             <div className="flex items-center gap-4">
-              <a href="https://www.facebook.com/prodigelec" target="_blank" rel="noopener noreferrer" aria-label="Suivez-nous sur Facebook" className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-primary hover:text-[#0b1a2a] transition-all group">
+              <a
+                href="https://www.facebook.com/prodigelec/"
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label="Suivez PRODIGELEC sur Facebook"
+                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-primary hover:text-[#0b1a2a] transition-all group"
+              >
                 <FaFacebook size={20} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="#" aria-label="Suivez-nous sur Instagram" className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-primary hover:text-[#0b1a2a] transition-all">
+              <a
+                href="https://www.instagram.com/prodigelec/"
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label="Suivez PRODIGELEC sur Instagram"
+                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-primary hover:text-[#0b1a2a] transition-all"
+              >
                 <FaInstagram size={20} className="md:w-[18px] md:h-[18px]" />
               </a>
-              <a href="https://wa.me/33638194752" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp" className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-[#25D366] hover:text-white transition-all">
+              <a
+                href="https://wa.me/33638194752"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contactez PRODIGELEC sur WhatsApp"
+                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-subtle hover:bg-[#25D366] hover:text-white transition-all"
+              >
                 <FaWhatsapp size={20} className="md:w-[18px] md:h-[18px]" />
               </a>
             </div>
@@ -113,7 +131,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left md:pr-24">
           <p className="text-foreground-subtle text-xs">
-            © 2025 PRODIGELEC — Petaccia Sébastien, EI. Tous droits réservés.
+            © {new Date().getFullYear()} PRODIGELEC — Petaccia Sébastien, EI. Tous droits réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <Link href="/mentions-legales" className="text-foreground-subtle hover:text-gray-100 text-xs transition-colors py-2">Mentions Légales</Link>

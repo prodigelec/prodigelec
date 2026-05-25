@@ -20,6 +20,11 @@ const sora = Sora({
   display: "swap",
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0b1a2a",
+};
 
 export const metadata = {
   metadataBase: new URL("https://www.prodigelec.fr"),
@@ -34,8 +39,8 @@ export const metadata = {
   publisher: "PRODIGELEC",
   formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
-    title: "PRODIGELEC - L'expertise artisanale 2.0",
-    description: "Électricité et sécurité en Eure-et-Loir, Eure et Yvelines.",
+    title: "PRODIGELEC — Électricien & Sécurité Électronique | 27, 28 & 78",
+    description: "Artisan électricien & sécurité électronique, 23 ans d'expérience en Eure-et-Loir, Eure et Yvelines. Dépannage rapide, devis gratuit.",
     url: "https://www.prodigelec.fr",
     siteName: "PRODIGELEC",
     images: [{ url: "https://www.prodigelec.fr/opengraph-image", width: 1200, height: 630, alt: "PRODIGELEC - Électricien & Sécurité" }],

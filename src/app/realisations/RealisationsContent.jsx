@@ -75,6 +75,7 @@ export default function RealisationsContent() {
             return (
               <m.article
                 key={r.slug}
+                id={r.slug}
                 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}
                 className="rounded-2xl overflow-hidden flex flex-col"
                 style={{ background: "var(--card)", border: "1px solid var(--border)" }}
