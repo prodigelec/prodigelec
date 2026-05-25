@@ -2,7 +2,7 @@ import AutomatismesContent from "./AutomatismesContent";
 import ServicePageJsonLd from "@/app/components/ServicePageJsonLd";
 
 export const metadata = {
-  title: "Automatismes & Motorisations 27, 28 & 78 - Volets, Portails, Domotique | PRODIGELEC",
+  title: "Automatismes & Motorisations 27, 28 & 78 - Volets, Portails, Domotique",
   description: "Motorisation volets, portails & portes de garage en 27, 28 & 78. Domotique Somfy, pilotage smartphone. Artisan qualifié. Devis gratuit.",
   keywords: [
     "Motorisation volet Broué", "Motorisation volet Dreux", "Motorisation volet Chartres", "Motorisation volet Évreux",

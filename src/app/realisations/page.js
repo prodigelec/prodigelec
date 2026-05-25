@@ -2,7 +2,7 @@ import RealisationsContent from "./RealisationsContent";
 import { realisations } from "@/app/data/realisations";
 
 export const metadata = {
-  title: "Réalisations — Chantiers électricité & sécurité | PRODIGELEC",
+  title: "Réalisations — Chantiers électricité & sécurité",
   description: "Découvrez les réalisations de PRODIGELEC : installation électrique, sécurité électronique et automatismes en Eure-et-Loir, Eure et Yvelines.",
   alternates: { canonical: "https://www.prodigelec.fr/realisations" },
   openGraph: {

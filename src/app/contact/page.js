@@ -3,7 +3,7 @@ import ContactInfo from "./components/sections/ContactInfo";
 import ContactForm from "./components/sections/ContactForm";
 
 export const metadata = {
-  title: "Contact & Devis Gratuit — Électricien 27, 28 & 78 | PRODIGELEC",
+  title: "Contact & Devis Gratuit — Électricien 27, 28 & 78",
   description: "Contactez PRODIGELEC au 06 38 19 47 52. Devis gratuit, dépannage urgent. Intervention rapide sur Dreux, Chartres, Évreux, Houdan & alentours (27, 28, 78).",
   alternates: {
     canonical: "https://www.prodigelec.fr/contact",

@@ -2,7 +2,7 @@ import ElectriciteContent from "./ElectriciteContent";
 import ServicePageJsonLd from "@/app/components/ServicePageJsonLd";
 
 export const metadata = {
-  title: "Électricien 27, 28 & 78 - Dépannage & Installation Électrique | PRODIGELEC",
+  title: "Électricien 27, 28 & 78 - Dépannage & Installation Électrique",
   description: "Électricien qualifié en 27, 28 & 78. Dépannage, mise aux normes NF C 15-100, éclairage LED, VMC, domotique. Intervention rapide. Devis gratuit.",
   keywords: [
     // Électricien par ville

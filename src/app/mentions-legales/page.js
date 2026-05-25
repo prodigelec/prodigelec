@@ -8,7 +8,7 @@ import ProprieteSection from './components/sections/ProprieteSection';
 import DonneesSection from './components/sections/DonneesSection';
 
 export const metadata = {
-    title: "Mentions Légales | PRODIGELEC",
+    title: "Mentions Légales",
     description: "Mentions légales, informations sur l'éditeur, hébergement et protection des données du site PRODIGELEC.",
 };
 

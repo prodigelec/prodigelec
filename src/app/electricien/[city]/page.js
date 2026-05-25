@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { cities, getCityBySlug } from "@/app/data/cities";
+import { buildCityFaqs } from "@/app/data/cityFaqs";
 import CityPageContent from "./CityPageContent";
 
 export function generateStaticParams() {
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }) {
   const city = getCityBySlug(citySlug);
   if (!city) return {};
 
-  const title = `Électricien ${city.name} (${city.postalCode}) — Dépannage & Sécurité | PRODIGELEC`;
+  const title = `Électricien ${city.name} (${city.postalCode}) — Dépannage & Sécurité`;
   const description = `Artisan électricien & sécurité électronique à ${city.name} (${city.postalCode}). Dépannage, mise aux normes NF C 15-100, digicode, alarme, motorisation. Devis gratuit, intervention rapide.`;
   const url = `https://www.prodigelec.fr/electricien/${city.slug}`;
   const ogImage = city.photo
@@ -97,32 +98,11 @@ export default async function CityPage({ params }) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: `Êtes-vous disponible pour un dépannage électrique urgent à ${city.name} ?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `Oui, PRODIGELEC intervient à ${city.name} (${city.postalCode}) du lundi au samedi, 24h/24. Pour les urgences électriques, contactez-nous au 06 38 19 47 52.`,
-        },
-      },
-      {
-        "@type": "Question",
-        name: `Proposez-vous des devis gratuits à ${city.name} ?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `${city.freeZone ? `Oui, le déplacement est gratuit à ${city.name}. Nous établissons votre devis sans frais et sans engagement.` : `Oui, nous établissons des devis gratuits pour toute intervention à ${city.name}. Contactez-nous pour convenir d'un rendez-vous.`}`,
-        },
-      },
-      {
-        "@type": "Question",
-        name: `Quelles prestations proposez-vous à ${city.name} ?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `À ${city.name}, PRODIGELEC réalise : dépannage et mise aux normes NF C 15-100, installation de tableaux électriques, pose de digicode et contrôle d'accès, alarme intrusion, vidéosurveillance, motorisation de volets et portails automatiques.`,
-        },
-      },
-    ],
+    mainEntity: buildCityFaqs(city).map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
   };
 
   return (

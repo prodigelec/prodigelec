@@ -4,6 +4,7 @@ import Image from "next/image";
 import { m } from "framer-motion";
 import { Phone, MapPin, Zap, Shield, Settings, CheckCircle, ArrowRight, Clock } from "lucide-react";
 import { getCityByName } from "@/app/data/cities";
+import CityFaq from "./CityFaq";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -312,6 +313,9 @@ export default function CityPageContent({ city }) {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ ── */}
+      <CityFaq city={city} />
 
       {/* ── CTA ── */}
       <section className="max-w-7xl mx-auto px-6">

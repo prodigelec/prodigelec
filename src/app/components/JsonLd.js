@@ -56,13 +56,6 @@ export default function JsonLd() {
         "areaServed": ["FR"]
       }
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "4",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "priceRange": "€€",
     "paymentAccepted": "Espèces, Virement bancaire, Chèque",
     "currenciesAccepted": "EUR",

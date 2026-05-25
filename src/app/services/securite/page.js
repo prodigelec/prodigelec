@@ -2,7 +2,7 @@ import SecuriteContent from "./SecuriteContent";
 import ServicePageJsonLd from "@/app/components/ServicePageJsonLd";
 
 export const metadata = {
-  title: "Sécurité Électronique 27, 28 & 78 - Digicode, Alarme, Vidéosurveillance | PRODIGELEC",
+  title: "Sécurité Électronique 27, 28 & 78 - Digicode, Alarme, Vidéosurveillance",
   description: "Digicode, vidéophonie, alarme et vidéosurveillance en Eure (27), Eure-et-Loir (28) et Yvelines (78). Installation sur mesure. Devis gratuit.",
   keywords: [
     "Digicode Broué", "Digicode Dreux", "Digicode Chartres", "Digicode Évreux",

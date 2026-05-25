@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/blog'
 import { Calendar, ArrowRight } from 'lucide-react'
 
 export const metadata = {
-  title: "Blog électricien — Conseils & dépannage en 27, 28 & 78 | PRODIGELEC",
+  title: "Blog électricien — Conseils & dépannage en 27, 28 & 78",
   description: "Conseils pratiques d'un artisan électricien : dépannage urgence, installation électrique, sécurité, portails motorisés — Eure-et-Loir, Eure et Yvelines.",
   alternates: { canonical: "https://www.prodigelec.fr/blog" },
   openGraph: {

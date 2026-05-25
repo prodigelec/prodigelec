@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params
   const { meta } = getPost(slug)
   return {
-    title: `${meta.titre} | PRODIGELEC`,
+    title: meta.titre,
     description: meta.description,
     alternates: { canonical: `https://www.prodigelec.fr/blog/${slug}` },
     openGraph: {
