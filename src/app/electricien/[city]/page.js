@@ -11,36 +11,28 @@ export async function generateMetadata({ params }) {
   const city = getCityBySlug(citySlug);
   if (!city) return {};
 
-  const title = `Électricien ${city.name} (${city.postalCode}) - Dépannage & Sécurité | PRODIGELEC`;
-  const description = `Artisan électricien & sécurité électronique à ${city.name} (${city.postalCode}). Dépannage, mise aux normes, digicode, alarme, motorisation. ${city.freeZone ? "Devis gratuit." : "Devis sur demande."}`;
+  const title = `Électricien ${city.name} (${city.postalCode}) — Dépannage & Sécurité | PRODIGELEC`;
+  const description = `Artisan électricien & sécurité électronique à ${city.name} (${city.postalCode}). Dépannage, mise aux normes NF C 15-100, digicode, alarme, motorisation. Devis gratuit, intervention rapide.`;
   const url = `https://www.prodigelec.fr/electricien/${city.slug}`;
+  const ogImage = city.photo
+    ? city.photo
+    : "https://www.prodigelec.fr/img_carousel_hero_home/tableau-electrique.optimized.jpg";
 
   return {
     title,
     description,
-    keywords: [
-      `Électricien ${city.name}`,
-      `Électricien ${city.postalCode}`,
-      `Dépannage électricité ${city.name}`,
-      `Sécurité électronique ${city.name}`,
-      `Digicode ${city.name}`,
-      `Alarme ${city.name}`,
-      `Motorisation volet ${city.name}`,
-      `Artisan électricien ${city.departmentCode}`,
-      `PRODIGELEC ${city.name}`,
-    ],
     alternates: { canonical: url },
     openGraph: {
       title: `Électricien & Sécurité à ${city.name} — PRODIGELEC`,
       description,
       url,
-      images: [{ url: "https://www.prodigelec.fr/logo_camera.png", width: 800, height: 600, alt: "PRODIGELEC" }],
+      images: [{ url: ogImage, width: 960, height: 640, alt: `Électricien à ${city.name} — PRODIGELEC` }],
     },
     twitter: {
       card: "summary_large_image",
       title: `Électricien & Sécurité à ${city.name} — PRODIGELEC`,
       description,
-      images: ["https://www.prodigelec.fr/logo_camera.png"],
+      images: [ogImage],
     },
   };
 }
@@ -90,13 +82,6 @@ export default async function CityPage({ params }) {
         closes: "23:59",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "4",
-      bestRating: "5",
-      worstRating: "1",
-    },
     areaServed: [
       { "@type": "City", name: city.name },
       ...city.nearby.map((n) => ({ "@type": "City", name: n })),
@@ -109,10 +94,42 @@ export default async function CityPage({ params }) {
     ],
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `Êtes-vous disponible pour un dépannage électrique urgent à ${city.name} ?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Oui, PRODIGELEC intervient à ${city.name} (${city.postalCode}) du lundi au samedi, 24h/24. Pour les urgences électriques, contactez-nous au 06 38 19 47 52.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Proposez-vous des devis gratuits à ${city.name} ?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${city.freeZone ? `Oui, le déplacement est gratuit à ${city.name}. Nous établissons votre devis sans frais et sans engagement.` : `Oui, nous établissons des devis gratuits pour toute intervention à ${city.name}. Contactez-nous pour convenir d'un rendez-vous.`}`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Quelles prestations proposez-vous à ${city.name} ?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `À ${city.name}, PRODIGELEC réalise : dépannage et mise aux normes NF C 15-100, installation de tableaux électriques, pose de digicode et contrôle d'accès, alarme intrusion, vidéosurveillance, motorisation de volets et portails automatiques.`,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <CityPageContent city={city} />
     </>
   );
