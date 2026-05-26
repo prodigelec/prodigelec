@@ -16,8 +16,9 @@ export async function generateMetadata({ params }) {
   const description = `Artisan électricien & sécurité électronique à ${city.name} (${city.postalCode}). Dépannage, mise aux normes NF C 15-100, digicode, alarme, motorisation. Devis gratuit, intervention rapide.`;
   const url = `https://www.prodigelec.fr/electricien/${city.slug}`;
   const ogImage = city.photo
-    ? city.photo
+    ? (city.photo.startsWith("http") ? city.photo : `https://www.prodigelec.fr${city.photo}`)
     : "https://www.prodigelec.fr/img_carousel_hero_home/tableau-electrique.optimized.jpg";
+  const ogImageAlt = city.photoAlt || `Électricien & sécurité PRODIGELEC à ${city.name}`;
 
   return {
     title,
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }) {
       title: `Électricien & Sécurité à ${city.name} — PRODIGELEC`,
       description,
       url,
-      images: [{ url: ogImage, width: 960, height: 640, alt: `Électricien à ${city.name} — PRODIGELEC` }],
+      images: [{ url: ogImage, width: 960, height: 640, alt: ogImageAlt }],
     },
     twitter: {
       card: "summary_large_image",
