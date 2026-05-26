@@ -158,7 +158,7 @@ export default function CityPageContent({ city }) {
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
               <Image
                 src={city.photo}
-                alt={`Vue de ${city.name} — PRODIGELEC électricien`}
+                alt={city.photoAlt || `Intervention PRODIGELEC à ${city.name} — électricien & sécurité`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 0px, 50vw"
