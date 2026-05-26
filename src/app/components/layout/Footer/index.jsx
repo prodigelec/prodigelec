@@ -70,6 +70,7 @@ export default function Footer() {
               <li><Link href="/#services" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Services</Link></li>
               <li><Link href="/#about" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">À Propos</Link></li>
               <li><Link href="/realisations" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Réalisations</Link></li>
+              <li><Link href="/avis" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Avis clients</Link></li>
               <li><Link href="/blog" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Blog</Link></li>
               <li><Link href="/contact#contact-form" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Contact</Link></li>
             </ul>

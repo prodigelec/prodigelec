@@ -8,7 +8,7 @@ const AboutSection = dynamic(() => import("@/app/components/home/sections/AboutS
 const ServicesSection = dynamic(() => import("@/app/components/home/sections/ServicesSection"));
 const ProcessSection = dynamic(() => import("@/app/components/home/sections/ProcessSection"));
 const PricingPolicySection = dynamic(() => import("@/app/components/home/sections/PricingPolicySection"));
-const TestimonialsSection = dynamic(() => import("@/app/components/home/sections/ClientTestimonials"));
+import ReviewsSection from "@/app/components/reviews/ReviewsSection";
 const PartnersSection = dynamic(() => import("@/app/components/home/sections/PartnersSection"));
 const MapSection = dynamic(() => import("@/app/components/home/sections/MapSection"));
 const ContactCTASection = dynamic(() => import("@/app/components/home/sections/ContactCTASection"));
@@ -49,7 +49,7 @@ export default function Home() {
         <ServicesSection />
         <ProcessSection />
         <PricingPolicySection />
-        <TestimonialsSection  />
+        <ReviewsSection limit={3} variant="home" />
         <PartnersSection />
         <MapSection />
         <ContactCTASection />
