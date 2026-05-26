@@ -1,4 +1,9 @@
-export default function JsonLd() {
+import { getGoogleReviews } from "@/lib/reviews";
+
+export default async function JsonLd() {
+  const { rating, totalRatings } = await getGoogleReviews();
+  const hasRating = rating && totalRatings > 0;
+
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "Electrician",
@@ -110,7 +115,17 @@ export default function JsonLd() {
       "https://www.google.com/maps/place/prodigelec/@48.7627173,1.5127265,17z/data=!3m1!4b1!4m6!3m5!1s0x40ad536c8e957f6b:0x793f73557873dece!8m2!3d48.7627138!4d1.5153014!16s%2Fg%2F11yzb2y_y6",
       "https://www.facebook.com/prodigelec/",
       "https://www.instagram.com/prodigelec/"
-    ]
+    ],
+    ...(hasRating ? {
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": rating,
+        "bestRating": 5,
+        "worstRating": 1,
+        "ratingCount": totalRatings,
+        "reviewCount": totalRatings,
+      }
+    } : {})
   };
 
   const websiteSchema = {

@@ -10,6 +10,7 @@ const LASTMOD = {
   contact:     "2026-05-22",
   about:       "2026-05-12",
   realisations:"2026-05-12",
+  avis:        "2026-05-26",
   blogIndex:   "2026-05-15",
   legal:       "2026-01-01",
 };
@@ -37,6 +38,7 @@ export default function sitemap() {
     { url: `${BASE_URL}/contact`,                       lastModified: LASTMOD.contact,      changeFrequency: "monthly", priority: 0.8 },
     ...cityPages,
     { url: `${BASE_URL}/about`,                         lastModified: LASTMOD.about,        changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/avis`,                          lastModified: LASTMOD.avis,         changeFrequency: "weekly",  priority: 0.8 },
     { url: `${BASE_URL}/realisations`,                  lastModified: LASTMOD.realisations, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/blog`,                          lastModified: LASTMOD.blogIndex,    changeFrequency: "weekly",  priority: 0.7 },
     ...blogPosts,

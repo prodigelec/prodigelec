@@ -14,6 +14,7 @@ function buildUrlList() {
     `${BASE_URL}/services/automatismes`,
     `${BASE_URL}/contact`,
     `${BASE_URL}/about`,
+    `${BASE_URL}/avis`,
     `${BASE_URL}/realisations`,
     `${BASE_URL}/blog`,
     `${BASE_URL}/mentions-legales`,
