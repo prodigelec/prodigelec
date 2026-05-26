@@ -96,6 +96,10 @@ export default async function JsonLd() {
     },
     "areaServed": [
       { "@type": "City", "name": "Broué" },
+      { "@type": "City", "name": "Bû" },
+      { "@type": "City", "name": "Boutigny-Prouais" },
+      { "@type": "City", "name": "Abondant" },
+      { "@type": "City", "name": "Luray" },
       { "@type": "City", "name": "Dreux" },
       { "@type": "City", "name": "Chartres" },
       { "@type": "City", "name": "Évreux" },
