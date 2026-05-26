@@ -1,37 +1,47 @@
 import { cities } from "@/app/data/cities";
 import { getAllPosts } from "@/lib/blog";
 
-export default function sitemap() {
-  const baseUrl = "https://www.prodigelec.fr";
-  const today = new Date().toISOString().split('T')[0];
+const BASE_URL = "https://www.prodigelec.fr";
 
+const LASTMOD = {
+  home:        "2026-05-26",
+  services:    "2026-05-25",
+  cities:      "2026-05-26",
+  contact:     "2026-05-22",
+  about:       "2026-05-12",
+  realisations:"2026-05-12",
+  blogIndex:   "2026-05-15",
+  legal:       "2026-01-01",
+};
+
+export default function sitemap() {
   const cityPages = cities.map((c) => ({
-    url: `${baseUrl}/electricien/${c.slug}`,
-    lastModified: today,
+    url: `${BASE_URL}/electricien/${c.slug}`,
+    lastModified: c.updatedAt || LASTMOD.cities,
     changeFrequency: "monthly",
     priority: 0.8,
   }));
 
   const blogPosts = getAllPosts().map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.date || today,
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: post.date || LASTMOD.blogIndex,
     changeFrequency: "yearly",
     priority: 0.7,
   }));
 
   return [
-    { url: `${baseUrl}/`,                              lastModified: today, changeFrequency: "monthly", priority: 1.0 },
-    { url: `${baseUrl}/services/electricite`,          lastModified: today, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/services/securite`,             lastModified: today, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/services/automatismes`,         lastModified: today, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/contact`,                       lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/`,                              lastModified: LASTMOD.home,         changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${BASE_URL}/services/electricite`,          lastModified: LASTMOD.services,     changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/services/securite`,             lastModified: LASTMOD.services,     changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/services/automatismes`,         lastModified: LASTMOD.services,     changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/contact`,                       lastModified: LASTMOD.contact,      changeFrequency: "monthly", priority: 0.8 },
     ...cityPages,
-    { url: `${baseUrl}/about`,                         lastModified: today, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/realisations`,                  lastModified: today, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/blog`,                          lastModified: today, changeFrequency: "weekly",   priority: 0.7 },
+    { url: `${BASE_URL}/about`,                         lastModified: LASTMOD.about,        changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/realisations`,                  lastModified: LASTMOD.realisations, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/blog`,                          lastModified: LASTMOD.blogIndex,    changeFrequency: "weekly",  priority: 0.7 },
     ...blogPosts,
-    { url: `${baseUrl}/mentions-legales`,              lastModified: today, changeFrequency: "yearly",  priority: 0.3 },
-    { url: `${baseUrl}/politique-de-confidentialite`,  lastModified: today, changeFrequency: "yearly",  priority: 0.3 },
-    { url: `${baseUrl}/cgv`,                           lastModified: today, changeFrequency: "yearly",  priority: 0.3 },
+    { url: `${BASE_URL}/mentions-legales`,              lastModified: LASTMOD.legal,        changeFrequency: "yearly",  priority: 0.3 },
+    { url: `${BASE_URL}/politique-de-confidentialite`,  lastModified: LASTMOD.legal,        changeFrequency: "yearly",  priority: 0.3 },
+    { url: `${BASE_URL}/cgv`,                           lastModified: LASTMOD.legal,        changeFrequency: "yearly",  priority: 0.3 },
   ];
 }
