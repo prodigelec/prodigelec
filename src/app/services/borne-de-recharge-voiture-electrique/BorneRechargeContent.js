@@ -154,27 +154,27 @@ export default function BorneRechargeContent() {
   const carouselSlides = [
     {
       id: 1,
-      image: "/img_carousel_borne_recharge/voiture-branchee-borne.jpg",
+      image: "/img_carousel_borne_recharge/legrand-femme-recharge-domicile.jpg",
       title: "Recharge à Domicile",
-      description: "Installation de bornes certifiées NF C 15-100"
+      description: "Solutions Legrand certifiées NF C 15-100"
     },
     {
       id: 2,
-      image: "/img_carousel_borne_recharge/wallbox-mur-bois.jpg",
-      title: "Borne Connectée 3,7 kW",
-      description: "Wallbox murale, pilotage smartphone, IP66"
-    },
-    {
-      id: 3,
-      image: "/img_carousel_borne_recharge/personne-recharge-ev.jpg",
+      image: "/img_carousel_borne_recharge/legrand-homme-recharge-maison.jpg",
       title: "Simple & Sécurisé",
       description: "Branchez, programmez, partez l'esprit tranquille"
     },
     {
+      id: 3,
+      image: "/img_carousel_borne_recharge/legrand-greenup-cable-jaune.jpg",
+      title: "Prise Renforcée Green'Up",
+      description: "La solution éprouvée Legrand pour démarrer en VE"
+    },
+    {
       id: 4,
-      image: "/img_carousel_borne_recharge/borne-murale-bois.jpg",
-      title: "Intégration Soignée",
-      description: "Pose pro respectant l'esthétique de votre habitat"
+      image: "/img_carousel_borne_recharge/legrand-maison-moderne.jpg",
+      title: "Près de Chez Vous",
+      description: "Artisan local — intervention 27, 28 & 78"
     }
   ];
 
