@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import FlyerContent from "./FlyerContent";
 
 export const metadata = {
@@ -7,5 +8,9 @@ export const metadata = {
 };
 
 export default function FlyerPage() {
-  return <FlyerContent />;
+  return (
+    <Suspense fallback={null}>
+      <FlyerContent />
+    </Suspense>
+  );
 }
