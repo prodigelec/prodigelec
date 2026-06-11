@@ -56,6 +56,14 @@ const slides = [
     image: "/img_carousel_hero_home/videophone-platine.jpg",
     icon: "📞",
     objectFit: "cover"
+  },
+  {
+    id: 8,
+    title: "Recharge Véhicule Électrique",
+    subtitle: "Borne Wallbox & prise Green'Up Legrand — crédit d'impôt 75%",
+    image: "/img_carousel_borne_recharge/legrand-homme-recharge-maison.jpg",
+    icon: "🔌",
+    objectFit: "cover"
   }
 ];
 
