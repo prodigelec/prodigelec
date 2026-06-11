@@ -30,6 +30,20 @@ export default function ServiceUrgency({ title, subtitle, description, steps, ic
       pingColor: "bg-primary",
       pingShadow: "shadow-[0_0_10px_rgba(201,162,39,0.8)]",
       stepColor: "text-primary/50"
+    },
+    borne: {
+      gradient: "from-emerald-500/20 to-emerald-400/20",
+      border: "border-emerald-500/20",
+      blur: "bg-emerald-500/20",
+      iconBg: "bg-emerald-500/20",
+      iconColor: "text-emerald-400",
+      highlightColor: "text-emerald-400",
+      buttonBg: "bg-emerald-500",
+      buttonHover: "hover:bg-emerald-400",
+      buttonShadow: "shadow-[0_10px_20px_-5px_rgba(16,185,129,0.4)]",
+      pingColor: "bg-emerald-500",
+      pingShadow: "shadow-[0_0_10px_rgba(16,185,129,0.8)]",
+      stepColor: "text-emerald-400/50"
     }
   };
 

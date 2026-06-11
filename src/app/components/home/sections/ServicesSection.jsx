@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Zap, Shield, Settings2, ArrowRight } from "lucide-react";
+import { Zap, Shield, Settings2, BatteryCharging, ArrowRight } from "lucide-react";
 
 export default function ServicesSection() {
   return (
@@ -11,7 +11,7 @@ export default function ServicesSection() {
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-8 sm:mb-12 text-center md:text-left text-foreground">Nos Domaines d&apos;Intervention</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
 
           {/* Electricity */}
           <div className="p-6 md:p-8 rounded-3xl border border-white/10 ring-1 ring-white/10 bg-linear-to-b from-white/10 via-white/5 to-black/30 hover:border-accent/50 transition-all duration-300 group overflow-hidden relative flex flex-col h-full shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_12px_30px_rgba(0,0,0,0.45)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.35),0_16px_40px_rgba(0,0,0,0.55)]">
@@ -78,7 +78,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Automatismes */}
-          <div className="p-6 md:p-8 rounded-3xl border border-white/10 ring-1 ring-white/10 bg-linear-to-b from-white/10 via-white/5 to-black/30 hover:border-primary/50 transition-all duration-300 group overflow-hidden relative flex flex-col h-full shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_12px_30px_rgba(0,0,0,0.45)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.35),0_16px_40px_rgba(0,0,0,0.55)] md:col-span-2 lg:col-span-1">
+          <div className="p-6 md:p-8 rounded-3xl border border-white/10 ring-1 ring-white/10 bg-linear-to-b from-white/10 via-white/5 to-black/30 hover:border-primary/50 transition-all duration-300 group overflow-hidden relative flex flex-col h-full shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_12px_30px_rgba(0,0,0,0.45)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.35),0_16px_40px_rgba(0,0,0,0.55)]">
             <div className="absolute inset-0 bg-linear-to-br from-primary/15 via-transparent to-accent/10 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-primary/10 ring-1 ring-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.35)] flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all mx-auto md:mx-0 relative z-10">
               <Settings2 className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
@@ -104,6 +104,38 @@ export default function ServicesSection() {
                 className="inline-flex items-center text-xs md:text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link"
               >
                 Nos services automatismes
+                <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Recharge VE */}
+          <div className="p-6 md:p-8 rounded-3xl border border-white/10 ring-1 ring-white/10 bg-linear-to-b from-white/10 via-white/5 to-black/30 hover:border-emerald-500/50 transition-all duration-300 group overflow-hidden relative flex flex-col h-full shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_12px_30px_rgba(0,0,0,0.45)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.35),0_16px_40px_rgba(0,0,0,0.55)]">
+            <div className="absolute inset-0 bg-linear-to-br from-emerald-500/15 via-transparent to-accent/10 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-emerald-500/10 ring-1 ring-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.35)] flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all mx-auto md:mx-0 relative z-10">
+              <BatteryCharging className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-400" />
+            </div>
+            <h3 className="text-lg md:text-2xl font-bold mb-3 sm:mb-4 text-center md:text-left text-foreground group-hover:text-emerald-400 transition-all relative z-10">Recharge Véhicule Électrique</h3>
+            <p className="text-gray-100 leading-relaxed text-sm md:text-base text-center md:text-left relative z-10 group-hover:text-white mb-5 grow">
+              Installation de borne Wallbox 3,7 kW et prise Green&apos;Up Legrand. Crédit d&apos;impôt 75%.
+            </p>
+            <div className="relative z-10 mb-6">
+              <ul className="grid grid-cols-1 gap-2 text-xs md:text-sm text-gray-100">
+                {["Crédit d'impôt 75%", "Solutions Legrand certifiées", "Devis gratuit"].map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/80" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative z-10 text-center md:text-left mt-auto">
+              <Link
+                href="/services/borne-de-recharge-voiture-electrique"
+                aria-label="En savoir plus sur l'installation de borne de recharge voiture électrique"
+                className="inline-flex items-center text-xs md:text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link"
+              >
+                Nos services borne VE
                 <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" />
               </Link>
             </div>

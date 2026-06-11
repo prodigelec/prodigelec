@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
-import { Menu, X, Home, Mail, PhoneCall, BookOpen, Images, Info, Cctv } from "lucide-react";
+import { Menu, X, Home, Mail, PhoneCall, BookOpen, Images, Info, Cctv, BatteryCharging } from "lucide-react";
 import { FcFlashOn } from "react-icons/fc";
 import { GiGate } from "react-icons/gi";
 import { usePathname } from "next/navigation";
@@ -12,6 +12,7 @@ const menuItems = [
     { name: 'Sécurité',      href: '/services/securite',   icon: <Cctv size={18} className="text-rose-400" /> },
     { name: 'Automatismes',  href: '/services/automatismes', icon: <GiGate size={18} className="text-sky-400" /> },
     { name: 'Électricité',   href: '/services/electricite', icon: <FcFlashOn size={18} /> },
+    { name: 'Recharge VE',   href: '/services/borne-de-recharge-voiture-electrique', icon: <BatteryCharging size={18} className="text-emerald-400" /> },
     { name: 'Réalisations',  href: '/realisations',        icon: <Images size={18} /> },
     { name: 'Blog',          href: '/blog',                icon: <BookOpen size={18} /> },
     { name: 'À Propos',      href: '/about',               icon: <Info size={18} /> },

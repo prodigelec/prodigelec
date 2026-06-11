@@ -83,6 +83,7 @@ export default function Footer() {
               <li><Link href="/services/electricite" className="text-foreground-subtle hover:text-accent transition-colors text-xs md:text-sm">Électricité Générale</Link></li>
               <li><Link href="/services/securite" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Sécurité Électronique</Link></li>
               <li><Link href="/services/automatismes" className="text-foreground-subtle hover:text-primary transition-colors text-xs md:text-sm">Automatismes & Motorisations</Link></li>
+              <li><Link href="/services/borne-de-recharge-voiture-electrique" className="text-foreground-subtle hover:text-emerald-400 transition-colors text-xs md:text-sm">Recharge Véhicule Électrique</Link></li>
             </ul>
           </div>
 

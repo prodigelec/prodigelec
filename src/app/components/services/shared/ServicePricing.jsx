@@ -26,6 +26,18 @@ export default function ServicePricing({ title, subtitle, description, prices, t
       priceColor: "text-primary",
       priceShadow: "drop-shadow-[0_0_10px_rgba(201,162,39,0.3)]",
       checkColor: "text-primary"
+    },
+    borne: {
+      highlightColor: "text-emerald-400",
+      borderColor: "border-emerald-500/40",
+      shadowColor: "shadow-[0_0_40px_-15px_rgba(16,185,129,0.4)]",
+      badgeBg: "bg-emerald-500",
+      badgeShadow: "shadow-[0_0_20px_rgba(16,185,129,0.6)]",
+      decorBg: "bg-emerald-500/10",
+      decorBgHover: "group-hover:bg-emerald-500/20",
+      priceColor: "text-emerald-400",
+      priceShadow: "drop-shadow-[0_0_10px_rgba(16,185,129,0.4)]",
+      checkColor: "text-emerald-400"
     }
   };
 

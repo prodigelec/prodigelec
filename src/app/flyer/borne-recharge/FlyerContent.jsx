@@ -59,9 +59,9 @@ export default function FlyerContent() {
 function PhoneOverlay() {
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform -rotate-6 z-10 drop-shadow-2xl">
-      <div className="w-[110px] h-[180px] bg-[#0b1a2a] rounded-[18px] border-2 border-slate-800 p-1.5 shadow-2xl">
+      <div className="w-27.5 h-45 bg-[#0b1a2a] rounded-[18px] border-2 border-slate-800 p-1.5 shadow-2xl">
         <div className="w-12 h-3 bg-[#0b1a2a] rounded-b-lg mx-auto -mb-1 relative z-10" />
-        <div className="w-full h-full bg-linear-to-b from-emerald-50 to-white rounded-[12px] overflow-hidden flex flex-col p-2 gap-1.5">
+        <div className="w-full h-full bg-linear-to-b from-emerald-50 to-white rounded-xl overflow-hidden flex flex-col p-2 gap-1.5">
           <div className="text-[6.5px] font-bold text-slate-500 text-center">14:32</div>
           <div className="bg-white border border-emerald-200 rounded-lg p-1.5 shadow-md">
             <div className="flex items-center gap-1 mb-0.5">
@@ -88,15 +88,15 @@ function PhoneOverlay() {
 function EquipmentOverlay() {
   return (
     <>
-      <div className="absolute top-3 right-3 w-[55px] h-[55px] bg-white rounded-xl shadow-2xl border-2 border-emerald-500/60 p-1 z-10 transform rotate-6">
+      <div className="absolute top-3 right-3 w-13.75 h-13.75 bg-white rounded-xl shadow-2xl border-2 border-emerald-500/60 p-1 z-10 transform rotate-6">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/flyer/borne-recharge/borne-3-7kw.jpg" alt="Borne de recharge 3,7 kW" className="w-full h-full object-contain" />
       </div>
-      <div className="absolute top-1/2 left-4 -translate-y-1/2 w-[60px] h-[60px] bg-white rounded-xl shadow-2xl border-2 border-emerald-500/60 p-1 z-10 transform -rotate-6">
+      <div className="absolute top-1/2 left-4 -translate-y-1/2 w-15 h-15 bg-white rounded-xl shadow-2xl border-2 border-emerald-500/60 p-1 z-10 transform -rotate-6">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/flyer/borne-recharge/borne-prise-maison.jpg" alt="Prise Green'Up renforcée" className="w-full h-full object-cover rounded-md" />
       </div>
-      <div className="absolute top-[42%] right-5 w-[70px] h-[60px] bg-emerald-700 rounded-xl shadow-2xl border-2 border-emerald-300 z-10 transform rotate-3 flex flex-col items-center justify-center text-white">
+      <div className="absolute top-[42%] right-5 w-17.5 h-15 bg-emerald-700 rounded-xl shadow-2xl border-2 border-emerald-300 z-10 transform rotate-3 flex flex-col items-center justify-center text-white">
         <Zap className="w-4 h-4 text-[#ffd60a] mb-0.5" />
         <span className="text-[10px] font-black uppercase tracking-wider leading-none">3,7 kW</span>
         <span className="text-[6px] font-bold mt-0.5">max 16A</span>
