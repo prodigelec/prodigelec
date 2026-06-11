@@ -30,13 +30,13 @@ export const metadata = {
     title: "Borne de Recharge VE — Installation Wallbox & Prise Green'Up | PRODIGELEC",
     description: "Installateur de borne de recharge voiture électrique en Eure (27), Eure-et-Loir (28) et Yvelines (78). Solutions Legrand, crédit d'impôt 75%. Devis gratuit.",
     url: "https://www.prodigelec.fr/services/borne-de-recharge-voiture-electrique",
-    images: [{ url: "https://www.prodigelec.fr/flyer/borne-recharge/femme-recharge-voiture.jpg", width: 1200, height: 630, alt: "Installation borne de recharge VE PRODIGELEC" }],
+    images: [{ url: "https://www.prodigelec.fr/img_carousel_borne_recharge/voiture-branchee-borne.jpg", width: 1200, height: 630, alt: "Installation borne de recharge VE PRODIGELEC" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Borne de Recharge VE 27, 28 & 78 — PRODIGELEC",
     description: "Installation de borne de recharge voiture électrique. Legrand certifié, crédit d'impôt 75%. Devis gratuit.",
-    images: ["https://www.prodigelec.fr/flyer/borne-recharge/femme-recharge-voiture.jpg"],
+    images: ["https://www.prodigelec.fr/img_carousel_borne_recharge/voiture-branchee-borne.jpg"],
   },
 };
 

@@ -154,27 +154,27 @@ export default function BorneRechargeContent() {
   const carouselSlides = [
     {
       id: 1,
-      image: "/flyer/borne-recharge/femme-recharge-voiture.jpg",
+      image: "/img_carousel_borne_recharge/voiture-branchee-borne.jpg",
       title: "Recharge à Domicile",
-      description: "Installation de bornes Legrand certifiées NF C 15-100"
+      description: "Installation de bornes certifiées NF C 15-100"
     },
     {
       id: 2,
-      image: "/flyer/borne-recharge/borne-3-7kw.jpg",
+      image: "/img_carousel_borne_recharge/wallbox-mur-bois.jpg",
       title: "Borne Connectée 3,7 kW",
-      description: "Pilotage smartphone, programmation heures creuses"
+      description: "Wallbox murale, pilotage smartphone, IP66"
     },
     {
       id: 3,
-      image: "/flyer/borne-recharge/borne-prise-maison.jpg",
-      title: "Prise Renforcée Green'Up",
-      description: "La solution éprouvée pour démarrer en VE"
+      image: "/img_carousel_borne_recharge/personne-recharge-ev.jpg",
+      title: "Simple & Sécurisé",
+      description: "Branchez, programmez, partez l'esprit tranquille"
     },
     {
       id: 4,
-      image: "/flyer/borne-recharge/app-smartphone.jpg",
-      title: "Pilotage Mobile",
-      description: "Suivi de consommation et programmation à distance"
+      image: "/img_carousel_borne_recharge/borne-murale-bois.jpg",
+      title: "Intégration Soignée",
+      description: "Pose pro respectant l'esthétique de votre habitat"
     }
   ];
 
