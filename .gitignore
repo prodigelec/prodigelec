@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# tooling local
+.claude/
+.seo-audit/
+
+# fichiers utilitaires one-off à la racine
+/carte-de-visite.html
+/export-logo.html
+
+# artefact Windows accidentel (nom réservé)
+/NUL
