@@ -142,7 +142,7 @@ export default function FlyerPrintBody({
           </h1>
           <div className="relative inline-block mt-1">
             <h2 className="text-white text-xl font-black tracking-wider font-sora leading-none">{d.mainTitle.line2}</h2>
-            <div className={`absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-24 h-[3px] bg-linear-to-r from-transparent ${a.via400} to-transparent rounded-full`} />
+            <div className={`absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-24 h-0.75 bg-linear-to-r from-transparent ${a.via400} to-transparent rounded-full`} />
           </div>
           <p className="text-slate-300 text-xs mt-3 max-w-lg mx-auto font-medium">
             <span className="text-[#ffd60a] font-bold">{d.subText.highlights[0]}</span> &amp; <span className="text-[#ffd60a] font-bold">{d.subText.highlights[1]}</span>{d.subText.suffix}
@@ -159,7 +159,7 @@ export default function FlyerPrintBody({
         </div>
 
         {/* 2 scènes */}
-        <div className="flex justify-center items-stretch gap-5 h-[320px] relative z-10">
+        <div className="flex justify-center items-stretch gap-5 h-80 relative z-10">
           <Scene a={a} scene={d.scenes[0]}>
             {renderScene ? renderScene(0, d.scenes[0]) : null}
           </Scene>
