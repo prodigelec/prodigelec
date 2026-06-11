@@ -16,6 +16,13 @@ export default function ServiceHero({ icon: Icon, title, subtitle, description, 
       iconShadow: "shadow-[0_0_30px_-5px_rgba(201,162,39,0.3)]",
       highlightColor: "text-primary",
       iconColor: "text-primary"
+    },
+    borne: {
+      iconBg: "bg-emerald-500/10",
+      iconBorder: "border-emerald-500/20",
+      iconShadow: "shadow-[0_0_30px_-5px_rgba(16,185,129,0.4)]",
+      highlightColor: "text-emerald-400",
+      iconColor: "text-emerald-400"
     }
   };
 

@@ -5,7 +5,10 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { cities } from "@/app/data/cities";
 
 export default function ServiceCityLinks({ theme = "electricite" }) {
-  const color = theme === "electricite" ? "var(--accent)" : "var(--primary)";
+  const color =
+    theme === "electricite" ? "var(--accent)" :
+    theme === "borne" ? "#10b981" :
+    "var(--primary)";
 
   return (
     <m.section

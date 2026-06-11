@@ -35,6 +35,7 @@ export default function sitemap() {
     { url: `${BASE_URL}/services/electricite`,          lastModified: LASTMOD.services,     changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/services/securite`,             lastModified: LASTMOD.services,     changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/services/automatismes`,         lastModified: LASTMOD.services,     changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/services/borne-de-recharge-voiture-electrique`, lastModified: LASTMOD.services, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/contact`,                       lastModified: LASTMOD.contact,      changeFrequency: "monthly", priority: 0.8 },
     ...cityPages,
     { url: `${BASE_URL}/about`,                         lastModified: LASTMOD.about,        changeFrequency: "monthly", priority: 0.7 },

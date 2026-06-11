@@ -4,7 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { FcFlashOn } from "react-icons/fc";
 import { GiGate } from "react-icons/gi";
-import { Cctv, PhoneCall } from "lucide-react";
+import { Cctv, PhoneCall, BatteryCharging } from "lucide-react";
 import Logo from "../Logo";
 
 export default function Navbar() {
@@ -23,7 +23,8 @@ export default function Navbar() {
             dropdown: [
                 { name: 'Sécurité', href: '/services/securite', icon: <Cctv className="w-5 h-5 text-rose-400 group-hover:text-rose-500 transition-colors" /> },
                 { name: 'Automatismes', href: '/services/automatismes', icon: <GiGate className="w-5 h-5 text-sky-400 group-hover:text-sky-300 transition-colors" /> },
-                { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> }
+                { name: 'Électricité', href: '/services/electricite', icon: <FcFlashOn className="w-5 h-5" /> },
+                { name: 'Recharge Véhicule Électrique', href: '/services/borne-de-recharge-voiture-electrique', icon: <BatteryCharging className="w-5 h-5 text-emerald-400 group-hover:text-emerald-300 transition-colors" /> }
             ]
         },
         { name: 'Réalisations', href: '/realisations' },
