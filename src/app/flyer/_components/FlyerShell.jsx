@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Printer, Settings, EyeOff } from "lucide-react";
 import { contact } from "../_data/contact";
+import { getAccent } from "./accent";
 
 const FlyerContext = createContext(null);
 
@@ -95,10 +96,11 @@ export default function FlyerShell({
   editorTitle = "Éditeur de Flyer",
   defaultOffer = { day: "31", month: "JUILLET", year: "2026" },
   printOverrides = "",
-  classNames = {},
+  accent = "emerald",
   enablePrintModeToggle = false,
   children,
 }) {
+  const a = getAccent(accent);
   const searchParams = useSearchParams();
   const isPrintMode = searchParams?.get("print") === "1";
 
@@ -136,6 +138,8 @@ export default function FlyerShell({
   };
 
   const ctx = {
+    accent: a,
+    accentName: accent,
     format,
     isPrintMode,
     qrUrl,
@@ -148,31 +152,19 @@ export default function FlyerShell({
     dateFormattedShort,
   };
 
-  const cls = {
-    root: classNames.root || "min-h-screen bg-slate-900 text-slate-100 flex flex-col md:flex-row font-sans",
-    panel: classNames.panel || "w-full md:w-80 bg-slate-950 p-6 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col gap-6 no-print shrink-0 overflow-y-auto max-h-screen",
-    panelTitle: classNames.panelTitle || "text-slate-300",
-    sectionTitle: classNames.sectionTitle || "text-xs font-bold uppercase tracking-wider text-slate-300 font-sora",
-    formatButtonActive: classNames.formatButtonActive || "bg-slate-200 text-slate-950 border-slate-200 font-black",
-    inputFocus: classNames.inputFocus || "focus:border-slate-400",
-    printButton: classNames.printButton || "bg-slate-200 hover:bg-slate-300 text-slate-950",
-    previewButtonActive: classNames.previewButtonActive || "bg-amber-500 hover:bg-amber-600 shadow-amber-500/10",
-    showPanelButton: classNames.showPanelButton || "text-slate-300 hover:text-white",
-  };
-
-  const inputBase = `w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-sm text-white focus:outline-none ${cls.inputFocus}`;
-  const inputBaseLg = `w-full bg-slate-900 border border-slate-700 rounded px-3 py-1.5 text-sm text-white focus:outline-none ${cls.inputFocus}`;
+  const inputBase = `w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-sm text-white focus:outline-none ${a.inputFocus}`;
+  const inputBaseLg = `w-full bg-slate-900 border border-slate-700 rounded px-3 py-1.5 text-sm text-white focus:outline-none ${a.inputFocus}`;
 
   return (
     <FlyerContext.Provider value={ctx}>
-      <div className={cls.root}>
+      <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col md:flex-row font-sans">
         <GoogleFontsAndPrintCss printOverrides={printOverrides} />
 
         {showControls && (
-          <div className={cls.panel}>
+          <div className="w-full md:w-80 bg-slate-950 p-6 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col gap-6 no-print shrink-0 overflow-y-auto max-h-screen">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Settings className={`w-5 h-5 ${cls.panelTitle}`} />
+                <Settings className={`w-5 h-5 ${a.panelTitle}`} />
                 <h2 className="font-bold text-lg tracking-wide text-white">{editorTitle}</h2>
               </div>
               <button
@@ -191,7 +183,7 @@ export default function FlyerShell({
             <hr className="border-slate-800" />
 
             <div className="flex flex-col gap-3">
-              <h3 className={cls.sectionTitle}>{"Format d'impression"}</h3>
+              <h3 className={a.sectionTitle}>{"Format d'impression"}</h3>
               <div className="grid grid-cols-2 gap-2">
                 {["A4", "A5"].map((f) => (
                   <button
@@ -199,7 +191,7 @@ export default function FlyerShell({
                     onClick={() => setFormat(f)}
                     className={`py-2 px-3 text-xs font-bold rounded-lg border transition cursor-pointer ${
                       format === f
-                        ? cls.formatButtonActive
+                        ? a.formatButtonActive
                         : "bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800"
                     }`}
                   >
@@ -217,7 +209,7 @@ export default function FlyerShell({
             <hr className="border-slate-800" />
 
             <div className="flex flex-col gap-3">
-              <h3 className={cls.sectionTitle}>{"Période de l'Offre"}</h3>
+              <h3 className={a.sectionTitle}>{"Période de l'Offre"}</h3>
               <div className="grid grid-cols-3 gap-2">
                 <div>
                   <label className="text-[10px] text-slate-400">Jour</label>
@@ -235,13 +227,13 @@ export default function FlyerShell({
             </div>
 
             <div className="flex flex-col gap-2">
-              <h3 className={cls.sectionTitle}>Destination QR Code</h3>
+              <h3 className={a.sectionTitle}>Destination QR Code</h3>
               <input type="text" value={qrUrl} onChange={(e) => setQrUrl(e.target.value)} className={inputBaseLg} placeholder="https://..." />
               <span className="text-[10px] text-slate-500 italic">{"Encode l'adresse URL saisie dans le QR Code."}</span>
             </div>
 
             <div className="flex flex-col gap-3">
-              <h3 className={cls.sectionTitle}>Coordonnées</h3>
+              <h3 className={a.sectionTitle}>Coordonnées</h3>
               <div>
                 <label className="text-[10px] text-slate-400">Téléphone</label>
                 <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className={inputBaseLg} />
@@ -258,7 +250,7 @@ export default function FlyerShell({
               {enablePrintModeToggle && (
                 <button
                   onClick={togglePrintMode}
-                  className={`w-full ${isPrintMode ? cls.previewButtonActive : "bg-slate-800 hover:bg-slate-700 shadow-slate-900/30 border border-slate-700"} active:scale-[0.98] transition-transform text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer shadow-md text-xs`}
+                  className={`w-full ${isPrintMode ? "bg-amber-500 hover:bg-amber-600 shadow-amber-500/10" : "bg-slate-800 hover:bg-slate-700 shadow-slate-900/30 border border-slate-700"} active:scale-[0.98] transition-transform text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer shadow-md text-xs`}
                   title={isPrintMode ? "Revenir au mode digital (réseaux sociaux)" : "Aperçu impression : texte plus contrasté"}
                 >
                   {isPrintMode ? "← Mode digital (réseaux)" : "Aperçu mode impression"}
@@ -267,7 +259,7 @@ export default function FlyerShell({
 
               <button
                 onClick={() => window.print()}
-                className={`w-full ${cls.printButton} active:scale-[0.98] transition-transform font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer shadow-lg`}
+                className={`w-full ${a.printButton} active:scale-[0.98] transition-transform font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer shadow-lg`}
               >
                 <Printer className="w-5 h-5" />
                 {"Imprimer / Exporter (A4/A5)"}
@@ -284,7 +276,7 @@ export default function FlyerShell({
           {!showControls && (
             <button
               onClick={() => setShowControls(true)}
-              className={`absolute top-4 left-4 bg-slate-950/80 backdrop-blur border border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs ${cls.showPanelButton} transition no-print shadow-md cursor-pointer`}
+              className={`absolute top-4 left-4 bg-slate-950/80 backdrop-blur border border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs ${a.showPanelButton} transition no-print shadow-md cursor-pointer`}
             >
               <Settings className="w-3.5 h-3.5" />
               {"Afficher l'éditeur"}
