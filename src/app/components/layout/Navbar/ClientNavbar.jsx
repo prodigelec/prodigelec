@@ -3,5 +3,9 @@
 import Navbar from "./index";
 
 export default function ClientNavbar() {
-  return <Navbar />;
+  return (
+    <div id="global-navbar">
+      <Navbar />
+    </div>
+  );
 }
