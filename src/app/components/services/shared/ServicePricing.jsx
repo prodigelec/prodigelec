@@ -1,6 +1,18 @@
 "use client";
 import { m } from "framer-motion";
 
+// Sépare le préfixe ("À partir de") du montant ("1 200€ TTC"),
+// en supportant l'espace insécable des milliers en français.
+function parsePrice(price) {
+  if (price === "Sur Devis") return { amount: price, prefix: "" };
+  const match = price.match(/(\d[\d\s ]*€(?:\s*TTC?)?)\s*$/);
+  if (!match) return { amount: price, prefix: "" };
+  return {
+    amount: match[1].trim(),
+    prefix: price.slice(0, -match[0].length).trim(),
+  };
+}
+
 export default function ServicePricing({ title, subtitle, description, prices, theme = "electricite" }) {
   const themeConfig = {
     electricite: {
@@ -83,16 +95,21 @@ export default function ServicePricing({ title, subtitle, description, prices, t
                   {plan.title}
                 </h3>
 
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className={`text-2xl lg:text-3xl font-black ${config.priceColor} ${config.priceShadow}`}>
-                    {plan.price === "Sur Devis" ? plan.price : plan.price.split(' ').slice(-2).join(' ')}
-                  </span>
-                  {plan.price !== "Sur Devis" && (
-                     <span className="text-sm text-gray-100 font-medium ml-1">
-                        {plan.price.replace(plan.price.split(' ').slice(-2).join(' '), '').trim()}
-                     </span>
-                  )}
-                </div>
+                {(() => {
+                  const { amount, prefix } = parsePrice(plan.price);
+                  return (
+                    <div className="flex items-baseline gap-2 mb-6">
+                      <span className={`text-2xl lg:text-3xl font-black ${config.priceColor} ${config.priceShadow}`}>
+                        {amount}
+                      </span>
+                      {prefix && (
+                        <span className="text-sm text-gray-100 font-medium ml-1">
+                          {prefix}
+                        </span>
+                      )}
+                    </div>
+                  );
+                })()}
 
                 <p className="text-gray-100 text-sm md:text-base mb-8 pb-8 border-b border-white/10">
                   {plan.description}
