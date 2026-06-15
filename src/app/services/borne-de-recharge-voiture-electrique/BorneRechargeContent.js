@@ -56,13 +56,13 @@ export default function BorneRechargeContent() {
     },
     {
       icon: HiOutlineCurrencyEuro,
-      title: "Crédit d'Impôt 75%",
-      description: "Je vous accompagne sur le justificatif fiscal pour récupérer jusqu'à 500€ sur votre installation.",
+      title: "Devis & Facture Détaillés",
+      description: "Facture détaillée avec matériel, main d'œuvre et attestation, à conserver pour vos aides éventuelles ou votre garantie.",
       items: [
-        "Art. 200 quater B du CGI",
-        "Justificatif fourni avec la facture",
-        "Plafond 500€ par système",
-        "Résidence principale, location, gratuit"
+        "Devis gratuit après visite",
+        "Facture détaillée matériel + pose",
+        "Attestation NF C 15-100 fournie",
+        "Conseil sur les aides en vigueur"
       ]
     },
     {
@@ -110,7 +110,7 @@ export default function BorneRechargeContent() {
         "Wallbox Legrand 3,7 kW",
         "Pilotage app Legrand",
         "Étanche IP66 ext./int.",
-        "Crédit d'impôt 75% inclus*"
+        "Programmation heures creuses"
       ],
       highlight: true,
       tag: "Recommandé"
@@ -121,17 +121,17 @@ export default function BorneRechargeContent() {
     { step: "01", title: "Étude du Besoin", desc: "Discussion véhicule, usage, configuration logement" },
     { step: "02", title: "Visite Technique", desc: "Audit tableau, mesure du tirage, devis détaillé" },
     { step: "03", title: "Installation Pro", desc: "Pose, raccordement, mise en service & démo app" },
-    { step: "04", title: "Justificatif Fiscal", desc: "Facture détaillée pour récupérer le crédit d'impôt 75%" }
+    { step: "04", title: "Mise en Service", desc: "Démo app, facture détaillée et attestation NF C 15-100" }
   ];
 
   const faqItems = [
     {
       question: "Combien coûte l'installation d'une borne de recharge à domicile ?",
-      answer: "Le coût varie selon le type d'équipement et la complexité de l'installation : à partir de 600€ TTC pour une prise renforcée Green'Up, et environ 1 200€ à 1 800€ TTC pour une borne connectée 3,7 kW posée. Le crédit d'impôt de 75% (plafonné à 500€ par système) réduit fortement la facture finale. Je fournis un devis gratuit après visite technique."
+      answer: "Le coût varie selon le type d'équipement et la complexité de l'installation : à partir de 600€ TTC pour une prise renforcée Green'Up, et environ 1 200€ à 1 800€ TTC pour une borne connectée 3,7 kW posée. Je fournis un devis gratuit après visite technique."
     },
     {
-      question: "Qu'est-ce que le crédit d'impôt 75% pour une borne de recharge ?",
-      answer: "Le crédit d'impôt pour la transition énergétique (art. 200 quater B du CGI) rembourse 75% du coût d'acquisition et de pose d'une borne de recharge ou prise renforcée, plafonné à 500€ par système et par logement. Il s'applique pour résidence principale, location ou occupation gratuite, sous conditions. Je vous accompagne sur le justificatif fiscal."
+      question: "Existe-t-il des aides pour installer une borne de recharge en 2026 ?",
+      answer: "Le crédit d'impôt 75% pour borne de recharge (art. 200 quater C du CGI) s'est appliqué aux dépenses payées jusqu'au 31 décembre 2025 et n'est plus reconduit en 2026. En copropriété, le programme ADVENIR peut financer une partie de votre point de charge individuel — il ne concerne pas les maisons individuelles. Lors du devis, je vous oriente vers les dispositifs encore en vigueur selon votre situation."
     },
     {
       question: "Prise renforcée Green'Up ou vraie borne : que choisir ?",
@@ -184,7 +184,7 @@ export default function BorneRechargeContent() {
         <ServiceHero
           title="Recharge Véhicule"
           subtitle="Électrique"
-          description="Borne connectée 3,7 kW ou prise renforcée Green'Up : installation Legrand certifiée NF C 15-100, éligible crédit d'impôt 75%."
+          description="Borne connectée 3,7 kW ou prise renforcée Green'Up : installation Legrand certifiée NF C 15-100, étanche IP66 et pilotable depuis votre smartphone."
           icon={BatteryCharging}
           theme="borne"
         />
@@ -202,7 +202,7 @@ export default function BorneRechargeContent() {
         <ServicePricing
           title="Mes Tarifs"
           subtitle="Borne VE"
-          description="Tarification transparente, justificatif fiscal pour le crédit d'impôt 75% inclus."
+          description="Tarification transparente, devis détaillé et attestation NF C 15-100 fournie à la mise en service."
           prices={pricingPlans}
           theme="borne"
         />

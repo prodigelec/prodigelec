@@ -117,11 +117,11 @@ export default function ServicesSection() {
             </div>
             <h3 className="text-lg md:text-2xl font-bold mb-3 sm:mb-4 text-center md:text-left text-foreground group-hover:text-emerald-400 transition-all relative z-10">Recharge Véhicule Électrique</h3>
             <p className="text-gray-100 leading-relaxed text-sm md:text-base text-center md:text-left relative z-10 group-hover:text-white mb-5 grow">
-              Installation de borne Wallbox 3,7 kW et prise Green&apos;Up Legrand. Crédit d&apos;impôt 75%.
+              Installation de borne Wallbox 3,7 kW et prise Green&apos;Up Legrand certifiée NF C 15-100.
             </p>
             <div className="relative z-10 mb-6">
               <ul className="grid grid-cols-1 gap-2 text-xs md:text-sm text-gray-100">
-                {["Crédit d'impôt 75%", "Solutions Legrand certifiées", "Devis gratuit"].map((item) => (
+                {["Pilotage smartphone", "Solutions Legrand certifiées", "Devis gratuit"].map((item) => (
                   <li key={item} className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/80" />
                     <span>{item}</span>

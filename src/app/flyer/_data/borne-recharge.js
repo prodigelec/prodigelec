@@ -35,20 +35,20 @@ export const borneRechargeData = {
   sceneSeparator: "et chez\nvous...",
 
   offerBand: {
-    eyebrow: "CRÉDIT D'IMPÔT VE",
-    title: "75% REMBOURSÉS*",
-    subtitle: "SUR INSTALLATION BORNE OU PRISE RENFORCÉE",
-    badge: "75% Remboursés !",
-    capsule: { prefix: "Jusqu'à", value: "500€", suffix: "déduits" },
+    eyebrow: "DEVIS GRATUIT",
+    title: "À PARTIR DE 600€*",
+    subtitle: "PRISE GREEN'UP POSÉE — PILOTAGE & HEURES CREUSES",
+    badge: "Devis offert !",
+    capsule: { prefix: "À partir de", value: "600€", suffix: "TTC posé" },
     legal:
-      "* Crédit d'impôt pour la transition énergétique (art. 200 quater B du CGI). 75% du coût d'acquisition et de pose plafonné à 500€ par système et par logement, pour résidence principale, location ou occupation gratuite. Sous conditions, à confirmer lors du devis.",
+      "* Tarif indicatif à partir de 600€ TTC pour une prise renforcée Green'Up Legrand 2,3 kW posée et raccordée à proximité du tableau électrique. Hors complexité spécifique (tirage de câble > 5m, mise en conformité tableau, augmentation de puissance). Devis détaillé après visite technique gratuite.",
   },
 
   reassurance: [
     { icon: "ShieldCheck", label: "Installation Pro" },
     { icon: "Car", label: "Tous Véhicules" },
     { icon: "Droplets", label: "Étanche IP66" },
-    { icon: "FileText", label: "Crédit d'Impôt" },
+    { icon: "FileText", label: "Devis Gratuit" },
   ],
 
   norm: {
