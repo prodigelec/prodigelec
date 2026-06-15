@@ -3,12 +3,12 @@ import ServicePageJsonLd from "@/app/components/ServicePageJsonLd";
 
 export const metadata = {
   title: "Borne de Recharge Voiture Électrique 27, 28 & 78 - PRODIGELEC",
-  description: "Installation de borne de recharge VE (Wallbox) et prise renforcée Green'Up en Eure-et-Loir, Eure & Yvelines. Solutions Legrand certifiées NF C 15-100, jusqu'à 3,7 kW, pilotage smartphone. Devis gratuit.",
+  description: "Installation de borne de recharge VE (Wallbox 3,7 / 7,4 / 22 kW) et prise renforcée Green'Up en Eure-et-Loir, Eure & Yvelines. Solutions Legrand Green'Up HOME certifiées NF C 15-100, pilotage smartphone. Devis gratuit.",
   keywords: [
     // Métier principal
     "Borne de recharge voiture électrique", "Borne de recharge VE", "Installation borne de recharge",
     "Wallbox installation", "Prise Green'Up", "Prise renforcée voiture électrique",
-    "Installateur IRVE", "Borne 3,7 kW", "Borne connectée maison",
+    "Installateur IRVE", "Borne 3,7 kW", "Borne 7,4 kW", "Borne 22 kW triphasé", "Borne connectée maison",
     // Par ville
     "Borne de recharge Broué", "Borne de recharge Dreux", "Borne de recharge Chartres", "Borne de recharge Évreux",
     "Borne de recharge Anet", "Borne de recharge Nonancourt", "Borne de recharge Nogent-le-Roi", "Borne de recharge Houdan",
@@ -20,7 +20,7 @@ export const metadata = {
     "Borne de recharge particulier", "Borne de recharge maison", "Borne de recharge à domicile",
     "Programme ADVENIR copropriété", "Aide borne de recharge 2026",
     // Marques / techniques
-    "Borne Legrand", "Green'Up Legrand", "Borne Wallbox 3,7 kW", "Borne connectée smartphone",
+    "Borne Legrand", "Green'Up Legrand", "Green'Up HOME", "Borne Wallbox 3,7 kW", "Borne Wallbox 7,4 kW", "Borne Wallbox 22 kW", "Borne connectée smartphone",
     "NF C 15-100 borne", "Étanche IP66"
   ],
   alternates: {
@@ -43,7 +43,7 @@ export const metadata = {
 const faqs = [
   {
     question: "Combien coûte l'installation d'une borne de recharge à domicile ?",
-    answer: "Le coût varie selon le type d'équipement et la complexité de l'installation : à partir de 600€ TTC pour une prise renforcée Green'Up, et environ 1 200€ à 1 800€ TTC pour une borne connectée 3,7 kW posée. Je fournis un devis gratuit après visite technique."
+    answer: "Le coût varie selon la puissance et la complexité de l'installation : à partir de 600€ TTC pour une prise renforcée Green'Up, 1 200€ TTC pour une borne 3,7 kW, 1 400€ TTC pour une 7,4 kW et 1 900€ TTC pour une 22 kW triphasée. Je fournis un devis gratuit après visite technique."
   },
   {
     question: "Existe-t-il des aides pour installer une borne de recharge en 2026 ?",
@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     question: "Faut-il un compteur électrique adapté pour installer une borne ?",
-    answer: "Pour une borne 3,7 kW (16A monophasé), un compteur standard 9 kVA suffit dans la plupart des cas. Pour des bornes plus puissantes (7,4 ou 11 kW), un passage en triphasé ou augmentation de puissance peut être nécessaire. Je vérifie votre installation lors du devis et coordonne avec Enedis si besoin."
+    answer: "Pour une borne 3,7 kW (16A monophasé), un compteur standard 9 kVA suffit dans la plupart des cas. Pour une 7,4 kW, une augmentation à 12 kVA min est souvent recommandée. La 22 kW nécessite obligatoirement un compteur triphasé. Je vérifie votre installation lors du devis et coordonne avec Enedis si besoin."
   },
   {
     question: "Combien de temps prend l'installation d'une borne ?",
@@ -73,7 +73,7 @@ export default function BorneRechargeVePage() {
       <ServicePageJsonLd
         service={{
           name: "Installation de Borne de Recharge Voiture Électrique",
-          description: "Installation de borne de recharge VE (Wallbox 3,7 kW) et prise renforcée Green'Up Legrand en Eure-et-Loir, Eure et Yvelines. Solutions certifiées NF C 15-100, étanche IP66, avec pilotage smartphone et programmation heures creuses."
+          description: "Installation de borne de recharge VE Legrand Green'Up HOME (3,7 / 7,4 / 22 kW triphasé) et prise renforcée Green'Up en Eure-et-Loir, Eure et Yvelines. Solutions certifiées NF C 15-100, étanche IP66, avec pilotage smartphone et programmation heures creuses."
         }}
         breadcrumbName="Borne de Recharge VE"
         pageUrl="https://www.prodigelec.fr/services/borne-de-recharge-voiture-electrique"

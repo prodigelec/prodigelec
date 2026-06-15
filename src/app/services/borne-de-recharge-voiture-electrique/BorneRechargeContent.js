@@ -105,15 +105,39 @@ export default function BorneRechargeContent() {
     {
       title: "Borne Wallbox 3,7 kW",
       price: "À partir de 1 200€ TTC",
-      description: "Borne connectée Legrand 3,7 kW avec pilotage smartphone et IP66.",
+      description: "Borne Green'Up HOME 3,7 kW connectée. Recharge ~24 km par heure. Compteur 9 kVA suffisant.",
       features: [
-        "Wallbox Legrand 3,7 kW",
+        "Wallbox Legrand Green'Up HOME",
         "Pilotage app Legrand",
         "Étanche IP66 ext./int.",
         "Programmation heures creuses"
       ],
       highlight: true,
       tag: "Recommandé"
+    },
+    {
+      title: "Borne Wallbox 7,4 kW",
+      price: "À partir de 1 400€ TTC",
+      description: "Borne Green'Up HOME 7,4 kW pour une recharge 2× plus rapide. Compteur 12 kVA min recommandé.",
+      features: [
+        "Wallbox Legrand 7,4 kW",
+        "Recharge ~37 km par heure",
+        "Pilotage app & heures creuses",
+        "Étanche IP66 ext./int."
+      ],
+      highlight: false
+    },
+    {
+      title: "Borne Wallbox 22 kW Triphasé",
+      price: "À partir de 1 900€ TTC",
+      description: "Borne Green'Up HOME 22 kW pour une recharge ultra-rapide. Compteur triphasé obligatoire.",
+      features: [
+        "Wallbox Legrand 22 kW triphasée",
+        "Recharge ~110 km par heure",
+        "Compteur triphasé obligatoire",
+        "Coordination Enedis si besoin"
+      ],
+      highlight: false
     }
   ];
 
@@ -127,7 +151,7 @@ export default function BorneRechargeContent() {
   const faqItems = [
     {
       question: "Combien coûte l'installation d'une borne de recharge à domicile ?",
-      answer: "Le coût varie selon le type d'équipement et la complexité de l'installation : à partir de 600€ TTC pour une prise renforcée Green'Up, et environ 1 200€ à 1 800€ TTC pour une borne connectée 3,7 kW posée. Je fournis un devis gratuit après visite technique."
+      answer: "Le coût varie selon la puissance et la complexité de l'installation : à partir de 600€ TTC pour une prise renforcée Green'Up, 1 200€ TTC pour une borne 3,7 kW, 1 400€ TTC pour une 7,4 kW et 1 900€ TTC pour une 22 kW triphasée. Je fournis un devis gratuit après visite technique."
     },
     {
       question: "Existe-t-il des aides pour installer une borne de recharge en 2026 ?",
@@ -139,7 +163,7 @@ export default function BorneRechargeContent() {
     },
     {
       question: "Faut-il un compteur électrique adapté pour installer une borne ?",
-      answer: "Pour une borne 3,7 kW (16A monophasé), un compteur standard 9 kVA suffit dans la plupart des cas. Pour des bornes plus puissantes (7,4 ou 11 kW), un passage en triphasé ou augmentation de puissance peut être nécessaire. Je vérifie votre installation lors du devis et coordonne avec Enedis si besoin."
+      answer: "Pour une borne 3,7 kW (16A monophasé), un compteur standard 9 kVA suffit dans la plupart des cas. Pour une 7,4 kW, une augmentation à 12 kVA min est souvent recommandée. La 22 kW nécessite obligatoirement un compteur triphasé. Je vérifie votre installation lors du devis et coordonne avec Enedis si besoin."
     },
     {
       question: "Combien de temps prend l'installation d'une borne ?",
