@@ -3,7 +3,7 @@ import ServicePageJsonLd from "@/app/components/ServicePageJsonLd";
 
 export const metadata = {
   title: "Borne de Recharge Voiture Électrique 27, 28 & 78 - PRODIGELEC",
-  description: "Installation de borne de recharge VE (Wallbox) et prise renforcée Green'Up en Eure-et-Loir, Eure & Yvelines. Solutions Legrand certifiées, jusqu'à 3,7 kW, crédit d'impôt 75%. Devis gratuit.",
+  description: "Installation de borne de recharge VE (Wallbox) et prise renforcée Green'Up en Eure-et-Loir, Eure & Yvelines. Solutions Legrand certifiées NF C 15-100, jusqu'à 3,7 kW, pilotage smartphone. Devis gratuit.",
   keywords: [
     // Métier principal
     "Borne de recharge voiture électrique", "Borne de recharge VE", "Installation borne de recharge",
@@ -16,9 +16,9 @@ export const metadata = {
     // Par département
     "Borne de recharge 27", "Borne de recharge 28", "Borne de recharge 78",
     "Borne de recharge Eure", "Borne de recharge Eure-et-Loir", "Borne de recharge Yvelines",
-    // Fiscal / aides
-    "Crédit d'impôt borne de recharge", "Crédit d'impôt VE 75%", "Aide installation borne VE",
+    // Aides & contexte particulier
     "Borne de recharge particulier", "Borne de recharge maison", "Borne de recharge à domicile",
+    "Programme ADVENIR copropriété", "Aide borne de recharge 2026",
     // Marques / techniques
     "Borne Legrand", "Green'Up Legrand", "Borne Wallbox 3,7 kW", "Borne connectée smartphone",
     "NF C 15-100 borne", "Étanche IP66"
@@ -28,14 +28,14 @@ export const metadata = {
   },
   openGraph: {
     title: "Borne de Recharge VE — Installation Wallbox & Prise Green'Up | PRODIGELEC",
-    description: "Installateur de borne de recharge voiture électrique en Eure (27), Eure-et-Loir (28) et Yvelines (78). Solutions Legrand, crédit d'impôt 75%. Devis gratuit.",
+    description: "Installateur de borne de recharge voiture électrique en Eure (27), Eure-et-Loir (28) et Yvelines (78). Solutions Legrand certifiées NF C 15-100, pilotage smartphone. Devis gratuit.",
     url: "https://www.prodigelec.fr/services/borne-de-recharge-voiture-electrique",
     images: [{ url: "https://www.prodigelec.fr/img_carousel_borne_recharge/legrand-femme-recharge-domicile.jpg", width: 1200, height: 630, alt: "Installation borne de recharge VE PRODIGELEC" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Borne de Recharge VE 27, 28 & 78 — PRODIGELEC",
-    description: "Installation de borne de recharge voiture électrique. Legrand certifié, crédit d'impôt 75%. Devis gratuit.",
+    description: "Installation de borne de recharge voiture électrique. Solutions Legrand certifiées NF C 15-100, pilotage smartphone. Devis gratuit.",
     images: ["https://www.prodigelec.fr/img_carousel_borne_recharge/legrand-femme-recharge-domicile.jpg"],
   },
 };
@@ -43,11 +43,11 @@ export const metadata = {
 const faqs = [
   {
     question: "Combien coûte l'installation d'une borne de recharge à domicile ?",
-    answer: "Le coût varie selon le type d'équipement et la complexité de l'installation : à partir de 600€ TTC pour une prise renforcée Green'Up, et environ 1 200€ à 1 800€ TTC pour une borne connectée 3,7 kW posée. Le crédit d'impôt de 75% (plafonné à 500€ par système) réduit fortement la facture finale. Je fournis un devis gratuit après visite technique."
+    answer: "Le coût varie selon le type d'équipement et la complexité de l'installation : à partir de 600€ TTC pour une prise renforcée Green'Up, et environ 1 200€ à 1 800€ TTC pour une borne connectée 3,7 kW posée. Je fournis un devis gratuit après visite technique."
   },
   {
-    question: "Qu'est-ce que le crédit d'impôt 75% pour une borne de recharge ?",
-    answer: "Le crédit d'impôt pour la transition énergétique (art. 200 quater B du CGI) rembourse 75% du coût d'acquisition et de pose d'une borne de recharge ou prise renforcée, plafonné à 500€ par système et par logement. Il s'applique pour résidence principale, location ou occupation gratuite, sous conditions. Je vous accompagne sur le justificatif fiscal."
+    question: "Existe-t-il des aides pour installer une borne de recharge en 2026 ?",
+    answer: "Le crédit d'impôt 75% pour borne de recharge (art. 200 quater C du CGI) s'est appliqué aux dépenses payées jusqu'au 31 décembre 2025 et n'est plus reconduit en 2026. En copropriété, le programme ADVENIR peut financer une partie de votre point de charge individuel — il ne concerne pas les maisons individuelles. Lors du devis, je vous oriente vers les dispositifs encore en vigueur selon votre situation."
   },
   {
     question: "Prise renforcée Green'Up ou vraie borne : que choisir ?",
@@ -73,7 +73,7 @@ export default function BorneRechargeVePage() {
       <ServicePageJsonLd
         service={{
           name: "Installation de Borne de Recharge Voiture Électrique",
-          description: "Installation de borne de recharge VE (Wallbox 3,7 kW) et prise renforcée Green'Up Legrand en Eure-et-Loir, Eure et Yvelines. Solutions certifiées NF C 15-100, étanche IP66, éligible au crédit d'impôt 75%."
+          description: "Installation de borne de recharge VE (Wallbox 3,7 kW) et prise renforcée Green'Up Legrand en Eure-et-Loir, Eure et Yvelines. Solutions certifiées NF C 15-100, étanche IP66, avec pilotage smartphone et programmation heures creuses."
         }}
         breadcrumbName="Borne de Recharge VE"
         pageUrl="https://www.prodigelec.fr/services/borne-de-recharge-voiture-electrique"
