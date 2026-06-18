@@ -171,10 +171,12 @@ export default function FlyerPrintBody({
 
         {/* Bandeau offre */}
         <div className={`bg-[#0b1a2a] text-white rounded-2xl p-5 relative shadow-xl shrink-0 border ${a.border500_20}`}>
-          <div className={`absolute -top-1.5 -right-1.5 bg-linear-to-r ${a.gradFromYellow} text-slate-950 text-xs font-black px-4 py-2 rounded-bl-xl shadow-md rotate-6 uppercase tracking-wider animate-pulse flex items-center gap-1.5 z-20`}>
-            <Sparkles className="w-3 h-3" />
-            {d.offerBand.badge}
-          </div>
+          {d.offerBand.badge && (
+            <div className={`absolute -top-1.5 -right-1.5 bg-linear-to-r ${a.gradFromYellow} text-slate-950 text-xs font-black px-4 py-2 rounded-bl-xl shadow-md rotate-6 uppercase tracking-wider animate-pulse flex items-center gap-1.5 z-20`}>
+              <Sparkles className="w-3 h-3" />
+              {d.offerBand.badge}
+            </div>
+          )}
           <div className="flex items-center gap-5">
             <div className={`w-14 h-14 bg-linear-to-br ${a.from500_20} ${a.to500_10} border-2 ${a.border500_60} rounded-full flex items-center justify-center shrink-0 shadow-lg ${a.shadow500_15}`}>
               {OfferBandIcon && <OfferBandIcon className={`w-7 h-7 ${a.text500}`} />}

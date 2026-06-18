@@ -26,7 +26,7 @@ export default function BorneRechargeContent() {
       title: "Prise Renforcée Green'Up",
       description: "La solution éprouvée Legrand pour recharger votre véhicule électrique en toute sécurité à domicile, sans gros chantier.",
       items: [
-        "Recharge jusqu'à 2,3 kW (~12 km/h)",
+        "Recharge ~72 km par nuit (8A monophasé)",
         "Compatible tous véhicules",
         "Protection différentielle dédiée",
         "Pose rapide en 1/2 journée"
@@ -37,7 +37,7 @@ export default function BorneRechargeContent() {
       title: "Borne Connectée 3,7 kW",
       description: "Wallbox Legrand avec pilotage smartphone, programmation heures creuses et suivi de consommation.",
       items: [
-        "Recharge 16A monophasé",
+        "Recharge ~144 km par nuit (16A monophasé)",
         "Pilotage app Legrand",
         "Programmation heures creuses",
         "Étanche IP66 intérieur/extérieur"
@@ -93,7 +93,7 @@ export default function BorneRechargeContent() {
     {
       title: "Prise Renforcée Green'Up",
       price: "À partir de 600€ TTC",
-      description: "Pose d'une prise Green'Up Legrand 2,3 kW pour véhicule électrique.",
+      description: "Pose d'une prise Green'Up Legrand pour véhicule électrique. Recharge ~72 km par nuit (8A monophasé).",
       features: [
         "Prise Green'Up Legrand",
         "Disjoncteur 16A dédié",
@@ -105,7 +105,7 @@ export default function BorneRechargeContent() {
     {
       title: "Borne Wallbox 3,7 kW",
       price: "À partir de 1 200€ TTC",
-      description: "Borne Green'Up HOME 3,7 kW connectée. Recharge ~24 km par heure. Compteur 9 kVA suffisant.",
+      description: "Borne Green'Up HOME 3,7 kW connectée. Recharge ~144 km par nuit (16A monophasé). Compteur 9 kVA suffisant.",
       features: [
         "Wallbox Legrand Green'Up HOME",
         "Pilotage app Legrand",
@@ -118,10 +118,10 @@ export default function BorneRechargeContent() {
     {
       title: "Borne Wallbox 7,4 kW",
       price: "À partir de 1 400€ TTC",
-      description: "Borne Green'Up HOME 7,4 kW pour une recharge 2× plus rapide. Compteur 12 kVA min recommandé.",
+      description: "Borne Green'Up HOME 7,4 kW pour une recharge 2× plus rapide. Recharge ~296 km par nuit (32A monophasé). Compteur 12 kVA min recommandé.",
       features: [
         "Wallbox Legrand 7,4 kW",
-        "Recharge ~37 km par heure",
+        "Recharge ~296 km par nuit (32A mono.)",
         "Pilotage app & heures creuses",
         "Étanche IP66 ext./int."
       ],
@@ -130,10 +130,10 @@ export default function BorneRechargeContent() {
     {
       title: "Borne Wallbox 22 kW Triphasé",
       price: "À partir de 1 900€ TTC",
-      description: "Borne Green'Up HOME 22 kW pour une recharge ultra-rapide. Compteur triphasé obligatoire.",
+      description: "Borne Green'Up HOME 22 kW pour une recharge ultra-rapide. Charge complète d'un VE en 2 à 3h. Compteur triphasé obligatoire.",
       features: [
         "Wallbox Legrand 22 kW triphasée",
-        "Recharge ~110 km par heure",
+        "Charge complète en 2 à 3h",
         "Compteur triphasé obligatoire",
         "Coordination Enedis si besoin"
       ],
@@ -159,7 +159,7 @@ export default function BorneRechargeContent() {
     },
     {
       question: "Prise renforcée Green'Up ou vraie borne : que choisir ?",
-      answer: "La prise renforcée Green'Up (~2,3 kW) charge à environ 12 km d'autonomie par heure — suffisant pour la nuit. La borne 3,7 kW double quasiment la vitesse (~24 km/h) et apporte le pilotage smartphone, la programmation heures creuses et la sécurité d'une installation dédiée. Je vous conseille selon votre véhicule, kilométrage quotidien et installation existante."
+      answer: "La prise renforcée Green'Up (8A monophasé) recharge environ 72 km d'autonomie en une nuit de 8h — largement suffisant pour les trajets domicile-travail. La borne 3,7 kW (16A monophasé) double la capacité (~144 km par nuit) et apporte le pilotage smartphone, la programmation heures creuses et la sécurité d'une installation dédiée. Je vous conseille selon votre véhicule, kilométrage quotidien et installation existante."
     },
     {
       question: "Faut-il un compteur électrique adapté pour installer une borne ?",
