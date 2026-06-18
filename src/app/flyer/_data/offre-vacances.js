@@ -1,6 +1,6 @@
 export const offreVacancesData = {
   editorTitle: "Éditeur de Flyer",
-  defaultOffer: { day: "31", month: "JUILLET", year: "2026" },
+  defaultOffer: { day: "30", month: "SEPTEMBRE", year: "2026" },
 
   accroche: { line1: "Partez l'esprit", line2: "tranquille !" },
 
@@ -36,7 +36,7 @@ export const offreVacancesData = {
 
   offerBand: {
     eyebrow: "OFFRE VACANCES",
-    title: "1 DÉTECTEUR OFFERT*",
+    title: "1 DÉTECTEUR D'OUVERTURE OFFERT*",
     subtitle: "POUR TOUTE INSTALLATION D'UN SYSTÈME D'ALARME",
     badge: "Offert !",
     legalTemplate:

@@ -38,7 +38,6 @@ export const borneRechargeData = {
     eyebrow: "DEVIS GRATUIT",
     title: "À PARTIR DE 600€*",
     subtitle: "PRISE GREEN'UP POSÉE — PILOTAGE & HEURES CREUSES",
-    badge: "Devis offert !",
     capsule: { prefix: "À partir de", value: "600€", suffix: "TTC posé" },
     legal:
       "* Tarif indicatif à partir de 600€ TTC pour une prise renforcée Green'Up Legrand 2,3 kW posée et raccordée à proximité du tableau électrique. Hors complexité spécifique (tirage de câble > 5m, mise en conformité tableau, augmentation de puissance). Devis détaillé après visite technique gratuite.",
