@@ -1,87 +1,26 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, useRef } from "react";
-import { useSearchParams } from "next/navigation";
 import { toPng } from "html-to-image";
-import { Printer, Settings, EyeOff, Download, Check, Loader2 } from "lucide-react";
-import { contact } from "../_data/contact";
-import { getAccent } from "./accent";
+import { Settings, EyeOff, Download, Check, Loader2 } from "lucide-react";
+import { contact } from "../../_data/contact";
+import { getAccent } from "../../_components/accent";
 
-const FlyerContext = createContext(null);
+const SocialFlyerContext = createContext(null);
 
-export function useFlyer() {
-  const ctx = useContext(FlyerContext);
-  if (!ctx) throw new Error("useFlyer must be used inside <FlyerShell>");
+export function useSocialFlyer() {
+  const ctx = useContext(SocialFlyerContext);
+  if (!ctx) throw new Error("useSocialFlyer must be used inside <SocialFlyerShell>");
   return ctx;
 }
 
-function GoogleFontsAndPrintCss({ printOverrides = "" }) {
+function GoogleFontsImport() {
   return (
     <style
       dangerouslySetInnerHTML={{
         __html: `
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800;900&display=swap');
-
         .font-handwritten { font-family: 'Caveat', cursive; }
-
-        ${printOverrides}
-
-        @media print {
-          html, body {
-            background: white !important;
-            color: black !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            min-height: 0 !important;
-            max-height: 100vh !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            overflow: hidden !important;
-          }
-          .no-print, #global-navbar, nav, footer, header, .floating-contact-btn {
-            display: none !important;
-          }
-          body * { visibility: hidden !important; }
-          .print-area, .print-area * { visibility: visible !important; }
-
-          .print-area {
-            position: fixed !important;
-            top: 50% !important;
-            left: 50% !important;
-            width: 210mm !important;
-            height: 297mm !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: none !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            background: #0b1a2a !important;
-            overflow: hidden !important;
-            transform: translate(-50%, -50%) !important;
-            transform-origin: center !important;
-            page-break-inside: avoid !important;
-            page-break-after: avoid !important;
-            page-break-before: avoid !important;
-            break-inside: avoid !important;
-            break-after: avoid !important;
-            break-before: avoid !important;
-          }
-          .print-area.format-a5 {
-            transform: translate(-50%, -50%) scale(0.7047) !important;
-          }
-          html, body, body > * {
-            page-break-after: avoid !important;
-            page-break-before: avoid !important;
-            page-break-inside: avoid !important;
-            break-after: avoid !important;
-            break-before: avoid !important;
-            break-inside: avoid !important;
-          }
-          * {
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-          }
-        }
       `,
       }}
     />
@@ -93,17 +32,20 @@ function monthToNumber(month) {
   return map[month] || "12";
 }
 
-export default function FlyerShell({
-  editorTitle = "Éditeur de Flyer",
-  defaultOffer = { day: "31", month: "JUILLET", year: "2026" },
-  printOverrides = "",
-  accent = "emerald",
-  enablePrintModeToggle = false,
+const FORMATS = {
+  square: { width: 1080, height: 1080, label: "1080×1080 (Feed)", filenameSuffix: "facebook" },
+  story: { width: 1080, height: 1920, label: "1080×1920 (Story)", filenameSuffix: "story" },
+};
+
+export default function SocialFlyerShell({
+  editorTitle = "Éditeur Flyer Social",
+  defaultOffer = { day: "30", month: "SEPTEMBRE", year: "2026" },
+  accent = "amber",
+  format = "square",
   children,
 }) {
   const a = getAccent(accent);
-  const searchParams = useSearchParams();
-  const isPrintMode = searchParams?.get("print") === "1";
+  const dims = FORMATS[format] || FORMATS.square;
 
   useEffect(() => {
     const navbar = document.getElementById("global-navbar");
@@ -119,7 +61,6 @@ export default function FlyerShell({
     };
   }, []);
 
-  const [format, setFormat] = useState("A5");
   const [offerYear, setOfferYear] = useState(defaultOffer.year);
   const [offerMonth, setOfferMonth] = useState(defaultOffer.month);
   const [offerDay, setOfferDay] = useState(defaultOffer.day);
@@ -128,40 +69,33 @@ export default function FlyerShell({
   const [emailAddress, setEmailAddress] = useState(contact.email);
   const [showControls, setShowControls] = useState(true);
   const [exportStatus, setExportStatus] = useState("idle");
+  const [isCapturing, setIsCapturing] = useState(false);
   const printAreaRef = useRef(null);
 
   const dateFormattedUpper = `JUSQU'AU ${offerDay} ${offerMonth} ${offerYear}`;
   const dateFormattedShort = `${offerDay}/${monthToNumber(offerMonth)}/${offerYear}`;
 
-  const togglePrintMode = () => {
-    const url = new URL(window.location.href);
-    if (isPrintMode) url.searchParams.delete("print");
-    else url.searchParams.set("print", "1");
-    window.location.href = url.toString();
-  };
-
   const handleDownloadPng = async () => {
     if (!printAreaRef.current || exportStatus === "generating") return;
     setExportStatus("generating");
-    const previousFormat = format;
-    setFormat("A4");
+    setIsCapturing(true);
     await new Promise((resolve) => setTimeout(resolve, 400));
     try {
       const dataUrl = await toPng(printAreaRef.current, {
         pixelRatio: 2,
         cacheBust: true,
       });
-      const slug = window.location.pathname.replace(/^\/flyer\/?/, "").replace(/\/+$/, "").replace(/\//g, "-") || "flyer";
+      const slug = window.location.pathname.replace(/^\/flyer\/social\/?/, "").replace(/\/+$/, "").replace(/\//g, "-") || "flyer-social";
       const link = document.createElement("a");
-      link.download = `flyer-${slug}-prodigelec.png`;
+      link.download = `flyer-${slug}-${dims.filenameSuffix}-prodigelec.png`;
       link.href = dataUrl;
       link.click();
-      setFormat(previousFormat);
+      setIsCapturing(false);
       setExportStatus("success");
       setTimeout(() => setExportStatus("idle"), 2500);
     } catch (err) {
       console.error("Erreur export PNG :", err);
-      setFormat(previousFormat);
+      setIsCapturing(false);
       setExportStatus("error");
       setTimeout(() => setExportStatus("idle"), 3000);
     }
@@ -170,8 +104,6 @@ export default function FlyerShell({
   const ctx = {
     accent: a,
     accentName: accent,
-    format,
-    isPrintMode,
     qrUrl,
     phoneNumber,
     emailAddress,
@@ -186,12 +118,12 @@ export default function FlyerShell({
   const inputBaseLg = `w-full bg-slate-900 border border-slate-700 rounded px-3 py-1.5 text-sm text-white focus:outline-none ${a.inputFocus}`;
 
   return (
-    <FlyerContext.Provider value={ctx}>
+    <SocialFlyerContext.Provider value={ctx}>
       <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col md:flex-row font-sans">
-        <GoogleFontsAndPrintCss printOverrides={printOverrides} />
+        <GoogleFontsImport />
 
         {showControls && (
-          <div className="w-full md:w-80 bg-slate-950 p-6 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col gap-6 no-print shrink-0 overflow-y-auto max-h-screen">
+          <div className="w-full md:w-80 bg-slate-950 p-6 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col gap-6 shrink-0 overflow-y-auto max-h-screen">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Settings className={`w-5 h-5 ${a.panelTitle}`} />
@@ -207,34 +139,10 @@ export default function FlyerShell({
             </div>
 
             <p className="text-xs text-slate-400">
-              {"Modifiez les informations ci-dessous. Le visuel à droite s'adaptera au format d'impression."}
+              {format === "story"
+                ? "Format vertical 1080×1920 (9:16) optimisé Stories & Reels Facebook/Instagram."
+                : "Format carré 1080×1080 optimisé Facebook & Instagram feed."}
             </p>
-
-            <hr className="border-slate-800" />
-
-            <div className="flex flex-col gap-3">
-              <h3 className={a.sectionTitle}>{"Format d'impression"}</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {["A4", "A5"].map((f) => (
-                  <button
-                    key={f}
-                    onClick={() => setFormat(f)}
-                    className={`py-2 px-3 text-xs font-bold rounded-lg border transition cursor-pointer ${
-                      format === f
-                        ? a.formatButtonActive
-                        : "bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800"
-                    }`}
-                  >
-                    {f === "A4" ? "A4 (Grand)" : "A5 (Prospectus)"}
-                  </button>
-                ))}
-              </div>
-              <span className="text-[10px] text-slate-500 italic leading-tight">
-                {format === "A5"
-                  ? "Format A5 actif. Le visuel sera réduit de 70,7% à l'impression pour tenir parfaitement sur un flyer A5."
-                  : "Format A4 actif. Le visuel sera imprimé à 100% de sa taille."}
-              </span>
-            </div>
 
             <hr className="border-slate-800" />
 
@@ -259,7 +167,6 @@ export default function FlyerShell({
             <div className="flex flex-col gap-2">
               <h3 className={a.sectionTitle}>Destination QR Code</h3>
               <input type="text" value={qrUrl} onChange={(e) => setQrUrl(e.target.value)} className={inputBaseLg} placeholder="https://..." />
-              <span className="text-[10px] text-slate-500 italic">{"Encode l'adresse URL saisie dans le QR Code."}</span>
             </div>
 
             <div className="flex flex-col gap-3">
@@ -277,24 +184,6 @@ export default function FlyerShell({
             <hr className="border-slate-800" />
 
             <div className="flex flex-col gap-2 mt-auto">
-              {enablePrintModeToggle && (
-                <button
-                  onClick={togglePrintMode}
-                  className={`w-full ${isPrintMode ? "bg-amber-500 hover:bg-amber-600 shadow-amber-500/10" : "bg-slate-800 hover:bg-slate-700 shadow-slate-900/30 border border-slate-700"} active:scale-[0.98] transition-transform text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer shadow-md text-xs`}
-                  title={isPrintMode ? "Revenir au mode digital (réseaux sociaux)" : "Aperçu impression : texte plus contrasté"}
-                >
-                  {isPrintMode ? "← Mode digital (réseaux)" : "Aperçu mode impression"}
-                </button>
-              )}
-
-              <button
-                onClick={() => window.print()}
-                className={`w-full ${a.printButton} active:scale-[0.98] transition-transform font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer shadow-lg`}
-              >
-                <Printer className="w-5 h-5" />
-                {"Imprimer / Exporter (A4/A5)"}
-              </button>
-
               <button
                 onClick={handleDownloadPng}
                 disabled={exportStatus === "generating"}
@@ -309,14 +198,14 @@ export default function FlyerShell({
                 {exportStatus === "generating" && <Loader2 className="w-5 h-5 animate-spin" />}
                 {exportStatus === "success" && <Check className="w-5 h-5" />}
                 {(exportStatus === "idle" || exportStatus === "error") && <Download className="w-5 h-5" />}
-                {exportStatus === "generating" && "Génération en cours..."}
-                {exportStatus === "success" && "Image téléchargée !"}
+                {exportStatus === "generating" && "Génération..."}
+                {exportStatus === "success" && "Téléchargé !"}
                 {exportStatus === "error" && "Erreur — réessayer"}
-                {exportStatus === "idle" && "Télécharger en PNG (Facebook)"}
+                {exportStatus === "idle" && `Télécharger en PNG ${dims.width}×${dims.height}`}
               </button>
 
               <p className="text-[10px] text-slate-400 text-center italic mt-1">
-                {"Astuce : Le PNG est optimisé pour les réseaux sociaux. Pour l'impression papier, utilisez le bouton ci-dessus (réglez \"Graphiques d'arrière-plan\" activé et marges \"Aucune\")."}
+                {`Le PNG fait ${dims.width * 2}×${dims.height * 2} (HD) pour rester net sur tous les écrans.`}
               </p>
             </div>
           </div>
@@ -326,7 +215,7 @@ export default function FlyerShell({
           {!showControls && (
             <button
               onClick={() => setShowControls(true)}
-              className={`absolute top-4 left-4 bg-slate-950/80 backdrop-blur border border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs ${a.showPanelButton} transition no-print shadow-md cursor-pointer`}
+              className={`absolute top-4 left-4 bg-slate-950/80 backdrop-blur border border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs ${a.showPanelButton} transition shadow-md cursor-pointer`}
             >
               <Settings className="w-3.5 h-3.5" />
               {"Afficher l'éditeur"}
@@ -334,25 +223,21 @@ export default function FlyerShell({
           )}
 
           <div
-            className="overflow-hidden transition-all duration-300 ease-in-out select-none shadow-2xl rounded-lg bg-white"
+            className="overflow-hidden transition-all duration-300 ease-in-out select-none shadow-2xl rounded-lg"
             style={{
-              width: format === "A4" ? "794px" : "561px",
-              height: format === "A4" ? "1123px" : "794px",
+              width: isCapturing ? `${dims.width}px` : `${dims.width * (600 / Math.max(dims.width, dims.height))}px`,
+              height: isCapturing ? `${dims.height}px` : `${dims.height * (600 / Math.max(dims.width, dims.height))}px`,
             }}
           >
             <div
               ref={printAreaRef}
-              className={`print-area bg-[#0b1a2a] text-white relative overflow-hidden shrink-0 flex flex-col justify-between ${
-                format === "A5" ? "format-a5" : ""
-              } ${isPrintMode ? "print-mode-preview" : ""}`}
+              className="bg-[#0b1a2a] text-white relative overflow-hidden shrink-0 flex flex-col"
               style={{
                 fontFamily: "'Inter', sans-serif",
-                aspectRatio: "1/1.414",
-                width: "794px",
-                height: "1123px",
-                transform: format === "A4" ? "none" : "scale(0.707)",
+                width: `${dims.width}px`,
+                height: `${dims.height}px`,
+                transform: isCapturing ? "none" : `scale(${600 / Math.max(dims.width, dims.height)})`,
                 transformOrigin: "top left",
-                transition: "transform 0.3s ease-in-out",
               }}
             >
               {children}
@@ -360,6 +245,6 @@ export default function FlyerShell({
           </div>
         </div>
       </div>
-    </FlyerContext.Provider>
+    </SocialFlyerContext.Provider>
   );
 }
