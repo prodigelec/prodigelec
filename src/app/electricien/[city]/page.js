@@ -55,44 +55,18 @@ export default async function CityPage({ params }) {
     ],
   };
 
-  const localBusinessSchema = {
+  // Référence le business canonique (déjà déclaré en entier dans le JSON-LD
+  // global du layout) au lieu de redupliquer adresse/geo/horaires sur les
+  // ~33 pages villes. Seul areaServed est spécifique à chaque page.
+  const serviceAreaSchema = {
     "@context": "https://schema.org",
-    "@type": "Electrician",
-    "@id": `https://www.prodigelec.fr/electricien/${city.slug}#business`,
-    name: "PRODIGELEC",
-    url: "https://www.prodigelec.fr",
-    telephone: "+33638194752",
-    email: "contact@prodigelec.fr",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "10 Rue Georges Bréant",
-      addressLocality: "Broué",
-      postalCode: "28410",
-      addressRegion: "Eure-et-Loir",
-      addressCountry: "FR",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 48.76271,
-      longitude: 1.51530,
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "00:00",
-        closes: "23:59",
-      },
-    ],
+    "@type": "Service",
+    name: `Électricien & Sécurité à ${city.name}`,
+    url,
+    provider: { "@id": "https://www.prodigelec.fr/#business" },
     areaServed: [
       { "@type": "City", name: city.name },
       ...city.nearby.map((n) => ({ "@type": "City", name: n })),
-    ],
-    priceRange: "€€",
-    sameAs: [
-      "https://www.prodigelec.fr/#business",
-      "https://www.facebook.com/prodigelec/",
-      "https://www.instagram.com/prodigelec/",
     ],
   };
 
@@ -109,7 +83,7 @@ export default async function CityPage({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAreaSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <CityPageContent city={city} />
     </>
