@@ -162,6 +162,7 @@ export default function CityPageContent({ city }) {
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 0px, 50vw"
+                priority
               />
               <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 50%, rgba(11,26,42,0.8) 100%)" }} />
               {city.freeZone && (
