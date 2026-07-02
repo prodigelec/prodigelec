@@ -17,14 +17,14 @@ export default function HeroContent({ slides, currentSlide }) {
             transition={{ duration: 0.5, staggerChildren: 0.1 }}
             className="space-y-6 md:space-y-12 max-w-5xl mx-auto"
           >
-            {/* H1 visible — ancre SEO locale */}
-            <h1 className="text-xs font-bold uppercase tracking-[0.3em] opacity-60" style={{ color: "var(--primary)" }}>
+            {/* Eyebrow — ancre SEO locale, pas un heading */}
+            <p className="inline-block bg-black/40 backdrop-blur-md rounded-full px-4 py-2 border border-white/10 text-xs font-bold uppercase tracking-[0.3em]" style={{ color: "var(--primary)" }}>
               Artisan électricien &amp; sécurité — Eure-et-Loir, Eure &amp; Yvelines
-            </h1>
+            </p>
 
-            {/* Titre carousel (H2) */}
+            {/* Titre carousel (H1) */}
             <div className="space-y-4">
-              <m.h2
+              <m.h1
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -36,7 +36,7 @@ export default function HeroContent({ slides, currentSlide }) {
                 <span className="block font-light opacity-95 mt-2 md:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                   {slides[currentSlide].title.split(' ').slice(1).join(' ')}
                 </span>
-              </m.h2>
+              </m.h1>
 
               <m.div
                 initial={{ opacity: 0 }}
