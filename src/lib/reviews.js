@@ -13,7 +13,7 @@ export async function getGoogleReviews() {
     const idParam = isCid ? `cid=${placeId}` : `place_id=${placeId}`;
 
     const res = await fetch(
-      `${PLACES_ENDPOINT}?${idParam}&fields=reviews,rating,user_ratings_total,name&language=fr&key=${apiKey}`,
+      `${PLACES_ENDPOINT}?${idParam}&fields=reviews,rating,user_ratings_total,name&language=fr&reviews_sort=newest&key=${apiKey}`,
       { next: { revalidate: 3600 } }
     );
 
