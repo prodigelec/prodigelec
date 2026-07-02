@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Star, ArrowRight } from "lucide-react";
 import { getGoogleReviews } from "@/lib/reviews";
-import ReviewCard from "@/app/components/reviews/ReviewCard";
+import ReviewsCarousel from "@/app/components/reviews/ReviewsCarousel";
 import ReviewsSchema from "@/app/components/reviews/ReviewsSchema";
 
 export const revalidate = 3600;
@@ -87,11 +87,7 @@ export default async function AvisPage() {
 
         {hasReviews ? (
           <section className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {reviews.map((r) => (
-                <ReviewCard key={r.id} review={r} />
-              ))}
-            </div>
+            <ReviewsCarousel reviews={reviews} />
           </section>
         ) : (
           <section className="max-w-3xl mx-auto px-6 text-center py-12">

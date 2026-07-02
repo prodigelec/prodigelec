@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Star, ArrowRight } from "lucide-react";
 import { getGoogleReviews } from "@/lib/reviews";
-import ReviewCard from "./ReviewCard";
+import ReviewsCarousel from "./ReviewsCarousel";
 
 const REVIEW_URL = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL || "#";
 
@@ -12,8 +12,11 @@ export default async function ReviewsSection({ limit = 3, variant = "home" }) {
     return null;
   }
 
-  const visible = reviews.slice(0, limit);
   const isHome = variant === "home";
+  const pool = isHome
+    ? reviews.filter((r) => r.rating >= 4 && r.text?.trim())
+    : reviews;
+  const visible = (pool.length > 0 ? pool : reviews).slice(0, limit);
 
   return (
     <section
@@ -63,11 +66,7 @@ export default async function ReviewsSection({ limit = 3, variant = "home" }) {
           )}
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {visible.map((r) => (
-            <ReviewCard key={r.id} review={r} clamp={isHome} />
-          ))}
-        </div>
+        <ReviewsCarousel reviews={visible} clamp={isHome} />
 
         <div className="flex flex-wrap items-center justify-center gap-4 mt-8 md:mt-12">
           {isHome && reviews.length > limit && (
