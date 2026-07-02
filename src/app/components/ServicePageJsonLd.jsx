@@ -16,16 +16,7 @@ export default function ServicePageJsonLd({ service, breadcrumbName, pageUrl, fa
     "description": service.description,
     "url": pageUrl,
     "provider": {
-      "@type": "LocalBusiness",
-      "name": "PRODIGELEC",
-      "url": "https://www.prodigelec.fr",
-      "telephone": "+33638194752",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Broué",
-        "postalCode": "28410",
-        "addressCountry": "FR"
-      }
+      "@id": "https://www.prodigelec.fr/#business"
     },
     "areaServed": [
       { "@type": "City", "name": "Broué" },
