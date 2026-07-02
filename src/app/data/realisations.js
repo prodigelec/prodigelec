@@ -1,4 +1,28 @@
-export const realisations = [
+const realisationsData = [
+  {
+    slug: "visiophone-tmezon-breval-yvelines",
+    titre: "Installation visiophone et remplacement gâche électrique",
+    description: "Le client avait acheté un visiophone Tmezon et une nouvelle gâche électrique. Pose de la platine extérieure et du poste intérieur en réutilisant la filerie existante, puis dépose de la gâche électrique hors d'usage et remplacement par celle fournie par le client.",
+    ville: "Bréval",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "securite",
+    date: "2026-06-15",
+    image: "/visiophone-tmezon-breval-yvelines-1.jpg",
+    imageAlt: "Platine extérieure visiophone Tmezon installée sur un portillon à Bréval, Yvelines",
+  },
+  {
+    slug: "depannage-alarme-somfy-villiers-saint-frederic",
+    titre: "Dépannage alarme Somfy et remplacement prise",
+    description: "L'alarme Somfy Link Essentiel ne fonctionnait plus après un changement de réseau internet. Réinitialisation complète du système, remplacement des piles de la sirène extérieure et des contacteurs de choc, et changement d'une prise électrique défectueuse dans le bureau.",
+    ville: "Villiers-Saint-Frédéric",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "securite",
+    date: "2026-06-30",
+    image: "/depannage-alarme-somfy-villiers-saint-frederic.jpg",
+    imageAlt: "Centrale d'alarme Somfy Link Essentiel dépannée à Villiers-Saint-Frédéric, Yvelines",
+  },
   {
     slug: "sonnette-urmet-la-queue-yvelines",
     titre: "Installation sonnette sans fil",
@@ -84,6 +108,10 @@ export const realisations = [
     imageAlt: "Installation chauffe-eau électrique Ariston à Havelu, Yvelines",
   },
 ];
+
+export const realisations = [...realisationsData].sort(
+  (a, b) => new Date(b.date) - new Date(a.date)
+);
 
 export const categories = [
   { slug: "tous", label: "Tous" },
