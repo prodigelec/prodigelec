@@ -107,6 +107,18 @@ const realisationsData = [
     image: "/installation-chauffe-eau-ariston-havelu-yvelines.jpg",
     imageAlt: "Installation chauffe-eau électrique Ariston à Havelu, Yvelines",
   },
+  {
+    slug: "renovation-electrique-cuisine-sorel-moussel",
+    titre: "Rénovation électrique d'une cuisine",
+    description: "Reprise complète de l'installation électrique de la cuisine : création de circuits dédiés avec une protection par usage, saignées et pose des boîtes d'encastrement, puis tirage de la filerie jusqu'au tableau. L'appareillage et les protections étaient fournis par le client, la filerie par mes soins.",
+    ville: "Sorel-Moussel",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-07-13",
+    image: "/renovation-electrique-cuisine-sorel-moussel.jpg",
+    imageAlt: "Câblage électrique en cours dans une cuisine à Sorel-Moussel, Eure-et-Loir",
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
