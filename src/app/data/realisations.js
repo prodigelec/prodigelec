@@ -119,6 +119,18 @@ const realisationsData = [
     image: "/renovation-electrique-cuisine-sorel-moussel.jpg",
     imageAlt: "Câblage électrique en cours dans une cuisine à Sorel-Moussel, Eure-et-Loir",
   },
+  {
+    slug: "pots-encastrement-prises-interrupteurs-mere-yvelines",
+    titre: "Remplacement de pots d'encastrement et d'appareillage",
+    description: "Les pots d'encastrement ne tenaient plus l'appareillage. Dépose des prises, remplacement des pots par des modèles étanches puis repose, avec changement des interrupteurs et boutons poussoirs fournis par le client.",
+    ville: "Méré",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "electricite",
+    date: "2026-07-16",
+    image: "/remplacement-pots-encastrement-mere-yvelines.jpg",
+    imageAlt: "Illustration du remplacement d'un pot d'encastrement : ancienne boîte déposée dans le mur et boîte neuve prête à être posée, chantier de Méré, Yvelines",
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
