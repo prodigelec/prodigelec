@@ -131,6 +131,18 @@ const realisationsData = [
     image: "/remplacement-pots-encastrement-mere-yvelines.jpg",
     imageAlt: "Illustration du remplacement d'un pot d'encastrement : ancienne boîte déposée dans le mur et boîte neuve prête à être posée, chantier de Méré, Yvelines",
   },
+  {
+    slug: "reglage-motorisation-portail-faac-marchezais",
+    titre: "Réglage d'une motorisation de portail FAAC",
+    description: "Le portail ne se refermait plus correctement, les deux vantaux n'étant plus synchronisés. Recherche de panne sur la motorisation FAAC e024s, puis reprise des réglages jusqu'au retour d'un cycle d'ouverture et de fermeture normal.",
+    ville: "Marchezais",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "automatismes",
+    date: "2026-08-01",
+    image: "/reglage-motorisation-portail-faac-marchezais.jpg",
+    imageAlt: "Illustration d'un portail battant équipé d'une motorisation FAAC e024s à Marchezais, Eure-et-Loir",
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
