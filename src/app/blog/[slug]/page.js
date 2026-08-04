@@ -56,7 +56,7 @@ export default async function BlogPostPage({ params }) {
     "description": meta.description,
     ...(meta.image && { "image": `https://www.prodigelec.fr${meta.image}` }),
     "datePublished": meta.date,
-    "dateModified": meta.date,
+    "dateModified": meta.dateModified || meta.date,
     "url": `https://www.prodigelec.fr/blog/${slug}`,
     "inLanguage": "fr-FR",
     "author": {
