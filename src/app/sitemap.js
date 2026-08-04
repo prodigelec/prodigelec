@@ -9,7 +9,7 @@ const LASTMOD = {
   cities:      "2026-05-26",
   contact:     "2026-05-22",
   about:       "2026-05-12",
-  realisations:"2026-05-12",
+  realisations:"2026-08-04",
   avis:        "2026-05-26",
   blogIndex:   "2026-05-15",
   legal:       "2026-01-01",
