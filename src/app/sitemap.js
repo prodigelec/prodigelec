@@ -11,7 +11,7 @@ const LASTMOD = {
   about:       "2026-05-12",
   realisations:"2026-08-04",
   avis:        "2026-05-26",
-  blogIndex:   "2026-05-15",
+  blogIndex:   "2026-08-04",
   legal:       "2026-01-01",
 };
 
@@ -25,7 +25,7 @@ export default function sitemap() {
 
   const blogPosts = getAllPosts().map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: post.date || LASTMOD.blogIndex,
+    lastModified: post.dateModified || post.date || LASTMOD.blogIndex,
     changeFrequency: "yearly",
     priority: 0.7,
   }));
