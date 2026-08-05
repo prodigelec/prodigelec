@@ -20,7 +20,7 @@ const categories = [
     },
     {
         name: "Contrôle d'Accès",
-        brands: ["Noralsy", "Urmet", "CDVI", "Aiphone", "Intratone", "Cofrel", "Comelit"],
+        brands: ["Noralsy", "Urmet", "CDVI", "Aiphone", "Intratone", "EZVIZ", "Cofrel", "Comelit"],
         duration: 28,
         reverse: true
     }
