@@ -15,8 +15,10 @@ export default function HeroRatingBadge({ rating, totalRatings }) {
 
   const rounded = Math.round(rating);
 
+  // Mobile : barre large, calée sur les marges de la page.
+  // Desktop : pastille compacte centrée.
   return (
-    <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-30">
+    <div className="absolute bottom-6 md:bottom-10 left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 z-30">
     <m.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
@@ -24,25 +26,24 @@ export default function HeroRatingBadge({ rating, totalRatings }) {
     >
       <Link
         href="/avis"
-        className="group inline-flex items-center gap-2.5 rounded-full bg-black/40 backdrop-blur-md px-4 py-2 border border-white/15 transition-all hover:border-white/30 hover:bg-black/60"
+        className="group flex w-full items-center justify-center gap-3 rounded-full bg-black/40 backdrop-blur-md px-5 py-3 border border-white/15 transition-all hover:border-white/30 hover:bg-black/60 md:inline-flex md:w-auto md:gap-2.5 md:px-4 md:py-2"
         aria-label={`Note ${rating} sur 5 — voir les ${totalRatings} avis Google`}
       >
         <span className="flex items-center gap-0.5" aria-hidden>
           {[1, 2, 3, 4, 5].map((i) => (
             <Star
               key={i}
-              size={14}
-              className={i <= rounded ? "fill-[#fbbc04] text-[#fbbc04]" : "text-white/25"}
+              className={`h-4 w-4 md:h-3.5 md:w-3.5 ${i <= rounded ? "fill-[#fbbc04] text-[#fbbc04]" : "text-white/25"}`}
             />
           ))}
         </span>
-        <span className="text-sm font-bold text-white">
+        <span className="text-base font-bold text-white md:text-sm">
           {rating.toFixed(1).replace(".", ",")}/5
         </span>
-        <span className="text-xs text-white/70">
+        <span className="text-sm text-white/70 md:text-xs">
           · {totalRatings} avis Google
         </span>
-        <ArrowRight size={13} className="text-white/60 transition-transform group-hover:translate-x-0.5" />
+        <ArrowRight className="h-4 w-4 text-white/60 transition-transform group-hover:translate-x-0.5 md:h-3.5 md:w-3.5" />
       </Link>
       </m.div>
     </div>
