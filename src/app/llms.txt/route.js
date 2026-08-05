@@ -75,6 +75,7 @@ PRODIGELEC est une entreprise individuelle fondée par Petaccia Sébastien, arti
 
 - [Accueil](${BASE_URL}/)
 - [À propos](${BASE_URL}/about)
+- [Zones d'intervention — les ${cities.length} communes desservies](${BASE_URL}/electricien)
 - [Réalisations — chantiers photographiés](${BASE_URL}/realisations)
 - [Avis clients](${BASE_URL}/avis)
 - [Blog](${BASE_URL}/blog)

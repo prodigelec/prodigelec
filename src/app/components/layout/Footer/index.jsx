@@ -95,7 +95,9 @@ export default function Footer() {
                 <MapPin size={16} className="text-primary shrink-0 mt-0.5 md:w-[18px] md:h-[18px]" />
                 <span>
                   10 Rue Georges Bréant<br />28410 Broué<br /><br />
-                  <strong className="text-white">Zones d&apos;intervention :</strong><br />
+                  <Link href="/electricien" className="text-white font-bold hover:text-primary transition-colors">
+                    Zones d&apos;intervention
+                  </Link> :<br />
                   <span className="flex flex-wrap gap-1 mt-1">
                     {cities.map((city) => (
                       <Link

@@ -51,7 +51,8 @@ export default async function CityPage({ params }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.prodigelec.fr/" },
-      { "@type": "ListItem", position: 2, name: `Électricien ${city.name}`, item: url },
+      { "@type": "ListItem", position: 2, name: "Zones d'intervention", item: "https://www.prodigelec.fr/electricien" },
+      { "@type": "ListItem", position: 3, name: `Électricien ${city.name}`, item: url },
     ],
   };
 

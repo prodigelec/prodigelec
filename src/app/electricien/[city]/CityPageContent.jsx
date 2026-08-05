@@ -289,6 +289,13 @@ export default function CityPageContent({ city }) {
               <NearbyList nearby={city.nearby} />.{" "}
               {city.freeZone ? "Le déplacement pour le devis est 100% gratuit." : "Déplacement facturé — tarif annoncé avant intervention."}
             </p>
+            <Link
+              href="/electricien"
+              className="inline-flex items-center gap-1 text-sm font-bold mt-4 hover:gap-2 transition-all"
+              style={{ color: "var(--primary)" }}
+            >
+              Toutes mes zones d&apos;intervention <ArrowRight size={14} />
+            </Link>
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {trustPoints.map((point) => (
