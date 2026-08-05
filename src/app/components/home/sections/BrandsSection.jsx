@@ -1,6 +1,6 @@
 "use client";
 import { m } from "framer-motion";
-import { brandCategories as categories } from "@/app/data/brands";
+import { bannerCategories as categories } from "@/app/data/brands";
 
 export default function BrandsSection() {
     return (

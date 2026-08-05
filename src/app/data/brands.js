@@ -75,7 +75,26 @@ export const brandCategories = [
     duration: 28,
     reverse: true,
   },
+  {
+    name: "Recharge Véhicule Électrique",
+    summary:
+      "Prises renforcées Green'Up et bornes Green'Up HOME de 3,7 à 22 kW triphasé, certifiées NF C 15-100, étanches IP66 et pilotables par smartphone.",
+    // Legrand figure deja plus haut : c'est justement le probleme que cette
+    // entree corrige. Rien ne reliait la marque au service de recharge VE,
+    // alors que la page /services/borne-de-recharge-voiture-electrique ne
+    // parle que de ca.
+    brands: ["Legrand", "Green'Up"],
+    // Hors bandeau : une ligne defilante avec deux marques rendrait mal.
+    // L'entree ne sert qu'au schema.org et a llms.txt.
+    inBanner: false,
+  },
 ];
+
+// Catégories affichées dans le bandeau défilant de l'accueil. Certaines
+// entrées existent uniquement pour le référencement (`inBanner: false`).
+export const bannerCategories = brandCategories.filter(
+  (category) => category.inBanner !== false,
+);
 
 // Liste à plat et dédoublonnée (plusieurs marques couvrent deux catégories),
 // utilisée pour le `knowsAbout` du schema.org.
