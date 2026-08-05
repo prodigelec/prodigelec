@@ -75,13 +75,17 @@ export default function RealisationsContent() {
                 className="rounded-2xl overflow-hidden flex flex-col"
                 style={{ background: "var(--card)", border: "1px solid var(--border)" }}
               >
+                {/* La carte entière mène à la page du chantier. L'ancre id est
+                    conservée : elle était la cible des anciens liens en
+                    /realisations#slug. */}
+                <Link href={`/realisations/${r.slug}`} className="group flex flex-col flex-1">
                 {/* Image */}
                 <div className="relative h-52 overflow-hidden">
                   <Image
                     src={r.image}
                     alt={r.imageAlt}
                     fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
@@ -95,7 +99,7 @@ export default function RealisationsContent() {
                   >
                     {cat.label}
                   </div>
-                  <h2 className="font-bold text-base mb-2 leading-snug">{r.titre}</h2>
+                  <h2 className="font-bold text-base mb-2 leading-snug group-hover:text-primary transition-colors">{r.titre}</h2>
                   <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "var(--foreground-subtle)" }}>
                     {r.description}
                   </p>
@@ -110,6 +114,7 @@ export default function RealisationsContent() {
                     </span>
                   </div>
                 </div>
+                </Link>
               </m.article>
             );
           })}

@@ -41,7 +41,7 @@ export default function RealisationsPage() {
         url: `${BASE_URL}${r.image}`,
         description: r.imageAlt,
       },
-      url: `${BASE_URL}/realisations#${r.slug}`,
+      url: `${BASE_URL}/realisations/${r.slug}`,
     })),
   };
 

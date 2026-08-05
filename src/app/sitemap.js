@@ -1,4 +1,5 @@
 import { cities } from "@/app/data/cities";
+import { realisations } from "@/app/data/realisations";
 import { getAllPosts } from "@/lib/blog";
 
 const BASE_URL = "https://www.prodigelec.fr";
@@ -23,6 +24,15 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
+  // La date du chantier fait office de lastmod : c'est la seule date que
+  // porte la donnée, et la page ne bouge plus une fois publiée.
+  const realisationPages = realisations.map((r) => ({
+    url: `${BASE_URL}/realisations/${r.slug}`,
+    lastModified: r.date,
+    changeFrequency: "yearly",
+    priority: 0.6,
+  }));
+
   const blogPosts = getAllPosts().map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: post.dateModified || post.date || LASTMOD.blogIndex,
@@ -41,6 +51,7 @@ export default function sitemap() {
     { url: `${BASE_URL}/about`,                         lastModified: LASTMOD.about,        changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/avis`,                          lastModified: LASTMOD.avis,         changeFrequency: "weekly",  priority: 0.8 },
     { url: `${BASE_URL}/realisations`,                  lastModified: LASTMOD.realisations, changeFrequency: "monthly", priority: 0.7 },
+    ...realisationPages,
     { url: `${BASE_URL}/blog`,                          lastModified: LASTMOD.blogIndex,    changeFrequency: "weekly",  priority: 0.7 },
     ...blogPosts,
     { url: `${BASE_URL}/mentions-legales`,              lastModified: LASTMOD.legal,        changeFrequency: "yearly",  priority: 0.3 },
