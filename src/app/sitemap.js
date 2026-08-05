@@ -47,6 +47,7 @@ export default function sitemap() {
     { url: `${BASE_URL}/services/automatismes`,         lastModified: LASTMOD.services,     changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/services/borne-de-recharge-voiture-electrique`, lastModified: LASTMOD.services, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/contact`,                       lastModified: LASTMOD.contact,      changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/electricien`,                   lastModified: LASTMOD.cities,       changeFrequency: "monthly", priority: 0.9 },
     ...cityPages,
     { url: `${BASE_URL}/about`,                         lastModified: LASTMOD.about,        changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/avis`,                          lastModified: LASTMOD.avis,         changeFrequency: "weekly",  priority: 0.8 },
