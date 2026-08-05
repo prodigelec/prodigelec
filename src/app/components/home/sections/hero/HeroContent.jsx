@@ -1,8 +1,9 @@
 "use client";
 import { m, AnimatePresence } from 'framer-motion';
 import Button from '@/app/components/ui/Button';
+import HeroRatingBadge from './HeroRatingBadge';
 
-export default function HeroContent({ slides, currentSlide }) {
+export default function HeroContent({ slides, currentSlide, rating, totalRatings }) {
 
   return (
     <div className="relative z-20 h-full flex items-center justify-center pt-24 md:pt-40">
@@ -91,6 +92,8 @@ export default function HeroContent({ slides, currentSlide }) {
             </m.div>
           </m.div>
         </AnimatePresence>
+
+        <HeroRatingBadge rating={rating} totalRatings={totalRatings} />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { HeroSection } from "@/app/components/home";
+import { getGoogleReviews } from "@/lib/reviews";
 
 // Chargement dynamique des sections sous le pli pour optimiser le LCP et le JS initial
 const BrandsSection = dynamic(() => import("@/app/components/home/sections/BrandsSection"));
@@ -38,18 +39,24 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  // Sert uniquement à alimenter le badge de note du hero. Le fetch est
+  // dédupliqué par React avec celui de ReviewsSection : un seul appel réseau.
+  const { rating, totalRatings } = await getGoogleReviews();
+
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 overflow-x-hidden relative w-full pb-8 md:pb-0">
       <div className="w-full overflow-x-hidden">
-        <HeroSection />
+        <HeroSection rating={rating} totalRatings={totalRatings} />
         <BrandsSection />
         <FeaturesSection />
+        {/* Les avis etaient en 8e position, soit six ecrans de scroll : des
+            clients disaient ne pas les trouver. */}
+        <ReviewsSection limit={3} variant="home" />
         <AboutSection />
         <ServicesSection />
         <ProcessSection />
         <PricingPolicySection />
-        <ReviewsSection limit={3} variant="home" />
         <PartnersSection />
         <MapSection />
         <ContactCTASection />

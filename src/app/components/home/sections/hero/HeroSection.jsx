@@ -67,7 +67,7 @@ const slides = [
   }
 ];
 
-export default function HeroSection() {
+export default function HeroSection({ rating = null, totalRatings = 0 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -93,7 +93,7 @@ export default function HeroSection() {
 
       <HeroNavigation prevSlide={prevSlide} nextSlide={nextSlide} />
 
-      <HeroContent slides={slides} currentSlide={safeSlide} />
+      <HeroContent slides={slides} currentSlide={safeSlide} rating={rating} totalRatings={totalRatings} />
 
       <HeroProgress currentSlide={safeSlide} totalSlides={slides.length} />
     </section>

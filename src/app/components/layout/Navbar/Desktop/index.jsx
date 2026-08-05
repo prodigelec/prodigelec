@@ -28,6 +28,7 @@ export default function Navbar() {
             ]
         },
         { name: 'Réalisations', href: '/realisations' },
+        { name: 'Avis', href: '/avis' },
         { name: 'Blog', href: '/blog' },
         { name: 'À Propos', href: '/about' },
         { name: 'Contact', href: '/contact' }
@@ -84,7 +85,9 @@ export default function Navbar() {
                     <Logo className={`${isScrolled ? 'scale-90' : 'scale-100'} transition-transform duration-500`} />
 
                     {/* Navigation desktop */}
-                    <div className="hidden lg:flex items-center gap-8">
+                    {/* gap resserré en dessous de xl : le 7e item (Avis) faisait
+                        passer "À Propos" sur deux lignes sur un écran de portable */}
+                    <div className="hidden lg:flex items-center gap-2 xl:gap-6">
                         {navItems.map((item, i) => (
                             <div key={item.name} className="relative group">
                                 <m.a
@@ -92,7 +95,7 @@ export default function Navbar() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: i * 0.1 + 0.2 }}
                                     href={item.href}
-                                    className={`flex items-center gap-1 text-sm font-semibold transition-all duration-300 relative px-3 py-2 rounded-lg hover:bg-white/10 ${isItemActive(item) ? 'text-white' : 'text-white/80 hover:text-white'}`}
+                                    className={`flex items-center gap-1 whitespace-nowrap text-sm font-semibold transition-all duration-300 relative px-2 xl:px-3 py-2 rounded-lg hover:bg-white/10 ${isItemActive(item) ? 'text-white' : 'text-white/80 hover:text-white'}`}
                                 >
                                     {item.name}
                                     {item.dropdown && (
