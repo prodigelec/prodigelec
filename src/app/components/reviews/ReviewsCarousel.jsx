@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ReviewCard from "./ReviewCard";
@@ -14,26 +14,33 @@ export default function ReviewsCarousel({ reviews, clamp = false }) {
       "(min-width: 768px)": { slidesToScroll: 1 },
     },
   });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [canPrev, setCanPrev] = useState(false);
-  const [canNext, setCanNext] = useState(false);
+  // Embla est un système externe : on s'abonne à ses événements plutôt que
+  // de recopier son état dans du useState depuis un effet. L'ancienne
+  // version appelait setState synchronement dans l'effet — ce que React
+  // déconseille — et n'appelait jamais off(), laissant les écouteurs en
+  // place au démontage.
+  const subscribe = useCallback(
+    (onStoreChange) => {
+      if (!emblaApi) return () => {};
+      emblaApi.on("select", onStoreChange);
+      emblaApi.on("reInit", onStoreChange);
+      return () => {
+        emblaApi.off("select", onStoreChange);
+        emblaApi.off("reInit", onStoreChange);
+      };
+    },
+    [emblaApi]
+  );
 
-  const onSelect = useCallback((api) => {
-    setSelectedIndex(api.selectedScrollSnap());
-    setCanPrev(api.canScrollPrev());
-    setCanNext(api.canScrollNext());
-  }, []);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect(emblaApi);
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-  }, [emblaApi, onSelect]);
+  // Chaque valeur est lue séparément : useSyncExternalStore compare les
+  // instantanés par identité, donc renvoyer des primitives évite la boucle
+  // de rendu qu'un objet recréé provoquerait.
+  const selectedIndex = useSyncExternalStore(subscribe, () => emblaApi?.selectedScrollSnap() ?? 0, () => 0);
+  const canPrev = useSyncExternalStore(subscribe, () => emblaApi?.canScrollPrev() ?? false, () => false);
+  const canNext = useSyncExternalStore(subscribe, () => emblaApi?.canScrollNext() ?? false, () => false);
+  const snapCount = useSyncExternalStore(subscribe, () => emblaApi?.scrollSnapList().length ?? 0, () => 0);
 
   if (!reviews || reviews.length === 0) return null;
-
-  const scrollSnaps = emblaApi?.scrollSnapList() ?? [];
 
   return (
     <div className="relative">
@@ -60,7 +67,7 @@ export default function ReviewsCarousel({ reviews, clamp = false }) {
         </button>
 
         <div className="flex items-center gap-2">
-          {scrollSnaps.map((_, i) => (
+          {Array.from({ length: snapCount }, (_, i) => (
             <button
               key={i}
               type="button"

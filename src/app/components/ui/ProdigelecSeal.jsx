@@ -137,7 +137,7 @@ export default function ProdigelecSeal({ size = 200, variant = "navy", instanceI
       <g transform="translate(-130,-20)">
         <text fill={fg} textAnchor="middle" style={labelFont}>
           <tspan x="0" dy="0">CONTRÔLE</tspan>
-          <tspan x="0" dy="16">D'ACCÈS</tspan>
+          <tspan x="0" dy="16">D&apos;ACCÈS</tspan>
         </text>
         <g transform="translate(0,52)">
           <IconInterphone c={fg} />
