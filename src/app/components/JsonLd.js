@@ -7,13 +7,21 @@ export default function JsonLd() {
     "legalName": "Petaccia Sébastien EI",
     "description": "Artisan électricien & sécurité électronique en Eure-et-Loir (28), Eure (27) et Yvelines (78). Dépannage électrique, mise aux normes NF C 15-100, alarmes, vidéosurveillance, contrôle d'accès, volets motorisés et portails automatiques. 23 ans d'expérience. Devis gratuit.",
     "url": "https://www.prodigelec.fr",
+    // Google n'accepte pas le SVG pour logo : version PNG rendue depuis
+    // favicon.svg. Le SVG reste utilisé pour les icônes du navigateur.
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.prodigelec.fr/favicon.svg",
+      "url": "https://www.prodigelec.fr/logo-prodigelec-512.png",
       "width": 512,
       "height": 512
     },
-    "image": "https://www.prodigelec.fr/favicon.svg",
+    // Photos de chantiers réels plutôt que le logo : c'est ce que Google
+    // attend ici, et ce qui s'affiche dans les résultats locaux.
+    "image": [
+      "https://www.prodigelec.fr/tableau-electrique-marchezais.jpg",
+      "https://www.prodigelec.fr/renovation-electrique-cuisine-sorel-moussel.jpg",
+      "https://www.prodigelec.fr/visiophone-tmezon-breval-yvelines-1.jpg"
+    ],
     "telephone": "+33638194752",
     "email": "contact@prodigelec.fr",
     "foundingDate": "2001",

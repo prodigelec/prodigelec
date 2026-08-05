@@ -10,6 +10,7 @@ import ContactSection from './components/sections/ContactSection';
 export const metadata = {
     title: "Politique de Confidentialité",
     description: "Découvrez comment PRODIGELEC collecte, utilise et protège vos données personnelles conformément au RGPD.",
+    alternates: { canonical: "https://www.prodigelec.fr/politique-de-confidentialite" },
 };
 
 export default function PrivacyPolicyPage() {
