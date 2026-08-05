@@ -1,3 +1,4 @@
+import { brandPages } from "@/app/data/brandPages";
 import { cities } from "@/app/data/cities";
 import { realisations } from "@/app/data/realisations";
 import { getAllPosts } from "@/lib/blog";
@@ -13,6 +14,7 @@ const LASTMOD = {
   realisations:"2026-08-04",
   avis:        "2026-05-26",
   blogIndex:   "2026-08-04",
+  brands:      "2026-08-05",
   legal:       "2026-01-01",
 };
 
@@ -33,6 +35,13 @@ export default function sitemap() {
     priority: 0.6,
   }));
 
+  const brandPageEntries = brandPages.map((b) => ({
+    url: `${BASE_URL}/marques/${b.slug}`,
+    lastModified: LASTMOD.brands,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   const blogPosts = getAllPosts().map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: post.dateModified || post.date || LASTMOD.blogIndex,
@@ -49,6 +58,8 @@ export default function sitemap() {
     { url: `${BASE_URL}/contact`,                       lastModified: LASTMOD.contact,      changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/electricien`,                   lastModified: LASTMOD.cities,       changeFrequency: "monthly", priority: 0.9 },
     ...cityPages,
+    { url: `${BASE_URL}/marques`,                       lastModified: LASTMOD.brands,       changeFrequency: "monthly", priority: 0.8 },
+    ...brandPageEntries,
     { url: `${BASE_URL}/about`,                         lastModified: LASTMOD.about,        changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/avis`,                          lastModified: LASTMOD.avis,         changeFrequency: "weekly",  priority: 0.8 },
     { url: `${BASE_URL}/realisations`,                  lastModified: LASTMOD.realisations, changeFrequency: "monthly", priority: 0.7 },
