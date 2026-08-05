@@ -143,6 +143,18 @@ const realisationsData = [
     image: "/reglage-motorisation-portail-faac-marchezais.jpg",
     imageAlt: "Illustration d'un portail battant équipé d'une motorisation FAAC e024s à Marchezais, Eure-et-Loir",
   },
+  {
+    slug: "installation-fileries-cuisine-garnay",
+    titre: "Installation de gaines et fileries dans une cuisine",
+    description: "Reprise de l'alimentation électrique d'une cuisine : passage des gaines, tirage de la filerie jusqu'au tableau existant et raccordement des circuits. Une partie des prises était fournie par le client, les gaines et la filerie par mes soins.",
+    ville: "Garnay",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-07-20",
+    image: "/installation-fileries-cuisine-garnay.jpg",
+    imageAlt: "Illustration de gaines électriques en attente dans les murs d'une pièce en rénovation, chantier de Garnay, Eure-et-Loir",
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
