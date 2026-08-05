@@ -5,6 +5,7 @@ import { m } from "framer-motion";
 import { Phone, MapPin, Zap, Shield, Settings, CheckCircle, ArrowRight, Clock } from "lucide-react";
 import { getCityByName } from "@/app/data/cities";
 import CityFaq from "./CityFaq";
+import CityRealisations from "./CityRealisations";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -268,6 +269,9 @@ export default function CityPageContent({ city }) {
           })}
         </div>
       </section>
+
+      {/* ── CHANTIERS REALISES DANS LA COMMUNE ── */}
+      <CityRealisations city={city} />
 
       {/* ── CONFIANCE ── */}
       <section className="max-w-7xl mx-auto px-6 mb-10 md:mb-20">

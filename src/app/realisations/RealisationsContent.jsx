@@ -4,22 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { m } from "framer-motion";
 import { MapPin, Calendar, ArrowRight } from "lucide-react";
-import { realisations, categories } from "@/app/data/realisations";
+import {
+  realisations,
+  categories,
+  categoryColors,
+  formatRealisationDate as formatDate,
+} from "@/app/data/realisations";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.4, delay: i * 0.08 } }),
 };
-
-const categoryColors = {
-  electricite: { bg: "rgba(255,193,7,0.12)", border: "rgba(255,193,7,0.35)", text: "#ffc107", label: "Électricité" },
-  securite:    { bg: "rgba(201,162,39,0.12)", border: "rgba(201,162,39,0.35)", text: "#c9a227", label: "Sécurité" },
-  automatismes:{ bg: "rgba(201,162,39,0.12)", border: "rgba(201,162,39,0.35)", text: "#c9a227", label: "Automatismes" },
-};
-
-function formatDate(dateStr) {
-  return new Date(dateStr).toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
-}
 
 export default function RealisationsContent() {
   const [filtre, setFiltre] = useState("tous");

@@ -75,37 +75,37 @@ const realisationsData = [
     slug: "radiateur-electrique-conde-sur-vesgres-1",
     titre: "Remplacement radiateur par modèle à inertie",
     description: "Remplacement d'un vieux radiateur électrique par un radiateur à inertie. Le confort de chauffe est bien meilleur et la consommation diminue sur la durée.",
-    ville: "Condé-sur-Vesgres",
+    ville: "Condé-sur-Vesgre",
     departement: "Yvelines",
     departementCode: "78",
     categorie: "electricite",
     date: "2026-01-13",
     image: "/installation-radiateur-electrique-conde-sur-vesgres.jpg",
-    imageAlt: "Installation radiateur électrique à inertie à Condé-sur-Vesgres",
+    imageAlt: "Installation radiateur électrique à inertie à Condé-sur-Vesgre",
   },
   {
     slug: "radiateur-electrique-conde-sur-vesgres-2",
     titre: "Remplacement second radiateur à inertie",
     description: "Même maison, même intervention pour une seconde pièce. Deux radiateurs à inertie remplacés pour moderniser le chauffage et faire des économies d'électricité.",
-    ville: "Condé-sur-Vesgres",
+    ville: "Condé-sur-Vesgre",
     departement: "Yvelines",
     departementCode: "78",
     categorie: "electricite",
     date: "2026-01-13",
     image: "/installation-radiateur-electrique-conde-sur-vesgres-2.jpg",
-    imageAlt: "Pose radiateur électrique à Condé-sur-Vesgres, Yvelines",
+    imageAlt: "Pose radiateur électrique à Condé-sur-Vesgre, Yvelines",
   },
   {
     slug: "chauffe-eau-ariston-havelu-yvelines",
     titre: "Installation chauffe-eau électrique Ariston",
     description: "Pose d'un chauffe-eau électrique Ariston en cave. Raccordement électrique, mise en eau et mise en service. Travail soigné dans un espace contraint.",
     ville: "Havelu",
-    departement: "Yvelines",
-    departementCode: "78",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
     categorie: "electricite",
     date: "2026-03-27",
     image: "/installation-chauffe-eau-ariston-havelu-yvelines.jpg",
-    imageAlt: "Installation chauffe-eau électrique Ariston à Havelu, Yvelines",
+    imageAlt: "Installation chauffe-eau électrique Ariston à Havelu, Eure-et-Loir",
   },
   {
     slug: "renovation-electrique-cuisine-sorel-moussel",
@@ -143,6 +143,18 @@ const realisationsData = [
     image: "/reglage-motorisation-portail-faac-marchezais.jpg",
     imageAlt: "Illustration d'un portail battant équipé d'une motorisation FAAC e024s à Marchezais, Eure-et-Loir",
   },
+  {
+    slug: "installation-fileries-cuisine-garnay",
+    titre: "Installation de gaines et fileries dans une cuisine",
+    description: "Reprise de l'alimentation électrique d'une cuisine : passage des gaines, tirage de la filerie jusqu'au tableau existant et raccordement des circuits. Une partie des prises était fournie par le client, les gaines et la filerie par mes soins.",
+    ville: "Garnay",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-07-20",
+    image: "/installation-fileries-cuisine-garnay.jpg",
+    imageAlt: "Illustration de gaines électriques en attente dans les murs d'une pièce en rénovation, chantier de Garnay, Eure-et-Loir",
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
@@ -155,3 +167,23 @@ export const categories = [
   { slug: "securite", label: "Sécurité" },
   { slug: "automatismes", label: "Automatismes" },
 ];
+
+export const categoryColors = {
+  electricite: { bg: "rgba(255,193,7,0.12)", border: "rgba(255,193,7,0.35)", text: "#ffc107", label: "Électricité" },
+  securite:    { bg: "rgba(201,162,39,0.12)", border: "rgba(201,162,39,0.35)", text: "#c9a227", label: "Sécurité" },
+  automatismes:{ bg: "rgba(201,162,39,0.12)", border: "rgba(201,162,39,0.35)", text: "#c9a227", label: "Automatismes" },
+};
+
+export function formatRealisationDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
+}
+
+// Les chantiers d'une commune, pour les afficher sur sa page ville.
+// Le rapprochement se fait sur le nom exact de la commune : c'est
+// volontaire, un rapprochement approximatif rattacherait des chantiers
+// à la mauvaise ville.
+export function getRealisationsByVille(ville) {
+  return realisations.filter(
+    (r) => r.ville.toLowerCase() === ville.toLowerCase()
+  );
+}
