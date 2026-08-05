@@ -5,7 +5,9 @@ import Button from '@/app/components/ui/Button';
 export default function HeroContent({ slides, currentSlide }) {
 
   return (
-    <div className="relative z-20 h-full flex items-center justify-center pt-24 md:pt-40">
+    // pb réserve la bande du bas au badge de note, qui est en position
+    // absolue : sans ça le contenu centré passerait dessous.
+    <div className="relative z-20 h-full flex items-center justify-center pt-24 md:pt-40 pb-20 md:pb-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center text-white w-full">
 
         <AnimatePresence mode='wait'>

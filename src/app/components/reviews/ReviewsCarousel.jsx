@@ -6,12 +6,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import ReviewCard from "./ReviewCard";
 
 export default function ReviewsCarousel({ reviews, clamp = false }) {
+  // Sur mobile le carousel est desactivé : Embla retire ses transformations
+  // et les avis s'empilent en colonne. Un defilement horizontal sur telephone
+  // oblige a swiper pour decouvrir les avis suivants, alors qu'un empilement
+  // les donne tous au scroll naturel de la page.
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: false,
     slidesToScroll: 1,
+    active: false,
     breakpoints: {
-      "(min-width: 768px)": { slidesToScroll: 1 },
+      "(min-width: 768px)": { active: true },
     },
   });
   // Embla est un système externe : on s'abonne à ses événements plutôt que
@@ -44,17 +49,18 @@ export default function ReviewsCarousel({ reviews, clamp = false }) {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="-ml-4 flex md:-ml-6">
+      <div className="md:overflow-hidden" ref={emblaRef}>
+        <div className="flex flex-col gap-4 md:-ml-6 md:flex-row md:gap-0">
           {reviews.map((r) => (
-            <div key={r.id} className="min-w-0 shrink-0 grow-0 basis-[85%] pl-4 sm:basis-[60%] md:basis-1/2 md:pl-6 lg:basis-1/3">
+            <div key={r.id} className="min-w-0 md:shrink-0 md:grow-0 md:basis-1/2 md:pl-6 lg:basis-1/3">
               <ReviewCard review={r} clamp={clamp} />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="mt-6 flex items-center justify-center gap-6">
+      {/* Fleches et puces n'ont plus d'objet en colonne : masquees sous md */}
+      <div className="mt-6 hidden items-center justify-center gap-6 md:flex">
         <button
           type="button"
           onClick={() => emblaApi?.scrollPrev()}
