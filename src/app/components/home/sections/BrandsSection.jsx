@@ -15,7 +15,7 @@ const categories = [
     },
     {
         name: "Sécurité & Automatismes",
-        brands: ["Netatmo", "Nuki", "Yale", "Tedee", "Somfy", "Aiphone", "Comelit", "Fermax", "2N"],
+        brands: ["Netatmo", "Nuki", "Yale", "Tedee", "EZVIZ", "Somfy", "Aiphone", "Comelit", "Fermax", "2N"],
         duration: 35
     },
     {
