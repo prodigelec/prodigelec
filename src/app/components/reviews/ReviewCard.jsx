@@ -30,7 +30,7 @@ export default function ReviewCard({ review, clamp = false }) {
       className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
       style={{ background: "linear-gradient(160deg, var(--card) 0%, var(--card-elevated) 100%)", border: "1px solid var(--border)" }}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] scale-x-0 bg-linear-to-r from-transparent via-primary to-transparent transition-transform duration-500 group-hover:scale-x-100" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-0.5 scale-x-0 bg-linear-to-r from-transparent via-primary to-transparent transition-transform duration-500 group-hover:scale-x-100" />
       <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-primary/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
       <span
         aria-hidden
