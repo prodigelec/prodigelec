@@ -1,37 +1,16 @@
 import { NextResponse } from "next/server";
-import { cities } from "@/app/data/cities";
-import { getAllPosts } from "@/lib/blog";
+import sitemap from "@/app/sitemap";
 
-const INDEXNOW_KEY = "a1b2c3d4e5f6789012345678abcdef01";
+const INDEXNOW_KEY = "321aaad315042811517c3d9e8faa746e";
 const HOST = "www.prodigelec.fr";
 const BASE_URL = `https://${HOST}`;
 
+// Le sitemap est la seule source de vérité des URLs du site. La liste était
+// auparavant recopiée à la main ici, et avait déjà divergé : la page borne de
+// recharge n'était jamais soumise. Toute page ajoutée au sitemap est
+// désormais soumise automatiquement.
 function buildUrlList() {
-  const staticUrls = [
-    `${BASE_URL}/`,
-    `${BASE_URL}/services/electricite`,
-    `${BASE_URL}/services/securite`,
-    `${BASE_URL}/services/automatismes`,
-    `${BASE_URL}/contact`,
-    `${BASE_URL}/about`,
-    `${BASE_URL}/avis`,
-    `${BASE_URL}/realisations`,
-    `${BASE_URL}/blog`,
-    `${BASE_URL}/mentions-legales`,
-    `${BASE_URL}/politique-de-confidentialite`,
-    `${BASE_URL}/cgv`,
-  ];
-
-  const cityUrls = cities.map((c) => `${BASE_URL}/electricien/${c.slug}`);
-
-  let blogUrls = [];
-  try {
-    blogUrls = getAllPosts().map((p) => `${BASE_URL}/blog/${p.slug}`);
-  } catch {
-    // no posts
-  }
-
-  return [...staticUrls, ...cityUrls, ...blogUrls];
+  return sitemap().map((entry) => entry.url);
 }
 
 /**
