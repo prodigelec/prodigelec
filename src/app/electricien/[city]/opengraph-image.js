@@ -45,8 +45,13 @@ export default async function OgImage({ params }) {
           position: "relative",
         }}
       >
-        {/* Photo de la ville en fond */}
+        {/* Photo de la ville en fond.
+            satori ne connaît que les balises HTML de base : next/image n'existe
+            pas dans ce runtime, et alt n'est pas restitué puisque la sortie est
+            une image unique. Les deux règles sont donc désactivées ici en
+            connaissance de cause. */}
         {photoSrc && (
+          // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
           <img
             src={photoSrc}
             width={1200}

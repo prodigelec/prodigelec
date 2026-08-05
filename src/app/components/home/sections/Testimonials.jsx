@@ -4,6 +4,7 @@ import { m } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import GoogleLogo from "@/app/components/ui/GoogleLogo";
 
 function FilledStar({ className = "" }) {
   return (
@@ -148,12 +149,7 @@ export default function Testimonials() {
 
                   {/* Badge Google */}
                   <div className="shrink-0 flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1">
-                    <img
-                      src="/google-logo.svg"
-                      alt="Google"
-                      className="h-3 w-3"
-                      onError={(e) => { e.target.style.display = "none"; }}
-                    />
+                    <GoogleLogo className="h-3 w-3" />
                     <span className="text-xs font-semibold text-white/40">Google</span>
                   </div>
                 </div>
@@ -175,7 +171,7 @@ export default function Testimonials() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-white text-background font-bold rounded-xl hover:bg-gray-100 transition-colors shadow-lg shadow-white/10 group"
           >
-            <img src="/google-logo.svg" alt="Google" className="w-6 h-6" onError={(e) => e.target.style.display = "none"} />
+            <GoogleLogo className="w-6 h-6" />
             <span className="group-hover:translate-x-1 transition-transform">
               Lire plus d&apos;avis ou laisser le vôtre
             </span>
