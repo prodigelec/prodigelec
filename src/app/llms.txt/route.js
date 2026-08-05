@@ -1,3 +1,4 @@
+import { brandCategories } from "@/app/data/brands";
 import { cities } from "@/app/data/cities";
 import { getAllPosts } from "@/lib/blog";
 
@@ -21,6 +22,15 @@ function citiesByDepartment() {
       .join("\n");
     return `### ${department}\n\n${links}`;
   });
+}
+
+// Les marques ne vivaient que dans le bandeau défilant de l'accueil, en
+// `aria-hidden` et sans contexte : illisible pour un moteur IA. Ici chaque
+// famille devient une phrase citable.
+function brandSections() {
+  return brandCategories
+    .map((c) => `### ${c.name}\n\n${c.brands.join(", ")} — ${c.summary}`)
+    .join("\n\n");
 }
 
 function blogLinks() {
@@ -70,6 +80,12 @@ PRODIGELEC est une entreprise individuelle fondée par Petaccia Sébastien, arti
 - Dimensionnement et raccordement au tableau
 
 [Page détaillée](${BASE_URL}/services/borne-de-recharge-voiture-electrique)
+
+## Marques installées
+
+PRODIGELEC installe, raccorde et dépanne le matériel des fabricants ci-dessous. Le choix se fait selon le besoin du chantier et le budget : aucune marque n'est imposée.
+
+${brandSections()}
 
 ## Pages principales
 

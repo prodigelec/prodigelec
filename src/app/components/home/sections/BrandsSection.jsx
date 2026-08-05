@@ -1,30 +1,6 @@
 "use client";
 import { m } from "framer-motion";
-
-const categories = [
-    {
-        name: "Électricité & Domotique",
-        brands: ["Legrand", "Schneider", "Hager", "Somfy", "Bticino", "Atlantic", "Theben", "Arnould", "Delta Dore"],
-        duration: 30
-    },
-    {
-        name: "Automatisation Volets",
-        brands: ["Somfy", "Nice", "Bubendorff", "Delta Dore", "Profalux", "Simu", "Eveno", "Lakal"],
-        duration: 25,
-        reverse: true
-    },
-    {
-        name: "Sécurité & Automatismes",
-        brands: ["Netatmo", "Nuki", "Yale", "Tedee", "EZVIZ", "Somfy", "Aiphone", "Comelit", "Fermax", "2N"],
-        duration: 35
-    },
-    {
-        name: "Contrôle d'Accès",
-        brands: ["Noralsy", "Urmet", "CDVI", "Aiphone", "Intratone", "EZVIZ", "Cofrel", "Comelit"],
-        duration: 28,
-        reverse: true
-    }
-];
+import { bannerCategories as categories } from "@/app/data/brands";
 
 export default function BrandsSection() {
     return (

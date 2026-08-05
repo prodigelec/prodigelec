@@ -1,3 +1,5 @@
+import { allBrands } from "@/app/data/brands";
+
 export default function JsonLd() {
   const businessSchema = {
     "@context": "https://schema.org",
@@ -97,6 +99,11 @@ export default function JsonLd() {
         }
       ]
     },
+    // Marques installées et dépannées. `knowsAbout` plutôt que `brand` :
+    // `brand` désignerait la marque de PRODIGELEC elle-même, pas le matériel
+    // posé. C'est le signal qui rattache l'entreprise à ces fabricants pour
+    // les requêtes du type « installateur EZVIZ Dreux ».
+    "knowsAbout": allBrands.map((name) => ({ "@type": "Brand", name })),
     "areaServed": [
       { "@type": "City", "name": "Broué" },
       { "@type": "City", "name": "Bû" },
