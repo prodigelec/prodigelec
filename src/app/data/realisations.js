@@ -187,3 +187,21 @@ export function getRealisationsByVille(ville) {
     (r) => r.ville.toLowerCase() === ville.toLowerCase()
   );
 }
+
+export function getRealisationBySlug(slug) {
+  return realisations.find((r) => r.slug === slug);
+}
+
+// Suggestions en bas de page d'un chantier. La même commune passe avant la
+// même catégorie : un visiteur venu d'une recherche locale est d'abord
+// intéressé par ce qui a été fait près de chez lui.
+export function getRelatedRealisations(realisation, limit = 3) {
+  const others = realisations.filter((r) => r.slug !== realisation.slug);
+  const sameVille = others.filter((r) => r.ville === realisation.ville);
+  const sameCategorie = others.filter(
+    (r) => r.ville !== realisation.ville && r.categorie === realisation.categorie
+  );
+  return [...sameVille, ...sameCategorie, ...others]
+    .filter((r, i, arr) => arr.findIndex((x) => x.slug === r.slug) === i)
+    .slice(0, limit);
+}

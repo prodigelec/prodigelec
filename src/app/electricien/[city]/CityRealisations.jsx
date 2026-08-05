@@ -46,32 +46,34 @@ export default function CityRealisations({ city }) {
               className="rounded-2xl overflow-hidden flex flex-col"
               style={{ background: "var(--card)", border: "1px solid var(--border)" }}
             >
-              <div className="relative h-52 overflow-hidden">
-                <Image
-                  src={r.image}
-                  alt={r.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-
-              <div className="p-5 flex flex-col flex-1">
-                <div
-                  className="self-start px-3 py-1 rounded-full text-xs font-bold mb-3"
-                  style={{ background: cat.bg, border: `1px solid ${cat.border}`, color: cat.text }}
-                >
-                  {cat.label}
+              <Link href={`/realisations/${r.slug}`} className="group flex flex-col flex-1">
+                <div className="relative h-52 overflow-hidden">
+                  <Image
+                    src={r.image}
+                    alt={r.imageAlt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
-                <h3 className="font-bold text-base mb-2 leading-snug">{r.titre}</h3>
-                <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "var(--foreground-subtle)" }}>
-                  {r.description}
-                </p>
-                <span className="flex items-center gap-1 text-xs" style={{ color: "var(--foreground-subtle)" }}>
-                  <Calendar size={12} />
-                  {formatRealisationDate(r.date)}
-                </span>
-              </div>
+
+                <div className="p-5 flex flex-col flex-1">
+                  <div
+                    className="self-start px-3 py-1 rounded-full text-xs font-bold mb-3"
+                    style={{ background: cat.bg, border: `1px solid ${cat.border}`, color: cat.text }}
+                  >
+                    {cat.label}
+                  </div>
+                  <h3 className="font-bold text-base mb-2 leading-snug group-hover:text-primary transition-colors">{r.titre}</h3>
+                  <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "var(--foreground-subtle)" }}>
+                    {r.description}
+                  </p>
+                  <span className="flex items-center gap-1 text-xs" style={{ color: "var(--foreground-subtle)" }}>
+                    <Calendar size={12} />
+                    {formatRealisationDate(r.date)}
+                  </span>
+                </div>
+              </Link>
             </m.article>
           );
         })}
