@@ -256,7 +256,7 @@ export const cities = [
   {
     slug: "sorel-moussel",
     name: "Sorel-Moussel",
-    postalCode: "28510",
+    postalCode: "28260",
     department: "Eure-et-Loir",
     departmentCode: "28",
     distance: 8,
@@ -284,7 +284,7 @@ export const cities = [
   {
     slug: "garnay",
     name: "Garnay",
-    postalCode: "28120",
+    postalCode: "28500",
     department: "Eure-et-Loir",
     departmentCode: "28",
     distance: 10,
@@ -354,7 +354,7 @@ export const cities = [
   {
     slug: "marcilly-sur-eure",
     name: "Marcilly-sur-Eure",
-    postalCode: "27130",
+    postalCode: "27810",
     department: "Eure",
     departmentCode: "27",
     distance: 18,
