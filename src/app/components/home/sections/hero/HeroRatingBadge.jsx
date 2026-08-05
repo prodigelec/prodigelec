@@ -3,20 +3,24 @@ import Link from "next/link";
 import { m } from "framer-motion";
 import { Star, ArrowRight } from "lucide-react";
 
-// Volontairement hors de l'AnimatePresence du hero : le badge doit rester
-// stable, il clignoterait à chaque changement de slide s'il était monté avec
-// le contenu du carousel.
+// Deux contraintes de placement :
+// - hors de l'AnimatePresence du hero, sinon le badge clignoterait à chaque
+//   changement de slide ;
+// - hors du flux et ancré au bas du hero, sinon sa hauteur varierait avec la
+//   longueur du titre du slide courant.
+// Le positionnement est porté par un div simple : framer-motion écrit
+// transform en style et écraserait un -translate-x-1/2 de Tailwind.
 export default function HeroRatingBadge({ rating, totalRatings }) {
   if (rating === null || rating === undefined) return null;
 
   const rounded = Math.round(rating);
 
   return (
+    <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-30">
     <m.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.1 }}
-      className="flex justify-center mt-6 md:mt-8"
     >
       <Link
         href="/avis"
@@ -40,6 +44,7 @@ export default function HeroRatingBadge({ rating, totalRatings }) {
         </span>
         <ArrowRight size={13} className="text-white/60 transition-transform group-hover:translate-x-0.5" />
       </Link>
-    </m.div>
+      </m.div>
+    </div>
   );
 }

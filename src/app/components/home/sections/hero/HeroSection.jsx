@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import HeroBackground from './HeroBackground';
 import HeroNavigation from './HeroNavigation';
 import HeroContent from './HeroContent';
+import HeroRatingBadge from './HeroRatingBadge';
 import HeroProgress from './HeroProgress';
 
 const slides = [
@@ -93,7 +94,11 @@ export default function HeroSection({ rating = null, totalRatings = 0 }) {
 
       <HeroNavigation prevSlide={prevSlide} nextSlide={nextSlide} />
 
-      <HeroContent slides={slides} currentSlide={safeSlide} rating={rating} totalRatings={totalRatings} />
+      <HeroContent slides={slides} currentSlide={safeSlide} />
+
+      {/* Ancré au hero et non au contenu : sa position ne dépend plus de la
+          longueur du titre du slide courant. */}
+      <HeroRatingBadge rating={rating} totalRatings={totalRatings} />
 
       <HeroProgress currentSlide={safeSlide} totalSlides={slides.length} />
     </section>
