@@ -167,3 +167,23 @@ export const categories = [
   { slug: "securite", label: "Sécurité" },
   { slug: "automatismes", label: "Automatismes" },
 ];
+
+export const categoryColors = {
+  electricite: { bg: "rgba(255,193,7,0.12)", border: "rgba(255,193,7,0.35)", text: "#ffc107", label: "Électricité" },
+  securite:    { bg: "rgba(201,162,39,0.12)", border: "rgba(201,162,39,0.35)", text: "#c9a227", label: "Sécurité" },
+  automatismes:{ bg: "rgba(201,162,39,0.12)", border: "rgba(201,162,39,0.35)", text: "#c9a227", label: "Automatismes" },
+};
+
+export function formatRealisationDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
+}
+
+// Les chantiers d'une commune, pour les afficher sur sa page ville.
+// Le rapprochement se fait sur le nom exact de la commune : c'est
+// volontaire, un rapprochement approximatif rattacherait des chantiers
+// à la mauvaise ville.
+export function getRealisationsByVille(ville) {
+  return realisations.filter(
+    (r) => r.ville.toLowerCase() === ville.toLowerCase()
+  );
+}
