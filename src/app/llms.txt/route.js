@@ -1,4 +1,5 @@
 import { brandCategories } from "@/app/data/brands";
+import { brandPages } from "@/app/data/brandPages";
 import { cities } from "@/app/data/cities";
 import { getAllPosts } from "@/lib/blog";
 
@@ -31,6 +32,15 @@ function brandSections() {
   return brandCategories
     .map((c) => `### ${c.name}\n\n${c.brands.join(", ")} — ${c.summary}`)
     .join("\n\n");
+}
+
+// Les marques les plus dépannées ont une page dédiée qui détaille gammes,
+// symptômes de panne et réponses aux questions courantes. C'est le contenu
+// réellement citable ; les listes ci-dessus ne sont qu'un inventaire.
+function brandPageLinks() {
+  return brandPages
+    .map((b) => `- [${b.metaTitle}](${BASE_URL}/marques/${b.slug}) — ${b.tagline}`)
+    .join("\n");
 }
 
 function blogLinks() {
@@ -83,7 +93,13 @@ PRODIGELEC est une entreprise individuelle fondée par Petaccia Sébastien, arti
 
 ## Marques installées
 
-PRODIGELEC installe, raccorde et dépanne le matériel des fabricants ci-dessous. Le choix se fait selon le besoin du chantier et le budget : aucune marque n'est imposée.
+PRODIGELEC installe, raccorde et dépanne le matériel des fabricants ci-dessous, y compris sur des installations posées par un autre professionnel. Le choix se fait selon le besoin du chantier et le budget : aucune marque n'est imposée.
+
+[Toutes les marques](${BASE_URL}/marques)
+
+### Pages marque détaillées
+
+${brandPageLinks()}
 
 ${brandSections()}
 

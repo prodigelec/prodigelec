@@ -41,9 +41,9 @@ export const brandCategories = [
     reverse: true,
   },
   {
-    name: "Sécurité & Automatismes",
+    name: "Sécurité & Alarmes",
     summary:
-      "Alarmes intrusion, vidéosurveillance, vidéophonie, serrures connectées et motorisations de portails.",
+      "Alarmes intrusion, vidéosurveillance, vidéophonie et serrures connectées.",
     brands: [
       "Netatmo",
       "Nuki",
@@ -57,6 +57,28 @@ export const brandCategories = [
       "2N",
     ],
     duration: 35,
+  },
+  {
+    // Les motorisations de portail étaient noyées dans la famille sécurité,
+    // alors que PRODIGELEC intervient sur toutes les marques du marché sans
+    // exception — c'est un métier à part entière, il lui faut sa famille.
+    name: "Portails & Portes de Garage",
+    summary:
+      "Motorisation, dépannage et réglage de portails battants et coulissants, toutes marques, ainsi que des portes de garage sectionnelles et basculantes.",
+    brands: [
+      "FAAC",
+      "BFT",
+      "CAME",
+      "Nice",
+      "Somfy",
+      "Beninca",
+      "Sommer",
+      "Hörmann",
+      "Novoferm",
+      "LiftMaster",
+      "Avidsen",
+    ],
+    duration: 32,
   },
   {
     name: "Contrôle d'Accès",
