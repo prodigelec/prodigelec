@@ -15,12 +15,12 @@ const categories = [
     },
     {
         name: "Sécurité & Automatismes",
-        brands: ["Netatmo", "Nuki", "Yale", "Tedee", "Somfy", "Aiphone", "Comelit", "Fermax", "2N"],
+        brands: ["Netatmo", "Nuki", "Yale", "Tedee", "EZVIZ", "Somfy", "Aiphone", "Comelit", "Fermax", "2N"],
         duration: 35
     },
     {
         name: "Contrôle d'Accès",
-        brands: ["Noralsy", "Urmet", "CDVI", "Aiphone", "Intratone", "Cofrel", "Comelit"],
+        brands: ["Noralsy", "Urmet", "CDVI", "Aiphone", "Intratone", "EZVIZ", "Cofrel", "Comelit"],
         duration: 28,
         reverse: true
     }
