@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Star } from "lucide-react";
+import GoogleLogo from "@/app/components/ui/GoogleLogo";
 
 function Stars({ rating }) {
   return (
@@ -84,7 +85,7 @@ export default function ReviewCard({ review, clamp = false }) {
           className="flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1"
           style={{ background: "rgba(255,255,255,0.05)", border: "1px solid var(--border)" }}
         >
-          <img src="/google-logo.svg" alt="" aria-hidden className="h-3 w-3" onError={(e) => { e.target.style.display = "none"; }} />
+          <GoogleLogo className="h-3 w-3" title="" />
           <span className="text-[11px] font-semibold" style={{ color: "var(--foreground-subtle)" }}>Google</span>
         </div>
       </footer>
