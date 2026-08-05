@@ -81,7 +81,7 @@ export default async function AvisPage() {
           ) : null}
 
           <p className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto" style={{ color: "var(--foreground-subtle)" }}>
-            Tous les avis affichés ici sont des avis Google authentifiés, laissés par des clients après une intervention réelle. Aucun avis n'est sélectionné ni filtré.
+            Tous les avis affichés ici sont des avis Google authentifiés, laissés par des clients après une intervention réelle. Aucun avis n&apos;est sélectionné ni filtré.
           </p>
         </section>
 
@@ -92,7 +92,7 @@ export default async function AvisPage() {
         ) : (
           <section className="max-w-3xl mx-auto px-6 text-center py-12">
             <p className="text-base mb-6" style={{ color: "var(--foreground-subtle)" }}>
-              Les avis seront affichés dès que l'API Google sera connectée. En attendant, retrouvez-les directement sur ma fiche Google.
+              Les avis seront affichés dès que l&apos;API Google sera connectée. En attendant, retrouvez-les directement sur ma fiche Google.
             </p>
           </section>
         )}
@@ -104,7 +104,7 @@ export default async function AvisPage() {
               Une intervention récente ?
             </h2>
             <p className="text-base mb-6" style={{ color: "var(--foreground-subtle)" }}>
-              Votre retour aide d'autres clients à me trouver — et ça me motive énormément. Merci de mentionner votre ville et le type d'intervention dans votre avis.
+              Votre retour aide d&apos;autres clients à me trouver — et ça me motive énormément. Merci de mentionner votre ville et le type d&apos;intervention dans votre avis.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
