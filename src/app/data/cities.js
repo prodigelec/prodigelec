@@ -581,7 +581,7 @@ export const cities = [
     distance: 27,
     freeZone: true,
     nearby: ["Garancières", "La Queue-les-Yvelines", "Villiers-Saint-Frédéric", "Houdan"],
-    photo: "/tableau-electrique-mise-aux-normes-thoiry.jpg",
+    photo: "/tableau-electrique-legrand-mise-aux-normes-thoiry.jpg",
     photoAlt: "Tableau électrique Legrand neuf sur quatre rangées, posé par PRODIGELEC à Thoiry",
     description: "Thoiry est une commune des Yvelines au nord de Garancières, que je dessers depuis Broué. J'y ai remplacé un tableau électrique Hager vieillissant par un tableau Legrand aux normes NF C 15-100, avec création de la terre à l'étage et remplacement complet de l'appareillage en gamme Dooxie. Mise aux normes, tableau électrique et sécurité — déplacement gratuit pour le devis.",
     localContext: "Commune résidentielle des Yvelines connue pour son château et son parc zoologique — pavillons et maisons de bourg des années 70 et 80 dont les tableaux et l'appareillage arrivent en fin de vie, souvent sans terre à l'étage.",
