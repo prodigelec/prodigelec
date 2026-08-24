@@ -211,3 +211,34 @@ article {
 .prose-blog a:hover {
   color: var(--primary-light);
 }
+
+/* Photos de chantier insérées dans le corps d'un article. Le <figure> vient du
+   MDX : la légende n'est pas décorative, c'est elle que Google rattache à
+   l'image, donc elle reste visible et lisible plutôt que réduite à un alt. */
+.prose-blog figure {
+  margin: 2rem 0;
+}
+
+/* max-height plutôt que width: 100% : les photos de chantier sont prises au
+   téléphone, donc le plus souvent en portrait. À pleine largeur elles font
+   800 px de haut et coupent la lecture en deux. La contrainte porte sur la
+   hauteur, la largeur suit — un cliché paysage occupe toute la colonne, un
+   portrait se centre sans être rogné. */
+.prose-blog img {
+  display: block;
+  max-width: 100%;
+  max-height: 30rem;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+}
+
+.prose-blog figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(244, 244, 245, 0.6);
+}
