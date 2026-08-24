@@ -196,7 +196,7 @@ const realisationsData = [
     categorie: "electricite",
     date: "2026-08-20",
     image: "/tableau-electrique-mise-aux-normes-thoiry.jpg",
-    imageAlt: "Tableau électrique Legrand neuf sur quatre rangées, avec différentiels 30 mA et bornier de terre, posé à Thoiry dans les Yvelines",
+    imageAlt: "Tableau électrique Legrand posé et refermé par ses plastrons, quatre rangées protégées par différentiels 30 mA, porte ouverte, à Thoiry dans les Yvelines",
     photos: [
       {
         src: "/tableau-electrique-mise-aux-normes-thoiry-ancien-tableau.jpg",
