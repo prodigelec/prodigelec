@@ -461,6 +461,130 @@ export const brandPages = [
     realisationSlugs: ["depannage-motorisation-enterree-came-ezy-sur-eure"],
     services: [{ label: "Automatismes & Motorisations", href: "/services/automatismes" }],
   },
+  {
+    slug: "legrand",
+    name: "Legrand",
+    category: "Électricité & Appareillage",
+    metaTitle: "Installateur Legrand — tableau, Dooxie, Céliane | Dreux, Chartres",
+    metaDescription:
+      "Artisan installateur Legrand en Eure-et-Loir, Eure et Yvelines : remplacement de tableau électrique Drivia, mise aux normes NF C 15-100, appareillage Dooxie et Céliane, télérupteurs, prise renforcée Green'Up. Devis gratuit.",
+    tagline: "Tableau électrique, appareillage et mise aux normes",
+    intro:
+      "Legrand est la marque que je pose le plus souvent, tout simplement parce que c'est celle qui équipe la majorité des logements du secteur : le tableau, les prises, les interrupteurs, les télérupteurs. Sur un chantier de mise aux normes, c'est aussi la gamme la plus facile à faire évoluer dans le temps — les boîtes d'encastrement, les plaques et les mécanismes restent compatibles d'une génération à l'autre. Je remplace les tableaux, je reprends les installations existantes et je change l'appareillage, y compris sur des installations que je n'ai pas posées.",
+    interventions: [
+      {
+        title: "Remplacement de tableau électrique",
+        description:
+          "Dépose de l'ancien tableau et pose d'un coffret Legrand réparti en rangées, avec différentiels 30 mA adaptés à chaque groupe de circuits, protections calibrées sur les sections réelles et repérage clair de chaque départ.",
+      },
+      {
+        title: "Mise aux normes NF C 15-100",
+        description:
+          "Création des circuits dédiés par usage, mise à la terre des prises, liaison équipotentielle en pièce d'eau et reprise de la GTL. Le détail de ce qu'impose la norme est dans mon article sur la mise aux normes.",
+      },
+      {
+        title: "Prises, interrupteurs et sorties de câble",
+        description:
+          "Remplacement complet de l'appareillage en gamme Dooxie ou Céliane, avec reprise des boîtes d'encastrement quand elles ne tiennent plus le mécanisme. La pose se fait à vis plutôt qu'aux griffes dès que le support le permet.",
+      },
+      {
+        title: "Télérupteurs et modulaire",
+        description:
+          "Remplacement des télérupteurs, minuteries, contacteurs jour/nuit et horloges du tableau. Un télérupteur récent demande souvent une reprise du câblage des poussoirs, de trois fils à quatre.",
+      },
+      {
+        title: "Prise renforcée et borne Green'Up",
+        description:
+          "Pose de prises renforcées Green'Up et de bornes de recharge sur circuit dédié et protégé, en résidentiel comme en copropriété. Le détail se trouve sur ma page dédiée à la recharge de véhicule électrique.",
+      },
+    ],
+    gammes: [
+      {
+        name: "Drivia",
+        description:
+          "Coffrets et tableaux électriques Legrand, en encastré comme en saillie, avec les blocs GTL et les rangées de communication. C'est la base sur laquelle se construit une mise aux normes complète.",
+      },
+      {
+        name: "dooxie",
+        description:
+          "Appareillage simple et rapide à poser, en blanc ou anthracite : prises, interrupteurs, va-et-vient, boutons poussoirs et sorties de câble. Le meilleur rapport qualité-prix pour reprendre tout un logement d'un coup.",
+      },
+      {
+        name: "Céliane",
+        description:
+          "Gamme supérieure, avec un large choix de finitions et de plaques et des fonctions connectées. Elle se justifie surtout dans les pièces de vie, où l'appareillage se voit.",
+      },
+      {
+        name: "Plexo",
+        description:
+          "Appareillage étanche pour les garages, les caves, les buanderies et l'extérieur. C'est ce qu'impose la norme dès que la pièce est humide ou exposée.",
+      },
+      {
+        name: "Green'Up",
+        description:
+          "Prise renforcée 3,7 kW et bornes de recharge jusqu'à 22 kW triphasé pour véhicule électrique, étanches et pilotables. Une prise renforcée recharge trois à quatre fois plus vite qu'une prise domestique, en toute sécurité.",
+      },
+    ],
+    pannes: [
+      {
+        symptome: "Mon télérupteur neuf ne fonctionne pas",
+        cause:
+          "L'installation est câblée en trois fils, avec le neutre aux boutons poussoirs. Les télérupteurs récents, surtout les silencieux, réclament un neutre permanent sur la bobine : il faut repasser le câblage en quatre fils.",
+      },
+      {
+        symptome: "Les prises de l'étage n'ont pas de terre",
+        cause:
+          "Très courant sur les maisons des années 70 et 80. Quand l'installation est encastrée en gaines, le câble se remplace conducteur par conducteur sans ouvrir les murs, et les terres se regroupent dans les combles.",
+      },
+      {
+        symptome: "Le différentiel saute sans raison apparente",
+        cause:
+          "Fuite de courant sur un appareil, humidité dans une boîte, ou différentiel d'un type inadapté aux circuits qu'il protège. On isole circuit par circuit avant de conclure.",
+      },
+      {
+        symptome: "Les prises bougent dès qu'on retire une fiche",
+        cause:
+          "La boîte d'encastrement ne tient plus le mécanisme. Ce sont ensuite les connexions qui travaillent à chaque manipulation, et une connexion qui travaille finit par chauffer.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Combien de temps faut-il pour remplacer un tableau électrique ?",
+        answer:
+          "Une journée dans le cas courant, pour un tableau de trois à quatre rangées : dépose de l'ancien, pose du coffret, répartition des circuits sous les bons différentiels, raccordement et repérage. Ce qui allonge, ce n'est presque jamais le tableau lui-même, mais ce qu'on découvre derrière — des circuits mélangés, des sections sous-dimensionnées ou un télérupteur câblé en trois fils. Je le dis avant de commencer plutôt qu'en cours de route.",
+      },
+      {
+        question: "Peut-on ajouter la terre dans une maison qui n'en a pas, sans casser les murs ?",
+        answer:
+          "Dans la majorité des cas, oui. Si l'installation est encastrée dans des gaines, le câble à deux conducteurs se remplace par un câble à trois en tirant le neuf attaché à l'ancien, prise par prise, sans ouvrir le mur. Les terres se regroupent ensuite dans la boîte de dérivation des combles avant de redescendre au tableau. La limite, ce sont les gaines écrasées ou bourrées, et le câblage posé directement dans le plâtre sans gaine — là, il faut ouvrir.",
+      },
+      {
+        question: "dooxie ou Céliane, laquelle choisir ?",
+        answer:
+          "dooxie couvre tous les besoins courants et coûte nettement moins cher : c'est le bon choix quand on reprend l'appareillage d'un logement entier. Céliane se justifie dans les pièces de vie, pour les finitions et les fonctions connectées. Rien n'interdit de mélanger, les deux gammes utilisent les mêmes boîtes d'encastrement — dooxie partout, Céliane dans le séjour, c'est un arbitrage que je propose souvent.",
+      },
+      {
+        question: "Faut-il refaire toute l'installation ou seulement le tableau ?",
+        answer:
+          "Ça dépend de l'état du câblage, pas du tableau. Si les fils sont sains et la terre présente partout, reprendre le tableau seul règle déjà l'essentiel du risque. Si le logement est câblé sans terre ou en section insuffisante, reprendre uniquement le tableau reviendrait à poser une serrure neuve sur une porte en carton. Je fais le point circuit par circuit avant de chiffrer quoi que ce soit.",
+      },
+      {
+        question: "Intervenez-vous sur du matériel Legrand que vous n'avez pas posé ?",
+        answer:
+          "Oui, c'est le cas le plus fréquent. Je reprends les tableaux existants pour y ajouter un circuit ou remplacer une protection, je change l'appareillage vieilli, je remplace les télérupteurs et les contacteurs. Sur du matériel Legrand, les boîtes d'encastrement et les mécanismes restent compatibles d'une génération à l'autre, ce qui évite souvent d'avoir à tout déposer.",
+      },
+      {
+        question: "Intervenez-vous autour de Dreux et dans les Yvelines ?",
+        answer:
+          "Oui, j'interviens en Eure-et-Loir, dans l'Eure et dans les Yvelines : Dreux, Chartres, Anet, Nogent-le-Roi, Houdan, Montfort-l'Amaury et tout le secteur dans un rayon de 30 km autour de Broué. J'ai notamment remplacé un tableau complet et créé la terre à l'étage d'une maison à Thoiry, chantier visible en photos dans mes réalisations.",
+      },
+    ],
+    realisationSlugs: ["tableau-electrique-mise-aux-normes-thoiry"],
+    services: [
+      { label: "Électricité Générale", href: "/services/electricite" },
+      { label: "Borne de recharge véhicule électrique", href: "/services/borne-de-recharge-voiture-electrique" },
+    ],
+  },
 ];
 
 export function getBrandPageBySlug(slug) {
