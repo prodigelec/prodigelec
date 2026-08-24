@@ -571,6 +571,21 @@ export const cities = [
     description: "Villiers-Saint-Frédéric est une commune des Yvelines que je dessers depuis Broué. J'y ai remis en service une alarme Somfy Link Essentiel devenue muette après un changement de box internet : réinitialisation complète, remplacement des piles de la sirène extérieure et des contacteurs de choc. Alarme, vidéosurveillance et électricité générale — devis gratuit.",
     localContext: "Commune pavillonnaire des Yvelines proche de Plaisir — maisons individuelles déjà équipées en alarme et domotique, avec des besoins fréquents en dépannage, reconfiguration après changement de box et maintenance.",
   },
+  {
+    slug: "thoiry",
+    updatedAt: "2026-08-24",
+    name: "Thoiry",
+    postalCode: "78770",
+    department: "Yvelines",
+    departmentCode: "78",
+    distance: 27,
+    freeZone: true,
+    nearby: ["Garancières", "La Queue-les-Yvelines", "Villiers-Saint-Frédéric", "Houdan"],
+    photo: "/tableau-electrique-mise-aux-normes-thoiry.jpg",
+    photoAlt: "Tableau électrique Legrand neuf sur quatre rangées, posé par PRODIGELEC à Thoiry",
+    description: "Thoiry est une commune des Yvelines au nord de Garancières, que je dessers depuis Broué. J'y ai remplacé un tableau électrique Hager vieillissant par un tableau Legrand aux normes NF C 15-100, avec création de la terre à l'étage et remplacement complet de l'appareillage en gamme Dooxie. Mise aux normes, tableau électrique et sécurité — déplacement gratuit pour le devis.",
+    localContext: "Commune résidentielle des Yvelines connue pour son château et son parc zoologique — pavillons et maisons de bourg des années 70 et 80 dont les tableaux et l'appareillage arrivent en fin de vie, souvent sans terre à l'étage.",
+  },
 ];
 
 export function getCityBySlug(slug) {

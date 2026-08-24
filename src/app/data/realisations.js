@@ -186,6 +186,45 @@ const realisationsData = [
       },
     ],
   },
+  {
+    slug: "tableau-electrique-mise-aux-normes-thoiry",
+    titre: "Remplacement de tableau électrique et mise aux normes NF C 15-100",
+    description: "Maison sans terre à l'étage et tableau d'origine arrivé en bout de course. Dépose de l'ancien tableau Hager et pose d'un tableau Legrand complet, réparti sur quatre rangées protégées par différentiels 30 mA. Montée de la terre à l'étage en remplaçant le câble de chaque prise, un par un, et raccordement sur l'araignée de distribution dans les combles. Remplacement de tout l'appareillage en gamme Dooxie de Legrand — prises, interrupteurs et sorties de câble — et reprise du câblage du télérupteur, passé de trois à quatre fils pour accepter un modèle récent. Déplacement d'un radiateur en faisant passer son alimentation derrière le doublage placo-polystyrène, sans une seule saignée dans le mur.",
+    ville: "Thoiry",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "electricite",
+    date: "2026-08-20",
+    image: "/tableau-electrique-mise-aux-normes-thoiry.jpg",
+    imageAlt: "Tableau électrique Legrand posé et refermé par ses plastrons, quatre rangées protégées par différentiels 30 mA, porte ouverte, à Thoiry dans les Yvelines",
+    photos: [
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-ancien-tableau.jpg",
+        alt: "Ancien tableau électrique Hager jauni avec son télérupteur et ses étiquettes manuscrites, avant remplacement à Thoiry",
+        legende: "L'ancien tableau Hager, saturé et étiqueté à la main. Le télérupteur d'origine est le module gris en bas à gauche.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-prise-terre-dooxie.jpg",
+        alt: "Prise de courant Legrand Dooxie neuve avec broche de terre visible, installée à l'étage d'une maison à Thoiry",
+        legende: "Une prise de l'étage après reprise : la broche de terre est là, ce qui n'était le cas nulle part avant le chantier.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-sortie-de-cable.jpg",
+        alt: "Sortie de câble Legrand Dooxie neuve posée à côté de l'ancienne sortie jaunie, chantier de Thoiry",
+        legende: "La sortie de câble neuve, à côté de celle qu'elle remplace. Vingt ans d'écart sur le même mur.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-radiateur-depose.jpg",
+        alt: "Mur avec alimentation en attente après dépose d'un radiateur, sans saignée dans le doublage placo-polystyrène, Thoiry",
+        legende: "Radiateur déposé, alimentation en attente à son nouvel emplacement. Le doublage n'a pas été ouvert.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-radiateur-repose.jpg",
+        alt: "Radiateur électrique reposé à son nouvel emplacement après déplacement de son alimentation, Thoiry, Yvelines",
+        legende: "Le radiateur à sa nouvelle place, alimenté par sa sortie de câble. Aucune reprise de peinture à prévoir.",
+      },
+    ],
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
