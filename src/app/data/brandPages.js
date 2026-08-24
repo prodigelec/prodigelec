@@ -340,6 +340,127 @@ export const brandPages = [
     realisationSlugs: ["reglage-motorisation-portail-faac-marchezais"],
     services: [{ label: "Automatismes & Motorisations", href: "/services/automatismes" }],
   },
+  {
+    slug: "came",
+    name: "CAME",
+    category: "Portails Automatiques",
+    metaTitle: "Dépannage motorisation portail CAME — Dreux, Anet, Évreux",
+    metaDescription:
+      "Dépannage et réglage de motorisation de portail CAME en Eure-et-Loir, Eure et Yvelines : moteur enterré FROG, vérins ATI et KRONO, armoire de commande ZM3E, fins de course, télécommandes TOP-432. Devis gratuit.",
+    tagline: "Motorisation CAME, moteur enterré compris",
+    intro:
+      "CAME est la marque que je retrouve le plus souvent sur les portails à motorisation enterrée, ceux dont on ne voit rien depuis l'allée parce que tout est logé dans un caisson sous le sol. C'est aussi la configuration que l'on évite le plus volontiers : il faut ouvrir le caisson et dégager le moteur avant même de savoir ce qui est en cause. Je dépanne les motorisations CAME enterrées comme apparentes, ainsi que les autres marques du marché.",
+    interventions: [
+      {
+        title: "Moteur enterré FROG",
+        description:
+          "Ouverture du caisson de fondation, aspiration de la terre accumulée, dégrippage et graissage du mécanisme, contrôle du bras de liaison. Sur un groupe enterré, le diagnostic commence toujours par dégager le moteur.",
+      },
+      {
+        title: "Réglage des fins de course",
+        description:
+          "Portail qui s'arrête trop tôt, talonne en fermeture ou laisse un vantail à moitié ouvert : les fins de course et les temps de course se reprennent sur l'armoire, sans rien remplacer dans la majorité des cas.",
+      },
+      {
+        title: "Armoire de commande ZM3E",
+        description:
+          "Programmation et diagnostic de l'armoire : fins de course, ralentissements, temporisation entre vantaux, détection d'obstacle, fermeture automatique. L'écran de la ZM3E affiche les codes de défaut, c'est le point de départ du dépannage.",
+      },
+      {
+        title: "Vérins et bras articulés",
+        description:
+          "Dépannage des motorisations apparentes CAME sur portail battant : vérins ATI et KRONO, bras FERNI et FAST. Butées mécaniques, condensateurs et synchronisation des deux vantaux.",
+      },
+      {
+        title: "Télécommandes et récepteur radio",
+        description:
+          "Programmation de télécommandes TOP-432 supplémentaires, remplacement d'un récepteur AF 433,92 MHz, ou ajout d'un clavier à code sur une installation CAME existante.",
+      },
+    ],
+    gammes: [
+      {
+        name: "FROG-A / FROG-AE",
+        description:
+          "Motorisation enterrée 230 V pour portail battant, irréversible, jusqu'à 3,50 m et 800 kg par vantail. Étanchéité IP67, encodeur et fins de course intégrés, moteur logé dans un caisson de fondation sous le sol.",
+      },
+      {
+        name: "ZM3E",
+        description:
+          "Armoire de commande 230 V qui pilote deux moteurs — gammes ATI, AXO, FAST, FERNI, KRONO et FROG. C'est elle qui gère les fins de course, l'encodeur, la vitesse et les ralentissements : la plupart des pannes de course se règlent ici, pas sur le moteur.",
+      },
+      {
+        name: "ATI / KRONO",
+        description:
+          "Vérins électromécaniques pour portails battants, du vantail léger jusqu'à cinq mètres. Les gammes CAME apparentes les plus répandues sur le secteur.",
+      },
+      {
+        name: "FERNI / FAST",
+        description:
+          "Motorisations à bras articulé, la solution quand les piliers sont trop larges ou le gond trop en retrait pour recevoir un vérin.",
+      },
+      {
+        name: "BX / BK",
+        description:
+          "Motorisations à crémaillère pour portails coulissants, avec réglage des butées et de la détection d'obstacle.",
+      },
+    ],
+    pannes: [
+      {
+        symptome: "Le portail ne s'arrête plus au bon endroit",
+        cause:
+          "Fins de course déréglées. Sur une motorisation CAME récente, elles se reprennent entièrement depuis l'armoire ZM3E, sans démonter le moteur ni toucher aux butées.",
+      },
+      {
+        symptome: "Un seul vantail s'ouvre, ou les deux se croisent",
+        cause:
+          "La temporisation entre les deux vantaux est perdue, ou un moteur ne reçoit plus son ordre. Le réglage du décalage se refait sur l'armoire, le diagnostic distingue les deux cas.",
+      },
+      {
+        symptome: "Le moteur ronfle mais le vantail reste immobile",
+        cause:
+          "Le plus souvent un condensateur de démarrage fatigué, ou le déverrouillage manuel resté engagé après un déblocage à la clé. Les deux se vérifient avant tout démontage.",
+      },
+      {
+        symptome: "Plus aucune télécommande ne répond",
+        cause:
+          "Récepteur radio AF mal enfiché sur l'armoire, ou codes perdus après une coupure de courant. La reprogrammation se fait sur place en quelques minutes.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Mon portail CAME ne s'arrête plus au bon endroit, faut-il changer le moteur ?",
+        answer:
+          "Presque jamais. Un portail qui s'arrête trop tôt, talonne en fermeture ou laisse un vantail entrouvert a des fins de course déréglées, pas un moteur mort. Sur les motorisations CAME pilotées par une armoire ZM3E, tout se reprend depuis la carte : positions d'ouverture et de fermeture, ralentissements, temporisation entre les deux vantaux. C'est une intervention courte, et c'est exactement ce que j'ai fait sur un portail enterré à Ézy-sur-Eure.",
+      },
+      {
+        question: "Peut-on dépanner un moteur de portail enterré CAME sans casser la maçonnerie ?",
+        answer:
+          "Oui, dans la grande majorité des cas. Le moteur est logé dans un caisson de fondation fermé par un couvercle démontable : il s'ouvre et se dégage sans toucher au dallage ni aux piliers. Le vrai travail, c'est d'évacuer la terre accumulée autour du groupe avant de pouvoir diagnostiquer quoi que ce soit. Casser n'est nécessaire que si le caisson lui-même est éclaté.",
+      },
+      {
+        question: "Mon caisson de fondation CAME est plein de terre, est-ce grave ?",
+        answer:
+          "C'est ce qui use les moteurs enterrés à petit feu. Le caisson est prévu pour évacuer l'eau par le bas ; quand l'évacuation se comble, le groupe finit noyé, le mécanisme se grippe et le moteur force en permanence. Pris à temps, une aspiration complète du caisson suivie d'un dégrippage et d'un graissage suffit à repartir sur des bases saines. Laissé plusieurs années, c'est le moteur qu'il faut remplacer.",
+      },
+      {
+        question: "Une motorisation CAME de vingt ans se répare-t-elle encore ?",
+        answer:
+          "Souvent oui. Les gammes FROG, ATI et FERNI sont mécaniquement robustes et les pièces d'usure restent disponibles : condensateurs, armoires de commande, récepteurs radio, télécommandes TOP-432. Je diagnostique d'abord ce qui est réellement en cause, puis je vous dis honnêtement si la réparation vaut le coup face à un remplacement.",
+      },
+      {
+        question: "Comment débloquer manuellement un portail CAME en cas de coupure ?",
+        answer:
+          "La plupart des motorisations CAME disposent d'un déverrouillage à clé qui désolidarise le moteur du vantail : sur les modèles enterrés il se trouve sur le groupe, dans le caisson, sur les vérins et les bras il est sur le corps du moteur. Une fois déverrouillé, le portail se manœuvre à la main. Pensez à le reverrouiller ensuite, sinon la motorisation tournera dans le vide au retour du courant — c'est un motif d'appel fréquent.",
+      },
+      {
+        question: "Intervenez-vous sur les portails CAME autour de Dreux et d'Ézy-sur-Eure ?",
+        answer:
+          "Oui, j'interviens sur les motorisations CAME à Dreux, Anet, Ivry-la-Bataille, Ézy-sur-Eure, Nonancourt, Nogent-le-Roi et dans tout le secteur entre l'Eure-et-Loir, l'Eure et les Yvelines. J'ai notamment repris les fins de course d'une motorisation enterrée CAME FROG-AE à Ézy-sur-Eure, chantier visible en photos dans mes réalisations.",
+      },
+    ],
+    realisationSlugs: ["depannage-motorisation-enterree-came-ezy-sur-eure"],
+    services: [{ label: "Automatismes & Motorisations", href: "/services/automatismes" }],
+  },
 ];
 
 export function getBrandPageBySlug(slug) {

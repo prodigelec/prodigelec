@@ -155,6 +155,37 @@ const realisationsData = [
     image: "/installation-fileries-cuisine-garnay.jpg",
     imageAlt: "Illustration de gaines électriques en attente dans les murs d'une pièce en rénovation, chantier de Garnay, Eure-et-Loir",
   },
+  {
+    slug: "depannage-motorisation-enterree-came-ezy-sur-eure",
+    titre: "Dépannage d'une motorisation de portail enterrée CAME",
+    description: "Le portail battant ne terminait plus ses cycles : les fins de course ne coupaient plus au bon endroit, laissant les vantaux en butée ou à moitié ouverts. Ouverture des caissons de fondation et aspiration complète de la terre accumulée autour des moteurs enterrés CAME FROG-AE, dégrippage et graissage des mécanismes, puis reprise des réglages de fins de course sur l'armoire de commande CAME ZM3E jusqu'au retour d'un cycle d'ouverture et de fermeture normal.",
+    ville: "Ézy-sur-Eure",
+    departement: "Eure",
+    departementCode: "27",
+    categorie: "automatismes",
+    date: "2026-08-16",
+    image: "/depannage-motorisation-enterree-came-ezy-sur-eure.jpg",
+    imageAlt: "Moteur enterré CAME FROG-AE et son bras de liaison dans le caisson de fondation d'un portail battant à Ézy-sur-Eure, Eure",
+    // Chantier avant / après : trois vues complémentaires valent mieux qu'une
+    // seule photo pour un moteur enterré, que le client lui-même ne voit jamais.
+    photos: [
+      {
+        src: "/depannage-motorisation-enterree-came-ezy-sur-eure-caisson-avant.jpg",
+        alt: "Caisson de fondation envahi par la terre autour du moteur enterré CAME avant l'intervention, Ézy-sur-Eure",
+        legende: "À l'ouverture du caisson : le moteur enterré et son condensateur noyés sous la terre accumulée au fil des ans.",
+      },
+      {
+        src: "/depannage-motorisation-enterree-came-ezy-sur-eure-etiquette-frog-ae.jpg",
+        alt: "Étiquette constructeur du moteur enterré CAME FROG-AE, code 109FROG-AE, 230 V, relevée à Ézy-sur-Eure",
+        legende: "L'étiquette dégagée donne le modèle exact : CAME FROG-AE, 230 V. C'est elle qui oriente les réglages.",
+      },
+      {
+        src: "/depannage-motorisation-enterree-came-ezy-sur-eure-cablage.jpg",
+        alt: "Moteur enterré CAME FROG-AE dégrippé et graissé dans son caisson après aspiration de la terre, Ézy-sur-Eure",
+        legende: "Caisson aspiré, mécanisme dégrippé et graissé : le moteur est prêt pour la reprise des fins de course.",
+      },
+    ],
+  },
 ];
 
 export const realisations = [...realisationsData].sort(

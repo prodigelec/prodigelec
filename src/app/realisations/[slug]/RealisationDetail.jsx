@@ -4,6 +4,7 @@ import Link from "next/link";
 import { m } from "framer-motion";
 import { MapPin, Calendar, ArrowLeft, ArrowRight } from "lucide-react";
 import { categoryColors } from "@/app/data/realisations";
+import RealisationGallery from "./RealisationGallery";
 import RelatedRealisations from "./RelatedRealisations";
 
 const fadeUp = {
@@ -76,6 +77,8 @@ export default function RealisationDetail({ realisation: r, citySlug, related, d
             {r.description}
           </p>
         </m.section>
+
+        <RealisationGallery photos={r.photos} />
 
         <m.section
           variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
