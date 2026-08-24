@@ -27,13 +27,20 @@ export default function RealisationGallery({ photos }) {
             className="rounded-2xl overflow-hidden flex flex-col"
             style={{ background: "var(--card)", border: "1px solid var(--border)" }}
           >
-            <div className="relative w-full aspect-[3/4]">
+            {/* Cadre carré + object-contain : les photos de chantier arrivent en
+                portrait comme en paysage, et un cadre portrait en object-cover
+                amputait les vues de pièce de la moitié de leur largeur. Ici
+                rien n'est rogné, seule la lettre-boîte varie. */}
+            <div
+              className="relative w-full aspect-square"
+              style={{ background: "var(--background)" }}
+            >
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
                 loading="lazy"
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 288px"
               />
             </div>
