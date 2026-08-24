@@ -75,11 +75,18 @@ export default async function RealisationPage({ params }) {
     serviceType: categoryColors[r.categorie]?.label ?? "Électricité",
     provider: { "@id": `${BASE_URL}/#business` },
     areaServed: { "@type": "City", name: r.ville },
-    image: {
-      "@type": "ImageObject",
-      url: `${BASE_URL}${r.image}`,
-      description: r.imageAlt,
-    },
+    // Toutes les photos du chantier, pas seulement la vignette : chaque
+    // ImageObject porte sa propre description et devient candidat dans Google
+    // Images, où "moteur enterré CAME" est une requête à part entière.
+    image: [
+      { "@type": "ImageObject", url: `${BASE_URL}${r.image}`, description: r.imageAlt },
+      ...(r.photos ?? []).map((photo) => ({
+        "@type": "ImageObject",
+        url: `${BASE_URL}${photo.src}`,
+        description: photo.alt,
+        caption: photo.legende,
+      })),
+    ],
   };
 
   return (
