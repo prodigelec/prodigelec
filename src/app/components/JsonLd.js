@@ -20,7 +20,7 @@ export default function JsonLd() {
     // Photos de chantiers réels plutôt que le logo : c'est ce que Google
     // attend ici, et ce qui s'affiche dans les résultats locaux.
     "image": [
-      "https://www.prodigelec.fr/tableau-electrique-marchezais.jpg",
+      "https://www.prodigelec.fr/tableau-electrique-legrand-mise-aux-normes-thoiry.jpg",
       "https://www.prodigelec.fr/renovation-electrique-cuisine-sorel-moussel.jpg",
       "https://www.prodigelec.fr/visiophone-tmezon-breval-yvelines-1.jpg"
     ],
