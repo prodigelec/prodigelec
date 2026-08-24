@@ -195,7 +195,7 @@ const realisationsData = [
     departementCode: "78",
     categorie: "electricite",
     date: "2026-08-20",
-    image: "/tableau-electrique-mise-aux-normes-thoiry.jpg",
+    image: "/tableau-electrique-legrand-mise-aux-normes-thoiry.jpg",
     imageAlt: "Tableau électrique Legrand posé et refermé par ses plastrons, quatre rangées protégées par différentiels 30 mA, porte ouverte, à Thoiry dans les Yvelines",
     photos: [
       {
