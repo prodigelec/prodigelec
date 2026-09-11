@@ -225,6 +225,18 @@ const realisationsData = [
       },
     ],
   },
+  {
+    slug: "tableau-electrique-cuisine-faverolles",
+    titre: "Remplacement du tableau électrique et mise aux normes de la cuisine",
+    description: "Remplacement complet du tableau électrique et reprise de toute l'alimentation de la cuisine. Le nouveau tableau Hager occupe quatre rangées, chacune sous son propre interrupteur différentiel 30 mA : étage, éclairages, cuisine et sous-sol, plus un différentiel dédié aux volets roulants. La cuisine a été remise aux normes NF C 15-100 circuit par circuit — plaque de cuisson en 32 A, four, lave-vaisselle, micro-ondes, réfrigérateur et prises du plan de travail, chacun sur sa propre protection, derrière un différentiel de type A comme l'exige la norme pour ces appareils. Le sous-sol a suivi la même logique : adoucisseur, chaudière, lave-linge, sèche-linge et congélateur séparés les uns des autres. Tout le tableau est repéré, étiquette par étiquette et numéro par numéro : le jour où un disjoncteur saute, on sait lequel regarder sans ouvrir quoi que ce soit.",
+    ville: "Faverolles",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-08-28",
+    image: "/tableau-electrique-cuisine-faverolles.jpg",
+    imageAlt: "Tableau électrique Hager de quatre rangées entièrement repéré, protégé par des interrupteurs différentiels 30 mA, installé en sous-sol dans une maison de Faverolles, Eure-et-Loir",
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
