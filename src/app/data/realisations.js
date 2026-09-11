@@ -189,7 +189,7 @@ const realisationsData = [
   {
     slug: "tableau-electrique-mise-aux-normes-thoiry",
     titre: "Remplacement de tableau électrique et mise aux normes NF C 15-100",
-    description: "Maison sans terre à l'étage et tableau d'origine arrivé en bout de course. Dépose de l'ancien tableau Hager et pose d'un tableau Legrand complet, réparti sur quatre rangées protégées par différentiels 30 mA. Montée de la terre à l'étage en remplaçant le câble de chaque prise, un par un, et raccordement sur l'araignée de distribution dans les combles. Remplacement de tout l'appareillage en gamme Dooxie de Legrand — prises, interrupteurs et sorties de câble — et reprise du câblage du télérupteur, passé de trois à quatre fils pour accepter un modèle récent. Déplacement d'un radiateur en faisant passer son alimentation derrière le doublage placo-polystyrène, sans une seule saignée dans le mur.",
+    description: "Maison sans terre à l'étage et tableau d'origine arrivé en bout de course. Dépose de l'ancien tableau Hager et pose d'un tableau Legrand complet, réparti sur quatre rangées protégées par différentiels 30 mA. Montée de la terre à l'étage en remplaçant le câble de chaque prise, un par un, et raccordement sur l'araignée de distribution dans les combles. Remplacement de tout l'appareillage en gamme Dooxie de Legrand — prises, interrupteurs et sorties de câble — et reprise du câblage du télérupteur, passé de trois à quatre fils pour accepter un modèle récent. Déplacement d'un radiateur en faisant passer son alimentation derrière le doublage placo-polystyrène, sans une seule saignée dans le mur. Dans le garage enfin, l'appareillage en saillie jauni par les années a laissé place à des boîtiers étanches Legrand Plexo, repris sur la même alimentation.",
     ville: "Thoiry",
     departement: "Yvelines",
     departementCode: "78",
@@ -222,6 +222,16 @@ const realisationsData = [
         src: "/tableau-electrique-mise-aux-normes-thoiry-radiateur-repose.jpg",
         alt: "Radiateur électrique reposé à son nouvel emplacement après déplacement de son alimentation, Thoiry, Yvelines",
         legende: "Le radiateur à sa nouvelle place, alimenté par sa sortie de câble. Aucune reprise de peinture à prévoir.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-garage-avant.jpg",
+        alt: "Anciens boîtiers électriques en saillie jaunis sur un mur de garage en parpaing, avant remplacement à Thoiry, Yvelines",
+        legende: "Côté garage, l'appareillage d'origine : trois boîtiers en saillie jaunis, alimentés par une gaine apparente.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-garage-apres.jpg",
+        alt: "Boîtiers étanches Legrand Plexo neufs posés en saillie dans un garage à Thoiry, avec le clavier à code du portail sur le même mur",
+        legende: "Les mêmes emplacements en boîtiers étanches Legrand Plexo, sur la gaine existante. Le clavier à code du portail est resté en place.",
       },
     ],
   },
