@@ -226,6 +226,23 @@ const realisationsData = [
     ],
   },
   {
+
+    slug: "prises-boitiers-etanches-garage-thoiry",
+    titre: "Remplacement de prises et boîtiers étanches dans un garage",
+    description: "L'appareillage en saillie du garage avait fait son temps : trois boîtiers blancs jaunis par les années, alimentés par une gaine apparente le long du mur en parpaing. Dépose des anciens boîtiers et pose de boîtiers étanches Legrand Plexo aux mêmes emplacements, repris sur l'alimentation existante sans modifier le cheminement. C'est l'appareillage qui convient à ce type de local : un garage n'est ni chauffé ni à l'abri de la poussière et de l'humidité, conditions dans lesquelles du matériel d'intérieur vieillit vite.",
+    ville: "Thoiry",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "electricite",
+    date: "2026-08-22",
+    image: "/prises-boitiers-etanches-garage-thoiry.jpg",
+    imageAlt: "Boîtiers étanches Legrand Plexo neufs posés en saillie sur le mur en parpaing d'un garage à Thoiry, dans les Yvelines",
+    photos: [
+      {
+        src: "/prises-boitiers-etanches-garage-thoiry-avant.jpg",
+        alt: "Anciens boîtiers électriques en saillie jaunis sur le mur en parpaing d'un garage, avant remplacement à Thoiry, Yvelines",
+        legende: "Avant l'intervention : trois boîtiers en saillie jaunis, sur la gaine qui a été conservée pour alimenter les neufs.",
+    
     slug: "visiophone-ezviz-tp9-pro-la-queue-yvelines",
     titre: "Remplacement d'un visiophone hors service par un EZVIZ TP9 Pro",
     description: "Le visiophone d'origine ne fonctionnait plus depuis un moment. Lors d'un premier passage, j'avais posé une sonnette sans fil Urmet sur la platine hors service pour que la maison garde au moins une sonnerie, le temps de choisir le remplaçant. Retour pour le remplacement définitif avec un kit EZVIZ TP9 Pro : dépose de l'ancienne platine encastrée et de sa visière, adaptation de la réservation dans le mur pour recevoir la nouvelle platine, puis pose et paramétrage du moniteur tactile à l'intérieur. L'accès s'ouvre maintenant de quatre façons : code sur le clavier, badge ou smartphone en NFC, écran de 8 pouces dans l'entrée, et application EZVIZ à distance pour ouvrir même en étant absent.",
