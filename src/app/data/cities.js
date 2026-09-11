@@ -498,7 +498,7 @@ export const cities = [
   },
   {
     slug: "la-queue-les-yvelines",
-    updatedAt: "2026-08-05",
+    updatedAt: "2026-09-10",
     name: "La Queue-les-Yvelines",
     postalCode: "78940",
     department: "Yvelines",
@@ -508,7 +508,7 @@ export const cities = [
     nearby: ["Montfort l'Amaury", "Garancières", "Houdan", "Condé-sur-Vesgre"],
     photo: "/four-bosch-branchement-la-queue-yvelines.jpg",
     photoAlt: "Branchement d'un four encastrable Bosch par PRODIGELEC à La Queue-les-Yvelines",
-    description: "La Queue-les-Yvelines est une commune que je dessers régulièrement depuis Broué. J'y suis intervenu en urgence pour déposer et rebrancher un four encastrable Bosch le jour même, et j'y ai posé une sonnette sans fil Urmet en dépannage d'un visiophone hors service. Électricité, sécurité et automatismes — déplacement gratuit pour le devis.",
+    description: "La Queue-les-Yvelines est une commune que je dessers régulièrement depuis Broué. J'y suis intervenu en urgence pour déposer et rebrancher un four encastrable Bosch le jour même, et j'y ai remplacé un visiophone hors service par un kit EZVIZ TP9 Pro à clavier à code et badge NFC, après l'avoir dépanné dans un premier temps avec une sonnette sans fil. Électricité, sécurité et automatismes — déplacement gratuit pour le devis.",
     localContext: "Bourg des Yvelines sur l'axe Houdan – Montfort l'Amaury — pavillons et maisons de ville avec des besoins en branchement d'appareils, contrôle d'accès et remise aux normes.",
   },
   {
