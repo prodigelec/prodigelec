@@ -138,7 +138,7 @@ export default function PricingPolicySection() {
 
               <button
                 onClick={() => setActiveModal('free')}
-                aria-label="Voir toutes les villes de la zone gratuite"
+                aria-label="Voir toutes les villes de la zone de devis gratuit"
                 className="w-full mt-4 py-2 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold text-primary uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
               >
                 Voir toutes les villes <ChevronRight className="w-3 h-3" />
@@ -263,7 +263,7 @@ export default function PricingPolicySection() {
                   {activeModal === 'free' ? 'Zone 1 & 2' : 'Zone 3 & 4'}
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white">
-                  {activeModal === 'free' ? "Zone d'intervention Gratuite" : "Zone avec Frais de déplacement"}
+                  {activeModal === 'free' ? "Zone de devis gratuit" : "Zone avec frais de déplacement"}
                 </h3>
                 <p className="text-gray-100 mt-2">
                   {activeModal === 'free'

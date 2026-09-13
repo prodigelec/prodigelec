@@ -103,9 +103,9 @@ export default function AutomatismesContent() {
       description: "Volet bloqué, portail en panne, moteur défaillant.",
       features: [
         "Volets, portails, portes de garage",
-        "Diagnostic & réparation sur place",
-        "Déplacement Zone 1 offert",
-        "Tarif annoncé avant intervention"
+        "Recherche de panne incluse",
+        "Réparation incluse si sans fourniture",
+        "Déplacement en sus, annoncé avant"
       ],
       highlight: true,
       tag: "Urgence"

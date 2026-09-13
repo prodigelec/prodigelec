@@ -98,10 +98,10 @@ export default function ElectriciteContent() {
       price: "À partir de 150€ TTC",
       description: "Recherche de panne et réparation rapide sur votre installation.",
       features: [
-        "Diagnostic complet inclus",
-        "1h de main d'œuvre incluse",
-        "Déplacement zone 1 offert",
-        "Hors zone : Frais déplacement +"
+        "Recherche de panne incluse",
+        "Réparation incluse si sans fourniture",
+        "Déplacement en sus selon la zone",
+        "Devis gratuit si travaux à prévoir"
       ],
       highlight: true,
       tag: "Urgence"

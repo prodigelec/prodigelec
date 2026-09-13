@@ -91,9 +91,9 @@ export default function SecuriteContent() {
       description: "Panne ou blocage sur vos équipements de sécurité.",
       features: [
         "Digicode, visiophone, alarme, caméra",
-        "Diagnostic & réparation sur place",
-        "Déplacement Zone 1 offert",
-        "Tarif annoncé avant intervention"
+        "Recherche de panne incluse",
+        "Réparation incluse si sans fourniture",
+        "Déplacement en sus, annoncé avant"
       ],
       highlight: true,
       tag: "Urgence"
