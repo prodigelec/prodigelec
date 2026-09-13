@@ -96,7 +96,8 @@ export default function SecuriteContent() {
         "Déplacement en sus, annoncé avant"
       ],
       highlight: true,
-      tag: "Urgence"
+      tag: "Urgence",
+      variant: "urgence"
     }
   ];
 

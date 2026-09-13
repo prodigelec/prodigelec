@@ -39,6 +39,22 @@ export default function ServicePricing({ title, subtitle, description, prices, t
       priceShadow: "drop-shadow-[0_0_10px_rgba(201,162,39,0.3)]",
       checkColor: "text-primary"
     },
+    // Palette d'une carte, pas d'une page : un plan peut la demander par sa clé
+    // `variant`. Le dépannage s'en sert pour rester rouge sur les trois pages
+    // services, là où il prenait la couleur du thème et changeait de teinte
+    // d'une page à l'autre.
+    urgence: {
+      highlightColor: "text-red-400",
+      borderColor: "border-red-500/40",
+      shadowColor: "shadow-[0_0_40px_-15px_rgba(239,68,68,0.4)]",
+      badgeBg: "bg-red-500",
+      badgeShadow: "shadow-[0_0_20px_rgba(239,68,68,0.6)]",
+      decorBg: "bg-red-500/10",
+      decorBgHover: "group-hover:bg-red-500/20",
+      priceColor: "text-red-400",
+      priceShadow: "drop-shadow-[0_0_10px_rgba(239,68,68,0.4)]",
+      checkColor: "text-red-400"
+    },
     borne: {
       highlightColor: "text-emerald-400",
       borderColor: "border-emerald-500/40",
@@ -67,7 +83,9 @@ export default function ServicePricing({ title, subtitle, description, prices, t
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12 px-6 max-w-5xl mx-auto">
-        {prices.map((plan, idx) => (
+        {prices.map((plan, idx) => {
+          const c = themeConfig[plan.variant] ?? config;
+          return (
           <m.div
             key={idx}
             initial={{ opacity: 0, y: 30 }}
@@ -79,16 +97,16 @@ export default function ServicePricing({ title, subtitle, description, prices, t
           >
             {/* Urgence Badge */}
             {plan.tag && (
-              <div className={`absolute -top-[18px] left-1/2 -translate-x-1/2 ${config.badgeBg} text-background font-black px-5 py-2 rounded-full text-xs uppercase tracking-widest ${config.badgeShadow} whitespace-nowrap z-50`}>
+              <div className={`absolute -top-[18px] left-1/2 -translate-x-1/2 ${c.badgeBg} text-background font-black px-5 py-2 rounded-full text-xs uppercase tracking-widest ${c.badgeShadow} whitespace-nowrap z-50`}>
                 {plan.tag}
               </div>
             )}
 
-            <div className={`relative h-full overflow-hidden bg-white/[0.03] backdrop-blur-xl border ${plan.highlight ? `${config.borderColor} ${config.shadowColor}` : 'border-white/10'
+            <div className={`relative h-full overflow-hidden bg-white/[0.03] backdrop-blur-xl border ${plan.highlight ? `${c.borderColor} ${c.shadowColor}` : 'border-white/10'
               } rounded-[40px] p-8 transition-all duration-500 hover:border-white/20 flex flex-col z-10`}
             >
               {/* Background Decor */}
-              <div className={`absolute -top-24 -right-24 w-48 h-48 ${config.decorBg} rounded-full blur-[80px] ${config.decorBgHover} transition-colors duration-700 pointer-events-none`} />
+              <div className={`absolute -top-24 -right-24 w-48 h-48 ${c.decorBg} rounded-full blur-[80px] ${c.decorBgHover} transition-colors duration-700 pointer-events-none`} />
 
               <div className="relative z-20 flex flex-col h-full">
                 <h3 className="text-lg lg:text-xl font-black text-white mb-2 uppercase tracking-tight min-h-[56px] flex items-center leading-tight">
@@ -99,7 +117,7 @@ export default function ServicePricing({ title, subtitle, description, prices, t
                   const { amount, prefix } = parsePrice(plan.price);
                   return (
                     <div className="flex items-baseline gap-2 mb-6">
-                      <span className={`text-2xl lg:text-3xl font-black ${config.priceColor} ${config.priceShadow}`}>
+                      <span className={`text-2xl lg:text-3xl font-black ${c.priceColor} ${c.priceShadow}`}>
                         {amount}
                       </span>
                       {prefix && (
@@ -118,19 +136,20 @@ export default function ServicePricing({ title, subtitle, description, prices, t
                 <ul className="space-y-4 mb-8 grow">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-gray-100">
-                      <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${config.badgeBg}`} />
+                      <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${c.badgeBg}`} />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <a href="/contact" className={`w-full py-4 rounded-xl font-bold text-center transition-all duration-300 ${plan.highlight ? `${config.badgeBg} text-background hover:brightness-110` : 'bg-white/5 text-white hover:bg-white/10'}`}>
+                <a href="/contact" className={`w-full py-4 rounded-xl font-bold text-center transition-all duration-300 ${plan.highlight ? `${c.badgeBg} text-background hover:brightness-110` : 'bg-white/5 text-white hover:bg-white/10'}`}>
                   Demander un devis
                 </a>
               </div>
             </div>
           </m.div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
