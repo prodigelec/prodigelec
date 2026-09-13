@@ -65,12 +65,12 @@ export default function Navbar() {
             }}
             className="fixed top-0 w-full z-9999 border-b border-white/0 transition-all duration-500"
         >
-            <div className={`container mx-auto px-6 flex items-center justify-between transition-all duration-500 ${isScrolled ? 'bg-black/20 rounded-full border border-white/10 px-8 mx-4 backdrop-blur-md shadow-lg' : ''}`}>
-                <Logo className={`${isScrolled ? 'scale-90' : 'scale-100'} transition-transform duration-500`} />
+            <div className={`container mx-auto px-6 flex items-center justify-between gap-4 2xl:gap-8 transition-all duration-500 ${isScrolled ? 'bg-black/20 rounded-full border border-white/10 px-8 mx-4 backdrop-blur-md shadow-lg' : ''}`}>
+                <Logo variant="desktop" className={`${isScrolled ? 'scale-90' : 'scale-100'} transition-transform duration-500`} />
 
                 {/* gap resserré en dessous de xl : le 7e item (Avis) faisait
                     passer "À Propos" sur deux lignes sur un écran de portable */}
-                <div className="hidden lg:flex items-center gap-2 xl:gap-6">
+                <div className="hidden lg:flex items-center gap-0.5 xl:gap-2 2xl:gap-4">
                     {navItems.map((item, i) => {
                         const active = isItemActive(item);
 
@@ -92,7 +92,7 @@ export default function Navbar() {
                                 <Link
                                     href={item.href}
                                     aria-current={active ? "page" : undefined}
-                                    className={`flex items-center gap-1 whitespace-nowrap text-sm font-semibold transition-all duration-300 relative px-2 xl:px-3 py-2 rounded-lg hover:bg-white/10 ${active ? 'text-white' : 'text-white/80 hover:text-white'}`}
+                                    className={`flex items-center gap-1 whitespace-nowrap text-sm font-semibold transition-all duration-300 relative px-2 xl:px-2.5 py-2 rounded-lg hover:bg-white/10 ${active ? 'text-white' : 'text-white/80 hover:text-white'}`}
                                 >
                                     {item.name}
                                     <span className="absolute inset-0 bg-white/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10" />
@@ -115,15 +115,15 @@ export default function Navbar() {
                         href="tel:0638194752"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center justify-center gap-2 bg-red-800 hover:bg-red-900 text-white h-10 px-5 xl:px-8 rounded-full font-bold text-sm text-center shadow-lg shadow-red-800/20 transition-all whitespace-nowrap"
+                        className="flex items-center justify-center gap-2 bg-red-800 hover:bg-red-900 text-white h-10 px-4 2xl:px-6 rounded-full font-bold text-sm text-center shadow-lg shadow-red-800/20 transition-all whitespace-nowrap"
                     >
                         <PhoneCall className="w-4 h-4 animate-pulse" />
-                        <span className="hidden xl:inline">Dépannage : </span>06 38 19 47 52
+                        <span className="hidden 2xl:inline">Dépannage : </span>06 38 19 47 52
                     </m.a>
 
                     <Link
                         href="/contact#contact-form"
-                        className="hidden xl:flex relative overflow-hidden bg-primary text-background h-10 w-40 rounded-full font-bold text-sm shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all group items-center justify-center whitespace-nowrap"
+                        className="hidden xl:flex relative overflow-hidden bg-primary text-background h-10 w-32 2xl:w-40 rounded-full font-bold text-sm shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all group items-center justify-center whitespace-nowrap"
                     >
                         <span className="relative z-10">DEVIS GRATUIT</span>
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

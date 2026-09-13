@@ -46,7 +46,7 @@ export default function NavDropdown({ item, isActive }) {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-haspopup="true"
-        className={`flex items-center gap-1 whitespace-nowrap text-sm font-semibold transition-all duration-300 relative px-2 xl:px-3 py-2 rounded-lg hover:bg-white/10 ${isActive ? "text-white" : "text-white/80 hover:text-white"}`}
+        className={`flex items-center gap-1 whitespace-nowrap text-sm font-semibold transition-all duration-300 relative px-2 xl:px-2.5 py-2 rounded-lg hover:bg-white/10 ${isActive ? "text-white" : "text-white/80 hover:text-white"}`}
       >
         {item.name}
         <svg
