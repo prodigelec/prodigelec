@@ -22,10 +22,13 @@ export default function FloatingContactButton() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Affiché à partir de lg seulement : entre 768 et 1023 px la barre de
+  // navigation du bas est encore là, et ce bouton se posait par-dessus ses
+  // deux dernières entrées.
   return (
     <AnimatePresence>
       {isVisible && (
-        <div className="fixed bottom-6 right-6 z-9999 hidden md:block">
+        <div className="fixed bottom-6 right-6 z-9999 hidden lg:block">
           <m.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
