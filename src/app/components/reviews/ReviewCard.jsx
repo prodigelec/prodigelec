@@ -59,6 +59,10 @@ export default function ReviewCard({ review, clamp = false }) {
 
       <footer className="relative z-10 mt-auto flex items-center justify-between gap-3 pt-3" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="flex min-w-0 items-center gap-3">
+          {/* L'avatar passe par l'optimiseur plutot que d'etre charge en direct
+              depuis googleusercontent.com : les bloqueurs de contenu filtrent ce
+              domaine et laissaient la bulle sans photo. Servi par le site, il y
+              echappe, et descend de 128 px en PNG a 36 px en AVIF. */}
           {review.profilePhoto ? (
             <Image
               src={review.profilePhoto}
@@ -67,7 +71,7 @@ export default function ReviewCard({ review, clamp = false }) {
               height={36}
               className="h-9 w-9 shrink-0 rounded-full object-cover ring-1"
               style={{ "--tw-ring-color": "rgba(201,162,39,0.4)" }}
-              unoptimized
+              sizes="36px"
             />
           ) : (
             <div
