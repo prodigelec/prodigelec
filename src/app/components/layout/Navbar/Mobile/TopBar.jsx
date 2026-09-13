@@ -74,7 +74,7 @@ export default function MobileTopBar() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setOpen(false)}
-                            className="fixed inset-0 z-[9998] bg-black/60 lg:hidden"
+                            className="fixed inset-0 z-[10000] bg-black/60 lg:hidden"
                         />
                         <m.div
                             id="menu-mobile"
@@ -82,7 +82,7 @@ export default function MobileTopBar() {
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            className="fixed top-0 right-0 h-full w-72 max-w-[85vw] z-[9999] lg:hidden flex flex-col"
+                            className="fixed top-0 right-0 h-full w-72 max-w-[85vw] z-[10001] lg:hidden flex flex-col"
                             style={{ background: "#0b1a2a", borderLeft: "1px solid rgba(255,255,255,0.08)" }}
                         >
                             <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
