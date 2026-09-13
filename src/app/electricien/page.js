@@ -49,7 +49,7 @@ export default function ElectricienHubPage() {
     ],
   };
 
-  // Liste des 41 pages villes : c'est le rôle de cette page hub, donner à
+  // Liste de toutes les pages villes : c'est le rôle de cette page hub, donner à
   // Google un point d'entrée unique vers des pages qui n'étaient jusqu'ici
   // atteignables que par le footer.
   const itemListSchema = {
