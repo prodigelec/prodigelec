@@ -108,7 +108,8 @@ export default function AutomatismesContent() {
         "Déplacement en sus, annoncé avant"
       ],
       highlight: true,
-      tag: "Urgence"
+      tag: "Urgence",
+      variant: "urgence"
     }
   ];
 

@@ -104,7 +104,8 @@ export default function ElectriciteContent() {
         "Devis gratuit si travaux à prévoir"
       ],
       highlight: true,
-      tag: "Urgence"
+      tag: "Urgence",
+      variant: "urgence"
     },
     {
       title: "Mise en Sécurité",
