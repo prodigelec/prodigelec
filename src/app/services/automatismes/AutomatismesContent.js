@@ -99,7 +99,7 @@ export default function AutomatismesContent() {
     },
     {
       title: "Dépannage Urgence",
-      price: "À partir de 150€ TTC",
+      price: "150€ TTC",
       description: "Volet bloqué, portail en panne, moteur défaillant.",
       features: [
         "Volets, portails, portes de garage",
@@ -109,7 +109,8 @@ export default function AutomatismesContent() {
       ],
       highlight: true,
       tag: "Urgence",
-      variant: "urgence"
+      variant: "urgence",
+      cta: "Demander un dépannage"
     }
   ];
 
