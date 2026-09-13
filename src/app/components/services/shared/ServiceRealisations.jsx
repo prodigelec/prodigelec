@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Camera } from "lucide-react";
 import { realisations, categoryColors } from "@/app/data/realisations";
 import RealisationsGrid from "@/app/components/realisations/RealisationsGrid";
 
@@ -27,9 +27,12 @@ export default function ServiceRealisations({ categorie, theme = "electricite", 
       titleClassName="text-xl md:text-2xl font-bold text-white"
       eyebrow="Chantiers réalisés"
       title={
-        <>
-          Mes derniers chantiers en <span style={{ color }}>{label}</span>
-        </>
+        <span className="flex items-center gap-2">
+          <Camera size={20} style={{ color }} className="shrink-0" />
+          <span>
+            Mes derniers chantiers en <span style={{ color }}>{label}</span>
+          </span>
+        </span>
       }
       footer={
         <Link
