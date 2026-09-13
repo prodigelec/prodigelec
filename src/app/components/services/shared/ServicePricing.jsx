@@ -25,7 +25,10 @@ export default function ServicePricing({ title, subtitle, description, prices, t
       decorBgHover: "group-hover:bg-accent/20",
       priceColor: "text-accent",
       priceShadow: "drop-shadow-[0_0_10px_rgba(var(--color-accent-rgb),0.3)]",
-      checkColor: "text-accent" // Assuming we might add checks, though currently not explicitly used in pricing component provided
+      checkColor: "text-accent",
+      // Couleur du texte posé sur l'aplat coloré, badge et bouton : le bleu
+      // nuit se lit mieux que le blanc sur le jaune comme sur l'or.
+      badgeText: "text-background"
     },
     securite: {
       highlightColor: "text-primary",
@@ -37,23 +40,25 @@ export default function ServicePricing({ title, subtitle, description, prices, t
       decorBgHover: "group-hover:bg-primary/20",
       priceColor: "text-primary",
       priceShadow: "drop-shadow-[0_0_10px_rgba(201,162,39,0.3)]",
-      checkColor: "text-primary"
+      checkColor: "text-primary",
+      badgeText: "text-background"
     },
     // Palette d'une carte, pas d'une page : un plan peut la demander par sa clé
     // `variant`. Le dépannage s'en sert pour rester rouge sur les trois pages
     // services, là où il prenait la couleur du thème et changeait de teinte
     // d'une page à l'autre.
     urgence: {
-      highlightColor: "text-red-400",
-      borderColor: "border-red-500/40",
-      shadowColor: "shadow-[0_0_40px_-15px_rgba(239,68,68,0.4)]",
-      badgeBg: "bg-red-500",
-      badgeShadow: "shadow-[0_0_20px_rgba(239,68,68,0.6)]",
-      decorBg: "bg-red-500/10",
-      decorBgHover: "group-hover:bg-red-500/20",
-      priceColor: "text-red-400",
-      priceShadow: "drop-shadow-[0_0_10px_rgba(239,68,68,0.4)]",
-      checkColor: "text-red-400"
+      highlightColor: "text-red-300",
+      borderColor: "border-red-500/25",
+      shadowColor: "shadow-[0_0_40px_-18px_rgba(220,38,38,0.28)]",
+      badgeBg: "bg-red-600",
+      badgeShadow: "shadow-[0_0_16px_rgba(220,38,38,0.35)]",
+      badgeText: "text-white",
+      decorBg: "bg-red-600/8",
+      decorBgHover: "group-hover:bg-red-600/15",
+      priceColor: "text-red-300",
+      priceShadow: "drop-shadow-[0_0_10px_rgba(220,38,38,0.25)]",
+      checkColor: "text-red-300"
     },
     borne: {
       highlightColor: "text-emerald-400",
@@ -65,7 +70,8 @@ export default function ServicePricing({ title, subtitle, description, prices, t
       decorBgHover: "group-hover:bg-emerald-500/20",
       priceColor: "text-emerald-400",
       priceShadow: "drop-shadow-[0_0_10px_rgba(16,185,129,0.4)]",
-      checkColor: "text-emerald-400"
+      checkColor: "text-emerald-400",
+      badgeText: "text-background"
     }
   };
 
@@ -97,7 +103,7 @@ export default function ServicePricing({ title, subtitle, description, prices, t
           >
             {/* Urgence Badge */}
             {plan.tag && (
-              <div className={`absolute -top-[18px] left-1/2 -translate-x-1/2 ${c.badgeBg} text-background font-black px-5 py-2 rounded-full text-xs uppercase tracking-widest ${c.badgeShadow} whitespace-nowrap z-50`}>
+              <div className={`absolute -top-[18px] left-1/2 -translate-x-1/2 ${c.badgeBg} ${c.badgeText} font-black px-5 py-2 rounded-full text-xs uppercase tracking-widest ${c.badgeShadow} whitespace-nowrap z-50`}>
                 {plan.tag}
               </div>
             )}
@@ -142,8 +148,8 @@ export default function ServicePricing({ title, subtitle, description, prices, t
                   ))}
                 </ul>
 
-                <a href="/contact" className={`w-full py-4 rounded-xl font-bold text-center transition-all duration-300 ${plan.highlight ? `${c.badgeBg} text-background hover:brightness-110` : 'bg-white/5 text-white hover:bg-white/10'}`}>
-                  Demander un devis
+                <a href="/contact" className={`w-full py-4 rounded-xl font-bold text-center transition-all duration-300 ${plan.highlight ? `${c.badgeBg} ${c.badgeText} hover:brightness-110` : 'bg-white/5 text-white hover:bg-white/10'}`}>
+                  {plan.cta ?? "Demander un devis"}
                 </a>
               </div>
             </div>

@@ -109,7 +109,8 @@ export default function AutomatismesContent() {
       ],
       highlight: true,
       tag: "Urgence",
-      variant: "urgence"
+      variant: "urgence",
+      cta: "Demander un dépannage"
     }
   ];
 

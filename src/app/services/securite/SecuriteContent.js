@@ -97,7 +97,8 @@ export default function SecuriteContent() {
       ],
       highlight: true,
       tag: "Urgence",
-      variant: "urgence"
+      variant: "urgence",
+      cta: "Demander un dépannage"
     }
   ];
 

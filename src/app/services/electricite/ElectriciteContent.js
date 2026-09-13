@@ -105,7 +105,8 @@ export default function ElectriciteContent() {
       ],
       highlight: true,
       tag: "Urgence",
-      variant: "urgence"
+      variant: "urgence",
+      cta: "Demander un dépannage"
     },
     {
       title: "Mise en Sécurité",
