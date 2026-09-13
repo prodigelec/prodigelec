@@ -87,9 +87,10 @@ export default function SecuriteContent() {
     },
     {
       title: "Dépannage Urgence",
-      price: "À partir de 150€ TTC",
+      price: "150€ TTC",
       description: "Panne ou blocage sur vos équipements de sécurité.",
       features: [
+        "Forfait jusqu'à 2 h sur place",
         "Digicode, visiophone, alarme, caméra",
         "Recherche de panne incluse",
         "Réparation incluse si sans fourniture",
