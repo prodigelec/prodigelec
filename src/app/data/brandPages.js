@@ -588,6 +588,248 @@ export const brandPages = [
       { label: "Borne de recharge véhicule électrique", href: "/services/borne-de-recharge-voiture-electrique" },
     ],
   },
+  {
+    slug: "hager",
+    name: "Hager",
+    category: "Électricité & Appareillage",
+    metaTitle: "Électricien tableau Hager — remplacement, panne | Dreux, Chartres",
+    metaDescription:
+      "Remplacement et mise aux normes de tableau électrique Hager en Eure-et-Loir, Eure et Yvelines : coffret gamma, disjoncteurs MFN, interrupteurs différentiels 30 mA type A et AC, repérage complet. Devis gratuit.",
+    tagline: "Le tableau Hager, du remplacement au repérage",
+    intro:
+      "Hager est l'une des marques que j'ouvre le plus souvent en arrivant devant un tableau, dans les maisons du secteur comme dans les pavillons des années 1990. Le matériel est solide et se trouve encore facilement, ce qui permet souvent de compléter un tableau existant plutôt que de tout déposer. Quand le remplacement s'impose, je repose un coffret complet, réparti par usage et repéré étiquette par étiquette — parce qu'un tableau qu'on ne sait pas lire ne sert à rien le jour où un disjoncteur saute.",
+    interventions: [
+      {
+        title: "Remplacement de tableau complet",
+        description:
+          "Dépose de l'ancien tableau et pose d'un coffret Hager neuf, réparti sur deux à quatre rangées selon le nombre de circuits. Chaque groupe passe sous son propre interrupteur différentiel 30 mA, et l'ensemble est remis en service le jour même.",
+      },
+      {
+        title: "Mise aux normes NF C 15-100",
+        description:
+          "Reprise des protections manquantes : différentiels 30 mA sur tous les départs, type A là où la norme l'exige, calibre du disjoncteur adapté à la section du câble. C'est le point de départ de toute remise en conformité.",
+      },
+      {
+        title: "Création de circuits dédiés",
+        description:
+          "Ajout de circuits sur un tableau existant quand il reste des modules libres : plaque de cuisson, four, lave-vaisselle, borne de recharge ou local annexe. Un appareil par circuit, avec sa propre protection.",
+      },
+      {
+        title: "Repérage et étiquetage",
+        description:
+          "Identification de chaque départ, un circuit après l'autre, puis étiquetage du tableau. Sur une installation reprise au fil des années, c'est souvent ce qui manque le plus — et ce qui fait perdre le plus de temps en cas de panne.",
+      },
+      {
+        title: "Recherche de panne",
+        description:
+          "Disjoncteur qui saute, différentiel qui déclenche sans raison apparente : je sépare les circuits un par un pour isoler le départ en cause, plutôt que de remplacer du matériel au jugé.",
+      },
+    ],
+    gammes: [
+      {
+        name: "gamma",
+        description:
+          "Les coffrets d'habitation de la marque, en rangées de 13 ou 18 modules et de une à quatre rangées. C'est le format que je pose en remplacement : il accepte directement l'appareillage modulaire Hager, sans adaptation.",
+      },
+      {
+        name: "Disjoncteurs MFN",
+        description:
+          "Disjoncteurs modulaires phase + neutre pour les circuits d'habitation, du 2 A au 32 A en courbe C. Le calibre suit la section du câble et l'usage : 20 A pour un four, 32 A pour une plaque de cuisson, 16 A pour les prises.",
+      },
+      {
+        name: "Interrupteurs différentiels CDC et CDA",
+        description:
+          "Les 30 mA qui protègent les personnes. Les CDC sont de type AC, les CDA de type A : ces derniers détectent en plus les défauts à composante continue, ce que la norme impose pour la plaque de cuisson, le lave-linge et la recharge d'un véhicule électrique.",
+      },
+      {
+        name: "Télérupteurs et contacteurs",
+        description:
+          "Commande d'un éclairage depuis plusieurs points, ou pilotage du chauffe-eau en heures creuses. Sur les installations anciennes, le remplacement d'un télérupteur demande parfois de reprendre son câblage pour accepter un modèle récent.",
+      },
+    ],
+    pannes: [
+      {
+        symptome: "Un disjoncteur saute dès qu'on branche un appareil",
+        cause:
+          "Soit le circuit est surchargé parce que trop d'appareils partagent le même départ, soit l'appareil lui-même est en défaut. Le test se fait circuit par circuit : c'est rapide et cela évite de remplacer un disjoncteur qui n'a rien.",
+      },
+      {
+        symptome: "L'interrupteur différentiel déclenche sans raison apparente",
+        cause:
+          "Un défaut d'isolement quelque part sur le groupe, souvent dans un appareil de lavage ou un circuit extérieur qui prend l'humidité. Il faut isoler les départs un par un pour trouver lequel fuit.",
+      },
+      {
+        symptome: "Le tableau n'a plus d'étiquettes lisibles",
+        cause:
+          "Rien de dangereux en soi, mais plus personne ne sait quoi couper en cas d'urgence. Le repérage se refait circuit par circuit, puis le tableau est étiqueté pour de bon.",
+      },
+      {
+        symptome: "Plus une seule place libre dans le coffret",
+        cause:
+          "Un tableau saturé interdit le moindre ajout de circuit. Selon la configuration, on ajoute une rangée, on pose un coffret annexe, ou on remplace l'ensemble si les protections ne sont plus aux normes.",
+      },
+      {
+        symptome: "Aucun différentiel de type A dans le tableau",
+        cause:
+          "Installation antérieure à l'obligation : la plaque de cuisson et le lave-linge se retrouvent protégés par du type AC, qui ne détecte pas les défauts à composante continue. C'est un point à reprendre lors d'une mise aux normes.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Faut-il remplacer un tableau Hager qui fonctionne encore ?",
+        answer:
+          "Pas forcément. Un tableau Hager en bon état, avec des différentiels 30 mA sur tous les départs et de la place disponible, se complète très bien. Le remplacement se justifie quand les protections manquent, quand le coffret est saturé, ou quand l'installation n'a pas de terre sur une partie du logement. Je vous le dis après avoir ouvert le tableau, pas avant.",
+      },
+      {
+        question: "Type A ou type AC, quelle différence concrète ?",
+        answer:
+          "Les deux coupent en cas de fuite de courant, mais le type A détecte en plus les défauts à composante continue, que produisent les électroniques modernes. La norme NF C 15-100 impose au moins un différentiel de type A pour la plaque de cuisson et le lave-linge, et un autre pour une borne de recharge de véhicule électrique. Chez Hager, ce sont les références CDA, quand les CDC sont de type AC.",
+      },
+      {
+        question: "Combien de temps dure un remplacement de tableau ?",
+        answer:
+          "Une journée pour un tableau seul, dans une installation dont les circuits sont sains et identifiables. Cela s'allonge dès qu'il faut reprendre des départs, monter une terre ou créer des circuits : le chantier de Faverolles, tableau complet plus toute l'alimentation de la cuisine reprise circuit par circuit, a demandé plusieurs jours. Le courant est rétabli chaque soir.",
+      },
+      {
+        question: "Peut-on mélanger du Hager avec une autre marque dans le tableau ?",
+        answer:
+          "Les disjoncteurs modulaires s'installent sur n'importe quel rail, mais les peignes d'alimentation, eux, sont propres à chaque marque : c'est là que le mélange coince, et c'est la raison pour laquelle je reste sur la marque du coffret quand je complète un tableau existant.",
+      },
+      {
+        question: "Mon tableau n'est pas repéré, pouvez-vous le faire seul ?",
+        answer:
+          "Oui, et c'est une intervention courte qui change la vie le jour d'une panne. Je coupe les départs un par un pour identifier ce que chacun alimente, puis j'étiquette l'ensemble du tableau. Cela se fait très bien lors d'un passage pour un autre motif.",
+      },
+      {
+        question: "Intervenez-vous sur les tableaux Hager autour de Dreux et Nogent-le-Roi ?",
+        answer:
+          "Oui, j'interviens sur les tableaux électriques à Dreux, Anet, Nogent-le-Roi, Houdan, Faverolles, Broué, Nonancourt et dans tout le secteur entre l'Eure-et-Loir, l'Eure et les Yvelines. J'ai notamment remplacé un tableau Hager complet à Faverolles, chantier visible en photo dans mes réalisations.",
+      },
+    ],
+    realisationSlugs: ["tableau-electrique-cuisine-faverolles"],
+    services: [{ label: "Électricité Générale", href: "/services/electricite" }],
+  },
+  {
+    slug: "ezviz",
+    name: "EZVIZ",
+    category: "Vidéophonie & Contrôle d'accès",
+    metaTitle: "Installateur visiophone EZVIZ — TP9 Pro, HP7 | Dreux, Houdan",
+    metaDescription:
+      "Installation et dépannage de visiophone connecté EZVIZ en Eure-et-Loir, Eure et Yvelines : platine de rue TP9 Pro et HP7, moniteur intérieur, ouverture par code, badge NFC et application. Devis gratuit.",
+    tagline: "Le visiophone connecté, posé et paramétré",
+    intro:
+      "EZVIZ s'est installé dans les maisons par la porte du grand public : du matériel qu'on trouve facilement, à un prix contenu, avec une application qui prévient sur le téléphone même quand personne n'est là. Reste que poser une platine de rue, la raccorder à une gâche ou à un portail et paramétrer l'ensemble ne s'improvise pas — c'est la partie sur laquelle on m'appelle, que le matériel vienne de moi ou que le client l'ait acheté lui-même.",
+    interventions: [
+      {
+        title: "Remplacement d'un visiophone hors service",
+        description:
+          "Dépose de l'ancienne platine, adaptation de la réservation dans le mur ou du support existant, puis pose de la platine EZVIZ. La filerie en place est réutilisée quand elle le permet, ce qui évite de rouvrir une saignée.",
+      },
+      {
+        title: "Pose de la platine et du moniteur",
+        description:
+          "Fixation de la platine de rue à bonne hauteur, passage de la liaison jusqu'au moniteur intérieur et mise en service. La hauteur de la caméra se choisit sur place : c'est elle qui détermine ce qu'on voit du visiteur.",
+      },
+      {
+        title: "Commande de gâche ou de portail",
+        description:
+          "Raccordement de la sortie du visiophone sur une gâche électrique, une serrure motorisée ou l'armoire de commande d'un portail, pour ouvrir depuis le moniteur ou depuis le téléphone.",
+      },
+      {
+        title: "Paramétrage de l'application",
+        description:
+          "Connexion au réseau, association du matériel au compte EZVIZ, réglage des notifications et de la détection. C'est ce qui fait la différence entre un visiophone qui prévient utilement et un qui sonne pour chaque passage dans la rue.",
+      },
+      {
+        title: "Codes, badges et accès",
+        description:
+          "Création des codes d'accès, enregistrement des badges et des smartphones en NFC, remise en main du fonctionnement. Chaque membre du foyer repart en sachant ouvrir.",
+      },
+    ],
+    gammes: [
+      {
+        name: "TP9 Pro",
+        description:
+          "Le haut de la gamme : caméra 4K, moniteur tactile de 8 pouces à l'intérieur, boîtier métallique. L'ouverture se fait au choix par code sur le clavier, par badge ou smartphone en NFC, depuis l'écran ou depuis l'application. C'est le modèle que j'ai posé à La Queue-les-Yvelines.",
+      },
+      {
+        name: "HP7",
+        description:
+          "Le modèle le plus répandu : caméra 2K grand angle, moniteur tactile de 7 pouces, badges RFID fournis. Il se raccorde en deux fils et accepte aussi les installations en quatre fils, ce qui facilite le remplacement d'un visiophone existant.",
+      },
+      {
+        name: "Sonnettes vidéo",
+        description:
+          "Format réduit pour une porte d'entrée, sans moniteur intérieur : tout passe par le téléphone. La solution la plus simple quand il n'y a pas de liaison filaire jusqu'à l'intérieur.",
+      },
+      {
+        name: "Caméras extérieures",
+        description:
+          "Caméras de surveillance de la même marque, pilotées depuis la même application que le visiophone. Cohérent quand on veut couvrir l'allée ou la cour en plus de l'entrée.",
+      },
+    ],
+    pannes: [
+      {
+        symptome: "Le moniteur sonne mais le téléphone ne reçoit rien",
+        cause:
+          "La liaison entre la platine et le moniteur est filaire et fonctionne donc toujours ; ce sont les notifications qui passent par le réseau. Un changement de box ou de mot de passe wifi suffit à couper l'application sans rien casser d'autre.",
+      },
+      {
+        symptome: "La gâche ne s'ouvre plus depuis le visiophone",
+        cause:
+          "Soit la commande d'ouverture n'est plus raccordée ou mal paramétrée, soit c'est la gâche elle-même qui a lâché. Les deux se distinguent en quelques minutes sur place.",
+      },
+      {
+        symptome: "Un badge ne fonctionne plus",
+        cause:
+          "Badge désactivé lors d'une remise à zéro, ou simplement jamais réenregistré après un changement de platine. Le réenregistrement se fait sur le matériel.",
+      },
+      {
+        symptome: "Image noire ou visiteur méconnaissable",
+        cause:
+          "Le plus souvent une question d'exposition : platine face au soleil couchant, ou éclairage d'entrée dans l'axe de l'objectif. Cela se corrige par l'orientation et les réglages, avant d'envisager un remplacement.",
+      },
+      {
+        symptome: "Le visiophone est hors service depuis des mois",
+        cause:
+          "Situation fréquente : on s'habitue à faire sans, en attendant. Une sonnette sans fil dépanne le temps de choisir, puis le remplacement se prépare tranquillement — c'est exactement le chemin qu'a suivi le chantier de La Queue-les-Yvelines.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Peut-on remplacer un ancien visiophone par un EZVIZ sans refaire les câbles ?",
+        answer:
+          "Souvent oui. La gamme se raccorde en deux fils et accepte les installations en quatre fils, ce qui couvre la majorité des visiophones à remplacer. Je vérifie la filerie en place avant de commander quoi que ce soit : c'est ce qui décide du modèle, et cela évite de rouvrir le mur.",
+      },
+      {
+        question: "Faut-il une connexion internet pour que le visiophone fonctionne ?",
+        answer:
+          "Pas pour l'essentiel. La platine sonne au moniteur intérieur par sa liaison filaire, et l'ouverture depuis l'écran fonctionne même box éteinte. Le réseau sert aux fonctions connectées : notification sur le téléphone, vidéo à distance, ouverture depuis l'extérieur du domicile.",
+      },
+      {
+        question: "Le visiophone peut-il ouvrir le portail et la porte ?",
+        answer:
+          "Oui, à condition que les deux commandes soient accessibles depuis la platine. Le plus courant chez les particuliers reste une seule ouverture — gâche de portillon ou portail motorisé. Je regarde ce qui existe déjà avant de définir le raccordement.",
+      },
+      {
+        question: "Puis-je acheter le matériel moi-même ?",
+        answer:
+          "Sans problème, c'est même une demande fréquente et je pose régulièrement du matériel fourni par le client. Un conseil avant l'achat évite toutefois les mauvaises surprises sur la compatibilité avec la filerie existante — un appel avant la commande fait gagner du temps aux deux.",
+      },
+      {
+        question: "Combien de temps prend l'installation d'un visiophone ?",
+        answer:
+          "Une demi-journée dans le cas courant : dépose de l'ancien, pose de la platine et du moniteur, raccordement, paramétrage de l'application et remise en main. Cela s'allonge s'il faut tirer une liaison neuve ou reprendre la maçonnerie autour de la platine.",
+      },
+      {
+        question: "Intervenez-vous sur les visiophones EZVIZ autour de Houdan et Montfort-l'Amaury ?",
+        answer:
+          "Oui, j'interviens à Houdan, La Queue-les-Yvelines, Montfort-l'Amaury, Garancières, Anet, Dreux et dans tout le secteur entre l'Eure-et-Loir, l'Eure et les Yvelines. J'ai notamment remplacé un visiophone hors service par un EZVIZ TP9 Pro à La Queue-les-Yvelines, chantier visible en photos dans mes réalisations.",
+      },
+    ],
+    realisationSlugs: ["visiophone-ezviz-tp9-pro-la-queue-yvelines"],
+    services: [{ label: "Sécurité Électronique", href: "/services/securite" }],
+  },
 ];
 
 export function getBrandPageBySlug(slug) {
