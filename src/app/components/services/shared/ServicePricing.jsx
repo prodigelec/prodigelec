@@ -49,15 +49,15 @@ export default function ServicePricing({ title, subtitle, description, prices, t
     // d'une page à l'autre.
     urgence: {
       highlightColor: "text-red-300",
-      borderColor: "border-red-500/25",
-      shadowColor: "shadow-[0_0_40px_-18px_rgba(220,38,38,0.28)]",
-      badgeBg: "bg-red-600",
-      badgeShadow: "shadow-[0_0_16px_rgba(220,38,38,0.35)]",
+      borderColor: "border-red-700/20",
+      shadowColor: "shadow-[0_0_40px_-22px_rgba(153,27,27,0.2)]",
+      badgeBg: "bg-red-800",
+      badgeShadow: "shadow-[0_0_10px_rgba(153,27,27,0.2)]",
       badgeText: "text-white",
-      decorBg: "bg-red-600/8",
-      decorBgHover: "group-hover:bg-red-600/15",
+      decorBg: "bg-red-800/6",
+      decorBgHover: "group-hover:bg-red-800/10",
       priceColor: "text-red-300",
-      priceShadow: "drop-shadow-[0_0_10px_rgba(220,38,38,0.25)]",
+      priceShadow: "drop-shadow-[0_0_8px_rgba(153,27,27,0.15)]",
       checkColor: "text-red-300"
     },
     borne: {
