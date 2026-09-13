@@ -95,7 +95,7 @@ export default function ElectriciteContent() {
   const pricingPlans = [
     {
       title: "Dépannage Électrique",
-      price: "À partir de 120€ TTC",
+      price: "À partir de 150€ TTC",
       description: "Recherche de panne et réparation rapide sur votre installation.",
       features: [
         "Diagnostic complet inclus",
