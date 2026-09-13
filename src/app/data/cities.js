@@ -180,7 +180,7 @@ export const cities = [
     nearby: ["Bû", "Marchezais", "Havelu", "Anet", "Houdan", "Dreux"],
     photo: "/img_carousel_hero_home/tableau-electrique.optimized.jpg",
     photoAlt: "Tableau électrique installé par PRODIGELEC à Broué",
-    description: "Broué est ma commune de résidence et d'activité — je suis votre électricien de proximité, disponible immédiatement pour tout dépannage, installation ou devis sans frais de déplacement.",
+    description: "Broué est ma commune de résidence et d'activité — je suis votre électricien de proximité, disponible immédiatement pour tout dépannage, installation ou devis — le déplacement pour établir le devis est gratuit.",
     localContext: "Village rural d'Eure-et-Loir entre Dreux et Houdan — clientèle de particuliers et agriculteurs avec des besoins en électricité générale, sécurité et motorisation.",
   },
   {
@@ -194,7 +194,7 @@ export const cities = [
     nearby: ["Broué", "Marchezais", "Havelu", "Anet", "Houdan", "Dreux"],
     photo: "/img_carousel_electric_page/reperage-disjoncteurs.jpg",
     photoAlt: "Dépannage électrique PRODIGELEC à Bû — repérage disjoncteurs",
-    description: "Bû est un village d'Eure-et-Loir à 5 km de ma base à Broué — je suis votre électricien le plus proche. Dépannage électrique urgent, mise aux normes NF C 15-100, digicode, alarme ou motorisation : j'interviens le jour même dans la plupart des cas, avec déplacement gratuit.",
+    description: "Bû est un village d'Eure-et-Loir à 5 km de ma base à Broué — je suis votre électricien le plus proche. Dépannage électrique urgent, mise aux normes NF C 15-100, digicode, alarme ou motorisation : j'interviens le jour même dans la plupart des cas, avec déplacement gratuit pour le devis.",
     localContext: "Village rural du 28410, à deux pas de Broué — maisons individuelles et propriétés agricoles avec des besoins en électricité générale et en sécurisation des accès.",
   },
   {
@@ -208,7 +208,7 @@ export const cities = [
     nearby: ["Broué", "Bû", "Marchezais", "Houdan", "Anet"],
     photo: "/img_carousel_securite_page/videophonie_digicode.jpg",
     photoAlt: "Installation vidéophonie et digicode PRODIGELEC à Boutigny-Prouais",
-    description: "Boutigny-Prouais est ma commune voisine immédiate — à seulement 5 km de Broué, j'interviens en moins de 10 minutes pour tout dépannage électrique ou installation de sécurité. Maisons de bourg et pavillons sont au cœur de mes interventions quotidiennes, avec déplacement gratuit et devis sans engagement.",
+    description: "Boutigny-Prouais est ma commune voisine immédiate — à seulement 5 km de Broué, j'interviens en moins de 10 minutes pour tout dépannage électrique ou installation de sécurité. Maisons de bourg et pavillons sont au cœur de mes interventions quotidiennes, avec déplacement gratuit pour le devis, sans engagement.",
     localContext: "Commune rurale du 28410 voisine directe de Broué — maisons de bourg, lotissements pavillonnaires et petites exploitations agricoles avec des besoins en mise aux normes NF C 15-100, sécurisation des accès (digicode, vidéophonie) et automatisation.",
   },
   {
@@ -237,7 +237,7 @@ export const cities = [
     nearby: ["Anet", "Bû", "Broué", "Dreux"],
     photo: "/img_carousel_hero_home/Volet_Battant.avif",
     photoAlt: "Motorisation de volets PRODIGELEC à Abondant",
-    description: "Abondant est une commune d'Eure-et-Loir que je dessers régulièrement depuis Broué. J'y interviens pour des installations électriques complètes, des motorisations de portails et volets, ainsi que des systèmes de sécurité dans les maisons de bourg et propriétés rurales. Déplacement gratuit et devis sans engagement.",
+    description: "Abondant est une commune d'Eure-et-Loir que je dessers régulièrement depuis Broué. J'y interviens pour des installations électriques complètes, des motorisations de portails et volets, ainsi que des systèmes de sécurité dans les maisons de bourg et propriétés rurales. Déplacement gratuit pour le devis, sans engagement.",
     localContext: "Village rural d'Eure-et-Loir entre Anet et Bû — clientèle de particuliers et de petites exploitations avec une forte demande en motorisation de portails Somfy, mise aux normes électriques et automatisation domotique.",
   },
   {
@@ -251,7 +251,7 @@ export const cities = [
     nearby: ["Dreux", "Vert-en-Drouais", "Saint-Rémy-sur-Avre", "Broué"],
     photo: "/img_carousel_hero_home/camera.jpg",
     photoAlt: "Pose de caméras de vidéosurveillance PRODIGELEC à Luray",
-    description: "Luray est une commune d'Eure-et-Loir limitrophe de Dreux, que je dessers fréquemment pour des dépannages électriques, des installations de vidéosurveillance et des systèmes d'alarme. Quartiers pavillonnaires et résidences récentes — j'interviens du lundi au samedi avec déplacement gratuit depuis Broué.",
+    description: "Luray est une commune d'Eure-et-Loir limitrophe de Dreux, que je dessers fréquemment pour des dépannages électriques, des installations de vidéosurveillance et des systèmes d'alarme. Quartiers pavillonnaires et résidences récentes — j'interviens du lundi au samedi, avec déplacement gratuit depuis Broué pour établir le devis.",
     localContext: "Commune en banlieue immédiate de Dreux — quartiers pavillonnaires modernes et résidences récentes avec une forte demande en vidéosurveillance, alarme intrusion, motorisation de portails et domotique connectée.",
   },
   {
@@ -265,7 +265,7 @@ export const cities = [
     nearby: ["Broué", "Dreux", "Anet", "Nonancourt"],
     photo: "/img_carousel_hero_home/Volet_Battant.avif",
     photoAlt: "Motorisation de volets battants par PRODIGELEC à Vert-en-Drouais",
-    description: "Vert-en-Drouais est un village proche de Dreux et de Broué. J'interviens rapidement pour tout dépannage électrique, installation de sécurité ou motorisation. Déplacement gratuit, devis sans engagement, disponible du lundi au samedi.",
+    description: "Vert-en-Drouais est un village proche de Dreux et de Broué. J'interviens rapidement pour tout dépannage électrique, installation de sécurité ou motorisation. Déplacement gratuit pour le devis, sans engagement, disponible du lundi au samedi.",
     localContext: "Village rural du Drouaisien — maisons de bourg et propriétés agricoles avec des besoins en électricité générale et en automatisation.",
   },
   {
@@ -293,7 +293,7 @@ export const cities = [
     nearby: ["Dreux", "Broué", "Anet", "Vert-en-Drouais"],
     photo: "/img_carousel_hero_home/digicode.png",
     photoAlt: "Installation de digicode PRODIGELEC à Charpont",
-    description: "Charpont est un village d'Eure-et-Loir proche de Dreux et de Broué. J'interviens pour des dépannages électriques, des installations de sécurité et des motorisations. Déplacement gratuit, disponible du lundi au samedi.",
+    description: "Charpont est un village d'Eure-et-Loir proche de Dreux et de Broué. J'interviens pour des dépannages électriques, des installations de sécurité et des motorisations. Déplacement gratuit pour le devis, disponible du lundi au samedi.",
     localContext: "Village du Drouaisien — maisons rurales et pavillons avec des besoins en électricité générale et en sécurisation des entrées.",
   },
   {
@@ -321,7 +321,7 @@ export const cities = [
     nearby: ["Dreux", "Anet", "Broué", "Nonancourt"],
     photo: "/img_carousel_hero_home/videosurveillance.avif",
     photoAlt: "Installation vidéosurveillance par PRODIGELEC à Marville-Moutiers-Brûlé",
-    description: "Marville-Moutiers-Brûlé est un village proche de Dreux et de Broué où j'interviens pour des travaux d'électricité, de sécurité et d'automatismes. Déplacement gratuit, devis sans engagement et intervention rapide.",
+    description: "Marville-Moutiers-Brûlé est un village proche de Dreux et de Broué où j'interviens pour des travaux d'électricité, de sécurité et d'automatismes. Déplacement gratuit pour le devis, sans engagement, et intervention rapide.",
     localContext: "Village rural d'Eure-et-Loir — maisons individuelles et propriétés agricoles avec des besoins en électricité générale et motorisation.",
   },
   {
@@ -335,7 +335,7 @@ export const cities = [
     nearby: ["Ivry-la-Bataille", "Anet", "Nonancourt", "Broué"],
     photo: "/img_carousel_securite_page/domotique.jpg",
     photoAlt: "Installation domotique PRODIGELEC à Ézy-sur-Eure",
-    description: "Ézy-sur-Eure est un village de l'Eure en bord de rivière, proche d'Ivry-la-Bataille. J'interviens depuis Broué pour des dépannages, mises aux normes et installations de sécurité — déplacement gratuit, devis sans engagement.",
+    description: "Ézy-sur-Eure est un village de l'Eure en bord de rivière, proche d'Ivry-la-Bataille. J'interviens depuis Broué pour des dépannages, mises aux normes et installations de sécurité — déplacement gratuit pour le devis, sans engagement.",
     localContext: "Village de la vallée de l'Eure — maisons rurales et résidences secondaires avec des besoins en électricité générale et en sécurisation.",
   },
   {
@@ -377,7 +377,7 @@ export const cities = [
     nearby: ["Nonancourt", "Ivry-la-Bataille", "Anet", "Broué"],
     photo: "/img_carousel_electric_page/eclairage-led.jpg",
     photoAlt: "Mise aux normes électrique PRODIGELEC à Marcilly-sur-Eure",
-    description: "Marcilly-sur-Eure est un village de l'Eure que je dessers facilement depuis Broué. Électricité, sécurité et automatismes — je suis disponible du lundi au samedi pour tout type d'intervention, avec devis gratuit et sans frais de déplacement.",
+    description: "Marcilly-sur-Eure est un village de l'Eure que je dessers facilement depuis Broué. Électricité, sécurité et automatismes — je suis disponible du lundi au samedi pour tout type d'intervention, et le déplacement pour établir le devis est gratuit.",
     localContext: "Village de l'Eure en bord de rivière — propriétés rurales et maisons individuelles avec des besoins en mise aux normes et en installation de systèmes de sécurité.",
   },
   {
@@ -391,7 +391,7 @@ export const cities = [
     nearby: ["Dreux", "Nonancourt", "Anet", "Broué"],
     photo: "/img_carousel_hero_home/videophone-platine.jpg",
     photoAlt: "Pose vidéophone PRODIGELEC à Saint-Rémy-sur-Avre",
-    description: "Saint-Rémy-sur-Avre est une commune d'Eure-et-Loir proche de la frontière normande. J'y interviens pour des dépannages électriques, des mises aux normes et des installations de sécurité. Déplacement gratuit depuis Broué.",
+    description: "Saint-Rémy-sur-Avre est une commune d'Eure-et-Loir proche de la frontière normande. J'y interviens pour des dépannages électriques, des mises aux normes et des installations de sécurité. Déplacement gratuit depuis Broué pour le devis.",
     localContext: "Commune à la frontière Eure / Eure-et-Loir — maisons de bourg et zones pavillonnaires avec des besoins en électricité générale et en contrôle d'accès.",
   },
   {
@@ -433,7 +433,7 @@ export const cities = [
     nearby: ["Brezolles", "Dreux", "Broué"],
     photo: "/img_carousel_hero_home/camera.jpg",
     photoAlt: "Pose caméra de vidéosurveillance PRODIGELEC à Happonvilliers",
-    description: "Happonvilliers est un village rural d'Eure-et-Loir. J'y interviens pour des travaux d'électricité générale, de sécurité électronique et de motorisation. Déplacement gratuit et devis sans engagement depuis Broué.",
+    description: "Happonvilliers est un village rural d'Eure-et-Loir. J'y interviens pour des travaux d'électricité générale, de sécurité électronique et de motorisation. Déplacement gratuit depuis Broué pour le devis, sans engagement.",
     localContext: "Petit village rural du Perche drouaisien — propriétés agricoles et maisons de caractère avec des besoins en électricité générale et en sécurité.",
   },
   {
@@ -478,7 +478,7 @@ export const cities = [
     nearby: ["Broué", "Havelu", "Bû", "Anet"],
     photo: "/tableau-electrique-marchezais.jpg",
     photoAlt: "Tableau électrique et prises étanches installés par PRODIGELEC dans un garage à Marchezais",
-    description: "Marchezais est ma commune voisine immédiate — 3 km depuis Broué, j'y suis en quelques minutes. J'y ai récemment câblé le tableau électrique et l'appareillage étanche d'un garage, et remis en service une motorisation de portail FAAC désynchronisée. Dépannage, mise aux normes ou automatisme : déplacement gratuit et devis sans engagement.",
+    description: "Marchezais est ma commune voisine immédiate — 3 km depuis Broué, j'y suis en quelques minutes. J'y ai récemment câblé le tableau électrique et l'appareillage étanche d'un garage, et remis en service une motorisation de portail FAAC désynchronisée. Dépannage, mise aux normes ou automatisme : déplacement gratuit pour le devis, sans engagement.",
     localContext: "Village du 28410 collé à Broué — maisons de bourg, garages et dépendances à équiper, avec des besoins en tableau électrique, prises étanches et motorisation de portail.",
   },
   {
@@ -493,7 +493,7 @@ export const cities = [
     nearby: ["Broué", "Marchezais", "Bû", "Houdan"],
     photo: "/installation-chauffe-eau-ariston-havelu-yvelines.jpg",
     photoAlt: "Chauffe-eau électrique Ariston installé par PRODIGELEC à Havelu",
-    description: "Havelu partage le code postal de Broué (28410) et se trouve à 6 km de chez moi — je suis l'électricien le plus proche de la commune. J'y ai notamment posé et raccordé un chauffe-eau électrique Ariston en cave, dans un espace contraint. Dépannage le jour même dans la plupart des cas, déplacement gratuit.",
+    description: "Havelu partage le code postal de Broué (28410) et se trouve à 6 km de chez moi — je suis l'électricien le plus proche de la commune. J'y ai notamment posé et raccordé un chauffe-eau électrique Ariston en cave, dans un espace contraint. Dépannage le jour même dans la plupart des cas, déplacement gratuit pour le devis.",
     localContext: "Petit village du 28410 entre Broué et Anet — maisons anciennes et caves à équiper, avec des besoins en chauffe-eau, mise aux normes NF C 15-100 et sécurisation des accès.",
   },
   {

@@ -7,7 +7,7 @@ export function buildCityFaqs(city) {
     {
       question: `Proposez-vous des devis gratuits à ${city.name} ?`,
       answer: city.freeZone
-        ? `Oui, le déplacement est gratuit à ${city.name}. Nous établissons votre devis sans frais et sans engagement.`
+        ? `Oui, le déplacement est gratuit à ${city.name} pour établir votre devis, sans engagement. Sur un dépannage, des frais de déplacement s'ajoutent au forfait selon la distance.`
         : `Oui, nous établissons des devis gratuits pour toute intervention à ${city.name}. Contactez-nous pour convenir d'un rendez-vous.`,
     },
     {
