@@ -7,6 +7,7 @@ import {
   formatRealisationDate,
 } from "@/app/data/realisations";
 import { getCityByName } from "@/app/data/cities";
+import { getGoogleReviews } from "@/lib/reviews";
 import RealisationDetail from "./RealisationDetail";
 
 const BASE_URL = "https://www.prodigelec.fr";
@@ -52,6 +53,15 @@ export default async function RealisationPage({ params }) {
   const url = `${BASE_URL}/realisations/${r.slug}`;
   const city = getCityByName(r.ville);
   const related = getRelatedRealisations(r);
+
+  // Quand le client d'un chantier a laissé un avis Google, il est affiché sur
+  // la page de ce chantier : c'est le même témoignage que sur /avis, mais
+  // rattaché au travail dont il parle. Il n'est pas repris dans le JSON-LD —
+  // un balisage d'avis sur ses propres pages est un signal que Google traite
+  // avec méfiance, et le site le déclare déjà une fois sur la page Avis.
+  const avis = r.avisAuteur
+    ? (await getGoogleReviews()).reviews.find((rv) => rv.author === r.avisAuteur) ?? null
+    : null;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -104,6 +114,7 @@ export default async function RealisationPage({ params }) {
         citySlug={city?.slug ?? null}
         related={related}
         dateLabel={formatRealisationDate(r.date)}
+        avis={avis}
       />
     </>
   );
