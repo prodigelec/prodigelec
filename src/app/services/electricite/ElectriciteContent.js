@@ -8,6 +8,7 @@ import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
 import ServiceCityLinks from "../../components/services/shared/ServiceCityLinks";
+import ServiceRealisations from "../../components/services/shared/ServiceRealisations";
 
 // Icons
 import { FcFlashOn } from "react-icons/fc";
@@ -244,6 +245,8 @@ export default function ElectriciteContent() {
           theme="electricite"
         />
         
+        <ServiceRealisations categorie="electricite" theme="electricite" />
+
         <ServiceCityLinks theme="electricite" />
 
         <ServiceCTA

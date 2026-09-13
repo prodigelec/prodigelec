@@ -579,7 +579,10 @@ export const brandPages = [
           "Oui, j'interviens en Eure-et-Loir, dans l'Eure et dans les Yvelines : Dreux, Chartres, Anet, Nogent-le-Roi, Houdan, Montfort-l'Amaury et tout le secteur dans un rayon de 30 km autour de Broué. J'ai notamment remplacé un tableau complet et créé la terre à l'étage d'une maison à Thoiry, chantier visible en photos dans mes réalisations.",
       },
     ],
-    realisationSlugs: ["tableau-electrique-mise-aux-normes-thoiry"],
+    realisationSlugs: [
+      "tableau-electrique-mise-aux-normes-thoiry",
+      "prises-boitiers-etanches-garage-thoiry",
+    ],
     services: [
       { label: "Électricité Générale", href: "/services/electricite" },
       { label: "Borne de recharge véhicule électrique", href: "/services/borne-de-recharge-voiture-electrique" },

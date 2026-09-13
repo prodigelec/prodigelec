@@ -8,6 +8,7 @@ import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
 import ServiceCityLinks from "../../components/services/shared/ServiceCityLinks";
+import ServiceRealisations from "../../components/services/shared/ServiceRealisations";
 
 import { Cctv, ShieldAlert, Fingerprint, Video, Bell, Camera } from "lucide-react";
 
@@ -199,6 +200,8 @@ export default function SecuriteContent() {
           faqs={faqItems}
           theme="securite"
         />
+
+        <ServiceRealisations categorie="securite" theme="securite" />
 
         <ServiceCityLinks theme="securite" />
 

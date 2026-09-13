@@ -8,6 +8,7 @@ import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
 import ServiceCityLinks from "../../components/services/shared/ServiceCityLinks";
+import ServiceRealisations from "../../components/services/shared/ServiceRealisations";
 
 import { Blinds, Wrench, Smartphone, Settings2, DoorOpen } from "lucide-react";
 
@@ -211,6 +212,8 @@ export default function AutomatismesContent() {
           faqs={faqItems}
           theme="securite"
         />
+
+        <ServiceRealisations categorie="automatismes" theme="securite" />
 
         <ServiceCityLinks theme="securite" />
 
