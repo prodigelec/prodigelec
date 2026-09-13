@@ -86,7 +86,7 @@ export default function MobileTopBar() {
                             <div className="px-4 pb-8 pt-4 flex flex-col gap-3 border-t border-white/10">
                                 <a
                                     href="tel:0638194752"
-                                    className="flex items-center justify-center gap-2 bg-rose-600 text-white h-11 rounded-full font-bold text-sm"
+                                    className="flex items-center justify-center gap-2 bg-red-800 text-white h-11 rounded-full font-bold text-sm"
                                 >
                                     <PhoneCall size={16} className="animate-pulse" />
                                     06 38 19 47 52
