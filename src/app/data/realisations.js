@@ -226,47 +226,16 @@ const realisationsData = [
     ],
   },
   {
-
-    slug: "prises-boitiers-etanches-garage-thoiry",
-    titre: "Remplacement de prises et boîtiers étanches dans un garage",
-    description: "L'appareillage en saillie du garage avait fait son temps : trois boîtiers blancs jaunis par les années, alimentés par une gaine apparente le long du mur en parpaing. Dépose des anciens boîtiers et pose de boîtiers étanches Legrand Plexo aux mêmes emplacements, repris sur l'alimentation existante sans modifier le cheminement. C'est l'appareillage qui convient à ce type de local : un garage n'est ni chauffé ni à l'abri de la poussière et de l'humidité, conditions dans lesquelles du matériel d'intérieur vieillit vite.",
-    ville: "Thoiry",
-    departement: "Yvelines",
-    departementCode: "78",
+    slug: "tableau-electrique-cuisine-faverolles",
+    titre: "Remplacement du tableau électrique et mise aux normes de la cuisine",
+    description: "Remplacement complet du tableau électrique et reprise de toute l'alimentation de la cuisine. Le nouveau tableau Hager occupe quatre rangées, chacune sous son propre interrupteur différentiel 30 mA : étage, éclairages, cuisine et sous-sol, plus un différentiel dédié aux volets roulants. La cuisine a été remise aux normes NF C 15-100 circuit par circuit — plaque de cuisson en 32 A, four, lave-vaisselle, micro-ondes, réfrigérateur et prises du plan de travail, chacun sur sa propre protection, derrière un différentiel de type A comme l'exige la norme pour ces appareils. Le sous-sol a suivi la même logique : adoucisseur, chaudière, lave-linge, sèche-linge et congélateur séparés les uns des autres. Tout le tableau est repéré, étiquette par étiquette et numéro par numéro : le jour où un disjoncteur saute, on sait lequel regarder sans ouvrir quoi que ce soit.",
+    ville: "Faverolles",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
     categorie: "electricite",
-    date: "2026-08-22",
-    image: "/prises-boitiers-etanches-garage-thoiry.jpg",
-    imageAlt: "Boîtiers étanches Legrand Plexo neufs posés en saillie sur le mur en parpaing d'un garage à Thoiry, dans les Yvelines",
-    photos: [
-      {
-        src: "/prises-boitiers-etanches-garage-thoiry-avant.jpg",
-        alt: "Anciens boîtiers électriques en saillie jaunis sur le mur en parpaing d'un garage, avant remplacement à Thoiry, Yvelines",
-        legende: "Avant l'intervention : trois boîtiers en saillie jaunis, sur la gaine qui a été conservée pour alimenter les neufs.",
-    
-    slug: "visiophone-ezviz-tp9-pro-la-queue-yvelines",
-    titre: "Remplacement d'un visiophone hors service par un EZVIZ TP9 Pro",
-    description: "Le visiophone d'origine ne fonctionnait plus depuis un moment. Lors d'un premier passage, j'avais posé une sonnette sans fil Urmet sur la platine hors service pour que la maison garde au moins une sonnerie, le temps de choisir le remplaçant. Retour pour le remplacement définitif avec un kit EZVIZ TP9 Pro : dépose de l'ancienne platine encastrée et de sa visière, adaptation de la réservation dans le mur pour recevoir la nouvelle platine, puis pose et paramétrage du moniteur tactile à l'intérieur. L'accès s'ouvre maintenant de quatre façons : code sur le clavier, badge ou smartphone en NFC, écran de 8 pouces dans l'entrée, et application EZVIZ à distance pour ouvrir même en étant absent.",
-    ville: "La Queue-les-Yvelines",
-    departement: "Yvelines",
-    departementCode: "78",
-    categorie: "securite",
-    date: "2026-09-10",
-    image: "/visiophone-ezviz-tp9-pro-la-queue-yvelines.jpg",
-    imageAlt: "Platine de rue EZVIZ TP9 Pro avec caméra 4K, clavier à code et lecteur NFC, installée sur un mur en pierre à La Queue-les-Yvelines",
-    // Le même accès avant et après : la platine hors service dépannée à la
-    // sonnette sans fil, puis le moniteur qui la remplace à l'intérieur.
-    photos: [
-      {
-        src: "/visiophone-ezviz-tp9-pro-la-queue-yvelines-ancienne-platine.jpg",
-        alt: "Ancienne platine de visiophone hors service avec sonnette sans fil Urmet posée en dépannage, avant remplacement à La Queue-les-Yvelines",
-        legende: "Avant l'intervention : la platine d'origine ne répondait plus, la sonnette sans fil posée dessus servait de solution d'attente.",
-      },
-      {
-        src: "/visiophone-ezviz-tp9-pro-la-queue-yvelines-moniteur.jpg",
-        alt: "Moniteur intérieur tactile 8 pouces du visiophone EZVIZ TP9 Pro fixé au mur dans l'entrée d'une maison à La Queue-les-Yvelines",
-        legende: "Le moniteur tactile de 8 pouces dans l'entrée : il affiche le visiteur, ouvre l'accès et conserve l'historique des appels.",
-      },
-    ],
+    date: "2026-08-28",
+    image: "/tableau-electrique-cuisine-faverolles.jpg",
+    imageAlt: "Tableau électrique Hager de quatre rangées entièrement repéré, protégé par des interrupteurs différentiels 30 mA, installé en sous-sol dans une maison de Faverolles, Eure-et-Loir",
   },
 ];
 
