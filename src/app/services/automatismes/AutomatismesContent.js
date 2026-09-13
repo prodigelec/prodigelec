@@ -102,7 +102,6 @@ export default function AutomatismesContent() {
       price: "150€ TTC",
       description: "Volet bloqué, portail en panne, moteur défaillant.",
       features: [
-        "Forfait jusqu'à 2 h sur place",
         "Volets, portails, portes de garage",
         "Recherche de panne incluse",
         "Réparation incluse si sans fourniture",

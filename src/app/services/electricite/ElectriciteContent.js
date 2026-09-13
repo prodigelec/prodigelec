@@ -98,7 +98,6 @@ export default function ElectriciteContent() {
       price: "150€ TTC",
       description: "Recherche de panne et réparation rapide sur votre installation.",
       features: [
-        "Forfait jusqu'à 2 h sur place",
         "Recherche de panne incluse",
         "Réparation incluse si sans fourniture",
         "Déplacement en sus selon la zone",
