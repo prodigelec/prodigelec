@@ -6,6 +6,7 @@ import { MapPin, Calendar, ArrowLeft, ArrowRight } from "lucide-react";
 import { categoryColors } from "@/app/data/realisations";
 import RealisationGallery from "./RealisationGallery";
 import RelatedRealisations from "./RelatedRealisations";
+import ReviewCard from "@/app/components/reviews/ReviewCard";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -18,7 +19,7 @@ const SERVICE_PAGES = {
   automatismes: { href: "/services/automatismes", label: "Automatismes & motorisations" },
 };
 
-export default function RealisationDetail({ realisation: r, citySlug, related, dateLabel }) {
+export default function RealisationDetail({ realisation: r, citySlug, related, dateLabel, avis = null }) {
   const cat = categoryColors[r.categorie] ?? categoryColors.electricite;
   const service = SERVICE_PAGES[r.categorie] ?? SERVICE_PAGES.electricite;
 
@@ -58,7 +59,7 @@ export default function RealisationDetail({ realisation: r, citySlug, related, d
 
         <m.div
           variants={fadeUp} initial="hidden" animate="visible" custom={2}
-          className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden mb-8"
+          className="relative w-full aspect-3/2 rounded-2xl overflow-hidden mb-8"
           style={{ border: "1px solid var(--border)" }}
         >
           <Image
@@ -79,6 +80,19 @@ export default function RealisationDetail({ realisation: r, citySlug, related, d
         </m.section>
 
         <RealisationGallery photos={r.photos} />
+
+        {/* L'avis que le client a laissé après ce chantier précis. Il vient de
+            l'API Google, qui ne renvoie que les cinq plus récents : la section
+            disparaît d'elle-même le jour où celui-ci sort de la fenêtre. */}
+        {avis && (
+          <m.section
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-xl font-bold mb-5">Ce que le client en a dit</h2>
+            <ReviewCard review={avis} />
+          </m.section>
+        )}
 
         <m.section
           variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}

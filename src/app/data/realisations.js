@@ -236,6 +236,11 @@ const realisationsData = [
     date: "2026-08-28",
     image: "/tableau-electrique-cuisine-faverolles.jpg",
     imageAlt: "Tableau électrique Hager de quatre rangées entièrement repéré, protégé par des interrupteurs différentiels 30 mA, installé en sous-sol dans une maison de Faverolles, Eure-et-Loir",
+    // Nom de l'auteur de l'avis Google laissé après ce chantier, tel qu'il
+    // apparaît chez Google. L'API ne renvoie que les cinq avis les plus
+    // récents : passé cette fenêtre l'encart disparaît de lui-même, plutôt
+    // que de figer dans le code un texte qui appartient au client.
+    avisAuteur: "samas _Jac",
   },
   {
     slug: "visiophone-ezviz-tp9-pro-la-queue-yvelines",
