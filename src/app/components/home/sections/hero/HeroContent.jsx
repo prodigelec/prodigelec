@@ -69,7 +69,7 @@ export default function HeroContent({ slides, currentSlide }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 }
-                className="!bg-rose-600 hover:!bg-rose-700 shadow-rose-600/30 hover:shadow-rose-600/50 !text-white !border-none w-full sm:w-auto"
+                className="!bg-red-800 hover:!bg-red-900 shadow-red-800/30 hover:shadow-red-800/50 !text-white !border-none w-full sm:w-auto"
               >
                 <span className="flex flex-col items-start leading-tight">
                   <span className="text-[10px] font-bold opacity-80 uppercase tracking-wider">Urgence · 24h/24 Lun–Sam</span>

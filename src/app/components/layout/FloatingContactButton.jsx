@@ -40,7 +40,7 @@ export default function FloatingContactButton() {
                   exit={{ opacity: 0, y: 10, scale: 0.9 }}
                   className="absolute bottom-full right-0 mb-4 w-64 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
                 >
-                  <div className="bg-rose-600 p-4 text-center">
+                  <div className="bg-red-800 p-4 text-center">
                     <h3 className="font-bold text-white">Besoin d&apos;un dépannage ?</h3>
                     <div className="flex items-center justify-center gap-1.5 mt-1">
                       <span className="relative flex h-1.5 w-1.5">
@@ -71,7 +71,7 @@ export default function FloatingContactButton() {
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsExpanded(!isExpanded)}
               aria-label={isExpanded ? "Fermer le menu de contact" : "Ouvrir le menu de contact"}
-              className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-colors ${isExpanded ? 'bg-gray-900 text-white' : 'bg-rose-600 text-white shadow-rose-600/40 hover:bg-rose-700'}`}
+              className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-colors ${isExpanded ? 'bg-gray-900 text-white' : 'bg-red-800 text-white shadow-red-800/40 hover:bg-red-900'}`}
             >
               {isExpanded ? <X size={24} /> : <Phone size={24} className="animate-pulse" />}
             </m.button>

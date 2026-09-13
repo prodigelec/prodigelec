@@ -136,7 +136,7 @@ export default function Navbar() {
                             href="tel:0638194752"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="hidden md:flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white h-10 w-55 px-8 rounded-full font-bold text-sm text-center shadow-lg shadow-rose-600/20 transition-all whitespace-nowrap"
+                            className="hidden md:flex items-center justify-center gap-2 bg-red-800 hover:bg-red-900 text-white h-10 w-55 px-8 rounded-full font-bold text-sm text-center shadow-lg shadow-red-800/20 transition-all whitespace-nowrap"
                         >
                             <PhoneCall className="w-4 h-4 animate-pulse" />
                             <span>Dépannage : 06 38 19 47 52</span>

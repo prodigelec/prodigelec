@@ -27,7 +27,7 @@ export default function MobileNavbar() {
                         whileTap={{ scale: 0.9 }}
                         className={`flex flex-col items-center justify-center min-w-0 flex-1 px-1 transition-all ${
                             item.highlight
-                            ? 'bg-rose-600 text-white rounded-xl py-3 -mt-6 shadow-lg shadow-rose-600/30 border-2 border-white/20'
+                            ? 'bg-red-800 text-white rounded-xl py-3 -mt-6 shadow-lg shadow-red-800/30 border-2 border-white/20'
                             : 'text-white/70 hover:text-primary hover:bg-white/5 py-2 rounded-xl'
                         }`}
                     >
