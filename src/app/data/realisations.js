@@ -290,7 +290,7 @@ const realisationsData = [
   {
     slug: "depannage-portail-nice-l-habit",
     titre: "Dépannage d'un portail motorisé Nice hors service",
-    description: "Le portail battant ne répondait plus du tout : ni télécommande, ni mouvement des vantaux. Recherche de panne sur l'armoire de commande Nice A700F, qui pilote les deux moteurs du portail : les fusibles avaient claqué et coupaient l'installation. Remplacement des fusibles et remise en service, les voyants de la carte se sont rallumés et le portail a retrouvé ses cycles d'ouverture et de fermeture.",
+    description: "Le portail battant ne répondait plus du tout : ni télécommande, ni mouvement des vantaux. Recherche de panne en partant de l'alimentation jusqu'à l'armoire de commande Nice A700F, qui pilote les deux moteurs du portail : c'est là que se trouvait le défaut, les moteurs n'étaient pas en cause. Remplacement des protections défaillantes et remise en service, le portail a retrouvé ses cycles d'ouverture et de fermeture.",
     ville: "L'Habit",
     departement: "Eure",
     departementCode: "27",
@@ -302,7 +302,7 @@ const realisationsData = [
       {
         src: "/depannage-portail-nice-l-habit-armoire-a700f.jpg",
         alt: "Carte électronique de l'armoire de commande Nice A700F remise sous tension, voyants allumés, à L'Habit",
-        legende: "L'armoire Nice A700F après remplacement des fusibles : les voyants de la carte se rallument, l'installation est de nouveau alimentée.",
+        legende: "L'armoire Nice A700F après intervention : les voyants de la carte se rallument, l'installation est de nouveau alimentée.",
       },
       {
         src: "/depannage-portail-nice-l-habit-schema-cablage.jpg",

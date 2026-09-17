@@ -830,6 +830,122 @@ export const brandPages = [
     realisationSlugs: ["visiophone-ezviz-tp9-pro-la-queue-yvelines"],
     services: [{ label: "Sécurité Électronique", href: "/services/securite" }],
   },
+  {
+    slug: "nice",
+    name: "Nice",
+    category: "Portails Automatiques",
+    metaTitle: "Dépannage motorisation portail Nice — Dreux, Anet, Évreux",
+    metaDescription:
+      "Dépannage et réglage de motorisation de portail Nice en Eure-et-Loir, Eure et Yvelines : Hyppo, Toona, Wingo, Robus, armoires de commande A700F et MC800, télécommandes Era. Devis gratuit.",
+    tagline: "Motorisation Nice, de l'armoire au moteur",
+    intro:
+      "Nice équipe une bonne partie des portails motorisés du secteur, souvent depuis longtemps : les anciennes armoires A700F tournent encore à côté des générations récentes. Face à un portail Nice en panne, le réflexe de changer le moteur est rarement le bon. Je commence par l'alimentation et l'armoire de commande, où se trouve la majorité des défauts, avant de mettre en cause quoi que ce soit d'autre. Je dépanne les motorisations Nice battantes et coulissantes, comme les autres marques du marché.",
+    interventions: [
+      {
+        title: "Portail qui ne répond plus",
+        description:
+          "Ni télécommande, ni mouvement des vantaux : la recherche de panne remonte de l'alimentation jusqu'à l'armoire de commande, puis vers les moteurs seulement si le défaut n'est pas trouvé en amont.",
+      },
+      {
+        title: "Armoire de commande A700F et MC800",
+        description:
+          "Diagnostic de la carte et reprise des réglages : temps de travail, temps de pause, décalage entre les deux vantaux, force. Quand une ancienne A700F n'est plus réparable, une MC800 prend sa place et reprend les moteurs existants.",
+      },
+      {
+        title: "Moteurs à bras et vérins",
+        description:
+          "Dépannage des motorisations battantes Hyppo, Toona et Wingo : fins de course, butées, synchronisation des deux vantaux, déverrouillage manuel resté engagé.",
+      },
+      {
+        title: "Portails coulissants Robus",
+        description:
+          "Réglage des fins de course et de la détection d'obstacle, contrôle de la crémaillère et de son engrènement sur le pignon du moteur.",
+      },
+      {
+        title: "Télécommandes et récepteur",
+        description:
+          "Programmation de télécommandes Era supplémentaires, remplacement d'un récepteur radio, ou reprise des codes perdus après une coupure de courant.",
+      },
+    ],
+    gammes: [
+      {
+        name: "A700F",
+        description:
+          "Ancienne armoire de commande pour deux moteurs 230 V, encore très présente sur les portails du secteur. Ses réglages se font par potentiomètres : temps de travail, temps de pause, décalage d'ouverture et de fermeture entre vantaux, force.",
+      },
+      {
+        name: "Moonclever MC800",
+        description:
+          "Armoire de commande récente pour un ou deux moteurs 230 V. C'est elle qui remplace l'A700F quand sa carte n'est plus réparable, en conservant les moteurs en place.",
+      },
+      {
+        name: "Hyppo",
+        description:
+          "Motorisation à bras pour portail battant, fixée sur le pilier. Selon le modèle, elle manœuvre des vantaux jusqu'à 3 m et 800 kg.",
+      },
+      {
+        name: "Toona et Wingo",
+        description:
+          "Vérins électromécaniques pour portails battants. Wingo couvre les vantaux légers des maisons individuelles, Toona les portails plus lourds.",
+      },
+      {
+        name: "Robus",
+        description:
+          "Motorisation pour portail coulissant, entraînée par crémaillère, avec fins de course et détection d'obstacle réglables.",
+      },
+    ],
+    pannes: [
+      {
+        symptome: "Le portail ne répond plus du tout",
+        cause:
+          "Avant d'incriminer les moteurs, on vérifie l'alimentation et l'armoire de commande, qui porte les protections de l'installation. Le défaut s'y trouve très souvent, et la remise en service ne demande alors ni moteur ni carte neuve.",
+      },
+      {
+        symptome: "Un seul vantail s'ouvre",
+        cause:
+          "Soit le décalage entre les deux vantaux est mal réglé, soit un moteur ne reçoit plus son ordre. Le diagnostic distingue les deux cas, le premier se corrige sur l'armoire.",
+      },
+      {
+        symptome: "Le portail s'arrête ou repart en sens inverse",
+        cause:
+          "La force réglée trop bas lui fait prendre le vent ou un point dur pour un obstacle, ou les photocellules sont encrassées et désalignées. Deux vérifications rapides avant tout remplacement.",
+      },
+      {
+        symptome: "Plus aucune télécommande ne fonctionne",
+        cause:
+          "Récepteur radio défaillant ou codes effacés après une coupure de courant, quand ce n'est pas simplement la pile. La reprogrammation se fait sur place.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Mon portail Nice ne fonctionne plus du tout, faut-il changer le moteur ?",
+        answer:
+          "Rarement en premier lieu. Un portail totalement inerte a le plus souvent un défaut côté alimentation ou armoire de commande, pas un moteur mort. C'est exactement le cas du portail de L'Habit : la panne se trouvait dans l'armoire A700F, les moteurs n'étaient pas en cause, et le portail est reparti après intervention.",
+      },
+      {
+        question: "Une armoire Nice A700F se répare-t-elle encore ?",
+        answer:
+          "Dans beaucoup de cas, oui : on la remet en état et on reprend ses réglages. Si la carte est trop abîmée, l'armoire Moonclever MC800 la remplace et reprend les moteurs 230 V déjà en place, sans toucher au reste de l'installation.",
+      },
+      {
+        question: "Pourquoi mon portail Nice repart-il en arrière tout seul ?",
+        answer:
+          "C'est la sécurité qui réagit : elle croit détecter un obstacle. En cause, le plus souvent, une force réglée trop faible ou des photocellules encrassées ou désalignées. Les deux se vérifient et se corrigent sur place, sans remplacer de pièce dans la majorité des cas.",
+      },
+      {
+        question: "Comment débloquer manuellement un portail Nice en cas de panne ?",
+        answer:
+          "Les motorisations Nice disposent d'un déverrouillage manuel, généralement à clé, qui libère le vantail du moteur. Une fois débloqué, le portail se manœuvre à la main. Pensez à le reverrouiller ensuite, sinon le moteur tournera dans le vide au retour du courant.",
+      },
+      {
+        question: "Intervenez-vous sur les portails Nice autour d'Ézy-sur-Eure et d'Anet ?",
+        answer:
+          "Oui, j'interviens sur les motorisations Nice à L'Habit, Ézy-sur-Eure, Ivry-la-Bataille, Anet, Dreux, Nonancourt et dans tout le secteur entre l'Eure-et-Loir, l'Eure et les Yvelines. J'ai notamment remis en service un portail Nice équipé d'une armoire A700F à L'Habit, chantier visible en photos dans mes réalisations.",
+      },
+    ],
+    realisationSlugs: ["depannage-portail-nice-l-habit"],
+    services: [{ label: "Automatismes & Motorisations", href: "/services/automatismes" }],
+  },
 ];
 
 export function getBrandPageBySlug(slug) {
