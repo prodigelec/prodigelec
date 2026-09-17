@@ -20,6 +20,7 @@ export const brandCategories = [
       "Theben",
       "Arnould",
       "Delta Dore",
+      "Yokis",
     ],
     duration: 30,
   },
