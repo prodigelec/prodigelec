@@ -311,6 +311,25 @@ const realisationsData = [
       },
     ],
   },
+  {
+    slug: "telerupteur-radio-yokis-l-habit",
+    titre: "Pose d'un télérupteur radio Yokis encastré",
+    description: "Dans la même maison que le portail motorisé Nice, pose d'un micromodule télérupteur radio Yokis de la gamme MTR2000 directement dans la boîte d'encastrement. Raccordé sur le circuit existant, il se commande aussi bien par bouton poussoir que par télécommande ou bouton radio, sans tirer de câble supplémentaire ni ouvrir de saignée. Le module supporte jusqu'à 2000 W et peut couper automatiquement après une durée réglable.",
+    ville: "L'Habit",
+    departement: "Eure",
+    departementCode: "27",
+    categorie: "electricite",
+    date: "2026-09-14",
+    image: "/telerupteur-radio-yokis-l-habit.jpg",
+    imageAlt: "Micromodule télérupteur radio Yokis raccordé dans une boîte d'encastrement, avec son antenne, à L'Habit dans l'Eure",
+    photos: [
+      {
+        src: "/telerupteur-radio-yokis-l-habit-face-arriere.jpg",
+        alt: "Face arrière du micromodule télérupteur radio Yokis avant sa mise en place dans la boîte d'encastrement, L'Habit, Eure",
+        legende: "La face arrière du module, avec son bouton de connexion : c'est par là qu'on l'associe aux télécommandes et boutons radio.",
+      },
+    ],
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
