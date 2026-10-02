@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "facebook": "node --env-file-if-exists=.env.local scripts/publier-facebook.mjs"
   },
   "dependencies": {
     "critters": "^0.0.23",
