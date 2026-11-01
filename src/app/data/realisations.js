@@ -390,6 +390,25 @@ const realisationsData = [
       },
     ],
   },
+  {
+    slug: "salle-de-bain-seche-serviettes-vernouillet",
+    titre: "Salle de bain : sèche-serviettes, applique et mise en sécurité",
+    description: "Dans une salle de bain sous les toits, au 5e étage sans ascenseur : dépose du radiateur hors service, dont les conducteurs n'étaient isolés que par du ruban adhésif. Reprise de ces conducteurs dans une boîte de dérivation fermée, raccordement sur une sortie de câble, puis pose et fixation d'un sèche-serviettes électrique à fluide. Remplacement de l'ancienne applique par celle choisie par la cliente, pose d'une prise étanche hors volumes, distincte de l'éclairage, et remplacement de deux boîtes de dérivation dépourvues de couvercle pour sécuriser l'installation. Essais et mise en service.",
+    ville: "Vernouillet",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-10-16",
+    image: "/salle-de-bain-seche-serviettes-vernouillet.jpg",
+    imageAlt: "Salle de bain sous les toits avec sèche-serviettes électrique, applique au-dessus du miroir et prise étanche, à Vernouillet en Eure-et-Loir",
+    photos: [
+      {
+        src: "/salle-de-bain-seche-serviettes-vernouillet-ancien-radiateur.jpg",
+        alt: "Ancien radiateur électrique hors service déposé au sol de la salle de bain, conducteurs à reprendre, Vernouillet, Eure-et-Loir",
+        legende: "Avant : le radiateur hors service une fois déposé. Ses conducteurs, seulement scotchés, ont été repris dans une boîte de dérivation fermée.",
+      },
+    ],
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
