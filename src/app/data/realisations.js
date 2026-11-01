@@ -333,7 +333,7 @@ const realisationsData = [
   {
     slug: "creation-circuits-prises-sous-sol-bu",
     titre: "Création de trois circuits de prises au sous-sol",
-    description: "Équipement électrique d'un sous-sol aménagé : création de trois circuits de prises raccordés au tableau existant, dont des prises commandées par interrupteur, une prise étanche sur circuit spécialisé 20 A et un circuit dédié au matériel audio, protégé par un différentiel de type A. Les câbles cheminent en gaine dans les montants des cloisons, en gaine sur le mur côté fenêtre, laissée en attente du doublage que le client posera ensuite, et en moulure au sol pour contourner le mur, avec sortie du tableau sous conduit IRL. Deux saignées au plafond ont été réalisées pour dissimuler les câbles existants. Pose des boîtes d'encastrement et de l'appareillage Legrand, raccordement au tableau, essais et mise en service.",
+    description: "Équipement électrique d'un sous-sol aménagé : création de trois circuits raccordés au tableau existant : des prises commandées par interrupteur, des prises classiques et une prise étanche. Les câbles cheminent en gaine dans les montants des cloisons, en gaine sur le mur côté fenêtre, laissée en attente du doublage que le client posera ensuite, et en moulure au sol pour contourner le mur, avec sortie du tableau sous conduit IRL. Deux saignées au plafond ont été réalisées pour dissimuler les câbles existants. Pose des boîtes d'encastrement et de l'appareillage Legrand, raccordement au tableau, essais et mise en service.",
     ville: "Bû",
     departement: "Eure-et-Loir",
     departementCode: "28",
