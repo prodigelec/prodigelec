@@ -409,6 +409,18 @@ const realisationsData = [
       },
     ],
   },
+  {
+    slug: "depannage-alarme-paradox-saint-lubin-des-joncherets",
+    titre: "Dépannage d'une alarme Paradox qui se déclenchait seule",
+    description: "Dans un bar-tabac, l'alarme Paradox Magellan se déclenchait toute seule. Recherche de la cause dans l'historique des événements de la centrale, qui enregistre chaque déclenchement, zone par zone, avec son heure : le diagnostic a orienté vers les piles des détecteurs sans fil. Remplacement des piles, fournies par le client, puis contrôle du retour à la normale. L'installation étant vétuste, son remplacement est à prévoir pour retrouver un système fiable dans la durée.",
+    ville: "Saint-Lubin-des-Joncherets",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "securite",
+    date: "2026-10-27",
+    image: "/depannage-alarme-paradox-saint-lubin-des-joncherets.jpg",
+    imageAlt: "Centrale d'alarme Paradox Magellan affichant « Secteur1 PRÊT » après dépannage dans un bar-tabac à Saint-Lubin-des-Joncherets, Eure-et-Loir",
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
