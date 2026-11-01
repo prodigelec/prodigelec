@@ -333,14 +333,14 @@ const realisationsData = [
   {
     slug: "creation-circuits-prises-sous-sol-bu",
     titre: "Création de trois circuits de prises au sous-sol",
-    description: "Équipement électrique d'un sous-sol aménagé : création de trois circuits de prises raccordés au tableau existant, dont des prises commandées par interrupteur, une prise étanche sur circuit spécialisé 20 A et un circuit dédié au matériel audio, protégé par un différentiel de type A. Les câbles cheminent en gaine dans les montants des cloisons, en gaine apparente sur le mur côté fenêtre et en moulure au sol pour contourner le mur, avec sortie du tableau sous conduit IRL. Deux saignées au plafond ont été réalisées pour dissimuler les câbles existants. Pose des boîtes d'encastrement et de l'appareillage Legrand, raccordement au tableau, essais et mise en service.",
+    description: "Équipement électrique d'un sous-sol aménagé : création de trois circuits de prises raccordés au tableau existant, dont des prises commandées par interrupteur, une prise étanche sur circuit spécialisé 20 A et un circuit dédié au matériel audio, protégé par un différentiel de type A. Les câbles cheminent en gaine dans les montants des cloisons, en gaine sur le mur côté fenêtre, laissée en attente du doublage que le client posera ensuite, et en moulure au sol pour contourner le mur, avec sortie du tableau sous conduit IRL. Deux saignées au plafond ont été réalisées pour dissimuler les câbles existants. Pose des boîtes d'encastrement et de l'appareillage Legrand, raccordement au tableau, essais et mise en service.",
     ville: "Bû",
     departement: "Eure-et-Loir",
     departementCode: "28",
     categorie: "electricite",
     date: "2026-10-14",
     image: "/creation-circuits-prises-sous-sol-bu.jpg",
-    imageAlt: "Gaines électriques apparentes, boîte d'encastrement et interrupteur posés sur le mur d'un sous-sol en cours d'aménagement à Bû, Eure-et-Loir",
+    imageAlt: "Gaines électriques apparentes, boîte d'encastrement et interrupteur posés en attente du doublage sur le mur d'un sous-sol en cours d'aménagement à Bû, Eure-et-Loir",
     photos: [
       {
         src: "/creation-circuits-prises-sous-sol-bu-prise-double.jpg",
@@ -355,7 +355,7 @@ const realisationsData = [
       {
         src: "/creation-circuits-prises-sous-sol-bu-gaine-apparente.jpg",
         alt: "Gaine électrique apparente fixée dans l'angle d'un mur et boîte de connexion, sous-sol à Bû, Eure-et-Loir",
-        legende: "Sur le mur côté fenêtre, la gaine reste apparente, fixée proprement le long de l'angle.",
+        legende: "Sur le mur côté fenêtre, la gaine est fixée en attente : elle sera cachée par le doublage que le client posera ensuite.",
       },
       {
         src: "/creation-circuits-prises-sous-sol-bu-saignee-plafond.jpg",
