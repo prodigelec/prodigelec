@@ -330,6 +330,40 @@ const realisationsData = [
       },
     ],
   },
+  {
+    slug: "creation-circuits-prises-sous-sol-bu",
+    titre: "Création de trois circuits de prises au sous-sol",
+    description: "Équipement électrique d'un sous-sol aménagé : création de trois circuits de prises raccordés au tableau existant, dont des prises commandées par interrupteur, une prise étanche sur circuit spécialisé 20 A et un circuit dédié au matériel audio, protégé par un différentiel de type A. Les câbles cheminent en gaine dans les montants des cloisons, en gaine apparente sur le mur côté fenêtre et en moulure au sol pour contourner le mur, avec sortie du tableau sous conduit IRL. Deux saignées au plafond ont été réalisées pour dissimuler les câbles existants. Pose des boîtes d'encastrement et de l'appareillage Legrand, raccordement au tableau, essais et mise en service.",
+    ville: "Bû",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-10-14",
+    image: "/creation-circuits-prises-sous-sol-bu.jpg",
+    imageAlt: "Gaines électriques apparentes, boîte d'encastrement et interrupteur posés sur le mur d'un sous-sol en cours d'aménagement à Bû, Eure-et-Loir",
+    photos: [
+      {
+        src: "/creation-circuits-prises-sous-sol-bu-prise-double.jpg",
+        alt: "Double prise de courant Legrand encastrée dans une cloison de sous-sol à Bû, Eure-et-Loir",
+        legende: "Une double prise encastrée dans la cloison : le câble arrive par la gaine passée dans les montants, rien ne dépasse.",
+      },
+      {
+        src: "/creation-circuits-prises-sous-sol-bu-prise-cloison.jpg",
+        alt: "Bloc de prises encastré en pied de cloison, alimenté par une gaine électrique, dans un sous-sol à Bû, Eure-et-Loir",
+        legende: "Un bloc de prises en pied de cloison, posé avant les finitions de peinture.",
+      },
+      {
+        src: "/creation-circuits-prises-sous-sol-bu-gaine-apparente.jpg",
+        alt: "Gaine électrique apparente fixée dans l'angle d'un mur et boîte de connexion, sous-sol à Bû, Eure-et-Loir",
+        legende: "Sur le mur côté fenêtre, la gaine reste apparente, fixée proprement le long de l'angle.",
+      },
+      {
+        src: "/creation-circuits-prises-sous-sol-bu-saignee-plafond.jpg",
+        alt: "Saignée réalisée au plafond pour encastrer et dissimuler un câble électrique existant, sous-sol à Bû, Eure-et-Loir",
+        legende: "Une des deux saignées au plafond, ouverte pour dissimuler les câbles existants avant rebouchage.",
+      },
+    ],
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
