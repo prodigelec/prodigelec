@@ -330,6 +330,30 @@ const realisationsData = [
       },
     ],
   },
+  {
+    slug: "gestionnaire-energie-calybox-hanches",
+    titre: "Remplacement d'un gestionnaire de chauffage par un Calybox 230",
+    description: "L'ancien gestionnaire d'énergie Delta Dore GP36 et son boîtier d'ambiance pilotaient les radiateurs électriques à fil pilote de la maison. Dépose de l'ensemble, puis pose d'un pack Delta Dore Calybox 230 : le boîtier technique s'installe dans le tableau électrique, sur un disjoncteur dédié, et reprend les fils pilotes existants ; le nouveau boîtier d'ambiance se raccorde sur la liaison bus déjà en place, sans câble à tirer. Programmation des zones de chauffage selon les horaires du client, contrôle du délestage, essais et prise en main.",
+    ville: "Hanches",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-10-26",
+    image: "/gestionnaire-energie-calybox-hanches.jpg",
+    imageAlt: "Boîtier technique Delta Dore Calybox 230 installé dans le tableau électrique à côté de son disjoncteur dédié, à Hanches en Eure-et-Loir",
+    photos: [
+      {
+        src: "/gestionnaire-energie-calybox-hanches-ancien-gp36.jpg",
+        alt: "Ancien gestionnaire d'énergie Delta Dore GP36 dans le tableau électrique avant son remplacement, Hanches, Eure-et-Loir",
+        legende: "Avant : l'ancien gestionnaire Delta Dore GP36, avec son bornier téléinfo et bus. C'est lui que remplace le Calybox.",
+      },
+      {
+        src: "/gestionnaire-energie-calybox-hanches-boitier-ambiance.jpg",
+        alt: "Boîtier d'ambiance du gestionnaire Delta Dore Calybox 230 posé au mur, Hanches, Eure-et-Loir",
+        legende: "Le boîtier d'ambiance, raccordé sur la liaison bus existante : c'est depuis lui que le client règle ses zones et ses horaires de chauffage.",
+      },
+    ],
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
