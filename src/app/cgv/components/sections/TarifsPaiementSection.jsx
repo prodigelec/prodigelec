@@ -35,6 +35,13 @@ export default function TarifsPaiementSection() {
                     </div>
                 </div>
 
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                    <h3 className="text-white font-bold mb-2">Interventions hors horaires</h3>
+                    <p className="text-gray-100 text-sm leading-relaxed">
+                        Les interventions de dépannage réalisées en dehors des horaires d&apos;ouverture (du lundi au vendredi, de 8 h à 18 h), le week-end ou les jours fériés font l&apos;objet d&apos;une majoration de 50 % du forfait d&apos;intervention. Cette majoration est annoncée au client avant l&apos;intervention.
+                    </p>
+                </div>
+
                 <div className="p-4 bg-orange-500/10 border border-orange-500/20 rounded-xl flex gap-3 items-start">
                     <AlertCircle className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
                     <div>
