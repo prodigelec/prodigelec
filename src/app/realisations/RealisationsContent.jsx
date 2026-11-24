@@ -85,6 +85,9 @@ export default function RealisationsContent() {
                     src={r.image}
                     alt={r.imageAlt}
                     fill
+                    // Première rangée visible dès l'arrivée : chargement immédiat (LCP)
+                    loading={i < 3 ? "eager" : "lazy"}
+                    fetchPriority={i === 0 ? "high" : "auto"}
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
