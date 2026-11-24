@@ -66,7 +66,7 @@ export default function RealisationDetail({ realisation: r, citySlug, related, d
             src={r.image}
             alt={r.imageAlt}
             fill
-            priority
+            preload
             className="object-cover"
             sizes="(max-width: 896px) 100vw, 896px"
           />
