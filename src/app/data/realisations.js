@@ -343,6 +343,18 @@ const realisationsData = [
     ],
   },
   {
+    slug: "depannage-portail-beninca-tillieres-sur-avre",
+    titre: "Dépannage d'un portail en bois motorisé Beninca qui ne se fermait plus",
+    description: "Le portail en bois du porche, motorisé Beninca, s'ouvrait mais ne se fermait plus. Recherche de panne jusqu'à la carte de commande Beninca, qui pilote le moteur et surveille les sécurités : c'est là que se trouvait le défaut. Ses voyants de diagnostic, un par entrée (arrêt, photocellules, fins de course), permettent de vérifier ce que la carte voit avant de lancer un cycle. Après intervention sur la carte, le portail a retrouvé ses cycles d'ouverture et de fermeture.",
+    ville: "Tillières-sur-Avre",
+    departement: "Eure",
+    departementCode: "27",
+    categorie: "automatismes",
+    date: "2026-11-20",
+    image: "/depannage-portail-beninca-tillieres-sur-avre.jpg",
+    imageAlt: "Carte de commande Beninca d'un portail motorisé, voyant d'alimentation et voyants des entrées de sécurité allumés, à Tillières-sur-Avre dans l'Eure",
+  },
+  {
 
     slug: "creation-circuits-prises-sous-sol-bu",
     titre: "Création de trois circuits de prises au sous-sol",
