@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import HeroBackground from './HeroBackground';
 import HeroNavigation from './HeroNavigation';
 import HeroContent from './HeroContent';
+import HeroRatingBadge from './HeroRatingBadge';
 import HeroProgress from './HeroProgress';
 
 const slides = [
@@ -15,8 +16,8 @@ const slides = [
   },
   {
     id: 2,
-    title: "Électricité Générale",
-    subtitle: "Vos installations fiables et sécurisées",
+    title: "Dépannage & Électricité",
+    subtitle: "Intervention rapide et mise aux normes",
     image: "/img_carousel_hero_home/tableau-electrique.optimized.jpg",
     icon: "⚡"
   },
@@ -51,15 +52,23 @@ const slides = [
   },
   {
     id: 7,
-    title: "Visiophone Urmet Aura",
+    title: "Visiophone Platine de Rue",
     subtitle: "Le visiophone avec platine de rue haute qualité",
     image: "/img_carousel_hero_home/videophone-platine.jpg",
     icon: "📞",
     objectFit: "cover"
+  },
+  {
+    id: 8,
+    title: "Recharge Véhicule Électrique",
+    subtitle: "Borne Wallbox & prise Green'Up Legrand — pilotage smartphone",
+    image: "/img_carousel_borne_recharge/legrand-homme-recharge-maison.jpg",
+    icon: "🔌",
+    objectFit: "cover"
   }
 ];
 
-export default function HeroSection() {
+export default function HeroSection({ rating = null, totalRatings = 0 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -86,6 +95,10 @@ export default function HeroSection() {
       <HeroNavigation prevSlide={prevSlide} nextSlide={nextSlide} />
 
       <HeroContent slides={slides} currentSlide={safeSlide} />
+
+      {/* Ancré au hero et non au contenu : sa position ne dépend plus de la
+          longueur du titre du slide courant. */}
+      <HeroRatingBadge rating={rating} totalRatings={totalRatings} />
 
       <HeroProgress currentSlide={safeSlide} totalSlides={slides.length} />
     </section>

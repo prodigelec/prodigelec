@@ -7,6 +7,8 @@ import ServiceUrgency from "../../components/services/shared/ServiceUrgency";
 import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
+import ServiceCityLinks from "../../components/services/shared/ServiceCityLinks";
+import ServiceRealisations from "../../components/services/shared/ServiceRealisations";
 
 import { Cctv, ShieldAlert, Fingerprint, Video, Bell, Camera } from "lucide-react";
 
@@ -85,16 +87,18 @@ export default function SecuriteContent() {
     },
     {
       title: "Dépannage Urgence",
-      price: "À partir de 120€ TTC",
+      price: "150€ TTC",
       description: "Panne ou blocage sur vos équipements de sécurité.",
       features: [
         "Digicode, visiophone, alarme, caméra",
-        "Diagnostic & réparation sur place",
-        "Déplacement Zone 1 offert",
-        "Tarif annoncé avant intervention"
+        "Recherche de panne incluse",
+        "Réparation incluse si sans fourniture",
+        "Déplacement en sus, annoncé avant"
       ],
       highlight: true,
-      tag: "Urgence"
+      tag: "Urgence",
+      variant: "urgence",
+      cta: "Demander un dépannage"
     }
   ];
 
@@ -198,6 +202,10 @@ export default function SecuriteContent() {
           faqs={faqItems}
           theme="securite"
         />
+
+        <ServiceRealisations categorie="securite" theme="securite" />
+
+        <ServiceCityLinks theme="securite" />
 
         <ServiceCTA
           title="Besoin de sécuriser votre domicile ?"

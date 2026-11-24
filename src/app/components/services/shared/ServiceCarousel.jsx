@@ -14,6 +14,10 @@ export default function ServiceCarousel({ slides, theme = "electricite" }) {
     securite: {
       barColor: "bg-primary",
       barShadow: ""
+    },
+    borne: {
+      barColor: "bg-emerald-500",
+      barShadow: "shadow-[0_0_15px_rgba(16,185,129,0.5)]"
     }
   };
 

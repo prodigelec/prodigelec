@@ -1,30 +1,8 @@
 "use client";
+import Link from "next/link";
 import { m } from "framer-motion";
-
-const categories = [
-    {
-        name: "Électricité & Domotique",
-        brands: ["Legrand", "Schneider", "Hager", "Somfy", "Bticino", "Atlantic", "Theben", "Arnould", "Delta Dore"],
-        duration: 30
-    },
-    {
-        name: "Automatisation Volets",
-        brands: ["Somfy", "Nice", "Bubendorff", "Delta Dore", "Profalux", "Simu", "Eveno", "Lakal"],
-        duration: 25,
-        reverse: true
-    },
-    {
-        name: "Sécurité & Automatismes",
-        brands: ["Netatmo", "Nuki", "Yale", "Tedee", "Somfy", "Aiphone", "Comelit", "Fermax", "2N"],
-        duration: 35
-    },
-    {
-        name: "Contrôle d'Accès",
-        brands: ["Noralsy", "Urmet", "CDVI", "Aiphone", "Intratone", "Cofrel", "Comelit"],
-        duration: 28,
-        reverse: true
-    }
-];
+import { ArrowRight } from "lucide-react";
+import { bannerCategories as categories } from "@/app/data/brands";
 
 export default function BrandsSection() {
     return (
@@ -79,6 +57,20 @@ export default function BrandsSection() {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            {/* Le bandeau reste décoratif : la liste est dupliquée pour boucler
+                sans trou, donc `aria-hidden` est correct et les noms qui
+                défilent ne sont pas cliquables. Ce lien est la vraie porte
+                d'entrée — pour le visiteur comme pour le crawl. */}
+            <div className="max-w-7xl mx-auto px-6 mt-8 md:mt-12 text-center">
+                <Link
+                    href="/marques"
+                    className="inline-flex items-center gap-1 text-sm font-bold hover:gap-2 transition-all"
+                    style={{ color: "var(--primary)" }}
+                >
+                    Voir toutes les marques que j&apos;installe <ArrowRight size={14} />
+                </Link>
             </div>
         </section>
     );

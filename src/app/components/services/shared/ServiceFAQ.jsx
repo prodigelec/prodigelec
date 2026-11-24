@@ -28,6 +28,17 @@ export default function ServiceFAQ({ title, subtitle, description, faqs, theme =
       buttonText: "text-primary",
       buttonBorder: "border-primary/30",
       buttonHoverBg: "hover:bg-primary"
+    },
+    borne: {
+      highlightColor: "text-emerald-400",
+      hoverBorder: "hover:border-emerald-500/30",
+      iconColor: "text-emerald-400",
+      gradientFrom: "from-emerald-500/50",
+      gradientVia: "via-emerald-500/20",
+      buttonBg: "bg-emerald-500/10",
+      buttonText: "text-emerald-400",
+      buttonBorder: "border-emerald-500/30",
+      buttonHoverBg: "hover:bg-emerald-500"
     }
   };
 

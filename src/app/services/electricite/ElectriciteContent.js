@@ -7,6 +7,8 @@ import ServiceUrgency from "../../components/services/shared/ServiceUrgency";
 import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
+import ServiceCityLinks from "../../components/services/shared/ServiceCityLinks";
+import ServiceRealisations from "../../components/services/shared/ServiceRealisations";
 
 // Icons
 import { FcFlashOn } from "react-icons/fc";
@@ -93,16 +95,18 @@ export default function ElectriciteContent() {
   const pricingPlans = [
     {
       title: "Dépannage Électrique",
-      price: "À partir de 120€ TTC",
+      price: "150€ TTC",
       description: "Recherche de panne et réparation rapide sur votre installation.",
       features: [
-        "Diagnostic complet inclus",
-        "1h de main d'œuvre incluse",
-        "Déplacement zone 1 offert",
-        "Hors zone : Frais déplacement +"
+        "Recherche de panne incluse",
+        "Réparation incluse si sans fourniture",
+        "Déplacement en sus selon la zone",
+        "Devis gratuit si travaux à prévoir"
       ],
       highlight: true,
-      tag: "Urgence"
+      tag: "Urgence",
+      variant: "urgence",
+      cta: "Demander un dépannage"
     },
     {
       title: "Mise en Sécurité",
@@ -143,8 +147,8 @@ export default function ElectriciteContent() {
       answer: "Les tarifs varient selon la nature de l'intervention. Je fournis un devis gratuit avant toute intervention. Si vous acceptez le devis et que j'effectue les travaux, la facturation inclut au minimum 1 heure de main d'œuvre et un déplacement, sans surprise."
     },
     {
-      question: "Intervenez-vous en urgence le week-end ?",
-      answer: "Oui, j'interviens sur rendez-vous le samedi et en urgence après 19h ainsi que le dimanche pour les pannes nécessitant une intervention immédiate (court-circuit, coupure totale, etc.)."
+      question: "Intervenez-vous en urgence la nuit ?",
+      answer: "Oui, je suis disponible du lundi au samedi 24h/24. La nuit, un répondeur est actif — laissez un message et je vous rappelle dès que possible pour les pannes nécessitant une intervention immédiate (court-circuit, coupure totale, etc.)."
     },
     {
       question: "Qu'est-ce que la norme NF C 15-100 ?",
@@ -243,8 +247,12 @@ export default function ElectriciteContent() {
           theme="electricite"
         />
         
-        <ServiceCTA 
-          title="Un projet de rénovation ou d'installation ?" 
+        <ServiceRealisations categorie="electricite" theme="electricite" />
+
+        <ServiceCityLinks theme="electricite" />
+
+        <ServiceCTA
+          title="Un projet de rénovation ou d'installation ?"
           description="Discutons de votre projet. Je vous accompagne de la conception à la réalisation avec des conseils personnalisés."
           buttonText="Demander un devis gratuit"
           theme="electricite"

@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { HeroSection } from "@/app/components/home";
+import { getGoogleReviews } from "@/lib/reviews";
 
 // Chargement dynamique des sections sous le pli pour optimiser le LCP et le JS initial
 const BrandsSection = dynamic(() => import("@/app/components/home/sections/BrandsSection"));
@@ -8,12 +9,14 @@ const AboutSection = dynamic(() => import("@/app/components/home/sections/AboutS
 const ServicesSection = dynamic(() => import("@/app/components/home/sections/ServicesSection"));
 const ProcessSection = dynamic(() => import("@/app/components/home/sections/ProcessSection"));
 const PricingPolicySection = dynamic(() => import("@/app/components/home/sections/PricingPolicySection"));
-const TestimonialsSection = dynamic(() => import("@/app/components/home/sections/ClientTestimonials"));
+const ReviewsSection = dynamic(() => import("@/app/components/reviews/ReviewsSection"));
+const PartnersSection = dynamic(() => import("@/app/components/home/sections/PartnersSection"));
+const MapSection = dynamic(() => import("@/app/components/home/sections/MapSection"));
 const ContactCTASection = dynamic(() => import("@/app/components/home/sections/ContactCTASection"));
 
 export const metadata = {
   title: "PRODIGELEC - Artisan Électricien & Sécurité Électronique | 27, 28 & 78",
-  description: "Expertise en électricité et sécurité électronique avec 23 ans d'expérience. Intervention rapide en Eure (27), Eure-et-Loir (28) et Yvelines (78) : Broué, Dreux, Chartres, Houdan & alentours.",
+  description: "Artisan électricien & sécurité électronique, 23 ans d'expérience. Intervention rapide en Eure (27), Eure-et-Loir (28) et Yvelines (78). Devis gratuit.",
   keywords: [
     // Électricien par ville
     "Électricien Broué", "Électricien Dreux", "Électricien Chartres", "Électricien Évreux",
@@ -36,18 +39,26 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  // Sert uniquement à alimenter le badge de note du hero. Le fetch est
+  // dédupliqué par React avec celui de ReviewsSection : un seul appel réseau.
+  const { rating, totalRatings } = await getGoogleReviews();
+
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 overflow-x-hidden relative w-full pb-8 md:pb-0">
       <div className="w-full overflow-x-hidden">
-        <HeroSection />
+        <HeroSection rating={rating} totalRatings={totalRatings} />
         <BrandsSection />
         <FeaturesSection />
+        {/* Les avis etaient en 8e position, soit six ecrans de scroll : des
+            clients disaient ne pas les trouver. */}
+        <ReviewsSection limit={3} variant="home" />
         <AboutSection />
         <ServicesSection />
         <ProcessSection />
         <PricingPolicySection />
-        <TestimonialsSection  />
+        <PartnersSection />
+        <MapSection />
         <ContactCTASection />
       </div>
     </main>

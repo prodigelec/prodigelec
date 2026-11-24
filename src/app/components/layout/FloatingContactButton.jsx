@@ -22,10 +22,13 @@ export default function FloatingContactButton() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Affiché à partir de lg seulement : entre 768 et 1023 px la barre de
+  // navigation du bas est encore là, et ce bouton se posait par-dessus ses
+  // deux dernières entrées.
   return (
     <AnimatePresence>
       {isVisible && (
-        <div className="fixed bottom-6 right-6 z-9999 hidden md:block">
+        <div className="fixed bottom-6 right-6 z-9999 hidden lg:block">
           <m.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -40,9 +43,15 @@ export default function FloatingContactButton() {
                   exit={{ opacity: 0, y: 10, scale: 0.9 }}
                   className="absolute bottom-full right-0 mb-4 w-64 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
                 >
-                  <div className="bg-primary p-4 text-center">
-                    <h3 className="font-bold text-gray-900">Besoin d&apos;un dépannage ?</h3>
-                    <p className="text-xs text-gray-800 mt-1">Réponse rapide garantie</p>
+                  <div className="bg-red-800 p-4 text-center">
+                    <h3 className="font-bold text-white">Besoin d&apos;un dépannage ?</h3>
+                    <div className="flex items-center justify-center gap-1.5 mt-1">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400" />
+                      </span>
+                      <p className="text-xs text-white/90">Disponible 24h/24 — Lun. au Sam.</p>
+                    </div>
                   </div>
                   <div className="p-4 bg-white">
                     <a
@@ -53,7 +62,7 @@ export default function FloatingContactButton() {
                       06 38 19 47 52
                     </a>
                     <p className="text-xs text-center text-gray-700 mt-3">
-                      Basé à Broué (28) - Intervention rapide
+                      Répondeur actif la nuit — rappel dès que possible
                     </p>
                   </div>
                 </m.div>
@@ -65,7 +74,7 @@ export default function FloatingContactButton() {
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsExpanded(!isExpanded)}
               aria-label={isExpanded ? "Fermer le menu de contact" : "Ouvrir le menu de contact"}
-              className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg shadow-primary/30 transition-colors ${isExpanded ? 'bg-gray-900 text-white' : 'bg-primary text-gray-900'}`}
+              className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-colors ${isExpanded ? 'bg-gray-900 text-white' : 'bg-red-800 text-white shadow-red-800/40 hover:bg-red-900'}`}
             >
               {isExpanded ? <X size={24} /> : <Phone size={24} className="animate-pulse" />}
             </m.button>

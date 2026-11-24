@@ -10,7 +10,7 @@ import GarantiesSection from './components/sections/GarantiesSection';
 import LitigesSection from './components/sections/LitigesSection';
 
 export const metadata = {
-    title: "Conditions Générales de Vente | PRODIGELEC",
+    title: "Conditions Générales de Vente",
     description: "Conditions générales de vente des prestations d'électricité, de sécurité et d'automatismes par PRODIGELEC.",
     alternates: {
         canonical: "https://www.prodigelec.fr/cgv",

@@ -2,6 +2,7 @@
 import { m } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, ArrowUpRight, Calculator } from "lucide-react";
 import dynamic from 'next/dynamic';
+import ProdigelecSeal from "@/app/components/ui/ProdigelecSeal";
 
 const InterventionMap = dynamic(() => import('@/app/components/ui/InterventionMap'), {
   ssr: false,
@@ -31,8 +32,8 @@ export default function ContactInfo() {
     {
       icon: Clock,
       title: "Horaires d'ouverture",
-      value: "Lundi - Vendredi (9h-18h)",
-      sub: "Samedi uniquement sur RDV",
+      value: "Lundi - Samedi : 24h/24",
+      sub: "Répondeur actif la nuit, rappel dès que possible",
       link: null,
       gradient: "from-primary/20 to-primary-dark/20",
       text: "text-primary-light"
@@ -83,6 +84,17 @@ export default function ContactInfo() {
             </div>
           </m.a>
         ))}
+
+        {/* Seal de confiance */}
+        <m.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="flex justify-center pt-2"
+        >
+          <ProdigelecSeal size={180} variant="transparent" instanceId="contact" />
+        </m.div>
       </div>
 
       {/* Map & Travel Rates Column */}

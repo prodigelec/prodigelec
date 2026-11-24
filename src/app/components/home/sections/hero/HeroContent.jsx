@@ -1,13 +1,13 @@
 "use client";
 import { m, AnimatePresence } from 'framer-motion';
 import Button from '@/app/components/ui/Button';
-import { useRouter } from 'next/navigation';
 
 export default function HeroContent({ slides, currentSlide }) {
-  const router = useRouter();
 
   return (
-    <div className="relative z-20 h-full flex items-center justify-center">
+    // pb réserve la bande du bas au badge de note, qui est en position
+    // absolue : sans ça le contenu centré passerait dessous.
+    <div className="relative z-20 h-full flex items-center justify-center pt-24 md:pt-40 pb-20 md:pb-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center text-white w-full">
 
         <AnimatePresence mode='wait'>
@@ -19,14 +19,14 @@ export default function HeroContent({ slides, currentSlide }) {
             transition={{ duration: 0.5, staggerChildren: 0.1 }}
             className="space-y-6 md:space-y-12 max-w-5xl mx-auto"
           >
-            {/* SEO Optimized H1 (Hidden) */}
-            <h1 className="sr-only">
-              PRODIGELEC - Expert Artisan Électricien & Sécurité Électronique | Eure (27), Eure-et-Loir (28) & Yvelines (78)
-            </h1>
+            {/* Eyebrow — ancre SEO locale, pas un heading */}
+            <p className="inline-block bg-black/40 backdrop-blur-md rounded-full px-4 py-2 border border-white/10 text-xs font-bold uppercase tracking-[0.3em]" style={{ color: "var(--primary)" }}>
+              Artisan électricien &amp; sécurité — Eure-et-Loir, Eure &amp; Yvelines
+            </p>
 
-            {/* Title (Carousel H2) */}
+            {/* Titre carousel (H1) */}
             <div className="space-y-4">
-              <m.h2
+              <m.h1
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -38,7 +38,7 @@ export default function HeroContent({ slides, currentSlide }) {
                 <span className="block font-light opacity-95 mt-2 md:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                   {slides[currentSlide].title.split(' ').slice(1).join(' ')}
                 </span>
-              </m.h2>
+              </m.h1>
 
               <m.div
                 initial={{ opacity: 0 }}
@@ -54,34 +54,39 @@ export default function HeroContent({ slides, currentSlide }) {
               </m.div>
             </div>
 
-            {/* CTA Buttons - Hidden on mobile */}
+            {/* CTA Buttons */}
             <m.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 pt-4 md:pt-6 lg:pt-10"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 md:pt-6 lg:pt-10 w-full px-4 sm:px-0"
             >
               <Button
-                onClick={() => router.push('/contact#contact-form')}
+                onClick={() => window.location.href = 'tel:0638194752'}
                 variant="primary"
                 icon={
-                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 }
+                className="!bg-red-800 hover:!bg-red-900 shadow-red-800/30 hover:shadow-red-800/50 !text-white !border-none w-full sm:w-auto"
               >
-                Nous contacter
+                <span className="flex flex-col items-start leading-tight">
+                  <span className="text-[10px] font-bold opacity-80 uppercase tracking-wider">Urgence · 24h/24 Lun–Sam</span>
+                  <span className="text-base md:text-lg font-black">06 38 19 47 52</span>
+                </span>
               </Button>
 
               <Button
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                variant="primary"
+                variant="secondary"
                 icon={
                   <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 }
+                className="w-full sm:w-auto bg-black/40 hover:bg-black/60 backdrop-blur-md"
               >
                 Voir nos services
               </Button>

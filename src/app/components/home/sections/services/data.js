@@ -1,0 +1,93 @@
+import { Cctv, BatteryCharging } from "lucide-react";
+import { GiGate } from "react-icons/gi";
+import { FcFlashOn } from "react-icons/fc";
+
+export const services = [
+  {
+    key: "electricite",
+    title: "Électricité & Dépannage",
+    icon: FcFlashOn,
+    iconClassName: "",
+    accent: "amber",
+    image: "/tableau-electrique-marchezais.jpg",
+    imageAlt: "Tableau électrique installé par PRODIGELEC à Marchezais",
+    description: "Dépannage urgent, recherche de panne, mise aux normes et tableaux électriques.",
+    bullets: ["Dépannage d'urgence", "Intervention rapide", "Devis gratuit"],
+    href: "/services/electricite",
+    cta: "Nos services électricité",
+    ariaLabel: "En savoir plus sur nos prestations d'électricien",
+  },
+  {
+    key: "securite",
+    title: "Sécurité",
+    icon: Cctv,
+    iconClassName: "text-rose-400 group-hover:text-rose-300 transition-colors",
+    accent: "rose",
+    image: "/img_carousel_securite_page/videophonie_digicode.jpg",
+    imageAlt: "Vidéophone et digicode installés par PRODIGELEC",
+    description: "Digicode, vidéophonie, alarmes et vidéosurveillance sur mesure.",
+    bullets: ["Audit sécurité gratuit", "Équipements certifiés", "Installation soignée"],
+    href: "/services/securite",
+    cta: "Nos services sécurité",
+    ariaLabel: "En savoir plus sur nos prestations de sécurité",
+  },
+  {
+    key: "automatismes",
+    title: "Automatisation",
+    icon: GiGate,
+    iconClassName: "text-sky-400 group-hover:text-sky-300 transition-colors",
+    accent: "sky",
+    image: "/img_carousel_securite_page/domotique.jpg",
+    imageAlt: "Solution domotique connectée installée par PRODIGELEC",
+    description: "Motorisation de volets, portails et portes de garage. Domotique connectée.",
+    bullets: ["Pilotage smartphone", "Box Somfy Tahoma", "Devis gratuit"],
+    href: "/services/automatismes",
+    cta: "Nos services automatismes",
+    ariaLabel: "En savoir plus sur nos prestations d'automatisme",
+  },
+  {
+    key: "borne-ve",
+    title: "Recharge Véhicule Électrique",
+    icon: BatteryCharging,
+    iconClassName: "text-emerald-400 group-hover:text-emerald-300 transition-colors",
+    accent: "emerald",
+    image: "/img_carousel_borne_recharge/legrand-femme-recharge-domicile.jpg",
+    imageAlt: "Installation borne de recharge VE Legrand par PRODIGELEC",
+    description: "Installation de borne Wallbox 3,7 kW et prise Green'Up Legrand certifiée NF C 15-100.",
+    bullets: ["Pilotage smartphone", "Solutions Legrand certifiées", "Devis gratuit"],
+    href: "/services/borne-de-recharge-voiture-electrique",
+    cta: "Nos services borne VE",
+    ariaLabel: "En savoir plus sur l'installation de borne de recharge voiture électrique",
+  },
+];
+
+export const accentClasses = {
+  amber: {
+    border: "hover:border-amber-500/50",
+    iconBg: "bg-amber-500/10 group-hover:bg-amber-500/20",
+    titleHover: "group-hover:text-amber-400",
+    bullet: "bg-amber-500/80",
+    gradient: "from-amber-500/15",
+  },
+  rose: {
+    border: "hover:border-rose-500/50",
+    iconBg: "bg-rose-500/10 group-hover:bg-rose-500/20",
+    titleHover: "group-hover:text-rose-400",
+    bullet: "bg-rose-500/80",
+    gradient: "from-rose-500/15",
+  },
+  sky: {
+    border: "hover:border-sky-500/50",
+    iconBg: "bg-sky-500/10 group-hover:bg-sky-500/20",
+    titleHover: "group-hover:text-sky-400",
+    bullet: "bg-sky-500/80",
+    gradient: "from-sky-500/15",
+  },
+  emerald: {
+    border: "hover:border-emerald-500/50",
+    iconBg: "bg-emerald-500/10 group-hover:bg-emerald-500/20",
+    titleHover: "group-hover:text-emerald-400",
+    bullet: "bg-emerald-500/80",
+    gradient: "from-emerald-500/15",
+  },
+};

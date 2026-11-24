@@ -1,0 +1,492 @@
+const realisationsData = [
+  {
+    slug: "visiophone-tmezon-breval-yvelines",
+    titre: "Installation visiophone et remplacement gâche électrique",
+    description: "Le client avait acheté un visiophone Tmezon et une nouvelle gâche électrique. Pose de la platine extérieure et du poste intérieur en réutilisant la filerie existante, puis dépose de la gâche électrique hors d'usage et remplacement par celle fournie par le client.",
+    ville: "Bréval",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "securite",
+    date: "2026-06-15",
+    image: "/visiophone-tmezon-breval-yvelines-1.jpg",
+    imageAlt: "Platine extérieure visiophone Tmezon installée sur un portillon à Bréval, Yvelines",
+  },
+  {
+    slug: "depannage-alarme-somfy-villiers-saint-frederic",
+    titre: "Dépannage alarme Somfy et remplacement prise",
+    description: "L'alarme Somfy Link Essentiel ne fonctionnait plus après un changement de réseau internet. Réinitialisation complète du système, remplacement des piles de la sirène extérieure et des contacteurs de choc, et changement d'une prise électrique défectueuse dans le bureau.",
+    ville: "Villiers-Saint-Frédéric",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "securite",
+    date: "2026-06-30",
+    image: "/depannage-alarme-somfy-villiers-saint-frederic.jpg",
+    imageAlt: "Centrale d'alarme Somfy Link Essentiel dépannée à Villiers-Saint-Frédéric, Yvelines",
+  },
+  {
+    slug: "sonnette-urmet-la-queue-yvelines",
+    titre: "Installation sonnette sans fil",
+    description: "Le visiophone était hors service, le client avait besoin d'un accès fonctionnel rapidement. J'ai posé une sonnette sans fil Urmet en attendant le remplacement définitif.",
+    ville: "La Queue-les-Yvelines",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "securite",
+    date: "2026-04-27",
+    image: "/sonnette-urmet-la-queue-yvelines.jpg",
+    imageAlt: "Installation sonnette sans fil Urmet à La Queue-les-Yvelines",
+  },
+  {
+    slug: "four-bosch-branchement-la-queue-yvelines",
+    titre: "Remplacement et branchement four encastrable",
+    description: "Appel en urgence pour un four encastrable Bosch à remplacer. Dépose de l'ancien, branchement électrique du nouveau et mise en service le même jour.",
+    ville: "La Queue-les-Yvelines",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "electricite",
+    date: "2026-04-27",
+    image: "/four-bosch-branchement-la-queue-yvelines.jpg",
+    imageAlt: "Branchement four encastrable Bosch à La Queue-les-Yvelines",
+  },
+  {
+    slug: "tableau-electrique-marchezais",
+    titre: "Branchement tableau électrique, prises et interrupteurs",
+    description: "Travaux complets dans un garage : branchement du tableau électrique, pose des prises et interrupteurs étanches. Tout a été fait dans les règles pour une installation durable.",
+    ville: "Marchezais",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-05-18",
+    image: "/tableau-electrique-marchezais.jpg",
+    imageAlt: "Tableau électrique et prises étanches dans un garage à Marchezais",
+  },
+  {
+    slug: "videophone-solaire-sans-fil-garencieres-yvelines",
+    titre: "Installation visiophone solaire sans fil",
+    description: "Le client avait acheté un visiophone solaire sans fil. Je me suis chargé de la pose et du paramétrage. Pas de câblage nécessaire, l'appareil fonctionne sur énergie solaire.",
+    ville: "Garancières",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "securite",
+    date: "2025-12-19",
+    image: "/videophone-solaire-sans-fil-garencieres-yvelines.jpg",
+    imageAlt: "Installation visiophone solaire sans fil à Garancières, Yvelines",
+  },
+  {
+    slug: "radiateur-electrique-conde-sur-vesgres-1",
+    titre: "Remplacement radiateur par modèle à inertie",
+    description: "Remplacement d'un vieux radiateur électrique par un radiateur à inertie. Le confort de chauffe est bien meilleur et la consommation diminue sur la durée.",
+    ville: "Condé-sur-Vesgre",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "electricite",
+    date: "2026-01-13",
+    image: "/installation-radiateur-electrique-conde-sur-vesgres.jpg",
+    imageAlt: "Installation radiateur électrique à inertie à Condé-sur-Vesgre",
+  },
+  {
+    slug: "radiateur-electrique-conde-sur-vesgres-2",
+    titre: "Remplacement second radiateur à inertie",
+    description: "Même maison, même intervention pour une seconde pièce. Deux radiateurs à inertie remplacés pour moderniser le chauffage et faire des économies d'électricité.",
+    ville: "Condé-sur-Vesgre",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "electricite",
+    date: "2026-01-13",
+    image: "/installation-radiateur-electrique-conde-sur-vesgres-2.jpg",
+    imageAlt: "Pose radiateur électrique à Condé-sur-Vesgre, Yvelines",
+  },
+  {
+    slug: "chauffe-eau-ariston-havelu-yvelines",
+    titre: "Installation chauffe-eau électrique Ariston",
+    description: "Pose d'un chauffe-eau électrique Ariston en cave. Raccordement électrique, mise en eau et mise en service. Travail soigné dans un espace contraint.",
+    ville: "Havelu",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-03-27",
+    image: "/installation-chauffe-eau-ariston-havelu-yvelines.jpg",
+    imageAlt: "Installation chauffe-eau électrique Ariston à Havelu, Eure-et-Loir",
+  },
+  {
+    slug: "renovation-electrique-cuisine-sorel-moussel",
+    titre: "Rénovation électrique d'une cuisine",
+    description: "Reprise complète de l'installation électrique de la cuisine : création de circuits dédiés avec une protection par usage, saignées et pose des boîtes d'encastrement, puis tirage de la filerie jusqu'au tableau. L'appareillage et les protections étaient fournis par le client, la filerie par mes soins.",
+    ville: "Sorel-Moussel",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-07-13",
+    image: "/renovation-electrique-cuisine-sorel-moussel.jpg",
+    imageAlt: "Câblage électrique en cours dans une cuisine à Sorel-Moussel, Eure-et-Loir",
+  },
+  {
+    slug: "pots-encastrement-prises-interrupteurs-mere-yvelines",
+    titre: "Remplacement de pots d'encastrement et d'appareillage",
+    description: "Les pots d'encastrement ne tenaient plus l'appareillage. Dépose des prises, remplacement des pots par des modèles étanches puis repose, avec changement des interrupteurs et boutons poussoirs fournis par le client.",
+    ville: "Méré",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "electricite",
+    date: "2026-07-16",
+    image: "/remplacement-pots-encastrement-mere-yvelines.jpg",
+    imageAlt: "Illustration du remplacement d'un pot d'encastrement : ancienne boîte déposée dans le mur et boîte neuve prête à être posée, chantier de Méré, Yvelines",
+  },
+  {
+    slug: "reglage-motorisation-portail-faac-marchezais",
+    titre: "Réglage d'une motorisation de portail FAAC",
+    description: "Le portail ne se refermait plus correctement, les deux vantaux n'étant plus synchronisés. Recherche de panne sur la motorisation FAAC e024s, puis reprise des réglages jusqu'au retour d'un cycle d'ouverture et de fermeture normal.",
+    ville: "Marchezais",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "automatismes",
+    date: "2026-08-01",
+    image: "/reglage-motorisation-portail-faac-marchezais.jpg",
+    imageAlt: "Illustration d'un portail battant équipé d'une motorisation FAAC e024s à Marchezais, Eure-et-Loir",
+  },
+  {
+    slug: "installation-fileries-cuisine-garnay",
+    titre: "Installation de gaines et fileries dans une cuisine",
+    description: "Reprise de l'alimentation électrique d'une cuisine : passage des gaines, tirage de la filerie jusqu'au tableau existant et raccordement des circuits. Une partie des prises était fournie par le client, les gaines et la filerie par mes soins.",
+    ville: "Garnay",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-07-20",
+    image: "/installation-fileries-cuisine-garnay.jpg",
+    imageAlt: "Illustration de gaines électriques en attente dans les murs d'une pièce en rénovation, chantier de Garnay, Eure-et-Loir",
+  },
+  {
+    slug: "depannage-motorisation-enterree-came-ezy-sur-eure",
+    titre: "Dépannage d'une motorisation de portail enterrée CAME",
+    description: "Le portail battant ne terminait plus ses cycles : les fins de course ne coupaient plus au bon endroit, laissant les vantaux en butée ou à moitié ouverts. Ouverture des caissons de fondation et aspiration complète de la terre accumulée autour des moteurs enterrés CAME FROG-AE, dégrippage et graissage des mécanismes, puis reprise des réglages de fins de course sur l'armoire de commande CAME ZM3E jusqu'au retour d'un cycle d'ouverture et de fermeture normal.",
+    ville: "Ézy-sur-Eure",
+    departement: "Eure",
+    departementCode: "27",
+    categorie: "automatismes",
+    date: "2026-08-16",
+    image: "/depannage-motorisation-enterree-came-ezy-sur-eure.jpg",
+    imageAlt: "Moteur enterré CAME FROG-AE et son bras de liaison dans le caisson de fondation d'un portail battant à Ézy-sur-Eure, Eure",
+    // Chantier avant / après : trois vues complémentaires valent mieux qu'une
+    // seule photo pour un moteur enterré, que le client lui-même ne voit jamais.
+    photos: [
+      {
+        src: "/depannage-motorisation-enterree-came-ezy-sur-eure-caisson-avant.jpg",
+        alt: "Caisson de fondation envahi par la terre autour du moteur enterré CAME avant l'intervention, Ézy-sur-Eure",
+        legende: "À l'ouverture du caisson : le moteur enterré et son condensateur noyés sous la terre accumulée au fil des ans.",
+      },
+      {
+        src: "/depannage-motorisation-enterree-came-ezy-sur-eure-etiquette-frog-ae.jpg",
+        alt: "Étiquette constructeur du moteur enterré CAME FROG-AE, code 109FROG-AE, 230 V, relevée à Ézy-sur-Eure",
+        legende: "L'étiquette dégagée donne le modèle exact : CAME FROG-AE, 230 V. C'est elle qui oriente les réglages.",
+      },
+      {
+        src: "/depannage-motorisation-enterree-came-ezy-sur-eure-cablage.jpg",
+        alt: "Moteur enterré CAME FROG-AE dégrippé et graissé dans son caisson après aspiration de la terre, Ézy-sur-Eure",
+        legende: "Caisson aspiré, mécanisme dégrippé et graissé : le moteur est prêt pour la reprise des fins de course.",
+      },
+    ],
+  },
+  {
+    slug: "tableau-electrique-mise-aux-normes-thoiry",
+    titre: "Remplacement de tableau électrique et mise aux normes NF C 15-100",
+    description: "Maison sans terre à l'étage et tableau d'origine arrivé en bout de course. Dépose de l'ancien tableau Hager et pose d'un tableau Legrand complet, réparti sur quatre rangées protégées par différentiels 30 mA. Montée de la terre à l'étage en remplaçant le câble de chaque prise, un par un, et raccordement sur l'araignée de distribution dans les combles. Remplacement de tout l'appareillage en gamme Dooxie de Legrand — prises, interrupteurs et sorties de câble — et reprise du câblage du télérupteur, passé de trois à quatre fils pour accepter un modèle récent. Déplacement d'un radiateur en faisant passer son alimentation derrière le doublage placo-polystyrène, sans une seule saignée dans le mur.",
+    ville: "Thoiry",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "electricite",
+    date: "2026-08-20",
+    image: "/tableau-electrique-legrand-mise-aux-normes-thoiry.jpg",
+    imageAlt: "Tableau électrique Legrand posé et refermé par ses plastrons, quatre rangées protégées par différentiels 30 mA, porte ouverte, à Thoiry dans les Yvelines",
+    photos: [
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-ancien-tableau.jpg",
+        alt: "Ancien tableau électrique Hager jauni avec son télérupteur et ses étiquettes manuscrites, avant remplacement à Thoiry",
+        legende: "L'ancien tableau Hager, saturé et étiqueté à la main. Le télérupteur d'origine est le module gris en bas à gauche.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-prise-terre-dooxie.jpg",
+        alt: "Prise de courant Legrand Dooxie neuve avec broche de terre visible, installée à l'étage d'une maison à Thoiry",
+        legende: "Une prise de l'étage après reprise : la broche de terre est là, ce qui n'était le cas nulle part avant le chantier.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-sortie-de-cable.jpg",
+        alt: "Sortie de câble Legrand Dooxie neuve posée à côté de l'ancienne sortie jaunie, chantier de Thoiry",
+        legende: "La sortie de câble neuve, à côté de celle qu'elle remplace. Vingt ans d'écart sur le même mur.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-radiateur-depose.jpg",
+        alt: "Mur avec alimentation en attente après dépose d'un radiateur, sans saignée dans le doublage placo-polystyrène, Thoiry",
+        legende: "Radiateur déposé, alimentation en attente à son nouvel emplacement. Le doublage n'a pas été ouvert.",
+      },
+      {
+        src: "/tableau-electrique-mise-aux-normes-thoiry-radiateur-repose.jpg",
+        alt: "Radiateur électrique reposé à son nouvel emplacement après déplacement de son alimentation, Thoiry, Yvelines",
+        legende: "Le radiateur à sa nouvelle place, alimenté par sa sortie de câble. Aucune reprise de peinture à prévoir.",
+      },
+    ],
+  },
+  {
+    slug: "tableau-electrique-cuisine-faverolles",
+    titre: "Remplacement du tableau électrique et mise aux normes de la cuisine",
+    description: "Remplacement complet du tableau électrique et reprise de toute l'alimentation de la cuisine. Le nouveau tableau Hager occupe quatre rangées, chacune sous son propre interrupteur différentiel 30 mA : étage, éclairages, cuisine et sous-sol, plus un différentiel dédié aux volets roulants. La cuisine a été remise aux normes NF C 15-100 circuit par circuit — plaque de cuisson en 32 A, four, lave-vaisselle, micro-ondes, réfrigérateur et prises du plan de travail, chacun sur sa propre protection, derrière un différentiel de type A comme l'exige la norme pour ces appareils. Le sous-sol a suivi la même logique : adoucisseur, chaudière, lave-linge, sèche-linge et congélateur séparés les uns des autres. Tout le tableau est repéré, étiquette par étiquette et numéro par numéro : le jour où un disjoncteur saute, on sait lequel regarder sans ouvrir quoi que ce soit.",
+    ville: "Faverolles",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-08-28",
+    image: "/tableau-electrique-cuisine-faverolles.jpg",
+    imageAlt: "Tableau électrique Hager de quatre rangées entièrement repéré, protégé par des interrupteurs différentiels 30 mA, installé en sous-sol dans une maison de Faverolles, Eure-et-Loir",
+    // Nom de l'auteur de l'avis Google laissé après ce chantier, tel qu'il
+    // apparaît chez Google. L'API ne renvoie que les cinq avis les plus
+    // récents : passé cette fenêtre l'encart disparaît de lui-même, plutôt
+    // que de figer dans le code un texte qui appartient au client.
+    avisAuteur: "samas _Jac",
+  },
+  {
+    slug: "visiophone-ezviz-tp9-pro-la-queue-yvelines",
+    titre: "Remplacement d'un visiophone hors service par un EZVIZ TP9 Pro",
+    description: "Le visiophone d'origine ne fonctionnait plus depuis un moment. Lors d'un premier passage, j'avais posé une sonnette sans fil Urmet sur la platine hors service pour que la maison garde au moins une sonnerie, le temps de choisir le remplaçant. Retour pour le remplacement définitif avec un kit EZVIZ TP9 Pro : dépose de l'ancienne platine encastrée et de sa visière, adaptation de la réservation dans le mur pour recevoir la nouvelle platine, puis pose et paramétrage du moniteur tactile à l'intérieur. L'accès s'ouvre maintenant de quatre façons : code sur le clavier, badge ou smartphone en NFC, écran de 8 pouces dans l'entrée, et application EZVIZ à distance pour ouvrir même en étant absent.",
+    ville: "La Queue-les-Yvelines",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "securite",
+    date: "2026-09-10",
+    image: "/visiophone-ezviz-tp9-pro-la-queue-yvelines.jpg",
+    imageAlt: "Platine de rue EZVIZ TP9 Pro avec caméra 4K, clavier à code et lecteur NFC, installée sur un mur en pierre à La Queue-les-Yvelines",
+    // Le même accès avant et après : la platine hors service dépannée à la
+    // sonnette sans fil, puis le moniteur qui la remplace à l'intérieur.
+    photos: [
+      {
+        src: "/visiophone-ezviz-tp9-pro-la-queue-yvelines-ancienne-platine.jpg",
+        alt: "Ancienne platine de visiophone hors service avec sonnette sans fil Urmet posée en dépannage, avant remplacement à La Queue-les-Yvelines",
+        legende: "Avant l'intervention : la platine d'origine ne répondait plus, la sonnette sans fil posée dessus servait de solution d'attente.",
+      },
+      {
+        src: "/visiophone-ezviz-tp9-pro-la-queue-yvelines-moniteur.jpg",
+        alt: "Moniteur intérieur tactile 8 pouces du visiophone EZVIZ TP9 Pro fixé au mur dans l'entrée d'une maison à La Queue-les-Yvelines",
+        legende: "Le moniteur tactile de 8 pouces dans l'entrée : il affiche le visiteur, ouvre l'accès et conserve l'historique des appels.",
+      },
+    ],
+  },
+  {
+    slug: "prises-boitiers-etanches-garage-thoiry",
+    titre: "Remplacement de prises et boîtiers étanches dans un garage",
+    description: "L'appareillage en saillie du garage avait fait son temps : trois boîtiers blancs jaunis par les années, alimentés par une gaine apparente le long du mur en parpaing. Dépose des anciens boîtiers et pose de boîtiers étanches Legrand Plexo aux mêmes emplacements, repris sur l'alimentation existante sans modifier le cheminement. C'est l'appareillage qui convient à ce type de local : un garage n'est ni chauffé ni à l'abri de la poussière et de l'humidité, conditions dans lesquelles du matériel d'intérieur vieillit vite.",
+    ville: "Thoiry",
+    departement: "Yvelines",
+    departementCode: "78",
+    categorie: "electricite",
+    date: "2026-08-22",
+    image: "/prises-boitiers-etanches-garage-thoiry.jpg",
+    imageAlt: "Boîtiers étanches Legrand Plexo neufs posés en saillie sur le mur en parpaing d'un garage à Thoiry, dans les Yvelines",
+    photos: [
+      {
+        src: "/prises-boitiers-etanches-garage-thoiry-avant.jpg",
+        alt: "Anciens boîtiers électriques en saillie jaunis sur le mur en parpaing d'un garage, avant remplacement à Thoiry, Yvelines",
+        legende: "Avant l'intervention : trois boîtiers en saillie jaunis, sur la gaine qui a été conservée pour alimenter les neufs.",
+      },
+    ],
+  },
+  {
+    slug: "depannage-portail-nice-l-habit",
+    titre: "Dépannage d'un portail motorisé Nice hors service",
+    description: "Le portail battant ne répondait plus du tout : ni télécommande, ni mouvement des vantaux. Recherche de panne en partant de l'alimentation jusqu'à l'armoire de commande Nice A700F, qui pilote les deux moteurs du portail : c'est là que se trouvait le défaut, les moteurs n'étaient pas en cause. Remplacement des protections défaillantes et remise en service, le portail a retrouvé ses cycles d'ouverture et de fermeture.",
+    ville: "L'Habit",
+    departement: "Eure",
+    departementCode: "27",
+    categorie: "automatismes",
+    date: "2026-09-14",
+    image: "/depannage-portail-nice-l-habit.jpg",
+    imageAlt: "Motorisation à bras Nice fixée sur le pilier d'un portail battant, dépannée à L'Habit dans l'Eure",
+    photos: [
+      {
+        src: "/depannage-portail-nice-l-habit-armoire-a700f.jpg",
+        alt: "Carte électronique de l'armoire de commande Nice A700F remise sous tension, voyants allumés, à L'Habit",
+        legende: "L'armoire Nice A700F après intervention : les voyants de la carte se rallument, l'installation est de nouveau alimentée.",
+      },
+      {
+        src: "/depannage-portail-nice-l-habit-schema-cablage.jpg",
+        alt: "Schéma de raccordement de l'armoire Nice A700F collé à l'intérieur du couvercle du boîtier, L'Habit, Eure",
+        legende: "Le schéma collé dans le couvercle du boîtier : il confirme le modèle d'armoire et le raccordement des deux moteurs.",
+      },
+    ],
+  },
+  {
+    slug: "telerupteur-radio-yokis-l-habit",
+    titre: "Commande d'éclairage par télérupteur radio Yokis",
+    description: "Dans la même maison que le portail motorisé Nice, pose d'un micromodule télérupteur radio Yokis de la gamme MTR2000 pour commander un éclairage. Logé directement dans la boîte d'encastrement et raccordé sur le circuit existant, il allume et éteint la lumière depuis un bouton poussoir comme depuis une télécommande ou un bouton radio, sans tirer de câble supplémentaire ni ouvrir de saignée. Le module accepte jusqu'à 2000 W d'éclairage et peut éteindre la lumière automatiquement après une durée réglable.",
+    ville: "L'Habit",
+    departement: "Eure",
+    departementCode: "27",
+    categorie: "electricite",
+    date: "2026-09-14",
+    image: "/telerupteur-radio-yokis-l-habit.jpg",
+    imageAlt: "Micromodule télérupteur radio Yokis raccordé dans une boîte d'encastrement pour commander un éclairage, à L'Habit dans l'Eure",
+    photos: [
+      {
+        src: "/telerupteur-radio-yokis-l-habit-face-arriere.jpg",
+        alt: "Face arrière du micromodule télérupteur radio Yokis avant sa mise en place dans la boîte d'encastrement, L'Habit, Eure",
+        legende: "La face arrière du module, avec son bouton de connexion : c'est par là qu'on l'associe aux télécommandes et boutons radio qui allument la lumière.",
+      },
+    ],
+  },
+  {
+
+    slug: "creation-circuits-prises-sous-sol-bu",
+    titre: "Création de trois circuits de prises au sous-sol",
+    description: "Équipement électrique d'un sous-sol aménagé : création de trois circuits raccordés au tableau existant : des prises commandées par interrupteur, des prises classiques et une prise étanche. Les câbles cheminent en gaine dans les montants des cloisons, en gaine sur le mur côté fenêtre, laissée en attente du doublage que le client posera ensuite, et en moulure au sol pour contourner le mur, avec sortie du tableau sous conduit IRL. Deux saignées au plafond ont été réalisées pour dissimuler les câbles existants. Pose des boîtes d'encastrement et de l'appareillage Legrand, raccordement au tableau, essais et mise en service.",
+    ville: "Bû",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-10-14",
+    image: "/creation-circuits-prises-sous-sol-bu.jpg",
+    imageAlt: "Gaines électriques apparentes, boîte d'encastrement et interrupteur posés en attente du doublage sur le mur d'un sous-sol en cours d'aménagement à Bû, Eure-et-Loir",
+    photos: [
+      {
+        src: "/creation-circuits-prises-sous-sol-bu-prise-double.jpg",
+        alt: "Double prise de courant Legrand encastrée dans une cloison de sous-sol à Bû, Eure-et-Loir",
+        legende: "Une double prise encastrée dans la cloison : le câble arrive par la gaine passée dans les montants, rien ne dépasse.",
+      },
+      {
+        src: "/creation-circuits-prises-sous-sol-bu-prise-cloison.jpg",
+        alt: "Bloc de prises encastré en pied de cloison, alimenté par une gaine électrique, dans un sous-sol à Bû, Eure-et-Loir",
+        legende: "Un bloc de prises en pied de cloison, posé avant les finitions de peinture.",
+      },
+      {
+        src: "/creation-circuits-prises-sous-sol-bu-gaine-apparente.jpg",
+        alt: "Gaine électrique apparente fixée dans l'angle d'un mur et boîte de connexion, sous-sol à Bû, Eure-et-Loir",
+        legende: "Sur le mur côté fenêtre, la gaine est fixée en attente : elle sera cachée par le doublage que le client posera ensuite.",
+      },
+      {
+        src: "/creation-circuits-prises-sous-sol-bu-saignee-plafond.jpg",
+        alt: "Saignée réalisée au plafond pour encastrer et dissimuler un câble électrique existant, sous-sol à Bû, Eure-et-Loir",
+        legende: "Une des deux saignées au plafond, ouverte pour dissimuler les câbles existants avant rebouchage.",
+
+      },
+    ],
+  },
+  {
+    slug: "gestionnaire-energie-calybox-saint-martin-de-nigelles",
+    titre: "Remplacement d'un gestionnaire de chauffage par un Calybox 230",
+    description: "L'ancien gestionnaire d'énergie Delta Dore GP36 et son boîtier d'ambiance pilotaient les radiateurs électriques à fil pilote de la maison. Dépose de l'ensemble, puis pose d'un pack Delta Dore Calybox 230 : le boîtier technique s'installe dans le tableau électrique, sur un disjoncteur dédié, et reprend les fils pilotes existants ; le nouveau boîtier d'ambiance se raccorde sur la liaison bus déjà en place, sans câble à tirer. Programmation des zones de chauffage selon les horaires du client, contrôle du délestage, essais et prise en main.",
+    ville: "Saint-Martin-de-Nigelles",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-10-26",
+    image: "/gestionnaire-energie-calybox-saint-martin-de-nigelles.jpg",
+    imageAlt: "Boîtier technique Delta Dore Calybox 230 installé dans le tableau électrique à côté de son disjoncteur dédié, à Saint-Martin-de-Nigelles en Eure-et-Loir",
+    photos: [
+      {
+        src: "/gestionnaire-energie-calybox-saint-martin-de-nigelles-ancien-gp36.jpg",
+        alt: "Ancien gestionnaire d'énergie Delta Dore GP36 dans le tableau électrique avant son remplacement, Saint-Martin-de-Nigelles, Eure-et-Loir",
+        legende: "Avant : l'ancien gestionnaire Delta Dore GP36, avec son bornier téléinfo et bus. C'est lui que remplace le Calybox.",
+      },
+      {
+        src: "/gestionnaire-energie-calybox-saint-martin-de-nigelles-boitier-ambiance.jpg",
+        alt: "Boîtier d'ambiance du gestionnaire Delta Dore Calybox 230 posé au mur, Saint-Martin-de-Nigelles, Eure-et-Loir",
+        legende: "Le boîtier d'ambiance, raccordé sur la liaison bus existante : c'est depuis lui que le client règle ses zones et ses horaires de chauffage.",
+      },
+    ],
+  },
+  {
+    slug: "salle-de-bain-seche-serviettes-vernouillet",
+    titre: "Salle de bain : sèche-serviettes, applique et mise en sécurité",
+    description: "Dans une salle de bain sous les toits, au 5e étage sans ascenseur : dépose du radiateur hors service, dont les conducteurs n'étaient isolés que par du ruban adhésif. Reprise de ces conducteurs dans une boîte de dérivation fermée, raccordement sur une sortie de câble, puis pose et fixation d'un sèche-serviettes électrique à fluide. Remplacement de l'ancienne applique par celle choisie par la cliente, pose d'une prise étanche hors volumes, distincte de l'éclairage, et remplacement de deux boîtes de dérivation dépourvues de couvercle pour sécuriser l'installation. Essais et mise en service.",
+    ville: "Vernouillet",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-10-16",
+    image: "/salle-de-bain-seche-serviettes-vernouillet.jpg",
+    imageAlt: "Salle de bain sous les toits avec sèche-serviettes électrique, applique au-dessus du miroir et prise étanche, à Vernouillet en Eure-et-Loir",
+    photos: [
+      {
+        src: "/salle-de-bain-seche-serviettes-vernouillet-ancien-radiateur.jpg",
+        alt: "Ancien radiateur électrique hors service déposé au sol de la salle de bain, conducteurs à reprendre, Vernouillet, Eure-et-Loir",
+        legende: "Avant : le radiateur hors service une fois déposé. Ses conducteurs, seulement scotchés, ont été repris dans une boîte de dérivation fermée.",
+      },
+    ],
+  },
+  {
+    slug: "depannage-alarme-paradox-saint-lubin-des-joncherets",
+    titre: "Dépannage d'une alarme Paradox qui se déclenchait seule",
+    description: "Dans un bar-tabac, l'alarme Paradox Magellan se déclenchait toute seule. Recherche de la cause dans l'historique des événements de la centrale, qui enregistre chaque déclenchement, zone par zone, avec son heure : le diagnostic a orienté vers les piles des détecteurs sans fil. Remplacement des piles, fournies par le client, puis contrôle du retour à la normale. L'installation étant vétuste, son remplacement est à prévoir pour retrouver un système fiable dans la durée.",
+    ville: "Saint-Lubin-des-Joncherets",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "securite",
+    date: "2026-10-27",
+    image: "/depannage-alarme-paradox-saint-lubin-des-joncherets.jpg",
+    imageAlt: "Centrale d'alarme Paradox Magellan affichant « Secteur1 PRÊT » après dépannage dans un bar-tabac à Saint-Lubin-des-Joncherets, Eure-et-Loir",
+  },
+  {
+    slug: "tableau-electrique-gaine-technique-saint-germain-sur-avre",
+    titre: "Remplacement du tableau électrique en gaine technique logement",
+    description: "L'ancien tableau fonctionnait encore avec des coupe-circuits à fusibles, sous un seul différentiel général de 300 mA qui ne protège pas les personnes contre l'électrocution, et il n'était pas posé à la hauteur réglementaire. Pose d'une gaine technique logement avec un tableau neuf de quatre rangées : cinq interrupteurs différentiels 30 mA, dont deux de type A, l'un réservé aux trois pompes à chaleur, l'autre à la cuisine et au lavage, dix-neuf disjoncteurs adaptés à chaque circuit et un contacteur heures creuses pour le chauffe-eau. Reprise de tous les circuits existants après repérage et séparation des neutres communs. Le petit tableau du bas a été conservé et protégé par un différentiel 30 mA en tête. Un support pour la box internet, avec sa prise, complète la gaine technique.",
+    ville: "Saint-Germain-sur-Avre",
+    departement: "Eure",
+    departementCode: "27",
+    categorie: "electricite",
+    date: "2026-11-11",
+    image: "/tableau-electrique-gaine-technique-saint-germain-sur-avre.jpg",
+    imageAlt: "Gaine technique logement neuve avec tableau électrique fermé et support de box internet, posée à Saint-Germain-sur-Avre dans l'Eure",
+    photos: [
+      {
+        src: "/tableau-electrique-saint-germain-sur-avre-ancien-tableau.jpg",
+        alt: "Ancien tableau électrique Hager jauni avec coupe-circuits à fusibles et interrupteur différentiel général Schupa 300 mA, avant remplacement à Saint-Germain-sur-Avre",
+        legende: "Avant : l'ancien tableau, avec des fusibles et un seul différentiel de 300 mA pour toute la maison.",
+      },
+    ],
+  },
+];
+
+export const realisations = [...realisationsData].sort(
+  (a, b) => new Date(b.date) - new Date(a.date)
+);
+
+export const categories = [
+  { slug: "tous", label: "Tous" },
+  { slug: "electricite", label: "Électricité" },
+  { slug: "securite", label: "Sécurité" },
+  { slug: "automatismes", label: "Automatismes" },
+];
+
+export const categoryColors = {
+  electricite: { bg: "rgba(255,193,7,0.12)", border: "rgba(255,193,7,0.35)", text: "#ffc107", label: "Électricité" },
+  securite:    { bg: "rgba(201,162,39,0.12)", border: "rgba(201,162,39,0.35)", text: "#c9a227", label: "Sécurité" },
+  automatismes:{ bg: "rgba(201,162,39,0.12)", border: "rgba(201,162,39,0.35)", text: "#c9a227", label: "Automatismes" },
+};
+
+export function formatRealisationDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
+}
+
+// Les chantiers d'une commune, pour les afficher sur sa page ville.
+// Le rapprochement se fait sur le nom exact de la commune : c'est
+// volontaire, un rapprochement approximatif rattacherait des chantiers
+// à la mauvaise ville.
+export function getRealisationsByVille(ville) {
+  return realisations.filter(
+    (r) => r.ville.toLowerCase() === ville.toLowerCase()
+  );
+}
+
+export function getRealisationBySlug(slug) {
+  return realisations.find((r) => r.slug === slug);
+}
+
+// Suggestions en bas de page d'un chantier. La même commune passe avant la
+// même catégorie : un visiteur venu d'une recherche locale est d'abord
+// intéressé par ce qui a été fait près de chez lui.
+export function getRelatedRealisations(realisation, limit = 3) {
+  const others = realisations.filter((r) => r.slug !== realisation.slug);
+  const sameVille = others.filter((r) => r.ville === realisation.ville);
+  const sameCategorie = others.filter(
+    (r) => r.ville !== realisation.ville && r.categorie === realisation.categorie
+  );
+  return [...sameVille, ...sameCategorie, ...others]
+    .filter((r, i, arr) => arr.findIndex((x) => x.slug === r.slug) === i)
+    .slice(0, limit);
+}

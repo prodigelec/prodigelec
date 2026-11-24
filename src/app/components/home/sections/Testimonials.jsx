@@ -4,6 +4,7 @@ import { m } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import GoogleLogo from "@/app/components/ui/GoogleLogo";
 
 function FilledStar({ className = "" }) {
   return (
@@ -18,56 +19,21 @@ function FilledStar({ className = "" }) {
   );
 }
 
-const FALLBACK_TESTIMONIALS = [
-  {
-    id: 1,
-    name: "Sophie M.",
-    location: "Dreux",
-    rating: 5,
-    text: "Intervention très rapide pour une panne de courant totale. L'électricien a été ponctuel, très professionnel et a pris le temps d'expliquer le problème. Je recommande vivement !",
-    date: "Il y a 2 semaines",
-    profilePhoto: null,
-  },
-  {
-    id: 2,
-    name: "Laurent B.",
-    location: "Anet",
-    rating: 5,
-    text: "Excellent professionnel, je recommande à 100%. Réparation de notre digicode réalisée rapidement et proprement. Explications claires, tarif honnête. On sent que le métier est maîtrisé.",
-    date: "Il y a 3 semaines",
-    profilePhoto: null,
-  },
-  {
-    id: 3,
-    name: "Marie & Thomas",
-    location: "Broué",
-    rating: 4,
-    text: "Nous avons fait appel à Prodigelec pour la rénovation de notre tableau électrique. Excellent travail. Un artisan de confiance.",
-    date: "Il y a 3 semaines",
-    profilePhoto: null,
-  },
-];
 
 export default function Testimonials() {
   const googleReviewLink = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL || "https://g.page/r/Cc7ec3hVcz95EBM/review";
-  const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
+  const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
     fetch("/api/reviews")
       .then((r) => r.json())
       .then(({ reviews }) => {
-        if (reviews?.length > 0) {
-          // Compléter avec les fallbacks si moins de 3 vrais avis
-          const merged = [...reviews];
-          for (const f of FALLBACK_TESTIMONIALS) {
-            if (merged.length >= 3) break;
-            merged.push({ ...f, id: reviews.length + f.id });
-          }
-          setTestimonials(merged);
-        }
+        if (reviews?.length > 0) setTestimonials(reviews);
       })
       .catch(() => {});
   }, []);
+
+  if (testimonials.length === 0) return null;
 
   return (
     <section className="py-20 md:py-32 bg-background relative overflow-hidden">
@@ -108,7 +74,7 @@ export default function Testimonials() {
           </m.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16">
           {testimonials.map((testimonial, index) => (
             <m.div
               key={testimonial.id}
@@ -183,12 +149,7 @@ export default function Testimonials() {
 
                   {/* Badge Google */}
                   <div className="shrink-0 flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1">
-                    <img
-                      src="/google-logo.svg"
-                      alt="Google"
-                      className="h-3 w-3"
-                      onError={(e) => { e.target.style.display = "none"; }}
-                    />
+                    <GoogleLogo className="h-3 w-3" />
                     <span className="text-xs font-semibold text-white/40">Google</span>
                   </div>
                 </div>
@@ -210,7 +171,7 @@ export default function Testimonials() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-white text-background font-bold rounded-xl hover:bg-gray-100 transition-colors shadow-lg shadow-white/10 group"
           >
-            <img src="/google-logo.svg" alt="Google" className="w-6 h-6" onError={(e) => e.target.style.display = "none"} />
+            <GoogleLogo className="w-6 h-6" />
             <span className="group-hover:translate-x-1 transition-transform">
               Lire plus d&apos;avis ou laisser le vôtre
             </span>

@@ -7,6 +7,8 @@ import ServiceUrgency from "../../components/services/shared/ServiceUrgency";
 import ServiceFAQ from "../../components/services/shared/ServiceFAQ";
 import ServiceCTA from "../../components/services/shared/ServiceCTA";
 import ServiceCarousel from "../../components/services/shared/ServiceCarousel";
+import ServiceCityLinks from "../../components/services/shared/ServiceCityLinks";
+import ServiceRealisations from "../../components/services/shared/ServiceRealisations";
 
 import { Blinds, Wrench, Smartphone, Settings2, DoorOpen } from "lucide-react";
 
@@ -97,16 +99,18 @@ export default function AutomatismesContent() {
     },
     {
       title: "Dépannage Urgence",
-      price: "À partir de 120€ TTC",
+      price: "150€ TTC",
       description: "Volet bloqué, portail en panne, moteur défaillant.",
       features: [
         "Volets, portails, portes de garage",
-        "Diagnostic & réparation sur place",
-        "Déplacement Zone 1 offert",
-        "Tarif annoncé avant intervention"
+        "Recherche de panne incluse",
+        "Réparation incluse si sans fourniture",
+        "Déplacement en sus, annoncé avant"
       ],
       highlight: true,
-      tag: "Urgence"
+      tag: "Urgence",
+      variant: "urgence",
+      cta: "Demander un dépannage"
     }
   ];
 
@@ -210,6 +214,10 @@ export default function AutomatismesContent() {
           faqs={faqItems}
           theme="securite"
         />
+
+        <ServiceRealisations categorie="automatismes" theme="securite" />
+
+        <ServiceCityLinks theme="securite" />
 
         <ServiceCTA
           title="Besoin de motoriser vos fermetures ?"

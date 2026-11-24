@@ -13,6 +13,11 @@ export default function ServiceCTA({ title, description, buttonText, theme = "el
       buttonBg: "bg-primary",
       buttonHover: "hover:bg-primary-light",
       buttonText: "text-background"
+    },
+    borne: {
+      buttonBg: "bg-emerald-500",
+      buttonHover: "hover:bg-emerald-400",
+      buttonText: "text-background"
     }
   };
 

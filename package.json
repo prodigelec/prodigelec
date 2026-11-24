@@ -6,15 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "facebook": "node --env-file-if-exists=.env.local scripts/publier-facebook.mjs"
   },
   "dependencies": {
     "critters": "^0.0.23",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.26",
     "googleapis": "^169.0.0",
+    "gray-matter": "^4.0.3",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.562.0",
     "next": "16.0.10",
+    "next-mdx-remote": "^6.0.0",
     "nodemailer": "^8.0.1",
     "react": "19.2.1",
     "react-dom": "19.2.1",

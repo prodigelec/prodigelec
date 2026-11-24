@@ -25,6 +25,17 @@ export default function ServiceServices({ title, subtitle, description, features
       cardBorder: "border-white/10",
       glowColor: "bg-primary/10 group-hover:bg-primary/20",
       checkBg: "bg-primary/10"
+    },
+    borne: {
+      highlightColor: "text-emerald-400",
+      cardHoverBorder: "hover:border-emerald-500/50",
+      iconBgHover: "hover:bg-white/[0.07]",
+      iconColor: "text-emerald-400",
+      checkColor: "text-emerald-400",
+      cardBg: "bg-white/[0.03] backdrop-blur-xl",
+      cardBorder: "border-white/10",
+      glowColor: "bg-emerald-500/10 group-hover:bg-emerald-500/20",
+      checkBg: "bg-emerald-500/10"
     }
   };
 
@@ -41,7 +52,7 @@ export default function ServiceServices({ title, subtitle, description, features
         </p>
       </div>
 
-      <div className={`grid grid-cols-1 md:grid-cols-2 ${theme === 'electricite' ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-4 md:gap-8 lg:gap-10 px-6`}>
+      <div className={`grid grid-cols-1 md:grid-cols-2 ${theme === 'electricite' || theme === 'borne' ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-4 md:gap-8 lg:gap-10 px-6`}>
         {features.map((feature, idx) => (
           <m.div
             key={idx}
