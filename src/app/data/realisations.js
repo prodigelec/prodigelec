@@ -391,6 +391,35 @@ const realisationsData = [
     ],
   },
   {
+    slug: "depannage-porte-sectionnelle-tremblay-les-villages",
+    titre: "Dépannage d'une porte sectionnelle de quai de chargement qui ne s'ouvrait plus",
+    description: "Sur un quai de chargement, la porte sectionnelle industrielle ne s'ouvrait plus. Elle est pilotée par un boîtier Loading Systems Combi Control, qui commande aussi le niveleur de quai. Recherche de panne sur toute la chaîne de commande : le boîtier, le moteur monté en bout d'arbre avec sa chaîne de manœuvre de secours, et la sécurité du bas de porte, reliée au boîtier par un câble spiralé qui suit la porte dans sa course. Après dépannage, la porte a retrouvé ses cycles d'ouverture et de fermeture.",
+    ville: "Tremblay-les-Villages",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "automatismes",
+    date: "2026-11-23",
+    image: "/depannage-porte-sectionnelle-tremblay-les-villages-quai.jpg",
+    imageAlt: "Porte sectionnelle industrielle blanche d'un quai de chargement avec niveleur de quai et boîtier de commande, à Tremblay-les-Villages, Eure-et-Loir",
+    photos: [
+      {
+        src: "/depannage-porte-sectionnelle-tremblay-les-villages-boitier-combi-control.jpg",
+        alt: "Boîtier de commande Loading Systems Combi Control avec boutons de montée, descente et arrêt et interrupteur-sectionneur rouge et jaune, Tremblay-les-Villages",
+        legende: "Le boîtier Loading Systems Combi Control : il commande la porte et le niveleur de quai, avec son sectionneur rouge et jaune pour couper l'alimentation.",
+      },
+      {
+        src: "/depannage-porte-sectionnelle-tremblay-les-villages-moteur.jpg",
+        alt: "Moteur de porte sectionnelle monté en bout d'arbre avec tambour d'enroulement des câbles et chaîne de manœuvre de secours, Tremblay-les-Villages",
+        legende: "Le moteur en bout d'arbre, à côté du tambour des câbles. La chaîne permet de manœuvrer la porte à la main en cas de panne.",
+      },
+      {
+        src: "/depannage-porte-sectionnelle-tremblay-les-villages-cable-spirale-bas-de-porte.jpg",
+        alt: "Câble spiralé orange reliant la sécurité du bas de la porte sectionnelle au boîtier de commande, Tremblay-les-Villages, Eure-et-Loir",
+        legende: "Le câble spiralé qui relie la sécurité du bas de porte au boîtier : il s'étire et se replie à chaque cycle.",
+      },
+    ],
+  },
+  {
     slug: "gestionnaire-energie-calybox-saint-martin-de-nigelles",
     titre: "Remplacement d'un gestionnaire de chauffage par un Calybox 230",
     description: "L'ancien gestionnaire d'énergie Delta Dore GP36 et son boîtier d'ambiance pilotaient les radiateurs électriques à fil pilote de la maison. Dépose de l'ensemble, puis pose d'un pack Delta Dore Calybox 230 : le boîtier technique s'installe dans le tableau électrique, sur un disjoncteur dédié, et reprend les fils pilotes existants ; le nouveau boîtier d'ambiance se raccorde sur la liaison bus déjà en place, sans câble à tirer. Programmation des zones de chauffage selon les horaires du client, contrôle du délestage, essais et prise en main.",
