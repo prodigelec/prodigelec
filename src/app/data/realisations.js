@@ -421,6 +421,30 @@ const realisationsData = [
     image: "/depannage-alarme-paradox-saint-lubin-des-joncherets.jpg",
     imageAlt: "Centrale d'alarme Paradox Magellan affichant « Secteur1 PRÊT » après dépannage dans un bar-tabac à Saint-Lubin-des-Joncherets, Eure-et-Loir",
   },
+  {
+    slug: "creation-prise-de-terre-dreux",
+    titre: "Création d'une prise de terre pour une maison qui n'en avait pas",
+    description: "Dans une maison en cours de réhabilitation, l'installation n'était reliée à aucune terre : en cas de défaut sur un appareil, rien ne pouvait évacuer le courant ni faire déclencher les protections. Création d'une prise de terre par piquets, reliés par un conducteur en cuivre nu de 25 mm² posé en tranchée le long de la maison. Le circuit de terre remonte ensuite par une barrette de coupure et un conducteur de 16 mm² jusqu'au tableau neuf, protégé par des différentiels 30 mA. La valeur de la prise de terre est mesurée avant la mise en service.",
+    ville: "Dreux",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "electricite",
+    date: "2026-11-19",
+    image: "/prise-de-terre-cuivre-nu-tranchee-dreux.jpg",
+    imageAlt: "Conducteur de terre en cuivre nu posé au fond d'une tranchée le long d'une maison à Dreux, Eure-et-Loir",
+    photos: [
+      {
+        src: "/prise-de-terre-dreux-tranchee-ouverte.jpg",
+        alt: "Tranchée creusée au pied du mur d'une maison pour le passage du conducteur de terre, Dreux",
+        legende: "La tranchée ouverte au pied du mur, prête à recevoir le cuivre nu.",
+      },
+      {
+        src: "/prise-de-terre-dreux-emplacement-piquet.jpg",
+        alt: "Emplacement d'un piquet de terre enfoncé au pied d'une maison, avec la masse utilisée pour le battre, Dreux",
+        legende: "L'emplacement d'un piquet, enfoncé à la masse dans le sol avant d'être relié au cuivre.",
+      },
+    ],
+  },
 ];
 
 export const realisations = [...realisationsData].sort(
