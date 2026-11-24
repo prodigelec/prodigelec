@@ -424,7 +424,7 @@ const realisationsData = [
   {
     slug: "creation-prise-de-terre-dreux",
     titre: "Création d'une prise de terre pour une maison qui n'en avait pas",
-    description: "Dans une maison en cours de réhabilitation, l'installation n'était reliée à aucune terre : en cas de défaut sur un appareil, rien ne pouvait évacuer le courant ni faire déclencher les protections. Création d'une prise de terre par piquets, reliés par un conducteur en cuivre nu de 25 mm² posé en tranchée le long de la maison. Le circuit de terre remonte ensuite par une barrette de coupure et un conducteur de 16 mm² jusqu'au tableau neuf, protégé par des différentiels 30 mA. Mesurée avant la mise en service, la prise de terre affiche 30 ohms, bien en dessous des 100 ohms visés.",
+    description: "Dans une maison en cours de réhabilitation, l'installation n'était reliée à aucune terre : en cas de défaut sur un appareil, rien ne pouvait évacuer le courant ni faire déclencher les protections. Création d'une prise de terre par piquets, reliés par un conducteur en cuivre nu de 25 mm² posé en tranchée le long de la maison. Le circuit de terre remonte ensuite par une barrette de coupure et un conducteur de 16 mm² jusqu'au tableau neuf, protégé par des différentiels 30 mA. Mesurée avant la mise en service, la prise de terre affiche 30,6 ohms, bien en dessous des 100 ohms visés.",
     ville: "Dreux",
     departement: "Eure-et-Loir",
     departementCode: "28",
@@ -442,6 +442,11 @@ const realisationsData = [
         src: "/prise-de-terre-dreux-emplacement-piquet.jpg",
         alt: "Emplacement d'un piquet de terre enfoncé au pied d'une maison, avec la masse utilisée pour le battre, Dreux",
         legende: "L'emplacement d'un piquet, enfoncé à la masse dans le sol avant d'être relié au cuivre.",
+      },
+      {
+        src: "/prise-de-terre-dreux-mesure-30-ohms.jpg",
+        alt: "Mesureur de terre Sefram MW9452D affichant 30,6 ohms lors du contrôle d'une prise de terre neuve à Dreux, Eure-et-Loir",
+        legende: "La mesure avant mise en service : 30,6 ohms, bien en dessous des 100 ohms visés.",
       },
     ],
   },
