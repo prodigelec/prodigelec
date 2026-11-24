@@ -436,17 +436,7 @@ const realisationsData = [
       {
         src: "/tableau-electrique-saint-germain-sur-avre-ancien-tableau.jpg",
         alt: "Ancien tableau électrique Hager jauni avec coupe-circuits à fusibles et interrupteur différentiel général Schupa 300 mA, avant remplacement à Saint-Germain-sur-Avre",
-        legende: "L'ancien tableau : des fusibles et un seul différentiel de 300 mA pour toute la maison.",
-      },
-      {
-        src: "/tableau-electrique-saint-germain-sur-avre-ancien-tableau-ouvert.jpg",
-        alt: "Intérieur de l'ancien tableau électrique ouvert, filerie et neutres communs avant reprise, Saint-Germain-sur-Avre",
-        legende: "Le même tableau ouvert : chaque circuit a été repéré et ses neutres séparés avant d'être repris sur le neuf.",
-      },
-      {
-        src: "/tableau-electrique-saint-germain-sur-avre-support-box.jpg",
-        alt: "Support de box internet intégré sous le tableau électrique dans la gaine technique logement, Saint-Germain-sur-Avre",
-        legende: "Sous le tableau, le support de la box internet et sa prise, rangés dans la gaine technique.",
+        legende: "Avant : l'ancien tableau, avec des fusibles et un seul différentiel de 300 mA pour toute la maison.",
       },
     ],
   },
