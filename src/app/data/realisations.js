@@ -312,6 +312,18 @@ const realisationsData = [
     ],
   },
   {
+    slug: "depannage-portail-charpont",
+    titre: "Dépannage d'un portail motorisé qui ne se fermait plus",
+    description: "Le portail s'ouvrait mais refusait de se refermer : les cellules photoélectriques, défaillantes, signalaient un obstacle en permanence et la carte bloquait la fermeture. Shunt des cellules sur la carte de commande pour rendre le portail de nouveau utilisable, puis reprogrammation du mode de fonctionnement : sans cellules actives, la fermeture automatique est désactivée et le portail s'ouvre et se ferme uniquement sur appui de la télécommande, l'utilisateur gardant le portail en vue. Le remplacement des cellules est à prévoir pour retrouver la fermeture automatique en toute sécurité.",
+    ville: "Charpont",
+    departement: "Eure-et-Loir",
+    departementCode: "28",
+    categorie: "automatismes",
+    date: "2026-11-24",
+    image: "/depannage-portail-charpont-carte-reprogrammee.jpg",
+    imageAlt: "Carte de commande d'une motorisation de portail avec ses voyants allumés après reprogrammation, à Charpont, Eure-et-Loir",
+  },
+  {
     slug: "telerupteur-radio-yokis-l-habit",
     titre: "Commande d'éclairage par télérupteur radio Yokis",
     description: "Dans la même maison que le portail motorisé Nice, pose d'un micromodule télérupteur radio Yokis de la gamme MTR2000 pour commander un éclairage. Logé directement dans la boîte d'encastrement et raccordé sur le circuit existant, il allume et éteint la lumière depuis un bouton poussoir comme depuis une télécommande ou un bouton radio, sans tirer de câble supplémentaire ni ouvrir de saignée. Le module accepte jusqu'à 2000 W d'éclairage et peut éteindre la lumière automatiquement après une durée réglable.",
