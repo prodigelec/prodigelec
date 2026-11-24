@@ -442,6 +442,22 @@ const realisationsData = [
         src: "/prise-de-terre-dreux-emplacement-piquet.jpg",
         alt: "Emplacement d'un piquet de terre enfoncé au pied d'une maison, avec la masse utilisée pour le battre, Dreux",
         legende: "L'emplacement d'un piquet, enfoncé à la masse dans le sol avant d'être relié au cuivre.",
+
+    slug: "tableau-electrique-gaine-technique-saint-germain-sur-avre",
+    titre: "Remplacement du tableau électrique en gaine technique logement",
+    description: "L'ancien tableau fonctionnait encore avec des coupe-circuits à fusibles, sous un seul différentiel général de 300 mA qui ne protège pas les personnes contre l'électrocution, et il n'était pas posé à la hauteur réglementaire. Pose d'une gaine technique logement avec un tableau neuf de quatre rangées : cinq interrupteurs différentiels 30 mA, dont deux de type A, l'un réservé aux trois pompes à chaleur, l'autre à la cuisine et au lavage, dix-neuf disjoncteurs adaptés à chaque circuit et un contacteur heures creuses pour le chauffe-eau. Reprise de tous les circuits existants après repérage et séparation des neutres communs. Le petit tableau du bas a été conservé et protégé par un différentiel 30 mA en tête. Un support pour la box internet, avec sa prise, complète la gaine technique.",
+    ville: "Saint-Germain-sur-Avre",
+    departement: "Eure",
+    departementCode: "27",
+    categorie: "electricite",
+    date: "2026-11-11",
+    image: "/tableau-electrique-gaine-technique-saint-germain-sur-avre.jpg",
+    imageAlt: "Gaine technique logement neuve avec tableau électrique fermé et support de box internet, posée à Saint-Germain-sur-Avre dans l'Eure",
+    photos: [
+      {
+        src: "/tableau-electrique-saint-germain-sur-avre-ancien-tableau.jpg",
+        alt: "Ancien tableau électrique Hager jauni avec coupe-circuits à fusibles et interrupteur différentiel général Schupa 300 mA, avant remplacement à Saint-Germain-sur-Avre",
+        legende: "Avant : l'ancien tableau, avec des fusibles et un seul différentiel de 300 mA pour toute la maison.",
       },
     ],
   },
