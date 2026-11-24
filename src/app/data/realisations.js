@@ -319,7 +319,7 @@ const realisationsData = [
     departement: "Eure-et-Loir",
     departementCode: "28",
     categorie: "automatismes",
-    date: "2026-11-24",
+    date: "2026-11-20",
     image: "/depannage-portail-charpont-carte-reprogrammee.jpg",
     imageAlt: "Carte de commande d'une motorisation de portail avec ses voyants allumés après reprogrammation, à Charpont, Eure-et-Loir",
   },
